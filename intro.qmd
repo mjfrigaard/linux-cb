@@ -7,10 +7,41 @@ knitr:
 
 # Introduction {.unnumbered}
 
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
 This is a book created from markdown and executable code.
 
 > "*Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.*" - [Donald Knuth. "Literate Programming (1984)" in Literate Programming. CSLI, 1992, pg. 99.](http://www.literateprogramming.com/index.html)
 
+```{bash}
+whoami
+```
+
 ```{r}
-1 + 1
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
 ```

@@ -1,0 +1,15 @@
+{
+  "hash": "b64477186d1132b18ab568f191420089",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n---\n\n\n# Common Commands {.unnumbered}\n\n\n\n\n\n:::: {.callout-important collapse='false' appearance='default' icon=false}\n\n## [Caution]{style='font-weight: bold; font-size: 1.25em;'}\n\n::: {style='font-size: 1.00em; color: #282b2d;'}\n\n\nThis section is under development. Thank you for your patience.\n  \n\n::: \n\n::::\n\n\nCommon Unix/Linux Commands.\n\n## Navigate \n\n`pwd` \n\n`cd` \n\n`ls`\n\n`file` \n\n`less`\n\n## Manipulate Files and Folders\n\n`mkdir`\n\n`cp` \n\n`mv`\n\n`rm`\n\n`ln`\n\n\n## Manipulate Text \n\n`cat`\n\n`sort`\n\n`uniq`\n\n`cut`\n\n`paste`\n\n`join`\n\n`comm`\n\n`diff`\n\n\n\n\n:::: {.callout-note collapse='false' appearance='default' icon=false}\n\n## [See a typo, error, or something missing?]{style='font-weight: bold; font-size: 0.95em;'}\n\n::: {style='font-size: 0.90em; color: #282b2d;'}\n\n\nPlease open an issue on [GitHub.](https://github.com/mjfrigaard/fm-unix/issues/new)\n\n::: \n\n::::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

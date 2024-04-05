@@ -7,4 +7,42 @@ knitr:
 
 # Format {.unnumbered}
 
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
 Shell script formats.
+
+```bash
+#!/bin/bash
+# This is our first script.
+echo 'Hello World!'
+```
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```
+

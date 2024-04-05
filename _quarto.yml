@@ -34,8 +34,8 @@ format:
   html:
     theme: [cosmo, styles.scss]
     highlight-style: radical
-    code-block-bg: "#262626"
-    code-block-border-left: "#73FA91"
+    code-block-bg: "#1E2229"
+    code-block-border-left: "#A5FFE1"
     number-sections: false
     toc: true
     toc-depth: 4

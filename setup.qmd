@@ -7,6 +7,29 @@ knitr:
 
 # Set-Up {.unnumbered}
 
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
 ## Using Bash in Quarto 
 
 Follow the instructions on the [Quarto website](https://quarto.org/docs/computations/execution-options.html#shell-commands) to configure your HTML documents to run Bash code chunks. 
@@ -55,3 +78,11 @@ echo "foo"
 ## Terminal (macOS)
 
 ## Virtual Machines
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```

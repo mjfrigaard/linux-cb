@@ -7,6 +7,30 @@ knitr:
 
 # Welcome! {.unnumbered}
 
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This book is under development. Thank you for your patience.
+  "
+)
+```
+
+
 Welcome to the start of your Unix and Linux journey. This book is designed with the non-technical audience in mind, providing a clear understanding of the concepts and commands of Unix/Linux to make them accessible to everyone. Whether you are a student, a professional from a non-IT field, or merely someone curious about operating systems, this book will guide you through the essentials of Unix/Linux.
 
 ## Preface
@@ -39,7 +63,10 @@ By the end of this book, you'll have a solid understanding of the Unix/Linux ope
 
 ## <!--# Audience and Prerequisites -->
 
-
-```{bash}
-whoami
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
 ```
