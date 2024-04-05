@@ -1,0 +1,15 @@
+{
+  "hash": "8725b0c9a2b851132506f77ee5e74228",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Preface\"\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n---\n\n\nWhy am I here? \n\nWhy Unix?\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

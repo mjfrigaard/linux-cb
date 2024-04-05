@@ -1,0 +1,15 @@
+{
+  "hash": "c6e4712b3994e7524204dc65cd050e63",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Commands\n\nWhat are commands? \n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n##  [1] 2\n```\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

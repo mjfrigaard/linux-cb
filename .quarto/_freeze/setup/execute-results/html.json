@@ -1,0 +1,15 @@
+{
+  "hash": "e7c32701f4c176d17f5f9532f802fe82",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Set-Up\"\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n---\n\n\n## Using Bash in Quarto \n\nFollow the instructions on the [Quarto website](https://quarto.org/docs/computations/execution-options.html#shell-commands) to configure your HTML documents to run Bash code chunks. \n\n### Document header\n\nSpecify the `engine` field of in the YAML header of the `.qmd` file:\n\n```yaml\n---\ntitle: \"Using Bash\"\nengine: knitr\n---\n```\n\nYou can also add any `knitr` chunk options: \n\n```yaml\nknitr:\n  opts_chunk: \n    collapse: true\n```\n\n### Code Chunks\n\nThe code chunks function like R or Python code chunks: \n\n```{{bash}}\necho \"foo\" \n```\n\nYou caan also specify the code chunk options with the hash-pipe:\n\n```{{bash}}\n#| code-fold: show\n#| code-summary: 'show/hide echo'\necho \"foo\" \n```\n\n\n::: {.cell}\n\n```{.bash .cell-code  code-fold=\"show\" code-summary=\"show/hide echo\"}\necho \"foo\"\n## foo\n```\n:::\n\n\n## Terminal (macOS)\n\n## Virtual Machines",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

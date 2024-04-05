@@ -1,0 +1,15 @@
+{
+  "hash": "4e4445f227c960640f241342f09df393",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Pipes\"\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n---",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

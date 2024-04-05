@@ -1,0 +1,15 @@
+{
+  "hash": "b657792ace9100e89d5ce7c07db6c669",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Permissions\"\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n---\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

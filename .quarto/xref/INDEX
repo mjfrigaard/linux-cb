@@ -1,0 +1,41 @@
+{
+  "index.qmd": {
+    "index.html": "dbdf780f"
+  },
+  "intro.qmd": {
+    "intro.html": "763a20b0"
+  },
+  "summary.qmd": {
+    "summary.html": "25e5e394"
+  },
+  "references.qmd": {
+    "references.html": "3f0ba8b8"
+  },
+  "preface.qmd": {
+    "preface.html": "00e76c94"
+  },
+  "setup.qmd": {
+    "setup.html": "6350dba7"
+  },
+  "commands.qmd": {
+    "commands.html": "c9122927"
+  },
+  "pipes.qmd": {
+    "pipes.html": "881ea37f"
+  },
+  "scripts.qmd": {
+    "scripts.html": "19c804e6"
+  },
+  "format.qmd": {
+    "format.html": "ad175536"
+  },
+  "permissions.qmd": {
+    "permissions.html": "18e61721"
+  },
+  "common_commands.qmd": {
+    "common_commands.html": "62bd5915"
+  },
+  "advanced_commands.qmd": {
+    "advanced_commands.html": "970da99b"
+  }
+}
