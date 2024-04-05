@@ -1,5 +1,144 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "fm-unix",
+    "section": "",
+    "text": "Welcome!\nWelcome to the start of your Unix and Linux journey. This book is designed with the non-technical audience in mind, providing a clear understanding of the concepts and commands of Unix/Linux to make them accessible to everyone. Whether you are a student, a professional from a non-IT field, or merely someone curious about operating systems, this book will guide you through the essentials of Unix/Linux.",
+    "crumbs": [
+      "Welcome!"
+    ]
+  },
+  {
+    "objectID": "index.html#preface",
+    "href": "index.html#preface",
+    "title": "fm-unix",
+    "section": "Preface",
+    "text": "Preface\nUnix and Linux are powerful, versatile, and widely used operating systems that run on millions of devices worldwide, from smartphones to supercomputers. Learning about Unix/Linux opens doors to many career opportunities and equips you with the knowledge to understand the digital world around you better.\nThis book is structured to gradually introduce you to the Unix/Linux environment, starting from the basics to more complex concepts. Here is the summary of what each section covers:\nIntroduction\nThis section will begin with some Unix/Linux command-line basics.\n\nSet-Up: Before diving into the commands and scripts, it’s essential to have your Unix/Linux environment ready. This section will guide you through setting up Unix/Linux on your machine, be it natively or through a virtual machine. We will ensure that you have a solid foundation to learn and practice the commands and scripts discussed in the subsequent sections.\nCommands: The command line is at the core of Unix/Linux, offering a powerful way to interact with the operating system. In this section, you will learn basic commands for navigating the file system, managing files and directories, and obtaining system information. These commands are the building blocks for more complex operations in Unix/Linux.\nPipes: Pipes are a unique feature in Unix/Linux that allows you to combine multiple commands to perform complex tasks. This section will introduce the concept of pipes, teaching you how to redirect the output of one command to the input of another, thereby enabling efficient data processing and manipulation.\n\nShell Scripts\nShell scripting is a powerful tool for automating repetitive tasks in Unix/Linux. This section will introduce you to writing your shell scripts, covering the basics of script creation, execution, and debugging. You’ll learn how to automate simple tasks, making your Unix/Linux experience more productive and enjoyable.\n\nFormats: Shell scripts can be written in various formats, depending on the shell you’re using (e.g., Bash, Zsh). This section delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Unix/Linux systems.\nPermissions: Understanding file permissions is crucial for managing the security of your files and directories in Unix/Linux. This section will explain how Unix/Linux permissions work, teaching you how to set and modify permissions to protect your data and system from unauthorized access.\n\nBy the end of this book, you’ll have a solid understanding of the Unix/Linux operating system and will be equipped with the knowledge to navigate, manage files, write scripts, and set permissions confidently. Whether you’re looking to enhance your career prospects, manage your Unix/Linux systems, or merely satisfy your curiosity, this book will be your companion on a fascinating journey into the world of Unix/Linux.",
+    "crumbs": [
+      "Welcome!"
+    ]
+  },
+  {
+    "objectID": "index.html#section-1",
+    "href": "index.html#section-1",
+    "title": "fm-unix",
+    "section": "",
+    "text": "whoami\n## mjfrigaard",
+    "crumbs": [
+      "Welcome!"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\n\n“Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.” - Donald Knuth. “Literate Programming (1984)” in Literate Programming. CSLI, 1992, pg. 99.\n\n\n1 + 1\n## [1] 2",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Set-Up",
+    "section": "",
+    "text": "Using Bash in Quarto\nFollow the instructions on the Quarto website to configure your HTML documents to run Bash code chunks.",
+    "crumbs": [
+      "Introduction",
+      "Set-Up"
+    ]
+  },
+  {
+    "objectID": "setup.html#using-bash-in-quarto",
+    "href": "setup.html#using-bash-in-quarto",
+    "title": "Set-Up",
+    "section": "",
+    "text": "Document header\nSpecify the engine field of in the YAML header of the .qmd file:\n---\ntitle: \"Using Bash\"\nengine: knitr\n---\nYou can also add any knitr chunk options:\nknitr:\n  opts_chunk: \n    collapse: true\n\n\nCode Chunks\nThe code chunks function like R or Python code chunks:\n```{bash}\necho \"foo\" \n```\nYou caan also specify the code chunk options with the hash-pipe:\n```{bash}\n#| code-fold: show\n#| code-summary: 'show/hide echo'\necho \"foo\" \n```\n\n\nshow/hide echo\necho \"foo\"\n## foo",
+    "crumbs": [
+      "Introduction",
+      "Set-Up"
+    ]
+  },
+  {
+    "objectID": "setup.html#terminal-macos",
+    "href": "setup.html#terminal-macos",
+    "title": "Set-Up",
+    "section": "Terminal (macOS)",
+    "text": "Terminal (macOS)",
+    "crumbs": [
+      "Introduction",
+      "Set-Up"
+    ]
+  },
+  {
+    "objectID": "setup.html#virtual-machines",
+    "href": "setup.html#virtual-machines",
+    "title": "Set-Up",
+    "section": "Virtual Machines",
+    "text": "Virtual Machines",
+    "crumbs": [
+      "Introduction",
+      "Set-Up"
+    ]
+  },
+  {
+    "objectID": "common_commands.html",
+    "href": "common_commands.html",
+    "title": "Common Commands",
+    "section": "",
+    "text": "Navigate\npwd\ncd\nls\nfile\nless",
+    "crumbs": [
+      "Introduction",
+      "Common Commands"
+    ]
+  },
+  {
+    "objectID": "common_commands.html#manipulate-files-and-folders",
+    "href": "common_commands.html#manipulate-files-and-folders",
+    "title": "Common Commands",
+    "section": "Manipulate Files and Folders",
+    "text": "Manipulate Files and Folders",
+    "crumbs": [
+      "Introduction",
+      "Common Commands"
+    ]
+  },
+  {
+    "objectID": "common_commands.html#manipulate-text",
+    "href": "common_commands.html#manipulate-text",
+    "title": "Common Commands",
+    "section": "Manipulate Text",
+    "text": "Manipulate Text\ncat\nsort\nuniq\ncut\npaste\njoin\ncomm\ndiff",
+    "crumbs": [
+      "Introduction",
+      "Common Commands"
+    ]
+  },
+  {
+    "objectID": "advanced_commands.html",
+    "href": "advanced_commands.html",
+    "title": "Advanced Commands",
+    "section": "",
+    "text": "Advanced commands.",
+    "crumbs": [
+      "Introduction",
+      "Advanced Commands"
+    ]
+  },
+  {
+    "objectID": "pipes.html",
+    "href": "pipes.html",
+    "title": "Pipes",
+    "section": "",
+    "text": "Using the |",
+    "crumbs": [
+      "Introduction",
+      "Pipes"
+    ]
+  },
+  {
     "objectID": "format.html",
     "href": "format.html",
     "title": "Format",
@@ -7,7 +146,18 @@
     "text": "Shell script formats.",
     "crumbs": [
       "Shell Scripts",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Format</span>"
+      "Format"
+    ]
+  },
+  {
+    "objectID": "permissions.html",
+    "href": "permissions.html",
+    "title": "Permissions",
+    "section": "",
+    "text": "File permissions.",
+    "crumbs": [
+      "Shell Scripts",
+      "Permissions"
     ]
   }
 ]

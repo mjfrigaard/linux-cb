@@ -1,9 +1,0 @@
----
-title: "Advanced Commands"
-engine: knitr
-knitr:
-  opts_chunk: 
-    collapse: true
----
-
-Advanced commands.

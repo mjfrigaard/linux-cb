@@ -1,9 +1,0 @@
----
-title: "Format"
-engine: knitr
-knitr:
-  opts_chunk: 
-    collapse: true
----
-
-Shell script formats.
