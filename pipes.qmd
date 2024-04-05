@@ -1,0 +1,7 @@
+---
+title: "Pipes"
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+---

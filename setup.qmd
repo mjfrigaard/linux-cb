@@ -1,0 +1,56 @@
+---
+title: "Set-Up"
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+---
+
+## Using Bash in Quarto 
+
+Follow the instructions on the [Quarto website](https://quarto.org/docs/computations/execution-options.html#shell-commands) to configure your HTML documents to run Bash code chunks. 
+
+### Document header
+
+Specify the `engine` field of in the YAML header of the `.qmd` file:
+
+```yaml
+---
+title: "Using Bash"
+engine: knitr
+---
+```
+
+You can also add any `knitr` chunk options: 
+
+```yaml
+knitr:
+  opts_chunk: 
+    collapse: true
+```
+
+### Code Chunks
+
+The code chunks function like R or Python code chunks: 
+
+```{{bash}}
+echo "foo" 
+```
+
+You caan also specify the code chunk options with the hash-pipe:
+
+```{{bash}}
+#| code-fold: show
+#| code-summary: 'show/hide echo'
+echo "foo" 
+```
+
+```{bash}
+#| code-fold: show 
+#| code-summary: 'show/hide echo'
+echo "foo"
+```
+
+## Terminal (macOS)
+
+## Virtual Machines

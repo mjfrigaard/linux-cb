@@ -1,0 +1,8 @@
+---
+title: "Shell Scripts"
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+---
+
