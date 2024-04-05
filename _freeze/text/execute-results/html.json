@@ -1,0 +1,15 @@
+{
+  "hash": "ef75c08c38c8be905f657c838a88c5c1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n    comment: '# '\n---\n\n\n# Manipulate Text {.unnumbered}\n\n\n\n\n\n:::: {.callout-important collapse='false' appearance='default' icon=false}\n\n## [Caution]{style='font-weight: bold; font-size: 1.25em;'}\n\n::: {style='font-size: 1.00em; color: #282b2d;'}\n\n\nThis section is under development. Thank you for your patience.\n  \n\n::: \n\n::::\n\n\n#### `cat`\n\n**`cat` (Concatenate)**: Laying out pages on the floor to see them all at once, `cat` displays the content of files straight to your screen, useful for checking what's in a text file quickly.\n\n#### `sort`\n\n**`sort`**: Organizing a stack of papers alphabetically, `sort` arranges the lines in a text file into order.\n\n#### `uniq`\n\n**`uniq`**: After accidentally printing duplicates of a document, you remove the extra copies. `uniq` helps by removing duplicate lines from a file, making sure every line is unique.\n\n#### `cut`\n\n**`cut`**: If you only want the dates from a list of events, you might physically cut them out of the paper. `cut` extracts specific parts of lines in a file, like cutting out columns of text.\n\n#### `paste`\n\n**`paste`**: Taking snippets of text from different documents and sticking them together into one, `paste` combines lines from multiple files side by side.\n\n#### `join`\n\n**`join`**: If you have two lists with common information, you might merge them based on what matches. `join` merges lines from two files based on a common field.\n\n#### `comm`\n\n**`comm` (Compare)**: Laying two printed lists side by side to see what items appear on both, only on one, or the other, `comm` compares two sorted files line by line.\n\n#### `diff`\n\n**`diff` (Difference)**: Highlighting what changes have been made between your draft and the final copy of a letter, `diff` shows the differences between two files.\n\nThese analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.\n\n\n\n\n:::: {.callout-note collapse='false' appearance='default' icon=false}\n\n## [See a typo, error, or something missing?]{style='font-weight: bold; font-size: 0.95em;'}\n\n::: {style='font-size: 0.90em; color: #282b2d;'}\n\n\nPlease open an issue on [GitHub.](https://github.com/mjfrigaard/fm-unix/issues/new)\n\n::: \n\n::::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

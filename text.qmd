@@ -1,0 +1,75 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: '# '
+---
+
+# Manipulate Text {.unnumbered}
+
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+#### `cat`
+
+**`cat` (Concatenate)**: Laying out pages on the floor to see them all at once, `cat` displays the content of files straight to your screen, useful for checking what's in a text file quickly.
+
+#### `sort`
+
+**`sort`**: Organizing a stack of papers alphabetically, `sort` arranges the lines in a text file into order.
+
+#### `uniq`
+
+**`uniq`**: After accidentally printing duplicates of a document, you remove the extra copies. `uniq` helps by removing duplicate lines from a file, making sure every line is unique.
+
+#### `cut`
+
+**`cut`**: If you only want the dates from a list of events, you might physically cut them out of the paper. `cut` extracts specific parts of lines in a file, like cutting out columns of text.
+
+#### `paste`
+
+**`paste`**: Taking snippets of text from different documents and sticking them together into one, `paste` combines lines from multiple files side by side.
+
+#### `join`
+
+**`join`**: If you have two lists with common information, you might merge them based on what matches. `join` merges lines from two files based on a common field.
+
+#### `comm`
+
+**`comm` (Compare)**: Laying two printed lists side by side to see what items appear on both, only on one, or the other, `comm` compares two sorted files line by line.
+
+#### `diff`
+
+**`diff` (Difference)**: Highlighting what changes have been made between your draft and the final copy of a letter, `diff` shows the differences between two files.
+
+These analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.
+
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```

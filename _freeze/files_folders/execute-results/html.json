@@ -1,0 +1,15 @@
+{
+  "hash": "9007581dd9539b0eb1c500fcb8ed472f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n    comment: '# '\n---\n\n\n# Files and Folders  {.unnumbered}\n\n\n\n\n\n:::: {.callout-important collapse='false' appearance='default' icon=false}\n\n## [Caution]{style='font-weight: bold; font-size: 1.25em;'}\n\n::: {style='font-size: 1.00em; color: #282b2d;'}\n\n\nThis section is under development. Thank you for your patience.\n  \n\n::: \n\n::::\n\n\n#### `mkdir`\n\n**`mkdir` (Make Directory)** builds a new folder wherever you tell it to, like making a new folder for projects in `/bin` (although you typically wouldn't do that there)\n\n#### `cp`\n\n**`cp` (Copy)** duplicates files or folders. For instance, copying a tool from `/bin` to your desktop, but usually, you leave `/bin` tools where they are.\n\n#### `mv`\n\n- **`mv` (Move)**: Taking a book from your desk and putting it on the shelf, `mv` moves files or folders from one place to another. It's like moving a misplaced tool back into `/bin`.\n\n#### `rm`\n\n**`rm` (Remove)**: Throwing away an old, tattered magazine, `rm` deletes files or folders. Be cautious, as this is like shredding documents—no easy way to get them back.\n\n#### `ln`\n\n**`ln` (Link)**: Creating a shortcut on your desktop to a frequently used program, `ln` creates links to files, making them accessible from multiple places without duplicating them.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -20,8 +20,9 @@ book:
     - part: intro.qmd
       chapters:
         - setup.qmd
-        - common_commands.qmd
-        - advanced_commands.qmd
+        - navigate.qmd
+        - files_folders.qmd
+        - text.qmd
         - pipes.qmd
     - part: scripts.qmd
       chapters:
@@ -42,7 +43,6 @@ format:
     toc-expand: true
     toc-title: Contents
     toc-location: right
-    embed-resources: true
     dpi: 320
     df-print: kable
     fig-format: retina

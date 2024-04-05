@@ -1,0 +1,52 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: '# '
+---
+
+# Files and Folders  {.unnumbered}
+
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+#### `mkdir`
+
+**`mkdir` (Make Directory)** builds a new folder wherever you tell it to, like making a new folder for projects in `/bin` (although you typically wouldn't do that there)
+
+#### `cp`
+
+**`cp` (Copy)** duplicates files or folders. For instance, copying a tool from `/bin` to your desktop, but usually, you leave `/bin` tools where they are.
+
+#### `mv`
+
+- **`mv` (Move)**: Taking a book from your desk and putting it on the shelf, `mv` moves files or folders from one place to another. It's like moving a misplaced tool back into `/bin`.
+
+#### `rm`
+
+**`rm` (Remove)**: Throwing away an old, tattered magazine, `rm` deletes files or folders. Be cautious, as this is like shredding documents—no easy way to get them back.
+
+#### `ln`
+
+**`ln` (Link)**: Creating a shortcut on your desktop to a frequently used program, `ln` creates links to files, making them accessible from multiple places without duplicating them.

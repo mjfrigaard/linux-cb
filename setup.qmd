@@ -32,36 +32,43 @@ co_box(
 
 ## Using Bash in Quarto 
 
-Follow the instructions on the [Quarto website](https://quarto.org/docs/computations/execution-options.html#shell-commands) to configure your HTML documents to run Bash code chunks. 
+Quarto is an open-source scientific and technical publishing framework that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards. 
+
+Quarto documents are built to work with various programming languages, including R, Python, Julia, and Observable JavaScript, which makes it a versatile tool for data scientists, researchers, and anyone involved in data analysis. However, you can also use Quarto to run Unix commands--specifically, Bash.[^quarto-bash] 
+
+[^quarto-bash]: Follow these instructions on the [Quarto website](https://quarto.org/docs/computations/execution-options.html#shell-commands) to configure your HTML documents to run Bash code chunks. 
 
 ### Document header
 
-Specify the `engine` field of in the YAML header of the `.qmd` file:
+Specify the `engine` field of in the YAML header of the `.qmd` file, and any `knitr` chunk options:
 
 ```yaml
 ---
 title: "Using Bash"
 engine: knitr
----
-```
-
-You can also add any `knitr` chunk options: 
-
-```yaml
 knitr:
   opts_chunk: 
     collapse: true
+---
 ```
 
 ### Code Chunks
 
-The code chunks function like R or Python code chunks: 
+> "*Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.*" - [Donald Knuth. "Literate Programming (1984)" in Literate Programming. CSLI, 1992, pg. 99.](http://www.literateprogramming.com/index.html)
+
+Quarto documents are written in markdown, a lightweight markup language that’s easy to write and read. This simplicity allows authors to focus on their content rather than formatting. One of the powerful aspects of Quarto is its ability to integrate executable code chunks into Markdown documents (in fact, this entire book was created using markdown and executable code chunks).
 
 ```{{bash}}
 echo "foo" 
 ```
 
-You caan also specify the code chunk options with the hash-pipe:
+You can also specify the code chunk options with the hash-pipe (`#|`):
+
+```{bash}
+#| code-fold: show 
+#| code-summary: 'show/hide echo'
+echo "foo"
+```
 
 ```{{bash}}
 #| code-fold: show
@@ -69,11 +76,7 @@ You caan also specify the code chunk options with the hash-pipe:
 echo "foo" 
 ```
 
-```{bash}
-#| code-fold: show 
-#| code-summary: 'show/hide echo'
-echo "foo"
-```
+
 
 ## Terminal (macOS)
 
