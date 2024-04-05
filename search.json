@@ -30,21 +30,11 @@
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "Introduction",
-    "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nThis is a book created from markdown and executable code.\n\n“Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.” - Donald Knuth. “Literate Programming (1984)” in Literate Programming. CSLI, 1992, pg. 99.\n\n\nwhoami\n## mjfrigaard\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
     "objectID": "setup.html",
     "href": "setup.html",
     "title": "Set-Up",
     "section": "",
-    "text": "Using Bash in Quarto\nFollow the instructions on the Quarto website to configure your HTML documents to run Bash code chunks.",
+    "text": "Using Bash in Quarto\nQuarto is an open-source scientific and technical publishing framework that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards.\nQuarto documents are built to work with various programming languages, including R, Python, Julia, and Observable JavaScript, which makes it a versatile tool for data scientists, researchers, and anyone involved in data analysis. However, you can also use Quarto to run Unix commands–specifically, Bash.1",
     "crumbs": [
       "Introduction",
       "Set-Up"
@@ -55,7 +45,7 @@
     "href": "setup.html#using-bash-in-quarto",
     "title": "Set-Up",
     "section": "",
-    "text": "Document header\nSpecify the engine field of in the YAML header of the .qmd file:\n---\ntitle: \"Using Bash\"\nengine: knitr\n---\nYou can also add any knitr chunk options:\nknitr:\n  opts_chunk: \n    collapse: true\n\n\nCode Chunks\nThe code chunks function like R or Python code chunks:\n```{bash}\necho \"foo\" \n```\nYou caan also specify the code chunk options with the hash-pipe:\n```{bash}\n#| code-fold: show\n#| code-summary: 'show/hide echo'\necho \"foo\" \n```\n\n\nshow/hide echo\necho \"foo\"\n## foo",
+    "text": "Document header\nSpecify the engine field of in the YAML header of the .qmd file, and any knitr chunk options:\n---\ntitle: \"Using Bash\"\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n---\n\n\nCode Chunks\n\n“Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.” - Donald Knuth. “Literate Programming (1984)” in Literate Programming. CSLI, 1992, pg. 99.\n\nQuarto documents are written in markdown, a lightweight markup language that’s easy to write and read. This simplicity allows authors to focus on their content rather than formatting. One of the powerful aspects of Quarto is its ability to integrate executable code chunks into Markdown documents (in fact, this entire book was created using markdown and executable code chunks).\n```{bash}\necho \"foo\" \n```\nYou can also specify the code chunk options with the hash-pipe (#|):\n\n\nshow/hide echo\necho \"foo\"\n## foo\n\n\n```{bash}\n#| code-fold: show\n#| code-summary: 'show/hide echo'\necho \"foo\" \n```",
     "crumbs": [
       "Introduction",
       "Set-Up"
@@ -84,25 +74,47 @@
     ]
   },
   {
-    "objectID": "common_commands.html",
-    "href": "common_commands.html",
-    "title": "Common Commands",
+    "objectID": "setup.html#footnotes",
+    "href": "setup.html#footnotes",
+    "title": "Set-Up",
     "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nI’ll tie in examples relevant to macOS, particularly focusing on files and folders you might find in the /bin directory, which is like a toolshed for software tools on your computer.\n\nNavigate\n\npwd (Print Working Directory): Imagine you’re blindfolded in a library. Asking “Where am I?” would get you an answer like “You’re in the history section, on the third floor.” pwd does this for your computer, telling you exactly where you are in the filesystem.\n\n\npwd\n## /Users/mjfrigaard/projects/books/fm-unix\n\n\ncd (Change Directory): If you want to move from the history section to the science fiction section in the library, you’d walk over there. cd lets you move to a different folder on your computer. For example, cd /bin takes you to the /bin folder, the toolshed of software tools.\n\n\ncd /bin\n# confirm \npwd\n## /bin\n\n\nls (List): Standing in the middle of the library and spinning around with your arms outstretched, you’d touch the bookshelves around you. ls is like this, showing you what files and folders are around you. In /bin, it would show you the software tools available.\n\n\ncd /bin\nls \n## [\n## bash\n## cat\n## chmod\n## cp\n## csh\n## dash\n## date\n## dd\n## df\n## echo\n## ed\n## expr\n## hostname\n## kill\n## ksh\n## launchctl\n## link\n## ln\n## ls\n## mkdir\n## mv\n## pax\n## ps\n## pwd\n## realpath\n## rm\n## rmdir\n## sh\n## sleep\n## stty\n## sync\n## tcsh\n## test\n## unlink\n## wait4path\n## zsh\n\n\nfile: If you pick up a book and aren’t sure what it’s about, you might look at the cover or the summary on the back. file gives you a summary of what a computer file is or what it contains, like telling you if a tool in /bin is a program you can run or a text file.\nless: When you find a hefty book, you might skim through it instead of reading every word. less lets you skim through a file on your computer, moving forwards and backwards as you please.\n\n\n\nManipulate Files and Folders\n\nmkdir (Make Directory): Deciding you need a new shelf for your comic book collection, you build one. mkdir builds a new folder wherever you tell it to, like making a new folder for projects in /bin, although you typically wouldn’t do that there.\ncp (Copy): Photocopying your friend’s recipe so you both can have a copy, cp duplicates files or folders. For instance, copying a tool from /bin to your desktop, but usually, you leave /bin tools where they are.\nmv (Move): Taking a book from your desk and putting it on the shelf, mv moves files or folders from one place to another. It’s like moving a misplaced tool back into /bin.\nrm (Remove): Throwing away an old, tattered magazine, rm deletes files or folders. Be cautious, as this is like shredding documents—no easy way to get them back.\nln (Link): Creating a shortcut on your desktop to a frequently used program, ln creates links to files, making them accessible from multiple places without duplicating them.\n\n\n\nManipulate Text\n\ncat (Concatenate): Laying out pages on the floor to see them all at once, cat displays the content of files straight to your screen, useful for checking what’s in a text file quickly.\nsort: Organizing a stack of papers alphabetically, sort arranges the lines in a text file into order.\nuniq: After accidentally printing duplicates of a document, you remove the extra copies. uniq helps by removing duplicate lines from a file, making sure every line is unique.\ncut: If you only want the dates from a list of events, you might physically cut them out of the paper. cut extracts specific parts of lines in a file, like cutting out columns of text.\npaste: Taking snippets of text from different documents and sticking them together into one, paste combines lines from multiple files side by side.\njoin: If you have two lists with common information, you might merge them based on what matches. join merges lines from two files based on a common field.\ncomm (Compare): Laying two printed lists side by side to see what items appear on both, only on one, or the other, comm compares two sorted files line by line.\ndiff (Difference): Highlighting what changes have been made between your draft and the final copy of a letter, diff shows the differences between two files.\n\nThese analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "text": "Follow these instructions on the Quarto website to configure your HTML documents to run Bash code chunks.↩︎",
     "crumbs": [
       "Introduction",
-      "Common Commands"
+      "Set-Up"
     ]
   },
   {
-    "objectID": "advanced_commands.html",
-    "href": "advanced_commands.html",
-    "title": "Advanced Commands",
+    "objectID": "navigate.html",
+    "href": "navigate.html",
+    "title": "Navigate",
     "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nAdvanced commands.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nWhen presented with a new map, the most important thing to find is your location on it. It’s hard to know where you’re going without knowing where you are.\n\npwd\npwd (Print Working Directory) tells you exactly where you are in the filesystem.\n\npwd # where am I?\n#  /Users/mjfrigaard/projects/books/fm-unix\n\n\n\ncd\ncd (Change Directory) lets you move to a different folder on your computer.\nIf you want to move from the one place to another, cd can get you there. For example, cd /bin takes you to the /bin folder, the toolshed of software tools.\n\ncd /bin # change location\npwd # now where am I?\n#  /bin\n\n\n\nls\nls (List) is like standing in one location, looking around, and seeing what files and folders are around you. In /bin, ls would show you the software tools available:\n\ncd /bin # change location\nls # what's in here?\n#  [\n#  bash\n#  cat\n#  chmod\n#  cp\n#  csh\n#  dash\n#  date\n#  dd\n#  df\n#  echo\n#  ed\n#  expr\n#  hostname\n#  kill\n#  ksh\n#  launchctl\n#  link\n#  ln\n#  ls\n#  mkdir\n#  mv\n#  pax\n#  ps\n#  pwd\n#  realpath\n#  rm\n#  rmdir\n#  sh\n#  sleep\n#  stty\n#  sync\n#  tcsh\n#  test\n#  unlink\n#  wait4path\n#  zsh\n\n\n\nfile\nfile gives you a summary of what a computer file is or what it contains, like telling you if a tool in /bin/pax is a program you can run or a text file.\n\nfile /bin/pax\n#  /bin/pax: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]\n#  /bin/pax (for architecture x86_64):  Mach-O 64-bit executable x86_64\n#  /bin/pax (for architecture arm64e):  Mach-O 64-bit executable arm64e\n\n\n\nless\nless lets you skim through a file on your computer, moving forwards and backwards as you please.\n\nless data/gamehof.tsv\n\n\n\n\nEnter less in the Terminal\n\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Introduction",
-      "Advanced Commands"
+      "Navigate"
+    ]
+  },
+  {
+    "objectID": "files_folders.html",
+    "href": "files_folders.html",
+    "title": "Files and Folders",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\n\nmkdir\nmkdir (Make Directory) builds a new folder wherever you tell it to, like making a new folder for projects in /bin (although you typically wouldn’t do that there)\n\n\ncp\ncp (Copy) duplicates files or folders. For instance, copying a tool from /bin to your desktop, but usually, you leave /bin tools where they are.\n\n\nmv\n\nmv (Move): Taking a book from your desk and putting it on the shelf, mv moves files or folders from one place to another. It’s like moving a misplaced tool back into /bin.\n\n\n\nrm\nrm (Remove): Throwing away an old, tattered magazine, rm deletes files or folders. Be cautious, as this is like shredding documents—no easy way to get them back.\n\n\nln\nln (Link): Creating a shortcut on your desktop to a frequently used program, ln creates links to files, making them accessible from multiple places without duplicating them.",
+    "crumbs": [
+      "Introduction",
+      "Files and Folders"
+    ]
+  },
+  {
+    "objectID": "text.html",
+    "href": "text.html",
+    "title": "Manipulate Text",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\n\ncat\ncat (Concatenate): Laying out pages on the floor to see them all at once, cat displays the content of files straight to your screen, useful for checking what’s in a text file quickly.\n\n\nsort\nsort: Organizing a stack of papers alphabetically, sort arranges the lines in a text file into order.\n\n\nuniq\nuniq: After accidentally printing duplicates of a document, you remove the extra copies. uniq helps by removing duplicate lines from a file, making sure every line is unique.\n\n\ncut\ncut: If you only want the dates from a list of events, you might physically cut them out of the paper. cut extracts specific parts of lines in a file, like cutting out columns of text.\n\n\npaste\npaste: Taking snippets of text from different documents and sticking them together into one, paste combines lines from multiple files side by side.\n\n\njoin\njoin: If you have two lists with common information, you might merge them based on what matches. join merges lines from two files based on a common field.\n\n\ncomm\ncomm (Compare): Laying two printed lists side by side to see what items appear on both, only on one, or the other, comm compares two sorted files line by line.\n\n\ndiff\ndiff (Difference): Highlighting what changes have been made between your draft and the final copy of a letter, diff shows the differences between two files.\nThese analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Introduction",
+      "Manipulate Text"
     ]
   },
   {
@@ -114,16 +126,6 @@
     "crumbs": [
       "Introduction",
       "Pipes"
-    ]
-  },
-  {
-    "objectID": "scripts.html",
-    "href": "scripts.html",
-    "title": "Shell Scripts",
-    "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Shell Scripts"
     ]
   },
   {
@@ -157,6 +159,36 @@
     "crumbs": [
       "Appendices",
       "References"
+    ]
+  },
+  {
+    "objectID": "scripts.html",
+    "href": "scripts.html",
+    "title": "Shell Scripts",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Shell Scripts"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Background\nUnix and Linux are like the great ancestors and heroes of the computer world, with stories full of innovation, community, and evolution.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "intro.html#background",
+    "href": "intro.html#background",
+    "title": "Introduction",
+    "section": "",
+    "text": "The Tale of Unix\nImagine Unix and Linux as the master and apprentice in the vast workshop of computer operating systems. Our story begins in the late 1960s at AT&T’s Bell Labs. Unix was born out of a desire for a more flexible and portable operating system. It was a time when computers were as big as rooms and operated on specific, often incompatible, systems. Unix was a breath of fresh air because it was designed to be simple, elegant, and, most importantly, portable, meaning it could run on different types of hardware.\nUnix is the master craftsman in this story, having laid the foundational tools and techniques, and crafting a blueprint for how computers could efficiently and securely manage tasks like organizing files or running software.\nThe Unix expertise has been distilled into a comprehensive manual of essential commands and operations, guiding other apprentices in creating their versions of tools and systems.\n\n\nThe Emergence of Linux\nFast forward a couple of decades to 1991, when a Finnish student named Linus Torvalds decided to create his own free operating system kernel, inspired by Unix. This kernel, which is at the heart of the Linux operating system, was made freely available to anyone who wanted to use or improve it. Imagine someone building a car engine and then giving it away for free, saying, “Here, add whatever you want to it!”\nLinux flourished with the help of developers around the world. It’s a testament to what collaboration and shared goals can achieve. This global effort resulted in an operating system that is not only free but also incredibly powerful and reliable.\nLinux, inspired by the teachings of Unix, is the eager apprentice who learned from the master’s manual and decided to share its own set of tools with the world for free. It’s like a collaborative ‘Linux guild’ where anyone can contribute their skills, refine the tools, and share the fruits of their labor. This guild has cultivated various specialties, known as “distributions,” each with ts unique set of tools and embellishments, yet all rooted in the same foundational teachings.\n\n\nModern Uses\nToday, Unix and Linux are everywhere. They’re the invisible forces behind much of the Internet and are responsible for running servers, desktops, smartphones, and even household appliances.\n\nServers and Supercomputers: The majority of the web servers powering the internet, as well as the world’s most powerful supercomputers, run on Linux due to its stability, security, and efficiency.\nDesktops: Although not as common on desktops as Windows or macOS, Linux distributions offer a free, customizable alternative for users.\nSmartphones: Android, the most popular mobile operating system, is powered by a Linux kernel, making Linux the silent workhorse behind billions of smartphones.\nEmbedded Systems: From smartwatches to smart home devices, Linux is often the go-to choice for running embedded systems thanks to its scalability and low cost.\n\nIn essence, Unix and Linux have grown from niche systems used by academics and researchers to foundational elements that power much of the digital world. They exemplify the power of open collaboration and innovation, showing how a small project or idea can grow and change the world.\nIn simple terms, Unix and Linux provide the underlying framework for computer programs. They’re like the behind-the-scenes craftsmen ensuring the workshop runs smoothly, whether crafting a simple piece of furniture (like running a straightforward program on your computer) or constructing an elaborate mansion (like managing the complex operations of a large server), crafting a simple piece of furniture (like running a straightforward program on your computer), or constructing an elaborate mansion (like managing the complex operations of a large server).\nThe first four chapters will cover an introduction to some common commands in Unix/Linux. These will help you find your way around your machine’s folders and files. We’ll also cover how to manipulate text within files.\n\nwhoami\n## mjfrigaard\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Introduction"
     ]
   }
 ]
