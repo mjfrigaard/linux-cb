@@ -88,29 +88,7 @@
     "href": "common_commands.html",
     "title": "Common Commands",
     "section": "",
-    "text": "Navigate\npwd\ncd\nls\nfile\nless",
-    "crumbs": [
-      "Introduction",
-      "Common Commands"
-    ]
-  },
-  {
-    "objectID": "common_commands.html#manipulate-files-and-folders",
-    "href": "common_commands.html#manipulate-files-and-folders",
-    "title": "Common Commands",
-    "section": "Manipulate Files and Folders",
-    "text": "Manipulate Files and Folders\nmkdir\ncp\nmv\nrm\nln",
-    "crumbs": [
-      "Introduction",
-      "Common Commands"
-    ]
-  },
-  {
-    "objectID": "common_commands.html#manipulate-text",
-    "href": "common_commands.html#manipulate-text",
-    "title": "Common Commands",
-    "section": "Manipulate Text",
-    "text": "Manipulate Text\ncat\nsort\nuniq\ncut\npaste\njoin\ncomm\ndiff\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nI’ll tie in examples relevant to macOS, particularly focusing on files and folders you might find in the /bin directory, which is like a toolshed for software tools on your computer.\n\nNavigate\n\npwd (Print Working Directory): Imagine you’re blindfolded in a library. Asking “Where am I?” would get you an answer like “You’re in the history section, on the third floor.” pwd does this for your computer, telling you exactly where you are in the filesystem.\n\n\npwd\n## /Users/mjfrigaard/projects/books/fm-unix\n\n\ncd (Change Directory): If you want to move from the history section to the science fiction section in the library, you’d walk over there. cd lets you move to a different folder on your computer. For example, cd /bin takes you to the /bin folder, the toolshed of software tools.\n\n\ncd /bin\n# confirm \npwd\n## /bin\n\n\nls (List): Standing in the middle of the library and spinning around with your arms outstretched, you’d touch the bookshelves around you. ls is like this, showing you what files and folders are around you. In /bin, it would show you the software tools available.\n\n\ncd /bin\nls \n## [\n## bash\n## cat\n## chmod\n## cp\n## csh\n## dash\n## date\n## dd\n## df\n## echo\n## ed\n## expr\n## hostname\n## kill\n## ksh\n## launchctl\n## link\n## ln\n## ls\n## mkdir\n## mv\n## pax\n## ps\n## pwd\n## realpath\n## rm\n## rmdir\n## sh\n## sleep\n## stty\n## sync\n## tcsh\n## test\n## unlink\n## wait4path\n## zsh\n\n\nfile: If you pick up a book and aren’t sure what it’s about, you might look at the cover or the summary on the back. file gives you a summary of what a computer file is or what it contains, like telling you if a tool in /bin is a program you can run or a text file.\nless: When you find a hefty book, you might skim through it instead of reading every word. less lets you skim through a file on your computer, moving forwards and backwards as you please.\n\n\n\nManipulate Files and Folders\n\nmkdir (Make Directory): Deciding you need a new shelf for your comic book collection, you build one. mkdir builds a new folder wherever you tell it to, like making a new folder for projects in /bin, although you typically wouldn’t do that there.\ncp (Copy): Photocopying your friend’s recipe so you both can have a copy, cp duplicates files or folders. For instance, copying a tool from /bin to your desktop, but usually, you leave /bin tools where they are.\nmv (Move): Taking a book from your desk and putting it on the shelf, mv moves files or folders from one place to another. It’s like moving a misplaced tool back into /bin.\nrm (Remove): Throwing away an old, tattered magazine, rm deletes files or folders. Be cautious, as this is like shredding documents—no easy way to get them back.\nln (Link): Creating a shortcut on your desktop to a frequently used program, ln creates links to files, making them accessible from multiple places without duplicating them.\n\n\n\nManipulate Text\n\ncat (Concatenate): Laying out pages on the floor to see them all at once, cat displays the content of files straight to your screen, useful for checking what’s in a text file quickly.\nsort: Organizing a stack of papers alphabetically, sort arranges the lines in a text file into order.\nuniq: After accidentally printing duplicates of a document, you remove the extra copies. uniq helps by removing duplicate lines from a file, making sure every line is unique.\ncut: If you only want the dates from a list of events, you might physically cut them out of the paper. cut extracts specific parts of lines in a file, like cutting out columns of text.\npaste: Taking snippets of text from different documents and sticking them together into one, paste combines lines from multiple files side by side.\njoin: If you have two lists with common information, you might merge them based on what matches. join merges lines from two files based on a common field.\ncomm (Compare): Laying two printed lists side by side to see what items appear on both, only on one, or the other, comm compares two sorted files line by line.\ndiff (Difference): Highlighting what changes have been made between your draft and the final copy of a letter, diff shows the differences between two files.\n\nThese analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Introduction",
       "Common Commands"
