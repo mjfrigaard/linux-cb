@@ -1,6 +1,7 @@
 project:
   type: book
   output-dir: _book
+  execute-dir: project
   
 editor: source
 
@@ -15,8 +16,7 @@ book:
   #repo-branch: main
   #repo-actions: [edit, issue]
   chapters:
-    - index.qmd
-    - preface.qmd
+    - index.qmd 
     - part: intro.qmd
       chapters:
         - setup.qmd
@@ -53,16 +53,7 @@ format:
     fig-height: 5
     engine: knitr
 
-# knitr:
-#   opts_chunk: 
-#     collapse: true
-#     comment: "## "
-#     message: false
-#     warning: false
-
-# execute: 
-#   eval: true
-#   freeze: true
-#   echo: true
+execute:
+  freeze: true
 
 

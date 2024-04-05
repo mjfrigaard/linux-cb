@@ -1,10 +1,11 @@
 ---
-title: "Set-Up"
 engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
 ---
+
+# Set-Up {.unnumbered}
 
 ## Using Bash in Quarto 
 

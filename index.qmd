@@ -1,16 +1,15 @@
 ---
-title: "Welcome!"
 engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
 ---
 
-Welcome to the Unix Field manual! I put book together to help anyone new to the command line (Linux or Mac Terminal).
-
-## Preface
+# Welcome! {.unnumbered}
 
 Welcome to the start of your Unix and Linux journey. This book is designed with the non-technical audience in mind, providing a clear understanding of the concepts and commands of Unix/Linux to make them accessible to everyone. Whether you are a student, a professional from a non-IT field, or merely someone curious about operating systems, this book will guide you through the essentials of Unix/Linux.
+
+## Preface
 
 Unix and Linux are powerful, versatile, and widely used operating systems that run on millions of devices worldwide, from smartphones to supercomputers. Learning about Unix/Linux opens doors to many career opportunities and equips you with the knowledge to understand the digital world around you better.
 
