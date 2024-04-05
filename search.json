@@ -24,7 +24,7 @@
     "href": "index.html#section-1",
     "title": "fm-unix",
     "section": "",
-    "text": "whoami\n## mjfrigaard",
+    "text": "See a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Welcome!"
     ]
@@ -34,7 +34,7 @@
     "href": "intro.html",
     "title": "Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\n\n“Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.” - Donald Knuth. “Literate Programming (1984)” in Literate Programming. CSLI, 1992, pg. 99.\n\n\n1 + 1\n## [1] 2",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nThis is a book created from markdown and executable code.\n\n“Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.” - Donald Knuth. “Literate Programming (1984)” in Literate Programming. CSLI, 1992, pg. 99.\n\n\nwhoami\n## mjfrigaard\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Introduction"
     ]
@@ -77,7 +77,7 @@
     "href": "setup.html#virtual-machines",
     "title": "Set-Up",
     "section": "Virtual Machines",
-    "text": "Virtual Machines",
+    "text": "Virtual Machines\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Introduction",
       "Set-Up"
@@ -99,7 +99,7 @@
     "href": "common_commands.html#manipulate-files-and-folders",
     "title": "Common Commands",
     "section": "Manipulate Files and Folders",
-    "text": "Manipulate Files and Folders",
+    "text": "Manipulate Files and Folders\nmkdir\ncp\nmv\nrm\nln",
     "crumbs": [
       "Introduction",
       "Common Commands"
@@ -110,7 +110,7 @@
     "href": "common_commands.html#manipulate-text",
     "title": "Common Commands",
     "section": "Manipulate Text",
-    "text": "Manipulate Text\ncat\nsort\nuniq\ncut\npaste\njoin\ncomm\ndiff",
+    "text": "Manipulate Text\ncat\nsort\nuniq\ncut\npaste\njoin\ncomm\ndiff\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Introduction",
       "Common Commands"
@@ -121,7 +121,7 @@
     "href": "advanced_commands.html",
     "title": "Advanced Commands",
     "section": "",
-    "text": "Advanced commands.",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nAdvanced commands.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Introduction",
       "Advanced Commands"
@@ -132,10 +132,20 @@
     "href": "pipes.html",
     "title": "Pipes",
     "section": "",
-    "text": "Using the |",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nUsing the |\n\nls /bin | head -n5\n## [\n## bash\n## cat\n## chmod\n## cp\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Introduction",
       "Pipes"
+    ]
+  },
+  {
+    "objectID": "scripts.html",
+    "href": "scripts.html",
+    "title": "Shell Scripts",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Shell Scripts"
     ]
   },
   {
@@ -143,7 +153,7 @@
     "href": "format.html",
     "title": "Format",
     "section": "",
-    "text": "Shell script formats.",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nShell script formats.\n#!/bin/bash\n# This is our first script.\necho 'Hello World!'\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Shell Scripts",
       "Format"
@@ -154,10 +164,21 @@
     "href": "permissions.html",
     "title": "Permissions",
     "section": "",
-    "text": "File permissions.",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nFile permissions with chmod\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Shell Scripts",
       "Permissions"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Appendices",
+      "References"
     ]
   }
 ]
