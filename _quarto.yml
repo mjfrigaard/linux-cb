@@ -21,7 +21,6 @@ book:
       chapters:
         - setup.qmd
         - syntax.qmd
-        - navigate.qmd
         - files_folders.qmd
         - text.qmd
         - pipes.qmd

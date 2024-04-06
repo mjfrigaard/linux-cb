@@ -170,12 +170,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./navigate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Navigate</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./files_folders.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Files and Folders</span></a>
   </div>
@@ -294,9 +288,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>This section of the book dives into the practical aspects of preparing your environment to work with Unix/Linux systems. It is designed to guide readers through various setup processes, catering to different preferences and requirements. Whether you’re using Quarto for document creation, working directly on a macOS terminal, or setting up a virtual machine, this section has you covered. Below is an overview of what to expect in each subsection:</p>
 <section id="quarto" class="level2">
 <h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
-<p><a href="https://quarto.org/">Quarto</a> is an ‘<em>open-source scientific and technical publishing system</em>’ that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards.</p>
+<p>is an ‘<em>open-source scientific and technical publishing system</em>’ that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards.</p>
+<p><a href="https://quarto.org/">Quarto</a> is an ‘<em>open-source scientific and technical publishing system</em>’ built on <a href="https://pandoc.org/">Pandoc.</a> It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through writing YAML headers and Bash code chunks, two essential components when working with Quarto in a Unix/Linux context.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -317,10 +313,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><a href="glossary.html#sec-quarto" class="quarto-xref"><span>Quarto</span></a> documents are built to work with various programming languages, including Unix commands.</p>
 <section id="yaml-header" class="level3">
 <h3 class="anchored" data-anchor-id="yaml-header">YAML header</h3>
-<p>Quarto documents are written in markdown, a lightweight markup language that’s easy to write and read. This simplicity allows authors to focus on their content rather than formatting. Quarto documents contain a <a href="glossary.html#sec-yaml" class="quarto-xref"><span>YAML</span></a> header for configuring various options. To run Bash commands, specify <code>knitr</code> in the <code>engine</code> field of in the YAML header of the <code>.qmd</code> file, and any additional key-value pairs:</p>
+<p>This part will explain the syntax and options available within the <code>YAML</code> header, showing how to configure document properties such as title, engine, output format, and more. It serves as the foundation for controlling how your Quarto document behaves and appears.</p>
+<p><a href="glossary.html#sec-quarto" class="quarto-xref"><span>Quarto</span></a> documents are written in markdown and can include executable code in various programming languages, including Unix commands. <a href="glossary.html#sec-yaml" class="quarto-xref"><span>YAML</span></a> is a lightweight markup language that’s easy to write and read. The <code>YAML</code> header is placed between three dashes <code>---</code> at the top of each Quarto document to specify metadata and global options.</p>
+<p>To run Bash commands, specify <code>knitr</code> in the <code>engine</code> field of in the YAML header of the <code>.qmd</code> file, and any additional key-value pairs:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Using Bash"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">engine</span><span class="kw">:</span><span class="at"> knitr</span></span>
@@ -328,15 +325,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">opts_chunk</span><span class="kw">:</span><span class="at"> </span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">collapse</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This simplicity allows authors to focus on their content rather than formatting.</p>
 </section>
 <section id="bash-code-chunks" class="level3">
 <h3 class="anchored" data-anchor-id="bash-code-chunks">Bash Code Chunks</h3>
-<p>Introduced in 1989, Bash has become the default command-line interface or “shell” for most Linux distributions.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> We’ll use Bash commands and scripts to preproceess data files, render Quarto documents, and automate other operations in the data analysis pipeline, from downloading and ingesting data to creating and deploying analysis outputs.</p>
-<p>One of the powerful aspects of Quarto is its ability to integrate executable code chunks into Markdown documents (in fact, this entire book was created using markdown and executable code chunks).</p>
+<p>Introduced in 1989, Bash has become the default command-line interface or “shell” for most Linux distributions.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> We’ll use Bash commands and scripts to preproceess data files, render Quarto documents, and automate other operations in the data analysis pipeline, from downloading and ingesting data to creating and deploying analysis outputs.</p>
+<p>One of the powerful features of Quarto is the ability to integrate executable code chunks into Markdown documents.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> You can create bash code chunks using the following syntax:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">echo "foo" </span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You can also specify the code chunk options with the hash-pipe (<code>#|</code>):<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>Bash code chunks allow you to include executable Bash commands within your Quarto documents. You can also specify the code chunk options with the hash-pipe (<code>#|</code>):<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>show/hide echo</summary>
@@ -353,9 +351,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="terminal-macos" class="level2">
 <h2 class="anchored" data-anchor-id="terminal-macos">Terminal (macOS)</h2>
+<p>The terminal application in macOS is a gateway to the Unix command line, providing users with direct access to Unix/Linux commands and utilities. This subsection focuses on setting up and customizing the terminal in macOS, covering basic configurations, installing essential software, and introducing useful shortcuts and commands. It aims to equip macOS users with the knowledge needed to effectively utilize the terminal for Unix/Linux operations.</p>
 </section>
 <section id="virtual-machines" class="level2">
 <h2 class="anchored" data-anchor-id="virtual-machines">Virtual Machines</h2>
+<p>Virtual machines (VMs) offer a flexible way to run Unix/Linux environments on top of your existing operating system, regardless of whether it’s Windows, macOS, or another Linux distribution. This subsection explores the setup process for virtual machines, highlighting popular VM software like VirtualBox and VMware. It will guide readers through creating a new VM, installing a Unix/Linux distribution, configuring network settings, and optimizing performance. This part is essential for those looking to experiment with Unix/Linux systems in an isolated environment.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -380,8 +380,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Bash was the default command-line interface for Apple’s macOS (which is Unix-based) until the transition to <code>zsh</code> as the default shell in macOS Catalina.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Follow these instructions on the <a href="https://quarto.org/docs/computations/execution-options.html#shell-commands">Quarto website</a> to configure your HTML documents to run Bash code chunks.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Read more about configuring shell code blocks in Quarto in the <a href="https://quarto.org/docs/computations/execution-options.html#shell-commands">documentation.</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Bash was the default command-line interface for Apple’s macOS (which is Unix-based) until the transition to <code>zsh</code> as the default shell in macOS Catalina.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>In fact, this entire book was created using Quarto and executable code chunks!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Consult the full list of code chunk options in the <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">Quarto documentation</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
