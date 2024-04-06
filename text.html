@@ -130,6 +130,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./syntax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syntax</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./navigate.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Navigate</span></a>
   </div>
@@ -188,8 +194,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
       </ul>
@@ -204,14 +210,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#cat" id="toc-cat" class="nav-link active" data-scroll-target="#cat"><code>cat</code></a></li>
-  <li><a href="#sort" id="toc-sort" class="nav-link" data-scroll-target="#sort"><code>sort</code></a></li>
-  <li><a href="#uniq" id="toc-uniq" class="nav-link" data-scroll-target="#uniq"><code>uniq</code></a></li>
-  <li><a href="#cut" id="toc-cut" class="nav-link" data-scroll-target="#cut"><code>cut</code></a></li>
-  <li><a href="#paste" id="toc-paste" class="nav-link" data-scroll-target="#paste"><code>paste</code></a></li>
-  <li><a href="#join" id="toc-join" class="nav-link" data-scroll-target="#join"><code>join</code></a></li>
-  <li><a href="#comm" id="toc-comm" class="nav-link" data-scroll-target="#comm"><code>comm</code></a></li>
-  <li><a href="#diff" id="toc-diff" class="nav-link" data-scroll-target="#diff"><code>diff</code></a></li>
+  <li><a href="#sec-cat" id="toc-sec-cat" class="nav-link active" data-scroll-target="#sec-cat"><code>cat</code></a></li>
+  <li><a href="#sec-grep" id="toc-sec-grep" class="nav-link" data-scroll-target="#sec-grep"><code>grep</code></a></li>
+  <li><a href="#sec-sort" id="toc-sec-sort" class="nav-link" data-scroll-target="#sec-sort"><code>sort</code></a></li>
+  <li><a href="#sec-uniq" id="toc-sec-uniq" class="nav-link" data-scroll-target="#sec-uniq"><code>uniq</code></a></li>
+  <li><a href="#sec-cut" id="toc-sec-cut" class="nav-link" data-scroll-target="#sec-cut"><code>cut</code></a></li>
+  <li><a href="#sec-paste" id="toc-sec-paste" class="nav-link" data-scroll-target="#sec-paste"><code>paste</code></a></li>
+  <li><a href="#sec-join" id="toc-sec-join" class="nav-link" data-scroll-target="#sec-join"><code>join</code></a></li>
+  <li><a href="#sec-comm" id="toc-sec-comm" class="nav-link" data-scroll-target="#sec-comm"><code>comm</code></a></li>
+  <li><a href="#sec-diff" id="toc-sec-diff" class="nav-link" data-scroll-target="#sec-diff"><code>diff</code></a></li>
   </ul>
 </nav>
     </div>
@@ -255,36 +262,40 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<section id="cat" class="level4">
-<h4 class="anchored" data-anchor-id="cat"><code>cat</code></h4>
+<section id="sec-cat" class="level4">
+<h4 class="anchored" data-anchor-id="sec-cat"><code>cat</code></h4>
 <p><strong><code>cat</code> (Concatenate)</strong>: Laying out pages on the floor to see them all at once, <code>cat</code> displays the content of files straight to your screen, useful for checking what’s in a text file quickly.</p>
 </section>
-<section id="sort" class="level4">
-<h4 class="anchored" data-anchor-id="sort"><code>sort</code></h4>
+<section id="sec-grep" class="level4">
+<h4 class="anchored" data-anchor-id="sec-grep"><code>grep</code></h4>
+<p><strong><code>grep</code></strong> stands for “global regular expression print” and it reads from <code>stdin</code> or a list of files and outputs the lines that contain matches for a specified pattern.</p>
+</section>
+<section id="sec-sort" class="level4">
+<h4 class="anchored" data-anchor-id="sec-sort"><code>sort</code></h4>
 <p><strong><code>sort</code></strong>: Organizing a stack of papers alphabetically, <code>sort</code> arranges the lines in a text file into order.</p>
 </section>
-<section id="uniq" class="level4">
-<h4 class="anchored" data-anchor-id="uniq"><code>uniq</code></h4>
+<section id="sec-uniq" class="level4">
+<h4 class="anchored" data-anchor-id="sec-uniq"><code>uniq</code></h4>
 <p><strong><code>uniq</code></strong>: After accidentally printing duplicates of a document, you remove the extra copies. <code>uniq</code> helps by removing duplicate lines from a file, making sure every line is unique.</p>
 </section>
-<section id="cut" class="level4">
-<h4 class="anchored" data-anchor-id="cut"><code>cut</code></h4>
+<section id="sec-cut" class="level4">
+<h4 class="anchored" data-anchor-id="sec-cut"><code>cut</code></h4>
 <p><strong><code>cut</code></strong>: If you only want the dates from a list of events, you might physically cut them out of the paper. <code>cut</code> extracts specific parts of lines in a file, like cutting out columns of text.</p>
 </section>
-<section id="paste" class="level4">
-<h4 class="anchored" data-anchor-id="paste"><code>paste</code></h4>
+<section id="sec-paste" class="level4">
+<h4 class="anchored" data-anchor-id="sec-paste"><code>paste</code></h4>
 <p><strong><code>paste</code></strong>: Taking snippets of text from different documents and sticking them together into one, <code>paste</code> combines lines from multiple files side by side.</p>
 </section>
-<section id="join" class="level4">
-<h4 class="anchored" data-anchor-id="join"><code>join</code></h4>
+<section id="sec-join" class="level4">
+<h4 class="anchored" data-anchor-id="sec-join"><code>join</code></h4>
 <p><strong><code>join</code></strong>: If you have two lists with common information, you might merge them based on what matches. <code>join</code> merges lines from two files based on a common field.</p>
 </section>
-<section id="comm" class="level4">
-<h4 class="anchored" data-anchor-id="comm"><code>comm</code></h4>
+<section id="sec-comm" class="level4">
+<h4 class="anchored" data-anchor-id="sec-comm"><code>comm</code></h4>
 <p><strong><code>comm</code> (Compare)</strong>: Laying two printed lists side by side to see what items appear on both, only on one, or the other, <code>comm</code> compares two sorted files line by line.</p>
 </section>
-<section id="diff" class="level4">
-<h4 class="anchored" data-anchor-id="diff"><code>diff</code></h4>
+<section id="sec-diff" class="level4">
+<h4 class="anchored" data-anchor-id="sec-diff"><code>diff</code></h4>
 <p><strong><code>diff</code> (Difference)</strong>: Highlighting what changes have been made between your draft and the final copy of a letter, <code>diff</code> shows the differences between two files.</p>
 <p>These analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">

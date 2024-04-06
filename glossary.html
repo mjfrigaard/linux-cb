@@ -8,7 +8,7 @@
 
 <meta name="description" content="A Unix Field Manual">
 
-<title>fm-unix – Navigate</title>
+<title>fm-unix – Glossary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./files_folders.html" rel="next">
-<link href="./syntax.html" rel="prev">
+<link href="./permissions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -116,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./navigate.html">Navigate</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./glossary.html">Appendices</a></li><li class="breadcrumb-item"><a href="./glossary.html">Glossary</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -170,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./navigate.html" class="sidebar-item-text sidebar-link active">
+  <a href="./navigate.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Navigate</span></a>
   </div>
 </li>
@@ -228,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Glossary</span></a>
   </div>
 </li>
@@ -244,20 +243,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#sec-pwd" id="toc-sec-pwd" class="nav-link active" data-scroll-target="#sec-pwd"><code>pwd</code></a></li>
-  <li><a href="#sec-cd" id="toc-sec-cd" class="nav-link" data-scroll-target="#sec-cd"><code>cd</code></a></li>
-  <li><a href="#sec-ls" id="toc-sec-ls" class="nav-link" data-scroll-target="#sec-ls"><code>ls</code></a></li>
-  <li><a href="#sec-file" id="toc-sec-file" class="nav-link" data-scroll-target="#sec-file"><code>file</code></a></li>
-  <li><a href="#sec-less" id="toc-sec-less" class="nav-link" data-scroll-target="#sec-less"><code>less</code></a></li>
+  <li><a href="#sec-bash" id="toc-sec-bash" class="nav-link active" data-scroll-target="#sec-bash">Bash</a></li>
+  <li><a href="#sec-quarto" id="toc-sec-quarto" class="nav-link" data-scroll-target="#sec-quarto">Quarto</a></li>
+  <li><a href="#sec-yaml" id="toc-sec-yaml" class="nav-link" data-scroll-target="#sec-yaml">YAML</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./navigate.html">Navigate</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./glossary.html">Appendices</a></li><li class="breadcrumb-item"><a href="./glossary.html">Glossary</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Navigate</h1>
+<h1 class="title">Glossary</h1>
 </div>
 
 
@@ -292,92 +289,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>When presented with a new map, the most important thing to find is your location on it. It’s hard to know where you’re going without knowing where you are.</p>
-<section id="sec-pwd" class="level4">
-<h4 class="anchored" data-anchor-id="sec-pwd"><code>pwd</code></h4>
-<p><strong><code>pwd</code> (Print Working Directory)</strong> tells you exactly where you are in the filesystem.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span> <span class="co"># where am I?</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  /Users/mjfrigaard/projects/books/fm-unix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="sec-bash" class="level2">
+<h2 class="anchored" data-anchor-id="sec-bash">Bash</h2>
+<p><a href="https://www.gnu.org/software/bash/">Bash</a>, short for Bourne Again SHell, is a command line interface and scripting language for operating systems, enabling direct command input and task automation. Originally created for the GNU project and known for its flexibility and powerful features, Bash is the standard shell on many Linux distributions and was the default shell in the Terminal on macOS until the Catalina release.</p>
 </section>
-<section id="sec-cd" class="level4">
-<h4 class="anchored" data-anchor-id="sec-cd"><code>cd</code></h4>
-<p><strong><code>cd</code> (Change Directory)</strong> lets you move to a different folder on your computer.</p>
-<p>If you want to move from the one place to another, <code>cd</code> can get you there. For example, <code>cd /bin</code> takes you to the <code>/bin</code> folder, the toolshed of software tools.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /bin <span class="co"># change location</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span> <span class="co"># now where am I?</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  /bin</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="sec-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="sec-quarto">Quarto</h2>
+<p><a href="https://quarto.org/">Quarto</a> is an open-source scientific and technical publishing framework designed to work with R, Python, Julia, Observable JavaScript, and more, making it a versatile tool for data scientists, researchers, and anyone involved in data analysis.</p>
 </section>
-<section id="sec-ls" class="level4">
-<h4 class="anchored" data-anchor-id="sec-ls"><code>ls</code></h4>
-<p><strong><code>ls</code> (List)</strong> is like standing in one location, looking around, and seeing what files and folders are around you. In <code>/bin</code>, <code>ls</code> would show you the software tools available:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /bin <span class="co"># change location</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="co"># what's in here?</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  [</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  bash</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  cat</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#  chmod</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  cp</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#  csh</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#  dash</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#  date</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#  dd</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#  df</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#  echo</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#  ed</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#  expr</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#  hostname</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#  kill</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#  ksh</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#  launchctl</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#  link</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#  ln</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#  ls</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#  mkdir</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#  mv</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">#  pax</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#  ps</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#  pwd</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">#  realpath</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">#  rm</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">#  rmdir</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co">#  sh</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co">#  sleep</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">#  stty</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">#  sync</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co">#  tcsh</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="co">#  test</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co">#  unlink</span></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="co">#  wait4path</span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co">#  zsh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-file" class="level4">
-<h4 class="anchored" data-anchor-id="sec-file"><code>file</code></h4>
-<p><strong><code>file</code></strong> gives you a summary of what a computer file is or what it contains, like telling you if a tool in <code>/bin/pax</code> is a program you can run or a text file.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file</span> /bin/pax</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  /bin/pax: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  /bin/pax (for architecture x86_64):  Mach-O 64-bit executable x86_64</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  /bin/pax (for architecture arm64e):  Mach-O 64-bit executable arm64e</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-less" class="level4">
-<h4 class="anchored" data-anchor-id="sec-less"><code>less</code></h4>
-<p><strong><code>less</code></strong> lets you skim through a file on your computer, moving forwards and backwards as you please.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> data/gamehof.tsv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/less.gif" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Enter <code>less</code> in the Terminal to scroll</figcaption>
-</figure>
-</div>
+<section id="sec-yaml" class="level2">
+<h2 class="anchored" data-anchor-id="sec-yaml">YAML</h2>
+<p>YAML: <a href="https://yaml.org/">YAML</a> is a human-friendly data format for configuration files and data exchange, using key-value pairs, lists, and indentation to organize data.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">key</span><span class="kw">:</span><span class="at"> value</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">key</span><span class="kw">:</span><span class="at"> value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It’s readable and easily parsed by machines, making it popular for application configuration and data sharing.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -823,14 +748,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./syntax.html" class="pagination-link" aria-label="Syntax">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Syntax</span>
+      <a href="./permissions.html" class="pagination-link" aria-label="Permissions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Permissions</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./files_folders.html" class="pagination-link" aria-label="Files and Folders">
-        <span class="nav-page-text">Files and Folders</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

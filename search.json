@@ -34,18 +34,18 @@
     "href": "setup.html",
     "title": "Set-Up",
     "section": "",
-    "text": "Using Bash in Quarto\nQuarto is an open-source scientific and technical publishing framework that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards.\nQuarto documents are built to work with various programming languages, including R, Python, Julia, and Observable JavaScript, which makes it a versatile tool for data scientists, researchers, and anyone involved in data analysis. However, you can also use Quarto to run Unix commands–specifically, Bash.1",
+    "text": "Quarto\nQuarto is an ‘open-source scientific and technical publishing system’ that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards.\nQuarto documents are built to work with various programming languages, including Unix commands.",
     "crumbs": [
       "Introduction",
       "Set-Up"
     ]
   },
   {
-    "objectID": "setup.html#using-bash-in-quarto",
-    "href": "setup.html#using-bash-in-quarto",
+    "objectID": "setup.html#quarto",
+    "href": "setup.html#quarto",
     "title": "Set-Up",
     "section": "",
-    "text": "Document header\nSpecify the engine field of in the YAML header of the .qmd file, and any knitr chunk options:\n---\ntitle: \"Using Bash\"\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n---\n\n\nCode Chunks\n\n“Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.” - Donald Knuth. “Literate Programming (1984)” in Literate Programming. CSLI, 1992, pg. 99.\n\nQuarto documents are written in markdown, a lightweight markup language that’s easy to write and read. This simplicity allows authors to focus on their content rather than formatting. One of the powerful aspects of Quarto is its ability to integrate executable code chunks into Markdown documents (in fact, this entire book was created using markdown and executable code chunks).\n```{bash}\necho \"foo\" \n```\nYou can also specify the code chunk options with the hash-pipe (#|):\n\n\nshow/hide echo\necho \"foo\"\n## foo\n\n\n```{bash}\n#| code-fold: show\n#| code-summary: 'show/hide echo'\necho \"foo\" \n```",
+    "text": "Literate Programming\n\n\n\n\n\n\n\n‘Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.’ - Donald Knuth. Literate Programming (1984) in Literate Programming. CSLI, 1992, pg. 99.\n\n\n\n\n\n\n\nYAML header\nQuarto documents are written in markdown, a lightweight markup language that’s easy to write and read. This simplicity allows authors to focus on their content rather than formatting. Quarto documents contain a YAML header for configuring various options. To run Bash commands, specify knitr in the engine field of in the YAML header of the .qmd file, and any additional key-value pairs:\n---\ntitle: \"Using Bash\"\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n---\n\n\nBash Code Chunks\nIntroduced in 1989, Bash has become the default command-line interface or “shell” for most Linux distributions.1 We’ll use Bash commands and scripts to preproceess data files, render Quarto documents, and automate other operations in the data analysis pipeline, from downloading and ingesting data to creating and deploying analysis outputs.\nOne of the powerful aspects of Quarto is its ability to integrate executable code chunks into Markdown documents (in fact, this entire book was created using markdown and executable code chunks).\n```{bash}\necho \"foo\" \n```\nYou can also specify the code chunk options with the hash-pipe (#|):2\n\n\nshow/hide echo\necho \"foo\"\n## foo\n\n\n```{bash}\n#| code-fold: show\n#| code-summary: 'show/hide echo'\necho \"foo\" \n```",
     "crumbs": [
       "Introduction",
       "Set-Up"
@@ -78,10 +78,87 @@
     "href": "setup.html#footnotes",
     "title": "Set-Up",
     "section": "",
-    "text": "Follow these instructions on the Quarto website to configure your HTML documents to run Bash code chunks.↩︎",
+    "text": "Bash was the default command-line interface for Apple’s macOS (which is Unix-based) until the transition to zsh as the default shell in macOS Catalina.↩︎\nFollow these instructions on the Quarto website to configure your HTML documents to run Bash code chunks.↩︎",
     "crumbs": [
       "Introduction",
       "Set-Up"
+    ]
+  },
+  {
+    "objectID": "syntax.html",
+    "href": "syntax.html",
+    "title": "Syntax",
+    "section": "",
+    "text": "Commands\nCommands are the first part of a command line instruction, specifying the program or built-in functionality to be executed, such as ls for listing directory contents or grep for pattern searching.\nls /\n#  Applications\n#  Library\n#  System\n#  Users\n#  Volumes\n#  bin\n#  cores\n#  dev\n#  etc\n#  home\n#  opt\n#  private\n#  sbin\n#  tmp\n#  usr\n#  var",
+    "crumbs": [
+      "Introduction",
+      "Syntax"
+    ]
+  },
+  {
+    "objectID": "syntax.html#arguments",
+    "href": "syntax.html#arguments",
+    "title": "Syntax",
+    "section": "Arguments",
+    "text": "Arguments\nArguments follow the command and provide additional information or specify targets for the command, such as file names and paths. For example, in cat data/myfile.txt, the data/myfile.txt file path is an argument to the cat command, specifying which file it should display.\n\ncat data/myfile.txt\n#  This is my file.",
+    "crumbs": [
+      "Introduction",
+      "Syntax"
+    ]
+  },
+  {
+    "objectID": "syntax.html#options",
+    "href": "syntax.html#options",
+    "title": "Syntax",
+    "section": "Options",
+    "text": "Options\nOptions (sometimes called flags) modify how a command operates, allowing for more control over its behavior. Options often start with one or two dashes (- or --). For example, in ls -l, the -l option tells ls to use a long listing format.\n\nls -l /\n#  total 10\n#  drwxrwxr-x  59 root  admin  1888 Apr  5 14:42 Applications\n#  drwxr-xr-x  73 root  wheel  2336 Apr  2 11:16 Library\n#  drwxr-xr-x@ 10 root  wheel   320 Mar 20 23:13 System\n#  drwxr-xr-x   5 root  admin   160 Apr  2 11:13 Users\n#  drwxr-xr-x   3 root  wheel    96 Apr  5 14:39 Volumes\n#  drwxr-xr-x@ 39 root  wheel  1248 Mar 20 23:13 bin\n#  drwxr-xr-x   2 root  wheel    64 Mar  3  2021 cores\n#  dr-xr-xr-x   3 root  wheel  4698 Apr  5 14:39 dev\n#  lrwxr-xr-x@  1 root  wheel    11 Mar 20 23:13 etc -&gt; private/etc\n#  lrwxr-xr-x   1 root  wheel    25 Apr  5 14:39 home -&gt; /System/Volumes/Data/home\n#  drwxr-xr-x   4 root  wheel   128 Sep 25  2023 opt\n#  drwxr-xr-x   6 root  wheel   192 Apr  5 14:39 private\n#  drwxr-xr-x@ 64 root  wheel  2048 Mar 20 23:13 sbin\n#  lrwxr-xr-x@  1 root  wheel    11 Mar 20 23:13 tmp -&gt; private/tmp\n#  drwxr-xr-x@ 11 root  wheel   352 Mar 20 23:13 usr\n#  lrwxr-xr-x@  1 root  wheel    11 Mar 20 23:13 var -&gt; private/var\n\nIn summary, commands tell the system what action to perform, arguments specify on what or whom the action is performed, and options modify how the action is performed.",
+    "crumbs": [
+      "Introduction",
+      "Syntax"
+    ]
+  },
+  {
+    "objectID": "syntax.html#input",
+    "href": "syntax.html#input",
+    "title": "Syntax",
+    "section": "Input",
+    "text": "Input\nInput generally refers to the data fed into a command, which can come from stdin or be specified as arguments.\n\n\n\n\n\n\nStandard Input (stdin)\n\n\n\n\n\n\nstdin (standard input) is a stream from which a command reads its input. By default, it’s the keyboard, but it can be redirected to read from a file or another command’s output.",
+    "crumbs": [
+      "Introduction",
+      "Syntax"
+    ]
+  },
+  {
+    "objectID": "syntax.html#output",
+    "href": "syntax.html#output",
+    "title": "Syntax",
+    "section": "Output",
+    "text": "Output\nOutput is the data produced by a command, displayed on stdout unless redirected.\n\n\n\n\n\n\nStandard Output (stdout)\n\n\n\n\n\n\nstdout (standard output) is a stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command’s input.",
+    "crumbs": [
+      "Introduction",
+      "Syntax"
+    ]
+  },
+  {
+    "objectID": "syntax.html#pipes",
+    "href": "syntax.html#pipes",
+    "title": "Syntax",
+    "section": "Pipes",
+    "text": "Pipes\nPipes (|) allow the output of one command (stdout) to be used as the input (stdin) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next.\nWe’ll use the grep command as an example to illustrate stdin.\nImagine you want to find the word “dress” in a file named roxanne in the data/ folder. Instead of directly providing the file as an argument to grep, you can use cat to read the file and then pipe (|) its output into grep, utilizing stdin to receive the file content.\n\ncat data/roxanne | grep dress\n#  You don't have to wear that dress tonight\n\nIn this command:\n\ncat data/roxanne reads the content of roxanne and sends it to stdout\nThe pipe | redirects the stdout from cat to the stdin of grep.\ngrep dress receives the file’s content through stdin, searches for the word “dress”, and prints lines containing it to stdout.\n\nHere, grep’s input comes from stdin (provided by the pipe) instead of directly reading from a file.",
+    "crumbs": [
+      "Introduction",
+      "Syntax"
+    ]
+  },
+  {
+    "objectID": "syntax.html#recap",
+    "href": "syntax.html#recap",
+    "title": "Syntax",
+    "section": "Recap",
+    "text": "Recap\nThis framework of commands, arguments, options, and the interplay of input (stdin), output (stdout) , and pipes enables sophisticated data processing and manipulation directly from the terminal.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Introduction",
+      "Syntax"
     ]
   },
   {
@@ -89,7 +166,7 @@
     "href": "navigate.html",
     "title": "Navigate",
     "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nWhen presented with a new map, the most important thing to find is your location on it. It’s hard to know where you’re going without knowing where you are.\n\npwd\npwd (Print Working Directory) tells you exactly where you are in the filesystem.\n\npwd # where am I?\n#  /Users/mjfrigaard/projects/books/fm-unix\n\n\n\ncd\ncd (Change Directory) lets you move to a different folder on your computer.\nIf you want to move from the one place to another, cd can get you there. For example, cd /bin takes you to the /bin folder, the toolshed of software tools.\n\ncd /bin # change location\npwd # now where am I?\n#  /bin\n\n\n\nls\nls (List) is like standing in one location, looking around, and seeing what files and folders are around you. In /bin, ls would show you the software tools available:\n\ncd /bin # change location\nls # what's in here?\n#  [\n#  bash\n#  cat\n#  chmod\n#  cp\n#  csh\n#  dash\n#  date\n#  dd\n#  df\n#  echo\n#  ed\n#  expr\n#  hostname\n#  kill\n#  ksh\n#  launchctl\n#  link\n#  ln\n#  ls\n#  mkdir\n#  mv\n#  pax\n#  ps\n#  pwd\n#  realpath\n#  rm\n#  rmdir\n#  sh\n#  sleep\n#  stty\n#  sync\n#  tcsh\n#  test\n#  unlink\n#  wait4path\n#  zsh\n\n\n\nfile\nfile gives you a summary of what a computer file is or what it contains, like telling you if a tool in /bin/pax is a program you can run or a text file.\n\nfile /bin/pax\n#  /bin/pax: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]\n#  /bin/pax (for architecture x86_64):  Mach-O 64-bit executable x86_64\n#  /bin/pax (for architecture arm64e):  Mach-O 64-bit executable arm64e\n\n\n\nless\nless lets you skim through a file on your computer, moving forwards and backwards as you please.\n\nless data/gamehof.tsv\n\n\n\n\nEnter less in the Terminal\n\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nWhen presented with a new map, the most important thing to find is your location on it. It’s hard to know where you’re going without knowing where you are.\n\npwd\npwd (Print Working Directory) tells you exactly where you are in the filesystem.\n\npwd # where am I?\n#  /Users/mjfrigaard/projects/books/fm-unix\n\n\n\ncd\ncd (Change Directory) lets you move to a different folder on your computer.\nIf you want to move from the one place to another, cd can get you there. For example, cd /bin takes you to the /bin folder, the toolshed of software tools.\n\ncd /bin # change location\npwd # now where am I?\n#  /bin\n\n\n\nls\nls (List) is like standing in one location, looking around, and seeing what files and folders are around you. In /bin, ls would show you the software tools available:\n\ncd /bin # change location\nls # what's in here?\n#  [\n#  bash\n#  cat\n#  chmod\n#  cp\n#  csh\n#  dash\n#  date\n#  dd\n#  df\n#  echo\n#  ed\n#  expr\n#  hostname\n#  kill\n#  ksh\n#  launchctl\n#  link\n#  ln\n#  ls\n#  mkdir\n#  mv\n#  pax\n#  ps\n#  pwd\n#  realpath\n#  rm\n#  rmdir\n#  sh\n#  sleep\n#  stty\n#  sync\n#  tcsh\n#  test\n#  unlink\n#  wait4path\n#  zsh\n\n\n\nfile\nfile gives you a summary of what a computer file is or what it contains, like telling you if a tool in /bin/pax is a program you can run or a text file.\n\nfile /bin/pax\n#  /bin/pax: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]\n#  /bin/pax (for architecture x86_64):  Mach-O 64-bit executable x86_64\n#  /bin/pax (for architecture arm64e):  Mach-O 64-bit executable arm64e\n\n\n\nless\nless lets you skim through a file on your computer, moving forwards and backwards as you please.\n\nless data/gamehof.tsv\n\n\n\n\nEnter less in the Terminal to scroll\n\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Introduction",
       "Navigate"
@@ -111,7 +188,7 @@
     "href": "text.html",
     "title": "Manipulate Text",
     "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\n\ncat\ncat (Concatenate): Laying out pages on the floor to see them all at once, cat displays the content of files straight to your screen, useful for checking what’s in a text file quickly.\n\n\nsort\nsort: Organizing a stack of papers alphabetically, sort arranges the lines in a text file into order.\n\n\nuniq\nuniq: After accidentally printing duplicates of a document, you remove the extra copies. uniq helps by removing duplicate lines from a file, making sure every line is unique.\n\n\ncut\ncut: If you only want the dates from a list of events, you might physically cut them out of the paper. cut extracts specific parts of lines in a file, like cutting out columns of text.\n\n\npaste\npaste: Taking snippets of text from different documents and sticking them together into one, paste combines lines from multiple files side by side.\n\n\njoin\njoin: If you have two lists with common information, you might merge them based on what matches. join merges lines from two files based on a common field.\n\n\ncomm\ncomm (Compare): Laying two printed lists side by side to see what items appear on both, only on one, or the other, comm compares two sorted files line by line.\n\n\ndiff\ndiff (Difference): Highlighting what changes have been made between your draft and the final copy of a letter, diff shows the differences between two files.\nThese analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\n\ncat\ncat (Concatenate): Laying out pages on the floor to see them all at once, cat displays the content of files straight to your screen, useful for checking what’s in a text file quickly.\n\n\ngrep\ngrep stands for “global regular expression print” and it reads from stdin or a list of files and outputs the lines that contain matches for a specified pattern.\n\n\nsort\nsort: Organizing a stack of papers alphabetically, sort arranges the lines in a text file into order.\n\n\nuniq\nuniq: After accidentally printing duplicates of a document, you remove the extra copies. uniq helps by removing duplicate lines from a file, making sure every line is unique.\n\n\ncut\ncut: If you only want the dates from a list of events, you might physically cut them out of the paper. cut extracts specific parts of lines in a file, like cutting out columns of text.\n\n\npaste\npaste: Taking snippets of text from different documents and sticking them together into one, paste combines lines from multiple files side by side.\n\n\njoin\njoin: If you have two lists with common information, you might merge them based on what matches. join merges lines from two files based on a common field.\n\n\ncomm\ncomm (Compare): Laying two printed lists side by side to see what items appear on both, only on one, or the other, comm compares two sorted files line by line.\n\n\ndiff\ndiff (Difference): Highlighting what changes have been made between your draft and the final copy of a letter, diff shows the differences between two files.\nThese analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Introduction",
       "Manipulate Text"
@@ -151,14 +228,36 @@
     ]
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
+    "objectID": "glossary.html",
+    "href": "glossary.html",
+    "title": "Glossary",
     "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "text": "Bash\nBash, short for Bourne Again SHell, is a command line interface and scripting language for operating systems, enabling direct command input and task automation. Originally created for the GNU project and known for its flexibility and powerful features, Bash is the standard shell on many Linux distributions and was the default shell in the Terminal on macOS until the Catalina release.",
     "crumbs": [
       "Appendices",
-      "References"
+      "Glossary"
+    ]
+  },
+  {
+    "objectID": "glossary.html#sec-quarto",
+    "href": "glossary.html#sec-quarto",
+    "title": "Glossary",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto is an open-source scientific and technical publishing framework designed to work with R, Python, Julia, Observable JavaScript, and more, making it a versatile tool for data scientists, researchers, and anyone involved in data analysis.",
+    "crumbs": [
+      "Appendices",
+      "Glossary"
+    ]
+  },
+  {
+    "objectID": "glossary.html#sec-yaml",
+    "href": "glossary.html#sec-yaml",
+    "title": "Glossary",
+    "section": "YAML",
+    "text": "YAML\nYAML: YAML is a human-friendly data format for configuration files and data exchange, using key-value pairs, lists, and indentation to organize data.\nkey: value\n  key: value\nIt’s readable and easily parsed by machines, making it popular for application configuration and data sharing.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Appendices",
+      "Glossary"
     ]
   },
   {
@@ -186,7 +285,17 @@
     "href": "intro.html#background",
     "title": "Introduction",
     "section": "",
-    "text": "The Tale of Unix\nImagine Unix and Linux as the master and apprentice in the vast workshop of computer operating systems. Our story begins in the late 1960s at AT&T’s Bell Labs. Unix was born out of a desire for a more flexible and portable operating system. It was a time when computers were as big as rooms and operated on specific, often incompatible, systems. Unix was a breath of fresh air because it was designed to be simple, elegant, and, most importantly, portable, meaning it could run on different types of hardware.\nThe Unix philosophy has been distilled into a comprehensive operating system of essential commands and operations, guiding other apprentices in creating their versions of tools and systems.\nUnix is like the master craftsman in this story, having laid the foundational tools and techniques, and crafting a blueprint for how computers could efficiently and securely manage tasks like organizing files or running software.\n\n\nThe Emergence of Linux\nFast forward a couple of decades to 1991, when a Finnish student named Linus Torvalds decided to create his own free operating system kernel, inspired by Unix. This kernel, which is at the heart of the Linux operating system, was made freely available to anyone who wanted to use or improve it.\nLinux flourished with the help of developers around the world. It’s a testament to what collaboration and shared goals can achieve. This global effort resulted in an operating system that is not only free but also incredibly powerful and reliable.\nLinux, inspired by the teachings of Unix, was the eager apprentice who learned from the master’s manual and decided to share its own set of tools with the world for free. Making it free meant anyone could contribute their skills, refine the tools, and share the fruits of their labor. This open-source community of developers eventually cultivated various specialties, known as “distributions,” each with ts unique set of tools and embellishments, yet all rooted in the same foundational teachings.\n\n\nModern Uses\nToday, Unix and Linux are everywhere. They’re the invisible forces behind much of the Internet and are responsible for running servers, desktops, smartphones, and even household appliances.\n\nServers and Supercomputers: The majority of the web servers powering the internet, as well as the world’s most powerful supercomputers, run on Linux due to its stability, security, and efficiency.\nDesktops: Although not as common on desktops as Windows or macOS, Linux distributions offer a free, customizable alternative for users.\nSmartphones: Android, the most popular mobile operating system, is powered by a Linux kernel, making Linux the silent workhorse behind billions of smartphones.\nEmbedded Systems: From smartwatches to smart home devices, Linux is often the go-to choice for running embedded systems thanks to its scalability and low cost.\n\nUnix and Linux have grown from niche systems used by academics and researchers to foundational elements that power much of the digital world. They exemplify the power of open collaboration and innovation, showing how a small project or idea can grow and change the world.\nTo summarize, Unix and Linux provide the underlying framework for computer programs. They’re like the behind-the-scenes craftsmen ensuring the workshop runs smoothly, whether crafting a simple piece of furniture (like running a straightforward program on your computer), or constructing an elaborate mansion (like managing the complex operations of a large server).\nThe first four chapters will cover an introduction to some common commands in Unix/Linux. These will help you find your way around your machine’s folders and files. We’ll also cover how to manipulate text within files.\n\nwhoami\n## mjfrigaard\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "text": "The Tale of Unix\nImagine Unix and Linux as the master and apprentice in the vast workshop of computer operating systems. Our story begins in the late 1960s at AT&T’s Bell Labs. Unix was born out of a desire for a more flexible and portable operating system. It was a time when computers were as big as rooms and operated on specific, often incompatible, systems. Unix was a breath of fresh air because it was designed to be simple, elegant, and, most importantly, portable, meaning it could run on different types of hardware.\nThe Unix philosophy has been distilled into a comprehensive operating system of essential commands and operations, guiding other apprentices in creating their versions of tools and systems.\nUnix is like the master craftsman in this story, having laid the foundational tools and techniques, and crafting a blueprint for how computers could efficiently and securely manage tasks like organizing files or running software.\n\n\nThe Emergence of Linux\nFast forward a couple of decades to 1991, when a Finnish student named Linus Torvalds decided to create his own free operating system kernel, inspired by Unix. This kernel, which is at the heart of the Linux operating system, was made freely available to anyone who wanted to use or improve it.\nLinux flourished with the help of developers around the world. It’s a testament to what collaboration and shared goals can achieve. This global effort resulted in an operating system that is not only free but also incredibly powerful and reliable.\nLinux, inspired by the teachings of Unix, was the eager apprentice who learned from the master’s manual and decided to share its own set of tools with the world for free. Making it free meant anyone could contribute their skills, refine the tools, and share the fruits of their labor. This open-source community of developers eventually cultivated various specialties, known as “distributions,” each with ts unique set of tools and embellishments, yet all rooted in the same foundational teachings.\n\n\n\n\n\n\nModern Uses of Unix/Linux\n\n\n\n\n\n\nToday, Unix and Linux are everywhere. They’re the invisible forces behind much of the Internet and are responsible for running servers, desktops, smartphones, and even household appliances.\n\nServers and Supercomputers: The majority of the web servers powering the internet, as well as the world’s most powerful supercomputers, run on Linux due to its stability, security, and efficiency.\nDesktops: Although not as common on desktops as Windows or macOS, Linux distributions offer a free, customizable alternative for users.\nSmartphones: Android, the most popular mobile operating system, is powered by a Linux kernel, making Linux the silent workhorse behind billions of smartphones.\nEmbedded Systems: From smartwatches to smart home devices, Linux is often the go-to choice for running embedded systems thanks to its scalability and low cost.\n\nUnix and Linux have grown from niche systems used by academics and researchers to foundational elements that power much of the digital world. They exemplify the power of open collaboration and innovation, showing how a small project or idea can grow and change the world.\n\n\n\n\n\n\nBash\nIn the story of Unix and Linux, Bash is the interpreter that translates commands into actions the computer can understand and execute. If Unix and Linux are the environments where the heavy lifting of computing happens—managing files, running programs, and controlling hardware—then Bash is the language and syntax that spells out how the work happens.\nBash allows users to interact directly with the operating system by typing commands into a text-based interface, automating tasks through scripts, managing files, and even controlling network operations. Incorporating features from the Korn shell (ksh) and the C shell (csh), Bash supports features like command history, tab completion, and aliases.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "intro.html#recap",
+    "href": "intro.html#recap",
+    "title": "Introduction",
+    "section": "Recap",
+    "text": "Recap\nTo summarize, Unix and Linux provide the underlying framework for computer programs. They’re like the behind-the-scenes craftsmen ensuring the workshop runs smoothly, whether crafting a simple piece of furniture (like running a straightforward program on your computer), or constructing an elaborate mansion (like managing the complex operations of a large server).\nThe Bash shell is like the skilled artisan’s primary tool within the grand workshop of Unix and Linux, serving as a bridge between the user and the system’s deeper capabilities. Just as a master carpenter relies on a trusted hammer or saw, users of Unix and Linux turn to Bash for navigating and manipulating the vast landscape of these operating systems.\nThe first four chapters will cover an introduction to some common commands in Unix/Linux. These will help you find your way around your machine’s folders and files. We’ll also cover how to manipulate text within files.\n\nwhoami\n## mjfrigaard\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Introduction"
     ]
