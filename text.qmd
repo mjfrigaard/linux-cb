@@ -31,35 +31,39 @@ co_box(
 )
 ```
 
-#### `cat`
+#### `cat` {#sec-cat}
 
 **`cat` (Concatenate)**: Laying out pages on the floor to see them all at once, `cat` displays the content of files straight to your screen, useful for checking what's in a text file quickly.
 
-#### `sort`
+#### `grep` {#sec-grep}
+
+**`grep`** stands for "global regular expression print" and it reads from `stdin` or a list of files and outputs the lines that contain matches for a specified pattern.
+
+#### `sort` {#sec-sort}
 
 **`sort`**: Organizing a stack of papers alphabetically, `sort` arranges the lines in a text file into order.
 
-#### `uniq`
+#### `uniq` {#sec-uniq}
 
 **`uniq`**: After accidentally printing duplicates of a document, you remove the extra copies. `uniq` helps by removing duplicate lines from a file, making sure every line is unique.
 
-#### `cut`
+#### `cut` {#sec-cut}
 
 **`cut`**: If you only want the dates from a list of events, you might physically cut them out of the paper. `cut` extracts specific parts of lines in a file, like cutting out columns of text.
 
-#### `paste`
+#### `paste` {#sec-paste}
 
 **`paste`**: Taking snippets of text from different documents and sticking them together into one, `paste` combines lines from multiple files side by side.
 
-#### `join`
+#### `join` {#sec-join}
 
 **`join`**: If you have two lists with common information, you might merge them based on what matches. `join` merges lines from two files based on a common field.
 
-#### `comm`
+#### `comm` {#sec-comm}
 
 **`comm` (Compare)**: Laying two printed lists side by side to see what items appear on both, only on one, or the other, `comm` compares two sorted files line by line.
 
-#### `diff`
+#### `diff` {#sec-diff}
 
 **`diff` (Difference)**: Highlighting what changes have been made between your draft and the final copy of a letter, `diff` shows the differences between two files.
 

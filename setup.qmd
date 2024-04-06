@@ -30,17 +30,32 @@ co_box(
 )
 ```
 
-## Using Bash in Quarto 
+##  Quarto 
 
-Quarto is an open-source scientific and technical publishing framework that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards. 
+[Quarto](https://quarto.org/) is an '*open-source scientific and technical publishing system*' that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards. 
 
-Quarto documents are built to work with various programming languages, including R, Python, Julia, and Observable JavaScript, which makes it a versatile tool for data scientists, researchers, and anyone involved in data analysis. However, you can also use Quarto to run Unix commands--specifically, Bash.[^quarto-bash] 
+```{r}
+#| label: co_box_knuth
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "b",
+  look = "default", 
+  hsize = "1.10", 
+  size = "1.0", 
+  header = "Literate Programming", 
+  fold = TRUE,
+  contents = "
+> '*Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.*' - [Donald Knuth. Literate Programming (1984) in Literate Programming. CSLI, 1992, pg. 99.](http://www.literateprogramming.com/index.html)")
+```
 
-[^quarto-bash]: Follow these instructions on the [Quarto website](https://quarto.org/docs/computations/execution-options.html#shell-commands) to configure your HTML documents to run Bash code chunks. 
 
-### Document header
+@sec-quarto documents are built to work with various programming languages, including Unix commands. 
 
-Specify the `engine` field of in the YAML header of the `.qmd` file, and any `knitr` chunk options:
+### YAML header
+
+Quarto documents are written in markdown, a lightweight markup language that’s easy to write and read. This simplicity allows authors to focus on their content rather than formatting. Quarto documents contain a @sec-yaml header for configuring various options. To run Bash commands, specify `knitr` in the `engine` field of in the YAML header of the `.qmd` file, and any additional key-value pairs:
 
 ```yaml
 ---
@@ -52,17 +67,21 @@ knitr:
 ---
 ```
 
-### Code Chunks
+### Bash Code Chunks
 
-> "*Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.*" - [Donald Knuth. "Literate Programming (1984)" in Literate Programming. CSLI, 1992, pg. 99.](http://www.literateprogramming.com/index.html)
+Introduced in 1989, Bash has become the default command-line interface or "shell" for most Linux distributions.[^bash-macos] We'll use Bash commands and scripts to preproceess data files, render Quarto documents, and automate other operations in the data analysis pipeline, from downloading and ingesting data to creating and deploying analysis outputs.  
 
-Quarto documents are written in markdown, a lightweight markup language that’s easy to write and read. This simplicity allows authors to focus on their content rather than formatting. One of the powerful aspects of Quarto is its ability to integrate executable code chunks into Markdown documents (in fact, this entire book was created using markdown and executable code chunks).
+[^bash-macos]: Bash was the default command-line interface for Apple's macOS (which is Unix-based) until the transition to `zsh` as the default shell in macOS Catalina.
+
+One of the powerful aspects of Quarto is its ability to integrate executable code chunks into Markdown documents (in fact, this entire book was created using markdown and executable code chunks).
 
 ```{{bash}}
 echo "foo" 
 ```
 
-You can also specify the code chunk options with the hash-pipe (`#|`):
+You can also specify the code chunk options with the hash-pipe (`#|`):[^quarto-bash] 
+
+[^quarto-bash]: Follow these instructions on the [Quarto website](https://quarto.org/docs/computations/execution-options.html#shell-commands) to configure your HTML documents to run Bash code chunks.
 
 ```{bash}
 #| code-fold: show 
@@ -75,7 +94,6 @@ echo "foo"
 #| code-summary: 'show/hide echo'
 echo "foo" 
 ```
-
 
 
 ## Terminal (macOS)

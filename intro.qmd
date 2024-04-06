@@ -52,8 +52,20 @@ Linux flourished with the help of developers around the world. It's a testament 
 
 Linux, inspired by the teachings of Unix, was the eager apprentice who learned from the master's manual and decided to share its own set of tools with the world for free. Making it free meant anyone could contribute their skills, refine the tools, and share the fruits of their labor. This open-source community of developers eventually cultivated various specialties, known as "distributions," each with ts unique set of tools and embellishments, yet all rooted in the same foundational teachings.
 
-### Modern Uses
 
+```{r}
+#| label: co_box_modern_unix
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "b",
+  look = "default", 
+  hsize = "1.10", 
+  size = "1.0", 
+  header = "Modern Uses of Unix/Linux", 
+  fold = TRUE,
+  contents = "\n
 Today, Unix and Linux are everywhere. They're the invisible forces behind much of the Internet and are responsible for running servers, desktops, smartphones, and even household appliances. 
 
 - **Servers and Supercomputers**: The majority of the web servers powering the internet, as well as the world's most powerful supercomputers, run on Linux due to its stability, security, and efficiency.
@@ -64,9 +76,22 @@ Today, Unix and Linux are everywhere. They're the invisible forces behind much o
 
 - **Embedded Systems**: From smartwatches to smart home devices, Linux is often the go-to choice for running embedded systems thanks to its scalability and low cost.
 
-Unix and Linux have grown from niche systems used by academics and researchers to foundational elements that power much of the digital world. They exemplify the power of open collaboration and innovation, showing how a small project or idea can grow and change the world.
+Unix and Linux have grown from niche systems used by academics and researchers to foundational elements that power much of the digital world. They exemplify the power of open collaboration and innovation, showing how a small project or idea can grow and change the world.")
+```
 
-To summarize, Unix and Linux provide the underlying framework for computer programs. They're like the behind-the-scenes craftsmen ensuring the workshop runs smoothly, whether crafting a simple piece of furniture (like running a straightforward program on your computer), or constructing an elaborate mansion (like managing the complex operations of a large server).
+### Bash
+
+In the story of Unix and Linux, @sec-bash is the interpreter that translates commands into actions the computer can understand and execute. If Unix and Linux are the environments *where* the heavy lifting of computing happens—managing files, running programs, and controlling hardware—then Bash is the language and syntax that spells out *how* the work happens. 
+
+Bash allows users to interact directly with the operating system by typing commands into a text-based interface, automating tasks through scripts, managing files, and even controlling network operations. Incorporating features from the Korn shell (`ksh`) and the C shell (`csh`), Bash supports features like command history, tab completion, and aliases. 
+
+***
+
+## Recap
+
+To summarize, Unix and Linux provide the underlying framework for computer programs. They're like the behind-the-scenes craftsmen ensuring the workshop runs smoothly, whether crafting a simple piece of furniture (like running a straightforward program on your computer), or constructing an elaborate mansion (like managing the complex operations of a large server). 
+
+The Bash shell is like the skilled artisan's primary tool within the grand workshop of Unix and Linux, serving as a bridge between the user and the system's deeper capabilities. Just as a master carpenter relies on a trusted hammer or saw, users of Unix and Linux turn to Bash for navigating and manipulating the vast landscape of these operating systems.
 
 The first four chapters will cover an introduction to some common commands in Unix/Linux. These will help you find your way around your machine's folders and files. We'll also cover how to manipulate text within files. 
 

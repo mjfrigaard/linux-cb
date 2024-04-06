@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./navigate.html" rel="next">
+<link href="./syntax.html" rel="next">
 <link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -164,6 +164,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./syntax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syntax</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./navigate.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Navigate</span></a>
   </div>
@@ -222,8 +228,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
       </ul>
@@ -238,10 +244,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#using-bash-in-quarto" id="toc-using-bash-in-quarto" class="nav-link active" data-scroll-target="#using-bash-in-quarto">Using Bash in Quarto</a>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link active" data-scroll-target="#quarto">Quarto</a>
   <ul>
-  <li><a href="#document-header" id="toc-document-header" class="nav-link" data-scroll-target="#document-header">Document header</a></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code Chunks</a></li>
+  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header">YAML header</a></li>
+  <li><a href="#bash-code-chunks" id="toc-bash-code-chunks" class="nav-link" data-scroll-target="#bash-code-chunks">Bash Code Chunks</a></li>
   </ul></li>
   <li><a href="#terminal-macos" id="toc-terminal-macos" class="nav-link" data-scroll-target="#terminal-macos">Terminal (macOS)</a></li>
   <li><a href="#virtual-machines" id="toc-virtual-machines" class="nav-link" data-scroll-target="#virtual-machines">Virtual Machines</a></li>
@@ -288,13 +294,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="using-bash-in-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="using-bash-in-quarto">Using Bash in Quarto</h2>
-<p>Quarto is an open-source scientific and technical publishing framework that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards.</p>
-<p>Quarto documents are built to work with various programming languages, including R, Python, Julia, and Observable JavaScript, which makes it a versatile tool for data scientists, researchers, and anyone involved in data analysis. However, you can also use Quarto to run Unix commands–specifically, Bash.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<section id="document-header" class="level3">
-<h3 class="anchored" data-anchor-id="document-header">Document header</h3>
-<p>Specify the <code>engine</code> field of in the YAML header of the <code>.qmd</code> file, and any <code>knitr</code> chunk options:</p>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p><a href="https://quarto.org/">Quarto</a> is an ‘<em>open-source scientific and technical publishing system</em>’ that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span style="font-weight: bold; font-size: 1.10em;">Literate Programming</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="font-size: 1.0em; color: #282b2d;">
+<blockquote class="blockquote">
+<p>‘<em>Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.</em>’ - <a href="http://www.literateprogramming.com/index.html">Donald Knuth. Literate Programming (1984) in Literate Programming. CSLI, 1992, pg. 99.</a></p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<p><a href="glossary.html#sec-quarto" class="quarto-xref"><span>Quarto</span></a> documents are built to work with various programming languages, including Unix commands.</p>
+<section id="yaml-header" class="level3">
+<h3 class="anchored" data-anchor-id="yaml-header">YAML header</h3>
+<p>Quarto documents are written in markdown, a lightweight markup language that’s easy to write and read. This simplicity allows authors to focus on their content rather than formatting. Quarto documents contain a <a href="glossary.html#sec-yaml" class="quarto-xref"><span>YAML</span></a> header for configuring various options. To run Bash commands, specify <code>knitr</code> in the <code>engine</code> field of in the YAML header of the <code>.qmd</code> file, and any additional key-value pairs:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Using Bash"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">engine</span><span class="kw">:</span><span class="at"> knitr</span></span>
@@ -303,16 +329,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">collapse</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="code-chunks" class="level3">
-<h3 class="anchored" data-anchor-id="code-chunks">Code Chunks</h3>
-<blockquote class="blockquote">
-<p>“<em>Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.</em>” - <a href="http://www.literateprogramming.com/index.html">Donald Knuth. “Literate Programming (1984)” in Literate Programming. CSLI, 1992, pg. 99.</a></p>
-</blockquote>
-<p>Quarto documents are written in markdown, a lightweight markup language that’s easy to write and read. This simplicity allows authors to focus on their content rather than formatting. One of the powerful aspects of Quarto is its ability to integrate executable code chunks into Markdown documents (in fact, this entire book was created using markdown and executable code chunks).</p>
+<section id="bash-code-chunks" class="level3">
+<h3 class="anchored" data-anchor-id="bash-code-chunks">Bash Code Chunks</h3>
+<p>Introduced in 1989, Bash has become the default command-line interface or “shell” for most Linux distributions.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> We’ll use Bash commands and scripts to preproceess data files, render Quarto documents, and automate other operations in the data analysis pipeline, from downloading and ingesting data to creating and deploying analysis outputs.</p>
+<p>One of the powerful aspects of Quarto is its ability to integrate executable code chunks into Markdown documents (in fact, this entire book was created using markdown and executable code chunks).</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">echo "foo" </span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You can also specify the code chunk options with the hash-pipe (<code>#|</code>):</p>
+<p>You can also specify the code chunk options with the hash-pipe (<code>#|</code>):<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>show/hide echo</summary>
@@ -333,7 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="virtual-machines" class="level2">
 <h2 class="anchored" data-anchor-id="virtual-machines">Virtual Machines</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -342,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 0.90em; color: #282b2d;">
 <p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
@@ -356,7 +380,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Follow these instructions on the <a href="https://quarto.org/docs/computations/execution-options.html#shell-commands">Quarto website</a> to configure your HTML documents to run Bash code chunks.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Bash was the default command-line interface for Apple’s macOS (which is Unix-based) until the transition to <code>zsh</code> as the default shell in macOS Catalina.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Follow these instructions on the <a href="https://quarto.org/docs/computations/execution-options.html#shell-commands">Quarto website</a> to configure your HTML documents to run Bash code chunks.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -788,8 +813,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./navigate.html" class="pagination-link" aria-label="Navigate">
-        <span class="nav-page-text">Navigate</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./syntax.html" class="pagination-link" aria-label="Syntax">
+        <span class="nav-page-text">Syntax</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,145 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: '# '
+---
+
+# Syntax {.unnumbered}
+
+```{bash}
+#| label: setup
+#| include: false
+whoami
+```
+
+```{r}
+#| label: common
+#| include: false
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+In Unix-like operating systems, the terms commands, arguments, and options refer to the components of the syntax you type into the terminal:
+
+## Commands
+
+Commands are the first part of a command line instruction, specifying the program or built-in functionality to be executed, such as <code>@sec-ls</code> for listing directory contents or <code>@sec-grep</code> for pattern searching.
+
+```{bash}
+ls /
+```
+
+## Arguments
+
+Arguments follow the command and provide additional information or specify targets for the command, such as file names and paths. For example, in <code>@sec-cat</code> `data/myfile.txt`, the `data/myfile.txt` file path is an argument to the <code>@sec-cat</code> command, specifying which file it should display.
+
+```{bash}
+cat data/myfile.txt
+```
+
+
+## Options
+
+**Options** (sometimes called flags) modify how a command operates, allowing for more control over its behavior. Options often start with one or two dashes (`-` or `--`). For example, in `ls -l`, the `-l` option tells `ls` to use a long listing format.
+
+```{bash}
+ls -l /
+```
+
+In summary, commands tell the system what action to perform, arguments specify on what or whom the action is performed, and options modify how the action is performed.
+
+***
+
+## Input
+
+**Input** generally refers to the data fed into a command, which can come from `stdin` or be specified as arguments.
+
+```{r}
+#| label: co_box_stdin
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "g",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Standard Input (`stdin`)", 
+  fold = FALSE,
+  contents = "\n
+`stdin` (standard input) is a stream from which a command reads its input. By default, it's the keyboard, but it can be redirected to read from a file or another command's output.\n")
+```
+
+## Output
+
+**Output** is the data produced by a command, displayed on `stdout` unless redirected.
+
+```{r}
+#| label: co_box_stdout
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "g",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Standard Output (`stdout`)", 
+  fold = FALSE,
+  contents = "\n
+`stdout` (standard output) is a stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command's input.\n")
+```
+
+
+## Pipes
+
+Pipes (`|`) allow the output of one command (`stdout`) to be used as the input (`stdin`) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next.
+
+We'll use the <code>@sec-grep</code> command as an example to illustrate `stdin`. 
+
+Imagine you want to find the word "dress" in a file named `roxanne` in the `data/` folder. Instead of directly providing the file as an argument to <code>@sec-grep</code>, you can use <code>@sec-cat</code> to read the file and then pipe (`|`) its output into <code>@sec-grep</code>, utilizing `stdin` to receive the file content.
+
+```{bash}
+cat data/roxanne | grep dress
+```
+
+In this command:
+
+1. `cat data/roxanne` reads the content of `roxanne` and *sends* it to `stdout`
+
+2. The pipe `|` *redirects* the `stdout` from <code>@sec-cat</code> to the `stdin` of <code>@sec-grep</code>.
+
+3. `grep dress` *receives* the file's content through `stdin`, searches for the word "dress", and *prints* lines containing it to `stdout`.
+
+Here, <code>@sec-grep</code>'s input comes from `stdin` (provided by the pipe) instead of directly reading from a file.
+
+## Recap
+
+This framework of commands, arguments, options, and the interplay of input (`stdin`), output (`stdout`) , and pipes enables sophisticated data processing and manipulation directly from the terminal.
+
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```

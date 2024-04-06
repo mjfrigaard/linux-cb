@@ -20,6 +20,7 @@ book:
     - part: intro.qmd
       chapters:
         - setup.qmd
+        - syntax.qmd
         - navigate.qmd
         - files_folders.qmd
         - text.qmd
@@ -29,7 +30,7 @@ book:
         - format.qmd
         - permissions.qmd
   appendices:
-        - references.qmd
+        - glossary.qmd
 
 format:
   html:
