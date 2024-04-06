@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,7 +66,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./text.html" rel="next">
-<link href="./navigate.html" rel="prev">
+<link href="./syntax.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -136,12 +170,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./navigate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Navigate</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./files_folders.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Files and Folders</span></a>
   </div>
@@ -210,11 +238,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#mkdir" id="toc-mkdir" class="nav-link active" data-scroll-target="#mkdir"><code>mkdir</code></a></li>
-  <li><a href="#cp" id="toc-cp" class="nav-link" data-scroll-target="#cp"><code>cp</code></a></li>
-  <li><a href="#mv" id="toc-mv" class="nav-link" data-scroll-target="#mv"><code>mv</code></a></li>
-  <li><a href="#rm" id="toc-rm" class="nav-link" data-scroll-target="#rm"><code>rm</code></a></li>
-  <li><a href="#ln" id="toc-ln" class="nav-link" data-scroll-target="#ln"><code>ln</code></a></li>
+  <li><a href="#sec-nav" id="toc-sec-nav" class="nav-link active" data-scroll-target="#sec-nav">Navigation</a>
+  <ul>
+  <li><a href="#sec-pwd" id="toc-sec-pwd" class="nav-link" data-scroll-target="#sec-pwd"><code>pwd</code></a></li>
+  <li><a href="#sec-cd" id="toc-sec-cd" class="nav-link" data-scroll-target="#sec-cd"><code>cd</code></a></li>
+  <li><a href="#sec-ls" id="toc-sec-ls" class="nav-link" data-scroll-target="#sec-ls"><code>ls</code></a></li>
+  <li><a href="#sec-file" id="toc-sec-file" class="nav-link" data-scroll-target="#sec-file"><code>file</code></a></li>
+  <li><a href="#sec-less" id="toc-sec-less" class="nav-link" data-scroll-target="#sec-less"><code>less</code></a></li>
+  </ul></li>
+  <li><a href="#sec-manip-files-folders" id="toc-sec-manip-files-folders" class="nav-link" data-scroll-target="#sec-manip-files-folders">Manipulate</a>
+  <ul>
+  <li><a href="#sec-mkdir" id="toc-sec-mkdir" class="nav-link" data-scroll-target="#sec-mkdir"><code>mkdir</code></a></li>
+  <li><a href="#sec-cp" id="toc-sec-cp" class="nav-link" data-scroll-target="#sec-cp"><code>cp</code></a></li>
+  <li><a href="#sec-mv" id="toc-sec-mv" class="nav-link" data-scroll-target="#sec-mv"><code>mv</code></a></li>
+  <li><a href="#sec-rm" id="toc-sec-rm" class="nav-link" data-scroll-target="#sec-rm"><code>rm</code></a></li>
+  <li><a href="#sec-ln" id="toc-sec-ln" class="nav-link" data-scroll-target="#sec-ln"><code>ln</code></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -223,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./files_folders.html">Files and Folders</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Files and Folders</h1>
+<h1 class="title"><span id="sec-files-folders" class="quarto-section-identifier">Files and Folders</span></h1>
 </div>
 
 
@@ -258,29 +297,157 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<section id="mkdir" class="level4">
-<h4 class="anchored" data-anchor-id="mkdir"><code>mkdir</code></h4>
-<p><strong><code>mkdir</code> (Make Directory)</strong> builds a new folder wherever you tell it to, like making a new folder for projects in <code>/bin</code> (although you typically wouldn’t do that there)</p>
+<p>This section covers commands to help you navigate and manipulate files and folders using Unix commands.</p>
+<section id="sec-nav" class="level2">
+<h2 class="anchored" data-anchor-id="sec-nav">Navigation</h2>
+<p>When presented with a new map, the most important thing to find is your location on it. It’s hard to know where you’re going without knowing where you are.</p>
+<section id="sec-pwd" class="level3">
+<h3 class="anchored" data-anchor-id="sec-pwd"><code>pwd</code></h3>
+<p><strong><code>pwd</code> (Print Working Directory)</strong> tells you exactly where you are in the filesystem.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span> <span class="co"># where am I?</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  /Users/mjfrigaard/projects/books/fm-unix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="cp" class="level4">
-<h4 class="anchored" data-anchor-id="cp"><code>cp</code></h4>
-<p><strong><code>cp</code> (Copy)</strong> duplicates files or folders. For instance, copying a tool from <code>/bin</code> to your desktop, but usually, you leave <code>/bin</code> tools where they are.</p>
+<section id="sec-cd" class="level3">
+<h3 class="anchored" data-anchor-id="sec-cd"><code>cd</code></h3>
+<p><strong><code>cd</code> (Change Directory)</strong> lets you move to a different folder on your computer.</p>
+<p>If you want to move from the one place to another, <code>cd</code> can get you there. For example, <code>cd /bin</code> takes you to the <code>/bin</code> folder, the toolshed of software tools.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /bin <span class="co"># change location</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span> <span class="co"># now where am I?</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  /bin</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="mv" class="level4">
-<h4 class="anchored" data-anchor-id="mv"><code>mv</code></h4>
-<ul>
-<li><strong><code>mv</code> (Move)</strong>: Taking a book from your desk and putting it on the shelf, <code>mv</code> moves files or folders from one place to another. It’s like moving a misplaced tool back into <code>/bin</code>.</li>
-</ul>
+<section id="sec-ls" class="level3">
+<h3 class="anchored" data-anchor-id="sec-ls"><code>ls</code></h3>
+<p><strong><code>ls</code> (List)</strong> is like standing in one location, looking around, and seeing what files and folders are around you. In <code>/bin</code>, <code>ls</code> would show you the software tools available:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /bin <span class="co"># change location</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="co"># what's in here?</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  [</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  bash</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  cat</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#  chmod</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  cp</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#  csh</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#  dash</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#  date</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#  dd</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#  df</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#  echo</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#  ed</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#  expr</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#  hostname</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#  kill</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#  ksh</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#  launchctl</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#  link</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#  ln</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#  ls</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#  mkdir</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#  mv</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">#  pax</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#  ps</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#  pwd</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">#  realpath</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">#  rm</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">#  rmdir</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co">#  sh</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co">#  sleep</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">#  stty</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">#  sync</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co">#  tcsh</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="co">#  test</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co">#  unlink</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="co">#  wait4path</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co">#  zsh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="rm" class="level4">
-<h4 class="anchored" data-anchor-id="rm"><code>rm</code></h4>
-<p><strong><code>rm</code> (Remove)</strong>: Throwing away an old, tattered magazine, <code>rm</code> deletes files or folders. Be cautious, as this is like shredding documents—no easy way to get them back.</p>
+<section id="sec-file" class="level3">
+<h3 class="anchored" data-anchor-id="sec-file"><code>file</code></h3>
+<p><strong><code>file</code></strong> gives you a summary of what a computer file is or what it contains, like telling you if a tool in <code>/bin/pax</code> is a program you can run or a text file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file</span> /bin/pax</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  /bin/pax: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  /bin/pax (for architecture x86_64):  Mach-O 64-bit executable x86_64</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  /bin/pax (for architecture arm64e):  Mach-O 64-bit executable arm64e</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="ln" class="level4">
-<h4 class="anchored" data-anchor-id="ln"><code>ln</code></h4>
-<p><strong><code>ln</code> (Link)</strong>: Creating a shortcut on your desktop to a frequently used program, <code>ln</code> creates links to files, making them accessible from multiple places without duplicating them.</p>
+<section id="sec-less" class="level3">
+<h3 class="anchored" data-anchor-id="sec-less"><code>less</code></h3>
+<p><strong><code>less</code></strong> lets you skim through a file on your computer, moving forwards and backwards as you please.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> data/gamehof.tsv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/less.gif" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Enter <code>less</code> in the Terminal to scroll</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-manip-files-folders" class="level2">
+<h2 class="anchored" data-anchor-id="sec-manip-files-folders">Manipulate</h2>
+<p>In the Unix/Linux world, file and directory management is a fundamental skill. This chapter dives deep into the commands that allow users to create, copy, move, remove, and link files and directories. Each section below introduces a different command, detailing its purpose and providing examples of its use.</p>
+<section id="sec-mkdir" class="level3">
+<h3 class="anchored" data-anchor-id="sec-mkdir"><code>mkdir</code></h3>
+<p><strong><code>mkdir</code> (Make Directory)</strong> builds a new folder wherever you tell it to, like making a new folder in our project for outputs (<code>out/</code>) or documents (<code>doc/</code>).</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> out</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> doc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sec-cp" class="level3">
+<h3 class="anchored" data-anchor-id="sec-cp"><code>cp</code></h3>
+<p><strong><code>cp</code> (Copy)</strong> duplicates files or folders. The <code>cp</code> command is used to Copy files or directories from one location to another. Imagine having a file (<code>myfile.txt</code>) on your root (<code>.</code>) directory that you want to copy to the <code>/data</code> folder; you could use <code>cp</code> to make a duplicate.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> myfile.txt data/myfile.txt</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># confirm copy</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  gamehof.tsv</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  music_vids.tsv</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#  myfile.txt</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  roxanne</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#  trees.tsv</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#  wu_tang.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sec-mv" class="level3">
+<h3 class="anchored" data-anchor-id="sec-mv"><code>mv</code></h3>
+<p><strong><code>mv</code> (Move)</strong>: <code>mv</code>, short for Move, functions similarly to picking up a book from your desk and placing it on a shelf. It moves files or directories from one location to another. It can also be used for renaming files. This command is especially useful for organizing files and directories that are in the wrong place.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create folder</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> doc</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># move file</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> data/myfile.txt doc/myfile.txt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># confirm move</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> doc</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  myfile.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sec-rm" class="level3">
+<h3 class="anchored" data-anchor-id="sec-rm"><code>rm</code></h3>
+<p><strong><code>rm</code> (Remove)</strong>: The <code>rm</code> command stands for Remove and is used to delete files or directories.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove doc folder</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> doc</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  rm: doc: is a directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add flag</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-R</span> doc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Using <code>rm</code> is a powerful action with significant consequences, as it permanently deletes files, akin to shredding documents. There’s usually no easy way to recover deleted files unless you have a backup.</p>
+</section>
+<section id="sec-ln" class="level3">
+<h3 class="anchored" data-anchor-id="sec-ln"><code>ln</code></h3>
+<p><strong><code>ln</code> (Link)</strong>: <code>ln</code> creates Links to files or directories, making them accessible from multiple locations without duplicating the actual content. It’s like creating a shortcut on your desktop to a program you frequently use. There are two types of links: hard links and symbolic (soft) links. Symbolic links are more commonly used because they can link to directories and provide more flexibility.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> /path/to/original /path/to/link</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -706,8 +873,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./navigate.html" class="pagination-link" aria-label="Navigate">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Navigate</span>
+      <a href="./syntax.html" class="pagination-link" aria-label="Syntax">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Syntax</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
