@@ -1,0 +1,172 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    
+---
+
+# Quarto {#sec-quarto}
+
+```{bash}
+#| label: setup
+#| include: false
+whoami
+```
+
+```{r}
+#| label: common
+#| include: false
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+
+[Quarto](https://quarto.org/) is an '*open-source scientific and technical publishing system*' built on [Pandoc](https://pandoc.org/) that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards. It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through writing YAML headers and Bash code chunks, two essential components when working with Quarto in a Unix/Linux context.
+
+
+```{r}
+#| label: co_box_knuth
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "b",
+  look = "default", 
+  hsize = "1.15", 
+  size = "1.05", 
+  header = "Literate Programming", 
+  fold = TRUE,
+  contents = "
+> '*Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.*' - [Donald Knuth. Literate Programming (1984) in Literate Programming. CSLI, 1992, pg. 99.](http://www.literateprogramming.com/index.html)")
+```
+
+
+
+
+### YAML header {#sec-quarto-yaml}
+
+<code>@sec-yaml</code> is a lightweight markup language that’s easy to write and read. In Quarto, the `YAML` header is used to configure document properties such as the title, engine, output format, and more. It serves as the foundation for controlling how your Quarto document behaves and appears.
+
+Quarto documents are written in markdown and can include executable code in various programming languages, including Unix commands. The `YAML` header is placed between three dashes `---` at the top of each Quarto document to specify metadata and global options. 
+
+```yaml
+---
+title: "Using Bash"
+---
+```
+
+To run Bash commands, specify `knitr` in the `engine` field of in the `YAML` header of the Quarto file, and any additional key-value pairs:[^shell-reference]
+
+```yaml
+---
+title: "Using Bash"
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+---
+```
+
+[^shell-reference]: Read more about configuring shell code blocks in Quarto in the [documentation.](https://quarto.org/docs/computations/execution-options.html#shell-commands)
+
+### Bash Code Chunks {#sec-quarto-bash}
+
+Introduced in 1989, Bash has become the default command-line interface or "shell" for most Linux distributions.[^bash-macos] We'll use Bash commands and scripts to preproceess data files, render Quarto documents, and automate other operations in the data analysis pipeline, from downloading and ingesting data to creating and deploying analysis outputs.  
+
+[^bash-macos]: Bash was the default command-line interface for Apple's macOS (which is Unix-based) until the transition to `zsh` as the default shell in macOS Catalina.
+
+One of the powerful features of Quarto is the ability to integrate executable code chunks into Markdown documents.[^quarto-bash-book] You can create bash code chunks using the following syntax:
+
+```{{bash}}
+echo "foo" 
+```
+
+[^quarto-bash-book]: In fact, this entire book was created using Quarto and executable code chunks!
+
+Bash code chunks allow you to include executable commands within your Quarto documents. You can also specify the code chunk options with the hash-pipe (`#|`):[^quarto-chunk-opts] 
+
+```{{bash}}
+#| code-fold: show
+#| code-summary: 'show/hide echo'
+echo "foo" 
+```
+
+When the document is rendered, the narrative text is included with the output from the commnads.
+
+```{bash}
+#| code-fold: show 
+#| code-summary: 'show/hide echo'
+echo "foo"
+```
+
+[^quarto-chunk-opts]: Consult the full list of code chunk options in the [Quarto documentation](https://quarto.org/docs/reference/cells/cells-knitr.html). 
+
+ This simplicity allows authors to focus on their content rather than formatting. 
+ 
+### Code Chunk Isolation
+
+When incorporating Bash code chunks into Quarto documents, an essential detail to remember is the behavior of the working directory during file rendering. By default, Quarto sets the working directory to the location of the current document within the project.
+
+Consider the following scenario in a Quarto project:
+
+```{bash}
+#| label: show-current-directory
+# This code chunk displays the current working directory
+pwd
+```
+
+Although we can navigate to a different directory within a given code chunk:
+
+```{bash}
+cd data # Change the current working directory to 'data' 
+pwd # confirm the change
+```
+
+It's crucial to note that Quarto resets the working directory to the document's location for each new code chunk:
+
+```{bash}
+# Verifying the working directory, which reverts to 
+pwd # the document's location for each new code chunk
+```
+
+This behavior is different than what we'd see in Posit Workbench's Terminal on my local machine:
+
+1. Assume the current working directory is `~/projects/` (as indicated by the blue highlighted area in the Terminal pane) 
+
+![~/projects/](img/pwd-local-01.png){width='100%'}
+
+2. If we change my working directory with `..`, we are in the home directory `~`.
+
+![~/](img/pwd-local-02.png){width='100%'}
+
+3. When we check the current working directory again with `pwd`, we see the location has been *permanently* changed to `~`. 
+
+![Still ~/](img/pwd-local-03.png){width='100%'}
+
+This behavior can be frustrating, but it also means we'll start with a 'clean slate' in each new code chunk! 
+
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```

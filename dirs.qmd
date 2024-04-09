@@ -1,0 +1,171 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    
+---
+
+# Directories {#sec-dirs}
+
+```{bash}
+#| label: setup
+#| include: false
+whoami
+```
+
+
+```{r}
+#| label: common
+#| include: false
+# Sys.setenv('QUARTO_PROJECT_DIR' = 'data')
+# Sys.getenv('QUARTO_PROJECT_DIR')
+source("_common.R")
+```
+
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+When presented with a new map, the most important thing to find is your location on it. It's hard to know where you're going without knowing where you are. 
+
+## Navigate {#sec-nav-dirs}
+
+### `pwd` {#sec-pwd}
+
+**`pwd` (Print Working Directory)** tells you exactly where you are in the filesystem.
+
+```{bash}
+pwd # where am I?
+```
+
+### `cd` {#sec-cd}
+
+ **`cd` (Change Directory)** lets you move to a different folder on your computer.
+
+If you want to move from the one place to another, `cd` can get you there. For example, `cd /bin` takes you to the `/bin` folder, the toolshed of software tools.
+
+```{bash}
+cd /bin # change location
+pwd # now where am I?
+```
+
+### `ls` {#sec-ls}
+
+**`ls` (List)** is like standing in one location, looking around, and seeing what files and folders are around you. In `/bin`, `ls` would show you the software tools available:
+
+```{bash}
+cd /bin # change location
+ls # what's in here?
+```
+
+## Manage {#sec-manage-dirs}
+
+In the Unix/Linux world, file and directory management is a fundamental skill. This chapter dives deep into the commands that allow users to create, copy, move, remove, and link files and directories. Each section below introduces a different command, detailing its purpose and providing examples of its use.
+
+### `mkdir` {#sec-mkdir}
+
+**`mkdir` (Make Directory)** builds a new folder wherever you tell it to, like making a new folder in our project for outputs (`out/`) or documents (`doc/`).
+
+```bash
+mkdir out
+mkdir doc
+```
+
+### `cp` {#sec-cp}
+
+**`cp` (Copy)** duplicates files or folders. The `cp` command is used to Copy files or directories from one location to another. Imagine having a file (`myfile.txt`) on your root (`.`) directory that you want to copy to the `/data` folder; you could use `cp` to make a duplicate. 
+
+```{bash}
+cp myfile.txt data/myfile.txt
+# confirm copy
+ls data
+```
+
+### `mv` {#sec-mv}
+
+**`mv` (Move)**: `mv`, short for Move, functions similarly to picking up a book from your desk and placing it on a shelf. It moves files or directories from one location to another. It can also be used for renaming files. This command is especially useful for organizing files and directories that are in the wrong place.
+
+```{bash}
+# create folder
+mkdir doc
+# move file
+mv data/myfile.txt doc/myfile.txt 
+```
+
+```{bash}
+# confirm move
+ls doc
+```
+
+### `rm` {#sec-rm}
+
+**`rm` (Remove)**: The `rm` command stands for Remove and is used to delete files or directories.
+
+```{bash}
+#| error: true
+# remove doc folder
+rm doc
+```
+
+```{r}
+#| label: co_box_rm
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "o",
+  look = "default", 
+  hsize = "1.15", 
+  size = "1.05", 
+  header = "Warning", 
+  fold = FALSE,
+  contents = "\n
+It's important to note here that the command-line is not very forgiving. Using `rm` is a powerful action with significant consequences, as it permanently deletes files, akin to shredding documents. There's usually no easy way to recover deleted files unless you have a backup.
+
+> '*Unix is like a chainsaw. Chainsaws are powerful tools, and make many difficult tasks like cutting through thick logs quite easy. Unfortunately, this power comes with danger: chainsaws can cut just as easily through your leg.*' - Gary Bernhardt[^bernhardt]
+
+[^bernhardt]: As quoted in [Bioinformatics Data Skills: Reproducible and Robust Research with Open Source Tools (2015) by Vince Buffalo](https://bit.ly/3sVBSne).
+\n"
+)
+```
+
+```{bash}
+# add flag
+rm -R doc
+```
+
+
+
+
+### `ln` {#sec-ln}
+
+**`ln` (Link)**: `ln` creates Links to files or directories, making them accessible from multiple locations without duplicating the actual content. It's like creating a shortcut on your desktop to a program you frequently use. There are two types of links: hard links and symbolic (soft) links. Symbolic links are more commonly used because they can link to directories and provide more flexibility.
+
+```bash
+ln -s /path/to/original /path/to/link
+```
+
+
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```

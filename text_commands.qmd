@@ -1,0 +1,139 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+---
+
+# Text Commands {#sec-txt-cmds .unnumbered}
+
+```{bash}
+#| label: setup
+#| include: false
+whoami
+```
+
+
+```{r}
+#| label: common
+#| include: false
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+The Unix and Linux operating systems thrive on simplicity and efficiency, principles elegantly manifested in text handling. Central to this ecosystem are the commands explicitly designed for text manipulation—tools such as `cat`, `sort`, `cut`, and others form the core of text processing activities.
+
+### The Text Stream
+
+Unix/Linux conceptualizes text as a stream, a continuous sequence of characters that can be manipulated in real-time. Streams are crucial for understanding how Unix/Linux commands process text. A text stream can originate from files, input devices, or even the output of other commands. Treating text as a steady stream of inputs offers a versatile and powerful method for text manipulation.
+
+
+<!--
+
+- **`cat`**: Beyond simply displaying the content of files, `cat` is often used to concatenate several text files into one and to work with text streams.
+- **`sort`**: As the name suggests, `sort` organizes text lines into a specified order, proving invaluable for data analysis and organization tasks.
+- **`cut`**: This command extracts sections from each line of input, making it essential for parsing and processing delimited data.
+- **`grep`**: A powerful search tool, `grep` filters text according to patterns, enabling complex data extraction and analysis operations.
+- **`awk`**: An entire programming language in itself, `awk` is designed for pattern scanning and processing, offering sophisticated text manipulation capabilities.
+- **`sed`**: The stream editor (`sed`) transforms text in a stream, allowing for powerful pattern matching and substitution.
+
+Each of these commands leverages stdin and stdout, enabling them to be combined in pipelines that filter, transform, and manipulate text in complex ways with just a few keystrokes. This section aims to demystify these commands, providing a foundation for understanding and utilizing Unix's rich text manipulation capabilities.
+
+By mastering these commands, you gain the ability to effortlessly manipulate text streams, transforming raw data into structured information. This knowledge is not just a technical skill but a gateway to the deeper philosophy of Unix, where simplicity and efficiency reign supreme.
+-->
+
+## Text Manipulation {#sec-txt-manip .unnumbered}
+
+These commands embody the Unix philosophy of '*do one thing and do it well*' and demonstrate the system’s power in processing text streams. This section will explore these fundamental commands, illustrating how they easily interact with text streams, standard input (`stdin`), and standard output (`stdout`) to perform complex text manipulations.
+
+```{r}
+#| label: co_box_stdin_stdout
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "g",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Standard Input and Output", 
+  fold = TRUE,
+  contents = "\n
+`stdin` (standard input) is a stream from which a command reads its input. By default, it's the keyboard, but it can be redirected to read from a file or another command's output.\n
+  
+![The text stream looks nothing like this](img/mr-robot.gif){fig-align='center' width='75%'}
+  
+`stdout` (standard output) is a stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command's input.\n")
+```
+
+### `cat` {#sec-cat}
+
+**`cat` (Concatenate)**: `cat` displays the content of files straight to your screen, useful for checking what's in a text file quickly.
+
+This is similar to printing a file and laying out the pages on the floor to see them all at once.
+
+### `grep` {#sec-grep}
+
+**`grep`** stands for "global regular expression print" and it reads from `stdin` or a list of files and outputs the lines that contain matches for a specified pattern.
+
+
+### `sort` {#sec-sort}
+
+**`sort`**: `sort` arranges the lines in a text file into order:
+
+
+Similar to organizing our stack of papers alphabetically.
+
+### `uniq` {#sec-uniq}
+
+**`uniq`**: `uniq` helps by removing duplicate lines from a file, making sure every line is unique.
+
+
+After accidentally printing duplicates of a document, you remove the extra copies.
+
+### `cut` {#sec-cut}
+
+**`cut`**: If you only want the dates from a list of events, you might physically cut them out of the paper. `cut` extracts specific parts of lines in a file, like cutting out columns of text.
+
+### `paste` {#sec-paste}
+
+**`paste`**: Taking snippets of text from different documents and sticking them together into one, `paste` combines lines from multiple files side by side.
+
+### `join` {#sec-join}
+
+**`join`**: If you have two lists with common information, you might merge them based on what matches. `join` merges lines from two files based on a common field.
+
+### `comm` {#sec-comm}
+
+**`comm` (Compare)**: Laying two printed lists side by side to see what items appear on both, only on one, or the other, `comm` compares two sorted files line by line.
+
+### `diff` {#sec-diff}
+
+**`diff` (Difference)**: Highlighting what changes have been made between your draft and the final copy of a letter, `diff` shows the differences between two files.
+
+These analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.
+
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```

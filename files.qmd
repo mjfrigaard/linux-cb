@@ -1,0 +1,72 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    
+---
+
+# Files {#sec-files}
+
+```{bash}
+#| label: setup
+#| include: false
+whoami
+```
+
+
+```{r}
+#| label: common
+#| include: false
+# Sys.setenv('QUARTO_PROJECT_DIR' = 'data')
+# Sys.getenv('QUARTO_PROJECT_DIR')
+source("_common.R")
+```
+
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+
+### `file` {#sec-file}
+
+**`file`** gives you a summary of what a computer file is or what it contains, like telling you if a tool in `/bin/pax` is a program you can run or a text file.
+
+```{bash}
+file /bin/pax
+```
+
+### `less` {#sec-less}
+
+**`less`** lets you skim through a file on your computer, moving forwards and backwards as you please.
+
+```{bash}
+#| eval: false
+less data/gamehof.tsv
+```
+
+![Enter `less` in the Terminal to scroll](img/less.gif){width='100%' fig-align='center'}
+
+
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```

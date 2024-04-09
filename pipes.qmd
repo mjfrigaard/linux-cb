@@ -5,7 +5,7 @@ knitr:
     collapse: true
 ---
 
-# Pipes {.unnumbered}
+# Pipes {#sec-pipes}
 
 ```{r}
 #| label: setup
@@ -30,7 +30,25 @@ co_box(
 )
 ```
 
-Using the `|`
+Pipes (`|`) allow the output of one command (`stdout`) to be used as the input (`stdin`) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next.
+
+We'll use the <code>@sec-grep</code> command as an example to illustrate `stdin`. 
+
+Imagine you want to find the word "dress" in a file named `roxanne` in the `data/` folder. Instead of directly providing the file as an argument to <code>@sec-grep</code>, you can use <code>@sec-cat</code> to read the file and then pipe (`|`) its output into <code>@sec-grep</code>, utilizing `stdin` to receive the file content.
+
+```{bash}
+cat data/roxanne | grep dress
+```
+
+In this command:
+
+1. `cat data/roxanne` reads the content of `roxanne` and *sends* it to `stdout`
+
+2. The pipe `|` *redirects* the `stdout` from <code>@sec-cat</code> to the `stdin` of <code>@sec-grep</code>.
+
+3. `grep dress` *receives* the file's content through `stdin`, searches for the word "dress", and *prints* lines containing it to `stdout`.
+
+Here, <code>@sec-grep</code>'s input comes from `stdin` (provided by the pipe) instead of directly reading from a file.
 
 ```{bash}
 ls /bin | head -n5

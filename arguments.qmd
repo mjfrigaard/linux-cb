@@ -1,0 +1,77 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: '# '
+---
+
+# Arguments {#sec-args}
+
+```{bash}
+#| label: setup
+#| include: false
+whoami
+```
+
+
+```{r}
+#| label: common
+#| include: false
+# Sys.setenv('QUARTO_PROJECT_DIR' = 'data')
+# Sys.getenv('QUARTO_PROJECT_DIR')
+source("_common.R")
+```
+
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+Arguments follow the command and provide additional information or specify targets for the command, such as file names and paths. 
+
+```bash
+$ command [argument]
+```
+
+We'll use the <code>@sec-ls</code> command to list the directory contents of the root directory (accessed with `/`):
+
+```{bash}
+ls /
+```
+
+In the example above, `/` is the argument passed to the `ls` command.
+
+## Quotes
+
+For example, in <code>@sec-cat</code> `myfile.txt`, the `myfile.txt` file is an argument to the `cat` command, specifying which file it should display.
+
+```{bash}
+cat myfile.txt
+```
+
+```{bash}
+cat 'myfile.txt'
+```
+
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```

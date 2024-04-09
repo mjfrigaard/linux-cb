@@ -1,0 +1,1083 @@
+---
+title: "Introduction to command-line skills"
+description: >
+  Using the command line.
+output: 
+  learnr::tutorial:
+    progressive: true
+    highlight: tango
+    # 'arg' should be one of “default”, “bootstrap”, 
+    # “cerulean”, “cosmo”, “darkly”, “flatly”, “journal”,
+    #  “lumen”, “paper”, “readable”, “sandstone”, “simplex”,
+    #  “spacelab”, “united”, “yeti”
+    theme: flatly
+    allow_skip: true
+    df_print: paged
+
+runtime: shiny_prerendered
+
+---
+
+```{r setup, include = FALSE}
+library(learnr)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(readr)
+library(googlesheets4)
+library(skimr)
+library(knitr)
+library(readxl)
+library(writexl)
+library(openxlsx)
+# pipe url: https://bit.ly/01-file-txt ----
+# CSV url: https://bit.ly/01-file-csv ----
+# CSV2 url: https://bit.ly/01-file2-csv ----
+# TSV url: https://bit.ly/01-file-tsv ----
+# f1.csv: https://bit.ly/01-f1-csv ----
+# f2.csv: https://bit.ly/01-f2-csv ----
+# f3.csv: https://bit.ly/01-f3-csv ----
+knitr::opts_chunk$set(error = TRUE,
+  upload.fun = imgur_upload, 
+  exercise.cap = "bash:$")
+```
+
+## What is the command line? 
+
+You've probably seen a command-line interface in a movie or TV show at some point.  
+
+```{r mr.robot-1-4.gif, echo=FALSE, eval=TRUE, fig.align='center', out.height='90%', out.width='90%', fig.cap="My eyes hurt"}
+# fs::dir_create("www")
+# download.file(url = "https://i.imgur.com/msmvE09.gif", destfile = "www/mr-robot.gif")
+knitr::include_graphics(path = "www/mr-robot.gif")
+```
+
+###
+
+It's usually full of cryptic commands in different colored text (think 'The Matrix' or 'Mr. Robot'). Most of the technology you interact with daily uses a graphical user interface (GUI but pronounced 'gooey'), allowing for interactive, point-and-click options. While GUIs certainly make using computers, tablets, and phones easier, they're also limiting. 
+
+###
+
+Software designers and engineers build the display architecture (icons, scroll bars, etc.) for users, and in doing so, they have to try and determine how a user intends to use their software. 
+
+```{r jarvis.gif, echo=FALSE, eval=TRUE, fig.align='center', out.height='100%', out.width='100%', fig.cap="Unless you're Tony Stark--then Jarvis just interprets your hand motions..."}
+# download.file(url = "https://i.pinimg.com/originals/97/87/77/978777f3dbbe42ed7be1b3c09912ca6c.gif", destfile = "rscs-01a-command-line/www/jarvis.gif")
+knitr::include_graphics(path = "www/jarvis.gif")
+```
+
+###
+
+However, a command-line interface (CLI) gives users the power and precision of language (or text) to instruct the computer to perform desired tasks. These 'commands' are then chained into scripts or programs to achieve various outcomes. 
+
+###
+
+> "*In the Beginning... Was the Command Line*" - Neal Town Stephenson
+
+###
+
+You can think of the differences between the GUI and CLI as trading a lower learning curve and immediate feedback for power and precision. In the GUI, pointing and clicking is easier (provided you have all the options you need), and typing commands requires learning and entering the correct grammar and syntax (or enough of it to accomplish your objective).
+
+###
+
+This tutorial is not a comprehensive guide to command-line skills (I'll provide a list of resources at the end if you'd like to learn more). Instead, these exercises will introduce you to the command-line and where it sits in the RStudio/open-source ecosystem. 
+
+###
+
+*After all, RStudio gives us [access to a Terminal Pane](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE) in the IDE, so we might as well use it!*
+
+```{r term-simple.png, echo=FALSE, eval=TRUE, fig.align='center', out.height='80%', out.width='80%', fig.cap="Thank you, RStudio"}
+# download.file(url = "https://support.rstudio.com/hc/article_attachments/360078724934/2020-07-09_10-42-term-simple.png", destfile = "rscs-01a-command-line/www/term-simple.png"
+# )
+knitr::include_graphics(path = "www/term-simple.png")
+```
+
+### What we'll cover 
+
+First, we're going to cover some background on Unix systems, why they're so powerful, and some of the different command-line interfaces you might see outside of this tutorial and RStudio's Terminal Pane. Second, we'll cover a few commands that expose you to how the command-line works. Third, we'll use the command-line to navigate folders and understand their structure (the command-line calls these 'directories'). Finally, we will cover how to view, open, create, move, copy, and yes--even delete--files. 
+
+## Unix Systems
+
+[Unix](https://en.wikipedia.org/wiki/Unix) refers to a family of operating systems that serve as a 'backbone' for Linux (Android, Chrome OS) and Darwin (macOS, iOS, watchOS, tvOS, audioOS, iPadOS). Linux and Unix-like systems are the [dominant operating system](https://en.wikipedia.org/wiki/Usage_share_of_operating_systems#Supercomputers) for mainframes, web servers, phones and tablets, and even supercomputers. Throughout this tutorial, I'll use the term 'Unix' to refer to both Linux or other Unix-like operating system because they all will have access to the command-line (which is another reason to have these skills!). 
+
+###
+
+Microsoft Windows is the only exception here. Windows machines aren't based on Unix, but installing a Linux command-line tool [is possible](https://docs.microsoft.com/en-us/windows/wsl/about), although not necessary if you're using RStudio on your local machine.
+
+### The Unix Philosophy 
+
+> "*Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.*" — [Doug McIlory](https://en.wikipedia.org/wiki/Unix_philosophy#Doug_McIlroy_on_Unix_programming)
+
+###
+
+The Unix command-line is powerful because of its strict adherence to a division of labor *and* the ability to combine commands to solve increasingly complex tasks. The term 'text streams' refers to using plain text formatted files (which are common in open source software, like R and RStudio).
+
+#### Do one thing, do it well
+
+Command-line tools typically perform a singular task, and their specificity might seem like it would limit our ability to get much done. But you'll come to appreciate this narrow scope, because each tool comes with a list of options for tweaking the command to customize it for your unique purpose.
+
+
+###
+
+A complete list of options for each command is available in the documentation. Which you can access with the `man` command. Below is the man page for the touch command (a tool for creating new files)
+
+```bash
+man touch
+```
+
+```
+TOUCH(1)                       General Commands Manual                      TOUCH(1)
+
+NAME
+     touch – change file access and modification times
+
+SYNOPSIS
+     touch [-A [-][[hh]mm]SS] [-achm] [-r file] [-t [[CC]YY]MMDDhhmm[.SS]]
+           [-d YYYY-MM-DDThh:mm:SS[.frac][tz]] file ...
+
+DESCRIPTION
+     The touch utility sets the modification and access times of files.  If any file
+     does not exist, it is created with default permissions.
+
+     By default, touch changes both modification and access times.  The -a and -m
+     flags may be used to select the access time or the modification time
+     individually.  Selecting both is equivalent to the default.  By default, the
+     timestamps are set to the current time.  The -d and -t flags explicitly specify
+     a different time, and the -r flag specifies to set the times those of the
+     specified file.  The -A flag adjusts the values by a specified amount.
+
+     The following options are available:
+
+     -A      Adjust the access and modification time stamps for the file by the
+             specified value.  This flag is intended for use in modifying files with
+             incorrectly set time stamps.
+
+             The argument is of the form “[-][[hh]mm]SS” where each pair of letters
+             represents the following:
+
+                   -       Make the adjustment negative: the new time stamp is set
+                           to be before the old one.
+                   hh      The number of hours, from 00 to 99.
+                   mm      The number of minutes, from 00 to 59.
+                   SS      The number of seconds, from 00 to 59.
+
+             The -A flag implies the -c flag: if any file specified does not exist,
+             it will be silently ignored.
+
+     -a      Change the access time of the file.  The modification time of the file
+             is not changed unless the -m flag is also specified.
+
+     -c      Do not create the file if it does not exist.  The touch utility does
+             not treat this as an error.  No error messages are displayed and the
+             exit value is not affected.
+
+     -d      Change the access and modification times to the specified date time
+             instead of the current time of day.  The argument is of the form
+             “YYYY-MM-DDThh:mm:SS[.frac][tz]” where the letters represent the
+             following:
+                   YYYY    At least four decimal digits representing the year.
+                   MM, DD, hh, mm, SS
+                           As with -t time.
+                   T       The letter T or a space is the time designator.
+                   .frac   An optional fraction, consisting of a period or a comma
+                           followed by one or more digits.  The number of
+                           significant digits depends on the kernel configuration
+                           and the filesystem, and may be zero.
+                   tz      An optional letter Z indicating the time is in UTC.
+                           Otherwise, the time is assumed to be in local time.
+                           Local time is affected by the value of the TZ environment
+                           variable.
+
+     -h      If the file is a symbolic link, change the times of the link itself
+             rather than the file that the link points to.  Note that -h implies -c
+             and thus will not create any new files.
+
+     -m      Change the modification time of the file.  The access time of the file
+             is not changed unless the -a flag is also specified.
+
+     -r      Use the access and modifications times from the specified file instead
+             of the current time of day.
+
+     -t      Change the access and modification times to the specified time instead
+             of the current time of day.  The argument is of the form
+             “[[CC]YY]MMDDhhmm[.SS]” where each pair of letters represents the
+             following:
+
+                   CC      The first two digits of the year (the century).
+                   YY      The second two digits of the year.  If “YY” is specified,
+                           but “CC” is not, a value for “YY” between 69 and 99
+                           results in a “CC” value of 19.  Otherwise, a “CC” value
+                           of 20 is used.
+                   MM      The month of the year, from 01 to 12.
+                   DD      the day of the month, from 01 to 31.
+                   hh      The hour of the day, from 00 to 23.
+                   mm      The minute of the hour, from 00 to 59.
+                   SS      The second of the minute, from 00 to 60.
+
+             If the “CC” and “YY” letter pairs are not specified, the values default
+             to the current year.  If the “SS” letter pair is not specified, the
+             value defaults to 0.
+
+EXIT STATUS
+     The touch utility exits 0 on success, and >0 if an error occurs.
+
+COMPATIBILITY
+     The obsolescent form of touch, where a time format is specified as the first
+     argument, is supported.  When no -r or -t option is specified, there are at
+     least two arguments, and the first argument is a string of digits either eight
+     or ten characters in length, the first argument is interpreted as a time
+     specification of the form “MMDDhhmm[YY]”.
+
+     The “MM”, “DD”, “hh” and “mm” letter pairs are treated as their counterparts
+     specified to the -t option.  If the “YY” letter pair is in the range 39 to 99,
+     the year is set to 1939 to 1999, otherwise, the year is set in the 21st
+     century.
+
+SEE ALSO
+     utimensat(2)
+
+STANDARDS
+     The touch utility is expected to be a superset of the IEEE Std 1003.2
+     (“POSIX.2”) specification.
+
+HISTORY
+     A touch utility appeared in Version 7 AT&T UNIX.
+```
+
+###
+
+Having simple, reliable tools that never fail can also come in handy when our other GUI-based software isn't performing a specific task we need. For example, if you're having trouble downloading data onto your computer through the browser, you can pass the URL to the `curl` command like so: 
+
+```bash
+# download entire text file of Moby-Dick into data/moby-dick.txt 
+curl "https://www.gutenberg.org/files/2701/2701-0.txt" > data/moby-dick.txt
+```
+
+```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 1246k  100 1246k    0     0  9587k      0 --:--:-- --:--:-- --:--:-- 9587k
+```
+
+###
+
+The `curl` command allows us to download data from a URL and save it to a local file (in `data/moby-dick.txt`). Understanding what each command does is the first step in mastering command-line skills. 
+
+###
+
+#### Working together
+
+All command-line tools are modular, which means they work best when connected together. In the example above, we downloaded the book Moby-Dick into our local `data/` folder in a file named `moby-dick.txt` using the `>` operator.
+
+###
+
+Now that we've downloaded the file, let's count how many times the name `Ahab` occurs. We can do this by combining two more command-line tools (`grep` and `wc`) with the Unix pipe (`|`). The additional characters you see are options (`-o`, `i`, and `-l`).
+
+```bash
+# count the number of times 
+grep -o -i "Ahab" data/moby-dick.txt | wc -l
+```
+
+```
+518
+```
+
+###
+
+Being able to chain tools together requires us to know what each command does. Armed with this knowledge, we can connect the commands into a 'pipeline.' This practice makes it easier to find bugs and inspect intermediate results. 
+
+###
+
+#### Text as a universal interface
+
+The `grep` and `wc` commands worked with the `moby-dick.txt` file because the file is formatted in plain text. Most command-line tools are designed to work with plain text files. Examples include markdown files (`.md`), comma-separated values files (`.csv`), JavaScript Object Notation (`.json`), Extensible Markup Language (`.xml`) and HyperText Markup Language (`.html`).
+
+###
+
+Fortunately for us, these files are also commonly used in R programming. For example, we can use the command-line to quickly create new files and add a few lines of content faster than we can do with a GUI: 
+
+```bash
+echo "Text of 'Moby-Dick' from Project Gutenberg (https://www.gutenberg.org/)" > data/README.md
+```
+
+###
+
+The commands above make a `README.md` file for the `moby-dick.txt` file in our `data` folder. Below is the file we created in RStudio:
+
+```{r readme-rstudio.png, echo=FALSE, eval=TRUE, fig.align='center', out.height='80%', out.width='80%', fig.cap="New README.md file"}
+knitr::include_graphics(path = "www/readme-rstudio.png")
+```
+
+###
+
+Used this way, even having a few command-line tools at your disposal can supplement your R skills. 
+
+## Terminals, Shells and Prompts
+
+As with anything technical, there is some terminology to cover before we can move into writing commands. Below is a simplistic diagram of how the Unix architecture works:
+
+```{r unix-architecture.png, echo=FALSE, eval=TRUE, fig.align='center', out.height='70%', out.width='70%', fig.cap="Unix Architecture"}
+knitr::include_graphics(path = "www/unix-architecture.png")
+```
+
+###
+
+**Command-line tools**: these are the text commands you'll learn in this tutorial. They have the following structure: 
+
+```bash
+command [option] [argument]
+```
+
+###
+
+**Terminals**: an emulator program that provides a text-based interface to type commands into. RStudio comes with a Terminal pane, and so do Unix-based operating systems (if you're using macOS, it's the application in the Utilities folder). 
+
+###
+
+**Shells**: Shells take the commands we type into the Terminal and pass them off into into the magical realm of the operating system, where they do whatever we've asked of them. There are multiple types of shells (which we cover below).
+
+### Terminals 
+
+*Most* command-line interfaces open with a prompt. Below is an example prompt you'll see in the RStudio Terminal Pane:
+
+```{r prompt.png, echo=FALSE, eval=TRUE, fig.align='center', out.height='90%', out.width='90%', fig.cap="RStudio Terminal Prompt"}
+knitr::include_graphics(path = "www/prompt.png")
+```
+
+###
+
+If you're running macOS, you also have access to a Terminal application: 
+
+```{r prompt-zsh.png, echo=FALSE, eval=TRUE, fig.align='center', out.height='80%', out.width='80%', fig.cap="macOS Terminal Prompt"}
+knitr::include_graphics(path = "www/prompt-zsh.png")
+```
+
+### Shells & Prompts
+
+You might have noticed the prompts are different (`$` vs. `%`). RStudio's Terminal uses [bash](https://www.gnu.org/software/bash/), which stands for 'Bourne Again SHell', while macOS uses [zsh](https://zsh.sourceforge.io/), or the 'Z shell' (BTW they are called shells because they are the '[the outermost layer around the operating system.](https://en.wikipedia.org/wiki/Shell_(computing))'
+
+### Code chunks (exercises)
+
+These tutorials are designed for interactive R code like in the chunk below: 
+```{r r-code, exercise=TRUE, exercise.cap = "R code"}
+# click Run Code
+Sys.Date()
+```
+
+###
+
+However, we're going to be running `bash` chunks, which means instead of running R code, they'll be running command-line code. Try it for yourself: 
+
+```{bash example-bash, exercise=TRUE}
+# click Run Code
+date
+```
+
+###
+
+Above, I said *most* terminals have a prompt because the exercises in this tutorial won't--you'll type commands directly into the code chunks. However, all of these commands will also work in your RStudio Terminal Pane (or another command-line interface).
+
+### A word of caution...
+
+It's important to note here that the command-line is not very forgiving. It **is** possible to unintentionally overwrite or delete your files with a single typo. But this is the trade-off we make for using the command-line--we can't use powerful tools without encountering some risk.
+
+###
+
+
+
+###
+
+Don't worry though! We're working in your browser, so you won't be deleting any files from your computer. That means you can feel free to make mistakes and experiment in this environment without worrying too much about the consequences. Just be sure you understand what each command is doing before testing it out on your local machine.
+
+
+## Commands 
+
+Terminal commands (or command-line commands) can be a little cryptic and hard to interpret at first, but fortunately Unix has excellent [online documentation](https://unixguide.readthedocs.io/en/latest/unixcheatsheet/).
+
+### Who am I?
+
+We're going to start with a basic command: `whoami`
+
+```{bash whoami, exercise = TRUE, exercise.lines = 2}
+# type whoami below and click Run Code
+
+```
+
+###
+
+The command `whoami` returns a value for the currently logged-in user. You didn't log into this tutorial, so it's returning `shiny` (which is the name of the R package for running these tutorials in your browser).
+
+### REPL 
+
+What you've just done is referred to as the [read–eval–print loop](https://www.computerhope.com/jargon/r/repl.htm), or REPL, and it's the underlying process of the command-line. Here is how it works: 
+
+###
+
+1. **read** the command you've typed into the code chunk and create a data structure for it  
+
+###
+
+2. **eval**uate what the command means and perform the associated operation (in our case, retrieving the value of the currently logged-in user) 
+
+###
+
+3. **print** the value from **eval** results to the screen so we can see it  
+
+### Where am I?
+
+A great follow-up question is *where am I?*, but for this we'll enter `pwd`, which stands for 'print working directory.'
+
+```{bash pwd, exercise = TRUE, exercise.lines = 2}
+# type pwd below and click Run Code
+
+```
+
+### Working directory (local)
+
+The output from the previous exercise might look like gibberish. but that's because we're running the commands in the browser.  Let's switch over to RStudio and take a look at the Terminal pane again:
+
+```{r rs-terminal.png, echo=FALSE, eval=TRUE, fig.align='center', out.height='100%', out.width='100%', fig.cap="RStudio's Terminal"}
+knitr::include_graphics(path = "www/rs-terminal.png")
+```
+
+###
+
+Above we can see I am on `Martins-MacBook-Pro-2:` in the home directory (`~`), and I'm logged in as `mjfrigaard`. The black square I've highlighted is the cursor. 
+
+###
+
+If I ran the `pwd` command in RStudio's Terminal Pane, I'd see the following:
+
+```{r pwd-01.png, echo=FALSE, eval=TRUE, fig.align='center', out.height='100%', out.width='100%', fig.cap="Home Folder"}
+knitr::include_graphics(path = "www/pwd-01.png")
+```
+
+###
+
+This tells me quite a few things I can already derive from the Terminal prompt (which machine I am using, who I am logged in as, and what directory I am in).
+
+###
+
+Now I know *who* I am and *where* I am (which is always comforting). Next we'll cover how to start moving around and exploring.
+
+## Arguments 
+
+So far, we've been using basic commands in the Terminal (`whoami` and `pwd`). We're going to introduce another typical element in command-line programming, and that's the **argument**. 
+
+###
+
+To move from folder-to-folder, we can use the `cd` command (change directory). Unlike the previous commands, `cd` takes a command and an argument. 
+
+###
+
+Arguments come *after* commands, and they depend on what the command is going to do. 
+
+```bash
+$ command [argument]
+```
+
+###
+
+Unix systems use a single period (`.`) to represent the current working directory, and two periods (`..`) to represent the **parent directory** (i.e. the folder directly 'above' your working folder). Use the code chunk below to move from your current working directory to the parent directory (one folder 'up').
+
+```{bash cd-dot-dot, exercise = TRUE, exercise.lines = 6}
+# print current working directory with 'pwd'
+
+# change directory with 'cd ..'
+
+# print new working directory with 'pwd'
+
+```
+
+###
+
+Can you tell what's changed?
+
+### Folder structure
+
+The output should look something like this: 
+
+```bash
+# current working directory
+/tmp/RtmpeOV6tk/lrn-ex9b28e0a087
+
+# new working directory
+/tmp/RtmpeOV6tk
+```
+
+###
+
+If we were to represent these locations hierarchically, we could do it like so: 
+
+```bash
+pwd
+/tmp/
+  └──RtmpeOV6tk/
+        └──lrn-ex9b28e0a087 # started here!
+```
+
+```bash
+cd .. # move 'up' one folder
+pwd
+/tmp/
+  └──RtmpeOV6tk/ # ended here!
+        └──lrn-ex9b28e0a087 
+```
+
+###
+
+The layout above is referred to a folder tree. These are very handy for quickly getting a sense of the ordered arrangement of each directory.  
+
+
+## Listing things 
+
+Another helpful command-line tool is `ls`, which stands for 'List Files and Directories'. I like to think of `ls` as a follow up question to the output from `pwd`. While `pwd` tells you *where you are*, `ls` tells you what is located around you.
+
+```{bash list-files-dirs, exercise=TRUE,  exercise.lines = 2}
+# enter 'ls' and click Run Code
+
+```
+
+###
+
+As you can see, your environment contains two items: `data` (a folder) and  `exercise.Rmd` (the R markdown document for these exercises). 
+
+### Options
+
+In the previous exercise we used `ls` to list the files and folders in our current working directory. We're going to add another element to `-a`, which is an **option** for listing any hidden files in a directory. 
+
+###
+
+Options are added to commands like so: 
+
+```bash
+$ command [option] [argument] 
+```
+
+###
+
+Use the code chunk below to list any hidden files in the current working directory: 
+
+```{bash ls-a, exercise=TRUE, ,  exercise.lines = 2}
+# enter 'ls -a' and click Run Code
+
+```
+
+###
+
+We can see the two shortcuts we learned about above (`.` and `..`) are listed as hidden files. Typically, hidden files begin with a `.` (like `.gitignore` or `.RHistory`).
+
+###
+
+This is helpful, but we often want to know more information about the files in a working directory. We can do this by adding the `-l` option (long listing format) to `ls`. 
+
+
+```{bash ls-l, exercise=TRUE, exercise.lines = 2}
+# enter 'ls -l' and click Run Code
+
+```
+
+###
+
+The command-line also lets us combine options together. Use the code chunk below to view the file information in a long listing format for all the files in your current working directory (i.e. including the hidden files). 
+
+```{bash ls-la, exercise=TRUE, exercise.lines = 2}
+# enter 'ls -la' and click Run Code
+
+```
+
+###
+
+A typical set of commands when working in a new Terminal is `whoami`, `pwd`, and `ls -la`. These three commands get you oriented to your permissions and surroundings.  
+
+## Creating things
+
+Now that we have some basic navigation skills down, we're going to create directories (folders) and files, view them, and add some content. Let's get started! 
+
+### Create a file 
+
+The command for creating a new file is `touch`. 
+
+###
+
+In the code chunk below, use the `touch` command to create a new file called `stash.txt`
+
+```{bash touch, exercise = TRUE, exercise.lines = 2}
+# enter 'touch stash.txt' and click Run Code
+
+```
+
+###
+
+If this worked, you won't see anything...you might have noticed this behavior above with the `cd` command. I will stop here to emphasize an important point:
+
+> ***The command-line tends to keep to itself***
+
+###
+
+Many commands work and without printing any evidence of the success to your screen. We'll often have to give another command to check and see if the previous command worked as intended. 
+
+
+###
+
+In this case, it's the `ls` command we learned above:
+
+```{bash touch-ls, exercise = TRUE, exercise.lines = 4}
+# re-enter 'touch stash.txt' 
+
+# enter 'ls' and click Run Code
+
+```
+
+###
+
+The `touch` command will create a file if it doesn't exist. If the file does exist, `touch` will change the file time-stamps. We can check the time-stamps with the `stat` command.
+
+```{bash stash-txt-error, exercise = TRUE, exercise.lines = 2}
+# enter 'stat stash.txt' and click Run Code
+
+```
+
+###
+
+***Why did we get an error?*** As we said before, each code chunk is essentially 'reset' with only the `data` folder and the `exercise.Rmd` in the working directory. So, any of the commands we enter (like `cd` or `touch`) or things we create (like `stash.txt`) in previous chunks won't carry over to successive chunks. 
+
+###
+
+Again, this might seem frustrating, but it just means we need to include multiple commands in the same chunk (it also means if we make mistakes in one code chunk, we can just proceed to the next!).
+
+###
+
+Run `stat stash.txt` again below (after creating it with `touch`)
+
+```{bash stash-txt-stat, exercise = TRUE, exercise.lines = 4}
+# re-enter 'touch stash.txt'
+
+# re-enter 'stat stash.txt' and click Run Code
+
+```
+
+###
+
+In the output you should see something like the following: 
+
+```bash
+  File: stash.txt
+  Size: 0           Blocks: 0          IO Block: 4096   regular empty file
+Device: 1000f0h/1048816d    Inode: 242441014   Links: 1
+Access: (0664/-rw-rw-r--)  Uid: (10001/   shiny)   Gid: (10001/   shiny)
+Access: 2022-01-04 09:48:19.276836284 +0000
+Modify: 2022-01-04 09:48:19.276836284 +0000
+Change: 2022-01-04 09:48:19.276836284 +0000
+ Birth: -
+ ```
+ 
+## Operators 
+
+Operators help redirect the output from commands from the Terminal output to another location (usually a file). The two operators we'll cover are `>` and `>>`. 
+
+###
+
++ `>` redirects a commands output to a file, but overwrites any existing contents of the file. You might recall this operator from the 'Unix Systems' section example with the `curl` command (use this operator carefully!).
+
+###
+
++ `>>` does the same thing as `>`, but it *appends* the commands output to a file (i.e., adds the text to the end of the file), 
+
+###
+
+If there isn’t an existing file, both `>` and `>>` creates a new file, then redirects the output to it.
+
+### Adding file contents
+
+Now that we've learned how to create a file with `touch`, we can add contents to the file with `echo`. 
+
+###
+
+Any content passed as an argument to `echo` are printed to the Terminal. Test it in the code chunk below: 
+
+```{bash echo, exercise = TRUE, exercise.lines = 2}
+# enter some text inside the quotes after 'echo' and click Run Code
+echo " "
+```
+
+
+###
+
+Now use `echo` to add content to a file named `stash.txt` using the code chunk below. Print the contents to the screen with `cat`
+
+```{bash echo-redirect-01, exercise = TRUE, exercise.lines = 4}
+# add text inside the quotes after 'echo' 
+echo " " > stash.txt
+# view the contents using `cat stash.txt` and click Run Code
+cat stash.txt
+```
+
+###
+
+The `cat` command comes from the ability to [concatenate](https://en.wikipedia.org/wiki/Concatenation) files. 
+
+###
+
+To see how it works with the `>>` operator, add the contents 
+
+```{bash echo-redirect-02, exercise = TRUE, exercise.lines = 8}
+# add text inside the quotes after 'echo' and redirect to 'stash.txt'
+echo " " > stash.txt
+# add different text inside the quotes after 'echo', redirect to 'stash2.txt'
+echo " " > stash2.txt
+# append the contents of stash.txt to 'stash2.txt'
+cat stash.txt >> stash2.txt
+# view the contents using `cat stash.txt` and click Run Code
+cat stash2.txt
+```
+
+###
+
+We're going to cover more commands for printing file contents in the next exercises.
+
+### Printing file contents 
+
+We're going to view the contents in the `who-tb-data.tsv` file in our `data` folder with `head`.  
+
+```bash
+└── data
+     └── who-tb-data.tsv
+```
+
+###
+
+These data come from the [`tidyr` package](https://tidyr.tidyverse.org/) (which we will learn about later), and they contain ["all display the number of TB cases documented by the World Health Organization in Afghanistan, Brazil, and China between 1999 and 2000."](https://www.who.int/teams/global-tuberculosis-programme/data)
+
+###
+
+By default, `head` displays the first 10 lines of a file. We can change the number of lines to view with the `-n` option (as in, `head -n 5 some/file.txt` would return the first 5 lines of `file.txt`). 
+
+###
+
+Use the code chunk below to view the first 5 lines of  `data/who-tb-data.tsv`: 
+
+```{bash head, exercise = TRUE, exercise.lines = 2}
+# view the first 5 lines of 'who-tb-data.tsv' with head and click Run Code
+
+```
+
+###
+
+We can also view the last 5 lines of a file with `tail`. 
+
+```{bash tail, exercise = TRUE, exercise.lines = 2}
+# view the first 5 lines of 'who-tb-data.tsv' with tail and click Run Code
+
+```
+
+## Pipes 
+
+In the previous exercises, we learned how to view the first and last lines in a text file with `head` and `tail`. What if we wanted to combine these and get a specific row from `data/who-tb-data.tsv`? We could use the Unix pipe operator: `|`
+
+### Combine commands 
+
+Print the contents of `data/who-tb-data.tsv` with `cat` in the code chunk below:
+
+```{bash cat-who-tb-data-tsv, exercise = TRUE, exercise.lines = 2}
+
+```
+
+###
+
+Now we're going to print the line for `cases` from `Brazil` in `1999`. 
+
+```
+Brazil	1999	cases	37737
+```
+
+###
+
+We can do this by combining a negative number index (`-n -6`) to `head`, and pipe (`|`) it directly over to a positive number index (`-n +6`) the `tail` command:
+
+```{bash head-tail, exercise = TRUE, exercise.lines = 2}
+# pipe 'head -6 data/who-tb-data.tsv to 'tail -n +6'
+
+```
+
+###
+
+This works because the output from `head -n -6` is the top 6 rows, which gets piped' over to `tail -n +6`. The only overlapping row between these two outputs is line 6 (`cases` from `Brazil` in `1999`).
+
+###
+
+Test them in the code chunks below to see: 
+
+```{bash test-head, exercise = TRUE, exercise.lines = 2}
+# check 'head -6 data/who-tb-data.tsv'
+
+```
+
+```{bash test-tail, exercise = TRUE, exercise.lines = 2}
+# check 'tail -n +6 data/who-tb-data.tsv'
+
+```
+
+
+###
+
+Pipes allow us to combine commands together, which means we can use more than one command at a time. Combine this with the operators we learned above, and we can extract information from one file and store it in another. 
+
+###
+
+The code below extracts the rows for `Brazil` and stores them in `data/who-brazil-tb-data.tsv`, then lists the files in `data/`, and prints the contents to the screen.
+
+```{bash pipe-brazil-data, exercise = TRUE, exercise.lines = 6}
+# sent the Brazil data to 'who-brazil-tb-data.tsv'
+head -9 data/who-tb-data.tsv | tail +6 > data/who-brazil-tb-data.tsv
+# list files in 'data/''
+ls data/
+# print 'data/who-brazil-tb-data.tsv'
+cat data/who-brazil-tb-data.tsv
+```
+
+
+## Download stuff from the web
+
+One of the command line tools I like the most is `curl`, and it's used for downloading stuff from the web. We're going to use `curl` to download ['A Modest Proposal'](https://en.wikipedia.org/wiki/A_Modest_Proposal) by Jonathan Swift the [Gutenberg project](https://www.gutenberg.org/). 
+
+###
+
+It's always a good idea to view the file you're going to download before sending the URL to `curl`. View the plain text version of 'A Modest Proposal' [here.](https://www.gutenberg.org/files/1080/1080-0.txt)
+
+### Using `curl` 
+
+We'll start by combining `curl` with `head` to view the first lines of the file. 
+
+```{bash curl, exercise=TRUE, exercise.lines = 3}
+# pipe the contents in the url to 'head'
+curl "https://www.gutenberg.org/files/1080/1080-0.txt" 
+```
+
+###
+
+As we can see, by default `curl` tells us a lot of information about the download. We can silence this output with the `-s` option (for silent). 
+
+```{bash curl-s, exercise=TRUE, exercise.lines = 3}
+# use '-s' to silence the progress bar and send the contents to 'head'
+ "https://www.gutenberg.org/files/1080/1080-0.txt" 
+```
+
+###
+
+Now that we're confident it's the correct file, we'll store it in `data/modest-proposal.txt` using the `>` operator.
+
+```{bash curl-modest-proposal-txt, exercise=TRUE, exercise.lines = 3}
+# save the contents in the url to 'data/modest-proposal.txt' (silently)
+ "https://www.gutenberg.org/files/1080/1080-0.txt" 
+```
+
+### Get a `grep`
+
+If you haven't read 'A Modest Proposal', you should. It's a satirical essay that proposes poor people sell their children to the rich (for food). 
+
+###
+
+We're going to use the handy `grep` ('global regular expression print') tool for searching through the contents of `data/modest-proposal.txt` and finding 'pattern matches' for particular words (or collection of terms).
+
+###
+
+*Don't worry about downloading the file with `curl`--the code chunk below has `data/modest-proposal.txt` already downloaded*
+
+```{bash, prepare-modest-proposal}
+curl "https://www.gutenberg.org/files/1080/1080-0.txt" > 'data/modest-proposal.txt'
+```
+
+```{bash grep-child, exercise=TRUE, exercise.setup = "prepare-modest-proposal", exercise.lines = 3}
+# use grep to find 'child' in 'data/modest-proposal.txt'
+ 'data/modest-proposal.txt'
+```
+
+###
+
+Read the text above and identify the number of times `child` shows up. You'll see grep matched for any occurrence of `child` (including `children`). We can further refine our search by adding the `-w` option (for 'word') to the term we use with `grep`. 
+
+```{bash grep-children, exercise=TRUE, exercise.setup = "prepare-modest-proposal", exercise.lines = 3}
+# use 'grep' and '-w' to find the word 'child' in 'data/modest-proposal.txt'
+ 'data/modest-proposal.txt'
+```
+
+### Counting the number of words 
+
+Now that we know how to find specific words, we can count the number of times they occur with `wc` (word count). 
+
+###
+
+Use the code chunk below to count the number of times `child` (whole word) shows up in `data/modest-proposal.txt`.
+
+```{bash grep-wc-child, exercise=TRUE, exercise.setup = "prepare-modest-proposal", exercise.lines = 3}
+# use grep to find 'child', then count the number of words with 'wc'
+
+```
+
+###
+
++ `10` = number of lines
+
++ `113` = number of words
+
++ `601` = number of characters
+
+`wc` can also count the number of words or line a particular file. 
+
+###
+
+Use the code chunk below to view the number of words in the `data/modest-proposal.txt` file:
+
+```{bash grep-wc-w, exercise=TRUE, exercise.setup = "prepare-modest-proposal", exercise.lines = 3}
+# use wc and `-w` to count words in 'data/modest-proposal.txt'
+
+```
+
+###
+
+Count the number of lines `-l` in the `data/who-tb-data.tsv` file:
+
+```{bash grep-wc-l, exercise=TRUE, exercise.setup = "prepare-modest-proposal", exercise.lines = 3}
+# use 'wc' and `-l` to count lines in 'data/who-tb-data.tsv'
+
+```
+
+###
+
+These commands come in handy when we're want to quickly check how large a data file is, or check it's contents.  
+
+## Deleting stuff 
+
+The last two commands we'll cover is how to delete files and directories. These can be dangerous, so use them with caution on your own machine. 
+
+### Remove files 
+
+We'll start by removing the `modest-proposal.txt` file in the `data/` directory with `rm` (remove). Confirm their deletion with `ls`.
+
+```{bash, prepare-delete-file}
+curl -s "https://www.gutenberg.org/files/1080/1080-0.txt" > 'data/modest-proposal.txt'
+```
+
+```{bash rm, exercise=TRUE, exercise.setup = "prepare-delete-file", exercise.lines = 6}
+# list the files in data/
+
+# remove 'data/modest-proposal.txt'
+
+# confirm with ls
+```
+
+###
+
+We want to reduce the amount of commands we need to use to confirm our work. Adding the `-v` (verbose) prints our action to the screen. 
+
+```{bash rm-v, exercise=TRUE, exercise.setup = "prepare-delete-file", exercise.lines = 4}
+# list the files in data/
+
+# remove 'data/modest-proposal.txt' with '-v'
+
+```
+
+###
+
+### Make directories 
+
+Before we delete an entire directory, we're going to create a backup (`back/`) directory and copy the `modest-proposal.txt` file in `data/` to this location (*I've downloaded this file for you in the code chunks below*). 
+
+###
+
+The `mkdir` command creates new folders--use it to create `back/` and confirm with `ls`. 
+
+```{bash mkdir, exercise=TRUE, exercise.lines = 4}
+# create the 'back' folder with 'mkdir'
+
+# view folders with 'ls'
+
+```
+
+
+### Copy files 
+
+We can copy files using the `cp` command (`cp [original_file.txt] [new_file.txt]`). If the files we're copying are in a directory, we just include the full path to both files. 
+
+```{bash, prepare-copy-file}
+# cp -v mp-backup.txt /back
+curl -s "https://www.gutenberg.org/files/1080/1080-0.txt" > 'data/modest-proposal.txt'
+mkdir back
+```
+
+###
+
+Copy the `modest-proposal.txt` from `data/` to `back/` (*it's already been created for you*) using the `cp` (copy) command:
+
+
+```{bash cp, exercise=TRUE, exercise.setup = "prepare-copy-file", exercise.lines = 4}
+# list files and folders with 'ls;
+
+# copy 'modest-proposal.txt' to 'back'
+
+```
+
+###
+
+Once again, the command-line doesn't tell us when we've done here, but we can include the `-v` option to `cp` for a print out of what we've done. 
+
+```{bash cp-v, exercise=TRUE, exercise.setup = "prepare-copy-file", exercise.lines = 4}
+# list files and folders with 'ls;
+
+# copy 'modest-proposal.txt'  to 'back' again (using '-v')
+
+```
+
+### Removing directories 
+
+The `rmdir` command deletes **empty** directories and their contents. This is a lifesaver if you have files in a directory you don't want to delete. 
+
+###
+
+To see how this works, make sure the `modest-proposal.txt` is in `back/`, and try to remove the `back/` directory using `rmdir`. 
+
+```{bash, prepare-delete-dir}
+mkdir back
+curl -s "https://www.gutenberg.org/files/1080/1080-0.txt" > 'back/modest-proposal.txt'
+```
+
+```{bash rmdir, exercise=TRUE, exercise.setup = "prepare-delete-dir", exercise.lines = 4}
+# list the files in 'back/'
+
+# remove 'back' with 'rmdir'
+
+```
+
+###
+
+However, if we want to remove a folder and it's contents, we can use `rm` and add `r` (for recursive). We also want to add the `-v` command to `rm` for better bookkeeping (and sanity).
+
+```{bash rmdir-v, exercise=TRUE, exercise.setup = "prepare-delete-dir", exercise.lines = 4}
+# list the files in 'back/'
+
+# remove 'back' with 'rm', '-r' and '-v'
+
+```
+
+## Conclusion 
+
+This has been a very quick introduction to the command-line. As I hope you've been able to see, these commands can come in handy if you find yourself staring at a blinking Terminal screen. 
+
+###
+
+The command-line is used almost exclusively with [Git](https://git-scm.com/), a version control system also accessible to you in [RStudio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN). 
+
+###
+
+Check out the [RStudio IDE cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf) for more information on the tools available in RStudio. 
+
+## More resources 
+
+As promised, below are some additional resources for learning the command-line: 
+
+1. [Missing Semester - MIT Course](https://missing.csail.mit.edu/) - full course with great lectures and examples   
+2. [Linuxize - online documentation with examples](https://linuxize.com/tags/terminal/) - documentation and examples for nearly all commands    
+3. [Data Science at the Command Line](https://datascienceatthecommandline.com/2e/) - excellent resource if you'd like to master the command-line and learn other open source tools like [Docker](https://www.docker.com/), [Python](https://www.python.org/), etc. 
+

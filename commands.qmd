@@ -1,0 +1,74 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: '# '
+---
+
+# Commands {#sec-commands}
+
+```{bash}
+#| label: setup
+#| include: false
+whoami
+```
+
+
+```{r}
+#| label: common
+#| include: false
+# Sys.setenv('QUARTO_PROJECT_DIR' = 'data')
+# Sys.getenv('QUARTO_PROJECT_DIR')
+source("_common.R")
+```
+
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+Commands are the first part of a command line instruction, specifying the program or built-in functionality to be executed. We're going to start with a basic command: `whoami`:
+
+```{bash}
+whoami
+```
+
+The command `whoami` returns a value for the currently logged-in user. What we've just done is referred to as the [read–eval–print loop](https://www.computerhope.com/jargon/r/repl.htm), or REPL, and it's the underlying process of the command-line. Here is how it works: 
+
+## REPL
+
+1. **read** the command you've typed into the code chunk and create a data structure for it  
+
+2. **eval**uate what the command means and perform the associated operation (in our case, retrieving the value of the currently logged-in user) 
+
+3. **print** the value from **eval** results to the screen so we can see it 
+
+A great follow-up question is *where am I?*, but for this we'll use `pwd`, which stands for 'print working directory.'
+
+```{bash}
+pwd
+```
+
+Above we can see I am logged in as `/Users/mjfrigaard` and I'm currently accessing the `projects/books/fm-unix` directory. 
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```

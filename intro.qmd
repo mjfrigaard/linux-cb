@@ -7,8 +7,15 @@ knitr:
 
 # Introduction {.unnumbered}
 
-```{r}
+```{bash}
 #| label: setup
+#| include: false
+whoami
+```
+
+
+```{r}
+#| label: common
 #| include: false
 source("_common.R")
 ```
@@ -30,10 +37,6 @@ co_box(
 )
 ```
 
-
-
-## Background 
-
 Unix and Linux are like the great ancestors and heroes of the computer world, with stories full of innovation, community, and evolution.
 
 ### The Tale of Unix
@@ -51,7 +54,6 @@ Fast forward a couple of decades to 1991, when a Finnish student named Linus Tor
 Linux flourished with the help of developers around the world. It's a testament to what collaboration and shared goals can achieve. This global effort resulted in an operating system that is not only free but also incredibly powerful and reliable.
 
 Linux, inspired by the teachings of Unix, was the eager apprentice who learned from the master's manual and decided to share its own set of tools with the world for free. Making it free meant anyone could contribute their skills, refine the tools, and share the fruits of their labor. This open-source community of developers eventually cultivated various specialties, known as "distributions," each with ts unique set of tools and embellishments, yet all rooted in the same foundational teachings.
-
 
 ```{r}
 #| label: co_box_modern_unix
@@ -95,9 +97,6 @@ The Bash shell is like the skilled artisan's primary tool within the grand works
 
 The first four chapters will cover an introduction to some common commands in Unix/Linux. These will help you find your way around your machine's folders and files. We'll also cover how to manipulate text within files. 
 
-```{bash}
-whoami
-```
 
 ```{r}
 #| label: git_contrib_box

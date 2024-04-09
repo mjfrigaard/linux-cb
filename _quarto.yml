@@ -17,13 +17,27 @@ book:
   #repo-actions: [edit, issue]
   chapters:
     - index.qmd 
-    - part: intro.qmd
+    - preface.qmd
+    - intro.qmd
+    - part: setups.qmd
       chapters:
-        - setup.qmd
-        - syntax.qmd
-        - files_folders.qmd
-        - text.qmd
+        - terminals.qmd
+        - quarto.qmd
+        - vms.qmd
+    - part: syntax.qmd
+      chapters:
+        - commands.qmd
+        - arguments.qmd
+        - options.qmd
         - pipes.qmd
+    - part: files_dirs.qmd
+      chapters:
+        - dirs.qmd
+        - files.qmd
+    - part: text.qmd
+      chapters:
+        - text_commands.qmd
+        - text_editors.qmd
     - part: scripts.qmd
       chapters:
         - format.qmd
@@ -55,5 +69,3 @@ format:
 
 execute:
   freeze: true
-
-

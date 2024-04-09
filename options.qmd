@@ -1,0 +1,71 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: '# '
+---
+
+# Options {#sec-options}
+
+```{bash}
+#| label: setup
+#| include: false
+whoami
+```
+
+
+```{r}
+#| label: common
+#| include: false
+# Sys.setenv('QUARTO_PROJECT_DIR' = 'data')
+# Sys.getenv('QUARTO_PROJECT_DIR')
+source("_common.R")
+```
+
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+**Options** (sometimes called flags) modify how a command operates, allowing for more control over its behavior. Options often start with one or two dashes (`-` or `--`). For example, in `ls -l`, the `-l` option tells `ls` to use a long listing format.
+
+```{bash}
+ls -l /
+```
+
+Options modify how the action is performed.
+
+## Standard Input and Standard Output
+
+Two key concepts in Unix text processing are standard input (`stdin`) and standard output (`stdout`). `stdin` is the default input stream, which often comes from the keyboard or the output of another command. `stdout` is the default output stream, typically the terminal screen. Many Unix commands read from `stdin` when no file is specified and write to `stdout`, allowing the output of one command to become the input of another. This design facilitates the chaining of commands (piping) to perform complex operations in a streamlined manner.
+
+-   **Input** generally refers to the data fed into a command, which can come from `stdin` or be specified as arguments.
+
+-   **Output** is the data produced by a command, displayed on `stdout` unless redirected.
+
+
+## Recap
+
+This framework of commands, arguments, options, and the interplay of input (`stdin`), output (`stdout`) , and pipes enables sophisticated data processing and manipulation directly from the terminal.
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```

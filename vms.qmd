@@ -1,0 +1,48 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    
+---
+
+# Virtual Machines {#sec-vms}
+
+```{bash}
+#| label: setup
+#| include: false
+whoami
+```
+
+```{r}
+#| label: common
+#| include: false
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+Virtual machines (VMs) offer a flexible way to run Unix/Linux environments on top of your existing operating system, regardless of whether it's Windows, macOS, or another Linux distribution. This subsection explores the setup process for virtual machines, highlighting popular VM software like VirtualBox and VMware. It will guide readers through creating a new VM, installing a Unix/Linux distribution, configuring network settings, and optimizing performance. This part is essential for those looking to experiment with Unix/Linux systems in an isolated environment.
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```
