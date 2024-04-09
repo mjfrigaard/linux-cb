@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Martin Frigaard">
 <meta name="description" content="A Unix Field Manual">
 
-<title>fm-unix</title>
+<title>fm-unix – Text Commands</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./preface.html" rel="next">
+<link href="./text_editors.html" rel="next">
+<link href="./text.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome!</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./text.html">Manipulating Text</a></li><li class="breadcrumb-item"><a href="./text_commands.html">Text Commands</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -109,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome!</span></a>
   </div>
 </li>
@@ -214,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./text_commands.html" class="sidebar-item-text sidebar-link">
+  <a href="./text_commands.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Text Commands</span></a>
   </div>
 </li>
@@ -276,33 +276,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome!</a></li>
+  <li><a href="#the-text-stream" id="toc-the-text-stream" class="nav-link active" data-scroll-target="#the-text-stream">The Text Stream</a></li>
+  <li><a href="#sec-txt-manip" id="toc-sec-txt-manip" class="nav-link" data-scroll-target="#sec-txt-manip">Text Manipulation</a>
+  <ul>
+  <li><a href="#sec-cat" id="toc-sec-cat" class="nav-link" data-scroll-target="#sec-cat"><code>cat</code></a></li>
+  <li><a href="#sec-grep" id="toc-sec-grep" class="nav-link" data-scroll-target="#sec-grep"><code>grep</code></a></li>
+  <li><a href="#sec-sort" id="toc-sec-sort" class="nav-link" data-scroll-target="#sec-sort"><code>sort</code></a></li>
+  <li><a href="#sec-uniq" id="toc-sec-uniq" class="nav-link" data-scroll-target="#sec-uniq"><code>uniq</code></a></li>
+  <li><a href="#sec-cut" id="toc-sec-cut" class="nav-link" data-scroll-target="#sec-cut"><code>cut</code></a></li>
+  <li><a href="#sec-paste" id="toc-sec-paste" class="nav-link" data-scroll-target="#sec-paste"><code>paste</code></a></li>
+  <li><a href="#sec-join" id="toc-sec-join" class="nav-link" data-scroll-target="#sec-join"><code>join</code></a></li>
+  <li><a href="#sec-comm" id="toc-sec-comm" class="nav-link" data-scroll-target="#sec-comm"><code>comm</code></a></li>
+  <li><a href="#sec-diff" id="toc-sec-diff" class="nav-link" data-scroll-target="#sec-diff"><code>diff</code></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./text.html">Manipulating Text</a></li><li class="breadcrumb-item"><a href="./text_commands.html">Text Commands</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">fm-unix</h1>
+<h1 class="title"><span id="sec-txt-cmds" class="quarto-section-identifier">Text Commands</span></h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>A Unix Field Manual</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Martin Frigaard </p>
-          </div>
-  </div>
     
   
     
@@ -313,8 +314,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome!</h1>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -328,16 +327,98 @@ ul.task-list li input[type="checkbox"] {
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 1.00em; color: #282b2d;">
-<p>This book is under development. Thank you for your patience.</p>
+<p>This section is under development. Thank you for your patience.</p>
 </div>
 </div>
 </div>
 </div>
-<p>Welcome to the beginning of your Unix and Linux journey. This book aims to provide a clear understanding of the concepts and commands of Unix/Linux, even for non-technical audiences. Whether you are a student, a professional from a non-IT field, or someone curious about operating systems, this book will guide you through the essentials of Unix/Linux.</p>
-<!-- ## What This Book Is Not -->
-<!-- ## Audience and Prerequisites -->
+<p>The Unix and Linux operating systems thrive on simplicity and efficiency, principles elegantly manifested in text handling. Central to this ecosystem are the commands explicitly designed for text manipulation—tools such as <code>cat</code>, <code>sort</code>, <code>cut</code>, and others form the core of text processing activities.</p>
+<section id="the-text-stream" class="level3">
+<h3 class="anchored" data-anchor-id="the-text-stream">The Text Stream</h3>
+<p>Unix/Linux conceptualizes text as a stream, a continuous sequence of characters that can be manipulated in real-time. Streams are crucial for understanding how Unix/Linux commands process text. A text stream can originate from files, input devices, or even the output of other commands. Treating text as a steady stream of inputs offers a versatile and powerful method for text manipulation.</p>
+<!--
+
+- **`cat`**: Beyond simply displaying the content of files, `cat` is often used to concatenate several text files into one and to work with text streams.
+- **`sort`**: As the name suggests, `sort` organizes text lines into a specified order, proving invaluable for data analysis and organization tasks.
+- **`cut`**: This command extracts sections from each line of input, making it essential for parsing and processing delimited data.
+- **`grep`**: A powerful search tool, `grep` filters text according to patterns, enabling complex data extraction and analysis operations.
+- **`awk`**: An entire programming language in itself, `awk` is designed for pattern scanning and processing, offering sophisticated text manipulation capabilities.
+- **`sed`**: The stream editor (`sed`) transforms text in a stream, allowing for powerful pattern matching and substitution.
+
+Each of these commands leverages stdin and stdout, enabling them to be combined in pipelines that filter, transform, and manipulate text in complex ways with just a few keystrokes. This section aims to demystify these commands, providing a foundation for understanding and utilizing Unix's rich text manipulation capabilities.
+
+By mastering these commands, you gain the ability to effortlessly manipulate text streams, transforming raw data into structured information. This knowledge is not just a technical skill but a gateway to the deeper philosophy of Unix, where simplicity and efficiency reign supreme.
+-->
+</section>
+<section id="sec-txt-manip" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-txt-manip">Text Manipulation</h2>
+<p>These commands embody the Unix philosophy of ‘<em>do one thing and do it well</em>’ and demonstrate the system’s power in processing text streams. This section will explore these fundamental commands, illustrating how they easily interact with text streams, standard input (<code>stdin</code>), and standard output (<code>stdout</code>) to perform complex text manipulations.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span style="font-weight: bold; font-size: 1.25em;">Standard Input and Output</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="font-size: 1.00em; color: #282b2d;">
+<p><code>stdin</code> (standard input) is a stream from which a command reads its input. By default, it’s the keyboard, but it can be redirected to read from a file or another command’s output.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/mr-robot.gif" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>The text stream looks nothing like this</figcaption>
+</figure>
+</div>
+<p><code>stdout</code> (standard output) is a stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command’s input.</p>
+</div>
+</div>
+</div>
+</div>
+<section id="sec-cat" class="level3">
+<h3 class="anchored" data-anchor-id="sec-cat"><code>cat</code></h3>
+<p><strong><code>cat</code> (Concatenate)</strong>: <code>cat</code> displays the content of files straight to your screen, useful for checking what’s in a text file quickly.</p>
+<p>This is similar to printing a file and laying out the pages on the floor to see them all at once.</p>
+</section>
+<section id="sec-grep" class="level3">
+<h3 class="anchored" data-anchor-id="sec-grep"><code>grep</code></h3>
+<p><strong><code>grep</code></strong> stands for “global regular expression print” and it reads from <code>stdin</code> or a list of files and outputs the lines that contain matches for a specified pattern.</p>
+</section>
+<section id="sec-sort" class="level3">
+<h3 class="anchored" data-anchor-id="sec-sort"><code>sort</code></h3>
+<p><strong><code>sort</code></strong>: <code>sort</code> arranges the lines in a text file into order:</p>
+<p>Similar to organizing our stack of papers alphabetically.</p>
+</section>
+<section id="sec-uniq" class="level3">
+<h3 class="anchored" data-anchor-id="sec-uniq"><code>uniq</code></h3>
+<p><strong><code>uniq</code></strong>: <code>uniq</code> helps by removing duplicate lines from a file, making sure every line is unique.</p>
+<p>After accidentally printing duplicates of a document, you remove the extra copies.</p>
+</section>
+<section id="sec-cut" class="level3">
+<h3 class="anchored" data-anchor-id="sec-cut"><code>cut</code></h3>
+<p><strong><code>cut</code></strong>: If you only want the dates from a list of events, you might physically cut them out of the paper. <code>cut</code> extracts specific parts of lines in a file, like cutting out columns of text.</p>
+</section>
+<section id="sec-paste" class="level3">
+<h3 class="anchored" data-anchor-id="sec-paste"><code>paste</code></h3>
+<p><strong><code>paste</code></strong>: Taking snippets of text from different documents and sticking them together into one, <code>paste</code> combines lines from multiple files side by side.</p>
+</section>
+<section id="sec-join" class="level3">
+<h3 class="anchored" data-anchor-id="sec-join"><code>join</code></h3>
+<p><strong><code>join</code></strong>: If you have two lists with common information, you might merge them based on what matches. <code>join</code> merges lines from two files based on a common field.</p>
+</section>
+<section id="sec-comm" class="level3">
+<h3 class="anchored" data-anchor-id="sec-comm"><code>comm</code></h3>
+<p><strong><code>comm</code> (Compare)</strong>: Laying two printed lists side by side to see what items appear on both, only on one, or the other, <code>comm</code> compares two sorted files line by line.</p>
+</section>
+<section id="sec-diff" class="level3">
+<h3 class="anchored" data-anchor-id="sec-diff"><code>diff</code></h3>
+<p><strong><code>diff</code> (Difference)</strong>: Highlighting what changes have been made between your draft and the final copy of a letter, <code>diff</code> shows the differences between two files.</p>
+<p>These analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -346,7 +427,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 0.90em; color: #282b2d;">
 <p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
@@ -356,6 +437,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -781,10 +863,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./text.html" class="pagination-link" aria-label="Manipulating Text">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Manipulating Text</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./preface.html" class="pagination-link" aria-label="Preface">
-        <span class="nav-page-text">Preface</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./text_editors.html" class="pagination-link" aria-label="Text Editors">
+        <span class="nav-page-text">Text Editors</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

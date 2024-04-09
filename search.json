@@ -4,205 +4,160 @@
     "href": "index.html",
     "title": "fm-unix",
     "section": "",
-    "text": "Welcome!\nWelcome to the beginning of your Unix and Linux journey. This book aims to provide a clear understanding of the concepts and commands of Unix/Linux, even for non-technical audiences. Whether you are a student, a professional from a non-IT field, or someone curious about operating systems, this book will guide you through the essentials of Unix/Linux.",
+    "text": "Welcome!\n\n\n\n\n\n\nCaution\n\n\n\n\n\n\nThis book is under development. Thank you for your patience.\n\n\n\n\nWelcome to the beginning of your Unix and Linux journey. This book aims to provide a clear understanding of the concepts and commands of Unix/Linux, even for non-technical audiences. Whether you are a student, a professional from a non-IT field, or someone curious about operating systems, this book will guide you through the essentials of Unix/Linux.\n\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Welcome!"
     ]
   },
   {
-    "objectID": "index.html#preface",
-    "href": "index.html#preface",
-    "title": "fm-unix",
-    "section": "Preface",
-    "text": "Preface\nUnix and Linux are powerful, versatile, and widely used operating systems that run on millions of devices worldwide, from smartphones to supercomputers. Learning about Unix/Linux can open doors to many career opportunities and help you better understand the digital world around you.\nThis book is structured to gradually introduce you to the Unix/Linux environment, starting from the basics to more complex concepts. Here`s what each section covers:\nIntroduction\nThe introduction acquaints you with some background that formed the landscape of Unix/Linux systems. It explains the Bash shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Unix/Linux systems.\nSet-Up: Before diving into the commands and scripts, setting up your Unix/Linux environment is crucial. This section guides you through various options for setting up Unix/Linux on your machine, be it natively or through a virtual machine.\nSyntax: Understanding the syntax is vital for effectively communicating with the Unix/Linux system. This section demystifies the structure of commands, including how to differentiate between commands, arguments, and options and manage inputs and outputs. This knowledge is critical to executing tasks efficiently in the command line.\nFiles and Folders: Navigating and managing files and folders are daily tasks for Unix/Linux users. This section covers essential commands such as cd for changing directories, pwd to print the current directory, ls for listing files, and mkdir for making directories. It also explores file manipulation commands like cp (copy), mv (move), rm (remove), and less for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Unix/Linux.\nManipulate Text: Unix/Linux systems are renowned for their powerful text manipulation capabilities. This section introduces commands such as cat for displaying file contents, grep for searching within files, sort for sorting data, uniq for filtering unique lines, and cut, paste, and join for editing files. Mastering these commands will allow you to handle and process text data efficiently.\nPipes: Pipes are a cornerstone of Unix/Linux productivity, enabling the output of one command to serve as the input to another. This section covers how to combine commands using stdout and stdin, allowing for robust command chains that can perform complex tasks with a simple syntax. Understanding pipes unlocks a higher level of command-line efficiency and is a step towards advanced Unix/Linux usage.\nShell Scripts (in development)\nShell scripting is a powerful tool for automating repetitive tasks in Unix/Linux. This section introduces you to writing your shell scripts, covering the basics of script creation, execution, and debugging. You`ll learn how to automate simple tasks, making your Unix/Linux experience more productive and enjoyable.\nFormats: Shell scripts can be written in various formats, depending on your shell (e.g., Bash, Zsh). This section delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Unix/Linux systems.\nPermissions: Understanding file permissions is crucial to managing the security of your files and directories in Unix/Linux. This section explains how Unix/Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.\nBy the end of this book, youll have a solid understanding of the Unix/Linux operating system. Youll be equipped to navigate, manage files, write scripts, and set permissions confidently. Whether you`re looking to enhance your career prospects, manage your Unix/Linux systems, or simply satisfy your curiosity, this book will be your companion on a fascinating journey into the world of Unix/Linux.",
-    "crumbs": [
-      "Welcome!"
-    ]
-  },
-  {
-    "objectID": "index.html#section-1",
-    "href": "index.html#section-1",
-    "title": "fm-unix",
+    "objectID": "preface.html#section-1",
+    "href": "preface.html#section-1",
+    "title": "Preface",
     "section": "",
     "text": "See a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
-      "Welcome!"
+      "Preface"
     ]
   },
   {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Set-Up",
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
     "section": "",
-    "text": "Quarto\nis an ‘open-source scientific and technical publishing system’ that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards.\nQuarto is an ‘open-source scientific and technical publishing system’ built on Pandoc. It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through writing YAML headers and Bash code chunks, two essential components when working with Quarto in a Unix/Linux context.",
+    "text": "The Tale of Unix\nImagine Unix and Linux as the master and apprentice in the vast workshop of computer operating systems. Our story begins in the late 1960s at AT&T’s Bell Labs. Unix was born out of a desire for a more flexible and portable operating system. It was a time when computers were as big as rooms and operated on specific, often incompatible, systems. Unix was a breath of fresh air because it was designed to be simple, elegant, and, most importantly, portable, meaning it could run on different types of hardware.\nThe Unix philosophy has been distilled into a comprehensive operating system of essential commands and operations, guiding other apprentices in creating their versions of tools and systems.\nUnix is like the master craftsman in this story, having laid the foundational tools and techniques, and crafting a blueprint for how computers could efficiently and securely manage tasks like organizing files or running software.",
     "crumbs": [
-      "Introduction",
-      "Set-Up"
+      "Introduction"
     ]
   },
   {
-    "objectID": "setup.html#quarto",
-    "href": "setup.html#quarto",
-    "title": "Set-Up",
+    "objectID": "intro.html#recap",
+    "href": "intro.html#recap",
+    "title": "Introduction",
+    "section": "Recap",
+    "text": "Recap\nTo summarize, Unix and Linux provide the underlying framework for computer programs. They’re like the behind-the-scenes craftsmen ensuring the workshop runs smoothly, whether crafting a simple piece of furniture (like running a straightforward program on your computer), or constructing an elaborate mansion (like managing the complex operations of a large server).\nThe Bash shell is like the skilled artisan’s primary tool within the grand workshop of Unix and Linux, serving as a bridge between the user and the system’s deeper capabilities. Just as a master carpenter relies on a trusted hammer or saw, users of Unix and Linux turn to Bash for navigating and manipulating the vast landscape of these operating systems.\nThe first four chapters will cover an introduction to some common commands in Unix/Linux. These will help you find your way around your machine’s folders and files. We’ll also cover how to manipulate text within files.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "terminals.html",
+    "href": "terminals.html",
+    "title": "Terminals",
     "section": "",
-    "text": "Literate Programming\n\n\n\n\n\n\n\n‘Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.’ - Donald Knuth. Literate Programming (1984) in Literate Programming. CSLI, 1992, pg. 99.\n\n\n\n\n\n\nYAML header\nThis part will explain the syntax and options available within the YAML header, showing how to configure document properties such as title, engine, output format, and more. It serves as the foundation for controlling how your Quarto document behaves and appears.\nQuarto documents are written in markdown and can include executable code in various programming languages, including Unix commands. YAML is a lightweight markup language that’s easy to write and read. The YAML header is placed between three dashes --- at the top of each Quarto document to specify metadata and global options.\nTo run Bash commands, specify knitr in the engine field of in the YAML header of the .qmd file, and any additional key-value pairs:1\n---\ntitle: \"Using Bash\"\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n---\nThis simplicity allows authors to focus on their content rather than formatting.\n\n\nBash Code Chunks\nIntroduced in 1989, Bash has become the default command-line interface or “shell” for most Linux distributions.2 We’ll use Bash commands and scripts to preproceess data files, render Quarto documents, and automate other operations in the data analysis pipeline, from downloading and ingesting data to creating and deploying analysis outputs.\nOne of the powerful features of Quarto is the ability to integrate executable code chunks into Markdown documents.3 You can create bash code chunks using the following syntax:\n```{bash}\necho \"foo\" \n```\nBash code chunks allow you to include executable Bash commands within your Quarto documents. You can also specify the code chunk options with the hash-pipe (#|):4\n\n\nshow/hide echo\necho \"foo\"\n## foo\n\n\n```{bash}\n#| code-fold: show\n#| code-summary: 'show/hide echo'\necho \"foo\" \n```",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nUsing macOS’s Terminal to learn Unix/Linux offers a unique and powerful environment, but it comes with special considerations rooted in macOS’s distinct architecture and its version of Unix. Here are key points to keep in mind:\n\nTerminal Emulators: The default Terminal app on macOS provides a solid interface to access the Unix command line, but there are other terminal emulators available (like iTerm2) that offer additional features such as split panes, search, and customization options.\nShells: macOS has transitioned from using Bash as the default shell to Zsh since macOS Catalina. While both are Unix shells, they have some differences in features and configuration files (~/.bash_profile for Bash vs. ~/.zshrc for Zsh).\nHomebrew: Homebrew is an essential package manager for macOS, filling the gap for Unix/Linux software that isn’t pre-installed on macOS. It allows users to easily install and manage additional Unix tools, GNU utilities, languages, and applications. Learning to use Homebrew will significantly expand the Unix/Linux tools at your disposal on a macOS system.\nBSD vs. GNU Commands: macOS is based on Darwin, which incorporates elements from BSD Unix. Therefore, some of the command-line tools on macOS behave differently from their GNU counterparts found in Linux. For example, options and flags for commands like ls, sed, and tar may vary. This means that while the overarching principles remain the same, specific command syntax and options might require adjustments or the use of GNU versions of commands (installed via Homebrew, for instance).\nCase Sensitivity: By default, the macOS file system (APFS or HFS+) is case-insensitive but case-preserving. This behavior is different from most Linux file systems, which are case-sensitive. This can affect scripts and commands that rely on case distinctions for file and directory names.\nSecurity and Permissions: macOS has implemented increasingly stringent security measures, including the System Integrity Protection (SIP) and sandboxing mechanisms, which can restrict access to certain files and system operations. While these features enhance security, they can also limit what you can do via the Terminal. Understanding macOS’s security model and permissions (such as using sudo wisely) is crucial.\nFilesystem Hierarchy: While the Unix filesystem hierarchy is preserved in macOS, there are macOS-specific directories and structures, such as ~/Library for user-specific application support files and preferences. Understanding these macOS-specific elements is important when navigating and managing files via the Terminal.\nNetworking and Interoperability: macOS integrates well with both Unix/Linux and Windows environments, supporting various network protocols and file sharing options out of the box. Commands like ssh, scp, and smbutil can be used for remote access and file transfers, making macOS a versatile platform for learning Unix/Linux networking basics.\nGraphical Applications: macOS allows Unix command-line tools to interact with its graphical user interface (GUI) applications in ways that are not typically available on other Unix systems. For instance, the open command can be used to open files or applications, and osascript can interact with AppleScript-enabled applications for automation.\n\n\nTerminal Pane (Posit Workbench)\n\n\n\nTerminal Pane in Posit Workbench\n\n\nLearning Unix/Linux on macOS provides a robust foundation with the added benefit of macOS-specific features and conveniences. However, it’s essential to be aware of the differences and limitations inherent in macOS’s implementation of Unix. Balancing the powerful capabilities of Unix with the peculiarities of macOS will allow you to make the most of your learning experience.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
-      "Introduction",
-      "Set-Up"
+      "Set-Ups",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Terminals</span>"
     ]
   },
   {
-    "objectID": "setup.html#terminal-macos",
-    "href": "setup.html#terminal-macos",
-    "title": "Set-Up",
-    "section": "Terminal (macOS)",
-    "text": "Terminal (macOS)\nThe terminal application in macOS is a gateway to the Unix command line, providing users with direct access to Unix/Linux commands and utilities. This subsection focuses on setting up and customizing the terminal in macOS, covering basic configurations, installing essential software, and introducing useful shortcuts and commands. It aims to equip macOS users with the knowledge needed to effectively utilize the terminal for Unix/Linux operations.",
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "Quarto",
+    "section": "",
+    "text": "YAML header\nYAML is a lightweight markup language that’s easy to write and read. In Quarto, the YAML header is used to configure document properties such as the title, engine, output format, and more. It serves as the foundation for controlling how your Quarto document behaves and appears.\nQuarto documents are written in markdown and can include executable code in various programming languages, including Unix commands. The YAML header is placed between three dashes --- at the top of each Quarto document to specify metadata and global options.\nTo run Bash commands, specify knitr in the engine field of in the YAML header of the Quarto file, and any additional key-value pairs:1",
     "crumbs": [
-      "Introduction",
-      "Set-Up"
+      "Set-Ups",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto</span>"
     ]
   },
   {
-    "objectID": "setup.html#virtual-machines",
-    "href": "setup.html#virtual-machines",
-    "title": "Set-Up",
-    "section": "Virtual Machines",
-    "text": "Virtual Machines\nVirtual machines (VMs) offer a flexible way to run Unix/Linux environments on top of your existing operating system, regardless of whether it’s Windows, macOS, or another Linux distribution. This subsection explores the setup process for virtual machines, highlighting popular VM software like VirtualBox and VMware. It will guide readers through creating a new VM, installing a Unix/Linux distribution, configuring network settings, and optimizing performance. This part is essential for those looking to experiment with Unix/Linux systems in an isolated environment.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Introduction",
-      "Set-Up"
-    ]
-  },
-  {
-    "objectID": "setup.html#footnotes",
-    "href": "setup.html#footnotes",
-    "title": "Set-Up",
+    "objectID": "quarto.html#footnotes",
+    "href": "quarto.html#footnotes",
+    "title": "Quarto",
     "section": "",
     "text": "Read more about configuring shell code blocks in Quarto in the documentation.↩︎\nBash was the default command-line interface for Apple’s macOS (which is Unix-based) until the transition to zsh as the default shell in macOS Catalina.↩︎\nIn fact, this entire book was created using Quarto and executable code chunks!↩︎\nConsult the full list of code chunk options in the Quarto documentation.↩︎",
     "crumbs": [
-      "Introduction",
-      "Set-Up"
+      "Set-Ups",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Quarto</span>"
     ]
   },
   {
-    "objectID": "syntax.html",
-    "href": "syntax.html",
-    "title": "Syntax",
+    "objectID": "vms.html",
+    "href": "vms.html",
+    "title": "Virtual Machines",
     "section": "",
-    "text": "Commands\nCommands are the first part of a command line instruction, specifying the program or built-in functionality to be executed, such as ls for listing directory contents or grep for pattern searching.\nls /\n#  Applications\n#  Library\n#  System\n#  Users\n#  Volumes\n#  bin\n#  cores\n#  dev\n#  etc\n#  home\n#  opt\n#  private\n#  sbin\n#  tmp\n#  usr\n#  var",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nVirtual machines (VMs) offer a flexible way to run Unix/Linux environments on top of your existing operating system, regardless of whether it’s Windows, macOS, or another Linux distribution. This subsection explores the setup process for virtual machines, highlighting popular VM software like VirtualBox and VMware. It will guide readers through creating a new VM, installing a Unix/Linux distribution, configuring network settings, and optimizing performance. This part is essential for those looking to experiment with Unix/Linux systems in an isolated environment.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
-      "Introduction",
-      "Syntax"
+      "Set-Ups",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Virtual Machines</span>"
     ]
   },
   {
-    "objectID": "syntax.html#arguments",
-    "href": "syntax.html#arguments",
-    "title": "Syntax",
-    "section": "Arguments",
-    "text": "Arguments\nArguments follow the command and provide additional information or specify targets for the command, such as file names and paths. For example, in cat data/myfile.txt, the data/myfile.txt file path is an argument to the cat command, specifying which file it should display.\n\ncat data/myfile.txt\n#  This is my file.",
+    "objectID": "commands.html",
+    "href": "commands.html",
+    "title": "Commands",
+    "section": "",
+    "text": "REPL\nA great follow-up question is where am I?, but for this we’ll use pwd, which stands for ‘print working directory.’\npwd\n#  /Users/mjfrigaard/projects/books/fm-unix\nAbove we can see I am logged in as /Users/mjfrigaard and I’m currently accessing the projects/books/fm-unix directory.",
     "crumbs": [
-      "Introduction",
-      "Syntax"
+      "Syntax",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Commands</span>"
     ]
   },
   {
-    "objectID": "syntax.html#options",
-    "href": "syntax.html#options",
-    "title": "Syntax",
-    "section": "Options",
-    "text": "Options\nOptions (sometimes called flags) modify how a command operates, allowing for more control over its behavior. Options often start with one or two dashes (- or --). For example, in ls -l, the -l option tells ls to use a long listing format.\n\nls -l /\n#  total 10\n#  drwxrwxr-x  59 root  admin  1888 Apr  5 14:42 Applications\n#  drwxr-xr-x  73 root  wheel  2336 Apr  2 11:16 Library\n#  drwxr-xr-x@ 10 root  wheel   320 Mar 20 23:13 System\n#  drwxr-xr-x   5 root  admin   160 Apr  2 11:13 Users\n#  drwxr-xr-x   3 root  wheel    96 Apr  5 14:39 Volumes\n#  drwxr-xr-x@ 39 root  wheel  1248 Mar 20 23:13 bin\n#  drwxr-xr-x   2 root  wheel    64 Mar  3  2021 cores\n#  dr-xr-xr-x   3 root  wheel  4698 Apr  5 14:39 dev\n#  lrwxr-xr-x@  1 root  wheel    11 Mar 20 23:13 etc -&gt; private/etc\n#  lrwxr-xr-x   1 root  wheel    25 Apr  5 14:39 home -&gt; /System/Volumes/Data/home\n#  drwxr-xr-x   4 root  wheel   128 Sep 25  2023 opt\n#  drwxr-xr-x   6 root  wheel   192 Apr  5 14:39 private\n#  drwxr-xr-x@ 64 root  wheel  2048 Mar 20 23:13 sbin\n#  lrwxr-xr-x@  1 root  wheel    11 Mar 20 23:13 tmp -&gt; private/tmp\n#  drwxr-xr-x@ 11 root  wheel   352 Mar 20 23:13 usr\n#  lrwxr-xr-x@  1 root  wheel    11 Mar 20 23:13 var -&gt; private/var\n\nIn summary, commands tell the system what action to perform, arguments specify on what or whom the action is performed, and options modify how the action is performed.",
+    "objectID": "commands.html#repl",
+    "href": "commands.html#repl",
+    "title": "Commands",
+    "section": "",
+    "text": "read the command you’ve typed into the code chunk and create a data structure for it\nevaluate what the command means and perform the associated operation (in our case, retrieving the value of the currently logged-in user)\nprint the value from eval results to the screen so we can see it\n\n\n\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
-      "Introduction",
-      "Syntax"
+      "Syntax",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Commands</span>"
     ]
   },
   {
-    "objectID": "syntax.html#input",
-    "href": "syntax.html#input",
-    "title": "Syntax",
-    "section": "Input",
-    "text": "Input\nInput generally refers to the data fed into a command, which can come from stdin or be specified as arguments.\n\n\n\n\n\n\nStandard Input (stdin)\n\n\n\n\n\n\nstdin (standard input) is a stream from which a command reads its input. By default, it’s the keyboard, but it can be redirected to read from a file or another command’s output.",
+    "objectID": "arguments.html",
+    "href": "arguments.html",
+    "title": "Arguments",
+    "section": "",
+    "text": "Quotes\nFor example, in cat myfile.txt, the myfile.txt file is an argument to the cat command, specifying which file it should display.\ncat myfile.txt\n#  This is my file\ncat 'myfile.txt'\n#  This is my file",
     "crumbs": [
-      "Introduction",
-      "Syntax"
+      "Syntax",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Arguments</span>"
     ]
   },
   {
-    "objectID": "syntax.html#output",
-    "href": "syntax.html#output",
-    "title": "Syntax",
-    "section": "Output",
-    "text": "Output\nOutput is the data produced by a command, displayed on stdout unless redirected.\n\n\n\n\n\n\nStandard Output (stdout)\n\n\n\n\n\n\nstdout (standard output) is a stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command’s input.",
+    "objectID": "arguments.html#quotes",
+    "href": "arguments.html#quotes",
+    "title": "Arguments",
+    "section": "",
+    "text": "See a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
-      "Introduction",
-      "Syntax"
+      "Syntax",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Arguments</span>"
     ]
   },
   {
-    "objectID": "syntax.html#pipes",
-    "href": "syntax.html#pipes",
-    "title": "Syntax",
-    "section": "Pipes",
-    "text": "Pipes\nPipes (|) allow the output of one command (stdout) to be used as the input (stdin) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next.\nWe’ll use the grep command as an example to illustrate stdin.\nImagine you want to find the word “dress” in a file named roxanne in the data/ folder. Instead of directly providing the file as an argument to grep, you can use cat to read the file and then pipe (|) its output into grep, utilizing stdin to receive the file content.\n\ncat data/roxanne | grep dress\n#  You don't have to wear that dress tonight\n\nIn this command:\n\ncat data/roxanne reads the content of roxanne and sends it to stdout\nThe pipe | redirects the stdout from cat to the stdin of grep.\ngrep dress receives the file’s content through stdin, searches for the word “dress”, and prints lines containing it to stdout.\n\nHere, grep’s input comes from stdin (provided by the pipe) instead of directly reading from a file.",
+    "objectID": "options.html",
+    "href": "options.html",
+    "title": "Options",
+    "section": "",
+    "text": "Standard Input and Standard Output\nTwo key concepts in Unix text processing are standard input (stdin) and standard output (stdout). stdin is the default input stream, which often comes from the keyboard or the output of another command. stdout is the default output stream, typically the terminal screen. Many Unix commands read from stdin when no file is specified and write to stdout, allowing the output of one command to become the input of another. This design facilitates the chaining of commands (piping) to perform complex operations in a streamlined manner.",
     "crumbs": [
-      "Introduction",
-      "Syntax"
+      "Syntax",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Options</span>"
     ]
   },
   {
-    "objectID": "syntax.html#recap",
-    "href": "syntax.html#recap",
-    "title": "Syntax",
+    "objectID": "options.html#standard-input-and-standard-output",
+    "href": "options.html#standard-input-and-standard-output",
+    "title": "Options",
+    "section": "",
+    "text": "Input generally refers to the data fed into a command, which can come from stdin or be specified as arguments.\nOutput is the data produced by a command, displayed on stdout unless redirected.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Options</span>"
+    ]
+  },
+  {
+    "objectID": "options.html#recap",
+    "href": "options.html#recap",
+    "title": "Options",
     "section": "Recap",
     "text": "Recap\nThis framework of commands, arguments, options, and the interplay of input (stdin), output (stdout) , and pipes enables sophisticated data processing and manipulation directly from the terminal.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
-      "Introduction",
-      "Syntax"
-    ]
-  },
-  {
-    "objectID": "files_folders.html",
-    "href": "files_folders.html",
-    "title": "Files and Folders",
-    "section": "",
-    "text": "Navigation\nWhen presented with a new map, the most important thing to find is your location on it. It’s hard to know where you’re going without knowing where you are.",
-    "crumbs": [
-      "Introduction",
-      "Files and Folders"
-    ]
-  },
-  {
-    "objectID": "files_folders.html#sec-nav",
-    "href": "files_folders.html#sec-nav",
-    "title": "Files and Folders",
-    "section": "",
-    "text": "pwd\npwd (Print Working Directory) tells you exactly where you are in the filesystem.\n\npwd # where am I?\n#  /Users/mjfrigaard/projects/books/fm-unix\n\n\n\ncd\ncd (Change Directory) lets you move to a different folder on your computer.\nIf you want to move from the one place to another, cd can get you there. For example, cd /bin takes you to the /bin folder, the toolshed of software tools.\n\ncd /bin # change location\npwd # now where am I?\n#  /bin\n\n\n\nls\nls (List) is like standing in one location, looking around, and seeing what files and folders are around you. In /bin, ls would show you the software tools available:\n\ncd /bin # change location\nls # what's in here?\n#  [\n#  bash\n#  cat\n#  chmod\n#  cp\n#  csh\n#  dash\n#  date\n#  dd\n#  df\n#  echo\n#  ed\n#  expr\n#  hostname\n#  kill\n#  ksh\n#  launchctl\n#  link\n#  ln\n#  ls\n#  mkdir\n#  mv\n#  pax\n#  ps\n#  pwd\n#  realpath\n#  rm\n#  rmdir\n#  sh\n#  sleep\n#  stty\n#  sync\n#  tcsh\n#  test\n#  unlink\n#  wait4path\n#  zsh\n\n\n\nfile\nfile gives you a summary of what a computer file is or what it contains, like telling you if a tool in /bin/pax is a program you can run or a text file.\n\nfile /bin/pax\n#  /bin/pax: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]\n#  /bin/pax (for architecture x86_64):  Mach-O 64-bit executable x86_64\n#  /bin/pax (for architecture arm64e):  Mach-O 64-bit executable arm64e\n\n\n\nless\nless lets you skim through a file on your computer, moving forwards and backwards as you please.\n\nless data/gamehof.tsv\n\n\n\n\nEnter less in the Terminal to scroll",
-    "crumbs": [
-      "Introduction",
-      "Files and Folders"
-    ]
-  },
-  {
-    "objectID": "files_folders.html#sec-manip-files-folders",
-    "href": "files_folders.html#sec-manip-files-folders",
-    "title": "Files and Folders",
-    "section": "Manipulate",
-    "text": "Manipulate\nIn the Unix/Linux world, file and directory management is a fundamental skill. This chapter dives deep into the commands that allow users to create, copy, move, remove, and link files and directories. Each section below introduces a different command, detailing its purpose and providing examples of its use.\n\nmkdir\nmkdir (Make Directory) builds a new folder wherever you tell it to, like making a new folder in our project for outputs (out/) or documents (doc/).\nmkdir out\nmkdir doc\n\n\ncp\ncp (Copy) duplicates files or folders. The cp command is used to Copy files or directories from one location to another. Imagine having a file (myfile.txt) on your root (.) directory that you want to copy to the /data folder; you could use cp to make a duplicate.\n\ncp myfile.txt data/myfile.txt\n# confirm copy\nls data\n#  gamehof.tsv\n#  music_vids.tsv\n#  myfile.txt\n#  roxanne\n#  trees.tsv\n#  wu_tang.txt\n\n\n\nmv\nmv (Move): mv, short for Move, functions similarly to picking up a book from your desk and placing it on a shelf. It moves files or directories from one location to another. It can also be used for renaming files. This command is especially useful for organizing files and directories that are in the wrong place.\n\n# create folder\nmkdir doc\n# move file\nmv data/myfile.txt doc/myfile.txt \n\n\n# confirm move\nls doc\n#  myfile.txt\n\n\n\nrm\nrm (Remove): The rm command stands for Remove and is used to delete files or directories.\n\n# remove doc folder\nrm doc\n#  rm: doc: is a directory\n\n\n# add flag\nrm -R doc\n\nUsing rm is a powerful action with significant consequences, as it permanently deletes files, akin to shredding documents. There’s usually no easy way to recover deleted files unless you have a backup.\n\n\nln\nln (Link): ln creates Links to files or directories, making them accessible from multiple locations without duplicating the actual content. It’s like creating a shortcut on your desktop to a program you frequently use. There are two types of links: hard links and symbolic (soft) links. Symbolic links are more commonly used because they can link to directories and provide more flexibility.\nln -s /path/to/original /path/to/link",
-    "crumbs": [
-      "Introduction",
-      "Files and Folders"
-    ]
-  },
-  {
-    "objectID": "text.html",
-    "href": "text.html",
-    "title": "Manipulate Text",
-    "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\n\ncat\ncat (Concatenate): Laying out pages on the floor to see them all at once, cat displays the content of files straight to your screen, useful for checking what’s in a text file quickly.\n\n\ngrep\ngrep stands for “global regular expression print” and it reads from stdin or a list of files and outputs the lines that contain matches for a specified pattern.\n\n\nsort\nsort: Organizing a stack of papers alphabetically, sort arranges the lines in a text file into order.\n\n\nuniq\nuniq: After accidentally printing duplicates of a document, you remove the extra copies. uniq helps by removing duplicate lines from a file, making sure every line is unique.\n\n\ncut\ncut: If you only want the dates from a list of events, you might physically cut them out of the paper. cut extracts specific parts of lines in a file, like cutting out columns of text.\n\n\npaste\npaste: Taking snippets of text from different documents and sticking them together into one, paste combines lines from multiple files side by side.\n\n\njoin\njoin: If you have two lists with common information, you might merge them based on what matches. join merges lines from two files based on a common field.\n\n\ncomm\ncomm (Compare): Laying two printed lists side by side to see what items appear on both, only on one, or the other, comm compares two sorted files line by line.\n\n\ndiff\ndiff (Difference): Highlighting what changes have been made between your draft and the final copy of a letter, diff shows the differences between two files.\nThese analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Introduction",
-      "Manipulate Text"
+      "Syntax",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Options</span>"
     ]
   },
   {
@@ -210,10 +165,120 @@
     "href": "pipes.html",
     "title": "Pipes",
     "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nUsing the |\n\nls /bin | head -n5\n## [\n## bash\n## cat\n## chmod\n## cp\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nPipes (|) allow the output of one command (stdout) to be used as the input (stdin) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next.\nWe’ll use the grep command as an example to illustrate stdin.\nImagine you want to find the word “dress” in a file named roxanne in the data/ folder. Instead of directly providing the file as an argument to grep, you can use cat to read the file and then pipe (|) its output into grep, utilizing stdin to receive the file content.\n\ncat data/roxanne | grep dress\n## You don't have to wear that dress tonight\n\nIn this command:\n\ncat data/roxanne reads the content of roxanne and sends it to stdout\nThe pipe | redirects the stdout from cat to the stdin of grep.\ngrep dress receives the file’s content through stdin, searches for the word “dress”, and prints lines containing it to stdout.\n\nHere, grep’s input comes from stdin (provided by the pipe) instead of directly reading from a file.\n\nls /bin | head -n5\n## [\n## bash\n## cat\n## chmod\n## cp\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
-      "Introduction",
-      "Pipes"
+      "Syntax",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pipes</span>"
+    ]
+  },
+  {
+    "objectID": "dirs.html",
+    "href": "dirs.html",
+    "title": "Directories",
+    "section": "",
+    "text": "Navigate",
+    "crumbs": [
+      "Files and Directories",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Directories</span>"
+    ]
+  },
+  {
+    "objectID": "dirs.html#sec-nav-dirs",
+    "href": "dirs.html#sec-nav-dirs",
+    "title": "Directories",
+    "section": "",
+    "text": "pwd\npwd (Print Working Directory) tells you exactly where you are in the filesystem.\n\npwd # where am I?\n## /Users/mjfrigaard/projects/books/fm-unix\n\n\n\ncd\ncd (Change Directory) lets you move to a different folder on your computer.\nIf you want to move from the one place to another, cd can get you there. For example, cd /bin takes you to the /bin folder, the toolshed of software tools.\n\ncd /bin # change location\npwd # now where am I?\n## /bin\n\n\n\nls\nls (List) is like standing in one location, looking around, and seeing what files and folders are around you. In /bin, ls would show you the software tools available:\n\ncd /bin # change location\nls # what's in here?\n## [\n## bash\n## cat\n## chmod\n## cp\n## csh\n## dash\n## date\n## dd\n## df\n## echo\n## ed\n## expr\n## hostname\n## kill\n## ksh\n## launchctl\n## link\n## ln\n## ls\n## mkdir\n## mv\n## pax\n## ps\n## pwd\n## realpath\n## rm\n## rmdir\n## sh\n## sleep\n## stty\n## sync\n## tcsh\n## test\n## unlink\n## wait4path\n## zsh",
+    "crumbs": [
+      "Files and Directories",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Directories</span>"
+    ]
+  },
+  {
+    "objectID": "dirs.html#sec-manage-dirs",
+    "href": "dirs.html#sec-manage-dirs",
+    "title": "Directories",
+    "section": "Manage",
+    "text": "Manage\nIn the Unix/Linux world, file and directory management is a fundamental skill. This chapter dives deep into the commands that allow users to create, copy, move, remove, and link files and directories. Each section below introduces a different command, detailing its purpose and providing examples of its use.\n\nmkdir\nmkdir (Make Directory) builds a new folder wherever you tell it to, like making a new folder in our project for outputs (out/) or documents (doc/).\nmkdir out\nmkdir doc\n\n\ncp\ncp (Copy) duplicates files or folders. The cp command is used to Copy files or directories from one location to another. Imagine having a file (myfile.txt) on your root (.) directory that you want to copy to the /data folder; you could use cp to make a duplicate.\n\ncp myfile.txt data/myfile.txt\n# confirm copy\nls data\n## gamehof.tsv\n## music_vids.tsv\n## myfile.txt\n## roxanne\n## trees.tsv\n## who-tb-data.tsv\n## wu_tang.txt\n\n\n\nmv\nmv (Move): mv, short for Move, functions similarly to picking up a book from your desk and placing it on a shelf. It moves files or directories from one location to another. It can also be used for renaming files. This command is especially useful for organizing files and directories that are in the wrong place.\n\n# create folder\nmkdir doc\n# move file\nmv data/myfile.txt doc/myfile.txt \n\n\n# confirm move\nls doc\n## myfile.txt\n\n\n\nrm\nrm (Remove): The rm command stands for Remove and is used to delete files or directories.\n\n# remove doc folder\nrm doc\n## rm: doc: is a directory\n\n\n\n\n\n\n\nWarning\n\n\n\n\n\n\nIt’s important to note here that the command-line is not very forgiving. Using rm is a powerful action with significant consequences, as it permanently deletes files, akin to shredding documents. There’s usually no easy way to recover deleted files unless you have a backup.\n\n‘Unix is like a chainsaw. Chainsaws are powerful tools, and make many difficult tasks like cutting through thick logs quite easy. Unfortunately, this power comes with danger: chainsaws can cut just as easily through your leg.’ - Gary Bernhardt1\n\n\n\n\n\n\n# add flag\nrm -R doc\n\n\n\nln\nln (Link): ln creates Links to files or directories, making them accessible from multiple locations without duplicating the actual content. It’s like creating a shortcut on your desktop to a program you frequently use. There are two types of links: hard links and symbolic (soft) links. Symbolic links are more commonly used because they can link to directories and provide more flexibility.\nln -s /path/to/original /path/to/link\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Files and Directories",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Directories</span>"
+    ]
+  },
+  {
+    "objectID": "dirs.html#footnotes",
+    "href": "dirs.html#footnotes",
+    "title": "Directories",
+    "section": "",
+    "text": "As quoted in Bioinformatics Data Skills: Reproducible and Robust Research with Open Source Tools (2015) by Vince Buffalo.↩︎",
+    "crumbs": [
+      "Files and Directories",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Directories</span>"
+    ]
+  },
+  {
+    "objectID": "files.html",
+    "href": "files.html",
+    "title": "Files",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\n\nfile\nfile gives you a summary of what a computer file is or what it contains, like telling you if a tool in /bin/pax is a program you can run or a text file.\n\nfile /bin/pax\n## /bin/pax: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]\n## /bin/pax (for architecture x86_64):  Mach-O 64-bit executable x86_64\n## /bin/pax (for architecture arm64e):  Mach-O 64-bit executable arm64e\n\n\n\nless\nless lets you skim through a file on your computer, moving forwards and backwards as you please.\n\nless data/gamehof.tsv\n\n\n\n\nEnter less in the Terminal to scroll\n\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Files and Directories",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Files</span>"
+    ]
+  },
+  {
+    "objectID": "text_commands.html",
+    "href": "text_commands.html",
+    "title": "Text Commands",
+    "section": "",
+    "text": "The Text Stream\nUnix/Linux conceptualizes text as a stream, a continuous sequence of characters that can be manipulated in real-time. Streams are crucial for understanding how Unix/Linux commands process text. A text stream can originate from files, input devices, or even the output of other commands. Treating text as a steady stream of inputs offers a versatile and powerful method for text manipulation.",
+    "crumbs": [
+      "Manipulating Text",
+      "Text Commands"
+    ]
+  },
+  {
+    "objectID": "text_commands.html#sec-txt-manip",
+    "href": "text_commands.html#sec-txt-manip",
+    "title": "Text Commands",
+    "section": "Text Manipulation",
+    "text": "Text Manipulation\nThese commands embody the Unix philosophy of ‘do one thing and do it well’ and demonstrate the system’s power in processing text streams. This section will explore these fundamental commands, illustrating how they easily interact with text streams, standard input (stdin), and standard output (stdout) to perform complex text manipulations.\n\n\n\n\n\n\nStandard Input and Output\n\n\n\n\n\n\nstdin (standard input) is a stream from which a command reads its input. By default, it’s the keyboard, but it can be redirected to read from a file or another command’s output.\n\n\n\nThe text stream looks nothing like this\n\n\nstdout (standard output) is a stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command’s input.\n\n\n\n\n\ncat\ncat (Concatenate): cat displays the content of files straight to your screen, useful for checking what’s in a text file quickly.\nThis is similar to printing a file and laying out the pages on the floor to see them all at once.\n\n\ngrep\ngrep stands for “global regular expression print” and it reads from stdin or a list of files and outputs the lines that contain matches for a specified pattern.\n\n\nsort\nsort: sort arranges the lines in a text file into order:\nSimilar to organizing our stack of papers alphabetically.\n\n\nuniq\nuniq: uniq helps by removing duplicate lines from a file, making sure every line is unique.\nAfter accidentally printing duplicates of a document, you remove the extra copies.\n\n\ncut\ncut: If you only want the dates from a list of events, you might physically cut them out of the paper. cut extracts specific parts of lines in a file, like cutting out columns of text.\n\n\npaste\npaste: Taking snippets of text from different documents and sticking them together into one, paste combines lines from multiple files side by side.\n\n\njoin\njoin: If you have two lists with common information, you might merge them based on what matches. join merges lines from two files based on a common field.\n\n\ncomm\ncomm (Compare): Laying two printed lists side by side to see what items appear on both, only on one, or the other, comm compares two sorted files line by line.\n\n\ndiff\ndiff (Difference): Highlighting what changes have been made between your draft and the final copy of a letter, diff shows the differences between two files.\nThese analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Manipulating Text",
+      "Text Commands"
+    ]
+  },
+  {
+    "objectID": "text_editors.html",
+    "href": "text_editors.html",
+    "title": "Text Editors",
+    "section": "",
+    "text": "nano",
+    "crumbs": [
+      "Manipulating Text",
+      "Text Editors"
+    ]
+  },
+  {
+    "objectID": "text_editors.html#vi",
+    "href": "text_editors.html#vi",
+    "title": "Text Editors",
+    "section": "vi",
+    "text": "vi",
+    "crumbs": [
+      "Manipulating Text",
+      "Text Editors"
+    ]
+  },
+  {
+    "objectID": "text_editors.html#emacs",
+    "href": "text_editors.html#emacs",
+    "title": "Text Editors",
+    "section": "emacs",
+    "text": "emacs\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Manipulating Text",
+      "Text Editors"
     ]
   },
   {
@@ -272,6 +337,46 @@
     ]
   },
   {
+    "objectID": "files_dirs.html",
+    "href": "files_dirs.html",
+    "title": "Files and Directories",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nThis section covers commands to help you navigate and manipulate files and folders using Unix commands.",
+    "crumbs": [
+      "Files and Directories"
+    ]
+  },
+  {
+    "objectID": "text.html",
+    "href": "text.html",
+    "title": "Manipulating Text",
+    "section": "",
+    "text": "Plain Text Files\nAt the heart of Unix and Linux systems are plain text files. Unlike rich text files with formatting and specialized metadata, plain text files contain only text data. This simplicity makes them incredibly versatile and universally readable. Configuration files, scripts, and even the source code for the entire operating system itself are stored as plain text, ensuring that they can be created, edited, and read with a wide array of tools without the need for specialized software.",
+    "crumbs": [
+      "Manipulating Text"
+    ]
+  },
+  {
+    "objectID": "text.html#text-streams",
+    "href": "text.html#text-streams",
+    "title": "Manipulating Text",
+    "section": "Text Streams",
+    "text": "Text Streams\nA text stream in Unix and Linux is a simple, sequential flow of characters. Text streams can be inputs from keyboards, outputs to a display screen, or the data within a file. The concept of text streams is fundamental to the Unix philosophy; it allows for the chaining together of commands, where the output of one command can be seamlessly passed as input to another through a mechanism known as piping. This interconnectivity of commands and utilities, all communicating through text streams, exemplifies the efficiency and flexibility of Unix-like systems.",
+    "crumbs": [
+      "Manipulating Text"
+    ]
+  },
+  {
+    "objectID": "text.html#text-and-the-unix-philosophy",
+    "href": "text.html#text-and-the-unix-philosophy",
+    "title": "Manipulating Text",
+    "section": "Text and The Unix Philosophy",
+    "text": "Text and The Unix Philosophy\nThe Unix philosophy emphasizes simplicity, clarity, and the principle of “doing one thing well.” Plain text embodies this philosophy, serving as a simple, straightforward, and versatile means of interaction between the user, the system, and the programs running on it. It allows for complex operations to be broken down into smaller, manageable tasks that can be easily combined or modified. This philosophy also underpins the design of Unix text editors, which range from the simple (like nano) to the powerful and extensible (like vi and emacs).\nText commands and editors are not just tools but the medium through which users communicate with the system and manipulate it to their will. Mastering these commands and editors opens up a world of possibilities for efficient system management, programming, and beyond.\nThis chapter will explore the core text commands that every Unix and Linux user should know, from file manipulation to text processing and searching. We will also introduce the most popular text editors, guiding you through their primary usage and highlighting their unique features.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Manipulating Text"
+    ]
+  },
+  {
     "objectID": "scripts.html",
     "href": "scripts.html",
     "title": "Shell Scripts",
@@ -282,33 +387,23 @@
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "Introduction",
+    "objectID": "setups.html",
+    "href": "setups.html",
+    "title": "Set-Ups",
     "section": "",
-    "text": "Background\nUnix and Linux are like the great ancestors and heroes of the computer world, with stories full of innovation, community, and evolution.",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nThis section of the book dives into the practical aspects of preparing your environment to work with Unix/Linux systems. It is designed to guide readers through various setup processes, catering to different preferences and requirements. We’ll cover using Quarto documents to execute Bash commands, working directly on a macOS terminal, and setting up a virtual machine.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
-      "Introduction"
+      "Set-Ups"
     ]
   },
   {
-    "objectID": "intro.html#background",
-    "href": "intro.html#background",
-    "title": "Introduction",
+    "objectID": "syntax.html",
+    "href": "syntax.html",
+    "title": "Syntax",
     "section": "",
-    "text": "The Tale of Unix\nImagine Unix and Linux as the master and apprentice in the vast workshop of computer operating systems. Our story begins in the late 1960s at AT&T’s Bell Labs. Unix was born out of a desire for a more flexible and portable operating system. It was a time when computers were as big as rooms and operated on specific, often incompatible, systems. Unix was a breath of fresh air because it was designed to be simple, elegant, and, most importantly, portable, meaning it could run on different types of hardware.\nThe Unix philosophy has been distilled into a comprehensive operating system of essential commands and operations, guiding other apprentices in creating their versions of tools and systems.\nUnix is like the master craftsman in this story, having laid the foundational tools and techniques, and crafting a blueprint for how computers could efficiently and securely manage tasks like organizing files or running software.\n\n\nThe Emergence of Linux\nFast forward a couple of decades to 1991, when a Finnish student named Linus Torvalds decided to create his own free operating system kernel, inspired by Unix. This kernel, which is at the heart of the Linux operating system, was made freely available to anyone who wanted to use or improve it.\nLinux flourished with the help of developers around the world. It’s a testament to what collaboration and shared goals can achieve. This global effort resulted in an operating system that is not only free but also incredibly powerful and reliable.\nLinux, inspired by the teachings of Unix, was the eager apprentice who learned from the master’s manual and decided to share its own set of tools with the world for free. Making it free meant anyone could contribute their skills, refine the tools, and share the fruits of their labor. This open-source community of developers eventually cultivated various specialties, known as “distributions,” each with ts unique set of tools and embellishments, yet all rooted in the same foundational teachings.\n\n\n\n\n\n\nModern Uses of Unix/Linux\n\n\n\n\n\n\nToday, Unix and Linux are everywhere. They’re the invisible forces behind much of the Internet and are responsible for running servers, desktops, smartphones, and even household appliances.\n\nServers and Supercomputers: The majority of the web servers powering the internet, as well as the world’s most powerful supercomputers, run on Linux due to its stability, security, and efficiency.\nDesktops: Although not as common on desktops as Windows or macOS, Linux distributions offer a free, customizable alternative for users.\nSmartphones: Android, the most popular mobile operating system, is powered by a Linux kernel, making Linux the silent workhorse behind billions of smartphones.\nEmbedded Systems: From smartwatches to smart home devices, Linux is often the go-to choice for running embedded systems thanks to its scalability and low cost.\n\nUnix and Linux have grown from niche systems used by academics and researchers to foundational elements that power much of the digital world. They exemplify the power of open collaboration and innovation, showing how a small project or idea can grow and change the world.\n\n\n\n\n\n\nBash\nIn the story of Unix and Linux, Bash is the interpreter that translates commands into actions the computer can understand and execute. If Unix and Linux are the environments where the heavy lifting of computing happens—managing files, running programs, and controlling hardware—then Bash is the language and syntax that spells out how the work happens.\nBash allows users to interact directly with the operating system by typing commands into a text-based interface, automating tasks through scripts, managing files, and even controlling network operations. Incorporating features from the Korn shell (ksh) and the C shell (csh), Bash supports features like command history, tab completion, and aliases.",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nIn Unix-like operating systems, the terms commands, arguments, and options refer to the components of the syntax you type into the terminal.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "intro.html#recap",
-    "href": "intro.html#recap",
-    "title": "Introduction",
-    "section": "Recap",
-    "text": "Recap\nTo summarize, Unix and Linux provide the underlying framework for computer programs. They’re like the behind-the-scenes craftsmen ensuring the workshop runs smoothly, whether crafting a simple piece of furniture (like running a straightforward program on your computer), or constructing an elaborate mansion (like managing the complex operations of a large server).\nThe Bash shell is like the skilled artisan’s primary tool within the grand workshop of Unix and Linux, serving as a bridge between the user and the system’s deeper capabilities. Just as a master carpenter relies on a trusted hammer or saw, users of Unix and Linux turn to Bash for navigating and manipulating the vast landscape of these operating systems.\nThe first four chapters will cover an introduction to some common commands in Unix/Linux. These will help you find your way around your machine’s folders and files. We’ll also cover how to manipulate text within files.\n\nwhoami\n## mjfrigaard\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Introduction"
+      "Syntax"
     ]
   }
 ]

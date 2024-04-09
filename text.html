@@ -8,7 +8,7 @@
 
 <meta name="description" content="A Unix Field Manual">
 
-<title>fm-unix – Manipulate Text</title>
+<title>fm-unix – Manipulating Text</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./pipes.html" rel="next">
-<link href="./files_folders.html" rel="prev">
+<link href="./text_commands.html" rel="next">
+<link href="./files.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./text.html">Manipulate Text</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./text.html">Manipulating Text</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -113,10 +113,22 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Welcome!</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+            <a href="./setups.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Set-Ups</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -124,32 +136,92 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Set-Up</span></a>
+  <a href="./terminals.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Terminals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./syntax.html" class="sidebar-item-text sidebar-link">
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Virtual Machines</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./syntax.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syntax</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Commands</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./files_folders.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Files and Folders</span></a>
+  <a href="./arguments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Arguments</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./text.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Manipulate Text</span></a>
+  <a href="./options.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Options</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pipes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pipes</span></a>
+  <a href="./pipes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Pipes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./files_dirs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Files and Directories</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dirs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Directories</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./files.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Files</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./text.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Manipulating Text</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./text_commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Text Commands</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./text_editors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Text Editors</span></a>
   </div>
 </li>
       </ul>
@@ -158,11 +230,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./scripts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Shell Scripts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./format.html" class="sidebar-item-text sidebar-link">
@@ -179,13 +251,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./glossary.html" class="sidebar-item-text sidebar-link">
@@ -204,24 +276,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#sec-cat" id="toc-sec-cat" class="nav-link active" data-scroll-target="#sec-cat"><code>cat</code></a></li>
-  <li><a href="#sec-grep" id="toc-sec-grep" class="nav-link" data-scroll-target="#sec-grep"><code>grep</code></a></li>
-  <li><a href="#sec-sort" id="toc-sec-sort" class="nav-link" data-scroll-target="#sec-sort"><code>sort</code></a></li>
-  <li><a href="#sec-uniq" id="toc-sec-uniq" class="nav-link" data-scroll-target="#sec-uniq"><code>uniq</code></a></li>
-  <li><a href="#sec-cut" id="toc-sec-cut" class="nav-link" data-scroll-target="#sec-cut"><code>cut</code></a></li>
-  <li><a href="#sec-paste" id="toc-sec-paste" class="nav-link" data-scroll-target="#sec-paste"><code>paste</code></a></li>
-  <li><a href="#sec-join" id="toc-sec-join" class="nav-link" data-scroll-target="#sec-join"><code>join</code></a></li>
-  <li><a href="#sec-comm" id="toc-sec-comm" class="nav-link" data-scroll-target="#sec-comm"><code>comm</code></a></li>
-  <li><a href="#sec-diff" id="toc-sec-diff" class="nav-link" data-scroll-target="#sec-diff"><code>diff</code></a></li>
+  <li><a href="#plain-text-files" id="toc-plain-text-files" class="nav-link active" data-scroll-target="#plain-text-files">Plain Text Files</a></li>
+  <li><a href="#text-streams" id="toc-text-streams" class="nav-link" data-scroll-target="#text-streams">Text Streams</a></li>
+  <li><a href="#text-and-the-unix-philosophy" id="toc-text-and-the-unix-philosophy" class="nav-link" data-scroll-target="#text-and-the-unix-philosophy">Text and The Unix Philosophy</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./text.html">Manipulate Text</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Manipulate Text</h1>
+<h1 class="title"><span id="sec-manip-text" class="quarto-section-identifier">Manipulating Text</span></h1>
 </div>
 
 
@@ -256,42 +322,20 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<section id="sec-cat" class="level4">
-<h4 class="anchored" data-anchor-id="sec-cat"><code>cat</code></h4>
-<p><strong><code>cat</code> (Concatenate)</strong>: Laying out pages on the floor to see them all at once, <code>cat</code> displays the content of files straight to your screen, useful for checking what’s in a text file quickly.</p>
+<p>The essence of Unix and Linux systems is their powerful simplicity, and nowhere is this more evident than in how they handle text. Text commands and editors form the backbone of these operating systems, enabling users to perform complex tasks with a few keystrokes. This chapter will delve into the fundamental concepts of plain text files, text streams, and the Unix philosophy that prioritizes text as a universal interface for programming and system administration.</p>
+<section id="plain-text-files" class="level2">
+<h2 class="anchored" data-anchor-id="plain-text-files">Plain Text Files</h2>
+<p>At the heart of Unix and Linux systems are plain text files. Unlike rich text files with formatting and specialized metadata, plain text files contain only text data. This simplicity makes them incredibly versatile and universally readable. Configuration files, scripts, and even the source code for the entire operating system itself are stored as plain text, ensuring that they can be created, edited, and read with a wide array of tools without the need for specialized software.</p>
 </section>
-<section id="sec-grep" class="level4">
-<h4 class="anchored" data-anchor-id="sec-grep"><code>grep</code></h4>
-<p><strong><code>grep</code></strong> stands for “global regular expression print” and it reads from <code>stdin</code> or a list of files and outputs the lines that contain matches for a specified pattern.</p>
+<section id="text-streams" class="level2">
+<h2 class="anchored" data-anchor-id="text-streams">Text Streams</h2>
+<p>A text stream in Unix and Linux is a simple, sequential flow of characters. Text streams can be inputs from keyboards, outputs to a display screen, or the data within a file. The concept of text streams is fundamental to the Unix philosophy; it allows for the chaining together of commands, where the output of one command can be seamlessly passed as input to another through a mechanism known as piping. This interconnectivity of commands and utilities, all communicating through text streams, exemplifies the efficiency and flexibility of Unix-like systems.</p>
 </section>
-<section id="sec-sort" class="level4">
-<h4 class="anchored" data-anchor-id="sec-sort"><code>sort</code></h4>
-<p><strong><code>sort</code></strong>: Organizing a stack of papers alphabetically, <code>sort</code> arranges the lines in a text file into order.</p>
-</section>
-<section id="sec-uniq" class="level4">
-<h4 class="anchored" data-anchor-id="sec-uniq"><code>uniq</code></h4>
-<p><strong><code>uniq</code></strong>: After accidentally printing duplicates of a document, you remove the extra copies. <code>uniq</code> helps by removing duplicate lines from a file, making sure every line is unique.</p>
-</section>
-<section id="sec-cut" class="level4">
-<h4 class="anchored" data-anchor-id="sec-cut"><code>cut</code></h4>
-<p><strong><code>cut</code></strong>: If you only want the dates from a list of events, you might physically cut them out of the paper. <code>cut</code> extracts specific parts of lines in a file, like cutting out columns of text.</p>
-</section>
-<section id="sec-paste" class="level4">
-<h4 class="anchored" data-anchor-id="sec-paste"><code>paste</code></h4>
-<p><strong><code>paste</code></strong>: Taking snippets of text from different documents and sticking them together into one, <code>paste</code> combines lines from multiple files side by side.</p>
-</section>
-<section id="sec-join" class="level4">
-<h4 class="anchored" data-anchor-id="sec-join"><code>join</code></h4>
-<p><strong><code>join</code></strong>: If you have two lists with common information, you might merge them based on what matches. <code>join</code> merges lines from two files based on a common field.</p>
-</section>
-<section id="sec-comm" class="level4">
-<h4 class="anchored" data-anchor-id="sec-comm"><code>comm</code></h4>
-<p><strong><code>comm</code> (Compare)</strong>: Laying two printed lists side by side to see what items appear on both, only on one, or the other, <code>comm</code> compares two sorted files line by line.</p>
-</section>
-<section id="sec-diff" class="level4">
-<h4 class="anchored" data-anchor-id="sec-diff"><code>diff</code></h4>
-<p><strong><code>diff</code> (Difference)</strong>: Highlighting what changes have been made between your draft and the final copy of a letter, <code>diff</code> shows the differences between two files.</p>
-<p>These analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.</p>
+<section id="text-and-the-unix-philosophy" class="level2">
+<h2 class="anchored" data-anchor-id="text-and-the-unix-philosophy">Text and The Unix Philosophy</h2>
+<p>The Unix philosophy emphasizes simplicity, clarity, and the principle of “doing one thing well.” Plain text embodies this philosophy, serving as a simple, straightforward, and versatile means of interaction between the user, the system, and the programs running on it. It allows for complex operations to be broken down into smaller, manageable tasks that can be easily combined or modified. This philosophy also underpins the design of Unix text editors, which range from the simple (like nano) to the powerful and extensible (like vi and emacs).</p>
+<p>Text commands and editors are not just tools but the medium through which users communicate with the system and manipulate it to their will. Mastering these commands and editors opens up a world of possibilities for efficient system management, programming, and beyond.</p>
+<p>This chapter will explore the core text commands that every Unix and Linux user should know, from file manipulation to text processing and searching. We will also introduce the most popular text editors, guiding you through their primary usage and highlighting their unique features.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -737,13 +781,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./files_folders.html" class="pagination-link" aria-label="Files and Folders">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Files and Folders</span>
+      <a href="./files.html" class="pagination-link" aria-label="Files">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Files</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./pipes.html" class="pagination-link" aria-label="Pipes">
-        <span class="nav-page-text">Pipes</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./text_commands.html" class="pagination-link" aria-label="Text Commands">
+        <span class="nav-page-text">Text Commands</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
