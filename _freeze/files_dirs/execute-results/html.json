@@ -2,7 +2,7 @@
   "hash": "7cf58488e32b5a93e432511336f856ec",
   "result": {
     "engine": "knitr",
-    "markdown": "---\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n    comment: '# '\n---\n\n\n\n\n\n# Files and Directories  {#sec-dirs .unnumbered}\n\n\n\n\n\n\n\n\n:::: {.callout-important collapse='false' appearance='default' icon=false}\n\n## [Caution]{style='font-weight: bold; font-size: 1.25em;'}\n\n::: {style='font-size: 1.00em; color: #282b2d;'}\n\n\nThis section is under development. Thank you for your patience.\n  \n\n::: \n\n::::\n\n\n\n\n\nThis section covers commands to help you navigate and manipulate files and folders using Unix commands. \n",
+    "markdown": "---\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n    comment: '# '\n---\n\n\n\n\n# Files and Directories  {#sec-dirs .unnumbered}\n\n\n\n\n\n\n\n:::: {.callout-important collapse='false' appearance='default' icon=false}\n\n## [Caution]{style='font-weight: bold; font-size: 1.25em;'}\n\n::: {style='font-size: 1.00em; color: #282b2d;'}\n\n\nThis section is under development. Thank you for your patience.\n  \n\n::: \n\n::::\n\n\n\n\nThis section covers commands to help you navigate and manipulate files and folders using Unix commands. \n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
