@@ -276,7 +276,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#terminal-pane-posit-workbench" id="toc-terminal-pane-posit-workbench" class="nav-link active" data-scroll-target="#terminal-pane-posit-workbench">Terminal Pane (Posit Workbench)</a></li>
+  <li><a href="#terminal-emulators" id="toc-terminal-emulators" class="nav-link active" data-scroll-target="#terminal-emulators">Terminal Emulators</a></li>
+  <li><a href="#shells" id="toc-shells" class="nav-link" data-scroll-target="#shells">Shells</a></li>
+  <li><a href="#homebrew" id="toc-homebrew" class="nav-link" data-scroll-target="#homebrew">Homebrew</a></li>
+  <li><a href="#bsd-vs.-gnu-commands" id="toc-bsd-vs.-gnu-commands" class="nav-link" data-scroll-target="#bsd-vs.-gnu-commands">BSD vs.&nbsp;GNU Commands</a></li>
+  <li><a href="#case-sensitivity" id="toc-case-sensitivity" class="nav-link" data-scroll-target="#case-sensitivity">Case Sensitivity</a></li>
+  <li><a href="#security-and-permissions" id="toc-security-and-permissions" class="nav-link" data-scroll-target="#security-and-permissions">Security and Permissions</a></li>
+  <li><a href="#filesystem-hierarchy" id="toc-filesystem-hierarchy" class="nav-link" data-scroll-target="#filesystem-hierarchy">Filesystem Hierarchy</a></li>
+  <li><a href="#networking-and-interoperability" id="toc-networking-and-interoperability" class="nav-link" data-scroll-target="#networking-and-interoperability">Networking and Interoperability</a></li>
+  <li><a href="#graphical-applications" id="toc-graphical-applications" class="nav-link" data-scroll-target="#graphical-applications">Graphical Applications</a></li>
+  <li><a href="#terminal-pane-posit-workbench" id="toc-terminal-pane-posit-workbench" class="nav-link" data-scroll-target="#terminal-pane-posit-workbench">Terminal Pane (Posit Workbench)</a></li>
+  <li><a href="#bash" id="toc-bash" class="nav-link" data-scroll-target="#bash">Bash</a>
+  <ul>
+  <li><a href="#features-of-bash" id="toc-features-of-bash" class="nav-link" data-scroll-target="#features-of-bash">Features of Bash</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -320,18 +333,43 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Using macOS’s Terminal to learn Unix/Linux offers a unique and powerful environment, but it comes with special considerations rooted in macOS’s distinct architecture and its version of Unix. Here are key points to keep in mind:</p>
-<ul>
-<li><p><strong>Terminal Emulators</strong>: The default Terminal app on macOS provides a solid interface to access the Unix command line, but there are other terminal emulators available (like <a href="https://iterm2.com/">iTerm2</a>) that offer additional features such as split panes, search, and customization options.</p></li>
-<li><p><strong>Shells</strong>: macOS has transitioned from using Bash as the default shell to Zsh since macOS Catalina. While both are Unix shells, they have some differences in features and configuration files (<code>~/.bash_profile</code> for Bash vs.&nbsp;<code>~/.zshrc</code> for Zsh).</p></li>
-<li><p><strong>Homebrew</strong>: <a href="https://brew.sh/">Homebrew</a> is an essential package manager for macOS, filling the gap for Unix/Linux software that isn’t pre-installed on macOS. It allows users to easily install and manage additional Unix tools, GNU utilities, languages, and applications. Learning to use Homebrew will significantly expand the Unix/Linux tools at your disposal on a macOS system.</p></li>
-<li><p><strong>BSD vs.&nbsp;GNU Commands</strong>: macOS is based on Darwin, which incorporates elements from BSD Unix. Therefore, some of the command-line tools on macOS behave differently from their GNU counterparts found in Linux. For example, options and flags for commands like <code>ls</code>, <code>sed</code>, and <code>tar</code> may vary. This means that while the overarching principles remain the same, specific command syntax and options might require adjustments or the use of GNU versions of commands (installed via <a href="https://brew.sh/">Homebrew</a>, for instance).</p></li>
-<li><p><strong>Case Sensitivity</strong>: By default, the macOS file system (APFS or HFS+) is <strong>case-insensitive but case-preserving</strong>. This behavior is different from most Linux file systems, which are <em>case-sensitive</em>. This can affect scripts and commands that rely on case distinctions for file and directory names.</p></li>
-<li><p><strong>Security and Permissions</strong>: macOS has implemented increasingly stringent security measures, including the System Integrity Protection (SIP) and sandboxing mechanisms, which can restrict access to certain files and system operations. While these features enhance security, they can also limit what you can do via the Terminal. Understanding macOS’s security model and permissions (such as using <code>sudo</code> wisely) is crucial.</p></li>
-<li><p><strong>Filesystem Hierarchy</strong>: While the Unix filesystem hierarchy is preserved in macOS, there are macOS-specific directories and structures, such as <code>~/Library</code> for user-specific application support files and preferences. Understanding these macOS-specific elements is important when navigating and managing files via the Terminal.</p></li>
-<li><p><strong>Networking and Interoperability</strong>: macOS integrates well with both Unix/Linux and Windows environments, supporting various network protocols and file sharing options out of the box. Commands like <code>ssh</code>, <code>scp</code>, and <code>smbutil</code> can be used for remote access and file transfers, making macOS a versatile platform for learning Unix/Linux networking basics.</p></li>
-<li><p><strong>Graphical Applications</strong>: macOS allows Unix command-line tools to interact with its graphical user interface (GUI) applications in ways that are not typically available on other Unix systems. For instance, the <code>open</code> command can be used to open files or applications, and <code>osascript</code> can interact with AppleScript-enabled applications for automation.</p></li>
-</ul>
+<p>Using Unix/Linux on macOS offers a unique and powerful environment with macOS’s Terminal, but it’s important to be aware of the differences and limitations inherent in macOS’s implementation of Unix. Below we cover some special considerations rooted in macOS’s distinct architecture and its version of Unix.</p>
+<section id="terminal-emulators" class="level3">
+<h3 class="anchored" data-anchor-id="terminal-emulators">Terminal Emulators</h3>
+<p>The default Terminal app on macOS provides a solid interface to access the Unix command line, but there are other terminal emulators available (like <a href="https://iterm2.com/">iTerm2</a>) that offer additional features such as split panes, search, and customization options.</p>
+</section>
+<section id="shells" class="level3">
+<h3 class="anchored" data-anchor-id="shells">Shells</h3>
+<p>macOS has transitioned from using Bash as the default shell to Zsh since macOS Catalina. While both are Unix shells, they have some differences in features and configuration files (<code>~/.bash_profile</code> for Bash vs.&nbsp;<code>~/.zshrc</code> for Zsh).</p>
+</section>
+<section id="homebrew" class="level3">
+<h3 class="anchored" data-anchor-id="homebrew">Homebrew</h3>
+<p><a href="https://brew.sh/">Homebrew</a> is an essential package manager for macOS, filling the gap for Unix/Linux software that isn’t pre-installed on macOS. It allows users to easily install and manage additional Unix tools, GNU utilities, languages, and applications. Learning to use Homebrew will significantly expand the Unix/Linux tools at your disposal on a macOS system.</p>
+</section>
+<section id="bsd-vs.-gnu-commands" class="level3">
+<h3 class="anchored" data-anchor-id="bsd-vs.-gnu-commands">BSD vs.&nbsp;GNU Commands</h3>
+<p>macOS is based on Darwin, which incorporates elements from BSD Unix. Therefore, some of the command-line tools on macOS behave differently from their GNU counterparts found in Linux. For example, options and flags for commands like <code>ls</code>, <code>sed</code>, and <code>tar</code> may vary. This means that while the overarching principles remain the same, specific command syntax and options might require adjustments or the use of GNU versions of commands (installed via <a href="https://brew.sh/">Homebrew</a>, for instance).</p>
+</section>
+<section id="case-sensitivity" class="level3">
+<h3 class="anchored" data-anchor-id="case-sensitivity">Case Sensitivity</h3>
+<p>By default, the macOS file system (APFS or HFS+) is <strong>case-insensitive but case-preserving</strong>. This behavior is different from most Linux file systems, which are <em>case-sensitive</em>. This can affect scripts and commands that rely on case distinctions for file and directory names.</p>
+</section>
+<section id="security-and-permissions" class="level3">
+<h3 class="anchored" data-anchor-id="security-and-permissions">Security and Permissions</h3>
+<p>macOS has implemented increasingly stringent security measures, including the System Integrity Protection (SIP) and sandboxing mechanisms, which can restrict access to certain files and system operations. While these features enhance security, they can also limit what you can do via the Terminal. Understanding macOS’s security model and permissions (such as using <code>sudo</code> wisely) is crucial.</p>
+</section>
+<section id="filesystem-hierarchy" class="level3">
+<h3 class="anchored" data-anchor-id="filesystem-hierarchy">Filesystem Hierarchy</h3>
+<p>While the Unix filesystem hierarchy is preserved in macOS, there are macOS-specific directories and structures, such as <code>~/Library</code> for user-specific application support files and preferences. Understanding these macOS-specific elements is important when navigating and managing files via the Terminal.</p>
+</section>
+<section id="networking-and-interoperability" class="level3">
+<h3 class="anchored" data-anchor-id="networking-and-interoperability">Networking and Interoperability</h3>
+<p>macOS integrates well with both Unix/Linux and Windows environments, supporting various network protocols and file sharing options out of the box. Commands like <code>ssh</code>, <code>scp</code>, and <code>smbutil</code> can be used for remote access and file transfers, making macOS a versatile platform for learning Unix/Linux networking basics.</p>
+</section>
+<section id="graphical-applications" class="level3">
+<h3 class="anchored" data-anchor-id="graphical-applications">Graphical Applications</h3>
+<p>macOS allows Unix command-line tools to interact with its graphical user interface (GUI) applications in ways that are not typically available on other Unix systems. For instance, the <code>open</code> command can be used to open files or applications, and <code>osascript</code> can interact with AppleScript-enabled applications for automation.</p>
+</section>
 <section id="terminal-pane-posit-workbench" class="level3">
 <h3 class="anchored" data-anchor-id="terminal-pane-posit-workbench">Terminal Pane (Posit Workbench)</h3>
 <div class="quarto-figure quarto-figure-center">
@@ -340,7 +378,18 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Terminal Pane in Posit Workbench</figcaption>
 </figure>
 </div>
-<p>Learning Unix/Linux on macOS provides a robust foundation with the added benefit of macOS-specific features and conveniences. However, it’s essential to be aware of the differences and limitations inherent in macOS’s implementation of Unix. Balancing the powerful capabilities of Unix with the peculiarities of macOS will allow you to make the most of your learning experience.</p>
+</section>
+<section id="bash" class="level3">
+<h3 class="anchored" data-anchor-id="bash">Bash</h3>
+<p>This section covers Bash, a common Unix shell.</p>
+<section id="features-of-bash" class="level4">
+<h4 class="anchored" data-anchor-id="features-of-bash">Features of Bash</h4>
+<ul>
+<li><p><strong>Command History</strong>: Bash maintains a history of the commands that have been entered, allowing users to navigate through them using the up and down arrow keys or search through them with Ctrl+R.</p></li>
+<li><p><strong>Tab Completion</strong>: Bash supports tab completion for commands, filenames, and paths, making it easier to type commands accurately and quickly.</p></li>
+<li><p><strong>Scripting Capabilities</strong>: Beyond single commands, users can execute entire scripts within the Bash REPL, making it a powerful tool for automating tasks.</p></li>
+<li><p><strong>Customization</strong>: The prompt and behavior of the Bash REPL can be customized through various settings in <code>.bashrc</code> or <code>.bash_profile</code> files, allowing users to tailor the environment to their preferences.</p></li>
+</ul>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -361,6 +410,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -312,9 +312,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#sec-nav-dirs" id="toc-sec-nav-dirs" class="nav-link active" data-scroll-target="#sec-nav-dirs">Navigate</a>
   <ul>
-  <li><a href="#sec-pwd" id="toc-sec-pwd" class="nav-link" data-scroll-target="#sec-pwd"><code>pwd</code></a></li>
-  <li><a href="#sec-cd" id="toc-sec-cd" class="nav-link" data-scroll-target="#sec-cd"><code>cd</code></a></li>
-  <li><a href="#sec-ls" id="toc-sec-ls" class="nav-link" data-scroll-target="#sec-ls"><code>ls</code></a></li>
+  <li><a href="#pwd" id="toc-pwd" class="nav-link" data-scroll-target="#pwd"><code>pwd</code></a></li>
+  <li><a href="#cd" id="toc-cd" class="nav-link" data-scroll-target="#cd"><code>cd</code></a></li>
+  <li><a href="#ls" id="toc-ls" class="nav-link" data-scroll-target="#ls"><code>ls</code></a></li>
   </ul></li>
   <li><a href="#sec-manage-dirs" id="toc-sec-manage-dirs" class="nav-link" data-scroll-target="#sec-manage-dirs">Manage</a>
   <ul>
@@ -370,16 +370,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>When presented with a new map, the most important thing to find is your location on it. It’s hard to know where you’re going without knowing where you are.</p>
 <section id="sec-nav-dirs" class="level2">
 <h2 class="anchored" data-anchor-id="sec-nav-dirs">Navigate</h2>
-<section id="sec-pwd" class="level3">
-<h3 class="anchored" data-anchor-id="sec-pwd"><code>pwd</code></h3>
+<section id="pwd" class="level3">
+<h3 class="anchored" data-anchor-id="pwd"><code>pwd</code></h3>
 <p><strong><code>pwd</code> (Print Working Directory)</strong> tells you exactly where you are in the filesystem.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span> <span class="co"># where am I?</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">## /Users/mjfrigaard/projects/books/fm-unix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="sec-cd" class="level3">
-<h3 class="anchored" data-anchor-id="sec-cd"><code>cd</code></h3>
+<section id="cd" class="level3">
+<h3 class="anchored" data-anchor-id="cd"><code>cd</code></h3>
 <p><strong><code>cd</code> (Change Directory)</strong> lets you move to a different folder on your computer.</p>
 <p>If you want to move from the one place to another, <code>cd</code> can get you there. For example, <code>cd /bin</code> takes you to the <code>/bin</code> folder, the toolshed of software tools.</p>
 <div class="cell">
@@ -388,8 +388,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="sec-ls" class="level3">
-<h3 class="anchored" data-anchor-id="sec-ls"><code>ls</code></h3>
+<section id="ls" class="level3">
+<h3 class="anchored" data-anchor-id="ls"><code>ls</code></h3>
 <p><strong><code>ls</code> (List)</strong> is like standing in one location, looking around, and seeing what files and folders are around you. In <code>/bin</code>, <code>ls</code> would show you the software tools available:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /bin <span class="co"># change location</span></span>
