@@ -3,7 +3,7 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
-    comment: '# '
+    comment: '#>'
 ---
 
 # Options {#sec-options}
@@ -41,26 +41,211 @@ co_box(
 )
 ```
 
-**Options** (sometimes called flags) modify how a command operates, allowing for more control over its behavior. Options often start with one or two dashes (`-` or `--`). For example, in `ls -l`, the `-l` option tells `ls` to use a long listing format.
+Unix command options (sometimes called flags), often preceded by a hyphen (`-`) or two (`--` for long-form options), modify the behavior of commands to provide flexibility and control over their operation. Options can enable a vast array of additional functionalities, from altering the output format to specifying operational parameters that aren't set by default. 
+
+## Short Options
+ 
+Short options are typically a single dash followed by a single letter (e.g., `-l`) and they modify the command behavior in a specific, often concise way.
+
+**Example**
+
+<code>@sec-ls</code> `-l data` lists files in `data` in a long format, showing detailed information like permissions, owner, size, and modification date:
 
 ```{bash}
-ls -l /
+ls -l data
 ```
 
-Options modify how the action is performed.
 
-## Standard Input and Standard Output
+## Long Options
 
-Two key concepts in Unix text processing are standard input (`stdin`) and standard output (`stdout`). `stdin` is the default input stream, which often comes from the keyboard or the output of another command. `stdout` is the default output stream, typically the terminal screen. Many Unix commands read from `stdin` when no file is specified and write to `stdout`, allowing the output of one command to become the input of another. This design facilitates the chaining of commands (piping) to perform complex operations in a streamlined manner.
+Long options usually use two dashes followed by a word or compound words (e.g., `--long-listing`) and provide a more descriptive way to specify options, making scripts and commands more readable. **Note that not all commands support the long-form option syntax.**
 
--   **Input** generally refers to the data fed into a command, which can come from `stdin` or be specified as arguments.
+**Example**
 
--   **Output** is the data produced by a command, displayed on `stdout` unless redirected.
+`ls --reverse` lists files in reverse order. 
 
+```{bash}
+#| eval: false
+ls --reverse
+#> wu_tang.txt
+#> wu_tang.tsv
+#> wu_tang.dat
+#> wu_tang.csv
+#> who-tb-data.tsv
+#> vg_hof.tsv
+#> trees.tsv
+#> roxanne
+#> music_vids.tsv
+```
+
+### Combining Short Options
+
+Multiple short options can be combined after a single dash, without spaces (e.g., `-lrt`)
+allowing users to use multiple options at once, and reducing the need to type multiple dashes.
+
+
+**Example**
+
+`ls -lrt` combines three options: `-l` (long listing format), `-r` (reverse order), and `-t` (sort by modification time), providing a detailed, reverse-chronological list of files.
+
+```{bash}
+ls -lrt data
+```
+
+### Options with Arguments
+
+Options can be combined with arguments when they are followed by a space and then the argument (e.g., `-o filename`). Some options require or accept an argument to specify a value related to the option's action.
+
+**Example**
+
+<code>@sec-grep</code>`-i "2ND" myfile2.txt` uses `-i` to ignore case when searching for `"2ND"` in `myfile2.txt`:
+
+```{bash}
+grep -i "2ND" myfile2.txt
+```
+
+The `"2ND"` here is an argument to the `-i` option
+
+### Options Affecting Output
+
+**Example 1**
+
+```{bash}
+ls -a data
+```
+
+
+`ls -a` lists all files, including hidden ones (those starting with a dot). This option alters the command's output by showing files that are not listed by default.
+
+**Example 2**
+
+`df -h` shows disk space usage in human-readable form (e.g., KB, MB, GB), modifying the default output to be more easily understood.
+
+```{bash}
+#| eval: false
+df -h
+#> Filesystem                          Size    Used   Avail Capacity iused ifree %iused  Mounted on
+#> /dev/disk1s1s1                     466Gi   9.5Gi    41Gi    19%    404k  429M    0%   /
+#> devfs                              196Ki   196Ki     0Bi   100%     678     0  100%   /dev
+#> /dev/disk1s3                       466Gi   2.4Gi    41Gi     6%    5.1k  429M    0%   /System/Volumes/Preboot
+#> /dev/disk1s5                       466Gi   1.0Gi    41Gi     3%       1  429M    0%   /System/Volumes/VM
+#> /dev/disk1s6                       466Gi    18Mi    41Gi     1%      20  429M    0%   /System/Volumes/Update
+#> /dev/disk1s2                       466Gi   410Gi    41Gi    91%    5.6M  429M    1%   /System/Volumes/Data
+```
+
+### Options Modifying Command Behavior
+
+**Example**
+
+`cp -n source.txt dest.txt` does not overwrite the destination file if it already exists. 
+
+```{bash}
+#| eval: false
+cp -n myfile.txt myfile2.txt
+```
+
+The `-n` option modifies the default behavior of the `cp` command.
+
+```{bash}
+cat myfile2.txt
+```
+
+### Options for Help and Information
+
+**Example**
+
+`grep --help` displays usage information for the `grep` command, helping users understand available options and syntax.
+
+```{bash}
+#| eval: false
+grep --help
+#> usage: grep [-abcdDEFGHhIiJLlMmnOopqRSsUVvwXxZz] [-A num] [-B num] [-C[num]]
+#> 	[-e pattern] [-f file] [--binary-files=value] [--color=when]
+#> 	[--context[=num]] [--directories=action] [--label] [--line-buffered]
+#> 	[--null] [pattern] [file ...]
+```
+
+**Example 2**
+
+The `--version` option is commonly used to get version information for various commands.
+
+```{bash}
+grep --version  
+```
+
+
+**Example 3**
+
+`man` shows the official manual for the command. 
+
+```{bash}
+#| eval: false
+man echo
+#> ECHO(1)                     General Commands Manual                    ECHO(1)
+#> 
+#> NAME
+#>      echo – write arguments to the standard output
+#> 
+#> SYNOPSIS
+#>      echo [-n] [string ...]
+#> 
+#> DESCRIPTION
+#>      The echo utility writes any specified operands, separated by single blank
+#>      (‘\n’) characters and followed by a newline (‘\n’) character, to the
+#>      standard output.
+#> 
+#>      The following option is available:
+#> 
+#>      -n    Do not print the trailing newline character.  This may also be
+#>            achieved by appending ‘\c’ to the end of the string, as is done by
+#>            iBCS2 compatible systems.  Note that this option as well as the
+#>            effect of ‘\c’ are implementation-defined in IEEE Std 1003.1-2001
+#>            (“POSIX.1”) as amended by Cor. 1-2002.  Applications aiming for
+#>            maximum portability are strongly encouraged to use printf(1) to
+#>            suppress the newline character.
+#> 
+#>      Some shells may provide a builtin eecchhoo command which is similar or
+#>      identical to this utility.  Most notably, the builtin eecchhoo in sh(1) does
+#>      not accept the --nn option.  Consult the builtin(1) manual page.
+#> 
+#> EXIT STATUS
+#>      The echo utility exits 0 on success, and >0 if an error occurs.
+#> 
+#> SEE ALSO
+#>      builtin(1), csh(1), printf(1), sh(1)
+#> 
+#> STANDARDS
+#>      The echo utility conforms to IEEE Std 1003.1-2001 (“POSIX.1”) as amended
+#>      by Cor. 1-2002.
+#> 
+#> macOS 14.4                      April 12, 2003                      macOS 14.4
+```
+
+
+
+
+
+
+### Environment-Specific Options
+
+`sort -u file.txt` sorts the lines in `file.txt`, removing duplicate lines. The `-u` option's behavior (considering case sensitivity) might vary depending on the locale and environment settings.
+
+**Example**
+
+`sort -u data/roxanne` sorts the lines in `data/roxanne`, removing duplicate lines.[^roxanne]
+
+[^roxanne]: `data/roxanne` contains the lyrics to the 1978 song [Roxanne by The Police](https://en.wikipedia.org/wiki/Roxanne_(The_Police_song)). 
+
+```{bash}
+sort -u data/roxanne
+```
 
 ## Recap
 
-This framework of commands, arguments, options, and the interplay of input (`stdin`), output (`stdout`) , and pipes enables sophisticated data processing and manipulation directly from the terminal.
+Options greatly enhance the power and versatility of Unix commands, allowing users to tailor operations to their specific needs and preferences.
+
+Not all Unix-like systems or shells may support the same options for a given command, and behavior can vary between implementations. It's important to refer to a command's manual page (using `man command` or `command --help`) for the most accurate and comprehensive list of options and their effects.
+
 
 ```{r}
 #| label: git_contrib_box

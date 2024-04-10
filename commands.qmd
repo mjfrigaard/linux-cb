@@ -3,7 +3,7 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
-    comment: '# '
+    comment: '#>'
 ---
 
 # Commands {#sec-commands}
@@ -41,29 +41,187 @@ co_box(
 )
 ```
 
-Commands are the first part of a command line instruction, specifying the program or built-in functionality to be executed. We're going to start with a basic command: `whoami`:
+Commands are the first part of a command line instruction, specifying the program or built-in functionality to be executed. In Unix/Linux, several commands can operate without any options or arguments, performing their basic functions in their simplest form.
+
+
+We're going to start with a basic command: `date`:
 
 ```{bash}
-whoami
+date
 ```
-
-The command `whoami` returns a value for the currently logged-in user. What we've just done is referred to as the [read–eval–print loop](https://www.computerhope.com/jargon/r/repl.htm), or REPL, and it's the underlying process of the command-line. Here is how it works: 
 
 ## REPL
 
-1. **read** the command you've typed into the code chunk and create a data structure for it  
+The command `date` returns the current date and time. What we've just done is referred to as the [read–eval–print loop](https://www.computerhope.com/jargon/r/repl.htm), or REPL, and it's the underlying process of the command-line. The REPL in Bash exemplifies a powerful and flexible interface for interacting with the system, running commands, and developing scripts, providing both novice and experienced users with an efficient way to manage their computing environment.
 
-2. **eval**uate what the command means and perform the associated operation (in our case, retrieving the value of the currently logged-in user) 
+Here is how it works: 
 
-3. **print** the value from **eval** results to the screen so we can see it 
+### Read
 
-A great follow-up question is *where am I?*, but for this we'll use `pwd`, which stands for 'print working directory.'
+In Bash, the "Read" step occurs when the shell waits for input from the user. This is typically represented by the shell prompt, where we can type commands. The prompt might display useful information, such as the current user (`username`), hostname (`hostname`), and working directory (`current_directory`), depending on its configuration:
 
 ```{bash}
-pwd
+#| eval: false
+username@hostname:current_directory$
 ```
 
-Above we can see I am logged in as `/Users/mjfrigaard` and I'm currently accessing the `projects/books/fm-unix` directory. 
+### Eval
+
+Once a command is entered, Bash "evaluates" it. This step involves parsing the command and its arguments, checking for syntax correctness, and then executing it. 
+
+Commands can be simple, such as listing the current date and time, or complex scripts involving loops, conditionals, and functions.
+
+```{bash}
+#| eval: false
+username@hostname:current_directory$ date
+```
+
+### Print
+
+After evaluating the command, Bash "prints" the output or the result of the command execution to the screen (`stdout` or standard output) or another specified location. 
+
+```{bash}
+#| eval: false
+#> Wed Apr 10 02:55:23 MST 2024
+```
+
+If the command results in an error, the error message is displayed instead (typically on standard error).
+
+### Loop
+
+After executing a command and returning the output, Bash immediately returns to the "read" step, displaying the prompt and waiting for new user input. 
+
+```{bash}
+#| eval: false
+username@hostname:current_directory$
+username@hostname:current_directory$ date
+#> Wed Apr 10 02:55:23 MST 2024
+username@hostname:current_directory$
+```
+
+This cycle repeats indefinitely until the user exits the REPL environment, typically with an `exit` command or by pressing Ctrl+D.
+
+## Simple Commands 
+
+In Unix, several commands can operate without any options or arguments, performing their basic functions in their simplest form. Below are some of these commands:
+
+### `pwd` {#sec-pwd}
+
+`pwd` prints the current working directory. 
+
+```{bash}
+#| eval: false 
+pwd
+#> /Users/username/
+```
+
+
+### `ls` {#sec-ls}
+
+`ls` lists the contents of the current directory by default.
+
+```{bash}
+#| eval: false 
+ls 
+#> Applications
+#> Library
+#> System
+#> Users
+#> Volumes
+#> bin
+#> cores
+#> dev
+#> etc
+#> home
+#> opt
+#> private
+#> sbin
+#> tmp
+#> usr
+#> var
+```
+
+
+### `date` {#sec-date}
+
+`date` displays the current date and time. 
+
+```{bash}
+#| eval: false 
+date
+#>  Wed Apr 10 03:39:52 MST 2024
+```
+
+
+### `uptime` {#sec-uptime}
+
+`uptime` shows how long the system has been running.
+
+```{bash}
+#| eval: false 
+uptime
+#>  3:39  up 11:23, 2 users, load averages: 3.82 3.21 3.00
+```
+
+
+### `who` {#sec-who}
+
+`who` shows who is logged on the system. 
+
+```{bash}
+#| eval: false 
+who
+#>  username       console      Apr  9 03:20 
+#>  username       ttys000      Apr  9 03:42
+```
+
+`who` by itself, without options or arguments, lists the users currently logged into the system.
+
+
+### `clear` {#sec-clear}
+
+`clear` clears the terminal screen.
+
+```{bash}
+#| eval: false
+clear
+```
+
+`clear` does its job without the need for additional input and doesn't print any return values.
+
+### `exit` {#sec-exit}
+
+`exit` exits the shell or your current session. 
+
+```{bash}
+#| eval: false
+exit
+```
+
+`exit` requires no arguments or options to execute this action, and doesn't print any return values.
+
+### `hostname` {#sec-hostname}
+
+`hostname` displays the system's network name.
+
+```{bash}
+#| eval: false
+hostname
+#>  Users-MacBook-Pro-2.local
+```
+
+
+###  `yes` {#sec-yes}
+
+`yes` repeatedly outputs a string until killed. Without arguments, it defaults to outputting 'y'.
+
+```{bash}
+#| eval: false
+yes
+```
+
+
+Each of these commands performs a specific and often utilized function within the Unix environment, embodying the Unix philosophy of doing one thing well.
 
 ```{r}
 #| label: git_contrib_box

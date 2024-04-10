@@ -7,8 +7,14 @@ knitr:
 
 # Pipes {#sec-pipes}
 
-```{r}
+```{bash}
 #| label: setup
+#| include: false
+whoami
+```
+
+```{r}
+#| label: common
 #| include: false
 source("_common.R")
 ```
@@ -30,29 +36,162 @@ co_box(
 )
 ```
 
+The Unix pipe, denoted by the vertical bar `|`, is a powerful feature of Unix and Unix-like operating systems that allows the output of one command (`stdout`) to be used as the input to another (`stdin`). This capability forms the basis of the Unix philosophy of building small, modular utilities that do one thing well and connecting them together to perform complex tasks.
+
+## Fundamental Concept
+
+The pipe is placed between two commands and directs the standard output (`stdout`) of the command to the left of the pipe to the standard input (`stdin`) of the command to the right.
+
+**Example**
+
+`echo "Hello, World!" | wc -w` sends the output of the `echo` command to `wc` (word count), which then counts the words.
+
+```{bash}
+echo "Hello, World!" | wc -w
+```
+
+The output is `2`, indicating there are two words in "Hello, World!".
+
+```{r}
+#| label: co_box_stdin_stdout
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "b",
+  look = "default", 
+  hsize = "1.10", 
+  size = "1.05", 
+  header = " Refresher: Standard Input and Standard Output", 
+  fold = FALSE,
+  contents = "Two key concepts in Unix text processing are standard input (`stdin`) and standard output (`stdout`). `stdin` is the default input stream, which often comes from the keyboard or the output of another command. `stdout` is the default output stream, typically the terminal screen. Many Unix commands read from `stdin` when no file is specified and write to `stdout`, allowing the output of one command to become the input of another. This design facilitates the chaining of commands (piping) to perform complex operations in a streamlined manner.
+
+-   **Input** generally refers to the data fed into a command, which can come from `stdin` or be specified as arguments.
+
+-   **Output** is the data produced by a command, displayed on `stdout` unless redirected.")
+```
+
+### Combining Multiple Pipes
+
+Commands can be chained together using multiple pipes, allowing for the creation of command pipelines where data is processed in stages.
+
+**Example**
+
+**`ps aux | grep httpd`** lists all processes, filters those containing "httpd" (HTTPD = web server processes running):
+
+```{bash}
+ps aux | grep httpd
+```
+
+**Example**
+
+**`wc -l`** counts the number of lines:
+
+```{bash}
+ps aux | grep httpd | wc -l
+```
+
+### Filtering and Processing
+
+**Example 1**
+
+**`cat data/roxanne | grep "night"`** displays lines from `data/roxanne` that contain the number `"2"`.
+
+```{bash}
+cat data/roxanne | grep "night"
+```
+
+Here, `cat` outputs the file's contents, which `grep` filters.
+
+**Example 2**
+
+**`ls -l data | sort -r`** lists the files in `data` in a detailed format, then sorts them in reverse order.
+
+```{bash}
+ls -l data | sort -r
+```
+
+It showcases how to reverse the listing of directory contents.
+
+### Transformation and Reduction
+
+**Example**
+
+**`find . -type f | xargs du -sh | sort -h`** finds files (`-type f`) in the current directory and subdirectories, calculates their sizes (`du -sh`), and sorts them by size (`sort -h`):
+
+```{bash}
+find data -type f | xargs du -sh | sort -h
+```
+
+This pipeline not only identifies files but also sorts them by their disk usage, illustrating a complex operation made simple through pipes.
+
+### Real-time Streaming and Monitoring
+
+**Example**
+
+**`cat /var/log/system.log | grep DEAD_PROCESS`** prints the `system.log` file, continuously monitoring for new entries, filters for those containing `DEAD_PROCESS`, then counts the number of lines:[^pipes-1]
+
+[^pipes-1]: `tail -f /var/log/syslog | grep sshd` is useful for real-time monitoring of SSH daemon logs.
+
+```{bash}
+#| eval: false
+cat /var/log/system.log | grep "DEAD_PROCESS" 
+## Apr 10 06:35:23 Users-MacBook-Pro login[3596]: DEAD_PROCESS: 3596 ttys000
+## Apr 10 06:35:25 Users-MacBook-Pro sessionlogoutd[19895]: DEAD_PROCESS: 225 console
+## Apr 10 10:20:25 Users-MacBook-Pro login[715]: DEAD_PROCESS: 715 ttys000
+```
+
+### Advanced Data Manipulation
+
+**Example**
+
+**`cut -d':' -f1 data/roxanne | sort | uniq`** extracts the first field from each line in `data/roxanne`, sorts the contents alphabetically, and removes duplicates.
+
+```{bash}
+cut -d':' -f1 data/roxanne | sort | uniq
+```
+
+This sequence is an example of performing data extraction and deduplication.
+
+#### Pipes with Loops
+
+**Example**
+
+**`find data -name "*.tsv"`**: starts in the `data` directory, looking for all files that end with the `.tsv` extension. The search is recursive, meaning it includes all subdirectories of `data` as well. Produces a list of paths to `.tsv` files, each path on a new line. This list is piped to the next command.
+
+**`| while read fname; do`**: The pipe (`|`) feeds the output from the `find` command into a `while` loop, which reads each line (file name) into the variable `fname`, one at a time. For each iteration of the loop (i.e., for each file name read into `fname`), the commands within the `do ... done` block are executed.
+
+**`echo -n "$fname: "`**: Prints the current file's name being processed. `echo -n` outputs the value of `fname` (the path to the current `.tsv` file) followed by a colon and a space, without adding a newline at the end. This means the count returned by `wc` will be printed on the same line, right after the file name.
+
+**`grep "RZA" "$fname"`**: Searches for a specific pattern within the file. Looks through the contents of the file (whose path is in `fname`) for lines containing the string "RZA". Only the lines that match this pattern are printed to `stdout`, which is then piped to `wc`.
+
+**`wc`**: For each file processed by the loop, `wc` outputs three numbers: the line count, word count, and character/byte count of the lines that `grep` found to contain "RZA". Since no specific option is given to `wc`, it defaults to displaying all three counts.
+
+```{bash}
+#| eval: true 
+find data -name "*.tsv" | while read fname; do
+  echo -n "$fname: "
+  grep "RZA" "$fname" | wc 
+done
+```
+
+This Bash command sequence combines `find`, a `while` loop, `echo`, `grep`, and `wc` to search through `.tsv` (Tab-Separated Values) files for lines containing a specific pattern ("RZA") and reports the count of lines, words, and characters for each occurrence. Combining pipelines with loops is an efficient way to sift through a potentially large set of files within a directory, facilitating a detailed aggregation of specified conditions across multiple files.
+
+### Efficiency and Performance
+
+While pipes are incredibly powerful, their use can impact performance, especially when processing large amounts of data. Each pipe involves creating a new subprocess, and data is copied between processes, which can lead to overhead.
+
+### Error Handling
+
+Error handling in pipes can be non-trivial, as each command in a pipeline executes independently. Users need to consider how each command handles errors and ensure that the pipeline as a whole behaves as expected even when errors occur.
+
+## Recap
+
 Pipes (`|`) allow the output of one command (`stdout`) to be used as the input (`stdin`) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next.
 
-We'll use the <code>@sec-grep</code> command as an example to illustrate `stdin`. 
+Unix pipes embody the concept of composability in Unix, enabling users to build complex workflows out of simple, single-purpose programs. They are a testament to the flexibility and power of the Unix command line, facilitating a wide range of tasks from simple text processing to sophisticated data analysis and system monitoring.
 
-Imagine you want to find the word "dress" in a file named `roxanne` in the `data/` folder. Instead of directly providing the file as an argument to <code>@sec-grep</code>, you can use <code>@sec-cat</code> to read the file and then pipe (`|`) its output into <code>@sec-grep</code>, utilizing `stdin` to receive the file content.
-
-```{bash}
-cat data/roxanne | grep dress
-```
-
-In this command:
-
-1. `cat data/roxanne` reads the content of `roxanne` and *sends* it to `stdout`
-
-2. The pipe `|` *redirects* the `stdout` from <code>@sec-cat</code> to the `stdin` of <code>@sec-grep</code>.
-
-3. `grep dress` *receives* the file's content through `stdin`, searches for the word "dress", and *prints* lines containing it to `stdout`.
-
-Here, <code>@sec-grep</code>'s input comes from `stdin` (provided by the pipe) instead of directly reading from a file.
-
-```{bash}
-ls /bin | head -n5
-```
+This framework of commands, arguments, options, and the interplay of input (`stdin`), output (`stdout`) , and pipes enables sophisticated data processing and manipulation directly from the terminal.
 
 ```{r}
 #| label: git_contrib_box

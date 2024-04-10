@@ -33,7 +33,7 @@ co_box(
 )
 ```
 
-Welcome to the beginning of your Unix and Linux journey. This book aims
+Welcome to the beginning of your Unix and Linux journey! This book aims
 to provide a clear understanding of the concepts and commands of
 Unix/Linux, even for non-technical audiences. Whether you are a student,
 a professional from a non-IT field, or someone curious about operating

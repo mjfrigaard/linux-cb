@@ -3,7 +3,7 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
-    comment: '# '
+    comment: '#>'
 ---
 
 # Arguments {#sec-args}
@@ -14,7 +14,6 @@ knitr:
 whoami
 ```
 
-
 ```{r}
 #| label: common
 #| include: false
@@ -22,7 +21,6 @@ whoami
 # Sys.getenv('QUARTO_PROJECT_DIR')
 source("_common.R")
 ```
-
 
 ```{r}
 #| label: co_box_dev
@@ -41,32 +39,335 @@ co_box(
 )
 ```
 
-Arguments follow the command and provide additional information or specify targets for the command, such as file names and paths. 
+Arguments in Unix/Linux commands are values or data passed to commands for processing. Unlike options, which modify the behavior of commands, arguments typically specify what the command should *act upon*. This typically includes filenames, user names, data values, or other kinds of information the command needs to execute its task.
+ 
+## Command and Argument Anatomy
 
-```bash
-$ command [argument]
-```
-
-We'll use the <code>@sec-ls</code> command to list the directory contents of the root directory (accessed with `/`):
+A Unix command can be broken down into the command name, followed by its options (which we'll address in the next chapter), and then its arguments:
 
 ```{bash}
-ls /
+#| eval: false
+command argument1 argument2 ... argument
 ```
 
-In the example above, `/` is the argument passed to the `ls` command.
+### Common Arguments
 
-## Quotes
+**File and Directory Names**: Most commonly, arguments are the names of files or directories on which the command will operate.
 
-For example, in <code>@sec-cat</code> `myfile.txt`, the `myfile.txt` file is an argument to the `cat` command, specifying which file it should display.
+**Example**
+
+```{bash}
+#| eval: false
+cp source.txt destination.txt
+```
+
+`source.txt` and `destination.txt` are arguments representing the source and destination files, respectively.
+
+**User and Group Names**: Commands related to user management might take usernames or group names as arguments.
+
+**Example**
+
+```{bash}
+#| eval: false
+chown user:group file
+```
+
+<code>@sec-chown</code> changes the ownership of `file` to `user` and `group`.
+
+**Command Targets**: Some commands take other commands as arguments. For example, `sudo` command runs command with superuser privileges.
+
+**Example**
+
+```{bash}
+#| eval: false
+sudo
+```
+
+**Data Values**: Commands might take data values as arguments for processing. 
+
+**Example**
+
+```{bash}
+#| eval: false
+echo Hello, World!
+```
+
+In `echo Hello, World!`, `Hello, World!` is an argument that `echo` prints to the terminal.
+
+## Other Arguments 
+
+Below are other types of command arguments. This is not an exhaustive list, but includes many of the commands and arguments you'll encounter on a regular basis.
+
+### Direct and Indirect 
+
+**Direct Arguments**: These are the most straightforward type of arguments. They are typically the names of files or directories on which commands operate. 
+
+**Example** 
 
 ```{bash}
 cat myfile.txt
 ```
 
+
+In the command `cat myfile.txt`, `myfile.txt` is a direct argument to the `cat` command, telling it which file to display on the standard output.
+
+**Indirect Arguments**: These arguments might specify additional information that commands need to complete their tasks.
+
+**Example** 
+
 ```{bash}
-cat 'myfile.txt'
+grep file myfile.txt
 ```
 
+The `file` search pattern for the `grep` command is an example of an indirect command, and `myfile.txt` is the direct argument.
+
+### Position
+
+**Order**: For many commands, the order of the arguments is significant. 
+
+**Example** 
+
+```{bash}
+cp myfile.txt myfile2.txt
+```
+
+`myfile.txt` is the first argument (indicating the file to copy from), and `myfile2.txt` is the second argument (indicating where to copy the file to). Reversing these arguments would result in a completely different operation.
+
+**Spaces**: Arguments that contain spaces must be quoted or escaped, so the shell understands them as a single argument rather than multiple arguments. 
+
+**Example** 
+
+To copy the contents of `New myfile2.txt` to `'my file 3.txt`, you would use:
+
+```{bash}
+cp myfile2.txt 'my file 3.txt'
+```
+
+
+### Special Characters
+
+**Special Characters**: Characters such as spaces, tabs, asterisks, question marks, and others have special meanings in the shell. They need to be treated carefully when used within arguments.
+
+#### Asterisk: `*` {#sec-asterisk}
+
+**Glob Patterns**: Arguments can include wildcards (like `*` and `?`), which the shell expands into a list of files or directories that match the pattern. For example, `*.txt` would match all files in the current directory ending with `.txt`.
+
+`*` is the wildcard for matching zero or more characters.
+
+**Example** 
+
+`ls *.md` lists all files in the current directory that end with `.md`:
+
+```{bash}
+ls *.md
+```
+
+#### Question Mark: `?` {#sec-question}
+
+`?` is the wildcard for matching exactly one character.
+
+**Example** 
+
+`ls myfile?.txt` lists files like `myfile2.txt`, but not `myfile.txt` and `my file 3.txt`:
+
+```{bash}
+ls myfile?.txt
+```
+
+
+#### Tilde: `~` {#sec-tilde}
+
+`~` represents the home directory of the current user.
+
+**Example** 
+
+List the items in the user's home directory:
+
+```{bash}
+#| eval: false
+ls ~
+#> Applications
+#> Creative Cloud Files
+#> Desktop
+#> Documents
+#> Downloads
+#> Dropbox
+#> Fonts
+#> Library
+#> Movies
+#> Music
+#> Pictures
+#> Public
+#> R
+#> Themes
+```
+
+
+#### Dollar Sign: `$` {#sec-dollar}
+
+`$` indicates a variable.
+
+**Example** 
+
+`echo $PATH` prints the value of the `PATH` environment variable:
+
+```{bash}
+#| eval: false
+echo $PATH
+```
+
+
+#### Ampersand: `&` {#sec-ampersand}
+
+`&` runs a command in the background.
+
+**Example** 
+
+`firefox &` opens Firefox in the background, allowing the terminal to be used for other commands.
+
+```{bash}
+#| eval: false
+firefox &
+```
+
+
+#### Semicolon: `;` {#sec-semicolon}
+
+`;` separates multiple commands to be run in sequence.
+
+**Example** 
+
+`cd data; ls` changes the directory to `data` and then lists its contents:
+
+```{bash}
+cd data; ls
+```
+
+
+#### Greater Than: `>` {#sec-gt}
+
+**Redirection operators**: `>` directs output to a file or a device. 
+
+**Example** 
+
+`echo "This is my 2nd file" > myfile2.txt` writes `"This is my 2nd file"` into `myfile2.txt`:
+
+```{bash}
+echo "This is my 2nd file" > myfile2.txt
+```
+
+#### Less Than: `<` {#sec-lt}
+
+**Redirection operators**: `<` takes input from a file or a device.
+
+**Example** 
+
+Then `wc < myfile2.txt` counts the words in `myfile2.txt`:
+
+```{bash}
+wc < myfile2.txt
+```
+
+#### Braces: `{}` {#sec-braces}
+
+**Brace Expansion**: Similar to wildcards, brace expansion (`{}`) allows the creation of multiple text strings from a pattern containing braces. 
+
+**Example**
+
+`cat wu_tang.{txt,csv}` 
+
+```{bash}
+cat data/wu_tang.{tsv,dat}
+```
+
+would expand into:
+
+```{bash}
+cat data/wu_tang.tsv 
+cat data/wu_tang.dat
+```
+
+
+#### Parentheses: `()` {#sec-parens}
+
+Parentheses can be used to group commands or for command substitution with `$( )`.
+
+**Example** 
+
+`(cd /var; ls)` runs `ls in /var` without changing the current directory:
+
+```{bash}
+(cd data; ls)
+```
+
+`$(command)` uses the output of `command`.
+
+#### Backslash: `\` {#sec-backslash}
+
+`\` escapes the following character, nullifying its special meaning
+
+**Example** 
+
+`echo "File name with spaces \& special characters"` prints the text with spaces and the ampersand:
+
+```{bash}
+echo "File name with spaces \& special characters"
+```
+
+#### Single quotes: `''` {#sec-single-quotes}
+
+Single quotes (`' '`) treat every character literally, ignoring the special meaning of all characters.
+
+**Example** 
+
+`echo '$HOME'` prints `$HOME`, not the path to the home directory:
+
+```{bash}
+echo '$HOME'
+```
+
+#### Double quotes: `""` {#sec-double-quotes}
+
+Double quotes (`" "`) allow for the inclusion of special characters in an argument, except for the dollar sign (`$`), backticks (\` \`), and backslash (`\`). 
+
+**Example** 
+
+`echo "$HOME"` prints the path to the home directory:
+
+```{bash}
+#| eval: false
+echo "$HOME"
+#> /Users/username
+```
+
+### Command Substitution
+
+**Using Output as Arguments**: The output of a command can be used as an argument for another command using backticks (\` \`) or `$( )`. 
+
+**Example** 
+
+`echo $(grep file myfile.txt)` uses the output of the `grep` command as an argument for `echo`:
+
+```{bash}
+echo $(grep file myfile.txt)
+```
+
+### Environmental Variables
+
+**Variables as Arguments**: Environment variables can be used as arguments in commands. 
+
+**Example** 
+
+`echo $HOME` prints the path to the user's home directory, where `$HOME` is an argument that the `echo` command interprets:
+
+```{bash}
+#| eval: false
+echo $HOME
+#> /Users/username
+```
+
+
+Understanding the nuances of Unix arguments is crucial for crafting precise and effective commands, allowing users to leverage the full power of the Unix command line for a wide array of tasks.
 
 ```{r}
 #| label: git_contrib_box

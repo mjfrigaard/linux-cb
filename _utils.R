@@ -24,7 +24,7 @@ video_game_hof <- video_game_hof |>
   dplyr::select(!ends_with('ref'))
 vroom::vroom_write(
   x = video_game_hof, 
-  file = "data/gamehof.tsv", 
+  file = "data/vg_hof.tsv", 
   delim = "\t", 
   eol = '\n')
 
@@ -32,7 +32,8 @@ vroom::vroom_write(
 tallest_trees <- scrape_wiki_tbl(
   wiki_url = 'https://en.wikipedia.org/wiki/List_of_tallest_trees', 
   tbl_string = "trees")
-tallest_trees <- dplyr::filter(tallest_trees, # drop first row
+trees <- dplyr::filter(tallest_trees, 
+  # drop first row
   class != "Class") |> 
   dplyr::rename(
     ht_meters = height,
@@ -44,9 +45,25 @@ tallest_trees <- dplyr::filter(tallest_trees, # drop first row
       NA_character_, 
       false = tree_name)
   ) |> 
-  dplyr::select(!contains('ref'), -tree_name)
+  tidyr::separate(col = species, 
+    into = c('tree', 'species'), 
+    sep = "\\(") |> 
+  dplyr::mutate(
+    tree = stringr::str_trim(tree, "both"),
+    species = stringr::str_remove_all(species, "note 1"),
+    species = stringr::str_remove_all(species, "\\)|\\[|\\]"),
+  ) |> 
+  dplyr::select(
+    tree, species, class, 
+    dplyr::starts_with('ht'),
+    location, 
+    continent,
+    name, 
+    !dplyr::contains('ref'), 
+    -tree_name)
+  
 vroom::vroom_write(
-  x = tallest_trees, 
+  x = trees, 
   file = "data/trees.tsv", 
   delim = "\t", 
   eol = '\n')
@@ -62,9 +79,10 @@ music_videos <- dplyr::filter(music_videos, # drop first row
     artists = artist_s
   ) |> 
 dplyr::mutate(
-    title = str_remove_all(title, '\"')
+    title = stringr::str_remove_all(title, '\"')
   ) |> 
   dplyr::select(!contains('ref'))
+# music_videos |> View()
 vroom::vroom_write(
   x = music_videos, 
   file = "data/music_vids.tsv", 

@@ -90,7 +90,7 @@ the building blocks for more complex operations in Unix/Linux.
 
 **Manipulating Text**
 
-**Tex Commands**: Unix/Linux systems are renowned for their powerful
+**Text Commands**: Unix/Linux systems are renowned for their powerful
 text manipulation capabilities. This section introduces commands such as
 `cat` for displaying file contents, `grep` for searching within
 files, `sort` for sorting data, `uniq` for filtering unique lines, and

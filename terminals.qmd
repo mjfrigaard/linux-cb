@@ -37,32 +37,61 @@ co_box(
 )
 ```
 
+Using Unix/Linux on macOS offers a unique and powerful environment with macOS's Terminal, but it's important to be aware of the differences and limitations inherent in macOS's implementation of Unix. Below we cover some special considerations rooted in macOS's distinct architecture and its version of Unix.
 
-Using macOS's Terminal to learn Unix/Linux offers a unique and powerful environment, but it comes with special considerations rooted in macOS's distinct architecture and its version of Unix. Here are key points to keep in mind:
+### Terminal Emulators
 
--   **Terminal Emulators**: The default Terminal app on macOS provides a solid interface to access the Unix command line, but there are other terminal emulators available (like [iTerm2](https://iterm2.com/)) that offer additional features such as split panes, search, and customization options.
+The default Terminal app on macOS provides a solid interface to access the Unix command line, but there are other terminal emulators available (like [iTerm2](https://iterm2.com/)) that offer additional features such as split panes, search, and customization options.
 
--   **Shells**: macOS has transitioned from using Bash as the default shell to Zsh since macOS Catalina. While both are Unix shells, they have some differences in features and configuration files (`~/.bash_profile` for Bash vs. `~/.zshrc` for Zsh).
+### Shells
 
--   **Homebrew**: [Homebrew](https://brew.sh/) is an essential package manager for macOS, filling the gap for Unix/Linux software that isn't pre-installed on macOS. It allows users to easily install and manage additional Unix tools, GNU utilities, languages, and applications. Learning to use Homebrew will significantly expand the Unix/Linux tools at your disposal on a macOS system.
+macOS has transitioned from using Bash as the default shell to Zsh since macOS Catalina. While both are Unix shells, they have some differences in features and configuration files (`~/.bash_profile` for Bash vs. `~/.zshrc` for Zsh).
 
--   **BSD vs. GNU Commands**:  macOS is based on Darwin, which incorporates elements from BSD Unix. Therefore, some of the command-line tools on macOS behave differently from their GNU counterparts found in Linux. For example, options and flags for commands like `ls`, `sed`, and `tar` may vary. This means that while the overarching principles remain the same, specific command syntax and options might require adjustments or the use of GNU versions of commands (installed via [Homebrew](https://brew.sh/), for instance).
+### Homebrew
 
--   **Case Sensitivity**: By default, the macOS file system (APFS or HFS+) is **case-insensitive but case-preserving**. This behavior is different from most Linux file systems, which are *case-sensitive*. This can affect scripts and commands that rely on case distinctions for file and directory names.
+[Homebrew](https://brew.sh/) is an essential package manager for macOS, filling the gap for Unix/Linux software that isn't pre-installed on macOS. It allows users to easily install and manage additional Unix tools, GNU utilities, languages, and applications. Learning to use Homebrew will significantly expand the Unix/Linux tools at your disposal on a macOS system.
 
--   **Security and Permissions**: macOS has implemented increasingly stringent security measures, including the System Integrity Protection (SIP) and sandboxing mechanisms, which can restrict access to certain files and system operations. While these features enhance security, they can also limit what you can do via the Terminal. Understanding macOS's security model and permissions (such as using `sudo` wisely) is crucial.
+### BSD vs. GNU Commands
 
--   **Filesystem Hierarchy**: While the Unix filesystem hierarchy is preserved in macOS, there are macOS-specific directories and structures, such as `~/Library` for user-specific application support files and preferences. Understanding these macOS-specific elements is important when navigating and managing files via the Terminal.
+macOS is based on Darwin, which incorporates elements from BSD Unix. Therefore, some of the command-line tools on macOS behave differently from their GNU counterparts found in Linux. For example, options and flags for commands like `ls`, `sed`, and `tar` may vary. This means that while the overarching principles remain the same, specific command syntax and options might require adjustments or the use of GNU versions of commands (installed via [Homebrew](https://brew.sh/), for instance).
 
--   **Networking and Interoperability**: macOS integrates well with both Unix/Linux and Windows environments, supporting various network protocols and file sharing options out of the box. Commands like `ssh`, `scp`, and `smbutil` can be used for remote access and file transfers, making macOS a versatile platform for learning Unix/Linux networking basics.
+### Case Sensitivity
 
--   **Graphical Applications**: macOS allows Unix command-line tools to interact with its graphical user interface (GUI) applications in ways that are not typically available on other Unix systems. For instance, the `open` command can be used to open files or applications, and `osascript` can interact with AppleScript-enabled applications for automation.
+By default, the macOS file system (APFS or HFS+) is **case-insensitive but case-preserving**. This behavior is different from most Linux file systems, which are *case-sensitive*. This can affect scripts and commands that rely on case distinctions for file and directory names.
+
+### Security and Permissions
+
+macOS has implemented increasingly stringent security measures, including the System Integrity Protection (SIP) and sandboxing mechanisms, which can restrict access to certain files and system operations. While these features enhance security, they can also limit what you can do via the Terminal. Understanding macOS's security model and permissions (such as using `sudo` wisely) is crucial.
+
+### Filesystem Hierarchy
+
+While the Unix filesystem hierarchy is preserved in macOS, there are macOS-specific directories and structures, such as `~/Library` for user-specific application support files and preferences. Understanding these macOS-specific elements is important when navigating and managing files via the Terminal.
+
+### Networking and Interoperability
+
+macOS integrates well with both Unix/Linux and Windows environments, supporting various network protocols and file sharing options out of the box. Commands like `ssh`, `scp`, and `smbutil` can be used for remote access and file transfers, making macOS a versatile platform for learning Unix/Linux networking basics.
+
+### Graphical Applications
+
+macOS allows Unix command-line tools to interact with its graphical user interface (GUI) applications in ways that are not typically available on other Unix systems. For instance, the `open` command can be used to open files or applications, and `osascript` can interact with AppleScript-enabled applications for automation.
 
 ### Terminal Pane (Posit Workbench)
 
 ![Terminal Pane in Posit Workbench](img/term-simple.png)
 
-Learning Unix/Linux on macOS provides a robust foundation with the added benefit of macOS-specific features and conveniences. However, it's essential to be aware of the differences and limitations inherent in macOS's implementation of Unix. Balancing the powerful capabilities of Unix with the peculiarities of macOS will allow you to make the most of your learning experience.
+### Bash
+
+This section covers Bash, a common Unix shell.
+
+#### Features of Bash
+
+- **Command History**: Bash maintains a history of the commands that have been entered, allowing users to navigate through them using the up and down arrow keys or search through them with Ctrl+R.
+
+- **Tab Completion**: Bash supports tab completion for commands, filenames, and paths, making it easier to type commands accurately and quickly.
+
+- **Scripting Capabilities**: Beyond single commands, users can execute entire scripts within the Bash REPL, making it a powerful tool for automating tasks.
+
+- **Customization**: The prompt and behavior of the Bash REPL can be customized through various settings in `.bashrc` or `.bash_profile` files, allowing users to tailor the environment to their preferences.
 
 ```{r}
 #| label: git_contrib_box

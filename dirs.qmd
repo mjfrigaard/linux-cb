@@ -45,7 +45,7 @@ When presented with a new map, the most important thing to find is your location
 
 ## Navigate {#sec-nav-dirs}
 
-### `pwd` {#sec-pwd}
+### `pwd` 
 
 **`pwd` (Print Working Directory)** tells you exactly where you are in the filesystem.
 
@@ -53,7 +53,7 @@ When presented with a new map, the most important thing to find is your location
 pwd # where am I?
 ```
 
-### `cd` {#sec-cd}
+### `cd` 
 
  **`cd` (Change Directory)** lets you move to a different folder on your computer.
 
@@ -64,7 +64,7 @@ cd /bin # change location
 pwd # now where am I?
 ```
 
-### `ls` {#sec-ls}
+### `ls` 
 
 **`ls` (List)** is like standing in one location, looking around, and seeing what files and folders are around you. In `/bin`, `ls` would show you the software tools available:
 
