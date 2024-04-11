@@ -5,7 +5,7 @@ knitr:
     collapse: true
 ---
 
-# Introduction {.unnumbered}
+# Introduction {#sec-intro}
 
 ```{bash}
 #| label: setup

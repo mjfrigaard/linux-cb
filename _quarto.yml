@@ -43,6 +43,7 @@ book:
         - format.qmd
         - permissions.qmd
   appendices:
+        - syntax_ref.qmd
         - glossary.qmd
 
 format:

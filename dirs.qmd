@@ -3,7 +3,7 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
-    
+    comment: '#>'
 ---
 
 # Directories {#sec-dirs}
@@ -77,7 +77,7 @@ ls # what's in here?
 
 In the Unix/Linux world, file and directory management is a fundamental skill. This chapter dives deep into the commands that allow users to create, copy, move, remove, and link files and directories. Each section below introduces a different command, detailing its purpose and providing examples of its use.
 
-### `mkdir` {#sec-mkdir}
+### `mkdir` 
 
 **`mkdir` (Make Directory)** builds a new folder wherever you tell it to, like making a new folder in our project for outputs (`out/`) or documents (`doc/`).
 
@@ -86,7 +86,7 @@ mkdir out
 mkdir doc
 ```
 
-### `cp` {#sec-cp}
+### `cp` 
 
 **`cp` (Copy)** duplicates files or folders. The `cp` command is used to Copy files or directories from one location to another. Imagine having a file (`myfile.txt`) on your root (`.`) directory that you want to copy to the `/data` folder; you could use `cp` to make a duplicate. 
 
@@ -96,7 +96,7 @@ cp myfile.txt data/myfile.txt
 ls data
 ```
 
-### `mv` {#sec-mv}
+### `mv` 
 
 **`mv` (Move)**: `mv`, short for Move, functions similarly to picking up a book from your desk and placing it on a shelf. It moves files or directories from one location to another. It can also be used for renaming files. This command is especially useful for organizing files and directories that are in the wrong place.
 
@@ -112,15 +112,17 @@ mv data/myfile.txt doc/myfile.txt
 ls doc
 ```
 
-### `rm` {#sec-rm}
+### `rm` 
 
-**`rm` (Remove)**: The `rm` command stands for Remove and is used to delete files or directories.
+**`rm` (Remove)**: The `rm` command stands for **remove** and is used to delete files or directories.
 
 ```{bash}
 #| error: true
 # remove doc folder
 rm doc
 ```
+
+By default, it won't remove a directory without the `-R` or `-r` option.
 
 ```{r}
 #| label: co_box_rm
@@ -145,20 +147,31 @@ It's important to note here that the command-line is not very forgiving. Using `
 ```
 
 ```{bash}
-# add flag
+# add option 
 rm -R doc
 ```
 
 
-
-
-### `ln` {#sec-ln}
+### `ln` 
 
 **`ln` (Link)**: `ln` creates Links to files or directories, making them accessible from multiple locations without duplicating the actual content. It's like creating a shortcut on your desktop to a program you frequently use. There are two types of links: hard links and symbolic (soft) links. Symbolic links are more commonly used because they can link to directories and provide more flexibility.
 
 ```bash
 ln -s /path/to/original /path/to/link
 ```
+
+## System
+
+
+### `ps` 
+
+`ps` (**Process Status**) reports a snapshot of information about all running processes, regardless of the owner, including the user, CPU and memory usage, process ID, and the command that started each process.. Command options can expand the selection to include other users' processes, full command lines, etc.
+
+### `df` 
+
+`df` (**Disk Free**) shows disk usage in a human-readable format, including the size, used space, available space, and the mount point of each filesystem. By default, it displays sizes in 1K blocks but can show them in a more readable format (like MB or GB) with the `-h` option (human-readable).
+
+## Recap 
 
 
 

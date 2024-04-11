@@ -3,6 +3,7 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
+    comment: '#>'
 ---
 
 # Pipes {#sec-pipes}
@@ -42,9 +43,30 @@ The Unix pipe, denoted by the vertical bar `|`, is a powerful feature of Unix an
 
 The pipe is placed between two commands and directs the standard output (`stdout`) of the command to the left of the pipe to the standard input (`stdin`) of the command to the right.
 
+```{r}
+#| label: co_box_stdin_stdout
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "g",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Standard Input and Output", 
+  fold = FALSE,
+  contents = "\n
+`stdin` (standard input) is a stream from which a command reads its input. By default, it's the keyboard, but it can be redirected to read from a file or another command's output.\n
+  
+![The text stream looks nothing like this](img/mr-robot.gif){fig-align='center' width='75%'}
+  
+`stdout` (standard output) is a stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command's input.\n")
+```
+
+
 **Example**
 
-`echo "Hello, World!" | wc -w` sends the output of the `echo` command to `wc` (word count), which then counts the words.
+**`echo "Hello, World!" | wc -w`** sends the output of the <code>@sec-echo</code> command to <code>@sec-wc</code>, which then counts the words.
 
 ```{bash}
 echo "Hello, World!" | wc -w
@@ -52,32 +74,13 @@ echo "Hello, World!" | wc -w
 
 The output is `2`, indicating there are two words in "Hello, World!".
 
-```{r}
-#| label: co_box_stdin_stdout
-#| echo: false
-#| results: asis
-#| eval: true
-co_box(
-  color = "b",
-  look = "default", 
-  hsize = "1.10", 
-  size = "1.05", 
-  header = " Refresher: Standard Input and Standard Output", 
-  fold = FALSE,
-  contents = "Two key concepts in Unix text processing are standard input (`stdin`) and standard output (`stdout`). `stdin` is the default input stream, which often comes from the keyboard or the output of another command. `stdout` is the default output stream, typically the terminal screen. Many Unix commands read from `stdin` when no file is specified and write to `stdout`, allowing the output of one command to become the input of another. This design facilitates the chaining of commands (piping) to perform complex operations in a streamlined manner.
-
--   **Input** generally refers to the data fed into a command, which can come from `stdin` or be specified as arguments.
-
--   **Output** is the data produced by a command, displayed on `stdout` unless redirected.")
-```
-
-### Combining Multiple Pipes
+### Combining Pipes
 
 Commands can be chained together using multiple pipes, allowing for the creation of command pipelines where data is processed in stages.
 
 **Example**
 
-**`ps aux | grep httpd`** lists all processes, filters those containing "httpd" (HTTPD = web server processes running):
+**<code>@sec-ps</code>`aux | `<code>@sec-grep</code> `httpd`** lists all processes, filters those containing "httpd" (HTTPD = web server processes running):
 
 ```{bash}
 ps aux | grep httpd
@@ -85,7 +88,7 @@ ps aux | grep httpd
 
 **Example**
 
-**`wc -l`** counts the number of lines:
+**<code>@sec-wc</code>` -l`** counts the number of lines:
 
 ```{bash}
 ps aux | grep httpd | wc -l
@@ -95,17 +98,17 @@ ps aux | grep httpd | wc -l
 
 **Example 1**
 
-**`cat data/roxanne | grep "night"`** displays lines from `data/roxanne` that contain the number `"2"`.
+**<code>@sec-cat</code>`data/roxanne | `<code>@sec-grep</code>` "night"`** displays lines from `data/roxanne` that contain the number `"2"`.
 
 ```{bash}
 cat data/roxanne | grep "night"
 ```
 
-Here, `cat` outputs the file's contents, which `grep` filters.
+Here, <code>@sec-cat</code> outputs the file's contents, which <code>@sec-grep</code> filters.
 
 **Example 2**
 
-**`ls -l data | sort -r`** lists the files in `data` in a detailed format, then sorts them in reverse order.
+**<code>@sec-ls</code>` -l data | `<code>@sec-sort</code>` -r`** lists the files in `data` in a detailed format, then sorts them in reverse order.
 
 ```{bash}
 ls -l data | sort -r
@@ -117,7 +120,7 @@ It showcases how to reverse the listing of directory contents.
 
 **Example**
 
-**`find . -type f | xargs du -sh | sort -h`** finds files (`-type f`) in the current directory and subdirectories, calculates their sizes (`du -sh`), and sorts them by size (`sort -h`):
+**<code>@sec-find</code>` . -type f | `<code>@sec-xargs</code>` du -sh | `<code>@sec-sort</code>` -h`** finds files (`-type f`) in the current directory and subdirectories, calculates their sizes (`du -sh`), and sorts them by size (`sort -h`):
 
 ```{bash}
 find data -type f | xargs du -sh | sort -h
@@ -159,13 +162,40 @@ This sequence is an example of performing data extraction and deduplication.
 
 **`find data -name "*.tsv"`**: starts in the `data` directory, looking for all files that end with the `.tsv` extension. The search is recursive, meaning it includes all subdirectories of `data` as well. Produces a list of paths to `.tsv` files, each path on a new line. This list is piped to the next command.
 
-**`| while read fname; do`**: The pipe (`|`) feeds the output from the `find` command into a `while` loop, which reads each line (file name) into the variable `fname`, one at a time. For each iteration of the loop (i.e., for each file name read into `fname`), the commands within the `do ... done` block are executed.
+```{bash}
+#| eval: true 
+find data -name "*.tsv" 
+```
 
-**`echo -n "$fname: "`**: Prints the current file's name being processed. `echo -n` outputs the value of `fname` (the path to the current `.tsv` file) followed by a colon and a space, without adding a newline at the end. This means the count returned by `wc` will be printed on the same line, right after the file name.
+**`| while read fname; do`**: The pipe (`|`) feeds the output from the <code>@sec-find</code> command into a `while` loop, which reads each line (file name) into the variable `fname`, one at a time. For each iteration of the loop (i.e., for each file name read into `fname`), the commands within the `do ... done` block are executed.
 
-**`grep "RZA" "$fname"`**: Searches for a specific pattern within the file. Looks through the contents of the file (whose path is in `fname`) for lines containing the string "RZA". Only the lines that match this pattern are printed to `stdout`, which is then piped to `wc`.
+```{bash}
+#| eval: false 
+find data -name "*.tsv" | while read fname; do
+  # do this!
+done
+```
 
-**`wc`**: For each file processed by the loop, `wc` outputs three numbers: the line count, word count, and character/byte count of the lines that `grep` found to contain "RZA". Since no specific option is given to `wc`, it defaults to displaying all three counts.
+**`echo -n "$fname: "`**: Prints the current file's name being processed. <code>@sec-echo</code>`-n` outputs the value of `fname` (the path to the current `.tsv` file) followed by a colon and a space, without adding a newline at the end. This means the count returned by <code>@sec-wc</code> will be printed on the same line, right after the file name.
+
+```{bash}
+#| eval: true 
+find data -name "*.tsv" | while read fname; do
+  echo -n "$fname: "
+done
+```
+
+**`grep "RZA" "$fname"`**: Searches for a specific pattern within the file. <code>@sec-grep</code> looks through the contents of the file (whose path is in `fname`) for lines containing the string "RZA". Only the lines that match this pattern are printed to `stdout`, which is then piped to <code>@sec-wc</code>.
+
+```{bash}
+#| eval: true 
+find data -name "*.tsv" | while read fname; do
+  echo -n "$fname: "
+  grep "RZA" "$fname"
+done
+```
+
+**`wc`**: For each file processed by the loop, <code>@sec-wc</code> outputs three numbers: the line count, word count, and character/byte count of the lines that <code>@sec-grep</code> found to contain "RZA". Since no specific option is given to <code>@sec-wc</code>, it defaults to displaying all three counts.
 
 ```{bash}
 #| eval: true 
@@ -175,7 +205,11 @@ find data -name "*.tsv" | while read fname; do
 done
 ```
 
-This Bash command sequence combines `find`, a `while` loop, `echo`, `grep`, and `wc` to search through `.tsv` (Tab-Separated Values) files for lines containing a specific pattern ("RZA") and reports the count of lines, words, and characters for each occurrence. Combining pipelines with loops is an efficient way to sift through a potentially large set of files within a directory, facilitating a detailed aggregation of specified conditions across multiple files.
+This Bash command sequence combines <code>@sec-find</code>, a `while` loop, <code>@sec-echo</code>, <code>@sec-grep</code>, and <code>@sec-wc</code> to search through `.tsv` (Tab-Separated Values) files for lines containing a specific pattern ("RZA") and reports the count of lines, words, and characters for each occurrence. Combining pipelines with loops is an efficient way to sift through a potentially large set of files within a directory, facilitating a detailed aggregation of specified conditions across multiple files.
+
+## Recap
+
+Pipes (`|`) allow the output of one command (`stdout`) to be used as the input (`stdin`) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next.
 
 ### Efficiency and Performance
 
@@ -184,10 +218,6 @@ While pipes are incredibly powerful, their use can impact performance, especiall
 ### Error Handling
 
 Error handling in pipes can be non-trivial, as each command in a pipeline executes independently. Users need to consider how each command handles errors and ensure that the pipeline as a whole behaves as expected even when errors occur.
-
-## Recap
-
-Pipes (`|`) allow the output of one command (`stdout`) to be used as the input (`stdin`) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next.
 
 Unix pipes embody the concept of composability in Unix, enabling users to build complex workflows out of simple, single-purpose programs. They are a testament to the flexibility and power of the Unix command line, facilitating a wide range of tasks from simple text processing to sophisticated data analysis and system monitoring.
 

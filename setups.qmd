@@ -41,8 +41,13 @@ co_box(
 )
 ```
 
-This section of the book dives into the practical aspects of preparing your environment to work with Unix/Linux systems. It is designed to guide readers through various setup processes, catering to different preferences and requirements. We'll cover using Quarto documents to execute Bash commands, working directly on a macOS terminal, and setting up a virtual machine.
+This book section details the practical aspects of preparing your environment to work with Unix/Linux systems. It is designed to guide readers through various setup processes, catering to different preferences and requirements. We’ll cover using Quarto documents to execute Bash commands, working directly on a macOS terminal, and setting up a virtual machine.
 
+<strong>@sec-terminals</strong> covers how to setup up [iterm2](https://iterm2.com/).
+
+<strong>@sec-quarto</strong> covers how to setup up the [Quarto](https://iterm2.com/) publishing system.
+
+<strong>@sec-vms</strong> covers how to run Unix on a virtual machine.
 
 ```{r}
 #| label: git_contrib_box

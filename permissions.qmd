@@ -5,7 +5,7 @@ knitr:
     collapse: true
 ---
 
-# Permissions {.unnumbered}
+# Permissions {#sec-perms}
 
 ```{r}
 #| label: setup

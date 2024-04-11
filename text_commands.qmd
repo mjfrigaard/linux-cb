@@ -3,9 +3,10 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
+    comment: '#>'
 ---
 
-# Text Commands {#sec-txt-cmds .unnumbered}
+# Text Commands {#sec-txt-cmds}
 
 ```{bash}
 #| label: setup
@@ -58,7 +59,7 @@ Each of these commands leverages stdin and stdout, enabling them to be combined 
 By mastering these commands, you gain the ability to effortlessly manipulate text streams, transforming raw data into structured information. This knowledge is not just a technical skill but a gateway to the deeper philosophy of Unix, where simplicity and efficiency reign supreme.
 -->
 
-## Text Manipulation {#sec-txt-manip .unnumbered}
+## Text Manipulation 
 
 These commands embody the Unix philosophy of '*do one thing and do it well*' and demonstrate the system’s power in processing text streams. This section will explore these fundamental commands, illustrating how they easily interact with text streams, standard input (`stdin`), and standard output (`stdout`) to perform complex text manipulations.
 
@@ -68,64 +69,83 @@ These commands embody the Unix philosophy of '*do one thing and do it well*' and
 #| results: asis
 #| eval: true
 co_box(
-  color = "g",
+  color = "b",
   look = "default", 
-  hsize = "1.25", 
-  size = "1.00", 
-  header = "Standard Input and Output", 
+  hsize = "1.10", 
+  size = "1.05", 
+  header = " Refresher: Standard Input and Standard Output", 
   fold = TRUE,
-  contents = "\n
-`stdin` (standard input) is a stream from which a command reads its input. By default, it's the keyboard, but it can be redirected to read from a file or another command's output.\n
-  
-![The text stream looks nothing like this](img/mr-robot.gif){fig-align='center' width='75%'}
-  
-`stdout` (standard output) is a stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command's input.\n")
+  contents = "Two key concepts in Unix text processing are standard input (`stdin`) and standard output (`stdout`). `stdin` is the default input stream, which often comes from the keyboard or the output of another command. `stdout` is the default output stream, typically the terminal screen. Many Unix commands read from `stdin` when no file is specified and write to `stdout`, allowing the output of one command to become the input of another. This design facilitates the chaining of commands (piping) to perform complex operations in a streamlined manner.
+
+-   **Input** generally refers to the data fed into a command, which can come from `stdin` or be specified as arguments.
+
+-   **Output** is the data produced by a command, displayed on `stdout` unless redirected.")
 ```
 
-### `cat` {#sec-cat}
+### `echo` 
+
+The `echo` command prints its arguments to the standard output. It's commonly used in scripts and on the command line to display messages or variables.
+
+### `cat` 
 
 **`cat` (Concatenate)**: `cat` displays the content of files straight to your screen, useful for checking what's in a text file quickly.
 
 This is similar to printing a file and laying out the pages on the floor to see them all at once.
 
-### `grep` {#sec-grep}
+### `grep` 
 
 **`grep`** stands for "global regular expression print" and it reads from `stdin` or a list of files and outputs the lines that contain matches for a specified pattern.
 
 
-### `sort` {#sec-sort}
+### `sort` 
 
 **`sort`**: `sort` arranges the lines in a text file into order:
 
 
 Similar to organizing our stack of papers alphabetically.
 
-### `uniq` {#sec-uniq}
+### `uniq` 
 
 **`uniq`**: `uniq` helps by removing duplicate lines from a file, making sure every line is unique.
 
-
 After accidentally printing duplicates of a document, you remove the extra copies.
 
-### `cut` {#sec-cut}
+### `cut` 
 
-**`cut`**: If you only want the dates from a list of events, you might physically cut them out of the paper. `cut` extracts specific parts of lines in a file, like cutting out columns of text.
+**`cut`**: `cut` extracts specific parts of lines in a file, like cutting out columns of text.
 
-### `paste` {#sec-paste}
+If you only want the dates from a list of events, you might physically cut them out of the paper. 
 
-**`paste`**: Taking snippets of text from different documents and sticking them together into one, `paste` combines lines from multiple files side by side.
+### `paste` 
 
-### `join` {#sec-join}
+**`paste`**: `paste` combines lines from multiple files side by side:
 
-**`join`**: If you have two lists with common information, you might merge them based on what matches. `join` merges lines from two files based on a common field.
+`paste` is like taking snippets of text from different documents and sticking them together into one.
 
-### `comm` {#sec-comm}
+### `join` 
 
-**`comm` (Compare)**: Laying two printed lists side by side to see what items appear on both, only on one, or the other, `comm` compares two sorted files line by line.
+**`join`**: `join` merges lines from two files based on a common field.
 
-### `diff` {#sec-diff}
+
+If you have two lists with common information, you might merge them based on what matches. 
+
+### `comm` 
+
+**`comm` (Compare)**: `comm` compares two sorted files line by line to see what items appear on both, only on one, or the other.
+
+### `diff` 
 
 **`diff` (Difference)**: Highlighting what changes have been made between your draft and the final copy of a letter, `diff` shows the differences between two files.
+
+### `wc` 
+
+`wc` (**Word Count**): `wc` counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.
+
+### `xargs` 
+
+`xargs` builds and executes command lines from standard input (`stdin`). It's most often used in combination with other commands through pipes. `xargs` takes input from a pipe and passes it as arguments to another command, allowing for powerful command-line operations that process a list of inputs iteratively.
+
+## Recap 
 
 These analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.
 

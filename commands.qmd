@@ -43,7 +43,6 @@ co_box(
 
 Commands are the first part of a command line instruction, specifying the program or built-in functionality to be executed. In Unix/Linux, several commands can operate without any options or arguments, performing their basic functions in their simplest form.
 
-
 We're going to start with a basic command: `date`:
 
 ```{bash}
@@ -58,23 +57,25 @@ Here is how it works:
 
 ### Read
 
-In Bash, the "Read" step occurs when the shell waits for input from the user. This is typically represented by the shell prompt, where we can type commands. The prompt might display useful information, such as the current user (`username`), hostname (`hostname`), and working directory (`current_directory`), depending on its configuration:
+In Bash, the "Read" step occurs when the shell waits for input from the user. This is typically represented by the shell prompt, where we can type commands. 
 
 ```{bash}
 #| eval: false
 username@hostname:current_directory$
 ```
 
+The prompt might display useful information, such as the current user (`username`), hostname (`hostname`), and working directory (`current_directory`), depending on its configuration.
+
 ### Eval
 
 Once a command is entered, Bash "evaluates" it. This step involves parsing the command and its arguments, checking for syntax correctness, and then executing it. 
-
-Commands can be simple, such as listing the current date and time, or complex scripts involving loops, conditionals, and functions.
 
 ```{bash}
 #| eval: false
 username@hostname:current_directory$ date
 ```
+
+Commands can be simple, such as listing the current date and time, or complex scripts involving loops, conditionals, and functions.
 
 ### Print
 
@@ -101,95 +102,69 @@ username@hostname:current_directory$
 
 This cycle repeats indefinitely until the user exits the REPL environment, typically with an `exit` command or by pressing Ctrl+D.
 
-## Simple Commands 
+## Basic Commands 
 
 In Unix, several commands can operate without any options or arguments, performing their basic functions in their simplest form. Below are some of these commands:
 
-### `pwd` {#sec-pwd}
-
-`pwd` prints the current working directory. 
-
-```{bash}
-#| eval: false 
-pwd
-#> /Users/username/
-```
-
-
-### `ls` {#sec-ls}
-
-`ls` lists the contents of the current directory by default.
-
-```{bash}
-#| eval: false 
-ls 
-#> Applications
-#> Library
-#> System
-#> Users
-#> Volumes
-#> bin
-#> cores
-#> dev
-#> etc
-#> home
-#> opt
-#> private
-#> sbin
-#> tmp
-#> usr
-#> var
-```
-
-
-### `date` {#sec-date}
-
-`date` displays the current date and time. 
-
-```{bash}
-#| eval: false 
-date
-#>  Wed Apr 10 03:39:52 MST 2024
-```
-
-
-### `uptime` {#sec-uptime}
-
-`uptime` shows how long the system has been running.
-
-```{bash}
-#| eval: false 
-uptime
-#>  3:39  up 11:23, 2 users, load averages: 3.82 3.21 3.00
-```
-
-
-### `who` {#sec-who}
+### `who` 
 
 `who` shows who is logged on the system. 
 
 ```{bash}
-#| eval: false 
+#| eval: true 
 who
-#>  username       console      Apr  9 03:20 
-#>  username       ttys000      Apr  9 03:42
 ```
 
 `who` by itself, without options or arguments, lists the users currently logged into the system.
 
+### `whoami` 
 
-### `clear` {#sec-clear}
+`whoami` shows the username of the user currently logged into the system. 
 
-`clear` clears the terminal screen.
+```{bash}
+#| eval: true 
+whoami
+```
+
+### `hostname` 
+
+`hostname` displays the system's network name.
+
+```{bash}
+#| eval: true
+hostname
+```
+
+### `cal` 
+
+`cal` displays a calender of the current month.
+
+```{bash}
+#| eval: true 
+cal
+```
+
+### `uptime` 
+
+`uptime` shows how long the system has been running.
+
+```{bash}
+#| eval: true 
+uptime
+```
+
+### `clear` 
+
+`clear` clears the terminal screen and doesn’t print any return values.
 
 ```{bash}
 #| eval: false
 clear
 ```
 
-`clear` does its job without the need for additional input and doesn't print any return values.
+`clear` does its job without the need for additional input.
 
-### `exit` {#sec-exit}
+### `exit` 
 
 `exit` exits the shell or your current session. 
 
@@ -200,18 +175,7 @@ exit
 
 `exit` requires no arguments or options to execute this action, and doesn't print any return values.
 
-### `hostname` {#sec-hostname}
-
-`hostname` displays the system's network name.
-
-```{bash}
-#| eval: false
-hostname
-#>  Users-MacBook-Pro-2.local
-```
-
-
-###  `yes` {#sec-yes}
+###  `yes` 
 
 `yes` repeatedly outputs a string until killed. Without arguments, it defaults to outputting 'y'.
 
@@ -220,6 +184,9 @@ hostname
 yes
 ```
 
+**NOTE:** Use **<kbd>Ctrl+C</kbd>** to interrupt the `yes` command.
+
+## Recap
 
 Each of these commands performs a specific and often utilized function within the Unix environment, embodying the Unix philosophy of doing one thing well.
 

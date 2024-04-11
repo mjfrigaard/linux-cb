@@ -41,7 +41,7 @@ co_box(
 
 Arguments in Unix/Linux commands are values or data passed to commands for processing. Unlike options, which modify the behavior of commands, arguments typically specify what the command should *act upon*. This typically includes filenames, user names, data values, or other kinds of information the command needs to execute its task.
  
-## Command and Argument Anatomy
+## Anatomy
 
 A Unix command can be broken down into the command name, followed by its options (which we'll address in the next chapter), and then its arguments:
 
@@ -50,7 +50,12 @@ A Unix command can be broken down into the command name, followed by its options
 command argument1 argument2 ... argument
 ```
 
-### Common Arguments
+## Argument Types 
+
+Below are a variety of command arguments types. This is not an exhaustive list, but includes many of the commands and arguments you'll encounter on a regular basis.
+
+
+### Files and Directories
 
 **File and Directory Names**: Most commonly, arguments are the names of files or directories on which the command will operate.
 
@@ -61,7 +66,9 @@ command argument1 argument2 ... argument
 cp source.txt destination.txt
 ```
 
-`source.txt` and `destination.txt` are arguments representing the source and destination files, respectively.
+`source.txt` and `destination.txt` are arguments representing the source and destination files to copy with <code>@sec-cp</code>, respectively.
+
+### User and Group Names
 
 **User and Group Names**: Commands related to user management might take usernames or group names as arguments.
 
@@ -74,7 +81,9 @@ chown user:group file
 
 <code>@sec-chown</code> changes the ownership of `file` to `user` and `group`.
 
-**Command Targets**: Some commands take other commands as arguments. For example, `sudo` command runs command with superuser privileges.
+### Command Targets
+
+**Command Targets**: Some commands take other commands as arguments. For example, <code>@sec-sudo</code> command runs command with superuser privileges.
 
 **Example**
 
@@ -82,6 +91,8 @@ chown user:group file
 #| eval: false
 sudo
 ```
+
+### Data Values
 
 **Data Values**: Commands might take data values as arguments for processing. 
 
@@ -92,11 +103,7 @@ sudo
 echo Hello, World!
 ```
 
-In `echo Hello, World!`, `Hello, World!` is an argument that `echo` prints to the terminal.
-
-## Other Arguments 
-
-Below are other types of command arguments. This is not an exhaustive list, but includes many of the commands and arguments you'll encounter on a regular basis.
+In `echo Hello, World!`, `Hello, World!` is an argument that <code>@sec-echo</code> prints to the terminal.
 
 ### Direct and Indirect 
 
@@ -109,7 +116,7 @@ cat myfile.txt
 ```
 
 
-In the command `cat myfile.txt`, `myfile.txt` is a direct argument to the `cat` command, telling it which file to display on the standard output.
+In the command `cat myfile.txt`, `myfile.txt` is a direct argument to the <code>@sec-cat</code> command, telling it which file to display on the standard output.
 
 **Indirect Arguments**: These arguments might specify additional information that commands need to complete their tasks.
 
@@ -119,7 +126,7 @@ In the command `cat myfile.txt`, `myfile.txt` is a direct argument to the `cat` 
 grep file myfile.txt
 ```
 
-The `file` search pattern for the `grep` command is an example of an indirect command, and `myfile.txt` is the direct argument.
+The `file` search pattern for the <code>@sec-grep</code> command is an example of an indirect command, and `myfile.txt` is the direct argument.
 
 ### Position
 
@@ -143,210 +150,13 @@ To copy the contents of `New myfile2.txt` to `'my file 3.txt`, you would use:
 cp myfile2.txt 'my file 3.txt'
 ```
 
-
-### Special Characters
-
-**Special Characters**: Characters such as spaces, tabs, asterisks, question marks, and others have special meanings in the shell. They need to be treated carefully when used within arguments.
-
-#### Asterisk: `*` {#sec-asterisk}
-
-**Glob Patterns**: Arguments can include wildcards (like `*` and `?`), which the shell expands into a list of files or directories that match the pattern. For example, `*.txt` would match all files in the current directory ending with `.txt`.
-
-`*` is the wildcard for matching zero or more characters.
-
-**Example** 
-
-`ls *.md` lists all files in the current directory that end with `.md`:
-
-```{bash}
-ls *.md
-```
-
-#### Question Mark: `?` {#sec-question}
-
-`?` is the wildcard for matching exactly one character.
-
-**Example** 
-
-`ls myfile?.txt` lists files like `myfile2.txt`, but not `myfile.txt` and `my file 3.txt`:
-
-```{bash}
-ls myfile?.txt
-```
-
-
-#### Tilde: `~` {#sec-tilde}
-
-`~` represents the home directory of the current user.
-
-**Example** 
-
-List the items in the user's home directory:
-
-```{bash}
-#| eval: false
-ls ~
-#> Applications
-#> Creative Cloud Files
-#> Desktop
-#> Documents
-#> Downloads
-#> Dropbox
-#> Fonts
-#> Library
-#> Movies
-#> Music
-#> Pictures
-#> Public
-#> R
-#> Themes
-```
-
-
-#### Dollar Sign: `$` {#sec-dollar}
-
-`$` indicates a variable.
-
-**Example** 
-
-`echo $PATH` prints the value of the `PATH` environment variable:
-
-```{bash}
-#| eval: false
-echo $PATH
-```
-
-
-#### Ampersand: `&` {#sec-ampersand}
-
-`&` runs a command in the background.
-
-**Example** 
-
-`firefox &` opens Firefox in the background, allowing the terminal to be used for other commands.
-
-```{bash}
-#| eval: false
-firefox &
-```
-
-
-#### Semicolon: `;` {#sec-semicolon}
-
-`;` separates multiple commands to be run in sequence.
-
-**Example** 
-
-`cd data; ls` changes the directory to `data` and then lists its contents:
-
-```{bash}
-cd data; ls
-```
-
-
-#### Greater Than: `>` {#sec-gt}
-
-**Redirection operators**: `>` directs output to a file or a device. 
-
-**Example** 
-
-`echo "This is my 2nd file" > myfile2.txt` writes `"This is my 2nd file"` into `myfile2.txt`:
-
-```{bash}
-echo "This is my 2nd file" > myfile2.txt
-```
-
-#### Less Than: `<` {#sec-lt}
-
-**Redirection operators**: `<` takes input from a file or a device.
-
-**Example** 
-
-Then `wc < myfile2.txt` counts the words in `myfile2.txt`:
-
-```{bash}
-wc < myfile2.txt
-```
-
-#### Braces: `{}` {#sec-braces}
-
-**Brace Expansion**: Similar to wildcards, brace expansion (`{}`) allows the creation of multiple text strings from a pattern containing braces. 
-
-**Example**
-
-`cat wu_tang.{txt,csv}` 
-
-```{bash}
-cat data/wu_tang.{tsv,dat}
-```
-
-would expand into:
-
-```{bash}
-cat data/wu_tang.tsv 
-cat data/wu_tang.dat
-```
-
-
-#### Parentheses: `()` {#sec-parens}
-
-Parentheses can be used to group commands or for command substitution with `$( )`.
-
-**Example** 
-
-`(cd /var; ls)` runs `ls in /var` without changing the current directory:
-
-```{bash}
-(cd data; ls)
-```
-
-`$(command)` uses the output of `command`.
-
-#### Backslash: `\` {#sec-backslash}
-
-`\` escapes the following character, nullifying its special meaning
-
-**Example** 
-
-`echo "File name with spaces \& special characters"` prints the text with spaces and the ampersand:
-
-```{bash}
-echo "File name with spaces \& special characters"
-```
-
-#### Single quotes: `''` {#sec-single-quotes}
-
-Single quotes (`' '`) treat every character literally, ignoring the special meaning of all characters.
-
-**Example** 
-
-`echo '$HOME'` prints `$HOME`, not the path to the home directory:
-
-```{bash}
-echo '$HOME'
-```
-
-#### Double quotes: `""` {#sec-double-quotes}
-
-Double quotes (`" "`) allow for the inclusion of special characters in an argument, except for the dollar sign (`$`), backticks (\` \`), and backslash (`\`). 
-
-**Example** 
-
-`echo "$HOME"` prints the path to the home directory:
-
-```{bash}
-#| eval: false
-echo "$HOME"
-#> /Users/username
-```
-
 ### Command Substitution
 
 **Using Output as Arguments**: The output of a command can be used as an argument for another command using backticks (\` \`) or `$( )`. 
 
 **Example** 
 
-`echo $(grep file myfile.txt)` uses the output of the `grep` command as an argument for `echo`:
+`echo $(grep file myfile.txt)` uses the output of the <code>@sec-grep</code> command as an argument for <code>@sec-echo</code>:
 
 ```{bash}
 echo $(grep file myfile.txt)
@@ -358,7 +168,7 @@ echo $(grep file myfile.txt)
 
 **Example** 
 
-`echo $HOME` prints the path to the user's home directory, where `$HOME` is an argument that the `echo` command interprets:
+`echo $HOME` prints the path to the user's home directory, where `$HOME` is an argument that the <code>@sec-echo</code> command interprets:
 
 ```{bash}
 #| eval: false

@@ -55,10 +55,23 @@ Short options are typically a single dash followed by a single letter (e.g., `-l
 ls -l data
 ```
 
+## Combining Short Options
+
+Multiple short options can be combined after a single dash, without spaces (e.g., `-lrt`)
+allowing users to use multiple options at once, and reducing the need to type multiple dashes.
+
+
+**Example**
+
+`ls -lrt` combines three options: `-l` (long listing format), `-r` (reverse order), and `-t` (sort by modification time), providing a detailed, reverse-chronological list of files.
+
+```{bash}
+ls -lrt data
+```
 
 ## Long Options
 
-Long options usually use two dashes followed by a word or compound words (e.g., `--long-listing`) and provide a more descriptive way to specify options, making scripts and commands more readable. **Note that not all commands support the long-form option syntax.**
+Long options usually use two dashes followed by a word or compound words (e.g., `--long-listing`) and provide a more descriptive way to specify options, making scripts and commands more readable. 
 
 **Example**
 
@@ -78,21 +91,9 @@ ls --reverse
 #> music_vids.tsv
 ```
 
-### Combining Short Options
+**Note that not all commands support the long-form option syntax.**
 
-Multiple short options can be combined after a single dash, without spaces (e.g., `-lrt`)
-allowing users to use multiple options at once, and reducing the need to type multiple dashes.
-
-
-**Example**
-
-`ls -lrt` combines three options: `-l` (long listing format), `-r` (reverse order), and `-t` (sort by modification time), providing a detailed, reverse-chronological list of files.
-
-```{bash}
-ls -lrt data
-```
-
-### Options with Arguments
+## Options and Arguments
 
 Options can be combined with arguments when they are followed by a space and then the argument (e.g., `-o filename`). Some options require or accept an argument to specify a value related to the option's action.
 
@@ -106,7 +107,7 @@ grep -i "2ND" myfile2.txt
 
 The `"2ND"` here is an argument to the `-i` option
 
-### Options Affecting Output
+## Options Affecting Output
 
 **Example 1**
 
@@ -133,11 +134,11 @@ df -h
 #> /dev/disk1s2                       466Gi   410Gi    41Gi    91%    5.6M  429M    1%   /System/Volumes/Data
 ```
 
-### Options Modifying Command Behavior
+## Options Modifying Command Behavior
 
 **Example**
 
-`cp -n source.txt dest.txt` does not overwrite the destination file if it already exists. 
+<code>@sec-cp</code>`-n source.txt dest.txt` does not overwrite the destination file if it already exists. 
 
 ```{bash}
 #| eval: false
@@ -150,11 +151,11 @@ The `-n` option modifies the default behavior of the `cp` command.
 cat myfile2.txt
 ```
 
-### Options for Help and Information
+## Options for Help and Information
 
 **Example**
 
-`grep --help` displays usage information for the `grep` command, helping users understand available options and syntax.
+<code>@sec-grep</code>` --help` displays usage information for the `grep` command, helping users understand available options and syntax.
 
 ```{bash}
 #| eval: false
@@ -221,14 +222,9 @@ man echo
 #> macOS 14.4                      April 12, 2003                      macOS 14.4
 ```
 
+## Environment-Specific Options
 
-
-
-
-
-### Environment-Specific Options
-
-`sort -u file.txt` sorts the lines in `file.txt`, removing duplicate lines. The `-u` option's behavior (considering case sensitivity) might vary depending on the locale and environment settings.
+<code>@sec-sort</code>`-u file.txt` sorts the lines in `file.txt`, removing duplicate lines. The `-u` option's behavior (considering case sensitivity) might vary depending on the locale and environment settings.
 
 **Example**
 

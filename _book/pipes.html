@@ -155,8 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -248,8 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./text_commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Text Commands</span></a>
+  <a href="./text_commands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Text Commands</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -277,8 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./permissions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Permissions</span></a>
+  <a href="./permissions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Permissions</span></a>
   </div>
 </li>
       </ul>
@@ -292,6 +289,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syntax_ref.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Syntax Reference</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./glossary.html" class="sidebar-item-text sidebar-link">
@@ -312,7 +314,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#fundamental-concept" id="toc-fundamental-concept" class="nav-link active" data-scroll-target="#fundamental-concept">Fundamental Concept</a>
   <ul>
-  <li><a href="#combining-multiple-pipes" id="toc-combining-multiple-pipes" class="nav-link" data-scroll-target="#combining-multiple-pipes">Combining Multiple Pipes</a></li>
+  <li><a href="#combining-pipes" id="toc-combining-pipes" class="nav-link" data-scroll-target="#combining-pipes">Combining Pipes</a></li>
   <li><a href="#filtering-and-processing" id="toc-filtering-and-processing" class="nav-link" data-scroll-target="#filtering-and-processing">Filtering and Processing</a></li>
   <li><a href="#transformation-and-reduction" id="toc-transformation-and-reduction" class="nav-link" data-scroll-target="#transformation-and-reduction">Transformation and Reduction</a></li>
   <li><a href="#real-time-streaming-and-monitoring" id="toc-real-time-streaming-and-monitoring" class="nav-link" data-scroll-target="#real-time-streaming-and-monitoring">Real-time Streaming and Monitoring</a></li>
@@ -320,10 +322,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#pipes-with-loops" id="toc-pipes-with-loops" class="nav-link" data-scroll-target="#pipes-with-loops">Pipes with Loops</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a>
+  <ul>
   <li><a href="#efficiency-and-performance" id="toc-efficiency-and-performance" class="nav-link" data-scroll-target="#efficiency-and-performance">Efficiency and Performance</a></li>
   <li><a href="#error-handling" id="toc-error-handling" class="nav-link" data-scroll-target="#error-handling">Error Handling</a></li>
   </ul></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   </ul>
 </nav>
     </div>
@@ -371,95 +375,98 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="fundamental-concept" class="level2">
 <h2 class="anchored" data-anchor-id="fundamental-concept">Fundamental Concept</h2>
 <p>The pipe is placed between two commands and directs the standard output (<code>stdout</code>) of the command to the left of the pipe to the standard input (<code>stdin</code>) of the command to the right.</p>
-<p><strong>Example</strong></p>
-<p><code>echo "Hello, World!" | wc -w</code> sends the output of the <code>echo</code> command to <code>wc</code> (word count), which then counts the words.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello, World!"</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-w</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">##        2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The output is <code>2</code>, indicating there are two words in “Hello, World!”.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 1.10em;">Refresher: Standard Input and Standard Output</span>
+<span style="font-weight: bold; font-size: 1.25em;">Standard Input and Output</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<div style="font-size: 1.05em; color: #282b2d;">
-<p>Two key concepts in Unix text processing are standard input (<code>stdin</code>) and standard output (<code>stdout</code>). <code>stdin</code> is the default input stream, which often comes from the keyboard or the output of another command. <code>stdout</code> is the default output stream, typically the terminal screen. Many Unix commands read from <code>stdin</code> when no file is specified and write to <code>stdout</code>, allowing the output of one command to become the input of another. This design facilitates the chaining of commands (piping) to perform complex operations in a streamlined manner.</p>
-<ul>
-<li><p><strong>Input</strong> generally refers to the data fed into a command, which can come from <code>stdin</code> or be specified as arguments.</p></li>
-<li><p><strong>Output</strong> is the data produced by a command, displayed on <code>stdout</code> unless redirected.</p></li>
-</ul>
+<div style="font-size: 1.00em; color: #282b2d;">
+<p><code>stdin</code> (standard input) is a stream from which a command reads its input. By default, it’s the keyboard, but it can be redirected to read from a file or another command’s output.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/mr-robot.gif" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>The text stream looks nothing like this</figcaption>
+</figure>
+</div>
+<p><code>stdout</code> (standard output) is a stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command’s input.</p>
 </div>
 </div>
 </div>
 </div>
-<section id="combining-multiple-pipes" class="level3">
-<h3 class="anchored" data-anchor-id="combining-multiple-pipes">Combining Multiple Pipes</h3>
+<p><strong>Example</strong></p>
+<p><strong><code>echo "Hello, World!" | wc -w</code></strong> sends the output of the <code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code> command to <code><a href="syntax_ref.html#sec-wc" class="quarto-xref"><span>wc</span></a></code>, which then counts the words.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello, World!"</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-w</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The output is <code>2</code>, indicating there are two words in “Hello, World!”.</p>
+<section id="combining-pipes" class="level3">
+<h3 class="anchored" data-anchor-id="combining-pipes">Combining Pipes</h3>
 <p>Commands can be chained together using multiple pipes, allowing for the creation of command pipelines where data is processed in stages.</p>
 <p><strong>Example</strong></p>
-<p><strong><code>ps aux | grep httpd</code></strong> lists all processes, filters those containing “httpd” (HTTPD = web server processes running):</p>
+<p><strong><code><a href="syntax_ref.html#sec-ps" class="quarto-xref"><span>ps</span></a></code><code>aux |</code><code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> <code>httpd</code></strong> lists all processes, filters those containing “httpd” (HTTPD = web server processes running):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> aux <span class="kw">|</span> <span class="fu">grep</span> httpd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">## mjfrigaard       13523   0.0  0.0 33597016    628   ??  S     3:00PM   0:00.00 grep httpd</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">## mjfrigaard       13521   0.0  0.0 33597548    900   ??  S     3:00PM   0:00.01 bash -c ps aux | grep httpd</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">## mjfrigaard       13520   0.0  0.0 33606764    936   ??  S     3:00PM   0:00.01 sh -c 'bash'  -c 'ps aux | grep httpd' 2&gt;&amp;1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mjfrigaard       24013   0.0  0.0 33606232    640   ??  S     8:27AM   0:00.00 grep httpd</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mjfrigaard       24011   0.0  0.0 33607788    928   ??  S     8:27AM   0:00.00 bash -c ps aux | grep httpd</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mjfrigaard       24010   0.0  0.0 33597548    920   ??  S     8:27AM   0:00.01 sh -c 'bash'  -c 'ps aux | grep httpd' 2&gt;&amp;1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Example</strong></p>
-<p><strong><code>wc -l</code></strong> counts the number of lines:</p>
+<p><strong><code><a href="syntax_ref.html#sec-wc" class="quarto-xref"><span>wc</span></a></code><code>-l</code></strong> counts the number of lines:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> aux <span class="kw">|</span> <span class="fu">grep</span> httpd <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">##        3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="filtering-and-processing" class="level3">
 <h3 class="anchored" data-anchor-id="filtering-and-processing">Filtering and Processing</h3>
 <p><strong>Example 1</strong></p>
-<p><strong><code>cat data/roxanne | grep "night"</code></strong> displays lines from <code>data/roxanne</code> that contain the number <code>"2"</code>.</p>
+<p><strong><code><a href="syntax_ref.html#sec-cat" class="quarto-xref"><span>cat</span></a></code><code>data/roxanne |</code><code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code><code>"night"</code></strong> displays lines from <code>data/roxanne</code> that contain the number <code>"2"</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/roxanne <span class="kw">|</span> <span class="fu">grep</span> <span class="st">"night"</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">## You don't have to sell your body to the night</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">## You don't have to wear that dress tonight</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; You don't have to sell your body to the night</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; You don't have to wear that dress tonight</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Here, <code>cat</code> outputs the file’s contents, which <code>grep</code> filters.</p>
+<p>Here, <code><a href="syntax_ref.html#sec-cat" class="quarto-xref"><span>cat</span></a></code> outputs the file’s contents, which <code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> filters.</p>
 <p><strong>Example 2</strong></p>
-<p><strong><code>ls -l data | sort -r</code></strong> lists the files in <code>data</code> in a detailed format, then sorts them in reverse order.</p>
+<p><strong><code><a href="syntax_ref.html#sec-ls" class="quarto-xref"><span>ls</span></a></code><code>-l data |</code><code><a href="syntax_ref.html#sec-sort" class="quarto-xref"><span>sort</span></a></code><code>-r</code></strong> lists the files in <code>data</code> in a detailed format, then sorts them in reverse order.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> data <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-r</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">## total 96</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">## -rw-r--r--@ 1 mjfrigaard  staff  6122 Apr 10 14:04 music_vids.tsv</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">## -rw-r--r--@ 1 mjfrigaard  staff  4417 Apr 10 14:01 trees.tsv</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">## -rw-r--r--@ 1 mjfrigaard  staff   461 Apr 10 09:37 wu_tang.dat</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">## -rw-r--r--@ 1 mjfrigaard  staff   381 Mar 28  2023 who-tb-data.tsv</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">## -rw-r--r--@ 1 mjfrigaard  staff   281 Apr 10 09:38 wu_tang.txt</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">## -rw-r--r--@ 1 mjfrigaard  staff   263 Apr 10 09:39 wu_tang.tsv</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">## -rw-r--r--@ 1 mjfrigaard  staff   263 Apr 10 09:34 wu_tang.csv</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">## -rw-r--r--  1 mjfrigaard  staff  4814 Apr 10 14:07 vg_hof.tsv</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">## -rw-r--r--  1 mjfrigaard  staff  1315 Apr  6 05:38 roxanne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; total 96</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -rw-r--r--@ 1 mjfrigaard  staff  6122 Apr 10 14:04 music_vids.tsv</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -rw-r--r--@ 1 mjfrigaard  staff  4417 Apr 10 14:01 trees.tsv</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -rw-r--r--@ 1 mjfrigaard  staff   461 Apr 10 09:37 wu_tang.dat</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -rw-r--r--@ 1 mjfrigaard  staff   381 Mar 28  2023 who-tb-data.tsv</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -rw-r--r--@ 1 mjfrigaard  staff   281 Apr 10 09:38 wu_tang.txt</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -rw-r--r--@ 1 mjfrigaard  staff   263 Apr 10 09:39 wu_tang.tsv</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -rw-r--r--@ 1 mjfrigaard  staff   263 Apr 10 09:34 wu_tang.csv</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -rw-r--r--  1 mjfrigaard  staff  4814 Apr 10 14:07 vg_hof.tsv</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -rw-r--r--  1 mjfrigaard  staff  1315 Apr  6 05:38 roxanne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It showcases how to reverse the listing of directory contents.</p>
 </section>
 <section id="transformation-and-reduction" class="level3">
 <h3 class="anchored" data-anchor-id="transformation-and-reduction">Transformation and Reduction</h3>
 <p><strong>Example</strong></p>
-<p><strong><code>find . -type f | xargs du -sh | sort -h</code></strong> finds files (<code>-type f</code>) in the current directory and subdirectories, calculates their sizes (<code>du -sh</code>), and sorts them by size (<code>sort -h</code>):</p>
+<p><strong><code><a href="syntax_ref.html#sec-find" class="quarto-xref"><span>find</span></a></code><code>. -type f |</code><code><a href="syntax_ref.html#sec-xargs" class="quarto-xref"><span>xargs</span></a></code><code>du -sh |</code><code><a href="syntax_ref.html#sec-sort" class="quarto-xref"><span>sort</span></a></code><code>-h</code></strong> finds files (<code>-type f</code>) in the current directory and subdirectories, calculates their sizes (<code>du -sh</code>), and sorts them by size (<code>sort -h</code>):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> data <span class="at">-type</span> f <span class="kw">|</span> <span class="fu">xargs</span> du <span class="at">-sh</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-h</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">## 4.0K data/roxanne</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">## 4.0K data/who-tb-data.tsv</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">## 4.0K data/wu_tang.csv</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">## 4.0K data/wu_tang.dat</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">## 4.0K data/wu_tang.tsv</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">## 4.0K data/wu_tang.txt</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">## 8.0K data/music_vids.tsv</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">## 8.0K data/trees.tsv</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">## 8.0K data/vg_hof.tsv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4.0K data/roxanne</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4.0K data/who-tb-data.tsv</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4.0K data/wu_tang.csv</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4.0K data/wu_tang.dat</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4.0K data/wu_tang.tsv</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4.0K data/wu_tang.txt</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8.0K data/music_vids.tsv</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8.0K data/trees.tsv</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8.0K data/vg_hof.tsv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This pipeline not only identifies files but also sorts them by their disk usage, illustrating a complex operation made simple through pipes.</p>
 </section>
@@ -480,48 +487,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong><code>cut -d':' -f1 data/roxanne | sort | uniq</code></strong> extracts the first field from each line in <code>data/roxanne</code>, sorts the contents alphabetically, and removes duplicates.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cut</span> <span class="at">-d</span><span class="st">':'</span> <span class="at">-f1</span> data/roxanne <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">## I have to tell you just how I feel</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">## I know my mind is made up</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">## I loved you since I knew you</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">## I won't share you with another boy</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">## I wouldn't talk down to you</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">## It's a bad way</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">## Ro...</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">## Roxanne</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">## Roxanne (Put on the red light)</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">## Roxanne (You don't have to put on the red light)</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">## So put away your make up</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">## Those days are over</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">## Told you once I won't tell you again</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">## Walk the streets for money</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">## You don't care if it's wrong or if it's right</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">## You don't have to put on the red light</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">## You don't have to sell your body to the night</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">## You don't have to wear that dress tonight</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; I have to tell you just how I feel</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; I know my mind is made up</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; I loved you since I knew you</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; I won't share you with another boy</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; I wouldn't talk down to you</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; It's a bad way</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ro...</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Roxanne</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Roxanne (Put on the red light)</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Roxanne (You don't have to put on the red light)</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; So put away your make up</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Those days are over</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Told you once I won't tell you again</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Walk the streets for money</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; You don't care if it's wrong or if it's right</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; You don't have to put on the red light</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; You don't have to sell your body to the night</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; You don't have to wear that dress tonight</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This sequence is an example of performing data extraction and deduplication.</p>
 <section id="pipes-with-loops" class="level4">
 <h4 class="anchored" data-anchor-id="pipes-with-loops">Pipes with Loops</h4>
 <p><strong>Example</strong></p>
 <p><strong><code>find data -name "*.tsv"</code></strong>: starts in the <code>data</code> directory, looking for all files that end with the <code>.tsv</code> extension. The search is recursive, meaning it includes all subdirectories of <code>data</code> as well. Produces a list of paths to <code>.tsv</code> files, each path on a new line. This list is piped to the next command.</p>
-<p><strong><code>| while read fname; do</code></strong>: The pipe (<code>|</code>) feeds the output from the <code>find</code> command into a <code>while</code> loop, which reads each line (file name) into the variable <code>fname</code>, one at a time. For each iteration of the loop (i.e., for each file name read into <code>fname</code>), the commands within the <code>do ... done</code> block are executed.</p>
-<p><strong><code>echo -n "$fname: "</code></strong>: Prints the current file’s name being processed. <code>echo -n</code> outputs the value of <code>fname</code> (the path to the current <code>.tsv</code> file) followed by a colon and a space, without adding a newline at the end. This means the count returned by <code>wc</code> will be printed on the same line, right after the file name.</p>
-<p><strong><code>grep "RZA" "$fname"</code></strong>: Searches for a specific pattern within the file. Looks through the contents of the file (whose path is in <code>fname</code>) for lines containing the string “RZA”. Only the lines that match this pattern are printed to <code>stdout</code>, which is then piped to <code>wc</code>.</p>
-<p><strong><code>wc</code></strong>: For each file processed by the loop, <code>wc</code> outputs three numbers: the line count, word count, and character/byte count of the lines that <code>grep</code> found to contain “RZA”. Since no specific option is given to <code>wc</code>, it defaults to displaying all three counts.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> data <span class="at">-name</span> <span class="st">"*.tsv"</span> <span class="kw">|</span> <span class="cf">while</span> <span class="bu">read</span> <span class="va">fname</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="at">-n</span> <span class="st">"</span><span class="va">$fname</span><span class="st">: "</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">grep</span> <span class="st">"RZA"</span> <span class="st">"</span><span class="va">$fname</span><span class="st">"</span> <span class="kw">|</span> <span class="fu">wc</span> </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">## data/music_vids.tsv:        0       0       0</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">## data/vg_hof.tsv:        0       0       0</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">## data/trees.tsv:        0       0       0</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">## data/who-tb-data.tsv:        0       0       0</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">## data/wu_tang.tsv:        1       3      17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> data <span class="at">-name</span> <span class="st">"*.tsv"</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/music_vids.tsv</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/vg_hof.tsv</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/trees.tsv</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/who-tb-data.tsv</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/wu_tang.tsv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This Bash command sequence combines <code>find</code>, a <code>while</code> loop, <code>echo</code>, <code>grep</code>, and <code>wc</code> to search through <code>.tsv</code> (Tab-Separated Values) files for lines containing a specific pattern (“RZA”) and reports the count of lines, words, and characters for each occurrence. Combining pipelines with loops is an efficient way to sift through a potentially large set of files within a directory, facilitating a detailed aggregation of specified conditions across multiple files.</p>
+<p><strong><code>| while read fname; do</code></strong>: The pipe (<code>|</code>) feeds the output from the <code><a href="syntax_ref.html#sec-find" class="quarto-xref"><span>find</span></a></code> command into a <code>while</code> loop, which reads each line (file name) into the variable <code>fname</code>, one at a time. For each iteration of the loop (i.e., for each file name read into <code>fname</code>), the commands within the <code>do ... done</code> block are executed.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> data <span class="at">-name</span> <span class="st">"*.tsv"</span> <span class="kw">|</span> <span class="cf">while</span> <span class="bu">read</span> <span class="va">fname</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># do this!</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong><code>echo -n "$fname: "</code></strong>: Prints the current file’s name being processed. <code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code><code>-n</code> outputs the value of <code>fname</code> (the path to the current <code>.tsv</code> file) followed by a colon and a space, without adding a newline at the end. This means the count returned by <code><a href="syntax_ref.html#sec-wc" class="quarto-xref"><span>wc</span></a></code> will be printed on the same line, right after the file name.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> data <span class="at">-name</span> <span class="st">"*.tsv"</span> <span class="kw">|</span> <span class="cf">while</span> <span class="bu">read</span> <span class="va">fname</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="at">-n</span> <span class="st">"</span><span class="va">$fname</span><span class="st">: "</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/music_vids.tsv: data/vg_hof.tsv: data/trees.tsv: data/who-tb-data.tsv: data/wu_tang.tsv:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong><code>grep "RZA" "$fname"</code></strong>: Searches for a specific pattern within the file. <code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> looks through the contents of the file (whose path is in <code>fname</code>) for lines containing the string “RZA”. Only the lines that match this pattern are printed to <code>stdout</code>, which is then piped to <code><a href="syntax_ref.html#sec-wc" class="quarto-xref"><span>wc</span></a></code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> data <span class="at">-name</span> <span class="st">"*.tsv"</span> <span class="kw">|</span> <span class="cf">while</span> <span class="bu">read</span> <span class="va">fname</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="at">-n</span> <span class="st">"</span><span class="va">$fname</span><span class="st">: "</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">grep</span> <span class="st">"RZA"</span> <span class="st">"</span><span class="va">$fname</span><span class="st">"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/music_vids.tsv: data/vg_hof.tsv: data/trees.tsv: data/who-tb-data.tsv: data/wu_tang.tsv: RZA    Robert Diggs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong><code>wc</code></strong>: For each file processed by the loop, <code><a href="syntax_ref.html#sec-wc" class="quarto-xref"><span>wc</span></a></code> outputs three numbers: the line count, word count, and character/byte count of the lines that <code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> found to contain “RZA”. Since no specific option is given to <code><a href="syntax_ref.html#sec-wc" class="quarto-xref"><span>wc</span></a></code>, it defaults to displaying all three counts.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> data <span class="at">-name</span> <span class="st">"*.tsv"</span> <span class="kw">|</span> <span class="cf">while</span> <span class="bu">read</span> <span class="va">fname</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="at">-n</span> <span class="st">"</span><span class="va">$fname</span><span class="st">: "</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">grep</span> <span class="st">"RZA"</span> <span class="st">"</span><span class="va">$fname</span><span class="st">"</span> <span class="kw">|</span> <span class="fu">wc</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/music_vids.tsv:        0       0       0</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/vg_hof.tsv:        0       0       0</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/trees.tsv:        0       0       0</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/who-tb-data.tsv:        0       0       0</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/wu_tang.tsv:        1       3      17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This Bash command sequence combines <code><a href="syntax_ref.html#sec-find" class="quarto-xref"><span>find</span></a></code>, a <code>while</code> loop, <code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code>, <code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code>, and <code><a href="syntax_ref.html#sec-wc" class="quarto-xref"><span>wc</span></a></code> to search through <code>.tsv</code> (Tab-Separated Values) files for lines containing a specific pattern (“RZA”) and reports the count of lines, words, and characters for each occurrence. Combining pipelines with loops is an efficient way to sift through a potentially large set of files within a directory, facilitating a detailed aggregation of specified conditions across multiple files.</p>
 </section>
 </section>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<p>Pipes (<code>|</code>) allow the output of one command (<code>stdout</code>) to be used as the input (<code>stdin</code>) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next.</p>
 <section id="efficiency-and-performance" class="level3">
 <h3 class="anchored" data-anchor-id="efficiency-and-performance">Efficiency and Performance</h3>
 <p>While pipes are incredibly powerful, their use can impact performance, especially when processing large amounts of data. Each pipe involves creating a new subprocess, and data is copied between processes, which can lead to overhead.</p>
@@ -529,11 +566,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="error-handling" class="level3">
 <h3 class="anchored" data-anchor-id="error-handling">Error Handling</h3>
 <p>Error handling in pipes can be non-trivial, as each command in a pipeline executes independently. Users need to consider how each command handles errors and ensure that the pipeline as a whole behaves as expected even when errors occur.</p>
-</section>
-</section>
-<section id="recap" class="level2">
-<h2 class="anchored" data-anchor-id="recap">Recap</h2>
-<p>Pipes (<code>|</code>) allow the output of one command (<code>stdout</code>) to be used as the input (<code>stdin</code>) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next.</p>
 <p>Unix pipes embody the concept of composability in Unix, enabling users to build complex workflows out of simple, single-purpose programs. They are a testament to the flexibility and power of the Unix command line, facilitating a wide range of tasks from simple text processing to sophisticated data analysis and system monitoring.</p>
 <p>This framework of commands, arguments, options, and the interplay of input (<code>stdin</code>), output (<code>stdout</code>) , and pipes enables sophisticated data processing and manipulation directly from the terminal.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -556,6 +588,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>

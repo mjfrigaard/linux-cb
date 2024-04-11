@@ -13,7 +13,6 @@ knitr:
 whoami
 ```
 
-
 ```{r}
 #| label: common
 #| include: false
@@ -37,93 +36,45 @@ co_box(
 )
 ```
 
-Unix and Linux are powerful, versatile, and widely used operating
-systems that run on millions of devices worldwide, from smartphones to
-supercomputers. Learning about Unix/Linux can open doors to many career
-opportunities and help you better understand the digital world around
-you.
+Unix and Linux are powerful, versatile, and widely used operating systems that run on millions of devices worldwide, from smartphones to supercomputers. Learning about Unix/Linux can open doors to many career opportunities and help you better understand the digital world around you.
 
-This book is structured to gradually introduce you to the Unix/Linux
-environment, starting from the basics to more complex concepts. Here`s
-what each section covers:
+This book is structured to gradually introduce you to the Unix/Linux environment, starting from the basics to more complex concepts. Here's what each section covers:
 
 **Introduction**
 
-The introduction acquaints you with some background that formed the
-landscape of Unix/Linux systems. It explains the Bash shell, a
-command-line interface (CLI), which is the gateway to leveraging the
-full potential of Unix/Linux systems.
+The <strong>@sec-intro</strong> acquaints you with some background that formed the landscape of Unix/Linux systems. It explains the Bash shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Unix/Linux systems.
 
 **Set-Ups**
 
-Before diving into the commands and scripts, setting up your
-Unix/Linux environment is crucial. This section guides you through
-various options for setting up Unix/Linux on your machine, be it
-natively or through a virtual machine.
+Before diving into the commands and scripts, setting up your Unix/Linux environment is crucial. This section guides you through various options for setting up Unix/Linux on your machine, be it natively or through a virtual machine.
 
 **Syntax**
 
-Understanding the syntax is vital for effectively
-communicating with the Unix/Linux system. This section demystifies the
-structure of commands, including how to differentiate between commands,
-arguments, and options and manage inputs and outputs. This knowledge is
-critical to executing tasks efficiently in the command line. 
+Understanding the syntax is vital for effectively communicating with the Unix/Linux system. This section demystifies the structure of commands, including how to differentiate between <strong>@sec-commands</strong>, <strong>@sec-args</strong>, and <strong>@sec-options</strong> and manage inputs and outputs. This knowledge is critical to executing tasks efficiently in the command line.
 
-@sec-pipes are a cornerstone of Unix/Linux productivity, enabling
-the output of one command to serve as the input to another. This section
-covers how to combine commands using `stdout` and `stdin`, allowing for
-robust command chains that can perform complex tasks with a simple
-syntax. Understanding pipes unlocks a higher level of command-line
-efficiency and is a step towards advanced Unix/Linux usage.
+<strong>@sec-pipes</strong> are a cornerstone of Unix/Linux productivity, enabling the output of one command to serve as the input to another. This section covers how to combine commands using `stdout` and `stdin`, allowing for robust command chains that can perform complex tasks with a simple syntax. Understanding pipes unlocks a higher level of command-line efficiency and is a step towards advanced Unix/Linux usage.
 
 **Files and Directories**
 
-Navigating and managing files and folders are
-daily tasks for Unix/Linux users. @sec-dirs covers essential commands
-such as `cd` for changing directories, `pwd` to print the current
-directory, `ls` for listing files, and `mkdir` for making directories.
+Navigating and managing files and folders are daily tasks for Unix/Linux users. @sec-dirs covers essential commands such as `cd` for changing directories, `pwd` to print the current directory, `ls` for listing files, and `mkdir` for making directories.
 
-@sec-files chapter covers file manipulation commands like `cp` (copy), `mv`
-(move), `rm` (remove), and `less` for viewing file content, ensuring you
-can organize and manage your file system effectively. These commands are
-the building blocks for more complex operations in Unix/Linux.
+<strong>@sec-files</strong> chapter covers file manipulation commands like `cp` (copy), `mv` (move), `rm` (remove), and `less` for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Unix/Linux.
 
 **Manipulating Text**
 
-**Text Commands**: Unix/Linux systems are renowned for their powerful
-text manipulation capabilities. This section introduces commands such as
-`cat` for displaying file contents, `grep` for searching within
-files, `sort` for sorting data, `uniq` for filtering unique lines, and
-`cut`, `paste`, and `join` for editing files. Mastering these commands
-will allow you to handle and process text data efficiently.
+**Text Commands**: Unix/Linux systems are renowned for their powerful text manipulation capabilities. The <strong>@sec-txt-cmds</strong> chapter introduces commands such as `cat` for displaying file contents, `grep` for searching within files, `sort` for sorting data, `uniq` for filtering unique lines, and `cut`, `paste`, and `join` for editing files. Mastering these commands will allow you to handle and process text data efficiently.
 
 **Text Editors:** This section covers nano, vim, and emacs.
 
 **Shell Scripts (in development)**
 
-Shell scripting is a powerful tool for automating repetitive tasks in
-Unix/Linux. This section introduces you to writing your shell scripts,
-covering the basics of script creation, execution, and debugging. You`ll
-learn how to automate simple tasks, making your Unix/Linux experience
-more productive and enjoyable.
+Shell scripting is a powerful tool for automating repetitive tasks in Unix/Linux. This section introduces you to writing your shell scripts, covering the basics of script creation, execution, and debugging. You\`ll learn how to automate simple tasks, making your Unix/Linux experience more productive and enjoyable.
 
-**Format**: Shell scripts can be written in various formats, depending
-on your shell (e.g., Bash, Zsh). This section delves into the
-differences between these formats, guiding you on writing compatible
-scripts that can run across different Unix/Linux systems.
+**Format**: Shell scripts can be written in various formats, depending on your shell (e.g., Bash, Zsh). This section delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Unix/Linux systems.
 
-**Permissions**: Understanding file permissions is crucial to managing
-the security of your files and directories in Unix/Linux. This section
-explains how Unix/Linux permissions work and teaches you how to set and
-modify permissions to protect your data and system from unauthorized
-access.
+**Permissions**: Understanding file permissions is crucial to managing the security of your files and directories in Unix/Linux. This section explains how Unix/Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.
 
-By the end of this book, you'll have a solid understanding of the
-Unix/Linux operating system. You'll be equipped to navigate, manage
-files, write scripts, and set permissions confidently. Whether you're
-looking to enhance your career prospects, manage your Unix/Linux
-systems, or simply satisfy your curiosity, this book will be your
-companion on a fascinating journey into the world of Unix/Linux.
+By the end of this book, you'll have a solid understanding of the Unix/Linux operating system. You'll be equipped to navigate, manage files, write scripts, and set permissions confidently. Whether you're looking to enhance your career prospects, manage your Unix/Linux systems, or simply satisfy your curiosity, this book will be your companion on a fascinating journey into the world of Unix/Linux.
 
 ## <!--# What This Book Is Not   -->
 
