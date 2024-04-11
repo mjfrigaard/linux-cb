@@ -155,8 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -248,8 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./text_commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Text Commands</span></a>
+  <a href="./text_commands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Text Commands</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -277,8 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./permissions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Permissions</span></a>
+  <a href="./permissions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Permissions</span></a>
   </div>
 </li>
       </ul>
@@ -292,6 +289,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syntax_ref.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Syntax Reference</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./glossary.html" class="sidebar-item-text sidebar-link">
@@ -310,8 +312,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#sec-file" id="toc-sec-file" class="nav-link active" data-scroll-target="#sec-file"><code>file</code></a></li>
-  <li><a href="#sec-less" id="toc-sec-less" class="nav-link" data-scroll-target="#sec-less"><code>less</code></a></li>
+  <li><a href="#file" id="toc-file" class="nav-link active" data-scroll-target="#file"><code>file</code></a></li>
+  <li><a href="#less" id="toc-less" class="nav-link" data-scroll-target="#less"><code>less</code></a></li>
+  <li><a href="#find" id="toc-find" class="nav-link" data-scroll-target="#find"><code>find</code></a></li>
+  <li><a href="#wc" id="toc-wc" class="nav-link" data-scroll-target="#wc"><code>wc</code></a></li>
+  <li><a href="#permissions-priviledges" id="toc-permissions-priviledges" class="nav-link" data-scroll-target="#permissions-priviledges">Permissions &amp; Priviledges</a>
+  <ul>
+  <li><a href="#chown" id="toc-chown" class="nav-link" data-scroll-target="#chown"><code>chown</code></a></li>
+  <li><a href="#sudo" id="toc-sudo" class="nav-link" data-scroll-target="#sudo"><code>sudo</code></a></li>
+  </ul></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a>
+  <ul>
+  <li><a href="#man" id="toc-man" class="nav-link" data-scroll-target="#man"><code>man</code></a></li>
+  <li><a href="#help" id="toc-help" class="nav-link" data-scroll-target="#help"><code>help</code></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -355,18 +369,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="sec-file" class="level3">
-<h3 class="anchored" data-anchor-id="sec-file"><code>file</code></h3>
+<section id="file" class="level3">
+<h3 class="anchored" data-anchor-id="file"><code>file</code></h3>
 <p><strong><code>file</code></strong> gives you a summary of what a computer file is or what it contains, like telling you if a tool in <code>/bin/pax</code> is a program you can run or a text file.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file</span> /bin/pax</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/pax: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/pax (for architecture x86_64):  Mach-O 64-bit executable x86_64</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/pax (for architecture arm64e):  Mach-O 64-bit executable arm64e</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /bin/pax: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /bin/pax (for architecture x86_64):  Mach-O 64-bit executable x86_64</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /bin/pax (for architecture arm64e):  Mach-O 64-bit executable arm64e</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="sec-less" class="level3">
-<h3 class="anchored" data-anchor-id="sec-less"><code>less</code></h3>
+<section id="less" class="level3">
+<h3 class="anchored" data-anchor-id="less"><code>less</code></h3>
 <p><strong><code>less</code></strong> lets you skim through a file on your computer, moving forwards and backwards as you please.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> data/vg_hof.tsv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -377,6 +391,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Enter <code>less</code> in the Terminal to scroll</figcaption>
 </figure>
 </div>
+</section>
+<section id="find" class="level3">
+<h3 class="anchored" data-anchor-id="find"><code>find</code></h3>
+<p><code>find</code> is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, file type, and modification time.</p>
+</section>
+<section id="wc" class="level3">
+<h3 class="anchored" data-anchor-id="wc"><code>wc</code></h3>
+<p><code>wc</code> (<strong>word count</strong>) counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.</p>
+</section>
+<section id="permissions-priviledges" class="level2">
+<h2 class="anchored" data-anchor-id="permissions-priviledges">Permissions &amp; Priviledges</h2>
+<section id="chown" class="level3">
+<h3 class="anchored" data-anchor-id="chown"><code>chown</code></h3>
+</section>
+<section id="sudo" class="level3">
+<h3 class="anchored" data-anchor-id="sudo"><code>sudo</code></h3>
+</section>
+</section>
+<section id="documentation" class="level2">
+<h2 class="anchored" data-anchor-id="documentation">Documentation</h2>
+<section id="man" class="level3">
+<h3 class="anchored" data-anchor-id="man"><code>man</code></h3>
+<p><code>man</code> (<strong>Manual</strong>) displays the user manual of any command that we can run on the terminal. It’s the go-to resource for learning about the options, arguments, and examples of how to use commands.</p>
+</section>
+<section id="help" class="level3">
+<h3 class="anchored" data-anchor-id="help"><code>help</code></h3>
+<p><code>help</code> or <code>--help</code> option provides information about built-in commands and usage guidelines. It’s a quick way to get help for shell built-ins or to understand the basic usage of a command.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -397,6 +438,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

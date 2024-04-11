@@ -155,8 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -248,8 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./text_commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Text Commands</span></a>
+  <a href="./text_commands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Text Commands</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -277,8 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./permissions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Permissions</span></a>
+  <a href="./permissions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Permissions</span></a>
   </div>
 </li>
       </ul>
@@ -292,6 +289,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syntax_ref.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Syntax Reference</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./glossary.html" class="sidebar-item-text sidebar-link">
@@ -310,30 +312,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#command-and-argument-anatomy" id="toc-command-and-argument-anatomy" class="nav-link active" data-scroll-target="#command-and-argument-anatomy">Command and Argument Anatomy</a>
+  <li><a href="#anatomy" id="toc-anatomy" class="nav-link active" data-scroll-target="#anatomy">Anatomy</a></li>
+  <li><a href="#argument-types" id="toc-argument-types" class="nav-link" data-scroll-target="#argument-types">Argument Types</a>
   <ul>
-  <li><a href="#common-arguments" id="toc-common-arguments" class="nav-link" data-scroll-target="#common-arguments">Common Arguments</a></li>
-  </ul></li>
-  <li><a href="#other-arguments" id="toc-other-arguments" class="nav-link" data-scroll-target="#other-arguments">Other Arguments</a>
-  <ul>
+  <li><a href="#files-and-directories" id="toc-files-and-directories" class="nav-link" data-scroll-target="#files-and-directories">Files and Directories</a></li>
+  <li><a href="#user-and-group-names" id="toc-user-and-group-names" class="nav-link" data-scroll-target="#user-and-group-names">User and Group Names</a></li>
+  <li><a href="#command-targets" id="toc-command-targets" class="nav-link" data-scroll-target="#command-targets">Command Targets</a></li>
+  <li><a href="#data-values" id="toc-data-values" class="nav-link" data-scroll-target="#data-values">Data Values</a></li>
   <li><a href="#direct-and-indirect" id="toc-direct-and-indirect" class="nav-link" data-scroll-target="#direct-and-indirect">Direct and Indirect</a></li>
   <li><a href="#position" id="toc-position" class="nav-link" data-scroll-target="#position">Position</a></li>
-  <li><a href="#special-characters" id="toc-special-characters" class="nav-link" data-scroll-target="#special-characters">Special Characters</a>
-  <ul class="collapse">
-  <li><a href="#sec-asterisk" id="toc-sec-asterisk" class="nav-link" data-scroll-target="#sec-asterisk">Asterisk: <code>*</code></a></li>
-  <li><a href="#sec-question" id="toc-sec-question" class="nav-link" data-scroll-target="#sec-question">Question Mark: <code>?</code></a></li>
-  <li><a href="#sec-tilde" id="toc-sec-tilde" class="nav-link" data-scroll-target="#sec-tilde">Tilde: <code>~</code></a></li>
-  <li><a href="#sec-dollar" id="toc-sec-dollar" class="nav-link" data-scroll-target="#sec-dollar">Dollar Sign: <code>$</code></a></li>
-  <li><a href="#sec-ampersand" id="toc-sec-ampersand" class="nav-link" data-scroll-target="#sec-ampersand">Ampersand: <code>&amp;</code></a></li>
-  <li><a href="#sec-semicolon" id="toc-sec-semicolon" class="nav-link" data-scroll-target="#sec-semicolon">Semicolon: <code>;</code></a></li>
-  <li><a href="#sec-gt" id="toc-sec-gt" class="nav-link" data-scroll-target="#sec-gt">Greater Than: <code>&gt;</code></a></li>
-  <li><a href="#sec-lt" id="toc-sec-lt" class="nav-link" data-scroll-target="#sec-lt">Less Than: <code>&lt;</code></a></li>
-  <li><a href="#sec-braces" id="toc-sec-braces" class="nav-link" data-scroll-target="#sec-braces">Braces: <code>{}</code></a></li>
-  <li><a href="#sec-parens" id="toc-sec-parens" class="nav-link" data-scroll-target="#sec-parens">Parentheses: <code>()</code></a></li>
-  <li><a href="#sec-backslash" id="toc-sec-backslash" class="nav-link" data-scroll-target="#sec-backslash">Backslash: <code>\</code></a></li>
-  <li><a href="#sec-single-quotes" id="toc-sec-single-quotes" class="nav-link" data-scroll-target="#sec-single-quotes">Single quotes: <code>''</code></a></li>
-  <li><a href="#sec-double-quotes" id="toc-sec-double-quotes" class="nav-link" data-scroll-target="#sec-double-quotes">Double quotes: <code>""</code></a></li>
-  </ul></li>
   <li><a href="#command-substitution" id="toc-command-substitution" class="nav-link" data-scroll-target="#command-substitution">Command Substitution</a></li>
   <li><a href="#environmental-variables" id="toc-environmental-variables" class="nav-link" data-scroll-target="#environmental-variables">Environmental Variables</a></li>
   </ul></li>
@@ -381,42 +368,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Arguments in Unix/Linux commands are values or data passed to commands for processing. Unlike options, which modify the behavior of commands, arguments typically specify what the command should <em>act upon</em>. This typically includes filenames, user names, data values, or other kinds of information the command needs to execute its task.</p>
-<section id="command-and-argument-anatomy" class="level2">
-<h2 class="anchored" data-anchor-id="command-and-argument-anatomy">Command and Argument Anatomy</h2>
+<section id="anatomy" class="level2">
+<h2 class="anchored" data-anchor-id="anatomy">Anatomy</h2>
 <p>A Unix command can be broken down into the command name, followed by its options (which we’ll address in the next chapter), and then its arguments:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> argument1 argument2 ... argument</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="common-arguments" class="level3">
-<h3 class="anchored" data-anchor-id="common-arguments">Common Arguments</h3>
+</section>
+<section id="argument-types" class="level2">
+<h2 class="anchored" data-anchor-id="argument-types">Argument Types</h2>
+<p>Below are a variety of command arguments types. This is not an exhaustive list, but includes many of the commands and arguments you’ll encounter on a regular basis.</p>
+<section id="files-and-directories" class="level3">
+<h3 class="anchored" data-anchor-id="files-and-directories">Files and Directories</h3>
 <p><strong>File and Directory Names</strong>: Most commonly, arguments are the names of files or directories on which the command will operate.</p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> source.txt destination.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><code>source.txt</code> and <code>destination.txt</code> are arguments representing the source and destination files, respectively.</p>
+<p><code>source.txt</code> and <code>destination.txt</code> are arguments representing the source and destination files to copy with <code><a href="syntax_ref.html#sec-cp" class="quarto-xref"><span>cp</span></a></code>, respectively.</p>
+</section>
+<section id="user-and-group-names" class="level3">
+<h3 class="anchored" data-anchor-id="user-and-group-names">User and Group Names</h3>
 <p><strong>User and Group Names</strong>: Commands related to user management might take usernames or group names as arguments.</p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chown</span> user:group file</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><code><span class="quarto-unresolved-ref">?sec-chown</span></code> changes the ownership of <code>file</code> to <code>user</code> and <code>group</code>.</p>
-<p><strong>Command Targets</strong>: Some commands take other commands as arguments. For example, <code>sudo</code> command runs command with superuser privileges.</p>
+<p><code><a href="syntax_ref.html#sec-chown" class="quarto-xref"><span>chown</span></a></code> changes the ownership of <code>file</code> to <code>user</code> and <code>group</code>.</p>
+</section>
+<section id="command-targets" class="level3">
+<h3 class="anchored" data-anchor-id="command-targets">Command Targets</h3>
+<p><strong>Command Targets</strong>: Some commands take other commands as arguments. For example, <code><a href="syntax_ref.html#sec-sudo" class="quarto-xref"><span>sudo</span></a></code> command runs command with superuser privileges.</p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="data-values" class="level3">
+<h3 class="anchored" data-anchor-id="data-values">Data Values</h3>
 <p><strong>Data Values</strong>: Commands might take data values as arguments for processing.</p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> Hello, World!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In <code>echo Hello, World!</code>, <code>Hello, World!</code> is an argument that <code>echo</code> prints to the terminal.</p>
+<p>In <code>echo Hello, World!</code>, <code>Hello, World!</code> is an argument that <code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code> prints to the terminal.</p>
 </section>
-</section>
-<section id="other-arguments" class="level2">
-<h2 class="anchored" data-anchor-id="other-arguments">Other Arguments</h2>
-<p>Below are other types of command arguments. This is not an exhaustive list, but includes many of the commands and arguments you’ll encounter on a regular basis.</p>
 <section id="direct-and-indirect" class="level3">
 <h3 class="anchored" data-anchor-id="direct-and-indirect">Direct and Indirect</h3>
 <p><strong>Direct Arguments</strong>: These are the most straightforward type of arguments. They are typically the names of files or directories on which commands operate.</p>
@@ -425,14 +421,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> myfile.txt</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In the command <code>cat myfile.txt</code>, <code>myfile.txt</code> is a direct argument to the <code>cat</code> command, telling it which file to display on the standard output.</p>
+<p>In the command <code>cat myfile.txt</code>, <code>myfile.txt</code> is a direct argument to the <code><a href="syntax_ref.html#sec-cat" class="quarto-xref"><span>cat</span></a></code> command, telling it which file to display on the standard output.</p>
 <p><strong>Indirect Arguments</strong>: These arguments might specify additional information that commands need to complete their tasks.</p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> file myfile.txt</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The <code>file</code> search pattern for the <code>grep</code> command is an example of an indirect command, and <code>myfile.txt</code> is the direct argument.</p>
+<p>The <code>file</code> search pattern for the <code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> command is an example of an indirect command, and <code>myfile.txt</code> is the direct argument.</p>
 </section>
 <section id="position" class="level3">
 <h3 class="anchored" data-anchor-id="position">Position</h3>
@@ -449,234 +445,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> myfile2.txt <span class="st">'my file 3.txt'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="special-characters" class="level3">
-<h3 class="anchored" data-anchor-id="special-characters">Special Characters</h3>
-<p><strong>Special Characters</strong>: Characters such as spaces, tabs, asterisks, question marks, and others have special meanings in the shell. They need to be treated carefully when used within arguments.</p>
-<section id="sec-asterisk" class="level4">
-<h4 class="anchored" data-anchor-id="sec-asterisk">Asterisk: <code>*</code></h4>
-<p><strong>Glob Patterns</strong>: Arguments can include wildcards (like <code>*</code> and <code>?</code>), which the shell expands into a list of files or directories that match the pattern. For example, <code>*.txt</code> would match all files in the current directory ending with <code>.txt</code>.</p>
-<p><code>*</code> is the wildcard for matching zero or more characters.</p>
-<p><strong>Example</strong></p>
-<p><code>ls *.md</code> lists all files in the current directory that end with <code>.md</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="pp">*</span>.md</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; README.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-question" class="level4">
-<h4 class="anchored" data-anchor-id="sec-question">Question Mark: <code>?</code></h4>
-<p><code>?</code> is the wildcard for matching exactly one character.</p>
-<p><strong>Example</strong></p>
-<p><code>ls myfile?.txt</code> lists files like <code>myfile2.txt</code>, but not <code>myfile.txt</code> and <code>my file 3.txt</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> myfile<span class="pp">?</span>.txt</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; myfile2.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-tilde" class="level4">
-<h4 class="anchored" data-anchor-id="sec-tilde">Tilde: <code>~</code></h4>
-<p><code>~</code> represents the home directory of the current user.</p>
-<p><strong>Example</strong></p>
-<p>List the items in the user’s home directory:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ~</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Applications</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Creative Cloud Files</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Desktop</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Documents</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Downloads</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Dropbox</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Fonts</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Library</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Movies</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Music</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Pictures</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Public</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; R</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Themes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-dollar" class="level4">
-<h4 class="anchored" data-anchor-id="sec-dollar">Dollar Sign: <code>$</code></h4>
-<p><code>$</code> indicates a variable.</p>
-<p><strong>Example</strong></p>
-<p><code>echo $PATH</code> prints the value of the <code>PATH</code> environment variable:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$PATH</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-ampersand" class="level4">
-<h4 class="anchored" data-anchor-id="sec-ampersand">Ampersand: <code>&amp;</code></h4>
-<p><code>&amp;</code> runs a command in the background.</p>
-<p><strong>Example</strong></p>
-<p><code>firefox &amp;</code> opens Firefox in the background, allowing the terminal to be used for other commands.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">firefox</span> <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-semicolon" class="level4">
-<h4 class="anchored" data-anchor-id="sec-semicolon">Semicolon: <code>;</code></h4>
-<p><code>;</code> separates multiple commands to be run in sequence.</p>
-<p><strong>Example</strong></p>
-<p><code>cd data; ls</code> changes the directory to <code>data</code> and then lists its contents:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> data<span class="kw">;</span> <span class="fu">ls</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; music_vids.tsv</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; roxanne</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; trees.tsv</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; vg_hof.tsv</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; who-tb-data.tsv</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.csv</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.dat</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.tsv</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-gt" class="level4">
-<h4 class="anchored" data-anchor-id="sec-gt">Greater Than: <code>&gt;</code></h4>
-<p><strong>Redirection operators</strong>: <code>&gt;</code> directs output to a file or a device.</p>
-<p><strong>Example</strong></p>
-<p><code>echo "This is my 2nd file" &gt; myfile2.txt</code> writes <code>"This is my 2nd file"</code> into <code>myfile2.txt</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"This is my 2nd file"</span> <span class="op">&gt;</span> myfile2.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-lt" class="level4">
-<h4 class="anchored" data-anchor-id="sec-lt">Less Than: <code>&lt;</code></h4>
-<p><strong>Redirection operators</strong>: <code>&lt;</code> takes input from a file or a device.</p>
-<p><strong>Example</strong></p>
-<p>Then <code>wc &lt; myfile2.txt</code> counts the words in <code>myfile2.txt</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="op">&lt;</span> myfile2.txt</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        1       5      20</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-braces" class="level4">
-<h4 class="anchored" data-anchor-id="sec-braces">Braces: <code>{}</code></h4>
-<p><strong>Brace Expansion</strong>: Similar to wildcards, brace expansion (<code>{}</code>) allows the creation of multiple text strings from a pattern containing braces.</p>
-<p><strong>Example</strong></p>
-<p><code>cat wu_tang.{txt,csv}</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/wu_tang.<span class="dt">{tsv</span><span class="op">,</span><span class="dt">dat}</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Member   Name</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; RZA  Robert Diggs</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; GZA  Gary Grice</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Method Man   Clifford Smith</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Raekwon the Chef Corey Woods</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ghostface Killah Dennis Coles</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Inspectah Deck   Jason Hunter</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; U-God    Lamont Hawkins</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Masta Killa  Jamel Irief</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Cappadonna   Darryl Hill</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ol Dirty Bastard Russell Tyrone Jones</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Member           |Name                 |</span></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |RZA              |Robert Diggs         |</span></span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |GZA              |Gary Grice           |</span></span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Method Man       |Clifford Smith       |</span></span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Raekwon the Chef |Corey Woods          |</span></span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Ghostface Killah |Dennis Coles         |</span></span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Inspectah Deck   |Jason Hunter         |</span></span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |U-God            |Lamont Hawkins       |</span></span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Masta Killa      |Jamel Irief          |</span></span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Cappadonna       |Darryl Hill          |</span></span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Ol Dirty Bastard |Russell Tyrone Jones |</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>would expand into:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/wu_tang.tsv </span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/wu_tang.dat</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Member   Name</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; RZA  Robert Diggs</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; GZA  Gary Grice</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Method Man   Clifford Smith</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Raekwon the Chef Corey Woods</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ghostface Killah Dennis Coles</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Inspectah Deck   Jason Hunter</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; U-God    Lamont Hawkins</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Masta Killa  Jamel Irief</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Cappadonna   Darryl Hill</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ol Dirty Bastard Russell Tyrone Jones</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Member           |Name                 |</span></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |RZA              |Robert Diggs         |</span></span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |GZA              |Gary Grice           |</span></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Method Man       |Clifford Smith       |</span></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Raekwon the Chef |Corey Woods          |</span></span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Ghostface Killah |Dennis Coles         |</span></span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Inspectah Deck   |Jason Hunter         |</span></span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |U-God            |Lamont Hawkins       |</span></span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Masta Killa      |Jamel Irief          |</span></span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Cappadonna       |Darryl Hill          |</span></span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Ol Dirty Bastard |Russell Tyrone Jones |</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-parens" class="level4">
-<h4 class="anchored" data-anchor-id="sec-parens">Parentheses: <code>()</code></h4>
-<p>Parentheses can be used to group commands or for command substitution with <code>$( )</code>.</p>
-<p><strong>Example</strong></p>
-<p><code>(cd /var; ls)</code> runs <code>ls in /var</code> without changing the current directory:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="bu">cd</span> data<span class="kw">;</span> <span class="fu">ls</span><span class="kw">)</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; music_vids.tsv</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; roxanne</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; trees.tsv</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; vg_hof.tsv</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; who-tb-data.tsv</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.csv</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.dat</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.tsv</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><code>$(command)</code> uses the output of <code>command</code>.</p>
-</section>
-<section id="sec-backslash" class="level4">
-<h4 class="anchored" data-anchor-id="sec-backslash">Backslash: <code>\</code></h4>
-<p><code>\</code> escapes the following character, nullifying its special meaning</p>
-<p><strong>Example</strong></p>
-<p><code>echo "File name with spaces \&amp; special characters"</code> prints the text with spaces and the ampersand:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"File name with spaces \&amp; special characters"</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; File name with spaces \&amp; special characters</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-single-quotes" class="level4">
-<h4 class="anchored" data-anchor-id="sec-single-quotes">Single quotes: <code>''</code></h4>
-<p>Single quotes (<code>' '</code>) treat every character literally, ignoring the special meaning of all characters.</p>
-<p><strong>Example</strong></p>
-<p><code>echo '$HOME'</code> prints <code>$HOME</code>, not the path to the home directory:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'$HOME'</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $HOME</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-double-quotes" class="level4">
-<h4 class="anchored" data-anchor-id="sec-double-quotes">Double quotes: <code>""</code></h4>
-<p>Double quotes (<code>" "</code>) allow for the inclusion of special characters in an argument, except for the dollar sign (<code>$</code>), backticks (` `), and backslash (<code>\</code>).</p>
-<p><strong>Example</strong></p>
-<p><code>echo "$HOME"</code> prints the path to the home directory:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">$HOME</span><span class="st">"</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /Users/username</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
 <section id="command-substitution" class="level3">
 <h3 class="anchored" data-anchor-id="command-substitution">Command Substitution</h3>
 <p><strong>Using Output as Arguments</strong>: The output of a command can be used as an argument for another command using backticks (` `) or <code>$( )</code>.</p>
 <p><strong>Example</strong></p>
-<p><code>echo $(grep file myfile.txt)</code> uses the output of the <code>grep</code> command as an argument for <code>echo</code>:</p>
+<p><code>echo $(grep file myfile.txt)</code> uses the output of the <code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> command as an argument for <code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$(</span><span class="fu">grep</span> file myfile.txt<span class="va">)</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$(</span><span class="fu">grep</span> file myfile.txt<span class="va">)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="environmental-variables" class="level3">
 <h3 class="anchored" data-anchor-id="environmental-variables">Environmental Variables</h3>
 <p><strong>Variables as Arguments</strong>: Environment variables can be used as arguments in commands.</p>
 <p><strong>Example</strong></p>
-<p><code>echo $HOME</code> prints the path to the user’s home directory, where <code>$HOME</code> is an argument that the <code>echo</code> command interprets:</p>
+<p><code>echo $HOME</code> prints the path to the user’s home directory, where <code>$HOME</code> is an argument that the <code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code> command interprets:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$HOME</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /Users/username</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$HOME</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /Users/username</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Understanding the nuances of Unix arguments is crucial for crafting precise and effective commands, allowing users to leverage the full power of the Unix command line for a wide array of tasks.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">

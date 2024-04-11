@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./text.html">Manipulating Text</a></li><li class="breadcrumb-item"><a href="./text_commands.html">Text Commands</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./text.html">Manipulating Text</a></li><li class="breadcrumb-item"><a href="./text_commands.html"><span class="chapter-title">Text Commands</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -121,8 +121,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -214,8 +213,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./text_commands.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Text Commands</span></a>
+  <a href="./text_commands.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Text Commands</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -243,8 +241,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./permissions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Permissions</span></a>
+  <a href="./permissions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Permissions</span></a>
   </div>
 </li>
       </ul>
@@ -258,6 +255,11 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syntax_ref.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Syntax Reference</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./glossary.html" class="sidebar-item-text sidebar-link">
@@ -277,27 +279,31 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#the-text-stream" id="toc-the-text-stream" class="nav-link active" data-scroll-target="#the-text-stream">The Text Stream</a></li>
-  <li><a href="#sec-txt-manip" id="toc-sec-txt-manip" class="nav-link" data-scroll-target="#sec-txt-manip">Text Manipulation</a>
+  <li><a href="#text-manipulation" id="toc-text-manipulation" class="nav-link" data-scroll-target="#text-manipulation">Text Manipulation</a>
   <ul>
-  <li><a href="#sec-cat" id="toc-sec-cat" class="nav-link" data-scroll-target="#sec-cat"><code>cat</code></a></li>
-  <li><a href="#sec-grep" id="toc-sec-grep" class="nav-link" data-scroll-target="#sec-grep"><code>grep</code></a></li>
-  <li><a href="#sec-sort" id="toc-sec-sort" class="nav-link" data-scroll-target="#sec-sort"><code>sort</code></a></li>
-  <li><a href="#sec-uniq" id="toc-sec-uniq" class="nav-link" data-scroll-target="#sec-uniq"><code>uniq</code></a></li>
-  <li><a href="#sec-cut" id="toc-sec-cut" class="nav-link" data-scroll-target="#sec-cut"><code>cut</code></a></li>
-  <li><a href="#sec-paste" id="toc-sec-paste" class="nav-link" data-scroll-target="#sec-paste"><code>paste</code></a></li>
-  <li><a href="#sec-join" id="toc-sec-join" class="nav-link" data-scroll-target="#sec-join"><code>join</code></a></li>
-  <li><a href="#sec-comm" id="toc-sec-comm" class="nav-link" data-scroll-target="#sec-comm"><code>comm</code></a></li>
-  <li><a href="#sec-diff" id="toc-sec-diff" class="nav-link" data-scroll-target="#sec-diff"><code>diff</code></a></li>
+  <li><a href="#echo" id="toc-echo" class="nav-link" data-scroll-target="#echo"><code>echo</code></a></li>
+  <li><a href="#cat" id="toc-cat" class="nav-link" data-scroll-target="#cat"><code>cat</code></a></li>
+  <li><a href="#grep" id="toc-grep" class="nav-link" data-scroll-target="#grep"><code>grep</code></a></li>
+  <li><a href="#sort" id="toc-sort" class="nav-link" data-scroll-target="#sort"><code>sort</code></a></li>
+  <li><a href="#uniq" id="toc-uniq" class="nav-link" data-scroll-target="#uniq"><code>uniq</code></a></li>
+  <li><a href="#cut" id="toc-cut" class="nav-link" data-scroll-target="#cut"><code>cut</code></a></li>
+  <li><a href="#paste" id="toc-paste" class="nav-link" data-scroll-target="#paste"><code>paste</code></a></li>
+  <li><a href="#join" id="toc-join" class="nav-link" data-scroll-target="#join"><code>join</code></a></li>
+  <li><a href="#comm" id="toc-comm" class="nav-link" data-scroll-target="#comm"><code>comm</code></a></li>
+  <li><a href="#diff" id="toc-diff" class="nav-link" data-scroll-target="#diff"><code>diff</code></a></li>
+  <li><a href="#wc" id="toc-wc" class="nav-link" data-scroll-target="#wc"><code>wc</code></a></li>
+  <li><a href="#xargs" id="toc-xargs" class="nav-link" data-scroll-target="#xargs"><code>xargs</code></a></li>
   </ul></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./text.html">Manipulating Text</a></li><li class="breadcrumb-item"><a href="./text_commands.html">Text Commands</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./text.html">Manipulating Text</a></li><li class="breadcrumb-item"><a href="./text_commands.html"><span class="chapter-title">Text Commands</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-txt-cmds" class="quarto-section-identifier">Text Commands</span></h1>
+<h1 class="title"><span id="sec-txt-cmds" class="quarto-section-identifier"><span class="chapter-title">Text Commands</span></span></h1>
 </div>
 
 
@@ -350,72 +356,88 @@ Each of these commands leverages stdin and stdout, enabling them to be combined 
 By mastering these commands, you gain the ability to effortlessly manipulate text streams, transforming raw data into structured information. This knowledge is not just a technical skill but a gateway to the deeper philosophy of Unix, where simplicity and efficiency reign supreme.
 -->
 </section>
-<section id="sec-txt-manip" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-txt-manip">Text Manipulation</h2>
+<section id="text-manipulation" class="level2">
+<h2 class="anchored" data-anchor-id="text-manipulation">Text Manipulation</h2>
 <p>These commands embody the Unix philosophy of ‘<em>do one thing and do it well</em>’ and demonstrate the system’s power in processing text streams. This section will explore these fundamental commands, illustrating how they easily interact with text streams, standard input (<code>stdin</code>), and standard output (<code>stdout</code>) to perform complex text manipulations.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 1.25em;">Standard Input and Output</span>
+<span style="font-weight: bold; font-size: 1.10em;">Refresher: Standard Input and Standard Output</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div style="font-size: 1.00em; color: #282b2d;">
-<p><code>stdin</code> (standard input) is a stream from which a command reads its input. By default, it’s the keyboard, but it can be redirected to read from a file or another command’s output.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/mr-robot.gif" class="img-fluid figure-img" style="width:75.0%"></p>
-<figcaption>The text stream looks nothing like this</figcaption>
-</figure>
-</div>
-<p><code>stdout</code> (standard output) is a stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command’s input.</p>
+<div style="font-size: 1.05em; color: #282b2d;">
+<p>Two key concepts in Unix text processing are standard input (<code>stdin</code>) and standard output (<code>stdout</code>). <code>stdin</code> is the default input stream, which often comes from the keyboard or the output of another command. <code>stdout</code> is the default output stream, typically the terminal screen. Many Unix commands read from <code>stdin</code> when no file is specified and write to <code>stdout</code>, allowing the output of one command to become the input of another. This design facilitates the chaining of commands (piping) to perform complex operations in a streamlined manner.</p>
+<ul>
+<li><p><strong>Input</strong> generally refers to the data fed into a command, which can come from <code>stdin</code> or be specified as arguments.</p></li>
+<li><p><strong>Output</strong> is the data produced by a command, displayed on <code>stdout</code> unless redirected.</p></li>
+</ul>
 </div>
 </div>
 </div>
 </div>
-<section id="sec-cat" class="level3">
-<h3 class="anchored" data-anchor-id="sec-cat"><code>cat</code></h3>
+<section id="echo" class="level3">
+<h3 class="anchored" data-anchor-id="echo"><code>echo</code></h3>
+<p>The <code>echo</code> command prints its arguments to the standard output. It’s commonly used in scripts and on the command line to display messages or variables.</p>
+</section>
+<section id="cat" class="level3">
+<h3 class="anchored" data-anchor-id="cat"><code>cat</code></h3>
 <p><strong><code>cat</code> (Concatenate)</strong>: <code>cat</code> displays the content of files straight to your screen, useful for checking what’s in a text file quickly.</p>
 <p>This is similar to printing a file and laying out the pages on the floor to see them all at once.</p>
 </section>
-<section id="sec-grep" class="level3">
-<h3 class="anchored" data-anchor-id="sec-grep"><code>grep</code></h3>
+<section id="grep" class="level3">
+<h3 class="anchored" data-anchor-id="grep"><code>grep</code></h3>
 <p><strong><code>grep</code></strong> stands for “global regular expression print” and it reads from <code>stdin</code> or a list of files and outputs the lines that contain matches for a specified pattern.</p>
 </section>
-<section id="sec-sort" class="level3">
-<h3 class="anchored" data-anchor-id="sec-sort"><code>sort</code></h3>
+<section id="sort" class="level3">
+<h3 class="anchored" data-anchor-id="sort"><code>sort</code></h3>
 <p><strong><code>sort</code></strong>: <code>sort</code> arranges the lines in a text file into order:</p>
 <p>Similar to organizing our stack of papers alphabetically.</p>
 </section>
-<section id="sec-uniq" class="level3">
-<h3 class="anchored" data-anchor-id="sec-uniq"><code>uniq</code></h3>
+<section id="uniq" class="level3">
+<h3 class="anchored" data-anchor-id="uniq"><code>uniq</code></h3>
 <p><strong><code>uniq</code></strong>: <code>uniq</code> helps by removing duplicate lines from a file, making sure every line is unique.</p>
 <p>After accidentally printing duplicates of a document, you remove the extra copies.</p>
 </section>
-<section id="sec-cut" class="level3">
-<h3 class="anchored" data-anchor-id="sec-cut"><code>cut</code></h3>
-<p><strong><code>cut</code></strong>: If you only want the dates from a list of events, you might physically cut them out of the paper. <code>cut</code> extracts specific parts of lines in a file, like cutting out columns of text.</p>
+<section id="cut" class="level3">
+<h3 class="anchored" data-anchor-id="cut"><code>cut</code></h3>
+<p><strong><code>cut</code></strong>: <code>cut</code> extracts specific parts of lines in a file, like cutting out columns of text.</p>
+<p>If you only want the dates from a list of events, you might physically cut them out of the paper.</p>
 </section>
-<section id="sec-paste" class="level3">
-<h3 class="anchored" data-anchor-id="sec-paste"><code>paste</code></h3>
-<p><strong><code>paste</code></strong>: Taking snippets of text from different documents and sticking them together into one, <code>paste</code> combines lines from multiple files side by side.</p>
+<section id="paste" class="level3">
+<h3 class="anchored" data-anchor-id="paste"><code>paste</code></h3>
+<p><strong><code>paste</code></strong>: <code>paste</code> combines lines from multiple files side by side:</p>
+<p><code>paste</code> is like taking snippets of text from different documents and sticking them together into one.</p>
 </section>
-<section id="sec-join" class="level3">
-<h3 class="anchored" data-anchor-id="sec-join"><code>join</code></h3>
-<p><strong><code>join</code></strong>: If you have two lists with common information, you might merge them based on what matches. <code>join</code> merges lines from two files based on a common field.</p>
+<section id="join" class="level3">
+<h3 class="anchored" data-anchor-id="join"><code>join</code></h3>
+<p><strong><code>join</code></strong>: <code>join</code> merges lines from two files based on a common field.</p>
+<p>If you have two lists with common information, you might merge them based on what matches.</p>
 </section>
-<section id="sec-comm" class="level3">
-<h3 class="anchored" data-anchor-id="sec-comm"><code>comm</code></h3>
-<p><strong><code>comm</code> (Compare)</strong>: Laying two printed lists side by side to see what items appear on both, only on one, or the other, <code>comm</code> compares two sorted files line by line.</p>
+<section id="comm" class="level3">
+<h3 class="anchored" data-anchor-id="comm"><code>comm</code></h3>
+<p><strong><code>comm</code> (Compare)</strong>: <code>comm</code> compares two sorted files line by line to see what items appear on both, only on one, or the other.</p>
 </section>
-<section id="sec-diff" class="level3">
-<h3 class="anchored" data-anchor-id="sec-diff"><code>diff</code></h3>
+<section id="diff" class="level3">
+<h3 class="anchored" data-anchor-id="diff"><code>diff</code></h3>
 <p><strong><code>diff</code> (Difference)</strong>: Highlighting what changes have been made between your draft and the final copy of a letter, <code>diff</code> shows the differences between two files.</p>
+</section>
+<section id="wc" class="level3">
+<h3 class="anchored" data-anchor-id="wc"><code>wc</code></h3>
+<p><code>wc</code> (<strong>Word Count</strong>): <code>wc</code> counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.</p>
+</section>
+<section id="xargs" class="level3">
+<h3 class="anchored" data-anchor-id="xargs"><code>xargs</code></h3>
+<p><code>xargs</code> builds and executes command lines from standard input (<code>stdin</code>). It’s most often used in combination with other commands through pipes. <code>xargs</code> takes input from a pipe and passes it as arguments to another command, allowing for powerful command-line operations that process a list of inputs iteratively.</p>
+</section>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
 <p>These analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
@@ -437,7 +459,6 @@ By mastering these commands, you gain the ability to effortlessly manipulate tex
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

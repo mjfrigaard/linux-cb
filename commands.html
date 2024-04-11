@@ -155,8 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -248,8 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./text_commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Text Commands</span></a>
+  <a href="./text_commands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Text Commands</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -277,8 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./permissions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Permissions</span></a>
+  <a href="./permissions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Permissions</span></a>
   </div>
 </li>
       </ul>
@@ -292,6 +289,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syntax_ref.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Syntax Reference</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./glossary.html" class="sidebar-item-text sidebar-link">
@@ -317,18 +319,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#print" id="toc-print" class="nav-link" data-scroll-target="#print">Print</a></li>
   <li><a href="#loop" id="toc-loop" class="nav-link" data-scroll-target="#loop">Loop</a></li>
   </ul></li>
-  <li><a href="#simple-commands" id="toc-simple-commands" class="nav-link" data-scroll-target="#simple-commands">Simple Commands</a>
+  <li><a href="#basic-commands" id="toc-basic-commands" class="nav-link" data-scroll-target="#basic-commands">Basic Commands</a>
   <ul>
-  <li><a href="#sec-pwd" id="toc-sec-pwd" class="nav-link" data-scroll-target="#sec-pwd"><code>pwd</code></a></li>
-  <li><a href="#sec-ls" id="toc-sec-ls" class="nav-link" data-scroll-target="#sec-ls"><code>ls</code></a></li>
-  <li><a href="#sec-date" id="toc-sec-date" class="nav-link" data-scroll-target="#sec-date"><code>date</code></a></li>
-  <li><a href="#sec-uptime" id="toc-sec-uptime" class="nav-link" data-scroll-target="#sec-uptime"><code>uptime</code></a></li>
-  <li><a href="#sec-who" id="toc-sec-who" class="nav-link" data-scroll-target="#sec-who"><code>who</code></a></li>
-  <li><a href="#sec-clear" id="toc-sec-clear" class="nav-link" data-scroll-target="#sec-clear"><code>clear</code></a></li>
-  <li><a href="#sec-exit" id="toc-sec-exit" class="nav-link" data-scroll-target="#sec-exit"><code>exit</code></a></li>
-  <li><a href="#sec-hostname" id="toc-sec-hostname" class="nav-link" data-scroll-target="#sec-hostname"><code>hostname</code></a></li>
-  <li><a href="#sec-yes" id="toc-sec-yes" class="nav-link" data-scroll-target="#sec-yes"><code>yes</code></a></li>
+  <li><a href="#who" id="toc-who" class="nav-link" data-scroll-target="#who"><code>who</code></a></li>
+  <li><a href="#whoami" id="toc-whoami" class="nav-link" data-scroll-target="#whoami"><code>whoami</code></a></li>
+  <li><a href="#hostname" id="toc-hostname" class="nav-link" data-scroll-target="#hostname"><code>hostname</code></a></li>
+  <li><a href="#cal" id="toc-cal" class="nav-link" data-scroll-target="#cal"><code>cal</code></a></li>
+  <li><a href="#uptime" id="toc-uptime" class="nav-link" data-scroll-target="#uptime"><code>uptime</code></a></li>
+  <li><a href="#clear" id="toc-clear" class="nav-link" data-scroll-target="#clear"><code>clear</code></a></li>
+  <li><a href="#exit" id="toc-exit" class="nav-link" data-scroll-target="#exit"><code>exit</code></a></li>
+  <li><a href="#yes" id="toc-yes" class="nav-link" data-scroll-target="#yes"><code>yes</code></a></li>
   </ul></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   </ul>
 </nav>
     </div>
@@ -376,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We’re going to start with a basic command: <code>date</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Wed Apr 10 08:18:33 MST 2024</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Thu Apr 11 09:02:48 MST 2024</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="repl" class="level2">
 <h2 class="anchored" data-anchor-id="repl">REPL</h2>
@@ -384,18 +386,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Here is how it works:</p>
 <section id="read" class="level3">
 <h3 class="anchored" data-anchor-id="read">Read</h3>
-<p>In Bash, the “Read” step occurs when the shell waits for input from the user. This is typically represented by the shell prompt, where we can type commands. The prompt might display useful information, such as the current user (<code>username</code>), hostname (<code>hostname</code>), and working directory (<code>current_directory</code>), depending on its configuration:</p>
+<p>In Bash, the “Read” step occurs when the shell waits for input from the user. This is typically represented by the shell prompt, where we can type commands.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">username@hostname:current_directory$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>The prompt might display useful information, such as the current user (<code>username</code>), hostname (<code>hostname</code>), and working directory (<code>current_directory</code>), depending on its configuration.</p>
 </section>
 <section id="eval" class="level3">
 <h3 class="anchored" data-anchor-id="eval">Eval</h3>
 <p>Once a command is entered, Bash “evaluates” it. This step involves parsing the command and its arguments, checking for syntax correctness, and then executing it.</p>
-<p>Commands can be simple, such as listing the current date and time, or complex scripts involving loops, conditionals, and functions.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">username@hostname:current_directory$</span> date</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Commands can be simple, such as listing the current date and time, or complex scripts involving loops, conditionals, and functions.</p>
 </section>
 <section id="print" class="level3">
 <h3 class="anchored" data-anchor-id="print">Print</h3>
@@ -417,96 +420,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This cycle repeats indefinitely until the user exits the REPL environment, typically with an <code>exit</code> command or by pressing Ctrl+D.</p>
 </section>
 </section>
-<section id="simple-commands" class="level2">
-<h2 class="anchored" data-anchor-id="simple-commands">Simple Commands</h2>
+<section id="basic-commands" class="level2">
+<h2 class="anchored" data-anchor-id="basic-commands">Basic Commands</h2>
 <p>In Unix, several commands can operate without any options or arguments, performing their basic functions in their simplest form. Below are some of these commands:</p>
-<section id="sec-pwd" class="level3">
-<h3 class="anchored" data-anchor-id="sec-pwd"><code>pwd</code></h3>
-<p><code>pwd</code> prints the current working directory.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /Users/username/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-ls" class="level3">
-<h3 class="anchored" data-anchor-id="sec-ls"><code>ls</code></h3>
-<p><code>ls</code> lists the contents of the current directory by default.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Applications</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Library</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; System</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Users</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Volumes</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; bin</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; cores</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; dev</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; etc</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; home</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; opt</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; private</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sbin</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; tmp</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; usr</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; var</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-date" class="level3">
-<h3 class="anchored" data-anchor-id="sec-date"><code>date</code></h3>
-<p><code>date</code> displays the current date and time.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Wed Apr 10 03:39:52 MST 2024</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-uptime" class="level3">
-<h3 class="anchored" data-anchor-id="sec-uptime"><code>uptime</code></h3>
-<p><code>uptime</code> shows how long the system has been running.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uptime</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3:39  up 11:23, 2 users, load averages: 3.82 3.21 3.00</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-who" class="level3">
-<h3 class="anchored" data-anchor-id="sec-who"><code>who</code></h3>
+<section id="who" class="level3">
+<h3 class="anchored" data-anchor-id="who"><code>who</code></h3>
 <p><code>who</code> shows who is logged on the system.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">who</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  username       console      Apr  9 03:20 </span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  username       ttys000      Apr  9 03:42</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">who</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mjfrigaard       console      Apr 10 08:10 </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mjfrigaard       ttys001      Apr 11 08:42</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>who</code> by itself, without options or arguments, lists the users currently logged into the system.</p>
 </section>
-<section id="sec-clear" class="level3">
-<h3 class="anchored" data-anchor-id="sec-clear"><code>clear</code></h3>
-<p><code>clear</code> clears the terminal screen.</p>
+<section id="whoami" class="level3">
+<h3 class="anchored" data-anchor-id="whoami"><code>whoami</code></h3>
+<p><code>whoami</code> shows the username of the user currently logged into the system.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">whoami</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mjfrigaard</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="hostname" class="level3">
+<h3 class="anchored" data-anchor-id="hostname"><code>hostname</code></h3>
+<p><code>hostname</code> displays the system’s network name.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hostname</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Martins-MacBook-Pro-2.local</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="cal" class="level3">
+<h3 class="anchored" data-anchor-id="cal"><code>cal</code></h3>
+<p><code>cal</code> displays a calender of the current month.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cal</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      April 2024       </span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Su Mo Tu We Th Fr Sa  </span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     1  2  3  4  5  6  </span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7  8  9 10 11 12 13  </span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14 15 16 17 18 19 20  </span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21 22 23 24 25 26 27  </span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28 29 30              </span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="uptime" class="level3">
+<h3 class="anchored" data-anchor-id="uptime"><code>uptime</code></h3>
+<p><code>uptime</code> shows how long the system has been running.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uptime</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9:02  up 16:40, 2 users, load averages: 3.86 3.28 3.18</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="clear" class="level3">
+<h3 class="anchored" data-anchor-id="clear"><code>clear</code></h3>
+<p><code>clear</code> clears the terminal screen and doesn’t print any return values.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">clear</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><code>clear</code> does its job without the need for additional input and doesn’t print any return values.</p>
+<p><code>clear</code> does its job without the need for additional input.</p>
 </section>
-<section id="sec-exit" class="level3">
-<h3 class="anchored" data-anchor-id="sec-exit"><code>exit</code></h3>
+<section id="exit" class="level3">
+<h3 class="anchored" data-anchor-id="exit"><code>exit</code></h3>
 <p><code>exit</code> exits the shell or your current session.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">exit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>exit</code> requires no arguments or options to execute this action, and doesn’t print any return values.</p>
 </section>
-<section id="sec-hostname" class="level3">
-<h3 class="anchored" data-anchor-id="sec-hostname"><code>hostname</code></h3>
-<p><code>hostname</code> displays the system’s network name.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hostname</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Users-MacBook-Pro-2.local</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-yes" class="level3">
-<h3 class="anchored" data-anchor-id="sec-yes"><code>yes</code></h3>
+<section id="yes" class="level3">
+<h3 class="anchored" data-anchor-id="yes"><code>yes</code></h3>
 <p><code>yes</code> repeatedly outputs a string until killed. Without arguments, it defaults to outputting ‘y’.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">yes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">yes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><strong>NOTE:</strong> Use <strong><kbd>Ctrl+C</kbd></strong> to interrupt the <code>yes</code> command.</p>
+</section>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
 <p>Each of these commands performs a specific and often utilized function within the Unix environment, embodying the Unix philosophy of doing one thing well.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
@@ -528,7 +520,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
