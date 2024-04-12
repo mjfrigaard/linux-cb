@@ -3,12 +3,20 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
+    comment: '#>'
+    
 ---
 
-# Format {.unnumbered}
+# Format {#sec-format-sh}
+
+```{bash}
+#| label: setup
+#| include: false
+whoami
+```
 
 ```{r}
-#| label: setup
+#| label: common
 #| include: false
 source("_common.R")
 ```
@@ -30,13 +38,88 @@ co_box(
 )
 ```
 
-Shell script formats.
+```{bash}
+#| eval: false
+# Create and populate the file with your data
+touch who_tb_data.txt
+echo "country year  type  count
+Afghanistan 1999  cases 745
+Afghanistan 1999  population  19987071
+Afghanistan 2000  cases 2666
+Afghanistan 2000  population  20595360
+Brazil  1999  cases 37737
+Brazil  1999  population  172006362
+Brazil  2000  cases 80488
+Brazil  2000  population  174504898
+China 1999  cases 212258
+China 1999  population  1272915272
+China 2000  cases 213766
+China 2000  population  1280428583" > who_tb_data.txt
+
+# Get the word count values
+counts=$(wc who_tb_data.txt | awk '{print $1, $2, $3}')
+
+# Use printf to format the output
+printf "   lines   words characters\n"
+printf "%8s %7s %10s\n" $counts
+```
+
+To make the commands above more generalizable so that any file can be passed as input rather than being restricted to a specific file (`who_tb_data.txt`), we can modify the script to take a filename as a command-line argument. 
+
+This way, you can use the script with any file by specifying the filename when you run the script.
+
+### Step 1: Modify the Script to Take Command-Line Arguments
+
+Here's how the revised script could look:
 
 ```bash
 #!/bin/bash
-# This is our first script.
-echo 'Hello World!'
+
+# Check if a file name was provided as an argument
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <filename>"
+    exit 1
+fi
+
+# Check if the file exists
+if [ ! -f "$1" ]; then
+    echo "File not found: $1"
+    exit 1
+fi
+
+# Get the word count values
+counts=$(wc "$1" | awk '{print $1, $2, $3}')
+
+# Use printf to format the output
+printf "   lines   words characters\n"
+printf "%8s %7s %10s\n" $counts
 ```
+
+### Step 2: Save and Make the Script Executable
+
+1. Save the script in a file, for example, `format_wc_output.sh`.
+2. Make sure the script is executable:
+   ```bash
+   chmod +x format_wc_output.sh
+   ```
+
+### Step 3: Run the Script with a File as an Argument
+
+- Now you can run the script with any file as an argument. For example:
+  ```bash
+  ./format_wc_output.sh somefile.txt
+  ```
+
+### Explanation 
+
+1. **Argument Checking**: The script now starts by checking if exactly one argument (the filename) is provided. If not, it prints a usage message and exits. This ensures the user knows how to run the script correctly.
+   
+2. **File Existence Checking**: It checks if the file exists before attempting to process it. If the file doesn't exist, it prints an error message and exits. This prevents errors related to non-existent files.
+
+3. **Using Command-Line Argument**: The `wc` command now uses `$1`, which is a placeholder for the first command-line argument provided to the script (i.e., the filename you want to process).
+
+This version of the script is more flexible and useful, as it can handle any file input, making it a handy tool for quickly formatting word count output for various files across your system.
+
 
 ```{r}
 #| label: git_contrib_box

@@ -56,11 +56,11 @@ co_box(
   header = "Standard Input and Output", 
   fold = FALSE,
   contents = "\n
-`stdin` (standard input) is a stream from which a command reads its input. By default, it's the keyboard, but it can be redirected to read from a file or another command's output.\n
+`stdin` (standard input) is a text stream from which a command reads its input. By default, it's the keyboard, but it can be redirected to read from a file or another command's output.\n
   
 ![The text stream looks nothing like this](img/mr-robot.gif){fig-align='center' width='75%'}
   
-`stdout` (standard output) is a stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command's input.\n")
+`stdout` (standard output) is a text stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command's input.\n")
 ```
 
 

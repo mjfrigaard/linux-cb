@@ -1,0 +1,70 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: '# '
+---
+
+# Basics  {#sec-basic-cmnds}
+
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+This section covers commands to help you navigate and manipulate files and folders using Unix commands. 
+
+#### Basic Unix/Linux Commands
+
+- **Navigating the File System**: `cd`, `ls`, `pwd`
+
+- **File Operations**: `cp`, `mv`, `rm`, `mkdir`
+
+- **System Monitoring**: `top`, `htop`, `free`, `df`, `du`
+
+<!--
+
+#### Advanced Topics
+
+- **Scripting and Automation**: Basics of writing shell scripts to automate routine tasks.
+
+- **Customizing the Environment**: How to customize the shell experience, including themes, prompts, and aliases.
+
+- **Security Practices**: Basic security practices using terminal commands, such as setting file permissions and managing user accounts.
+
+#### Practical Exercises
+
+- **Hands-On Examples**: Provide step-by-step exercises to practice basic and intermediate commands.
+
+- **Project Ideas**: Offer project suggestions that involve using terminal commands to solve real-world problems, like data backup scripts or a basic server setup.
+
+-->
+
+## Recap 
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```

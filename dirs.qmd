@@ -45,26 +45,18 @@ When presented with a new map, the most important thing to find is your location
 
 ## Navigate {#sec-nav-dirs}
 
-### `pwd` 
-
 **`pwd` (Print Working Directory)** tells you exactly where you are in the filesystem.
 
 ```{bash}
 pwd # where am I?
 ```
 
-### `cd` 
-
- **`cd` (Change Directory)** lets you move to a different folder on your computer.
-
-If you want to move from the one place to another, `cd` can get you there. For example, `cd /bin` takes you to the `/bin` folder, the toolshed of software tools.
+ **`cd` (Change Directory)** lets you move to a different folder on your computer. If you want to move from the one place to another, `cd` can get you there. For example, `cd /bin` takes you to the `/bin` folder, the toolshed of software tools.
 
 ```{bash}
 cd /bin # change location
 pwd # now where am I?
 ```
-
-### `ls` 
 
 **`ls` (List)** is like standing in one location, looking around, and seeing what files and folders are around you. In `/bin`, `ls` would show you the software tools available:
 
@@ -77,16 +69,12 @@ ls # what's in here?
 
 In the Unix/Linux world, file and directory management is a fundamental skill. This chapter dives deep into the commands that allow users to create, copy, move, remove, and link files and directories. Each section below introduces a different command, detailing its purpose and providing examples of its use.
 
-### `mkdir` 
-
 **`mkdir` (Make Directory)** builds a new folder wherever you tell it to, like making a new folder in our project for outputs (`out/`) or documents (`doc/`).
 
 ```bash
 mkdir out
 mkdir doc
 ```
-
-### `cp` 
 
 **`cp` (Copy)** duplicates files or folders. The `cp` command is used to Copy files or directories from one location to another. Imagine having a file (`myfile.txt`) on your root (`.`) directory that you want to copy to the `/data` folder; you could use `cp` to make a duplicate. 
 
@@ -95,8 +83,6 @@ cp myfile.txt data/myfile.txt
 # confirm copy
 ls data
 ```
-
-### `mv` 
 
 **`mv` (Move)**: `mv`, short for Move, functions similarly to picking up a book from your desk and placing it on a shelf. It moves files or directories from one location to another. It can also be used for renaming files. This command is especially useful for organizing files and directories that are in the wrong place.
 
@@ -111,8 +97,6 @@ mv data/myfile.txt doc/myfile.txt
 # confirm move
 ls doc
 ```
-
-### `rm` 
 
 **`rm` (Remove)**: The `rm` command stands for **remove** and is used to delete files or directories.
 
@@ -152,8 +136,6 @@ rm -R doc
 ```
 
 
-### `ln` 
-
 **`ln` (Link)**: `ln` creates Links to files or directories, making them accessible from multiple locations without duplicating the actual content. It's like creating a shortcut on your desktop to a program you frequently use. There are two types of links: hard links and symbolic (soft) links. Symbolic links are more commonly used because they can link to directories and provide more flexibility.
 
 ```bash
@@ -162,14 +144,33 @@ ln -s /path/to/original /path/to/link
 
 ## System
 
-
-### `ps` 
-
 `ps` (**Process Status**) reports a snapshot of information about all running processes, regardless of the owner, including the user, CPU and memory usage, process ID, and the command that started each process.. Command options can expand the selection to include other users' processes, full command lines, etc.
 
-### `df` 
+```{bash}
+#| eval: false
+ps
+#>   PID TTY           TIME CMD
+#>  2637 ttys000    0:00.04 -zsh
+#>  2646 ttys001    0:00.04 -zsh
+#>  2791 ttys002    0:00.03 -zsh
+```
+
 
 `df` (**Disk Free**) shows disk usage in a human-readable format, including the size, used space, available space, and the mount point of each filesystem. By default, it displays sizes in 1K blocks but can show them in a more readable format (like MB or GB) with the `-h` option (human-readable).
+
+```{bash}
+#| eval: false
+df
+#> Filesystem                       512-blocks      Used Available Capacity iused     ifree %iused  Mounted on
+#> /dev/disk1s1s1                    976490576  20002808  84798224    20%  403755 423991120    0%   /
+#> devfs                                   395       395         0   100%     684         0  100%   /dev
+#> /dev/disk1s3                      976490576   5059568  84798224     6%    5077 423991120    0%   /System/Volumes/Preboot
+#> /dev/disk1s5                      976490576   2097312  84798224     3%       1 423991120    0%   /System/Volumes/VM
+#> /dev/disk1s6                      976490576     39200  84798224     1%      19 423991120    0%   /System/Volumes/Update
+#> /dev/disk1s2                      976490576 861746736  84798224    92% 5662798 423991120    1%   /System/Volumes/Data
+#> map auto_home                             0         0         0   100%       0         0     -   /System/Volumes/Data/home
+```
+
 
 ## Recap 
 

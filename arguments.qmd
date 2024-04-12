@@ -50,14 +50,34 @@ A Unix command can be broken down into the command name, followed by its options
 command argument1 argument2 ... argument
 ```
 
-## Argument Types 
+## Types 
 
 Below are a variety of command arguments types. This is not an exhaustive list, but includes many of the commands and arguments you'll encounter on a regular basis.
 
+### Direct and Indirect 
 
-### Files and Directories
+**Direct arguments** are the most straightforward type of arguments. They are typically the names of files or directories on which commands operate. 
 
-**File and Directory Names**: Most commonly, arguments are the names of files or directories on which the command will operate.
+**Example** 
+
+```{bash}
+cat myfile.txt
+```
+
+
+In the command `cat myfile.txt`, `myfile.txt` is a direct argument to the <code>@sec-cat</code> command, telling it which file to display on the standard output.
+
+**Indirect arguments** are arguments that might specify additional information that commands need to complete their tasks.
+
+**Example** 
+
+```{bash}
+grep file myfile.txt
+```
+
+The `file` search pattern for the <code>@sec-grep</code> command is an example of an indirect command, and `myfile.txt` is the direct argument.
+
+Most commonly, arguments are the names of **files and directory names** on which the command will operate.
 
 **Example**
 
@@ -68,9 +88,7 @@ cp source.txt destination.txt
 
 `source.txt` and `destination.txt` are arguments representing the source and destination files to copy with <code>@sec-cp</code>, respectively.
 
-### User and Group Names
-
-**User and Group Names**: Commands related to user management might take usernames or group names as arguments.
+Commands related to user management might take **user and group names** names as arguments.
 
 **Example**
 
@@ -83,7 +101,7 @@ chown user:group file
 
 ### Command Targets
 
-**Command Targets**: Some commands take other commands as arguments. For example, <code>@sec-sudo</code> command runs command with superuser privileges.
+Some commands take **other commands as arguments**. For example, <code>@sec-sudo</code> command runs command with superuser privileges.
 
 **Example**
 
@@ -94,7 +112,7 @@ sudo
 
 ### Data Values
 
-**Data Values**: Commands might take data values as arguments for processing. 
+Commands might take **data values** as arguments for processing. 
 
 **Example**
 
@@ -103,34 +121,11 @@ sudo
 echo Hello, World!
 ```
 
-In `echo Hello, World!`, `Hello, World!` is an argument that <code>@sec-echo</code> prints to the terminal.
+In `echo Hello, World!`, `Hello, World!` is the argument value that <code>@sec-echo</code> prints to the terminal.
 
-### Direct and Indirect 
+### Order and Position
 
-**Direct Arguments**: These are the most straightforward type of arguments. They are typically the names of files or directories on which commands operate. 
-
-**Example** 
-
-```{bash}
-cat myfile.txt
-```
-
-
-In the command `cat myfile.txt`, `myfile.txt` is a direct argument to the <code>@sec-cat</code> command, telling it which file to display on the standard output.
-
-**Indirect Arguments**: These arguments might specify additional information that commands need to complete their tasks.
-
-**Example** 
-
-```{bash}
-grep file myfile.txt
-```
-
-The `file` search pattern for the <code>@sec-grep</code> command is an example of an indirect command, and `myfile.txt` is the direct argument.
-
-### Position
-
-**Order**: For many commands, the order of the arguments is significant. 
+For many commands, the **order** of the arguments is significant. 
 
 **Example** 
 
@@ -140,7 +135,7 @@ cp myfile.txt myfile2.txt
 
 `myfile.txt` is the first argument (indicating the file to copy from), and `myfile2.txt` is the second argument (indicating where to copy the file to). Reversing these arguments would result in a completely different operation.
 
-**Spaces**: Arguments that contain spaces must be quoted or escaped, so the shell understands them as a single argument rather than multiple arguments. 
+Arguments that contain **spaces** must be quoted or escaped, so the shell understands them as a single argument rather than multiple arguments. 
 
 **Example** 
 
@@ -152,7 +147,7 @@ cp myfile2.txt 'my file 3.txt'
 
 ### Command Substitution
 
-**Using Output as Arguments**: The output of a command can be used as an argument for another command using backticks (\` \`) or `$( )`. 
+The **output of a command can be used as an argument for another command** using backticks (\` \`) or `$( )`. 
 
 **Example** 
 
@@ -162,9 +157,9 @@ cp myfile2.txt 'my file 3.txt'
 echo $(grep file myfile.txt)
 ```
 
-### Environmental Variables
+### Variables as Arguments
 
-**Variables as Arguments**: Environment variables can be used as arguments in commands. 
+**Environment variables** can be used as arguments in commands. 
 
 **Example** 
 

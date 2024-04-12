@@ -82,66 +82,39 @@ co_box(
 -   **Output** is the data produced by a command, displayed on `stdout` unless redirected.")
 ```
 
-### `echo` 
-
 The `echo` command prints its arguments to the standard output. It's commonly used in scripts and on the command line to display messages or variables.
-
-### `cat` 
 
 **`cat` (Concatenate)**: `cat` displays the content of files straight to your screen, useful for checking what's in a text file quickly.
 
 This is similar to printing a file and laying out the pages on the floor to see them all at once.
 
-### `grep` 
-
 **`grep`** stands for "global regular expression print" and it reads from `stdin` or a list of files and outputs the lines that contain matches for a specified pattern.
-
-
-### `sort` 
 
 **`sort`**: `sort` arranges the lines in a text file into order:
 
-
 Similar to organizing our stack of papers alphabetically.
-
-### `uniq` 
 
 **`uniq`**: `uniq` helps by removing duplicate lines from a file, making sure every line is unique.
 
 After accidentally printing duplicates of a document, you remove the extra copies.
 
-### `cut` 
-
 **`cut`**: `cut` extracts specific parts of lines in a file, like cutting out columns of text.
 
 If you only want the dates from a list of events, you might physically cut them out of the paper. 
-
-### `paste` 
 
 **`paste`**: `paste` combines lines from multiple files side by side:
 
 `paste` is like taking snippets of text from different documents and sticking them together into one.
 
-### `join` 
-
 **`join`**: `join` merges lines from two files based on a common field.
-
 
 If you have two lists with common information, you might merge them based on what matches. 
 
-### `comm` 
-
 **`comm` (Compare)**: `comm` compares two sorted files line by line to see what items appear on both, only on one, or the other.
-
-### `diff` 
 
 **`diff` (Difference)**: Highlighting what changes have been made between your draft and the final copy of a letter, `diff` shows the differences between two files.
 
-### `wc` 
-
 `wc` (**Word Count**): `wc` counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.
-
-### `xargs` 
 
 `xargs` builds and executes command lines from standard input (`stdin`). It's most often used in combination with other commands through pipes. `xargs` takes input from a pipe and passes it as arguments to another command, allowing for powerful command-line operations that process a list of inputs iteratively.
 

@@ -3,10 +3,9 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
-    
 ---
 
-# Terminals {#sec-terminals}
+# macOS {#sec-macos}
 
 ```{bash}
 #| label: setup
@@ -39,11 +38,13 @@ co_box(
 
 Using Unix/Linux on macOS offers a unique and powerful environment with macOS's Terminal, but it's important to be aware of the differences and limitations inherent in macOS's implementation of Unix. Below we cover some special considerations rooted in macOS's distinct architecture and its version of Unix.
 
-### Terminal Emulators
+### macOS Terminal
 
 The default Terminal app on macOS provides a solid interface to access the Unix command line, but there are other terminal emulators available (like [iTerm2](https://iterm2.com/)) that offer additional features such as split panes, search, and customization options.
 
-### Shells
+![iterm2](img/iterm2-panes.png){fig-alig="center" width="100%"}
+
+### macOS Shell
 
 macOS has transitioned from using Bash as the default shell to Zsh since macOS Catalina. While both are Unix shells, they have some differences in features and configuration files (`~/.bash_profile` for Bash vs. `~/.zshrc` for Zsh).
 
@@ -75,23 +76,9 @@ macOS integrates well with both Unix/Linux and Windows environments, supporting 
 
 macOS allows Unix command-line tools to interact with its graphical user interface (GUI) applications in ways that are not typically available on other Unix systems. For instance, the `open` command can be used to open files or applications, and `osascript` can interact with AppleScript-enabled applications for automation.
 
-### Terminal Pane (Posit Workbench)
+## Recap
 
-![Terminal Pane in Posit Workbench](img/term-simple.png)
 
-### Bash
-
-This section covers Bash, a common Unix shell.
-
-#### Features of Bash
-
-- **Command History**: Bash maintains a history of the commands that have been entered, allowing users to navigate through them using the up and down arrow keys or search through them with Ctrl+R.
-
-- **Tab Completion**: Bash supports tab completion for commands, filenames, and paths, making it easier to type commands accurately and quickly.
-
-- **Scripting Capabilities**: Beyond single commands, users can execute entire scripts within the Bash REPL, making it a powerful tool for automating tasks.
-
-- **Customization**: The prompt and behavior of the Bash REPL can be customized through various settings in `.bashrc` or `.bash_profile` files, allowing users to tailor the environment to their preferences.
 
 ```{r}
 #| label: git_contrib_box

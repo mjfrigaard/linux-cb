@@ -3,16 +3,26 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
-    comment: '# '
+    comment: '#>'
 ---
 
-# Files and Directories  {#sec-dirs .unnumbered}
+# System {#sec-sys}
 
-```{r}
+```{bash}
 #| label: setup
 #| include: false
+whoami
+```
+
+
+```{r}
+#| label: common
+#| include: false
+# Sys.setenv('QUARTO_PROJECT_DIR' = 'data')
+# Sys.getenv('QUARTO_PROJECT_DIR')
 source("_common.R")
 ```
+
 
 ```{r}
 #| label: co_box_dev
@@ -31,4 +41,5 @@ co_box(
 )
 ```
 
-This section covers commands to help you navigate and manipulate files and folders using Unix commands. 
+**System Monitoring**: `top`, `htop`, `free`, `df`, `du`
+

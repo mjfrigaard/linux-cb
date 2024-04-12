@@ -38,7 +38,7 @@ co_box(
 ```
 
 
-[Quarto](https://quarto.org/) is an '*open-source scientific and technical publishing system*' built on [Pandoc](https://pandoc.org/) that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards. It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through writing YAML headers and Bash code chunks, two essential components when working with Quarto in a Unix/Linux context.
+[Quarto](https://quarto.org/) is an '*open-source scientific and technical publishing system*' built on [Pandoc](https://pandoc.org/) that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards. It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through downloading and installing Quarto, `.qmd` documents, `YAML` headers and Bash code chunks.
 
 
 ```{r}
@@ -58,7 +58,9 @@ co_box(
 ```
 
 
+## Install 
 
+## Quarto Documents 
 
 ### YAML header {#sec-quarto-yaml}
 
@@ -161,6 +163,12 @@ This behavior is different than what we'd see in Posit Workbench's Terminal on m
 ![Still ~/](img/pwd-local-03.png){width='100%'}
 
 This behavior can be frustrating, but it also means we'll start with a 'clean slate' in each new code chunk! 
+
+## Posit Workbench
+
+### Terminal Pane (Posit Workbench)
+
+![Terminal Pane in Posit Workbench](img/term-simple.png)
 
 
 ```{r}

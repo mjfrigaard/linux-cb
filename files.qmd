@@ -41,47 +41,97 @@ co_box(
 )
 ```
 
+The following commands are designed for creating, managing, and manipulating files. Some of these commands will also work on directories (which we covered in the previous chapter).
 
-### `file` 
+## Create 
 
-**`file`** gives you a summary of what a computer file is or what it contains, like telling you if a tool in `/bin/pax` is a program you can run or a text file.
+To create a new file (`data/who_tb_data.txt`), use the **<code>@sec-touch</code>** command. 
 
 ```{bash}
-file /bin/pax
+touch data/who_tb_data.txt
 ```
 
-### `less` 
+We can add some contents to the `data/who_tb_data.txt` file using **<code>@sec-echo</code>** and the `>` operator.
 
-**`less`** lets you skim through a file on your computer, moving forwards and backwards as you please.
+```{bash}
+echo "country	year	type	count
+Afghanistan	1999	cases	745
+Afghanistan	1999	population	19987071
+Afghanistan	2000	cases	2666
+Afghanistan	2000	population	20595360
+Brazil	1999	cases	37737
+Brazil	1999	population	172006362
+Brazil	2000	cases	80488
+Brazil	2000	population	174504898
+China	1999	cases	212258
+China	1999	population	1272915272
+China	2000	cases	213766
+China	2000	population	1280428583" > data/who_tb_data.txt
+```
+
+## View 
+
+**<code>@sec-file</code>** gives us a summary of what a file is or what it contains, like telling us what's in `data/who_tb_data.txt`.
+
+```{bash}
+file data/who_tb_data.txt
+```
+
+We can use **<code>@sec-head</code>** and **<code>@sec-tail</code>** to view the top and bottom of `data/who_tb_data.txt`.
+
+```{bash}
+head data/vg_hof.tsv
+```
+
+
+```{bash}
+tail data/vg_hof.tsv
+```
+
+
+**<code>@sec-less</code>** lets you skim through a file on your computer, moving forwards and backwards as you please. We'll use less on the `data/vg_hof.tsv` file.
 
 ```{bash}
 #| eval: false
 less data/vg_hof.tsv
 ```
 
-![Enter `less` in the Terminal to scroll](img/less.gif){width='100%' fig-align='center'}
 
-### `find` 
+![Enter 'q' to exit the `less` scroll](img/less.gif){width='100%' fig-align='center'}
 
-`find` is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, file type, and modification time. 
 
-### `wc` 
+## Search 
 
-`wc` (**word count**) counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.
+**<code>@sec-find</code>** is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, file type, and modification time. 
+For example, the commands below look in the `data` directory for files with a `.txt` extension (`-name "*.txt"`) and finds files modified in the last 2 days (`-mtime -2`).
+
+```{bash}
+find data -name "*.txt" -mtime -1
+```
+
+## Count
+
+**<code>@sec-wc</code>** (**word count**) counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.
+
+```{bash}
+find data -name "*.txt" -mtime -1 | wc
+```
+
+```{bash}
+#| include: false
+counts=$(wc data/who_tb_data.txt | awk '{print $1, $2, $3}')
+printf "   lines   words characters\n"
+printf "%8s %7s %10s\n" $counts
+```
+
 
 ## Permissions & Priviledges 
 
-### `chown` 
-
-### `sudo` 
+`chown` & `sudo`
 
 ## Documentation 
 
-### `man` 
-
 `man` (**Manual**) displays the user manual of any command that we can run on the terminal. It's the go-to resource for learning about the options, arguments, and examples of how to use commands.
-
-### `help` 
 
 `help` or `--help` option provides information about built-in commands and usage guidelines. It's a quick way to get help for shell built-ins or to understand the basic usage of a command. 
 

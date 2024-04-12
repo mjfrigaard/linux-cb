@@ -21,19 +21,20 @@ book:
     - intro.qmd
     - part: setups.qmd
       chapters:
-        - terminals.qmd
-        - quarto.qmd
+        - sh_term.qmd
         - vms.qmd
+        - quarto.qmd
     - part: syntax.qmd
       chapters:
         - commands.qmd
         - arguments.qmd
         - options.qmd
         - pipes.qmd
-    - part: files_dirs.qmd
+    - part: basics.qmd
       chapters:
         - dirs.qmd
         - files.qmd
+        - sys.qmd
     - part: text.qmd
       chapters:
         - text_commands.qmd
@@ -45,6 +46,7 @@ book:
   appendices:
         - syntax_ref.qmd
         - glossary.qmd
+        - macos.qmd
 
 format:
   html:
@@ -53,6 +55,7 @@ format:
     code-block-bg: "#1E2229"
     code-block-border-left: "#A5FFE1"
     number-sections: false
+    callout-appearance: minimal
     toc: true
     toc-depth: 4
     toc-expand: true

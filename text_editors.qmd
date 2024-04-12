@@ -4,13 +4,24 @@ knitr:
   opts_chunk: 
     collapse: true
     comment: '# '
+    
+execute: 
+  eval: false
 ---
 
 # Text Editors {#sec-txt-edit .unnumbered}
 
-```{r}
+```{bash}
 #| label: setup
+#| include: false 
+#| eval: true
+whoami
+```
+
+```{r}
+#| label: common
 #| include: false
+#| eval: true
 source("_common.R")
 ```
 
@@ -33,7 +44,84 @@ co_box(
 
 ## nano
 
-## vi 
+## `vi` (Vim) 
+
+Vim, short for Vi IMproved, is an advanced text editor that is an enhanced version of the `vi` editor common to UNIX systems. Vim designed for both casual text editing and complex code development, making it a popular choice for developers and system administrators alike. Vim is known for its power, flexibility, and efficiency, but it can be intimidating for beginners due to its modal nature and extensive commands.
+
+### Getting Started
+
+To start using Vim, you can simply type `vim` followed by the name of the file you wish to edit or create. For example:
+
+```{bash}
+vim example.txt
+```
+
+This command will open `example.txt` in Vim. If the file doesn't exist, Vim will create it once you attempt to save.
+
+### Vim Modes
+
+Vim operates in several modes, primarily:
+
+- **Normal Mode**: The default mode where you can use vim commands. No text insertion happens in this mode.
+- **Insert Mode**: Allows you to insert text. Enter this mode by pressing `i` in Normal Mode.
+- **Command Mode**: Accessed from Normal Mode by pressing `:`. Here, you can execute Vim commands and scripts.
+
+### Basic Commands
+
+Here are some fundamental commands to get you started:
+
+- `i` - Enter insert mode to start typing/editing the text.
+- `Esc` - Return to normal mode from any other mode.
+- `:w` - Save the changes made to the file.
+- `:q` - Quit Vim.
+- `:wq` - Save the changes and quit Vim.
+- `dd` - Delete (cut) a line in normal mode.
+- `yy` - Copy (yank) a line in normal mode.
+- `p` - Paste the copied or deleted line below the current line.
+
+### Example Session
+
+Let's consider a simple session where you edit a new file:
+
+1. Open or create a file:
+
+    ```bash
+    vim example.txt
+    ```
+
+2. Enter Insert Mode to start typing:
+
+    ```bash
+    i
+    ```
+
+3. Type your text, for instance:
+
+    ```bash
+    Hello, this is a test file with Vim.
+    ```
+   
+4. Press `Esc` to go back to Normal Mode.
+
+5. Save and exit:
+
+    ```bash
+    :wq
+    ```
+
+## Advanced Features
+
+As you grow more comfortable with the basics of Vim, you may explore its advanced features:
+
+- **Multiple Windows**: Open multiple files or views using `:split`, `:vsplit`
+
+- **Macros**: Automate repetitive tasks by recording them.
+
+- **Customizable Settings**: Tweak Vim’s behavior through a `.vimrc` file
+
+- **Plugins**: Extend Vim’s functionality with plugins like NERDTree for file system navigation or YouCompleteMe for code completion.
+
+While Vim has a steep learning curve, mastering it can significantly enhance your productivity and efficiency in text editing tasks. Start with basic commands, gradually exploring more complex features as you become more comfortable with the editor. 
 
 ## emacs
 

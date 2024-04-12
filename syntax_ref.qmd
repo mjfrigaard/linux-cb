@@ -263,6 +263,16 @@ ln -s /path/to/original /path/to/link
 
 ## Files 
 
+### `touch` {#sec-touch}
+
+**`touch`** creates a new empty file if the specified file does not exist. If the file does exist, `touch` updates its access and modification timestamps.
+
+```{bash}
+#| eval: false
+touch newfile.txt
+```
+
+
 ### `file` {#sec-file}
 
 **`file`** gives you a summary of what a computer file is or what it contains, like telling you if a tool in `/bin/pax` is a program you can run or a text file.
@@ -270,6 +280,14 @@ ln -s /path/to/original /path/to/link
 ```{bash}
 file /bin/pax
 ```
+
+### `head` {#sec-head}
+
+**`head`** displays the first part of files, allowing you to see the beginning of a file. By default, it shows the first 10 lines.
+
+### `tail` {#sec-tail}
+
+**`tail`** displays the last part of files, useful for viewing the end of a file or for monitoring changes to a file in real time with `-f`.
 
 ### `less` {#sec-less}
 
