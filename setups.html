@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./terminals.html" rel="next">
+<link href="./sh_term.html" rel="next">
 <link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -135,17 +135,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./terminals.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Terminals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  <a href="./sh_term.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Shells and Terminals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./vms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Virtual Machines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
   </div>
 </li>
       </ul>
@@ -183,8 +183,8 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./files_dirs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Files and Directories</span></a>
+            <a href="./basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -198,6 +198,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./files.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
       </ul>
@@ -235,8 +240,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./format.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Format</span></a>
+  <a href="./format.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Format</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -264,6 +268,11 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./glossary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./macos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">macOS</span></a>
   </div>
 </li>
       </ul>
@@ -316,10 +325,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>This book section details the practical aspects of preparing your environment to work with Unix/Linux systems. It is designed to guide readers through various setup processes, catering to different preferences and requirements. We’ll cover using Quarto documents to execute Bash commands, working directly on a macOS terminal, and setting up a virtual machine.</p>
-<p><strong><a href="terminals.html" class="quarto-xref"><span>Terminals</span></a></strong> covers how to setup up <a href="https://iterm2.com/">iterm2</a>.</p>
-<p><strong><a href="glossary.html#sec-quarto" class="quarto-xref"><span>Quarto</span></a></strong> covers how to setup up the <a href="https://iterm2.com/">Quarto</a> publishing system.</p>
+<p>This book section details the practical aspects of preparing your environment to work with Unix/Linux systems. It is designed to guide readers through various setup processes, catering to different preferences and requirements. We’ll cover working directly with shells and terminals, setting up a virtual machine, and using Quarto documents to execute Bash commands.</p>
+<p><strong><a href="sh_term.html" class="quarto-xref"><span>Shells and Terminals</span></a></strong> covers the differences between shells and terminals, and some common options for both.</p>
 <p><strong><a href="vms.html" class="quarto-xref"><span>Virtual Machines</span></a></strong> covers how to run Unix on a virtual machine.</p>
+<p><strong><a href="glossary.html#sec-quarto" class="quarto-xref"><span>Quarto</span></a></strong> covers how to setup up the <a href="https://iterm2.com/">Quarto</a> publishing system.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -769,8 +778,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./terminals.html" class="pagination-link" aria-label="Terminals">
-        <span class="nav-page-text"><span class="chapter-title">Terminals</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sh_term.html" class="pagination-link" aria-label="Shells and Terminals">
+        <span class="nav-page-text"><span class="chapter-title">Shells and Terminals</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

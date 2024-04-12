@@ -135,17 +135,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./terminals.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Terminals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  <a href="./sh_term.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Shells and Terminals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./vms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Virtual Machines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
   </div>
 </li>
       </ul>
@@ -183,8 +183,8 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./files_dirs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Files and Directories</span></a>
+            <a href="./basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -198,6 +198,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./files.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
       </ul>
@@ -235,8 +240,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./format.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Format</span></a>
+  <a href="./format.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Format</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -266,6 +270,11 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./macos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">macOS</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -279,21 +288,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#the-text-stream" id="toc-the-text-stream" class="nav-link active" data-scroll-target="#the-text-stream">The Text Stream</a></li>
-  <li><a href="#text-manipulation" id="toc-text-manipulation" class="nav-link" data-scroll-target="#text-manipulation">Text Manipulation</a>
-  <ul>
-  <li><a href="#echo" id="toc-echo" class="nav-link" data-scroll-target="#echo"><code>echo</code></a></li>
-  <li><a href="#cat" id="toc-cat" class="nav-link" data-scroll-target="#cat"><code>cat</code></a></li>
-  <li><a href="#grep" id="toc-grep" class="nav-link" data-scroll-target="#grep"><code>grep</code></a></li>
-  <li><a href="#sort" id="toc-sort" class="nav-link" data-scroll-target="#sort"><code>sort</code></a></li>
-  <li><a href="#uniq" id="toc-uniq" class="nav-link" data-scroll-target="#uniq"><code>uniq</code></a></li>
-  <li><a href="#cut" id="toc-cut" class="nav-link" data-scroll-target="#cut"><code>cut</code></a></li>
-  <li><a href="#paste" id="toc-paste" class="nav-link" data-scroll-target="#paste"><code>paste</code></a></li>
-  <li><a href="#join" id="toc-join" class="nav-link" data-scroll-target="#join"><code>join</code></a></li>
-  <li><a href="#comm" id="toc-comm" class="nav-link" data-scroll-target="#comm"><code>comm</code></a></li>
-  <li><a href="#diff" id="toc-diff" class="nav-link" data-scroll-target="#diff"><code>diff</code></a></li>
-  <li><a href="#wc" id="toc-wc" class="nav-link" data-scroll-target="#wc"><code>wc</code></a></li>
-  <li><a href="#xargs" id="toc-xargs" class="nav-link" data-scroll-target="#xargs"><code>xargs</code></a></li>
-  </ul></li>
+  <li><a href="#text-manipulation" id="toc-text-manipulation" class="nav-link" data-scroll-target="#text-manipulation">Text Manipulation</a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   </ul>
 </nav>
@@ -381,60 +376,24 @@ By mastering these commands, you gain the ability to effortlessly manipulate tex
 </div>
 </div>
 </div>
-<section id="echo" class="level3">
-<h3 class="anchored" data-anchor-id="echo"><code>echo</code></h3>
 <p>The <code>echo</code> command prints its arguments to the standard output. It’s commonly used in scripts and on the command line to display messages or variables.</p>
-</section>
-<section id="cat" class="level3">
-<h3 class="anchored" data-anchor-id="cat"><code>cat</code></h3>
 <p><strong><code>cat</code> (Concatenate)</strong>: <code>cat</code> displays the content of files straight to your screen, useful for checking what’s in a text file quickly.</p>
 <p>This is similar to printing a file and laying out the pages on the floor to see them all at once.</p>
-</section>
-<section id="grep" class="level3">
-<h3 class="anchored" data-anchor-id="grep"><code>grep</code></h3>
 <p><strong><code>grep</code></strong> stands for “global regular expression print” and it reads from <code>stdin</code> or a list of files and outputs the lines that contain matches for a specified pattern.</p>
-</section>
-<section id="sort" class="level3">
-<h3 class="anchored" data-anchor-id="sort"><code>sort</code></h3>
 <p><strong><code>sort</code></strong>: <code>sort</code> arranges the lines in a text file into order:</p>
 <p>Similar to organizing our stack of papers alphabetically.</p>
-</section>
-<section id="uniq" class="level3">
-<h3 class="anchored" data-anchor-id="uniq"><code>uniq</code></h3>
 <p><strong><code>uniq</code></strong>: <code>uniq</code> helps by removing duplicate lines from a file, making sure every line is unique.</p>
 <p>After accidentally printing duplicates of a document, you remove the extra copies.</p>
-</section>
-<section id="cut" class="level3">
-<h3 class="anchored" data-anchor-id="cut"><code>cut</code></h3>
 <p><strong><code>cut</code></strong>: <code>cut</code> extracts specific parts of lines in a file, like cutting out columns of text.</p>
 <p>If you only want the dates from a list of events, you might physically cut them out of the paper.</p>
-</section>
-<section id="paste" class="level3">
-<h3 class="anchored" data-anchor-id="paste"><code>paste</code></h3>
 <p><strong><code>paste</code></strong>: <code>paste</code> combines lines from multiple files side by side:</p>
 <p><code>paste</code> is like taking snippets of text from different documents and sticking them together into one.</p>
-</section>
-<section id="join" class="level3">
-<h3 class="anchored" data-anchor-id="join"><code>join</code></h3>
 <p><strong><code>join</code></strong>: <code>join</code> merges lines from two files based on a common field.</p>
 <p>If you have two lists with common information, you might merge them based on what matches.</p>
-</section>
-<section id="comm" class="level3">
-<h3 class="anchored" data-anchor-id="comm"><code>comm</code></h3>
 <p><strong><code>comm</code> (Compare)</strong>: <code>comm</code> compares two sorted files line by line to see what items appear on both, only on one, or the other.</p>
-</section>
-<section id="diff" class="level3">
-<h3 class="anchored" data-anchor-id="diff"><code>diff</code></h3>
 <p><strong><code>diff</code> (Difference)</strong>: Highlighting what changes have been made between your draft and the final copy of a letter, <code>diff</code> shows the differences between two files.</p>
-</section>
-<section id="wc" class="level3">
-<h3 class="anchored" data-anchor-id="wc"><code>wc</code></h3>
 <p><code>wc</code> (<strong>Word Count</strong>): <code>wc</code> counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.</p>
-</section>
-<section id="xargs" class="level3">
-<h3 class="anchored" data-anchor-id="xargs"><code>xargs</code></h3>
 <p><code>xargs</code> builds and executes command lines from standard input (<code>stdin</code>). It’s most often used in combination with other commands through pipes. <code>xargs</code> takes input from a pipe and passes it as arguments to another command, allowing for powerful command-line operations that process a list of inputs iteratively.</p>
-</section>
 </section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap">Recap</h2>

@@ -169,17 +169,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./terminals.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Terminals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  <a href="./sh_term.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Shells and Terminals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./vms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Virtual Machines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
   </div>
 </li>
       </ul>
@@ -217,8 +217,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./files_dirs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Files and Directories</span></a>
+            <a href="./basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -232,6 +232,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./files.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
       </ul>
@@ -269,8 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./format.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Format</span></a>
+  <a href="./format.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Format</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -300,6 +304,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./macos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">macOS</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -313,16 +322,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#anatomy" id="toc-anatomy" class="nav-link active" data-scroll-target="#anatomy">Anatomy</a></li>
-  <li><a href="#argument-types" id="toc-argument-types" class="nav-link" data-scroll-target="#argument-types">Argument Types</a>
+  <li><a href="#types" id="toc-types" class="nav-link" data-scroll-target="#types">Types</a>
   <ul>
-  <li><a href="#files-and-directories" id="toc-files-and-directories" class="nav-link" data-scroll-target="#files-and-directories">Files and Directories</a></li>
-  <li><a href="#user-and-group-names" id="toc-user-and-group-names" class="nav-link" data-scroll-target="#user-and-group-names">User and Group Names</a></li>
+  <li><a href="#direct-and-indirect" id="toc-direct-and-indirect" class="nav-link" data-scroll-target="#direct-and-indirect">Direct and Indirect</a></li>
   <li><a href="#command-targets" id="toc-command-targets" class="nav-link" data-scroll-target="#command-targets">Command Targets</a></li>
   <li><a href="#data-values" id="toc-data-values" class="nav-link" data-scroll-target="#data-values">Data Values</a></li>
-  <li><a href="#direct-and-indirect" id="toc-direct-and-indirect" class="nav-link" data-scroll-target="#direct-and-indirect">Direct and Indirect</a></li>
-  <li><a href="#position" id="toc-position" class="nav-link" data-scroll-target="#position">Position</a></li>
+  <li><a href="#order-and-position" id="toc-order-and-position" class="nav-link" data-scroll-target="#order-and-position">Order and Position</a></li>
   <li><a href="#command-substitution" id="toc-command-substitution" class="nav-link" data-scroll-target="#command-substitution">Command Substitution</a></li>
-  <li><a href="#environmental-variables" id="toc-environmental-variables" class="nav-link" data-scroll-target="#environmental-variables">Environmental Variables</a></li>
+  <li><a href="#variables-as-arguments" id="toc-variables-as-arguments" class="nav-link" data-scroll-target="#variables-as-arguments">Variables as Arguments</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -375,70 +382,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> argument1 argument2 ... argument</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="argument-types" class="level2">
-<h2 class="anchored" data-anchor-id="argument-types">Argument Types</h2>
+<section id="types" class="level2">
+<h2 class="anchored" data-anchor-id="types">Types</h2>
 <p>Below are a variety of command arguments types. This is not an exhaustive list, but includes many of the commands and arguments you’ll encounter on a regular basis.</p>
-<section id="files-and-directories" class="level3">
-<h3 class="anchored" data-anchor-id="files-and-directories">Files and Directories</h3>
-<p><strong>File and Directory Names</strong>: Most commonly, arguments are the names of files or directories on which the command will operate.</p>
+<section id="direct-and-indirect" class="level3">
+<h3 class="anchored" data-anchor-id="direct-and-indirect">Direct and Indirect</h3>
+<p><strong>Direct arguments</strong> are the most straightforward type of arguments. They are typically the names of files or directories on which commands operate.</p>
 <p><strong>Example</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> source.txt destination.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> myfile.txt</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the command <code>cat myfile.txt</code>, <code>myfile.txt</code> is a direct argument to the <code><a href="syntax_ref.html#sec-cat" class="quarto-xref"><span>cat</span></a></code> command, telling it which file to display on the standard output.</p>
+<p><strong>Indirect arguments</strong> are arguments that might specify additional information that commands need to complete their tasks.</p>
+<p><strong>Example</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> file myfile.txt</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>file</code> search pattern for the <code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> command is an example of an indirect command, and <code>myfile.txt</code> is the direct argument.</p>
+<p>Most commonly, arguments are the names of <strong>files and directory names</strong> on which the command will operate.</p>
+<p><strong>Example</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> source.txt destination.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>source.txt</code> and <code>destination.txt</code> are arguments representing the source and destination files to copy with <code><a href="syntax_ref.html#sec-cp" class="quarto-xref"><span>cp</span></a></code>, respectively.</p>
-</section>
-<section id="user-and-group-names" class="level3">
-<h3 class="anchored" data-anchor-id="user-and-group-names">User and Group Names</h3>
-<p><strong>User and Group Names</strong>: Commands related to user management might take usernames or group names as arguments.</p>
+<p>Commands related to user management might take <strong>user and group names</strong> names as arguments.</p>
 <p><strong>Example</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chown</span> user:group file</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chown</span> user:group file</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code><a href="syntax_ref.html#sec-chown" class="quarto-xref"><span>chown</span></a></code> changes the ownership of <code>file</code> to <code>user</code> and <code>group</code>.</p>
 </section>
 <section id="command-targets" class="level3">
 <h3 class="anchored" data-anchor-id="command-targets">Command Targets</h3>
-<p><strong>Command Targets</strong>: Some commands take other commands as arguments. For example, <code><a href="syntax_ref.html#sec-sudo" class="quarto-xref"><span>sudo</span></a></code> command runs command with superuser privileges.</p>
+<p>Some commands take <strong>other commands as arguments</strong>. For example, <code><a href="syntax_ref.html#sec-sudo" class="quarto-xref"><span>sudo</span></a></code> command runs command with superuser privileges.</p>
 <p><strong>Example</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="data-values" class="level3">
 <h3 class="anchored" data-anchor-id="data-values">Data Values</h3>
-<p><strong>Data Values</strong>: Commands might take data values as arguments for processing.</p>
+<p>Commands might take <strong>data values</strong> as arguments for processing.</p>
 <p><strong>Example</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> Hello, World!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> Hello, World!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In <code>echo Hello, World!</code>, <code>Hello, World!</code> is an argument that <code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code> prints to the terminal.</p>
+<p>In <code>echo Hello, World!</code>, <code>Hello, World!</code> is the argument value that <code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code> prints to the terminal.</p>
 </section>
-<section id="direct-and-indirect" class="level3">
-<h3 class="anchored" data-anchor-id="direct-and-indirect">Direct and Indirect</h3>
-<p><strong>Direct Arguments</strong>: These are the most straightforward type of arguments. They are typically the names of files or directories on which commands operate.</p>
-<p><strong>Example</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> myfile.txt</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>In the command <code>cat myfile.txt</code>, <code>myfile.txt</code> is a direct argument to the <code><a href="syntax_ref.html#sec-cat" class="quarto-xref"><span>cat</span></a></code> command, telling it which file to display on the standard output.</p>
-<p><strong>Indirect Arguments</strong>: These arguments might specify additional information that commands need to complete their tasks.</p>
-<p><strong>Example</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> file myfile.txt</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The <code>file</code> search pattern for the <code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> command is an example of an indirect command, and <code>myfile.txt</code> is the direct argument.</p>
-</section>
-<section id="position" class="level3">
-<h3 class="anchored" data-anchor-id="position">Position</h3>
-<p><strong>Order</strong>: For many commands, the order of the arguments is significant.</p>
+<section id="order-and-position" class="level3">
+<h3 class="anchored" data-anchor-id="order-and-position">Order and Position</h3>
+<p>For many commands, the <strong>order</strong> of the arguments is significant.</p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> myfile.txt myfile2.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>myfile.txt</code> is the first argument (indicating the file to copy from), and <code>myfile2.txt</code> is the second argument (indicating where to copy the file to). Reversing these arguments would result in a completely different operation.</p>
-<p><strong>Spaces</strong>: Arguments that contain spaces must be quoted or escaped, so the shell understands them as a single argument rather than multiple arguments.</p>
+<p>Arguments that contain <strong>spaces</strong> must be quoted or escaped, so the shell understands them as a single argument rather than multiple arguments.</p>
 <p><strong>Example</strong></p>
 <p>To copy the contents of <code>New myfile2.txt</code> to <code>'my file 3.txt</code>, you would use:</p>
 <div class="cell">
@@ -447,7 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="command-substitution" class="level3">
 <h3 class="anchored" data-anchor-id="command-substitution">Command Substitution</h3>
-<p><strong>Using Output as Arguments</strong>: The output of a command can be used as an argument for another command using backticks (` `) or <code>$( )</code>.</p>
+<p>The <strong>output of a command can be used as an argument for another command</strong> using backticks (` `) or <code>$( )</code>.</p>
 <p><strong>Example</strong></p>
 <p><code>echo $(grep file myfile.txt)</code> uses the output of the <code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> command as an argument for <code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code>:</p>
 <div class="cell">
@@ -455,9 +456,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="environmental-variables" class="level3">
-<h3 class="anchored" data-anchor-id="environmental-variables">Environmental Variables</h3>
-<p><strong>Variables as Arguments</strong>: Environment variables can be used as arguments in commands.</p>
+<section id="variables-as-arguments" class="level3">
+<h3 class="anchored" data-anchor-id="variables-as-arguments">Variables as Arguments</h3>
+<p><strong>Environment variables</strong> can be used as arguments in commands.</p>
 <p><strong>Example</strong></p>
 <p><code>echo $HOME</code> prints the path to the user’s home directory, where <code>$HOME</code> is an argument that the <code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code> command interprets:</p>
 <div class="cell">

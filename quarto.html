@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./vms.html" rel="next">
-<link href="./terminals.html" rel="prev">
+<link href="./syntax.html" rel="next">
+<link href="./vms.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -169,17 +169,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./terminals.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Terminals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Quarto</span></a>
+  <a href="./sh_term.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Shells and Terminals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./vms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Virtual Machines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Quarto</span></a>
   </div>
 </li>
       </ul>
@@ -217,8 +217,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./files_dirs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Files and Directories</span></a>
+            <a href="./basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -232,6 +232,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./files.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
       </ul>
@@ -269,8 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./format.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Format</span></a>
+  <a href="./format.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Format</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -300,6 +304,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./macos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">macOS</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -312,9 +321,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#sec-quarto-yaml" id="toc-sec-quarto-yaml" class="nav-link active" data-scroll-target="#sec-quarto-yaml">YAML header</a></li>
+  <li><a href="#install" id="toc-install" class="nav-link active" data-scroll-target="#install">Install</a></li>
+  <li><a href="#quarto-documents" id="toc-quarto-documents" class="nav-link" data-scroll-target="#quarto-documents">Quarto Documents</a>
+  <ul>
+  <li><a href="#sec-quarto-yaml" id="toc-sec-quarto-yaml" class="nav-link" data-scroll-target="#sec-quarto-yaml">YAML header</a></li>
   <li><a href="#sec-quarto-bash" id="toc-sec-quarto-bash" class="nav-link" data-scroll-target="#sec-quarto-bash">Bash Code Chunks</a></li>
   <li><a href="#code-chunk-isolation" id="toc-code-chunk-isolation" class="nav-link" data-scroll-target="#code-chunk-isolation">Code Chunk Isolation</a></li>
+  </ul></li>
+  <li><a href="#posit-workbench" id="toc-posit-workbench" class="nav-link" data-scroll-target="#posit-workbench">Posit Workbench</a>
+  <ul>
+  <li><a href="#terminal-pane-posit-workbench" id="toc-terminal-pane-posit-workbench" class="nav-link" data-scroll-target="#terminal-pane-posit-workbench">Terminal Pane (Posit Workbench)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -358,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><a href="https://quarto.org/">Quarto</a> is an ‘<em>open-source scientific and technical publishing system</em>’ built on <a href="https://pandoc.org/">Pandoc</a> that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards. It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through writing YAML headers and Bash code chunks, two essential components when working with Quarto in a Unix/Linux context.</p>
+<p><a href="https://quarto.org/">Quarto</a> is an ‘<em>open-source scientific and technical publishing system</em>’ built on <a href="https://pandoc.org/">Pandoc</a> that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards. It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through downloading and installing Quarto, <code>.qmd</code> documents, <code>YAML</code> headers and Bash code chunks.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -379,6 +396,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<section id="install" class="level2">
+<h2 class="anchored" data-anchor-id="install">Install</h2>
+</section>
+<section id="quarto-documents" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-documents">Quarto Documents</h2>
 <section id="sec-quarto-yaml" class="level3">
 <h3 class="anchored" data-anchor-id="sec-quarto-yaml">YAML header</h3>
 <p><code><a href="glossary.html#sec-yaml" class="quarto-xref"><span>YAML</span></a></code> is a lightweight markup language that’s easy to write and read. In Quarto, the <code>YAML</code> header is used to configure document properties such as the title, engine, output format, and more. It serves as the foundation for controlling how your Quarto document behaves and appears.</p>
@@ -468,6 +490,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>This behavior can be frustrating, but it also means we’ll start with a ‘clean slate’ in each new code chunk!</p>
+</section>
+</section>
+<section id="posit-workbench" class="level2">
+<h2 class="anchored" data-anchor-id="posit-workbench">Posit Workbench</h2>
+<section id="terminal-pane-posit-workbench" class="level3">
+<h3 class="anchored" data-anchor-id="terminal-pane-posit-workbench">Terminal Pane (Posit Workbench)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/term-simple.png" class="img-fluid figure-img"></p>
+<figcaption>Terminal Pane in Posit Workbench</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -488,6 +522,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
@@ -922,13 +957,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./terminals.html" class="pagination-link" aria-label="Terminals">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Terminals</span></span>
+      <a href="./vms.html" class="pagination-link" aria-label="Virtual Machines">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Virtual Machines</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./vms.html" class="pagination-link" aria-label="Virtual Machines">
-        <span class="nav-page-text"><span class="chapter-title">Virtual Machines</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./syntax.html" class="pagination-link" aria-label="Syntax">
+        <span class="nav-page-text">Syntax</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

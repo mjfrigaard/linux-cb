@@ -8,7 +8,7 @@
 
 <meta name="description" content="A Unix Field Manual">
 
-<title>fm-unix – Syntax</title>
+<title>fm-unix – Appendix B — macOS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./commands.html" rel="next">
-<link href="./quarto.html" rel="prev">
+<link href="./glossary.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -82,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syntax.html">Syntax</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syntax_ref.html">Appendices</a></li><li class="breadcrumb-item"><a href="./macos.html"><span class="chapter-title">macOS</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -152,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./syntax.html" class="sidebar-item-text sidebar-link active">
+            <a href="./syntax.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syntax</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -272,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./macos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">macOS</span></a>
+  <a href="./macos.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">macOS</span></a>
   </div>
 </li>
       </ul>
@@ -282,15 +281,30 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#macos-terminal" id="toc-macos-terminal" class="nav-link active" data-scroll-target="#macos-terminal">macOS Terminal</a></li>
+  <li><a href="#macos-shell" id="toc-macos-shell" class="nav-link" data-scroll-target="#macos-shell">macOS Shell</a></li>
+  <li><a href="#homebrew" id="toc-homebrew" class="nav-link" data-scroll-target="#homebrew">Homebrew</a></li>
+  <li><a href="#bsd-vs.-gnu-commands" id="toc-bsd-vs.-gnu-commands" class="nav-link" data-scroll-target="#bsd-vs.-gnu-commands">BSD vs.&nbsp;GNU Commands</a></li>
+  <li><a href="#case-sensitivity" id="toc-case-sensitivity" class="nav-link" data-scroll-target="#case-sensitivity">Case Sensitivity</a></li>
+  <li><a href="#security-and-permissions" id="toc-security-and-permissions" class="nav-link" data-scroll-target="#security-and-permissions">Security and Permissions</a></li>
+  <li><a href="#filesystem-hierarchy" id="toc-filesystem-hierarchy" class="nav-link" data-scroll-target="#filesystem-hierarchy">Filesystem Hierarchy</a></li>
+  <li><a href="#networking-and-interoperability" id="toc-networking-and-interoperability" class="nav-link" data-scroll-target="#networking-and-interoperability">Networking and Interoperability</a></li>
+  <li><a href="#graphical-applications" id="toc-graphical-applications" class="nav-link" data-scroll-target="#graphical-applications">Graphical Applications</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syntax_ref.html">Appendices</a></li><li class="breadcrumb-item"><a href="./macos.html"><span class="chapter-title">macOS</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Syntax</h1>
+<h1 class="title"><span id="sec-macos" class="quarto-section-identifier">Appendix B — macOS</span></h1>
 </div>
 
 
@@ -325,7 +339,51 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>In Unix-like operating systems, the terms commands, arguments, and options refer to the components of the syntax you type into the terminal.</p>
+<p>Using Unix/Linux on macOS offers a unique and powerful environment with macOS’s Terminal, but it’s important to be aware of the differences and limitations inherent in macOS’s implementation of Unix. Below we cover some special considerations rooted in macOS’s distinct architecture and its version of Unix.</p>
+<section id="macos-terminal" class="level3">
+<h3 class="anchored" data-anchor-id="macos-terminal">macOS Terminal</h3>
+<p>The default Terminal app on macOS provides a solid interface to access the Unix command line, but there are other terminal emulators available (like <a href="https://iterm2.com/">iTerm2</a>) that offer additional features such as split panes, search, and customization options.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/iterm2-panes.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>iterm2</figcaption>
+</figure>
+</div>
+</section>
+<section id="macos-shell" class="level3">
+<h3 class="anchored" data-anchor-id="macos-shell">macOS Shell</h3>
+<p>macOS has transitioned from using Bash as the default shell to Zsh since macOS Catalina. While both are Unix shells, they have some differences in features and configuration files (<code>~/.bash_profile</code> for Bash vs.&nbsp;<code>~/.zshrc</code> for Zsh).</p>
+</section>
+<section id="homebrew" class="level3">
+<h3 class="anchored" data-anchor-id="homebrew">Homebrew</h3>
+<p><a href="https://brew.sh/">Homebrew</a> is an essential package manager for macOS, filling the gap for Unix/Linux software that isn’t pre-installed on macOS. It allows users to easily install and manage additional Unix tools, GNU utilities, languages, and applications. Learning to use Homebrew will significantly expand the Unix/Linux tools at your disposal on a macOS system.</p>
+</section>
+<section id="bsd-vs.-gnu-commands" class="level3">
+<h3 class="anchored" data-anchor-id="bsd-vs.-gnu-commands">BSD vs.&nbsp;GNU Commands</h3>
+<p>macOS is based on Darwin, which incorporates elements from BSD Unix. Therefore, some of the command-line tools on macOS behave differently from their GNU counterparts found in Linux. For example, options and flags for commands like <code>ls</code>, <code>sed</code>, and <code>tar</code> may vary. This means that while the overarching principles remain the same, specific command syntax and options might require adjustments or the use of GNU versions of commands (installed via <a href="https://brew.sh/">Homebrew</a>, for instance).</p>
+</section>
+<section id="case-sensitivity" class="level3">
+<h3 class="anchored" data-anchor-id="case-sensitivity">Case Sensitivity</h3>
+<p>By default, the macOS file system (APFS or HFS+) is <strong>case-insensitive but case-preserving</strong>. This behavior is different from most Linux file systems, which are <em>case-sensitive</em>. This can affect scripts and commands that rely on case distinctions for file and directory names.</p>
+</section>
+<section id="security-and-permissions" class="level3">
+<h3 class="anchored" data-anchor-id="security-and-permissions">Security and Permissions</h3>
+<p>macOS has implemented increasingly stringent security measures, including the System Integrity Protection (SIP) and sandboxing mechanisms, which can restrict access to certain files and system operations. While these features enhance security, they can also limit what you can do via the Terminal. Understanding macOS’s security model and permissions (such as using <code>sudo</code> wisely) is crucial.</p>
+</section>
+<section id="filesystem-hierarchy" class="level3">
+<h3 class="anchored" data-anchor-id="filesystem-hierarchy">Filesystem Hierarchy</h3>
+<p>While the Unix filesystem hierarchy is preserved in macOS, there are macOS-specific directories and structures, such as <code>~/Library</code> for user-specific application support files and preferences. Understanding these macOS-specific elements is important when navigating and managing files via the Terminal.</p>
+</section>
+<section id="networking-and-interoperability" class="level3">
+<h3 class="anchored" data-anchor-id="networking-and-interoperability">Networking and Interoperability</h3>
+<p>macOS integrates well with both Unix/Linux and Windows environments, supporting various network protocols and file sharing options out of the box. Commands like <code>ssh</code>, <code>scp</code>, and <code>smbutil</code> can be used for remote access and file transfers, making macOS a versatile platform for learning Unix/Linux networking basics.</p>
+</section>
+<section id="graphical-applications" class="level3">
+<h3 class="anchored" data-anchor-id="graphical-applications">Graphical Applications</h3>
+<p>macOS allows Unix command-line tools to interact with its graphical user interface (GUI) applications in ways that are not typically available on other Unix systems. For instance, the <code>open</code> command can be used to open files or applications, and <code>osascript</code> can interact with AppleScript-enabled applications for automation.</p>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -346,6 +404,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -770,14 +829,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./quarto.html" class="pagination-link" aria-label="Quarto">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Quarto</span></span>
+      <a href="./glossary.html" class="pagination-link" aria-label="Glossary">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Glossary</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./commands.html" class="pagination-link" aria-label="Commands">
-        <span class="nav-page-text"><span class="chapter-title">Commands</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
