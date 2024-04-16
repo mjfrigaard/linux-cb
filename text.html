@@ -8,7 +8,7 @@
 
 <meta name="description" content="A Unix Field Manual">
 
-<title>fm-unix – Manipulating Text</title>
+<title>fm-unix – Text</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./text_commands.html" rel="next">
+<link href="./regex.html" rel="next">
 <link href="./sys.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./text.html">Manipulating Text</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./text.html">Text</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -210,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./text.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Manipulating Text</span></a>
+ <span class="menu-text">Text</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -218,7 +218,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./text_commands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Text Commands</span></a>
+  <a href="./regex.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Regular Expressions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./text_commands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Manipulating Text</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -287,9 +292,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#plain-text-files" id="toc-plain-text-files" class="nav-link active" data-scroll-target="#plain-text-files">Plain Text Files</a></li>
+  <li><a href="#plain-text-files" id="toc-plain-text-files" class="nav-link active" data-scroll-target="#plain-text-files">Plain Text Files</a>
+  <ul>
+  <li><a href="#simple-and-efficient" id="toc-simple-and-efficient" class="nav-link" data-scroll-target="#simple-and-efficient">Simple and Efficient</a></li>
+  <li><a href="#communication-between-programs" id="toc-communication-between-programs" class="nav-link" data-scroll-target="#communication-between-programs">Communication Between Programs</a></li>
+  </ul></li>
   <li><a href="#text-streams" id="toc-text-streams" class="nav-link" data-scroll-target="#text-streams">Text Streams</a></li>
-  <li><a href="#text-and-the-unix-philosophy" id="toc-text-and-the-unix-philosophy" class="nav-link" data-scroll-target="#text-and-the-unix-philosophy">Text and The Unix Philosophy</a></li>
+  <li><a href="#text-editors-and-the-unix-philosophy" id="toc-text-editors-and-the-unix-philosophy" class="nav-link" data-scroll-target="#text-editors-and-the-unix-philosophy">Text Editors and The Unix Philosophy</a></li>
   </ul>
 </nav>
     </div>
@@ -298,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-manip-text" class="quarto-section-identifier">Manipulating Text</span></h1>
+<h1 class="title"><span id="sec-manip-text" class="quarto-section-identifier">Text</span></h1>
 </div>
 
 
@@ -333,20 +342,28 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>The essence of Unix and Linux systems is their powerful simplicity, and nowhere is this more evident than in how they handle text. Text commands and editors form the backbone of these operating systems, enabling users to perform complex tasks with a few keystrokes. This chapter will delve into the fundamental concepts of plain text files, text streams, and the Unix philosophy that prioritizes text as a universal interface for programming and system administration.</p>
+<p>The essence of Unix and Linux systems is their powerful simplicity, and nowhere is this more evident than in how they handle text. Text commands and editors form the backbone of these operating systems, enabling users to perform complex tasks with a few keystrokes. This chapter will delve into pattern matching with regular expressions, the fundamental concepts of plain text files, text streams, and the Unix philosophy that prioritizes text as a universal interface for programming and system administration.</p>
 <section id="plain-text-files" class="level2">
 <h2 class="anchored" data-anchor-id="plain-text-files">Plain Text Files</h2>
-<p>At the heart of Unix and Linux systems are plain text files. Unlike rich text files with formatting and specialized metadata, plain text files contain only text data. This simplicity makes them incredibly versatile and universally readable. Configuration files, scripts, and even the source code for the entire operating system itself are stored as plain text, ensuring that they can be created, edited, and read with a wide array of tools without the need for specialized software.</p>
+<p>Plain text files are vital to Unix/Linux systems, embodying their philosophy of ‘simple and beautiful.’<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> These files only contain text, making them versatile and powerful. Unix/Linux believes that ‘<em>everything is a file</em>,’ including devices, configurations, and processes.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Plain text files are the universal interface between systems, programs, and users. Standard Unix/Linux tools can easily create, manipulate, and read plain text, making it an essential interface for system administration, programming, and process management.</p>
+<section id="simple-and-efficient" class="level3">
+<h3 class="anchored" data-anchor-id="simple-and-efficient">Simple and Efficient</h3>
+<p>Plain text files are simple, versatile, and easy to work with. They can be edited with any text editor and don’t require specialized software, making actions transparent and learning accelerated. Plain text can also be easily manipulated using standard Unix/Linux text-processing tools such as <strong><code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code></strong>, <strong><code><a href="syntax_ref.html#sec-sed" class="quarto-xref"><span>sed</span></a></code></strong>, and <strong><code><a href="syntax_ref.html#sec-awk" class="quarto-xref"><span>awk</span></a></code></strong>. With simple one-liners from the command line, users can search for a specific line, replace text across multiple files, or transform data formats.</p>
+</section>
+<section id="communication-between-programs" class="level3">
+<h3 class="anchored" data-anchor-id="communication-between-programs">Communication Between Programs</h3>
+<p>Unix/Linux philosophy values specialized programs that work together efficiently. Plain text files are used as inputs or outputs in pipelines of simple, single-purpose programs to perform complex operations.</p>
+</section>
 </section>
 <section id="text-streams" class="level2">
 <h2 class="anchored" data-anchor-id="text-streams">Text Streams</h2>
-<p>A text stream in Unix and Linux is a simple, sequential flow of characters. Text streams can be inputs from keyboards, outputs to a display screen, or the data within a file. The concept of text streams is fundamental to the Unix philosophy; it allows for the chaining together of commands, where the output of one command can be seamlessly passed as input to another through a mechanism known as piping. This interconnectivity of commands and utilities, all communicating through text streams, exemplifies the efficiency and flexibility of Unix-like systems.</p>
+<p>A text stream in Unix and Linux is a simple, sequential flow of characters. Text streams can be inputs from keyboards, outputs to a display screen, or the data within a file. The concept of text streams is fundamental to the Unix philosophy; it allows for the chaining together of commands, where the output of one command can be seamlessly passed as input to another through a mechanism known as piping.</p>
 </section>
-<section id="text-and-the-unix-philosophy" class="level2">
-<h2 class="anchored" data-anchor-id="text-and-the-unix-philosophy">Text and The Unix Philosophy</h2>
-<p>The Unix philosophy emphasizes simplicity, clarity, and the principle of “doing one thing well.” Plain text embodies this philosophy, serving as a simple, straightforward, and versatile means of interaction between the user, the system, and the programs running on it. It allows for complex operations to be broken down into smaller, manageable tasks that can be easily combined or modified. This philosophy also underpins the design of Unix text editors, which range from the simple (like nano) to the powerful and extensible (like vi and emacs).</p>
+<section id="text-editors-and-the-unix-philosophy" class="level2">
+<h2 class="anchored" data-anchor-id="text-editors-and-the-unix-philosophy">Text Editors and The Unix Philosophy</h2>
+<p>The Unix philosophy emphasizes simplicity, clarity, and the principle of “doing one thing well.” Plain text embodies this philosophy, serving as a simple, straightforward, and versatile means of interaction between the user, the system, and the programs running on it. This philosophy also underpins the design of Unix text editors, which range from the simple (like nano) to the powerful and extensible (like vi and emacs).</p>
 <p>Text commands and editors are not just tools but the medium through which users communicate with the system and manipulate it to their will. Mastering these commands and editors opens up a world of possibilities for efficient system management, programming, and beyond.</p>
-<p>This chapter will explore the core text commands that every Unix and Linux user should know, from file manipulation to text processing and searching. We will also introduce the most popular text editors, guiding you through their primary usage and highlighting their unique features.</p>
+<p>This section will explore the core text commands that every Unix and Linux user should know, from file manipulation to text processing and searching. We will also introduce the most popular text editors, guiding you through their primary usage and highlighting their unique features.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -367,6 +384,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Doug McIlroy on Unix programming: “<em>Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.</em>” - <a href="https://en.wikipedia.org/wiki/Unix_philosophy#Doug_McIlroy_on_Unix_programming">Wikipedia</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Linus Torvalds (creator and lead developer of the Linux kernel) has <a href="https://yarchive.net/comp/linux/everything_is_file.html">clarified</a> this to, “<em>The UNIX philosophy is often quoted as ”everything is a file”, but that really means ”everything is a stream of bytes.</em>”<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -797,8 +821,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./text_commands.html" class="pagination-link" aria-label="Text Commands">
-        <span class="nav-page-text"><span class="chapter-title">Text Commands</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./regex.html" class="pagination-link" aria-label="Regular Expressions">
+        <span class="nav-page-text"><span class="chapter-title">Regular Expressions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

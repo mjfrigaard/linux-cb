@@ -244,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./text.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Manipulating Text</span></a>
+ <span class="menu-text">Text</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -252,7 +252,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./text_commands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Text Commands</span></a>
+  <a href="./regex.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Regular Expressions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./text_commands.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Manipulating Text</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -332,14 +337,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sec-clear" id="toc-sec-clear" class="nav-link" data-scroll-target="#sec-clear"><code>clear</code></a></li>
   <li><a href="#sec-exit" id="toc-sec-exit" class="nav-link" data-scroll-target="#sec-exit"><code>exit</code></a></li>
   </ul></li>
-  <li><a href="#directories" id="toc-directories" class="nav-link" data-scroll-target="#directories">Directories</a></li>
-  <li><a href="#sec-nav-dirs" id="toc-sec-nav-dirs" class="nav-link" data-scroll-target="#sec-nav-dirs">Navigate</a>
+  <li><a href="#navigate" id="toc-navigate" class="nav-link" data-scroll-target="#navigate">Navigate</a>
   <ul>
   <li><a href="#sec-pwd" id="toc-sec-pwd" class="nav-link" data-scroll-target="#sec-pwd"><code>pwd</code></a></li>
   <li><a href="#sec-cd" id="toc-sec-cd" class="nav-link" data-scroll-target="#sec-cd"><code>cd</code></a></li>
   <li><a href="#sec-ls" id="toc-sec-ls" class="nav-link" data-scroll-target="#sec-ls"><code>ls</code></a></li>
+  <li><a href="#sec-locate" id="toc-sec-locate" class="nav-link" data-scroll-target="#sec-locate"><code>locate</code></a></li>
   </ul></li>
-  <li><a href="#sec-manage-dirs" id="toc-sec-manage-dirs" class="nav-link" data-scroll-target="#sec-manage-dirs">Manage</a>
+  <li><a href="#manage" id="toc-manage" class="nav-link" data-scroll-target="#manage">Manage</a>
   <ul>
   <li><a href="#sec-mkdir" id="toc-sec-mkdir" class="nav-link" data-scroll-target="#sec-mkdir"><code>mkdir</code></a></li>
   <li><a href="#sec-cp" id="toc-sec-cp" class="nav-link" data-scroll-target="#sec-cp"><code>cp</code></a></li>
@@ -355,10 +360,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#files" id="toc-files" class="nav-link" data-scroll-target="#files">Files</a>
   <ul>
   <li><a href="#sec-touch" id="toc-sec-touch" class="nav-link" data-scroll-target="#sec-touch"><code>touch</code></a></li>
+  <li><a href="#view" id="toc-view" class="nav-link" data-scroll-target="#view">View</a></li>
   <li><a href="#sec-file" id="toc-sec-file" class="nav-link" data-scroll-target="#sec-file"><code>file</code></a></li>
-  <li><a href="#sec-head" id="toc-sec-head" class="nav-link" data-scroll-target="#sec-head"><code>head</code></a></li>
-  <li><a href="#sec-tail" id="toc-sec-tail" class="nav-link" data-scroll-target="#sec-tail"><code>tail</code></a></li>
   <li><a href="#sec-less" id="toc-sec-less" class="nav-link" data-scroll-target="#sec-less"><code>less</code></a></li>
+  </ul></li>
+  <li><a href="#search" id="toc-search" class="nav-link" data-scroll-target="#search">Search</a>
+  <ul>
   <li><a href="#sec-find" id="toc-sec-find" class="nav-link" data-scroll-target="#sec-find"><code>find</code></a></li>
   </ul></li>
   <li><a href="#permissions-priviledges" id="toc-permissions-priviledges" class="nav-link" data-scroll-target="#permissions-priviledges">Permissions &amp; Priviledges</a>
@@ -371,36 +378,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sec-man" id="toc-sec-man" class="nav-link" data-scroll-target="#sec-man"><code>man</code></a></li>
   <li><a href="#sec-help" id="toc-sec-help" class="nav-link" data-scroll-target="#sec-help"><code>help</code></a></li>
   </ul></li>
-  <li><a href="#text-manipulation" id="toc-text-manipulation" class="nav-link" data-scroll-target="#text-manipulation">Text Manipulation</a>
+  <li><a href="#text" id="toc-text" class="nav-link" data-scroll-target="#text">Text</a>
   <ul>
   <li><a href="#sec-echo" id="toc-sec-echo" class="nav-link" data-scroll-target="#sec-echo"><code>echo</code></a></li>
   <li><a href="#sec-cat" id="toc-sec-cat" class="nav-link" data-scroll-target="#sec-cat"><code>cat</code></a></li>
+  <li><a href="#sec-head" id="toc-sec-head" class="nav-link" data-scroll-target="#sec-head"><code>head</code></a></li>
+  <li><a href="#sec-tail" id="toc-sec-tail" class="nav-link" data-scroll-target="#sec-tail"><code>tail</code></a></li>
+  <li><a href="#sec-seq" id="toc-sec-seq" class="nav-link" data-scroll-target="#sec-seq"><code>seq</code></a></li>
   <li><a href="#sec-grep" id="toc-sec-grep" class="nav-link" data-scroll-target="#sec-grep"><code>grep</code></a></li>
+  <li><a href="#sec-sed" id="toc-sec-sed" class="nav-link" data-scroll-target="#sec-sed"><code>sed</code></a></li>
+  <li><a href="#sec-awk" id="toc-sec-awk" class="nav-link" data-scroll-target="#sec-awk"><code>awk</code></a></li>
+  <li><a href="#sec-gsub" id="toc-sec-gsub" class="nav-link" data-scroll-target="#sec-gsub"><code>gsub</code></a></li>
   <li><a href="#sec-sort" id="toc-sec-sort" class="nav-link" data-scroll-target="#sec-sort"><code>sort</code></a></li>
   <li><a href="#sec-uniq" id="toc-sec-uniq" class="nav-link" data-scroll-target="#sec-uniq"><code>uniq</code></a></li>
   <li><a href="#sec-cut" id="toc-sec-cut" class="nav-link" data-scroll-target="#sec-cut"><code>cut</code></a></li>
-  <li><a href="#paste" id="toc-paste" class="nav-link" data-scroll-target="#paste"><code>paste</code></a></li>
+  <li><a href="#sec-paste" id="toc-sec-paste" class="nav-link" data-scroll-target="#sec-paste"><code>paste</code></a></li>
   <li><a href="#sec-join" id="toc-sec-join" class="nav-link" data-scroll-target="#sec-join"><code>join</code></a></li>
-  <li><a href="#sec-comm" id="toc-sec-comm" class="nav-link" data-scroll-target="#sec-comm"><code>comm</code></a></li>
   <li><a href="#sec-diff" id="toc-sec-diff" class="nav-link" data-scroll-target="#sec-diff"><code>diff</code></a></li>
   <li><a href="#sec-wc" id="toc-sec-wc" class="nav-link" data-scroll-target="#sec-wc"><code>wc</code></a></li>
   <li><a href="#sec-xargs" id="toc-sec-xargs" class="nav-link" data-scroll-target="#sec-xargs"><code>xargs</code></a></li>
-  </ul></li>
-  <li><a href="#special-characters" id="toc-special-characters" class="nav-link" data-scroll-target="#special-characters">Special Characters</a>
-  <ul>
-  <li><a href="#sec-asterisk" id="toc-sec-asterisk" class="nav-link" data-scroll-target="#sec-asterisk">Asterisk: <code>*</code></a></li>
-  <li><a href="#sec-question" id="toc-sec-question" class="nav-link" data-scroll-target="#sec-question">Question Mark: <code>?</code></a></li>
-  <li><a href="#sec-tilde" id="toc-sec-tilde" class="nav-link" data-scroll-target="#sec-tilde">Tilde: <code>~</code></a></li>
-  <li><a href="#sec-dollar" id="toc-sec-dollar" class="nav-link" data-scroll-target="#sec-dollar">Dollar Sign: <code>$</code></a></li>
-  <li><a href="#sec-ampersand" id="toc-sec-ampersand" class="nav-link" data-scroll-target="#sec-ampersand">Ampersand: <code>&amp;</code></a></li>
-  <li><a href="#sec-semicolon" id="toc-sec-semicolon" class="nav-link" data-scroll-target="#sec-semicolon">Semicolon: <code>;</code></a></li>
-  <li><a href="#sec-gt" id="toc-sec-gt" class="nav-link" data-scroll-target="#sec-gt">Greater Than: <code>&gt;</code></a></li>
-  <li><a href="#sec-lt" id="toc-sec-lt" class="nav-link" data-scroll-target="#sec-lt">Less Than: <code>&lt;</code></a></li>
-  <li><a href="#sec-braces" id="toc-sec-braces" class="nav-link" data-scroll-target="#sec-braces">Braces: <code>{}</code></a></li>
-  <li><a href="#sec-parens" id="toc-sec-parens" class="nav-link" data-scroll-target="#sec-parens">Parentheses: <code>()</code></a></li>
-  <li><a href="#sec-backslash" id="toc-sec-backslash" class="nav-link" data-scroll-target="#sec-backslash">Backslash: <code>\</code></a></li>
-  <li><a href="#sec-single-quotes" id="toc-sec-single-quotes" class="nav-link" data-scroll-target="#sec-single-quotes">Single quotes: <code>''</code></a></li>
-  <li><a href="#sec-double-quotes" id="toc-sec-double-quotes" class="nav-link" data-scroll-target="#sec-double-quotes">Double quotes: <code>""</code></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -520,11 +516,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>exit</code> requires no arguments or options to execute this action, and doesn’t print any return values.</p>
 </section>
 </section>
-<section id="directories" class="level2">
-<h2 class="anchored" data-anchor-id="directories">Directories</h2>
-</section>
-<section id="sec-nav-dirs" class="level2">
-<h2 class="anchored" data-anchor-id="sec-nav-dirs">Navigate</h2>
+<section id="navigate" class="level2">
+<h2 class="anchored" data-anchor-id="navigate">Navigate</h2>
 <section id="sec-pwd" class="level3">
 <h3 class="anchored" data-anchor-id="sec-pwd"><code>pwd</code></h3>
 <p><strong><code>pwd</code> (Print Working Directory)</strong> tells you exactly where you are in the filesystem.</p>
@@ -588,57 +581,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; zsh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="sec-locate" class="level3">
+<h3 class="anchored" data-anchor-id="sec-locate"><code>locate</code></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">locate</span> bin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="sec-manage-dirs" class="level2">
-<h2 class="anchored" data-anchor-id="sec-manage-dirs">Manage</h2>
+</section>
+<section id="manage" class="level2">
+<h2 class="anchored" data-anchor-id="manage">Manage</h2>
 <p>In the Unix/Linux world, file and directory management is a fundamental skill. This chapter dives deep into the commands that allow users to create, copy, move, remove, and link files and directories. Each section below introduces a different command, detailing its purpose and providing examples of its use.</p>
 <section id="sec-mkdir" class="level3">
 <h3 class="anchored" data-anchor-id="sec-mkdir"><code>mkdir</code></h3>
 <p><strong><code>mkdir</code> (Make Directory)</strong> builds a new folder wherever you tell it to, like making a new folder in our project for outputs (<code>out/</code>) or documents (<code>doc/</code>).</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> out</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> doc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> out</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> doc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="sec-cp" class="level3">
 <h3 class="anchored" data-anchor-id="sec-cp"><code>cp</code></h3>
 <p><strong><code>cp</code> (Copy)</strong> duplicates files or folders. The <code>cp</code> command is used to Copy files or directories from one location to another. Imagine having a file (<code>myfile.txt</code>) on your root (<code>.</code>) directory that you want to copy to the <code>/data</code> folder; you could use <code>cp</code> to make a duplicate.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> myfile.txt data/myfile.txt</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># confirm copy</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; music_vids.tsv</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; myfile.txt</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; roxanne</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; trees.tsv</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; vg_hof.tsv</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; who-tb-data.tsv</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.csv</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.dat</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.tsv</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> myfile.txt data/myfile.txt</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># confirm copy</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ajperlis_epigrams.txt</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; music_vids.tsv</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; myfile.txt</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; roxanne.txt</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; trees.tsv</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; vg_hof.tsv</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; who-tb-data.tsv</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; who_tb_data.txt</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.csv</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.dat</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.tsv</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="sec-mv" class="level3">
 <h3 class="anchored" data-anchor-id="sec-mv"><code>mv</code></h3>
 <p><strong><code>mv</code> (Move)</strong>: <code>mv</code>, short for Move, functions similarly to picking up a book from your desk and placing it on a shelf. It moves files or directories from one location to another. It can also be used for renaming files. This command is especially useful for organizing files and directories that are in the wrong place.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create folder</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> doc</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># move file</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> data/myfile.txt doc/myfile.txt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create folder</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> doc</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># move file</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> data/myfile.txt doc/myfile.txt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># confirm move</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> doc</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; myfile.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># confirm move</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> doc</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; myfile.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="sec-rm" class="level3">
 <h3 class="anchored" data-anchor-id="sec-rm"><code>rm</code></h3>
 <p><strong><code>rm</code> (Remove)</strong>: The <code>rm</code> command stands for <strong>remove</strong> and is used to delete files or directories.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove doc folder</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> doc</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rm: doc: is a directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove doc folder</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> doc</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rm: doc: is a directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>By default, it won’t remove a directory without the <code>-R</code> or <code>-r</code> option.</p>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
@@ -663,14 +664,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add option </span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-R</span> doc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add option </span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-R</span> doc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="sec-ln" class="level3">
 <h3 class="anchored" data-anchor-id="sec-ln"><code>ln</code></h3>
 <p><strong><code>ln</code> (Link)</strong>: <code>ln</code> creates Links to files or directories, making them accessible from multiple locations without duplicating the actual content. It’s like creating a shortcut on your desktop to a program you frequently use. There are two types of links: hard links and symbolic (soft) links. Symbolic links are more commonly used because they can link to directories and provide more flexibility.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> /path/to/original /path/to/link</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> /path/to/original /path/to/link</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="system" class="level2">
@@ -690,32 +691,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="sec-touch"><code>touch</code></h3>
 <p><strong><code>touch</code></strong> creates a new empty file if the specified file does not exist. If the file does exist, <code>touch</code> updates its access and modification timestamps.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> newfile.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> newfile.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="view" class="level3">
+<h3 class="anchored" data-anchor-id="view">View</h3>
 </section>
 <section id="sec-file" class="level3">
 <h3 class="anchored" data-anchor-id="sec-file"><code>file</code></h3>
 <p><strong><code>file</code></strong> gives you a summary of what a computer file is or what it contains, like telling you if a tool in <code>/bin/pax</code> is a program you can run or a text file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file</span> /bin/pax</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /bin/pax: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /bin/pax (for architecture x86_64):  Mach-O 64-bit executable x86_64</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /bin/pax (for architecture arm64e):  Mach-O 64-bit executable arm64e</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file</span> /bin/pax</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /bin/pax: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /bin/pax (for architecture x86_64):  Mach-O 64-bit executable x86_64</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /bin/pax (for architecture arm64e):  Mach-O 64-bit executable arm64e</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="sec-head" class="level3">
-<h3 class="anchored" data-anchor-id="sec-head"><code>head</code></h3>
-<p><strong><code>head</code></strong> displays the first part of files, allowing you to see the beginning of a file. By default, it shows the first 10 lines.</p>
-</section>
-<section id="sec-tail" class="level3">
-<h3 class="anchored" data-anchor-id="sec-tail"><code>tail</code></h3>
-<p><strong><code>tail</code></strong> displays the last part of files, useful for viewing the end of a file or for monitoring changes to a file in real time with <code>-f</code>.</p>
 </section>
 <section id="sec-less" class="level3">
 <h3 class="anchored" data-anchor-id="sec-less"><code>less</code></h3>
 <p><strong><code>less</code></strong> lets you skim through a file on your computer, moving forwards and backwards as you please.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> data/vg_hof.tsv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> data/vg_hof.tsv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -724,6 +720,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
+</section>
+<section id="search" class="level2">
+<h2 class="anchored" data-anchor-id="search">Search</h2>
 <section id="sec-find" class="level3">
 <h3 class="anchored" data-anchor-id="sec-find"><code>find</code></h3>
 <p><code>find</code> is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, file type, and modification time.</p>
@@ -749,8 +748,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>help</code> or <code>--help</code> option provides information about built-in commands and usage guidelines. It’s a quick way to get help for shell built-ins or to understand the basic usage of a command.</p>
 </section>
 </section>
-<section id="text-manipulation" class="level2">
-<h2 class="anchored" data-anchor-id="text-manipulation">Text Manipulation</h2>
+<section id="text" class="level2">
+<h2 class="anchored" data-anchor-id="text">Text</h2>
 <section id="sec-echo" class="level3">
 <h3 class="anchored" data-anchor-id="sec-echo"><code>echo</code></h3>
 <p>The <code>echo</code> command prints its arguments to the standard output. It’s commonly used in scripts and on the command line to display messages or variables.</p>
@@ -760,37 +759,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong><code>cat</code> (Concatenate)</strong>: <code>cat</code> displays the content of files straight to your screen, useful for checking what’s in a text file quickly.</p>
 <p>This is similar to printing a file and laying out the pages on the floor to see them all at once.</p>
 </section>
+<section id="sec-head" class="level3">
+<h3 class="anchored" data-anchor-id="sec-head"><code>head</code></h3>
+<p><strong><code>head</code></strong> displays the first part of files, allowing you to see the beginning of a file. By default, it shows the first 10 lines.</p>
+</section>
+<section id="sec-tail" class="level3">
+<h3 class="anchored" data-anchor-id="sec-tail"><code>tail</code></h3>
+<p><strong><code>tail</code></strong> displays the last part of files, useful for viewing the end of a file or for monitoring changes to a file in real time with <code>-f</code>.</p>
+</section>
+<section id="sec-seq" class="level3">
+<h3 class="anchored" data-anchor-id="sec-seq"><code>seq</code></h3>
+<p><strong><code>seq</code></strong> is a simple utility used to generate a sequence of numbers, which can be very handy for scripting and looping operations. <code>seq</code> is often used to provide numeric input for loops or to create numbered lists in files.</p>
+</section>
 <section id="sec-grep" class="level3">
 <h3 class="anchored" data-anchor-id="sec-grep"><code>grep</code></h3>
 <p><strong><code>grep</code></strong> stands for “global regular expression print” and it reads from <code>stdin</code> or a list of files and outputs the lines that contain matches for a specified pattern.</p>
 </section>
+<section id="sec-sed" class="level3">
+<h3 class="anchored" data-anchor-id="sec-sed"><code>sed</code></h3>
+<p><strong><code>sed</code></strong> (Stream Editor) is a powerful utility in Unix and Linux systems designed for processing text in a stream, meaning it can filter and transform text in a pipeline. It’s typically used to automate editing of large numbers of files and to modify files too large to open in a traditional text editor.</p>
+</section>
+<section id="sec-awk" class="level3">
+<h3 class="anchored" data-anchor-id="sec-awk"><code>awk</code></h3>
+<p><strong><code>awk</code></strong> reads from a file or a stream, breaks up each line into fields, checks each line against patterns specified in the program, and then performs specified actions on matching lines.</p>
+</section>
+<section id="sec-gsub" class="level3">
+<h3 class="anchored" data-anchor-id="sec-gsub"><code>gsub</code></h3>
+<p><strong><code>gsub</code></strong> is not a standalone command but a function used within <code>awk</code>, <code>gsub</code> stands for “global substitution” and it is used to replace all occurrences of a specified pattern within each input record. It takes three arguments: the pattern to match, the replacement string, and the target string or field where the substitutions should be made. It operates on the entire line (or specified field) and replaces every occurrence of the pattern with the replacement.</p>
+</section>
 <section id="sec-sort" class="level3">
 <h3 class="anchored" data-anchor-id="sec-sort"><code>sort</code></h3>
-<p><strong><code>sort</code></strong>: <code>sort</code> arranges the lines in a text file into order:</p>
-<p>Similar to organizing our stack of papers alphabetically.</p>
+<p><strong><code>sort</code></strong>: <code>sort</code> arranges the lines in a text file into order (similar to organizing our stack of papers alphabetically).</p>
 </section>
 <section id="sec-uniq" class="level3">
 <h3 class="anchored" data-anchor-id="sec-uniq"><code>uniq</code></h3>
-<p><strong><code>uniq</code></strong>: <code>uniq</code> helps by removing duplicate lines from a file, making sure every line is unique.</p>
-<p>After accidentally printing duplicates of a document, you remove the extra copies.</p>
+<p><strong><code>uniq</code></strong>: <code>uniq</code> helps by removing duplicate lines from a file, making sure every line is unique (i.e., you’ve accidentally printed duplicates of a document, and you remove the extra copies).</p>
 </section>
 <section id="sec-cut" class="level3">
 <h3 class="anchored" data-anchor-id="sec-cut"><code>cut</code></h3>
-<p><strong><code>cut</code></strong>: <code>cut</code> extracts specific parts of lines in a file, like cutting out columns of text.</p>
-<p>If you only want the dates from a list of events, you might physically cut them out of the paper.</p>
+<p><strong><code>cut</code></strong>: <code>cut</code> extracts specific parts of lines in a file, like cutting out columns of text. The example below shows the names and log in times of the currently logged in users:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">who</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-c</span> 1-16,26-42</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mjfrigaard           Apr 12 15:33</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mjfrigaard           Apr 13 15:02</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mjfrigaard           Apr 12 15:33</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mjfrigaard           Apr 13 15:11</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="paste" class="level3">
-<h3 class="anchored" data-anchor-id="paste"><code>paste</code></h3>
-<p><strong><code>paste</code></strong>: <code>paste</code> combines lines from multiple files side by side:</p>
-<p><code>paste</code> is like taking snippets of text from different documents and sticking them together into one.</p>
+<section id="sec-paste" class="level3">
+<h3 class="anchored" data-anchor-id="sec-paste"><code>paste</code></h3>
+<p><strong><code>paste</code></strong>: <code>paste</code> combines lines from multiple files side by side (like taking snippets of text from different documents and sticking them together into one).</p>
 </section>
 <section id="sec-join" class="level3">
 <h3 class="anchored" data-anchor-id="sec-join"><code>join</code></h3>
 <p><strong><code>join</code></strong>: <code>join</code> merges lines from two files based on a common field.</p>
-<p>If you have two lists with common information, you might merge them based on what matches.</p>
-</section>
-<section id="sec-comm" class="level3">
-<h3 class="anchored" data-anchor-id="sec-comm"><code>comm</code></h3>
+<p>If you have two lists with common information, you might merge them based on what matches. ### <code>comm</code> {#sec-comm}</p>
 <p><strong><code>comm</code> (Compare)</strong>: <code>comm</code> compares two sorted files line by line to see what items appear on both, only on one, or the other.</p>
 </section>
 <section id="sec-diff" class="level3">
@@ -804,214 +827,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="sec-xargs" class="level3">
 <h3 class="anchored" data-anchor-id="sec-xargs"><code>xargs</code></h3>
 <p><code>xargs</code> builds and executes command lines from standard input (<code>stdin</code>). It’s most often used in combination with other commands through pipes. <code>xargs</code> takes input from a pipe and passes it as arguments to another command, allowing for powerful command-line operations that process a list of inputs iteratively.</p>
-</section>
-</section>
-<section id="special-characters" class="level2">
-<h2 class="anchored" data-anchor-id="special-characters">Special Characters</h2>
-<p><strong>Special Characters</strong>: Characters such as spaces, tabs, asterisks, question marks, and others have special meanings in the shell. They need to be treated carefully when used within arguments.</p>
-<section id="sec-asterisk" class="level3">
-<h3 class="anchored" data-anchor-id="sec-asterisk">Asterisk: <code>*</code></h3>
-<p><strong>Glob Patterns</strong>: <code>*</code> is the wildcard for matching <strong>zero or more characters</strong>. Arguments can include wildcards, which the shell expands into a list of files or directories that match the pattern. For example, <code>*.txt</code> would match all files in the current directory ending with <code>.txt</code>.</p>
-<p><strong>Example</strong></p>
-<p><code>ls *.md</code> lists all files in the current directory that end with <code>.md</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="pp">*</span>.md</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; README.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-</section>
-<section id="sec-question" class="level3">
-<h3 class="anchored" data-anchor-id="sec-question">Question Mark: <code>?</code></h3>
-<p><code>?</code> is the wildcard for matching <strong>exactly one character</strong>.</p>
-<p><strong>Example</strong></p>
-<p><code>ls myfile?.txt</code> lists files like <code>myfile2.txt</code>, but not <code>myfile.txt</code> and <code>my file 3.txt</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> myfile<span class="pp">?</span>.txt</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; myfile2.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-title-container flex-fill">
+<span style="font-weight: bold; font-size: 0.95em;">See a typo, error, or something missing?</span>
 </div>
-</section>
-<section id="sec-tilde" class="level3">
-<h3 class="anchored" data-anchor-id="sec-tilde">Tilde: <code>~</code></h3>
-<p><code>~</code> represents the home directory of the current user.</p>
-<p><strong>Example</strong></p>
-<p>List the items in the user’s home directory:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ~</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Applications</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Creative Cloud Files</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Desktop</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Documents</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Downloads</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Dropbox</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Fonts</span></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Library</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Movies</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Music</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Pictures</span></span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Public</span></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; R</span></span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Themes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-</section>
-<section id="sec-dollar" class="level3">
-<h3 class="anchored" data-anchor-id="sec-dollar">Dollar Sign: <code>$</code></h3>
-<p><code>$</code> indicates a variable.</p>
-<p><strong>Example</strong></p>
-<p><code>echo $PATH</code> prints the value of the <code>PATH</code> environment variable:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$PATH</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div style="font-size: 0.90em; color: #282b2d;">
+<p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
 </div>
-</section>
-<section id="sec-ampersand" class="level3">
-<h3 class="anchored" data-anchor-id="sec-ampersand">Ampersand: <code>&amp;</code></h3>
-<p><code>&amp;</code> runs a command in the background.</p>
-<p><strong>Example</strong></p>
-<p><code>firefox &amp;</code> opens Firefox in the background, allowing the terminal to be used for other commands.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">firefox</span> <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="sec-semicolon" class="level3">
-<h3 class="anchored" data-anchor-id="sec-semicolon">Semicolon: <code>;</code></h3>
-<p><code>;</code> separates multiple commands to be run in sequence.</p>
-<p><strong>Example</strong></p>
-<p><code>cd data; ls</code> changes the directory to <code>data</code> and then lists its contents:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> data<span class="kw">;</span> <span class="fu">ls</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; music_vids.tsv</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; roxanne</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; trees.tsv</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; vg_hof.tsv</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; who-tb-data.tsv</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.csv</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.dat</span></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.tsv</span></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="sec-gt" class="level3">
-<h3 class="anchored" data-anchor-id="sec-gt">Greater Than: <code>&gt;</code></h3>
-<p><strong>Redirection operators</strong>: <code>&gt;</code> directs output to a file or a device.</p>
-<p><strong>Example</strong></p>
-<p><code>echo "This is my 2nd file" &gt; myfile2.txt</code> writes <code>"This is my 2nd file"</code> into <code>myfile2.txt</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"This is my 2nd file"</span> <span class="op">&gt;</span> myfile2.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-lt" class="level3">
-<h3 class="anchored" data-anchor-id="sec-lt">Less Than: <code>&lt;</code></h3>
-<p><strong>Redirection operators</strong>: <code>&lt;</code> takes input from a file or a device.</p>
-<p><strong>Example</strong></p>
-<p>Then <code>wc &lt; myfile2.txt</code> counts the words in <code>myfile2.txt</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="op">&lt;</span> myfile2.txt</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        1       5      20</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-braces" class="level3">
-<h3 class="anchored" data-anchor-id="sec-braces">Braces: <code>{}</code></h3>
-<p><strong>Brace Expansion</strong>: Similar to wildcards, brace expansion (<code>{}</code>) allows the creation of multiple text strings from a pattern containing braces.</p>
-<p><strong>Example</strong></p>
-<p><code>cat wu_tang.{txt,csv}</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/wu_tang.<span class="dt">{tsv</span><span class="op">,</span><span class="dt">dat}</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Member   Name</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; RZA  Robert Diggs</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; GZA  Gary Grice</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Method Man   Clifford Smith</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Raekwon the Chef Corey Woods</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ghostface Killah Dennis Coles</span></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Inspectah Deck   Jason Hunter</span></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; U-God    Lamont Hawkins</span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Masta Killa  Jamel Irief</span></span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Cappadonna   Darryl Hill</span></span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ol Dirty Bastard Russell Tyrone Jones</span></span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Member           |Name                 |</span></span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |RZA              |Robert Diggs         |</span></span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |GZA              |Gary Grice           |</span></span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Method Man       |Clifford Smith       |</span></span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Raekwon the Chef |Corey Woods          |</span></span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Ghostface Killah |Dennis Coles         |</span></span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Inspectah Deck   |Jason Hunter         |</span></span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |U-God            |Lamont Hawkins       |</span></span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Masta Killa      |Jamel Irief          |</span></span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Cappadonna       |Darryl Hill          |</span></span>
-<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Ol Dirty Bastard |Russell Tyrone Jones |</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>would expand into:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/wu_tang.tsv </span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/wu_tang.dat</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Member   Name</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; RZA  Robert Diggs</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; GZA  Gary Grice</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Method Man   Clifford Smith</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Raekwon the Chef Corey Woods</span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ghostface Killah Dennis Coles</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Inspectah Deck   Jason Hunter</span></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; U-God    Lamont Hawkins</span></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Masta Killa  Jamel Irief</span></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Cappadonna   Darryl Hill</span></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ol Dirty Bastard Russell Tyrone Jones</span></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Member           |Name                 |</span></span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |RZA              |Robert Diggs         |</span></span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |GZA              |Gary Grice           |</span></span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Method Man       |Clifford Smith       |</span></span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Raekwon the Chef |Corey Woods          |</span></span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Ghostface Killah |Dennis Coles         |</span></span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Inspectah Deck   |Jason Hunter         |</span></span>
-<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |U-God            |Lamont Hawkins       |</span></span>
-<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Masta Killa      |Jamel Irief          |</span></span>
-<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Cappadonna       |Darryl Hill          |</span></span>
-<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Ol Dirty Bastard |Russell Tyrone Jones |</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-parens" class="level3">
-<h3 class="anchored" data-anchor-id="sec-parens">Parentheses: <code>()</code></h3>
-<p>Parentheses can be used to group commands or for command substitution with <code>$( )</code>.</p>
-<p><strong>Example</strong></p>
-<p><code>(cd /var; ls)</code> runs <code>ls in /var</code> without changing the current directory:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="bu">cd</span> data<span class="kw">;</span> <span class="fu">ls</span><span class="kw">)</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; music_vids.tsv</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; roxanne</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; trees.tsv</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; vg_hof.tsv</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; who-tb-data.tsv</span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.csv</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.dat</span></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.tsv</span></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><code>$(command)</code> uses the output of <code>command</code>.</p>
-</section>
-<section id="sec-backslash" class="level3">
-<h3 class="anchored" data-anchor-id="sec-backslash">Backslash: <code>\</code></h3>
-<p><code>\</code> escapes the following character, nullifying its special meaning</p>
-<p><strong>Example</strong></p>
-<p><code>echo "File name with spaces \&amp; special characters"</code> prints the text with spaces and the ampersand:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"File name with spaces \&amp; special characters"</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; File name with spaces \&amp; special characters</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-single-quotes" class="level3">
-<h3 class="anchored" data-anchor-id="sec-single-quotes">Single quotes: <code>''</code></h3>
-<p>Single quotes (<code>' '</code>) treat every character literally, ignoring the special meaning of all characters.</p>
-<p><strong>Example</strong></p>
-<p><code>echo '$HOME'</code> prints <code>$HOME</code>, not the path to the home directory:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'$HOME'</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $HOME</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-double-quotes" class="level3">
-<h3 class="anchored" data-anchor-id="sec-double-quotes">Double quotes: <code>""</code></h3>
-<p>Double quotes (<code>" "</code>) allow for the inclusion of special characters in an argument, except for the dollar sign (<code>$</code>), backticks (` `), and backslash (<code>\</code>).</p>
-<p><strong>Example</strong></p>
-<p><code>echo "$HOME"</code> prints the path to the home directory:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">$HOME</span><span class="st">"</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /Users/username</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

@@ -8,7 +8,7 @@
 
 <meta name="description" content="A Unix Field Manual">
 
-<title>fm-unix – Appendix B — macOS</title>
+<title>fm-unix – Regular Expressions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,7 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./glossary.html" rel="prev">
+<link href="./text_commands.html" rel="next">
+<link href="./text.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syntax_ref.html">Appendices</a></li><li class="breadcrumb-item"><a href="./macos.html"><span class="chapter-title">macOS</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./text.html">Text</a></li><li class="breadcrumb-item"><a href="./regex.html"><span class="chapter-title">Regular Expressions</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -217,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./regex.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Regular Expressions</span></a>
+  <a href="./regex.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Regular Expressions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -276,7 +311,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./macos.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">macOS</span></a>
+  <a href="./macos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">macOS</span></a>
   </div>
 </li>
       </ul>
@@ -291,25 +326,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#macos-terminal" id="toc-macos-terminal" class="nav-link active" data-scroll-target="#macos-terminal">macOS Terminal</a></li>
-  <li><a href="#macos-shell" id="toc-macos-shell" class="nav-link" data-scroll-target="#macos-shell">macOS Shell</a></li>
-  <li><a href="#homebrew" id="toc-homebrew" class="nav-link" data-scroll-target="#homebrew">Homebrew</a></li>
-  <li><a href="#bsd-vs.-gnu-commands" id="toc-bsd-vs.-gnu-commands" class="nav-link" data-scroll-target="#bsd-vs.-gnu-commands">BSD vs.&nbsp;GNU Commands</a></li>
-  <li><a href="#case-sensitivity" id="toc-case-sensitivity" class="nav-link" data-scroll-target="#case-sensitivity">Case Sensitivity</a></li>
-  <li><a href="#security-and-permissions" id="toc-security-and-permissions" class="nav-link" data-scroll-target="#security-and-permissions">Security and Permissions</a></li>
-  <li><a href="#filesystem-hierarchy" id="toc-filesystem-hierarchy" class="nav-link" data-scroll-target="#filesystem-hierarchy">Filesystem Hierarchy</a></li>
-  <li><a href="#networking-and-interoperability" id="toc-networking-and-interoperability" class="nav-link" data-scroll-target="#networking-and-interoperability">Networking and Interoperability</a></li>
-  <li><a href="#graphical-applications" id="toc-graphical-applications" class="nav-link" data-scroll-target="#graphical-applications">Graphical Applications</a></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#patterns" id="toc-patterns" class="nav-link active" data-scroll-target="#patterns">Patterns</a>
+  <ul>
+  <li><a href="#sec-asterisk" id="toc-sec-asterisk" class="nav-link" data-scroll-target="#sec-asterisk">Asterisk: <code>*</code></a></li>
+  <li><a href="#sec-question" id="toc-sec-question" class="nav-link" data-scroll-target="#sec-question">Question Mark: <code>?</code></a></li>
+  <li><a href="#sec-braces" id="toc-sec-braces" class="nav-link" data-scroll-target="#sec-braces">Braces: <code>{}</code></a></li>
+  <li><a href="#sec-backslash" id="toc-sec-backslash" class="nav-link" data-scroll-target="#sec-backslash">Backslash: <code>\</code></a></li>
+  <li><a href="#sec-single-quotes" id="toc-sec-single-quotes" class="nav-link" data-scroll-target="#sec-single-quotes">Single quotes: <code>''</code></a></li>
+  <li><a href="#sec-double-quotes" id="toc-sec-double-quotes" class="nav-link" data-scroll-target="#sec-double-quotes">Double quotes: <code>""</code></a></li>
+  </ul></li>
+  <li><a href="#special-characters" id="toc-special-characters" class="nav-link" data-scroll-target="#special-characters">Special Characters</a>
+  <ul>
+  <li><a href="#sec-tilde" id="toc-sec-tilde" class="nav-link" data-scroll-target="#sec-tilde">Tilde: <code>~</code></a></li>
+  <li><a href="#sec-dollar" id="toc-sec-dollar" class="nav-link" data-scroll-target="#sec-dollar">Dollar Sign: <code>$</code></a></li>
+  <li><a href="#sec-ampersand" id="toc-sec-ampersand" class="nav-link" data-scroll-target="#sec-ampersand">Ampersand: <code>&amp;</code></a></li>
+  <li><a href="#sec-semicolon" id="toc-sec-semicolon" class="nav-link" data-scroll-target="#sec-semicolon">Semicolon: <code>;</code></a></li>
+  <li><a href="#sec-gt" id="toc-sec-gt" class="nav-link" data-scroll-target="#sec-gt">Greater Than: <code>&gt;</code></a></li>
+  <li><a href="#sec-lt" id="toc-sec-lt" class="nav-link" data-scroll-target="#sec-lt">Less Than: <code>&lt;</code></a></li>
+  <li><a href="#sec-parens" id="toc-sec-parens" class="nav-link" data-scroll-target="#sec-parens">Parentheses: <code>()</code></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syntax_ref.html">Appendices</a></li><li class="breadcrumb-item"><a href="./macos.html"><span class="chapter-title">macOS</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./text.html">Text</a></li><li class="breadcrumb-item"><a href="./regex.html"><span class="chapter-title">Regular Expressions</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-macos" class="quarto-section-identifier">Appendix B — macOS</span></h1>
+<h1 class="title"><span id="sec-regex" class="quarto-section-identifier"><span class="chapter-title">Regular Expressions</span></span></h1>
 </div>
 
 
@@ -344,51 +388,220 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Using Unix/Linux on macOS offers a unique and powerful environment with macOS’s Terminal, but it’s important to be aware of the differences and limitations inherent in macOS’s implementation of Unix. Below we cover some special considerations rooted in macOS’s distinct architecture and its version of Unix.</p>
-<section id="macos-terminal" class="level3">
-<h3 class="anchored" data-anchor-id="macos-terminal">macOS Terminal</h3>
-<p>The default Terminal app on macOS provides a solid interface to access the Unix command line, but there are other terminal emulators available (like <a href="https://iterm2.com/">iTerm2</a>) that offer additional features such as split panes, search, and customization options.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/iterm2-panes.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>iterm2</figcaption>
-</figure>
+<section id="patterns" class="level2">
+<h2 class="anchored" data-anchor-id="patterns">Patterns</h2>
+<section id="sec-asterisk" class="level3">
+<h3 class="anchored" data-anchor-id="sec-asterisk">Asterisk: <code>*</code></h3>
+<p><strong>Glob Patterns</strong>: <code>*</code> is the wildcard for matching <strong>zero or more characters</strong>. Arguments can include wildcards, which the shell expands into a list of files or directories that match the pattern. For example, <code>*.txt</code> would match all files in the current directory ending with <code>.txt</code>.</p>
+<p><strong>Example</strong></p>
+<p><code>ls *.md</code> lists all files in the current directory that end with <code>.md</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="pp">*</span>.md</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; README.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="macos-shell" class="level3">
-<h3 class="anchored" data-anchor-id="macos-shell">macOS Shell</h3>
-<p>macOS has transitioned from using Bash as the default shell to Zsh since macOS Catalina. While both are Unix shells, they have some differences in features and configuration files (<code>~/.bash_profile</code> for Bash vs.&nbsp;<code>~/.zshrc</code> for Zsh).</p>
+<section id="sec-question" class="level3">
+<h3 class="anchored" data-anchor-id="sec-question">Question Mark: <code>?</code></h3>
+<p><code>?</code> is the wildcard for matching <strong>exactly one character</strong>.</p>
+<p><strong>Example</strong></p>
+<p><code>ls myfile?.txt</code> lists files like <code>myfile2.txt</code>, but not <code>myfile.txt</code> and <code>my file 3.txt</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> myfile<span class="pp">?</span>.txt</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; myfile2.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="homebrew" class="level3">
-<h3 class="anchored" data-anchor-id="homebrew">Homebrew</h3>
-<p><a href="https://brew.sh/">Homebrew</a> is an essential package manager for macOS, filling the gap for Unix/Linux software that isn’t pre-installed on macOS. It allows users to easily install and manage additional Unix tools, GNU utilities, languages, and applications. Learning to use Homebrew will significantly expand the Unix/Linux tools at your disposal on a macOS system.</p>
+<section id="sec-braces" class="level3">
+<h3 class="anchored" data-anchor-id="sec-braces">Braces: <code>{}</code></h3>
+<p><strong>Brace Expansion</strong>: Similar to wildcards, brace expansion (<code>{}</code>) allows the creation of multiple text strings from a pattern containing braces.</p>
+<p><strong>Example</strong></p>
+<p><code>cat wu_tang.{txt,csv}</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/wu_tang.<span class="dt">{tsv</span><span class="op">,</span><span class="dt">dat}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Member   Name</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; RZA  Robert Diggs</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; GZA  Gary Grice</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Method Man   Clifford Smith</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Raekwon the Chef Corey Woods</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ghostface Killah Dennis Coles</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Inspectah Deck   Jason Hunter</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; U-God    Lamont Hawkins</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Masta Killa  Jamel Irief</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Cappadonna   Darryl Hill</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ol Dirty Bastard Russell Tyrone Jones</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Member           |Name                 |</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |RZA              |Robert Diggs         |</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |GZA              |Gary Grice           |</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Method Man       |Clifford Smith       |</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Raekwon the Chef |Corey Woods          |</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Ghostface Killah |Dennis Coles         |</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Inspectah Deck   |Jason Hunter         |</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |U-God            |Lamont Hawkins       |</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Masta Killa      |Jamel Irief          |</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Cappadonna       |Darryl Hill          |</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Ol Dirty Bastard |Russell Tyrone Jones |</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>would expand into:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/wu_tang.tsv </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/wu_tang.dat</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Member   Name</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; RZA  Robert Diggs</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; GZA  Gary Grice</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Method Man   Clifford Smith</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Raekwon the Chef Corey Woods</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ghostface Killah Dennis Coles</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Inspectah Deck   Jason Hunter</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; U-God    Lamont Hawkins</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Masta Killa  Jamel Irief</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Cappadonna   Darryl Hill</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ol Dirty Bastard Russell Tyrone Jones</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Member           |Name                 |</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |RZA              |Robert Diggs         |</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |GZA              |Gary Grice           |</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Method Man       |Clifford Smith       |</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Raekwon the Chef |Corey Woods          |</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Ghostface Killah |Dennis Coles         |</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Inspectah Deck   |Jason Hunter         |</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |U-God            |Lamont Hawkins       |</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Masta Killa      |Jamel Irief          |</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Cappadonna       |Darryl Hill          |</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |Ol Dirty Bastard |Russell Tyrone Jones |</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="bsd-vs.-gnu-commands" class="level3">
-<h3 class="anchored" data-anchor-id="bsd-vs.-gnu-commands">BSD vs.&nbsp;GNU Commands</h3>
-<p>macOS is based on Darwin, which incorporates elements from BSD Unix. Therefore, some of the command-line tools on macOS behave differently from their GNU counterparts found in Linux. For example, options and flags for commands like <code>ls</code>, <code>sed</code>, and <code>tar</code> may vary. This means that while the overarching principles remain the same, specific command syntax and options might require adjustments or the use of GNU versions of commands (installed via <a href="https://brew.sh/">Homebrew</a>, for instance).</p>
+<section id="sec-backslash" class="level3">
+<h3 class="anchored" data-anchor-id="sec-backslash">Backslash: <code>\</code></h3>
+<p><code>\</code> escapes the following character, nullifying its special meaning</p>
+<p><strong>Example</strong></p>
+<p><code>echo "File name with spaces \&amp; special characters"</code> prints the text with spaces and the ampersand:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"File name with spaces \&amp; special characters"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; File name with spaces \&amp; special characters</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="case-sensitivity" class="level3">
-<h3 class="anchored" data-anchor-id="case-sensitivity">Case Sensitivity</h3>
-<p>By default, the macOS file system (APFS or HFS+) is <strong>case-insensitive but case-preserving</strong>. This behavior is different from most Linux file systems, which are <em>case-sensitive</em>. This can affect scripts and commands that rely on case distinctions for file and directory names.</p>
+<section id="sec-single-quotes" class="level3">
+<h3 class="anchored" data-anchor-id="sec-single-quotes">Single quotes: <code>''</code></h3>
+<p>Single quotes (<code>' '</code>) treat every character literally, ignoring the special meaning of all characters.</p>
+<p><strong>Example</strong></p>
+<p><code>echo '$HOME'</code> prints <code>$HOME</code>, not the path to the home directory:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'$HOME'</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $HOME</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="security-and-permissions" class="level3">
-<h3 class="anchored" data-anchor-id="security-and-permissions">Security and Permissions</h3>
-<p>macOS has implemented increasingly stringent security measures, including the System Integrity Protection (SIP) and sandboxing mechanisms, which can restrict access to certain files and system operations. While these features enhance security, they can also limit what you can do via the Terminal. Understanding macOS’s security model and permissions (such as using <code>sudo</code> wisely) is crucial.</p>
+<section id="sec-double-quotes" class="level3">
+<h3 class="anchored" data-anchor-id="sec-double-quotes">Double quotes: <code>""</code></h3>
+<p>Double quotes (<code>" "</code>) allow for the inclusion of special characters in an argument, except for the dollar sign (<code>$</code>), backticks (` `), and backslash (<code>\</code>).</p>
+<p><strong>Example</strong></p>
+<p><code>echo "$HOME"</code> prints the path to the home directory:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">$HOME</span><span class="st">"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /Users/username</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="filesystem-hierarchy" class="level3">
-<h3 class="anchored" data-anchor-id="filesystem-hierarchy">Filesystem Hierarchy</h3>
-<p>While the Unix filesystem hierarchy is preserved in macOS, there are macOS-specific directories and structures, such as <code>~/Library</code> for user-specific application support files and preferences. Understanding these macOS-specific elements is important when navigating and managing files via the Terminal.</p>
 </section>
-<section id="networking-and-interoperability" class="level3">
-<h3 class="anchored" data-anchor-id="networking-and-interoperability">Networking and Interoperability</h3>
-<p>macOS integrates well with both Unix/Linux and Windows environments, supporting various network protocols and file sharing options out of the box. Commands like <code>ssh</code>, <code>scp</code>, and <code>smbutil</code> can be used for remote access and file transfers, making macOS a versatile platform for learning Unix/Linux networking basics.</p>
+<section id="special-characters" class="level2">
+<h2 class="anchored" data-anchor-id="special-characters">Special Characters</h2>
+<p><strong>Special Characters</strong>: Characters such as spaces, quotes, and others have special meanings in the shell. They need to be treated carefully when used within arguments.</p>
+<section id="sec-tilde" class="level3">
+<h3 class="anchored" data-anchor-id="sec-tilde">Tilde: <code>~</code></h3>
+<p><code>~</code> represents the home directory of the current user.</p>
+<p><strong>Example</strong></p>
+<p>List the items in the user’s home directory:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ~</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Applications</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Creative Cloud Files</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Desktop</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Documents</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Downloads</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Dropbox</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Fonts</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Library</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Movies</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Music</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Pictures</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Public</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; R</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Themes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="graphical-applications" class="level3">
-<h3 class="anchored" data-anchor-id="graphical-applications">Graphical Applications</h3>
-<p>macOS allows Unix command-line tools to interact with its graphical user interface (GUI) applications in ways that are not typically available on other Unix systems. For instance, the <code>open</code> command can be used to open files or applications, and <code>osascript</code> can interact with AppleScript-enabled applications for automation.</p>
+<section id="sec-dollar" class="level3">
+<h3 class="anchored" data-anchor-id="sec-dollar">Dollar Sign: <code>$</code></h3>
+<p><code>$</code> indicates a variable.</p>
+<p><strong>Example</strong></p>
+<p><code>echo $PATH</code> prints the value of the <code>PATH</code> environment variable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$PATH</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="recap" class="level2">
-<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<section id="sec-ampersand" class="level3">
+<h3 class="anchored" data-anchor-id="sec-ampersand">Ampersand: <code>&amp;</code></h3>
+<p><code>&amp;</code> runs a command in the background.</p>
+<p><strong>Example</strong></p>
+<p><code>firefox &amp;</code> opens Firefox in the background, allowing the terminal to be used for other commands.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">firefox</span> <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sec-semicolon" class="level3">
+<h3 class="anchored" data-anchor-id="sec-semicolon">Semicolon: <code>;</code></h3>
+<p><code>;</code> separates multiple commands to be run in sequence.</p>
+<p><strong>Example</strong></p>
+<p><code>cd data; ls</code> changes the directory to <code>data</code> and then lists its contents:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> data<span class="kw">;</span> <span class="fu">ls</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ajperlis_epigrams.txt</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; music_vids.tsv</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; roxanne.txt</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; trees.tsv</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; vg_hof.tsv</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; who-tb-data.tsv</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; who_tb_data.txt</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.csv</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.dat</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.tsv</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sec-gt" class="level3">
+<h3 class="anchored" data-anchor-id="sec-gt">Greater Than: <code>&gt;</code></h3>
+<p><strong>Redirection operators</strong>: <code>&gt;</code> directs output to a file or a device.</p>
+<p><strong>Example</strong></p>
+<p><code>echo "This is my 2nd file" &gt; myfile2.txt</code> writes <code>"This is my 2nd file"</code> into <code>myfile2.txt</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"This is my 2nd file"</span> <span class="op">&gt;</span> myfile2.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sec-lt" class="level3">
+<h3 class="anchored" data-anchor-id="sec-lt">Less Than: <code>&lt;</code></h3>
+<p><strong>Redirection operators</strong>: <code>&lt;</code> takes input from a file or a device.</p>
+<p><strong>Example</strong></p>
+<p>Then <code>wc &lt; myfile2.txt</code> counts the words in <code>myfile2.txt</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="op">&lt;</span> myfile2.txt</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        1       5      20</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sec-parens" class="level3">
+<h3 class="anchored" data-anchor-id="sec-parens">Parentheses: <code>()</code></h3>
+<p>Parentheses can be used to group commands or for command substitution with <code>$( )</code>.</p>
+<p><strong>Example</strong></p>
+<p><code>(cd /var; ls)</code> runs <code>ls in /var</code> without changing the current directory:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="bu">cd</span> data<span class="kw">;</span> <span class="fu">ls</span><span class="kw">)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ajperlis_epigrams.txt</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; music_vids.tsv</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; roxanne.txt</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; trees.tsv</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; vg_hof.tsv</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; who-tb-data.tsv</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; who_tb_data.txt</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.csv</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.dat</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.tsv</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; wu_tang.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>$(command)</code> uses the output of <code>command</code>.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -409,6 +622,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -834,11 +1048,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./glossary.html" class="pagination-link" aria-label="Glossary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Glossary</span>
+      <a href="./text.html" class="pagination-link" aria-label="Text">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Text</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./text_commands.html" class="pagination-link" aria-label="Manipulating Text">
+        <span class="nav-page-text"><span class="chapter-title">Manipulating Text</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
