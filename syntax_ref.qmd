@@ -131,9 +131,7 @@ exit
 
 `exit` requires no arguments or options to execute this action, and doesn't print any return values.
 
-## Directories 
-
-## Navigate {#sec-nav-dirs}
+## Navigate 
 
 ### `pwd` {#sec-pwd}
 
@@ -163,7 +161,14 @@ cd /bin # change location
 ls # what's in here?
 ```
 
-## Manage {#sec-manage-dirs}
+### `locate` {#sec-locate}
+
+```{bash}
+#| eval: false
+locate bin
+```
+
+## Manage 
 
 In the Unix/Linux world, file and directory management is a fundamental skill. This chapter dives deep into the commands that allow users to create, copy, move, remove, and link files and directories. Each section below introduces a different command, detailing its purpose and providing examples of its use.
 
@@ -252,7 +257,6 @@ ln -s /path/to/original /path/to/link
 
 ## System
 
-
 ### `ps` {#sec-ps}
 
 `ps` (**Process Status**) reports a snapshot of information about all running processes, regardless of the owner, including the user, CPU and memory usage, process ID, and the command that started each process.. Command options can expand the selection to include other users' processes, full command lines, etc.
@@ -272,6 +276,7 @@ ln -s /path/to/original /path/to/link
 touch newfile.txt
 ```
 
+### View
 
 ### `file` {#sec-file}
 
@@ -280,14 +285,6 @@ touch newfile.txt
 ```{bash}
 file /bin/pax
 ```
-
-### `head` {#sec-head}
-
-**`head`** displays the first part of files, allowing you to see the beginning of a file. By default, it shows the first 10 lines.
-
-### `tail` {#sec-tail}
-
-**`tail`** displays the last part of files, useful for viewing the end of a file or for monitoring changes to a file in real time with `-f`.
 
 ### `less` {#sec-less}
 
@@ -299,6 +296,8 @@ less data/vg_hof.tsv
 ```
 
 ![Enter `less` in the Terminal to scroll](img/less.gif){width='100%' fig-align='center'}
+
+## Search
 
 ### `find` {#sec-find}
 
@@ -320,7 +319,7 @@ less data/vg_hof.tsv
 
 `help` or `--help` option provides information about built-in commands and usage guidelines. It's a quick way to get help for shell built-ins or to understand the basic usage of a command. 
 
-## Text Manipulation 
+## Text
 
 ### `echo` {#sec-echo}
 
@@ -332,43 +331,59 @@ The `echo` command prints its arguments to the standard output. It's commonly us
 
 This is similar to printing a file and laying out the pages on the floor to see them all at once.
 
+### `head` {#sec-head}
+
+**`head`** displays the first part of files, allowing you to see the beginning of a file. By default, it shows the first 10 lines.
+
+### `tail` {#sec-tail}
+
+**`tail`** displays the last part of files, useful for viewing the end of a file or for monitoring changes to a file in real time with `-f`.
+
+### `seq` {#sec-seq}
+
+**`seq`** is a simple utility used to generate a sequence of numbers, which can be very handy for scripting and looping operations. `seq` is often used to provide numeric input for loops or to create numbered lists in files.
+
 ### `grep` {#sec-grep}
 
 **`grep`** stands for "global regular expression print" and it reads from `stdin` or a list of files and outputs the lines that contain matches for a specified pattern.
 
+### `sed` {#sec-sed}
+
+**`sed`** (Stream Editor) is a powerful utility in Unix and Linux systems designed for processing text in a stream, meaning it can filter and transform text in a pipeline. It's typically used to automate editing of large numbers of files and to modify files too large to open in a traditional text editor.
+
+### `awk` {#sec-awk}
+
+**`awk`** reads from a file or a stream, breaks up each line into fields, checks each line against patterns specified in the program, and then performs specified actions on matching lines.
+
+### `gsub` {#sec-gsub}
+
+**`gsub`** is not a standalone command but a function used within `awk`, `gsub` stands for "global substitution" and it is used to replace all occurrences of a specified pattern within each input record. It takes three arguments: the pattern to match, the replacement string, and the target string or field where the substitutions should be made. It operates on the entire line (or specified field) and replaces every occurrence of the pattern with the replacement.
 
 ### `sort` {#sec-sort}
 
-**`sort`**: `sort` arranges the lines in a text file into order:
-
-
-Similar to organizing our stack of papers alphabetically.
+**`sort`**: `sort` arranges the lines in a text file into order (similar to organizing our stack of papers alphabetically).
 
 ### `uniq` {#sec-uniq}
 
-**`uniq`**: `uniq` helps by removing duplicate lines from a file, making sure every line is unique.
-
-After accidentally printing duplicates of a document, you remove the extra copies.
+**`uniq`**: `uniq` helps by removing duplicate lines from a file, making sure every line is unique (i.e., you've accidentally printed duplicates of a document, and you remove the extra copies).
 
 ### `cut` {#sec-cut}
 
-**`cut`**: `cut` extracts specific parts of lines in a file, like cutting out columns of text.
+**`cut`**: `cut` extracts specific parts of lines in a file, like cutting out columns of text. The example below shows the names and log in times of the currently logged in users:
 
-If you only want the dates from a list of events, you might physically cut them out of the paper. 
+```{bash}
+who | cut -c 1-16,26-42
+```
 
-### `paste` 
+### `paste` {#sec-paste}
 
-**`paste`**: `paste` combines lines from multiple files side by side:
-
-`paste` is like taking snippets of text from different documents and sticking them together into one.
+**`paste`**: `paste` combines lines from multiple files side by side (like taking snippets of text from different documents and sticking them together into one).
 
 ### `join` {#sec-join}
 
 **`join`**: `join` merges lines from two files based on a common field.
 
-
 If you have two lists with common information, you might merge them based on what matches. 
-
 ### `comm` {#sec-comm}
 
 **`comm` (Compare)**: `comm` compares two sorted files line by line to see what items appear on both, only on one, or the other.
@@ -385,196 +400,10 @@ If you have two lists with common information, you might merge them based on wha
 
 `xargs` builds and executes command lines from standard input (`stdin`). It's most often used in combination with other commands through pipes. `xargs` takes input from a pipe and passes it as arguments to another command, allowing for powerful command-line operations that process a list of inputs iteratively.
 
-## Special Characters
-
-**Special Characters**: Characters such as spaces, tabs, asterisks, question marks, and others have special meanings in the shell. They need to be treated carefully when used within arguments.
-
-### Asterisk: `*` {#sec-asterisk}
-
-**Glob Patterns**: `*` is the wildcard for matching **zero or more characters**. Arguments can include wildcards, which the shell expands into a list of files or directories that match the pattern. For example, `*.txt` would match all files in the current directory ending with `.txt`.
-
-**Example** 
-
-`ls *.md` lists all files in the current directory that end with `.md`:
-
-```{bash}
-ls *.md
-```
-
-### Question Mark: `?` {#sec-question}
-
-`?` is the wildcard for matching **exactly one character**.
-
-**Example** 
-
-`ls myfile?.txt` lists files like `myfile2.txt`, but not `myfile.txt` and `my file 3.txt`:
-
-```{bash}
-ls myfile?.txt
-```
-
-
-### Tilde: `~` {#sec-tilde}
-
-`~` represents the home directory of the current user.
-
-**Example** 
-
-List the items in the user's home directory:
-
-```{bash}
-#| eval: false
-ls ~
-#> Applications
-#> Creative Cloud Files
-#> Desktop
-#> Documents
-#> Downloads
-#> Dropbox
-#> Fonts
-#> Library
-#> Movies
-#> Music
-#> Pictures
-#> Public
-#> R
-#> Themes
-```
-
-
-### Dollar Sign: `$` {#sec-dollar}
-
-`$` indicates a variable.
-
-**Example** 
-
-`echo $PATH` prints the value of the `PATH` environment variable:
-
-```{bash}
-#| eval: false
-echo $PATH
-```
-
-
-### Ampersand: `&` {#sec-ampersand}
-
-`&` runs a command in the background.
-
-**Example** 
-
-`firefox &` opens Firefox in the background, allowing the terminal to be used for other commands.
-
-```{bash}
-#| eval: false
-firefox &
-```
-
-
-### Semicolon: `;` {#sec-semicolon}
-
-`;` separates multiple commands to be run in sequence.
-
-**Example** 
-
-`cd data; ls` changes the directory to `data` and then lists its contents:
-
-```{bash}
-cd data; ls
-```
-
-
-### Greater Than: `>` {#sec-gt}
-
-**Redirection operators**: `>` directs output to a file or a device. 
-
-**Example** 
-
-`echo "This is my 2nd file" > myfile2.txt` writes `"This is my 2nd file"` into `myfile2.txt`:
-
-```{bash}
-echo "This is my 2nd file" > myfile2.txt
-```
-
-### Less Than: `<` {#sec-lt}
-
-**Redirection operators**: `<` takes input from a file or a device.
-
-**Example** 
-
-Then `wc < myfile2.txt` counts the words in `myfile2.txt`:
-
-```{bash}
-wc < myfile2.txt
-```
-
-### Braces: `{}` {#sec-braces}
-
-**Brace Expansion**: Similar to wildcards, brace expansion (`{}`) allows the creation of multiple text strings from a pattern containing braces. 
-
-**Example**
-
-`cat wu_tang.{txt,csv}` 
-
-```{bash}
-cat data/wu_tang.{tsv,dat}
-```
-
-would expand into:
-
-```{bash}
-cat data/wu_tang.tsv 
-cat data/wu_tang.dat
-```
-
-
-### Parentheses: `()` {#sec-parens}
-
-Parentheses can be used to group commands or for command substitution with `$( )`.
-
-**Example** 
-
-`(cd /var; ls)` runs `ls in /var` without changing the current directory:
-
-```{bash}
-(cd data; ls)
-```
-
-`$(command)` uses the output of `command`.
-
-### Backslash: `\` {#sec-backslash}
-
-`\` escapes the following character, nullifying its special meaning
-
-**Example** 
-
-`echo "File name with spaces \& special characters"` prints the text with spaces and the ampersand:
-
-```{bash}
-echo "File name with spaces \& special characters"
-```
-
-### Single quotes: `''` {#sec-single-quotes}
-
-Single quotes (`' '`) treat every character literally, ignoring the special meaning of all characters.
-
-**Example** 
-
-`echo '$HOME'` prints `$HOME`, not the path to the home directory:
-
-```{bash}
-echo '$HOME'
-```
-
-### Double quotes: `""` {#sec-double-quotes}
-
-Double quotes (`" "`) allow for the inclusion of special characters in an argument, except for the dollar sign (`$`), backticks (\` \`), and backslash (`\`). 
-
-**Example** 
-
-`echo "$HOME"` prints the path to the home directory:
-
-```{bash}
-#| eval: false
-echo "$HOME"
-#> /Users/username
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
 ```

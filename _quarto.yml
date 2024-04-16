@@ -37,6 +37,7 @@ book:
         - sys.qmd
     - part: text.qmd
       chapters:
+        - regex.qmd
         - text_commands.qmd
         - text_editors.qmd
     - part: scripts.qmd
@@ -51,9 +52,10 @@ book:
 format:
   html:
     theme: [cosmo, styles.scss]
-    highlight-style: radical
-    code-block-bg: "#1E2229"
-    code-block-border-left: "#A5FFE1"
+    highlight-style: arrow
+    code-block-bg: "#f6f9f6"
+    code-block-border-left: "#4dff00"
+    code-overflow: wrap
     number-sections: false
     callout-appearance: minimal
     toc: true
@@ -65,8 +67,8 @@ format:
     df-print: kable
     fig-format: retina
     fig-asp: 0.618
-    fontsize: 1.025em
-    linestretch: 1.15
+    fontsize: 1.055em
+    linestretch: 1.25
     fig-width: 7
     fig-height: 5
     engine: knitr

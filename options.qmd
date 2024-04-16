@@ -228,12 +228,12 @@ man echo
 
 **Example**
 
-`sort -u data/roxanne` sorts the lines in `data/roxanne`, removing duplicate lines.[^roxanne]
+`sort -u data/roxanne.txt` sorts the lines in `data/roxanne.txt`, removing duplicate lines.[^roxanne]
 
-[^roxanne]: `data/roxanne` contains the lyrics to the 1978 song [Roxanne by The Police](https://en.wikipedia.org/wiki/Roxanne_(The_Police_song)). 
+[^roxanne]: `data/roxanne.txt` contains the lyrics to the 1978 song [Roxanne by The Police](https://en.wikipedia.org/wiki/Roxanne_(The_Police_song)). 
 
 ```{bash}
-sort -u data/roxanne
+sort -u data/roxanne.txt
 ```
 
 ## Recap

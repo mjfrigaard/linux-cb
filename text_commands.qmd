@@ -3,10 +3,10 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
-    comment: '#>'
+    comment: '#'
 ---
 
-# Text Commands {#sec-txt-cmds}
+# Manipulating Text {#sec-txt-cmds}
 
 ```{bash}
 #| label: setup
@@ -38,30 +38,11 @@ co_box(
 )
 ```
 
-The Unix and Linux operating systems thrive on simplicity and efficiency, principles elegantly manifested in text handling. Central to this ecosystem are the commands explicitly designed for text manipulation—tools such as `cat`, `sort`, `cut`, and others form the core of text processing activities.
+The Unix and Linux operating systems thrive on simplicity and efficiency, principles elegantly manifested in text handling. Central to this ecosystem are the commands explicitly designed for text manipulation.
 
-### The Text Stream
+## The Text Stream
 
 Unix/Linux conceptualizes text as a stream, a continuous sequence of characters that can be manipulated in real-time. Streams are crucial for understanding how Unix/Linux commands process text. A text stream can originate from files, input devices, or even the output of other commands. Treating text as a steady stream of inputs offers a versatile and powerful method for text manipulation.
-
-
-<!--
-
-- **`cat`**: Beyond simply displaying the content of files, `cat` is often used to concatenate several text files into one and to work with text streams.
-- **`sort`**: As the name suggests, `sort` organizes text lines into a specified order, proving invaluable for data analysis and organization tasks.
-- **`cut`**: This command extracts sections from each line of input, making it essential for parsing and processing delimited data.
-- **`grep`**: A powerful search tool, `grep` filters text according to patterns, enabling complex data extraction and analysis operations.
-- **`awk`**: An entire programming language in itself, `awk` is designed for pattern scanning and processing, offering sophisticated text manipulation capabilities.
-- **`sed`**: The stream editor (`sed`) transforms text in a stream, allowing for powerful pattern matching and substitution.
-
-Each of these commands leverages stdin and stdout, enabling them to be combined in pipelines that filter, transform, and manipulate text in complex ways with just a few keystrokes. This section aims to demystify these commands, providing a foundation for understanding and utilizing Unix's rich text manipulation capabilities.
-
-By mastering these commands, you gain the ability to effortlessly manipulate text streams, transforming raw data into structured information. This knowledge is not just a technical skill but a gateway to the deeper philosophy of Unix, where simplicity and efficiency reign supreme.
--->
-
-## Text Manipulation 
-
-These commands embody the Unix philosophy of '*do one thing and do it well*' and demonstrate the system’s power in processing text streams. This section will explore these fundamental commands, illustrating how they easily interact with text streams, standard input (`stdin`), and standard output (`stdout`) to perform complex text manipulations.
 
 ```{r}
 #| label: co_box_stdin_stdout
@@ -79,49 +60,449 @@ co_box(
 
 -   **Input** generally refers to the data fed into a command, which can come from `stdin` or be specified as arguments.
 
--   **Output** is the data produced by a command, displayed on `stdout` unless redirected.")
+-   **Output** is the data produced by a command, displayed on `stdout` unless redirected.
+  
+This interconnectivity of `stdin` and `stdout`, all communicating through text streams, exemplifies the efficiency and flexibility of Unix-like systems.")
 ```
 
-The `echo` command prints its arguments to the standard output. It's commonly used in scripts and on the command line to display messages or variables.
+## Text Manipulation 
 
-**`cat` (Concatenate)**: `cat` displays the content of files straight to your screen, useful for checking what's in a text file quickly.
+Text manipulation commands embody the Unix philosophy of '*do one thing and do it well*' and demonstrate the system’s power in processing text streams. This section will explore these fundamental commands, illustrating how they easily interact with text streams, standard input (`stdin`), and standard output (`stdout`) to perform complex text manipulations.
 
-This is similar to printing a file and laying out the pages on the floor to see them all at once.
+### Wu-Tang
 
-**`grep`** stands for "global regular expression print" and it reads from `stdin` or a list of files and outputs the lines that contain matches for a specified pattern.
+The members of the [Wu-Tang American hip hop collective](https://en.wikipedia.org/wiki/Wu-Tang_Clan) are stored in three different file formats in `data/`:
 
-**`sort`**: `sort` arranges the lines in a text file into order:
+```{bash}
+#| eval: false
+tree -Pf 'wu*' data
+# data
+# ├── data/wu_tang.csv
+# ├── data/wu_tang.dat
+# ├── data/wu_tang.tsv
+# └── data/wu_tang.txt
+# 
+# 1 directory, 4 files
+```
 
-Similar to organizing our stack of papers alphabetically.
+The `wu_tang.dat` file contains the members in pipe-delimited format:
 
-**`uniq`**: `uniq` helps by removing duplicate lines from a file, making sure every line is unique.
+```{bash}
+cat data/wu_tang.dat
+```
 
-After accidentally printing duplicates of a document, you remove the extra copies.
 
-**`cut`**: `cut` extracts specific parts of lines in a file, like cutting out columns of text.
+We can use head and tail to view specific 'rows' of the data: 
 
-If you only want the dates from a list of events, you might physically cut them out of the paper. 
+```{bash}
+head -n8 data/wu_tang.dat | tail -n4
+```
 
-**`paste`**: `paste` combines lines from multiple files side by side:
 
-`paste` is like taking snippets of text from different documents and sticking them together into one.
+### Epigrams
 
-**`join`**: `join` merges lines from two files based on a common field.
+**<code>@sec-echo</code>** prints its arguments to the standard output (`stdout`). It can be used in scripts and on the command line to display messages or variables.
 
-If you have two lists with common information, you might merge them based on what matches. 
+```{bash}
+#| label: echo
+echo "Beware of the Turing tar-pit in which everything is possible but nothing of interest is easy."
+```
 
-**`comm` (Compare)**: `comm` compares two sorted files line by line to see what items appear on both, only on one, or the other.
+`echo` can also be used to write text to a file created with **<code>@sec-touch</code>**. The quote below comes from Alan Perlis's 1982 article, "Epigrams on Programming."[^perlis-ref]
 
-**`diff` (Difference)**: Highlighting what changes have been made between your draft and the final copy of a letter, `diff` shows the differences between two files.
+[^perlis-ref]: Read the [Wikipedia](https://en.wikipedia.org/wiki/Epigrams_on_Programming) or download the [original PDF](https://iiif.library.cmu.edu/file/Simon_box00075_fld05959_bdl0003_doc0002/Simon_box00075_fld05959_bdl0003_doc0002.pdf).
 
-`wc` (**Word Count**): `wc` counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.
+```{bash}
+#| label: touch
+touch data/turing_tarpit.txt
+echo "Beware of the Turing tar-pit in which everything is possible but nothing of interest is easy." > data/turing_tarpit.txt
+```
+
+**<code>@sec-cat</code>** displays the content of files straight to the screen, useful for checking what's in a file quickly.
+
+```{bash}
+#| label: cat
+cat data/turing_tarpit.txt
+```
+
+All 130 epigrams are stored and numbered in the `data/perlis_epigrams.txt` file.
+
+**<code>@sec-head</code>** and **<code>@sec-tail</code>** allow us to view the top and bottom of any text file: 
+
+```{bash}
+#| label: head
+head data/ajperlis_epigrams.txt
+```
+
+```{bash}
+#| label: tail
+tail data/ajperlis_epigrams.txt
+```
+
+Applying a 'trust, but verify' to the previous claim about the Turing tar-pit quote involves using **<code>@sec-grep</code>** ("global regular expression print") to confirm the text in `turing_tarpit.txt` is also in `dataperlis_epigrams.txt`.
+
+`grep` reads from `stdin` (or a list of files) and outputs the lines that match a specified pattern. Lets see how many epigrams in `data/perlis_epigrams.txt` include the word "Turing":
+
+```{bash}
+#| label: grep
+grep Turing data/ajperlis_epigrams.txt
+```
+
+#### Number sequences {#sec-num-seq}
+
+We'll add numbers to each of the 130 epigrams in `data/ajperlis_epigrams.txt` to make them easier to reference. We can use the **<code>@sec-seq</code>** command piped into a formatting command like **<code>@sec-awk</code>**:
+
+
+```{bash}
+#| label: seq_awk_head
+seq 130 | awk '{print $1"."}' | head
+```
+
+`seq 130` generates the sequence of numbers from 1 to 130, then `awk '{print $1") "}'` takes uses the numbers from `seq` as the input to `awk` (`$1`) and appends a period `.` to each number. We can add the `>` operator redirects the output to `data/numbered_lines.txt`.
+
+```{bash}
+#| label: seq_awk
+seq 130 | awk '{print $1"."}' > data/numbered_lines.txt
+```
+
+We can now use **<code>@sec-paste</code>** to combine `data/numbered_lines.txt` and `data/ajperlis_epigrams.txt`. The `-d` option stands is the delimiter to be placed between the pasted lines (which we'll use to specify a space `" "`).
+
+We'll preview the head and tail of our paste before writing to a file:
+
+```{bash}
+#| label: paste_numbered_lines_head
+paste -d " " data/numbered_lines.txt data/ajperlis_epigrams.txt | head -n5
+```
+
+```{bash}
+#| label: paste_numbered_lines_tail
+paste -d " " data/numbered_lines.txt data/ajperlis_epigrams.txt | tail -n5
+```
+
+All 130 epigrams line up, so we'll assign the output to the `data/numbered_epigrams.txt` file.
+
+```{bash}
+#| label: paste_numbered_lines
+paste -d " " data/numbered_lines.txt data/ajperlis_epigrams.txt > \
+  data/numbered_epigrams.txt
+```
+
+Now we can re-check our `Turing` pattern in `data/numbered_epigrams.txt`:
+
+```{bash}
+#| label: recheck_turing
+grep Turing data/numbered_epigrams.txt
+```
+
+```{bash}
+#| label: clean_up_epigrams
+#| echo: false 
+rm data/numbered_lines.txt
+rm data/numbered_epigrams.txt
+```
+
+```{bash}
+#| label: clean_up_turing_tarpit.txt
+#| echo: false 
+rm data/turing_tarpit.txt
+```
+
+### Roxanne
+
+The `data/roxanne.txt` file contains the lyrics to the 1979 song [Roxanne by The Police](https://en.wikipedia.org/wiki/Roxanne_(The_Police_song)). We'll use this file to explore several powerful Unix/Linux command-line utilities that are invaluable for searching, editing, and manipulating text data in files.
+
+#### Global substitutions {#sec-glob-sub}
+
+`awk` is a powerful text processing tool. Here's an example where `awk` uses `gsub` (global substitution) to replace the phrase "red light" with "green light" in the lyrics:
+
+```{bash}
+#| label: awk_gsub
+awk '{gsub(/red light/, "green light"); print}' \
+  data/roxanne.txt | head -4
+```
+
+`gsub(/red light/, "green light")` tells `awk` to substitute `"red light"` with `"green light"` globally within each line. `print` outputs the modified line. Without this, `awk` would not display anything. The entire command is enclosed in single quotes to prevent the shell from interpreting any special characters.
+
+If we wanted to replace `"Roxanne"` with `"Dianne"` throughout the song, we'd use:
+
+```{bash}
+#| label: sed
+#| eval: false
+sed 's/Roxanne/Dianne/g' data/roxanne.txt
+```
+
+```{bash}
+#| code-fold: true
+#| code-summary: 'show/hide output'
+#| echo: true
+# Dianne
+# You don't have to put on the red light
+# Those days are over
+# You don't have to sell your body to the night
+# Dianne
+# You don't have to wear that dress tonight
+# Walk the streets for money
+# You don't care if it's wrong or if it's right
+# Dianne
+# You don't have to put on the red light
+# Dianne
+# You don't have to put on the red light
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Ro...
+# I loved you since I knew you
+# I wouldn't talk down to you
+# I have to tell you just how I feel
+# I won't share you with another boy
+# I know my mind is made up
+# So put away your make up
+# Told you once I won't tell you again
+# It's a bad way
+# Dianne
+# You don't have to put on the red light
+# Dianne
+# You don't have to put on the red light
+# Dianne (You don't have to put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Dianne (You don't have to put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+# Dianne (Put on the red light)
+```
+
+The `s` stands for substitute, the pattern to be replaced (`"Roxanne"`) is followed by the new text (`"Dianne"`), and the `g` at the end of the command tells `sed` to perform the substitution globally on each line, rather than stopping after the first occurrence.
+
+`sort` arranges lines of text alphabetically or numerically and `uniq` filters out adjacent repeated lines in a file (often used in conjunction with `sort`). 
+
+```{bash}
+#| label: sort_uniq
+#| eval: false
+sort data/roxanne.txt | uniq
+```
+
+```{bash}
+#| label: sort_uniq_output
+#| code-fold: true
+#| code-summary: 'show/hide output'
+# I have to tell you just how I feel
+# I know my mind is made up
+# I loved you since I knew you
+# I won't share you with another boy
+# I wouldn't talk down to you
+# It's a bad way
+# Ro...
+# Roxanne
+# Roxanne (Put on the red light)
+# Roxanne (You don't have to put on the red light)
+# So put away your make up
+# Those days are over
+# Told you once I won't tell you again
+# Walk the streets for money
+# You don't care if it's wrong or if it's right
+# You don't have to put on the red light
+# You don't have to sell your body to the night
+# You don't have to wear that dress tonight
+```
+
+
+The commands above sort the lines in the file first, then filter repeated lines.
+
+We'll use `awk` to add line numbers to `data/roxanne.txt`. `NR` is the record number variable in `awk`, which counts the lines. `$0` represents the entire current line, and combining them with `print` will print the line number followed by the original line.
+
+```{bash}
+#| label: awk_roxanne_lined
+awk '{print NR, $0}' data/roxanne.txt > data/roxanne_lined.txt
+head -n5 data/roxanne_lined.txt 
+```
+
+#### Two-file commands 
+
+We'll create a 'metadata' file for Roxanne in `data/roxanne_meta.txt` and add some content:
+
+```{bash}
+#| label: touch_roxanne_meta
+touch data/roxanne_meta.txt
+echo "1 <Song Title>
+2 <Chorus>
+3 <Verse 1>
+4 <Verse 2>
+5 <Song Title>" > data/roxanne_meta.txt
+cat data/roxanne_meta.txt
+```
+
+`join` is used to combine two files based on a common field. Assuming there's another file with additional details for some lines, you would use:
+
+```{bash}
+#| label: join
+join -1 1 -2 1 data/roxanne_lined.txt data/roxanne_meta.txt
+```
+
+`-1 1` specifies that the join field for the *first* file (`data/roxanne_lined.txt`) is the *first* column, and `-2 1` means that the join field for the *second* file (`data/roxanne_meta.txt`) is also the *first* column.
+
+`comm` is used to compare two sorted files line by line and outputs three columns by default:  
+1. Lines unique to the first file.
+2. Lines unique to the second file.
+3. Lines common to both files.
+
+Let's assume we have two versions of the song "Roxanne". The original version is stored in `roxanne_orig.txt`, and a revised version with some lines changed, added, or removed is stored in `roxanne_rev.txt`.
+
+
+**roxanne_orig.txt**
+
+```{bash}
+touch data/roxanne_orig.txt
+echo "Roxanne
+You don't have to put on the red light
+Those days are over
+You don't have to sell your body to the night" > data/roxanne_orig.txt
+```
+
+**roxanne_rev.txt**
+
+```{bash}
+touch data/roxanne_rev.txt
+echo "Roxanne
+You don't have to put on the green light
+Those days are over
+You don't need to sell your dreams to the night" > data/roxanne_rev.txt
+```
+
+These files are structured to have similar content with *minor* differences.
+
+:::{layout="[50,50]" layout-valign="top"}
+
+```bash
+# Roxanne
+# You don't have to put on the red light
+# Those days are over
+# You don't have to sell your body to the night
+```
+
+```bash
+# Roxanne
+# You don't have to put on the green light
+# Those days are over
+# You don't need to sell your dreams to the night
+```
+
+:::
+
+First, ensure both files are sorted (if not already). For simplicity, let's assume these are sorted or have matching line orders. Then, use `comm`:
+
+```{bash}
+comm data/roxanne_orig.txt data/roxanne_rev.txt
+```
+
+**Output:**
+
+- The first column shows lines that are only in the original file (`roxanne_orig.txt`).
+
+![](img/comm1.png){width='85%' fig-align='center'}
+    
+- The second column shows lines that are only in the revised file (`roxanne_rev.txt`).
+
+![](img/comm2.png){width='85%' fig-align='center'}
+    
+- The third column shows lines that are common in both files.
+
+![](img/comm3.png){width='85%' fig-align='center'}
+
+We can suppress any of these columns using the `-1`, `-2`, or `-3` options. For example, `comm -12 data/roxanne_orig.txt data/roxanne_rev.txt` will show only the lines that are common in both files:
+
+```{bash}
+comm -12 data/roxanne_orig.txt data/roxanne_rev.txt
+```
+
+Or 
+
+```{bash}
+comm -1 -2 data/roxanne_orig.txt data/roxanne_rev.txt
+```
+
+**NOTE**: ensure the files are sorted on the lines you are comparing; otherwise, `comm` will not function correctly.
+
+To see the line by line differences between `data/roxanne_orig.txt` and `data/roxanne_rev.txt`, pass both files to `diff`:
+
+```{bash}
+#| eval: false
+diff data/roxanne_orig.txt data/roxanne_rev.txt
+# 2c2
+# < You don't have to put on the red light
+# ---
+# > You don't have to put on the green light
+# 4c4
+# < You don't have to sell your body to the night
+# ---
+# > You don't need to sell your dreams to the night
+```
+
+The output of differences from `diff` can be interpreted as follow: 
+
+1. `2c2` indicates that a change has been made at line `2` of both files. The `c` stands for "change".
+    -   `< You don't have to put on the red light` shows what line 2 looked like in the original file (`roxanne_orig.txt`)
+    -   `---` is a separator used by `diff` to distinguish between the old version and the new version of the line
+    -   `> You don't have to put on the green light`: shows what line 2 now looks like in the revised file (`roxanne_rev.txt`)
+
+2. `4c4` indicates a change at line `4` in both documents.
+    -   `< You don't have to sell your body to the night` shows the original text at line 4 in `roxanne_orig.txt`
+    -   `---`: Again, a separator
+    -   `> You don't need to sell your dreams to the night` shows the revised text at line 4 in `roxanne_rev.txt`
+
+The `-y` option will display the changes side-by-side 
+
+```{bash}
+#| code-overflow: scroll
+#| eval: false
+diff -y data/roxanne_orig.txt data/roxanne_rev.txt
+# Roxanne                                                                 Roxanne
+# You don't have to put on the red light                          |       You don't have to put on the green light
+# Those days are over                                                     Those days are over
+# You don't have to sell your body to the night                   |       You don't need to sell your dreams to the night
+```
+
+Or, if all we care about is *if* the files differ, we can use the `-q` option:
+
+```{bash}
+#| eval: false
+diff -q data/roxanne_orig.txt data/roxanne_rev.txt
+# Files data/roxanne_orig.txt and data/roxanne_rev.txt differ
+```
+
+<!--
+
+`wc` (word count) counts lines, words, and characters in a file. To count these in the lyrics file:
+
+```{bash}
+#| eval: false
+wc data/roxanne.txt
+```
 
 `xargs` builds and executes command lines from standard input (`stdin`). It's most often used in combination with other commands through pipes. `xargs` takes input from a pipe and passes it as arguments to another command, allowing for powerful command-line operations that process a list of inputs iteratively.
 
+-->
+
+```{bash}
+#| label: clean_up_roxanne
+#| echo: false 
+rm data/roxanne_lined.txt
+rm data/roxanne_meta.txt
+```
+
 ## Recap 
 
-These analogies help demystify what can feel like complex commands, tying them back to everyday actions and decisions.
-
+Using these commands can dramatically enhance productivity and efficiency when working with text files in Unix/Linux environments.
 
 ```{r}
 #| label: git_contrib_box

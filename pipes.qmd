@@ -98,10 +98,10 @@ ps aux | grep httpd | wc -l
 
 **Example 1**
 
-**<code>@sec-cat</code>`data/roxanne | `<code>@sec-grep</code>` "night"`** displays lines from `data/roxanne` that contain the number `"2"`.
+**<code>@sec-cat</code>`data/roxanne.txt | `<code>@sec-grep</code>` "night"`** displays lines from `data/roxanne.txt` that contain the number `"2"`.
 
 ```{bash}
-cat data/roxanne | grep "night"
+cat data/roxanne.txt | grep "night"
 ```
 
 Here, <code>@sec-cat</code> outputs the file's contents, which <code>@sec-grep</code> filters.
@@ -148,10 +148,10 @@ cat /var/log/system.log | grep "DEAD_PROCESS"
 
 **Example**
 
-**`cut -d':' -f1 data/roxanne | sort | uniq`** extracts the first field from each line in `data/roxanne`, sorts the contents alphabetically, and removes duplicates.
+**`cut -d':' -f1 data/roxanne.txt | sort | uniq`** extracts the first field from each line in `data/roxanne.txt`, sorts the contents alphabetically, and removes duplicates.
 
 ```{bash}
-cut -d':' -f1 data/roxanne | sort | uniq
+cut -d':' -f1 data/roxanne.txt | sort | uniq
 ```
 
 This sequence is an example of performing data extraction and deduplication.
