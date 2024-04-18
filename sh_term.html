@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -218,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./regex.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Regular Expressions</span></a>
+  <a href="./symbols.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Symbols</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -292,21 +326,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#shells" id="toc-shells" class="nav-link active" data-scroll-target="#shells">Shells</a>
+  <li><a href="#sec-shells" id="toc-sec-shells" class="nav-link active" data-scroll-target="#sec-shells"><span style="font-size: 1.15em; font-weight: bold;">Shells</span></a>
   <ul>
-  <li><a href="#bash" id="toc-bash" class="nav-link" data-scroll-target="#bash">Bash</a></li>
-  <li><a href="#zsh" id="toc-zsh" class="nav-link" data-scroll-target="#zsh">Zsh</a></li>
-  <li><a href="#fish" id="toc-fish" class="nav-link" data-scroll-target="#fish">Fish</a></li>
+  <li><a href="#sec-bash" id="toc-sec-bash" class="nav-link" data-scroll-target="#sec-bash"><img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Bash</a></li>
+  <li><a href="#zsh" id="toc-zsh" class="nav-link" data-scroll-target="#zsh"><img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Zsh</a></li>
+  <li><a href="#fish" id="toc-fish" class="nav-link" data-scroll-target="#fish"><img src="img/fish-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Fish</a></li>
   </ul></li>
-  <li><a href="#terminals" id="toc-terminals" class="nav-link" data-scroll-target="#terminals">Terminals</a>
+  <li><a href="#sec-terminals" id="toc-sec-terminals" class="nav-link" data-scroll-target="#sec-terminals"><span style="font-size: 1.15em; font-weight: bold;">Terminals</span></a>
   <ul>
-  <li><a href="#terminal-emulators" id="toc-terminal-emulators" class="nav-link" data-scroll-target="#terminal-emulators">Terminal Emulators</a></li>
-  <li><a href="#gnome-terminal" id="toc-gnome-terminal" class="nav-link" data-scroll-target="#gnome-terminal">GNOME Terminal</a></li>
-  <li><a href="#konsole" id="toc-konsole" class="nav-link" data-scroll-target="#konsole">Konsole</a></li>
-  <li><a href="#xterm" id="toc-xterm" class="nav-link" data-scroll-target="#xterm">xterm</a></li>
-  <li><a href="#iterm2" id="toc-iterm2" class="nav-link" data-scroll-target="#iterm2">iTerm2</a></li>
+  <li><a href="#gnome" id="toc-gnome" class="nav-link" data-scroll-target="#gnome"><img src="img/gnome-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> GNOME</a></li>
+  <li><a href="#konsole" id="toc-konsole" class="nav-link" data-scroll-target="#konsole"><img src="img/konsole-logo.jpeg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Konsole</a></li>
+  <li><a href="#iterm2" id="toc-iterm2" class="nav-link" data-scroll-target="#iterm2"><img src="img/iterm2-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> iTerm2</a></li>
   </ul></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.15em; font-weight: bold;">Recap</span></a></li>
   </ul>
 </nav>
     </div>
@@ -351,19 +383,29 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>In Unix/Linux environments, the terms “Shell” and “Terminal” are commonly used and are related, but they refer to different things:</p>
-<section id="shells" class="level2">
-<h2 class="anchored" data-anchor-id="shells">Shells</h2>
+<section id="sec-shells" class="level2">
+<h2 class="anchored" data-anchor-id="sec-shells"><span style="font-size: 1.15em; font-weight: bold;">Shells</span></h2>
 <p>A <strong>Shell</strong> in Unix/Linux is a program that interprets commands and acts as an intermediary between the user and the kernel of the operating system. The shell processes user commands, which might involve calling other programs, and returns the output to the user. Shells can be either command-line based or graphical. Some popular examples of shells include Bash, Zsh, and Fish.</p>
-<section id="bash" class="level3">
-<h3 class="anchored" data-anchor-id="bash">Bash</h3>
-<p><strong>Bash, or the Bourne Again SHell</strong>, is one of the most widely used shells in Unix and Linux environments. It’s known for its powerful features that improve the user experience of command-line and scripting tasks. Here are some:</p>
-<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<p>You can use the following commands to discover which shell you’re currently:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /bin/zsh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-p</span> <span class="va">$$</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   PID TTY           TIME CMD</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   683 ttys000    0:00.09 -zsh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="sec-bash" class="level3">
+<h3 class="anchored" data-anchor-id="sec-bash"><img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Bash</h3>
+<p><a href="https://www.gnu.org/software/bash/"><strong>Bash, or the Bourne Again SHell</strong></a>, is one of the most widely used shells in Unix and Linux environments. Incorporating features from the Korn shell (<a href="https://en.wikipedia.org/wiki/KornShell"><code>ksh</code></a>) and the C shell (<a href="https://en.wikipedia.org/wiki/C_shell"><code>csh</code></a>), Bash supports features like command history, tab completion, aliases and scripting tasks.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-size: 1.35em;">Key features of Bash</span>
+<span style="font-size: 1.15em;">Key features of <img src="img/bash-logo.svg" class="img-fluid" style="width:8.0%"> Bash</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -371,61 +413,60 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
+<p><strong>Programming Features</strong></p>
+<p>Bash includes an array of programming constructs that make it a powerful tool for scripting, which includes:<br>
+- Conditional statements (<code>if</code>, <code>then</code>, <code>else</code>, <code>elif</code>, <code>fi</code>) - Looping statements (<code>for</code>, <code>while</code>, <code>until</code>) - Functions that allow code reusability</p>
+<p><strong>Command Line Editing</strong></p>
+<p>Bash provides an interactive command line editing environment with features:</p>
 <ul>
-<li><p><strong>Programming Features</strong>: Bash includes an array of programming constructs that make it a powerful tool for scripting. This includes:</p>
-<ul>
-<li>Conditional statements (<code>if</code>, <code>then</code>, <code>else</code>, <code>elif</code>, <code>fi</code>)</li>
-<li>Looping statements (<code>for</code>, <code>while</code>, <code>until</code>)</li>
-<li>Functions that allow code reusability</li>
-</ul></li>
-<li><p><strong>Command Line Editing</strong>: Bash provides an interactive command line editing environment with features like:</p>
-<ul>
-<li><p>History expansion: Commands can be re-executed by recalling them from the history.</p></li>
-<li><p>Command line editing: Users can navigate and edit commands directly on the command line using Emacs or Vi editing modes.</p></li>
-</ul></li>
-<li><p><strong>Tab Completion</strong>: Bash supports tab completion for command names, file names, and even command arguments in some cases. This feature speeds up the input process and reduces typos.</p></li>
-<li><p><strong>Job Control</strong>: Bash offers comprehensive job control, which includes:</p>
-<ul>
-<li><p>Backgrounding (<code>&amp;</code>), foregrounding (<code>fg</code>), and job management (<code>jobs</code>, <code>bg</code>).</p></li>
-<li><p>Stopping (suspending) processes and continuing them with <code>kill</code> and <code>kill -CONT</code>.</p></li>
-</ul></li>
-<li><p><strong>Aliases and Shell Functions</strong>: Users can create shorter commands to represent longer sequences of commands using aliases. Bash also supports functions, which are more powerful and can take arguments like small scripts.</p></li>
-<li><p><strong>Redirection and Piping</strong>: Bash allows for advanced redirection and piping:</p>
-<ul>
-<li><p>Redirecting input and output (<code>&gt;</code>, <code>&lt;</code>, <code>&gt;&gt;</code>, <code>2&gt;</code>, etc.)</p></li>
-<li><p>Piping commands (<code>|</code>) to pass the output of one command as the input to another.</p></li>
-</ul></li>
-<li><p><strong>Script Debugging</strong>: Bash scripts can be debugged using options like <code>set -x</code> to print commands and their arguments as they are executed, which is invaluable for troubleshooting scripts.</p></li>
-<li><p><strong>Environment Control</strong>: Bash allows users to control their shell environment extensively through:</p>
-<ul>
-<li><p>Environment variables configuration and management.</p></li>
-<li><p>Exporting variables to make them available to sub-processes.</p></li>
-</ul></li>
-<li><p><strong>Expansion Capabilities</strong>: Bash supports several types of expansions that enhance its scripting capabilities:</p>
-<ul>
-<li><p>Brace expansion: <code>{a,b,c}</code></p></li>
-<li><p>Tilde expansion: <code>~</code> translates to the home directory.</p></li>
-<li><p>Parameter and variable expansion: <code>$name</code> or <code>${name}</code></p></li>
-<li><p>Arithmetic expansion: <code>$(( expression ))</code></p></li>
-</ul></li>
-<li><p><strong>History Features</strong>: Bash maintains a history of commands that users have executed, which can be navigated, searched, and reused. It also supports configuring the history size and behavior through various environment variables like <code>HISTSIZE</code> and <code>HISTFILESIZE</code>.</p></li>
+<li>History expansion: Commands can be re-executed by recalling them from the history</li>
+<li>Command line editing: Users can navigate and edit commands directly on the command line using Emacs or Vi editing modes</li>
+<li>Tab Completion: Bash supports tab completion for command names, file names, and even command arguments, speeding up the input process and reducing typos</li>
 </ul>
-<p>These features make Bash a robust and versatile shell, suited both for interactive use and for complex scripting tasks. It remains a default shell on many Unix-like systems due to its extensive functionality and wide compatibility.</p>
+<p><strong>Job Control</strong></p>
+<p>Bash offers comprehensive job control, which includes:<br>
+- Backgrounding (<code>&amp;</code>), foregrounding (<code>fg</code>), and job management (<code>jobs</code>, <code>bg</code>) - Stopping (suspending) processes and continuing them with <code>kill</code> and <code>kill -CONT</code></p>
+<p><strong>Aliases and Shell Functions</strong></p>
+<p>Users can create shorter commands to represent longer sequences of commands using aliases. Bash also supports more powerful functions that can take arguments like small scripts.</p>
+<p><strong>Redirection and Piping</strong></p>
+<p>Bash allows for advanced redirection and piping:</p>
+<ul>
+<li>Redirecting input and output (<code>&gt;</code>, <code>&lt;</code>, <code>&gt;&gt;</code>, <code>2&gt;</code>, etc.)</li>
+<li>Piping commands (<code>|</code>) are used to pass the output of one command as input to another</li>
+</ul>
+<p><strong>Script Debugging</strong></p>
+<p>Bash scripts can be debugged using options like <code>set -x</code> to print commands and their arguments as they are executed, which is invaluable for troubleshooting scripts</p>
+<p><strong>Environment Control</strong></p>
+<p>Bash allows users to control their shell environment extensively through:</p>
+<ul>
+<li>Environment variables configuration and management</li>
+<li>Variables are exported to make them available to sub-processes</li>
+</ul>
+<p><strong>Expansion Capabilities</strong></p>
+<p>Bash supports several types of expansions that enhance its scripting capabilities:</p>
+<ul>
+<li>Brace expansion: <code>{a,b,c}</code></li>
+<li>Tilde expansion: <code>~</code> translates to the home directory.</li>
+<li>Parameter and variable expansion: <code>$name</code> or <code>${name}</code></li>
+<li>Arithmetic expansion: <code>$(( expression )0</code></li>
+</ul>
+<p><strong>History Features</strong></p>
+<p>Bash maintains a history of commands that users have executed, which can be navigated, searched, and reused. It also supports configuring the history size and behavior through various environment variables like <code>HISTSIZE</code> and <code>HISTFILESIZE</code>.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
 <section id="zsh" class="level3">
-<h3 class="anchored" data-anchor-id="zsh">Zsh</h3>
-<p><strong>Zsh (Z Shell)</strong> is noted for its interactive features and is often used with customization frameworks. Zsh is a powerful command-line interpreter for Unix systems that serves as both a scriptable shell and an interactive command interpreter. Its an extended version of <strong>Bash (Bourne Again SHell)</strong> (sh), with many improvements, and is fully compatible with the Bourne Shell.</p>
-<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<h3 class="anchored" data-anchor-id="zsh"><img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Zsh</h3>
+<p><a href="https://ohmyz.sh/"><strong>Zsh (Z Shell or ‘Oh My ZSH!’)</strong></a> is noted for its interactive features and is often used with customization frameworks. Zsh is a powerful command-line interpreter for Unix systems that serves as both a scriptable shell and an interactive command interpreter.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-size: 1.35em;">Key features of Zsh</span>
+<span style="font-size: 1.15em;">Key features of <img src="img/zshell-logo.png" class="img-fluid" style="width:8.0%"> Zsh</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -433,47 +474,52 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
-<ul>
-<li><p><strong>Command Line Editing</strong>: Zsh provides an advanced and customizable command-line editing environment. Users can configure key bindings and have extensive control over the text editing capabilities directly within the command prompt.</p></li>
-<li><p><strong>Tab Completion</strong>: Zsh has one of the most powerful tab completion systems. It supports:</p>
+<p><strong>Command Line Editing</strong></p>
+<p>Zsh provides an advanced and customizable command-line editing environment. Users can configure key bindings and have extensive control over the text editing capabilities directly within the command prompt.</p>
+<p><strong>Tab Completion</strong></p>
+<p>Zsh has one of the most powerful tab completion systems. It supports:</p>
 <ul>
 <li>Completion for command options and arguments.</li>
 <li>Automatic listing of options when a tab is hit twice.</li>
 <li>Context-sensitive completion that can recognize patterns in filenames, history, running processes, hostnames, and more.</li>
-</ul></li>
-<li><p><strong>Themes and Prompts</strong>: Zsh allows extensive customization of its prompt, supporting themes that can completely change the look of your command line. The prompt can include colors, content from shell variables, functions, and command outputs.</p></li>
-<li><p><strong>Scripting</strong>: Zsh scripting is robust, with features like arrays, associative arrays, and floating-point arithmetic which are not typically available in all shells. It enhances scripting capabilities and improves on the scripting syntax of the Bourne Shell.</p></li>
-<li><p><strong>Loadable Modules</strong>: Zsh supports dynamically loadable modules, expanding its capabilities with features like:</p>
+</ul>
+<p><strong>Themes and Prompts</strong></p>
+<p>Zsh allows extensive customization of its prompt, supporting themes that can completely change the look of your command line. The prompt can include colors, content from shell variables, functions, and command outputs.</p>
+<p><strong>Scripting</strong></p>
+<p>Zsh scripting is robust, with features like arrays, associative arrays, and floating-point arithmetic which are not typically available in all shells. It enhances scripting capabilities and improves on the scripting syntax of the Bourne Shell.</p>
+<p><strong>Loadable Modules</strong>: Zsh supports dynamically loadable modules, expanding its capabilities with features like:</p>
 <ul>
 <li>FTP client</li>
 <li>TCP and UDP socket operations</li>
 <li>Advanced math functions</li>
 <li>Full-fledged regular expression matching</li>
-</ul></li>
-<li><p><strong>Improved Variable Handling</strong> Variable handling in Zsh includes several enhancements like:</p>
+</ul>
+<p><strong>Improved Variable Handling</strong></p>
+<p>Variable handling in Zsh includes several enhancements like:</p>
 <ul>
 <li>Better array handling</li>
 <li>Associative arrays (similar to dictionaries in higher-level programming languages)</li>
 <li>Easier string manipulation and pattern matching</li>
-</ul></li>
-<li><p><strong>Spell Check and Correction</strong> Zsh can be configured to correct commands automatically if misspelled and to suggest corrections or alternatives. This feature helps in reducing syntax errors and improves user efficiency.</p></li>
-<li><p><strong>Extended Globbing</strong>: Zsh’s file globbing allows for more complex pattern matching than traditional Unix shells. You can specify patterns in a more expressive and powerful way, which is particularly useful in scripts.</p></li>
 </ul>
+<p><strong>Spell Check and Correction</strong></p>
+<p>Zsh can be configured to correct commands automatically if misspelled and to suggest corrections or alternatives. This feature helps in reducing syntax errors and improves user efficiency.</p>
+<p><strong>Extended Globbing</strong></p>
+<p>Zsh’s file globbing allows for more complex pattern matching than traditional Unix shells. You can specify patterns in a more expressive and powerful way, which is particularly useful in scripts.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
 <section id="fish" class="level3">
-<h3 class="anchored" data-anchor-id="fish">Fish</h3>
-<p><strong>Fish, or the Friendly Interactive SHell</strong>, is a smart and user-friendly command line shell for Unix-like operating systems. It’s designed to be more interactive and user-friendly than traditional shells like Bash or <strong>Zsh</strong>.</p>
-<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<h3 class="anchored" data-anchor-id="fish"><img src="img/fish-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Fish</h3>
+<p><a href="https://fishshell.com/"><strong>Fish, or the Friendly Interactive SHell</strong></a>, is a smart and user-friendly command line shell for Unix-like operating systems. It’s designed to be more interactive and user-friendly than traditional shells like Bash or Zsh.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-size: 1.35em;">Key features of Fish</span>
+<span style="font-size: 1.15em;">Key features of <img src="img/fish-small-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> Fish</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -481,42 +527,45 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
-<ul>
-<li><p><strong>Autosuggestions:</strong> Fish suggests commands as you type based on history and completions, just like a web browser. This feature allows users to see and reuse previous commands by simply pressing the right arrow key to complete the suggested command, which can significantly speed up typing and reduce errors.</p></li>
-<li><p><strong>Syntax Highlighting:</strong> One of Fish’s most noticeable features is its real-time syntax highlighting. Commands that are valid change color as you type them. It also helps users catch errors before the command is executed, such as highlighting misspelled commands or incorrect paths in red.</p></li>
-<li><p><strong>Web-Based Configuration:</strong> Fish includes a web-based configuration interface (accessible via the <code>fish_config</code> command), which makes customizing the shell settings and prompt easier for users who prefer a graphical interface over editing configuration files manually.</p></li>
-<li><p><strong>Enhanced Tab Completion:</strong> Fish provides intelligent tab completions for commands, file names, variables, and user-defined functions. It not only completes based on the prefix but also considers the whole line context, making the completions more relevant.</p></li>
-<li><p><strong>Improved Variables and Scoping:</strong> Fish simplifies variable management, including universal variables that are automatically shared between all running shells and persist across restarts without needing explicit saving to a file. Variable scoping is also more straightforward, helping avoid common bugs seen in other shells.</p></li>
-<li><p><strong>Function Autoloads:</strong> Fish allows functions to be defined in individual files and automatically loads them only when needed. This lazy-loading of functions helps speed up the start time of the shell.</p></li>
-<li><p><strong>Extensible:</strong> Fish is designed to be easily extensible through plugins. The Fisherman and Oh My Fish frameworks offer many plugins and themes designed to enhance Fish’s capabilities or customize its appearance.</p></li>
-<li><p><strong>Man Page Completions</strong>: Fish generates command completions automatically from man pages, which means it often supports completions for all the installed commands without needing special configuration.</p></li>
-<li><p><strong>No Configuration Needed</strong>: Fish is designed to work properly out of the box, without needing to configure it extensively. This makes it very accessible for new users or those who want a powerful shell without the need to customize or configure it heavily.</p></li>
-<li><p><strong>User-Friendly Scripts</strong>: Fish uses a syntax that is slightly different from the traditional POSIX shell syntax, which is often simpler and easier to understand. For example, loops and conditionals are clearer, and there is no need for explicit subshell management.</p></li>
-</ul>
-<p>These features make Fish a compelling option for users looking for a modern, efficient, and powerful shell experience with an emphasis on user-friendliness and interactivity. It’s particularly appreciated by those new to the command line or those who value efficiency and a visually appealing interface.</p>
+<p><strong>Autosuggestions</strong></p>
+<p>Fish suggests commands as you type based on history and completions, just like a web browser. This feature allows users to see and reuse previous commands by simply pressing the right arrow key to complete the suggested command, which can significantly speed up typing and reduce errors.</p>
+<p><strong>Syntax Highlighting</strong></p>
+<p>One of Fish’s most noticeable features is its real-time syntax highlighting. Commands that are valid change color as you type them. It also helps users catch errors before the command is executed, such as highlighting misspelled commands or incorrect paths in red.</p>
+<p><strong>Web-Based Configuration</strong></p>
+<p>Fish includes a web-based configuration interface (accessible via the <code>fish_config</code> command), which makes customizing the shell settings and prompt easier for users who prefer a graphical interface over editing configuration files manually (or if you’re new to the command line).</p>
+<p><strong>Enhanced Tab Completion</strong></p>
+<p>Fish provides intelligent tab completions for commands, file names, variables, and user-defined functions. It not only completes based on the prefix but also considers the whole line context, making the completions more relevant.</p>
+<p><strong>Improved Variables and Scoping</strong></p>
+<p>Fish simplifies variable management, including universal variables that are automatically shared between all running shells and persist across restarts without needing explicit saving to a file. Variable scoping is also more straightforward, helping avoid common bugs seen in other shells.</p>
+<p><strong>Function Autoloads</strong></p>
+<p>Fish allows functions to be defined in individual files and automatically loads them only when needed. This lazy-loading of functions helps speed up the start time of the shell.</p>
+<p><strong>Extensible</strong></p>
+<p>Fish is designed to be easily extensible through plugins. The Fisherman and Oh My Fish frameworks offer many plugins and themes designed to enhance Fish’s capabilities or customize its appearance.</p>
+<p><strong>Man Page Completions</strong></p>
+<p>Fish generates command completions automatically from <code>man</code> pages, which means it often supports completions for all the installed commands without needing special configuration.</p>
+<p><strong>No Configuration Needed</strong></p>
+<p>Fish is designed to work properly out of the box, without needing to configure it extensively. This makes it very accessible for new users or those who want a powerful shell without the need to customize or configure it heavily.</p>
+<p><strong>User-Friendly Scripts</strong></p>
+<p>Fish uses a syntax that is slightly different from the traditional POSIX shell syntax, which is often simpler and easier to understand. For example, loops and conditionals are clearer, and there is no need for explicit subshell management.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="terminals" class="level2">
-<h2 class="anchored" data-anchor-id="terminals">Terminals</h2>
-<p>A <strong>Terminal</strong> (or terminal emulator) is a software program that provides a text-based interface to the shell. It interprets keystrokes and commands from the user and sends these to the shell for execution. When the shell produces output, the terminal displays it to the user. Essentially, the terminal is a program that you use to run the shell.</p>
-<section id="terminal-emulators" class="level3">
-<h3 class="anchored" data-anchor-id="terminal-emulators">Terminal Emulators</h3>
-<p>Terminal emulators play a crucial role in providing access to the Unix shell environment. They allow users to interact with the shell and other command-line tools. Below is an expanded look at some commonly used terminal emulators, including GNOME Terminal, Konsole, xterm, and iTerm2, highlighting their key features.</p>
-</section>
-<section id="gnome-terminal" class="level3">
-<h3 class="anchored" data-anchor-id="gnome-terminal">GNOME Terminal</h3>
-<p>GNOME Terminal is the default terminal emulator for the GNOME desktop environment, widely used in many Linux distributions.</p>
-<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<section id="sec-terminals" class="level2">
+<h2 class="anchored" data-anchor-id="sec-terminals"><span style="font-size: 1.15em; font-weight: bold;">Terminals</span></h2>
+<p>A <strong>Terminal</strong> (or terminal emulator) is a software program that provides a text-based interface to the shell. Terminals interpret keystrokes and commands from users and send these to the shell for execution. When the shell produces output, the terminal displays it to the user. <strong>Terminal emulators</strong> allow users to interact with the shell and other command-line tools. Below is an expanded look at some commonly used terminal emulators and their key features.</p>
+<section id="gnome" class="level3">
+<h3 class="anchored" data-anchor-id="gnome"><img src="img/gnome-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> GNOME</h3>
+<p><a href="https://help.gnome.org/users/gnome-terminal/stable/">GNOME Terminal</a> is the default terminal emulator for the GNOME desktop environment, widely used in many Linux distributions.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-size: 1.35em;">Key features of GNOME</span>
+<span style="font-size: 1.15em;">Key features of GNOME</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -536,15 +585,15 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 <section id="konsole" class="level3">
-<h3 class="anchored" data-anchor-id="konsole">Konsole</h3>
-<p>Konsole is part of the KDE desktop environment. It is known for its deep integration with KDE and its high degree of customizability.</p>
-<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<h3 class="anchored" data-anchor-id="konsole"><img src="img/konsole-logo.jpeg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Konsole</h3>
+<p><a href="https://konsole.kde.org/">Konsole</a> is part of the KDE desktop environment. It is known for its deep integration with KDE and its high degree of customizability.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-size: 1.35em;">Key features of Konsole</span>
+<span style="font-size: 1.15em;">Key features of Konsole</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -563,47 +612,20 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="xterm" class="level3">
-<h3 class="anchored" data-anchor-id="xterm">xterm</h3>
-<p>xterm is one of the oldest terminal emulators available for the X Window System. It’s highly functional but minimalist in its design.</p>
-<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<section id="iterm2" class="level3">
+<h3 class="anchored" data-anchor-id="iterm2"><img src="img/iterm2-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> iTerm2</h3>
+<p><a href="https://iterm2.com/">iTerm2</a> is a replacement for Terminal and the successor to iTerm for macOS. It offers features beyond what traditional terminals provide.</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-size: 1.35em;">Key features of xterm</span>
+<span style="font-size: 1.15em;">Key features of iTerm2</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><br></p>
-<div style="font-size: 1.10em;">
-<ul>
-<li><p><strong>Customizability</strong>: Despite its simple appearance, xterm is highly configurable via X resources.</p></li>
-<li><p><strong>Compatibility</strong>: Supports a wide range of commands and functions compatible with the X Window System.</p></li>
-<li><p><strong>Lightweight</strong>: It uses minimal system resources, making it ideal for systems with limited hardware.</p></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="iterm2" class="level3">
-<h3 class="anchored" data-anchor-id="iterm2">iTerm2</h3>
-<p>iTerm2 is a replacement for Terminal and the successor to iTerm for macOS. It offers features beyond what traditional terminals provide.</p>
-<div class="callout callout-style-simple callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-size: 1.35em;">Key features of iTerm2</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
@@ -624,10 +646,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 <section id="recap" class="level2">
-<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.15em; font-weight: bold;">Recap</span></h2>
 <p>In summary, the shell is the command interpreter that executes the commands, while the terminal is the application that allows you to interact with the shell.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -636,7 +658,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 0.90em; color: #282b2d;">
 <p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
@@ -646,6 +668,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Since the release of macOS Catalina (2019), <a href="https://support.apple.com/en-us/102360">Apple transitioned</a> from using Bash as the default command-line interface to Zsh.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Zsh is an <a href="https://en.wikipedia.org/wiki/Z_shell">extended version</a> of <strong>Bash (Bourne Again SHell)</strong>, with many improvements, and is fully compatible with the Bourne Shell.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Ars Technica has a great <a href="https://arstechnica.com/information-technology/2005/12/linux-20051218/">summary</a> comparing Fish to other shells.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->

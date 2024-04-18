@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -217,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./regex.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Regular Expressions</span></a>
+  <a href="./symbols.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Symbols</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -358,6 +392,45 @@ ul.task-list li input[type="checkbox"] {
 <section id="macos-shell" class="level3">
 <h3 class="anchored" data-anchor-id="macos-shell">macOS Shell</h3>
 <p>macOS has transitioned from using Bash as the default shell to Zsh since macOS Catalina. While both are Unix shells, they have some differences in features and configuration files (<code>~/.bash_profile</code> for Bash vs.&nbsp;<code>~/.zshrc</code> for Zsh).</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span style="font-size: 1.15em;">Changing the macOS Shell</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To change the default shell on macOS from <code>zsh</code> to <code>bash</code>, follow these steps:</p>
+<ol type="1">
+<li><p>Verify that Bash is installed and locate its path.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+<p>   This gives you the path to the Bash executable, typically <code>/bin/bash</code>.</p>
+<ol start="2" type="1">
+<li><p>Change the default shell using the <code>chsh</code> (change shell) command.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chsh</span> <span class="at">-s</span> /bin/bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+<p>   Replace <code>/bin/bash</code> with the path you found if it’s different.</p>
+<ol start="3" type="1">
+<li><p>When prompted, enter the user account’s password.</p></li>
+<li><p>Verify the default shell has been changed to Bash by restarting the Terminal and entering:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+<p>   The output should now be <code>/bin/bash</code></p>
+<section id="considerations" class="level4">
+<h4 class="anchored" data-anchor-id="considerations">Considerations</h4>
+<p><strong>macOS Versions</strong></p>
+<p>In newer versions of macOS, Zsh is the default shell. If you’re switching to Bash, it’s important to know that some of the default configurations and behaviors may differ</p>
+<p><strong>Terminal Preferences</strong></p>
+<p>If you’re using iTerm2, you might have a specific shell configured in the profile settings which could override the system default shell setting. To ensure your iTerm2 sessions open with Bash, check the preferences (<strong>iTerm2</strong> &gt; <strong>Preferences</strong> &gt; <strong>Profiles</strong> &gt; <strong>General</strong> &gt; <strong>Command</strong>) and set it to <code>/bin/bash</code>.</p>
+</section>
+</div>
+</div>
+</div>
 </section>
 <section id="homebrew" class="level3">
 <h3 class="anchored" data-anchor-id="homebrew">Homebrew</h3>
@@ -390,7 +463,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap">Recap</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -399,7 +472,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 0.90em; color: #282b2d;">
 <p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
