@@ -48,6 +48,51 @@ The default Terminal app on macOS provides a solid interface to access the Unix 
 
 macOS has transitioned from using Bash as the default shell to Zsh since macOS Catalina. While both are Unix shells, they have some differences in features and configuration files (`~/.bash_profile` for Bash vs. `~/.zshrc` for Zsh).
 
+
+::: {.callout-note collapse="true"}
+
+### [Changing the macOS Shell]{style="font-size: 1.15em;"}
+
+To change the default shell on macOS from `zsh` to `bash`, follow these steps:
+
+1. Verify that Bash is installed and locate its path.
+
+    ```bash
+    which bash
+    ```
+
+&emsp;&emsp; This gives you the path to the Bash executable, typically `/bin/bash`.
+
+2. Change the default shell using the `chsh` (change shell) command.
+
+    ```bash
+    chsh -s /bin/bash
+    ```
+  
+&emsp;&emsp; Replace `/bin/bash` with the path you found if it's different.
+
+3. When prompted, enter the user account's password.
+
+4. Verify the default shell has been changed to Bash by restarting the Terminal and entering:
+
+    ```bash
+    echo $SHELL
+    ```
+
+&emsp;&emsp; The output should now be `/bin/bash`
+
+#### Considerations
+
+**macOS Versions**
+
+In newer versions of macOS, Zsh is the default shell. If you're switching to Bash, it's important to know that some of the default configurations and behaviors may differ
+
+**Terminal Preferences**
+
+If you're using iTerm2, you might have a specific shell configured in the profile settings which could override the system default shell setting. To ensure your iTerm2 sessions open with Bash, check the preferences (**iTerm2** > **Preferences** > **Profiles** > **General** > **Command**) and set it to `/bin/bash`.
+
+:::
+
 ### Homebrew
 
 [Homebrew](https://brew.sh/) is an essential package manager for macOS, filling the gap for Unix/Linux software that isn't pre-installed on macOS. It allows users to easily install and manage additional Unix tools, GNU utilities, languages, and applications. Learning to use Homebrew will significantly expand the Unix/Linux tools at your disposal on a macOS system.

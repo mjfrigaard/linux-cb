@@ -71,11 +71,39 @@ Text manipulation commands embody the Unix philosophy of '*do one thing and do i
 
 ### Wu-Tang
 
-The members of the [Wu-Tang American hip hop collective](https://en.wikipedia.org/wiki/Wu-Tang_Clan) are stored in three different file formats in `data/`:
+The `data/` folder contains three different file formats of the members of the [Wu-Tang American hip hop collective](https://en.wikipedia.org/wiki/Wu-Tang_Clan). We'll use the `tree` command to view the contents of the `data/` directory:[^tree]
+
+[^tree]: The `tree` command is not available in every Shell, but you can install it [using Homebrew](https://formulae.brew.sh/formula/tree).
+
+```{bash}
+#| eval: false
+tree -P 'wu*' data
+```
+
+The **`-P 'wu*'`** option tells `tree` to include only files and directories that match the pattern `'wu*'`. The pattern here uses a wildcard (`*`), meaning it will match any file or directory name that starts with `"wu"`. The pattern is case-sensitive by default.
+
+```{bash}
+#| eval: false
+# data
+# ├── wu_tang.csv
+# ├── wu_tang.dat
+# ├── wu_tang.tsv
+# └── wu_tang.txt
+# 
+# 1 directory, 4 files
+```
+
+We can add the  **`-f`** option to instruct `tree` to display the full path for each file and directory relative to the root of the tree, instead of just showing the names. 
 
 ```{bash}
 #| eval: false
 tree -Pf 'wu*' data
+```
+
+The command summarizes the content by showing "`1 directory, 4 files`".[^tree-file-structure]
+
+```{bash}
+#| eval: false
 # data
 # ├── data/wu_tang.csv
 # ├── data/wu_tang.dat
@@ -84,6 +112,8 @@ tree -Pf 'wu*' data
 # 
 # 1 directory, 4 files
 ```
+
+[^tree-file-structure]: **Note on Directory and File Structure:** The output structure from `tree -Pf 'wu*' data` visually shows that the `data` directory contains only the files matching the pattern and no subdirectories under it that match the pattern (or any subdirectories at all in this context). The `-P` option does not cause `tree` to exclude other directories from the inspection; it only filters what is displayed based on the pattern. If there were non-matching files or subdirectories, they would not appear in the output due to the filter.
 
 The `wu_tang.dat` file contains the members in pipe-delimited format:
 

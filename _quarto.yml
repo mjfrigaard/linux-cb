@@ -37,7 +37,7 @@ book:
         - sys.qmd
     - part: text.qmd
       chapters:
-        - regex.qmd
+        - symbols.qmd
         - text_commands.qmd
         - text_editors.qmd
     - part: scripts.qmd
@@ -53,11 +53,12 @@ format:
   html:
     theme: [cosmo, styles.scss]
     highlight-style: arrow
-    code-block-bg: "#f6f9f6"
-    code-block-border-left: "#4dff00"
+    code-block-bg: "#eff0ef"
+    code-block-border-left: "#696969"
     code-overflow: wrap
     number-sections: false
-    callout-appearance: minimal
+    callout-appearance: simple
+    callout-icon: false
     toc: true
     toc-depth: 4
     toc-expand: true

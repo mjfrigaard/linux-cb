@@ -33,15 +33,19 @@ co_box(
 )
 ```
 
-Welcome to the beginning of your Unix and Linux journey! This book aims
-to provide a clear understanding of the concepts and commands of
-Unix/Linux, even for non-technical audiences. Whether you are a student,
-a professional from a non-IT field, or someone curious about operating
-systems, this book will guide you through the essentials of Unix/Linux.
+
+
+Welcome to my Unix Field Manual! 
+
+<a href="https://github.com/mjfrigaard/fm-unix"><img src="img/fm_unix_logo.png" width="80%" class="cover" alt="Github Repo" fig-align="center"/></a> 
+
+This book aims to provide a quick reference for basic concepts and common tasks when using Unix/Linux operating systems.[^zsh-bash]
 
 <!-- ## What This Book Is Not -->
 
 <!-- ## Audience and Prerequisites -->
+
+[^zsh-bash]: Most of these commands will work on any Shell (Zsh, Bash, etc.) program.
 
 ```{r}
 #| label: git_contrib_box

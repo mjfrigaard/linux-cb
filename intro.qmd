@@ -81,11 +81,9 @@ Today, Unix and Linux are everywhere. They're the invisible forces behind much o
 Unix and Linux have grown from niche systems used by academics and researchers to foundational elements that power much of the digital world. They exemplify the power of open collaboration and innovation, showing how a small project or idea can grow and change the world.")
 ```
 
-### Bash
+### The Shell
 
-In the story of Unix and Linux, @sec-bash is the interpreter that translates commands into actions the computer can understand and execute. If Unix and Linux are the environments *where* the heavy lifting of computing happens—managing files, running programs, and controlling hardware—then Bash is the language and syntax that spells out *how* the work happens. 
-
-Bash allows users to interact directly with the operating system by typing commands into a text-based interface, automating tasks through scripts, managing files, and even controlling network operations. Incorporating features from the Korn shell (`ksh`) and the C shell (`csh`), Bash supports features like command history, tab completion, and aliases. 
+In the story of Unix and Linux, @sec-shells are the interpreters that translate commands into actions a computer can understand and execute. If Unix and Linux are the environments *where* the heavy lifting of computing happens—managing files, running programs, and controlling hardware—then the shell commands are the language and syntax that spells out *how* the work happens. 
 
 ***
 
@@ -93,9 +91,7 @@ Bash allows users to interact directly with the operating system by typing comma
 
 To summarize, Unix and Linux provide the underlying framework for computer programs. They're like the behind-the-scenes craftsmen ensuring the workshop runs smoothly, whether crafting a simple piece of furniture (like running a straightforward program on your computer), or constructing an elaborate mansion (like managing the complex operations of a large server). 
 
-The Bash shell is like the skilled artisan's primary tool within the grand workshop of Unix and Linux, serving as a bridge between the user and the system's deeper capabilities. Just as a master carpenter relies on a trusted hammer or saw, users of Unix and Linux turn to Bash for navigating and manipulating the vast landscape of these operating systems.
-
-The first four chapters will cover an introduction to some common commands in Unix/Linux. These will help you find your way around your machine's folders and files. We'll also cover how to manipulate text within files. 
+The shell is like the skilled artisan's primary tool within the grand workshop of Unix and Linux, serving as a bridge between the user and the system's deeper capabilities. Just as a master carpenter relies on a trusted hammer or saw, users of Unix and Linux turn to the shell for navigating and manipulating the vast landscape of these operating systems.
 
 
 ```{r}

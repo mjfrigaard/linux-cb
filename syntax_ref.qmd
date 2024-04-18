@@ -3,7 +3,7 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
-    comment: '#>'
+    comment: '#'
 ---
 
 # Syntax Reference {#sec-syn-ref}
@@ -38,7 +38,7 @@ co_box(
 )
 ```
 
-## Basic Commands
+## Basics
 
 ### `who` {#sec-who}
 
@@ -276,7 +276,7 @@ ln -s /path/to/original /path/to/link
 touch newfile.txt
 ```
 
-### View
+## View
 
 ### `file` {#sec-file}
 

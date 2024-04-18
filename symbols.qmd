@@ -1,0 +1,434 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: '#'
+    
+---
+
+# Symbols {#sec-symbols}
+
+```{bash}
+#| label: setup
+#| include: false
+whoami
+```
+
+```{r}
+#| label: common
+#| include: false
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+Regular expressions, or regex, are powerful tools for searching and manipulating text data. A regex is made up of special symbols that define specific patterns to be identified or transformed. The regular expressions are not the data themselves but rather a framework for locating or modifying the data. In this chapter, we will explore regular expressions, wildcards, and other special characters.
+
+## [Regular Expressions]{style="font-weight: bold;"} {#sec-regexp}
+
+A regular expression (regex) operates on text—a sequence of characters that can include letters, digits, punctuation, and other character types. The text serves as the subject or medium for which patterns the regex describes are searched.
+
+In Unix/Linux, regex are typically used with tools like <code>@sec-grep</code> (global regular expression print), <code>@sec-sed</code> (stream editor), and <code>@sec-awk</code>.
+
+### Dot: `.`
+
+`.` matches any single character except a newline.
+
+**Examples**
+
+We can use `grep` to find lines containing `R`, `n` and any five characters (`.....`) in-between in `data/wu_tang.txt`:
+
+```{bash}
+grep 'R.....n' data/wu_tang.txt
+```
+
+Replace any single character followed by `"Z"` with `"XYZ"` with `sed`
+
+```{bash}
+sed 's/.Z/XYZ/' data/wu_tang.txt
+```
+
+Print lines where the third character is an `A`:
+
+```{bash}
+awk '/^..A/' data/wu_tang.txt
+```
+
+### Asterisk: `*`
+
+`*` matches zero or more of the preceding element.
+
+**Examples**
+
+We can use `grep` to find lines where "i" is followed by zero or more "l"s (including none):
+
+```{bash}
+grep 'il*' data/wu_tang.txt
+```
+
+We can use `sed` to replace two or more `"l"`s with `11`:
+
+```{bash}
+sed 's/lll*/11/g' data/wu_tang.txt
+```
+
+Print lines that start with one or more `"R"`s
+
+```{bash}
+awk '/^ *R/' data/wu_tang.txt
+```
+
+
+### Plus: `+`
+
+`+` matches one or more occurrences of the preceding element.
+
+**Examples**
+
+Use `grep` with extended regular expressions to find '`i`' followed by one or more '`l`'s:
+
+```{bash}
+grep -E 'il+' data/wu_tang.txt
+```
+
+Replace one or more `"a"`s with the `@`:
+
+```{bash}
+sed -E 's/a+/@/g' data/wu_tang.txt
+```
+
+The `+` operator needs the `-E` option to enable extended regular expressions.
+
+Print lines with text containing one or more `"Z"`s:
+
+```{bash}
+awk '/Z+/' data/wu_tang.txt
+```
+
+
+### Question Mark: `?`
+
+`?` makes the preceding element optional (matches zero or one occurrence).
+
+**Examples**
+
+Use `grep` with extended regular expressions to find lines with '`Killah`' or '`Killah`':
+
+```{bash}
+grep -E 'Kill?' data/wu_tang.txt
+```
+
+**sed:** Replace `Ghostface` with `Ghost Face`:
+
+```{bash}
+sed -E 's/Ghostface?/Ghost Face/' data/wu_tang.txt
+```
+
+**awk:** Print lines with one or more digits.
+
+```{bash}
+awk '/[0-9]+/' data/wu_tang.txt
+```
+
+### Character Set: `[abc]`
+
+`[abc]` matches any single character listed in the set.
+
+**Example**
+
+Use `grep` to find lines containing 'a', 'b', or 'c':
+
+```bash
+grep '[abc]' filename.txt
+```
+
+### Caret: `^`
+
+`^` matches the start of a line.
+
+**Example**
+
+Use `grep` to find lines that start with 'start':
+
+```bash
+grep '^start' filename.txt
+```
+
+### Dollar: `$`
+
+`$` matches the end of a line.
+
+**Example**
+
+Use `grep` to find lines that end with 'end':
+
+```bash
+grep 'end$' filename.txt
+```
+
+These patterns are extremely powerful in scripting and command-line operations for filtering and manipulating text data efficiently. Here’s how you might use them in combination across different tools:
+
+- **`sed` for substitution**: Replace 'foo' with 'bar' only if 'foo' appears at the beginning of a line:
+
+```bash
+sed 's/^foo/bar/' filename.txt
+```
+
+- **`awk` for selection**: Print lines where the first field matches 'start':
+
+```bash
+awk '/^start/ {print $0}' filename.txt
+```
+
+- **`perl` for advanced manipulation**: Increment numbers found at the end of each line:
+
+```bash
+perl -pe 's/(\d+)$/ $1+1 /e' filename.txt
+```
+
+## [Wildcards]{style="font-weight: bold;"}  {#sec-wildcards}
+
+Wildcards (also known as glob patterns) are simpler than regex and are primarily used in shell environments for matching filenames or filtering text in a less complex manner.
+
+Wildcards are used in commands for matching filenames and paths (`ls`, `cp`, `mv`, `rm`, and more).
+
+### Asterisk: `*` {#sec-wc-asterisk}
+
+**Glob Patterns**: `*` is the wildcard for matching **zero or more characters**. Arguments can include wildcards, which the shell expands into a list of files or directories that match the pattern. For example, `*.txt` would match all files in the current directory ending with `.txt`.
+
+**Example** 
+
+`ls *.md` lists all files in the current directory that end with `.md`:
+
+```{bash}
+ls *.md
+```
+
+### Question Mark: `?` {#sec-wc-question}
+
+`?` is the wildcard for matching **exactly one character**.
+
+**Example** 
+
+`ls myfile?.txt` lists files like `myfile2.txt`, but not `myfile.txt` and `my file 3.txt`:
+
+```{bash}
+ls myfile?.txt
+```
+
+### Square brackets: `[]` {#sec-wc-square-brackets}
+
+`[abc]`: Matches any one character listed (a, b, or c).
+
+**Example** 
+
+
+```{bash}
+ls [my]*.txt
+```
+
+`[a-z]`: Matches any one character in the range (from a to z).
+
+**Example** 
+
+
+```{bash}
+ls [m-n]*.txt
+```
+
+  
+
+## [Special Characters]{style="font-weight: bold;"}
+
+**Special Characters**: Characters such as spaces, quotes, and others have special meanings in the shell. They need to be treated carefully when used within arguments.
+
+### Braces: `{}` {#sec-braces}
+
+**Brace Expansion**: Similar to wildcards, brace expansion (`{}`) allows the creation of multiple text strings from a pattern containing braces. 
+
+**Example**
+
+`cat wu_tang.{txt,csv}` 
+
+```{bash}
+cat data/wu_tang.{tsv,dat}
+```
+
+Expands into:
+
+```{bash}
+cat data/wu_tang.tsv 
+cat data/wu_tang.dat
+```
+
+### Backslash: `\` {#sec-backslash}
+
+`\` escapes the following character, nullifying its special meaning
+
+**Example** 
+
+`echo "File name with spaces \& special characters"` prints the text with spaces and the ampersand:
+
+```{bash}
+#| eval: false
+echo "File name with spaces \& special characters"
+# File name with spaces & special characters
+```
+
+
+### Single quotes: `''` {#sec-single-quotes}
+
+Single quotes (`' '`) treat every character literally, ignoring the special meaning of all characters.
+
+**Example** 
+
+`echo '$HOME'` prints `$HOME`, not the path to the home directory:
+
+```{bash}
+echo '$HOME'
+```
+
+### Double quotes: `""` {#sec-double-quotes}
+
+Double quotes (`" "`) allow for the inclusion of special characters in an argument, except for the dollar sign (`$`), backticks (\` \`), and backslash (`\`). 
+
+**Example** 
+
+`echo "$HOME"` prints the path to the home directory:
+
+```{bash}
+#| eval: false
+echo "$HOME"
+#> /Users/username
+```
+
+### Tilde: `~` {#sec-tilde}
+
+`~` represents the home directory of the current user.
+
+**Example** 
+
+List the items in the user's home directory:
+
+```{bash}
+#| eval: false
+ls ~
+#> Applications
+#> Creative Cloud Files
+#> Desktop
+#> Documents
+#> Downloads
+#> Dropbox
+#> Fonts
+#> Library
+#> Movies
+#> Music
+#> Pictures
+#> Public
+#> R
+#> Themes
+```
+
+
+### Dollar Sign: `$` {#sec-dollar}
+
+`$` indicates a variable.
+
+**Example** 
+
+`echo $PATH` prints the value of the `PATH` environment variable:
+
+```{bash}
+#| eval: false
+echo $PATH
+```
+
+
+### Ampersand: `&` {#sec-ampersand}
+
+`&` runs a command in the background.
+
+**Example** 
+
+`firefox &` opens Firefox in the background, allowing the terminal to be used for other commands.
+
+```{bash}
+#| eval: false
+firefox &
+```
+
+### Semicolon: `;` {#sec-semicolon}
+
+`;` separates multiple commands to be run in sequence.
+
+**Example** 
+
+`cd data; ls` changes the directory to `data` and then lists its contents:
+
+```{bash}
+cd data; ls
+```
+
+
+### Greater Than: `>` {#sec-gt}
+
+**Redirection operators**: `>` directs output to a file or a device. 
+
+**Example** 
+
+`echo "This is my 2nd file" > myfile2.txt` writes `"This is my 2nd file"` into `myfile2.txt`:
+
+```{bash}
+echo "This is my 2nd file" > myfile2.txt
+```
+
+### Less Than: `<` {#sec-lt}
+
+**Redirection operators**: `<` takes input from a file or a device.
+
+**Example** 
+
+Then `wc < myfile2.txt` counts the words in `myfile2.txt`:
+
+```{bash}
+wc < myfile2.txt
+```
+
+
+### Parentheses: `()` {#sec-parens}
+
+Parentheses can be used to group commands or for command substitution with `$( )`.
+
+**Example** 
+
+`(cd /data; ls)` runs `ls` in `/data` without changing the current directory:
+
+```{bash}
+(cd data; ls)
+```
+
+`$(command)` uses the output of `command`.
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```

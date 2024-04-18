@@ -46,7 +46,7 @@ The <strong>@sec-intro</strong> acquaints you with some background that formed t
 
 **Set-Ups**
 
-Before diving into the commands and scripts, setting up your Unix/Linux environment is crucial. This section guides you through various options for setting up Unix/Linux on your machine, be it natively or through a virtual machine.
+Before diving into the commands and scripts, setting up your Unix/Linux environment is crucial. This section guides you through various options for setting up <strong>@sec-sh-term</strong>, <strong>@sec-vms</strong>, and <strong>@sec-quarto</strong> documents.
 
 **Syntax**
 
@@ -56,7 +56,7 @@ Understanding the syntax is vital for effectively communicating with the Unix/Li
 
 **Files and Directories**
 
-Navigating and managing files and folders are daily tasks for Unix/Linux users. @sec-dirs covers essential commands such as `cd` for changing directories, `pwd` to print the current directory, `ls` for listing files, and `mkdir` for making directories.
+Navigating and managing files and folders are daily tasks for Unix/Linux users. <strong>@sec-dirs</strong> covers essential commands such as `cd` for changing directories, `pwd` to print the current directory, `ls` for listing files, and `mkdir` for making directories.
 
 <strong>@sec-files</strong> chapter covers file manipulation commands like `cp` (copy), `mv` (move), `rm` (remove), and `less` for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Unix/Linux.
 

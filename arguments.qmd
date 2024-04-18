@@ -3,7 +3,7 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
-    comment: '#>'
+    comment: '#'
 ---
 
 # Arguments {#sec-args}
@@ -83,10 +83,10 @@ Most commonly, arguments are the names of **files and directory names** on which
 
 ```{bash}
 #| eval: false
-cp source.txt destination.txt
+mv source/file.txt destination/file.txt
 ```
 
-`source.txt` and `destination.txt` are arguments representing the source and destination files to copy with <code>@sec-cp</code>, respectively.
+`source/file.txt` and `destination/file.txt` are arguments representing the source and destination locations to move with <code>@sec-mv</code>, respectively.
 
 Commands related to user management might take **user and group names** names as arguments.
 
@@ -107,7 +107,7 @@ Some commands take **other commands as arguments**. For example, <code>@sec-sudo
 
 ```{bash}
 #| eval: false
-sudo
+sudo vi path/to/file.config
 ```
 
 ### Data Values
@@ -139,7 +139,7 @@ Arguments that contain **spaces** must be quoted or escaped, so the shell unders
 
 **Example** 
 
-To copy the contents of `New myfile2.txt` to `'my file 3.txt`, you would use:
+To copy the contents of the new `myfile2.txt` to `'my file 3.txt`, you would use:
 
 ```{bash}
 cp myfile2.txt 'my file 3.txt'
@@ -168,7 +168,7 @@ echo $(grep file myfile.txt)
 ```{bash}
 #| eval: false
 echo $HOME
-#> /Users/username
+# /Users/username
 ```
 
 

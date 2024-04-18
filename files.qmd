@@ -3,7 +3,7 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
-    comment: '#>'
+    comment: '#'
 ---
 
 # Files {#sec-files}
