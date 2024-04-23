@@ -38,35 +38,42 @@ co_box(
 
 Unix and Linux are powerful, versatile, and widely used operating systems that run on millions of devices worldwide, from smartphones to supercomputers. Learning about Unix/Linux can open doors to many career opportunities and help you better understand the digital world around you.
 
-This book is structured to gradually introduce you to the Unix/Linux environment, starting from the basics to more complex concepts. Here's what each section covers:
+This book is structured to gradually introduce you to the Unix/Linux environment, starting from the basics to more complex concepts, then covering multiple case studies.
 
-**Introduction**
+
+## Book outline
+
+The first half (sections 1-5) of this manual cover concepts and materials for users who are new to Unix/Linux. If you're familiar with command-line tools, regular expressions, and bash scripts, feel free to skip these chapters.
+
+### Introduction
 
 The <strong>@sec-intro</strong> acquaints you with some background that formed the landscape of Unix/Linux systems. It explains the Bash shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Unix/Linux systems.
 
-**Set-Ups**
+### Set-Ups
 
 Before diving into the commands and scripts, setting up your Unix/Linux environment is crucial. This section guides you through various options for setting up <strong>@sec-sh-term</strong>, <strong>@sec-vms</strong>, and <strong>@sec-quarto</strong> documents.
 
-**Syntax**
+### Syntax
 
 Understanding the syntax is vital for effectively communicating with the Unix/Linux system. This section demystifies the structure of commands, including how to differentiate between <strong>@sec-commands</strong>, <strong>@sec-args</strong>, and <strong>@sec-options</strong> and manage inputs and outputs. This knowledge is critical to executing tasks efficiently in the command line.
 
 <strong>@sec-pipes</strong> are a cornerstone of Unix/Linux productivity, enabling the output of one command to serve as the input to another. This section covers how to combine commands using `stdout` and `stdin`, allowing for robust command chains that can perform complex tasks with a simple syntax. Understanding pipes unlocks a higher level of command-line efficiency and is a step towards advanced Unix/Linux usage.
 
-**Files and Directories**
+### The Basics
 
 Navigating and managing files and folders are daily tasks for Unix/Linux users. <strong>@sec-dirs</strong> covers essential commands such as `cd` for changing directories, `pwd` to print the current directory, `ls` for listing files, and `mkdir` for making directories.
 
 <strong>@sec-files</strong> chapter covers file manipulation commands like `cp` (copy), `mv` (move), `rm` (remove), and `less` for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Unix/Linux.
 
-**Manipulating Text**
+<strong>@sec-sys</strong> covers...
+
+## Manipulating Text
 
 **Text Commands**: Unix/Linux systems are renowned for their powerful text manipulation capabilities. The <strong>@sec-txt-cmds</strong> chapter introduces commands such as `cat` for displaying file contents, `grep` for searching within files, `sort` for sorting data, `uniq` for filtering unique lines, and `cut`, `paste`, and `join` for editing files. Mastering these commands will allow you to handle and process text data efficiently.
 
 **Text Editors:** This section covers nano, vim, and emacs.
 
-**Shell Scripts (in development)**
+## Shell Scripts (in development)
 
 Shell scripting is a powerful tool for automating repetitive tasks in Unix/Linux. This section introduces you to writing your shell scripts, covering the basics of script creation, execution, and debugging. You\`ll learn how to automate simple tasks, making your Unix/Linux experience more productive and enjoyable.
 
@@ -79,6 +86,28 @@ By the end of this book, you'll have a solid understanding of the Unix/Linux ope
 ## <!--# What This Book Is Not   -->
 
 ## <!--# Audience and Prerequisites -->
+
+## Data files 
+
+### Passwords
+
+This data file comes from [Information is Beautiful](https://docs.google.com/spreadsheets/d/1cz7TDhm0ebVpySqbTvrHrD3WpxeyE4hLZtifWSnoNTQ/edit#gid=16) and includes the following variables: 
+
+
+
+### AJ Perlis Epigrams 
+
+
+
+### Music Videos 
+
+### Roxanne 
+
+### Trees 
+
+### WHO TB Data 
+
+### Wu Tang Clan
 
 ```{r}
 #| label: git_contrib_box

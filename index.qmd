@@ -35,9 +35,9 @@ co_box(
 
 
 
-Welcome to my Unix Field Manual! 
+Welcome to my Unix/Linux Field Manual! 
 
-<a href="https://github.com/mjfrigaard/fm-unix"><img src="img/fm_unix_logo.png" width="80%" class="cover" alt="Github Repo" fig-align="center"/></a> 
+<a href="https://github.com/mjfrigaard/fm-unix"><img src="img/fm-unix.png" width="80%" class="cover" alt="Github Repo" fig-align="center"/></a> 
 
 This book aims to provide a quick reference for basic concepts and common tasks when using Unix/Linux operating systems.[^zsh-bash]
 

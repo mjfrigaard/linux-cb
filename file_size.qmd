@@ -1,0 +1,53 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: '#'
+---
+
+# Find Large Files {#sec-file-size}
+
+```{bash}
+#| label: setup
+#| include: false
+whoami
+```
+
+```{r}
+#| label: common
+#| include: false
+# Sys.setenv('QUARTO_PROJECT_DIR' = 'data')
+# Sys.getenv('QUARTO_PROJECT_DIR')
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_dev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "r",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is under development. Thank you for your patience.
+  "
+)
+```
+
+**Scenario:** You've been asked to discover any files over a certain size. This could be due concerns over disk space, performance optimization, backup and recovery, network load reduction, compliance, auditing, a system migration, user quotas, or internal data management policies (usually related to cost).
+
+## `find`
+
+## `du` & `sort`
+
+## `awk` & `ls`
+
+## `ncdu`
+
+## `grep` & `find` or `du`
+

@@ -34,6 +34,14 @@ co_box(
 
 [Bash](https://www.gnu.org/software/bash/),  short for Bourne Again SHell, is a command line interface and scripting language for operating systems, enabling direct command input and task automation. Originally created for the GNU project and known for its flexibility and powerful features, Bash is the standard shell on many Linux distributions and was the default shell in the Terminal on macOS until the Catalina release.
 
+## Network File System (NFS) {#sec-nfs}
+
+NFS is a file system protocol that enables a user to access files over a network. It provides a central location for storing and sharing files across multiple computers and allows users to work with files on remote servers as if they were on their local machine.
+
+## On-prem {#sec-onprem}
+
+On-prem or on-premises refers to software and technology installed and running on computers on the premises of the user instead of a remote facility. On-prem can include data centers, servers, and other hardware within a company's property. It is chosen for greater control over the computing environment and compliance reasons, as the organization is responsible for managing the security, maintenance, and updating of the systems.
+
 ## Quarto {#sec-quarto}
 
 [Quarto](https://quarto.org/) is an open-source scientific and technical publishing framework designed to work with R, Python, Julia, Observable JavaScript, and more, making it a versatile tool for data scientists, researchers, and anyone involved in data analysis.
@@ -56,4 +64,3 @@ It's readable and easily parsed by machines, making it popular for application c
 #| eval: true
 git_contrib_box()
 ```
-

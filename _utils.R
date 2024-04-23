@@ -4,6 +4,25 @@ library(rvest)
 library(tidyverse)
 library(janitor)
 
+pwrds <- vroom::vroom("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-14/passwords.csv") |>  
+  dplyr::select(password, rank, strength, online_crack_value = value, 
+    time_unit) |> 
+  dplyr::mutate(
+    online_crack = paste(online_crack_value, time_unit)
+  ) |> 
+  dplyr::select(-online_crack_value, -time_unit) |> 
+  dplyr::filter(!is.na(password))
+vroom::vroom_write(
+  x = pwrds, 
+  file = "data/pwrds.tsv", 
+  delim = "\t", 
+  eol = '\n')
+vroom::vroom_write(
+  x = pwrds, 
+  file = "data/pwrds.csv", 
+  delim = ",", 
+  eol = '\n')
+
 scrape_wiki_tbl <- function(wiki_url, tbl_string) {
   wiki_html <- xml2::read_html(wiki_url)
   wiki_html_tables <- wiki_html %>% rvest::html_nodes(css = "table")

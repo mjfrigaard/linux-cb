@@ -38,13 +38,66 @@ co_box(
 )
 ```
 
-Regular expressions, or regex, are powerful tools for searching and manipulating text data. A regex is made up of special symbols that define specific patterns to be identified or transformed. The regular expressions are not the data themselves but rather a framework for locating or modifying the data. In this chapter, we will explore regular expressions, wildcards, and other special characters.
+Regular expressions, or regex, are powerful tools for searching and manipulating text data. A regex is made up of special symbols that define specific patterns to be identified or transformed. The regular expressions are not the data themselves but rather a framework for locating or modifying the data. In this chapter, we will explore wildcards, regular expressions, and other special characters.
+
+## [Wildcards]{style="font-weight: bold;"}  {#sec-wildcards}
+
+Wildcards (also known as glob patterns) are primarily used in shell environments for matching filenames or filtering text in a less complex manner.
+
+Wildcards are used in commands for matching filenames and paths (`ls`, `cp`, `mv`, `rm`, and more).
+
+### Asterisk: `*` {#sec-wc-asterisk}
+
+**Glob Patterns**: `*` is the wildcard for matching **zero or more characters**. Arguments can include wildcards, which the shell expands into a list of files or directories that match the pattern. For example, `*.txt` would match all files in the current directory ending with `.txt`.
+
+**Example** 
+
+`ls *.md` lists all files in the current directory that end with `.md`:
+
+```{bash}
+ls *.md
+```
+
+### Question Mark: `?` {#sec-wc-question}
+
+`?` is the wildcard for matching **exactly one character**.
+
+**Example** 
+
+`ls myfile?.txt` lists files like `myfile2.txt`, but not `myfile.txt` and `my file 3.txt`:
+
+```{bash}
+ls myfile?.txt
+```
+
+### Square brackets: `[]` {#sec-wc-square-brackets}
+
+`[abc]`: Matches any one character listed (a, b, or c).
+
+**Example** 
+
+
+```{bash}
+ls [my]*.txt
+```
+
+`[a-z]`: Matches any one character in the range (from a to z).
+
+**Example** 
+
+
+```{bash}
+ls [m-n]*.txt
+```
+
 
 ## [Regular Expressions]{style="font-weight: bold;"} {#sec-regexp}
 
-A regular expression (regex) operates on text—a sequence of characters that can include letters, digits, punctuation, and other character types. The text serves as the subject or medium for which patterns the regex describes are searched.
+Regular expressions (or the singular 'regex') are powerful tools for searching and manipulating text data. A regex is made up of special symbols that define specific patterns to be identified or transformed. 
 
-In Unix/Linux, regex are typically used with tools like <code>@sec-grep</code> (global regular expression print), <code>@sec-sed</code> (stream editor), and <code>@sec-awk</code>.
+Regular expressions operate on text--the sequence of characters that can include letters, digits, punctuation, and other character types. Text serves as the 'data' or 'medium' for which the patterns the regex describes are searched. 
+
+Regular expressions are more complex than wildcards, and are typically used with tools like <code>@sec-grep</code> (global regular expression print), <code>@sec-sed</code> (stream editor), and <code>@sec-awk</code>.
 
 ### Dot: `.`
 
@@ -52,22 +105,23 @@ In Unix/Linux, regex are typically used with tools like <code>@sec-grep</code> (
 
 **Examples**
 
-We can use `grep` to find lines containing `R`, `n` and any five characters (`.....`) in-between in `data/wu_tang.txt`:
+Matches lines containing "password" or similar patterns where any character stands between '`p`' and '`ssword`'.
 
 ```{bash}
-grep 'R.....n' data/wu_tang.txt
+grep "p.ssword" data/pwrds.csv
 ```
 
-Replace any single character followed by `"Z"` with `"XYZ"` with `sed`
+
+Replaces "`password`" where any character is between '`p`' and '`ssword`' with "`p@ssword`".
 
 ```{bash}
-sed 's/.Z/XYZ/' data/wu_tang.txt
+sed 's/p.ssword/p@ssword/' data/pwrds.csv | head -n2
 ```
 
-Print lines where the third character is an `A`:
+Select records where "`password`" or similar patterns appear with any character between '`p`', '`ssw` and `rd`'.
 
 ```{bash}
-awk '/^..A/' data/wu_tang.txt
+awk '/p.ssw.rd/' data/pwrds.csv
 ```
 
 ### Asterisk: `*`
@@ -201,58 +255,6 @@ awk '/^start/ {print $0}' filename.txt
 ```bash
 perl -pe 's/(\d+)$/ $1+1 /e' filename.txt
 ```
-
-## [Wildcards]{style="font-weight: bold;"}  {#sec-wildcards}
-
-Wildcards (also known as glob patterns) are simpler than regex and are primarily used in shell environments for matching filenames or filtering text in a less complex manner.
-
-Wildcards are used in commands for matching filenames and paths (`ls`, `cp`, `mv`, `rm`, and more).
-
-### Asterisk: `*` {#sec-wc-asterisk}
-
-**Glob Patterns**: `*` is the wildcard for matching **zero or more characters**. Arguments can include wildcards, which the shell expands into a list of files or directories that match the pattern. For example, `*.txt` would match all files in the current directory ending with `.txt`.
-
-**Example** 
-
-`ls *.md` lists all files in the current directory that end with `.md`:
-
-```{bash}
-ls *.md
-```
-
-### Question Mark: `?` {#sec-wc-question}
-
-`?` is the wildcard for matching **exactly one character**.
-
-**Example** 
-
-`ls myfile?.txt` lists files like `myfile2.txt`, but not `myfile.txt` and `my file 3.txt`:
-
-```{bash}
-ls myfile?.txt
-```
-
-### Square brackets: `[]` {#sec-wc-square-brackets}
-
-`[abc]`: Matches any one character listed (a, b, or c).
-
-**Example** 
-
-
-```{bash}
-ls [my]*.txt
-```
-
-`[a-z]`: Matches any one character in the range (from a to z).
-
-**Example** 
-
-
-```{bash}
-ls [m-n]*.txt
-```
-
-  
 
 ## [Special Characters]{style="font-weight: bold;"}
 

@@ -9,7 +9,7 @@ book:
   title: "fm-unix"
   author: "Martin Frigaard"
   description: |
-    A Unix Field Manual
+    A Unix/Linux Field Manual
   search: true
   #site-url: https://mjfrigaard.github.io/fm-unix/
   #repo-url: https://github.com/mjfrigaard/fm-unix
@@ -44,6 +44,9 @@ book:
       chapters:
         - format.qmd
         - permissions.qmd
+    - part: use_cases.qmd
+      chapters:
+        - file_size.qmd
   appendices:
         - syntax_ref.qmd
         - glossary.qmd
