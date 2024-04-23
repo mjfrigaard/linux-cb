@@ -115,8 +115,12 @@ In Unix, several commands can operate without any options or arguments, performi
 `who` shows who is logged on the system. 
 
 ```{bash}
-#| eval: true 
+#| eval: false 
 who
+# username       console      Apr 14 13:45 
+# username       ttys000      Apr 14 13:45 
+# username       ttys001      Apr 14 13:45 
+# username       ttys003      Apr 16 05:56
 ```
 
 `who` by itself, without options or arguments, lists the users currently logged into the system.
@@ -126,8 +130,9 @@ who
 `whoami` shows the username of the user currently logged into the system. 
 
 ```{bash}
-#| eval: true 
+#| eval: false 
 whoami
+# username
 ```
 
 ### `hostname` 
@@ -135,8 +140,9 @@ whoami
 `hostname` displays the system's network name.
 
 ```{bash}
-#| eval: true
+#| eval: false
 hostname
+# Users-MacBook-Pro-2.local
 ```
 
 ### `cal` 
@@ -144,8 +150,16 @@ hostname
 `cal` displays a calender of the current month.
 
 ```{bash}
-#| eval: true 
+#| eval: false 
 cal
+#      April 2024       
+# Su Mo Tu We Th Fr Sa  
+#     1  2  3  4  5  6  
+#  7  8  9 10 11 12 13  
+# 14 15 16 17 18 19 20  
+# 21 22 23 24 25 26 27  
+# 28 29 30              
+# 
 ```
 
 ### `uptime` 
@@ -153,8 +167,9 @@ cal
 `uptime` shows how long the system has been running.
 
 ```{bash}
-#| eval: true 
+#| eval: false 
 uptime
+# 11:39  up 15:05, 4 users, load averages: 3.85 3.08 2.93
 ```
 
 ### `clear` 

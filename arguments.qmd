@@ -11,7 +11,9 @@ knitr:
 ```{bash}
 #| label: setup
 #| include: false
+rm -Rf tmp
 whoami
+mkdir tmp
 ```
 
 ```{r}
@@ -65,7 +67,7 @@ cat myfile.txt
 ```
 
 
-In the command `cat myfile.txt`, `myfile.txt` is a direct argument to the <code>@sec-cat</code> command, telling it which file to display on the standard output.
+In the command `echo myfile.txt`, `myfile.txt` is a direct argument to the <code>@sec-cat</code> command, telling it which file to display on the standard output.
 
 **Indirect arguments** are arguments that might specify additional information that commands need to complete their tasks.
 
@@ -82,11 +84,11 @@ Most commonly, arguments are the names of **files and directory names** on which
 **Example**
 
 ```{bash}
-#| eval: false
-mv source/file.txt destination/file.txt
+#| eval: true
+mv myfile.txt tmp/myfile.txt
 ```
 
-`source/file.txt` and `destination/file.txt` are arguments representing the source and destination locations to move with <code>@sec-mv</code>, respectively.
+`myfile.txt` and `tmp/myfile.txt` are arguments representing the source and destination locations to move with <code>@sec-mv</code>, respectively.
 
 Commands related to user management might take **user and group names** names as arguments.
 
@@ -94,7 +96,7 @@ Commands related to user management might take **user and group names** names as
 
 ```{bash}
 #| eval: false
-chown user:group file
+chown user:group myfile.txt
 ```
 
 <code>@sec-chown</code> changes the ownership of `file` to `user` and `group`.
@@ -130,19 +132,21 @@ For many commands, the **order** of the arguments is significant.
 **Example** 
 
 ```{bash}
-cp myfile.txt myfile2.txt
+#| eval: true
+cp tmp/myfile.txt myfile.txt
 ```
 
-`myfile.txt` is the first argument (indicating the file to copy from), and `myfile2.txt` is the second argument (indicating where to copy the file to). Reversing these arguments would result in a completely different operation.
+`tmp/myfile.txt` is the first argument (indicating the file to copy from), and `myfile.txt` is the second argument (indicating where to copy the file to). Reversing these arguments would result in a completely different operation.
 
 Arguments that contain **spaces** must be quoted or escaped, so the shell understands them as a single argument rather than multiple arguments. 
 
 **Example** 
 
-To copy the contents of the new `myfile2.txt` to `'my file 3.txt`, you would use:
+To copy the contents of the new `myfile.txt` to `'my file 2.txt`, you would use:
 
 ```{bash}
-cp myfile2.txt 'my file 3.txt'
+#| eval: true
+cp myfile.txt 'my file 2.txt'
 ```
 
 ### Command Substitution
@@ -151,10 +155,11 @@ The **output of a command can be used as an argument for another command** using
 
 **Example** 
 
-`echo $(grep file myfile.txt)` uses the output of the <code>@sec-grep</code> command as an argument for <code>@sec-echo</code>:
+`echo $(grep file 'my file 2.txt')` uses the output of the <code>@sec-grep</code> command as an argument for <code>@sec-echo</code>:
 
 ```{bash}
-echo $(grep file myfile.txt)
+#| eval: true
+echo $(grep file 'my file 2.txt')
 ```
 
 ### Variables as Arguments
@@ -180,4 +185,11 @@ Understanding the nuances of Unix arguments is crucial for crafting precise and 
 #| results: asis
 #| eval: true
 git_contrib_box()
+```
+
+
+```{bash}
+#| label: cleanup
+#| include: false
+rm -Rf tmp
 ```

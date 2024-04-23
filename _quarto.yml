@@ -58,7 +58,7 @@ format:
     highlight-style: arrow
     code-block-bg: "#eff0ef"
     code-block-border-left: "#696969"
-    code-overflow: wrap
+    code-overflow: scroll
     number-sections: false
     callout-appearance: simple
     callout-icon: false
