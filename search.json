@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "fm-unix",
     "section": "",
-    "text": "Welcome!\nWelcome to my Unix Field Manual!\nThis book aims to provide a quick reference for basic concepts and common tasks when using Unix/Linux operating systems.1",
+    "text": "Welcome!\nWelcome to my Unix/Linux Field Manual!\nThis book aims to provide a quick reference for basic concepts and common tasks when using Unix/Linux operating systems.1",
     "crumbs": [
       "Welcome!"
     ]
@@ -20,11 +20,51 @@
     ]
   },
   {
-    "objectID": "preface.html#section-1",
-    "href": "preface.html#section-1",
+    "objectID": "preface.html",
+    "href": "preface.html",
     "title": "Preface",
     "section": "",
-    "text": "See a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "text": "Book outline\nThe first half (sections 1-5) of this manual cover concepts and materials for users who are new to Unix/Linux. If you’re familiar with command-line tools, regular expressions, and bash scripts, feel free to skip these chapters.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#book-outline",
+    "href": "preface.html#book-outline",
+    "title": "Preface",
+    "section": "",
+    "text": "Introduction\nThe Introduction acquaints you with some background that formed the landscape of Unix/Linux systems. It explains the Bash shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Unix/Linux systems.\n\n\nSet-Ups\nBefore diving into the commands and scripts, setting up your Unix/Linux environment is crucial. This section guides you through various options for setting up Shells and Terminals, Virtual Machines, and Quarto documents.\n\n\nSyntax\nUnderstanding the syntax is vital for effectively communicating with the Unix/Linux system. This section demystifies the structure of commands, including how to differentiate between Commands, Arguments, and Options and manage inputs and outputs. This knowledge is critical to executing tasks efficiently in the command line.\nPipes are a cornerstone of Unix/Linux productivity, enabling the output of one command to serve as the input to another. This section covers how to combine commands using stdout and stdin, allowing for robust command chains that can perform complex tasks with a simple syntax. Understanding pipes unlocks a higher level of command-line efficiency and is a step towards advanced Unix/Linux usage.\n\n\nThe Basics\nNavigating and managing files and folders are daily tasks for Unix/Linux users. Directories covers essential commands such as cd for changing directories, pwd to print the current directory, ls for listing files, and mkdir for making directories.\nFiles chapter covers file manipulation commands like cp (copy), mv (move), rm (remove), and less for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Unix/Linux.\nSystem covers…",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#manipulating-text",
+    "href": "preface.html#manipulating-text",
+    "title": "Preface",
+    "section": "Manipulating Text",
+    "text": "Manipulating Text\nText Commands: Unix/Linux systems are renowned for their powerful text manipulation capabilities. The Manipulating Text chapter introduces commands such as cat for displaying file contents, grep for searching within files, sort for sorting data, uniq for filtering unique lines, and cut, paste, and join for editing files. Mastering these commands will allow you to handle and process text data efficiently.\nText Editors: This section covers nano, vim, and emacs.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#shell-scripts-in-development",
+    "href": "preface.html#shell-scripts-in-development",
+    "title": "Preface",
+    "section": "Shell Scripts (in development)",
+    "text": "Shell Scripts (in development)\nShell scripting is a powerful tool for automating repetitive tasks in Unix/Linux. This section introduces you to writing your shell scripts, covering the basics of script creation, execution, and debugging. You`ll learn how to automate simple tasks, making your Unix/Linux experience more productive and enjoyable.\nFormat: Shell scripts can be written in various formats, depending on your shell (e.g., Bash, Zsh). This section delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Unix/Linux systems.\nPermissions: Understanding file permissions is crucial to managing the security of your files and directories in Unix/Linux. This section explains how Unix/Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.\nBy the end of this book, you’ll have a solid understanding of the Unix/Linux operating system. You’ll be equipped to navigate, manage files, write scripts, and set permissions confidently. Whether you’re looking to enhance your career prospects, manage your Unix/Linux systems, or simply satisfy your curiosity, this book will be your companion on a fascinating journey into the world of Unix/Linux.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#data-files",
+    "href": "preface.html#data-files",
+    "title": "Preface",
+    "section": "Data files",
+    "text": "Data files\n\nPasswords\nThis data file comes from Information is Beautiful and includes the following variables:\n\n\nAJ Perlis Epigrams\n\n\nMusic Videos\n\n\nRoxanne\n\n\nTrees\n\n\nWHO TB Data\n\n\nWu Tang Clan\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Preface"
     ]
@@ -527,18 +567,7 @@
     "href": "symbols.html",
     "title": "Symbols",
     "section": "",
-    "text": "Regular Expressions\nA regular expression (regex) operates on text—a sequence of characters that can include letters, digits, punctuation, and other character types. The text serves as the subject or medium for which patterns the regex describes are searched.\nIn Unix/Linux, regex are typically used with tools like grep (global regular expression print), sed (stream editor), and awk.",
-    "crumbs": [
-      "Text",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Symbols</span>"
-    ]
-  },
-  {
-    "objectID": "symbols.html#sec-regexp",
-    "href": "symbols.html#sec-regexp",
-    "title": "Symbols",
-    "section": "",
-    "text": "Dot: .\n. matches any single character except a newline.\nExamples\nWe can use grep to find lines containing R, n and any five characters (.....) in-between in data/wu_tang.txt:\n\ngrep 'R.....n' data/wu_tang.txt\n# Raekwon the Chef  Corey Woods\n\nReplace any single character followed by \"Z\" with \"XYZ\" with sed\n\nsed 's/.Z/XYZ/' data/wu_tang.txt\n# Member    Name\n# XYZA  Robert Diggs\n# XYZA  Gary Grice\n# Method Man    Clifford Smith\n# Raekwon the Chef  Corey Woods\n# Ghostface Killah  Dennis Coles\n# Inspectah Deck    Jason Hunter\n# U-God     Lamont Hawkins\n# Masta Killa   Jamel Irief\n# Cappadonna    Darryl Hill\n# Ol Dirty Bastard  Russell Tyrone Jones\n\nPrint lines where the third character is an A:\n\nawk '/^..A/' data/wu_tang.txt\n# RZA   Robert Diggs\n# GZA   Gary Grice\n\n\n\nAsterisk: *\n* matches zero or more of the preceding element.\nExamples\nWe can use grep to find lines where “i” is followed by zero or more “l”s (including none):\n\ngrep 'il*' data/wu_tang.txt\n# RZA   Robert Diggs\n# GZA   Gary Grice\n# Method Man    Clifford Smith\n# Ghostface Killah  Dennis Coles\n# U-God     Lamont Hawkins\n# Masta Killa   Jamel Irief\n# Cappadonna    Darryl Hill\n# Ol Dirty Bastard  Russell Tyrone Jones\n\nWe can use sed to replace two or more \"l\"s with 11:\n\nsed 's/lll*/11/g' data/wu_tang.txt\n# Member    Name\n# RZA   Robert Diggs\n# GZA   Gary Grice\n# Method Man    Clifford Smith\n# Raekwon the Chef  Corey Woods\n# Ghostface Ki11ah  Dennis Coles\n# Inspectah Deck    Jason Hunter\n# U-God     Lamont Hawkins\n# Masta Ki11a   Jamel Irief\n# Cappadonna    Darryl Hi11\n# Ol Dirty Bastard  Russe11 Tyrone Jones\n\nPrint lines that start with one or more \"R\"s\n\nawk '/^ *R/' data/wu_tang.txt\n# RZA   Robert Diggs\n# Raekwon the Chef  Corey Woods\n\n\n\nPlus: +\n+ matches one or more occurrences of the preceding element.\nExamples\nUse grep with extended regular expressions to find ‘i’ followed by one or more ’l’s:\n\ngrep -E 'il+' data/wu_tang.txt\n# Ghostface Killah  Dennis Coles\n# Masta Killa   Jamel Irief\n# Cappadonna    Darryl Hill\n\nReplace one or more \"a\"s with the @:\n\nsed -E 's/a+/@/g' data/wu_tang.txt\n# Member    N@me\n# RZA   Robert Diggs\n# GZA   G@ry Grice\n# Method M@n    Clifford Smith\n# R@ekwon the Chef  Corey Woods\n# Ghostf@ce Kill@h  Dennis Coles\n# Inspect@h Deck    J@son Hunter\n# U-God     L@mont H@wkins\n# M@st@ Kill@   J@mel Irief\n# C@pp@donn@    D@rryl Hill\n# Ol Dirty B@st@rd  Russell Tyrone Jones\n\nThe + operator needs the -E option to enable extended regular expressions.\nPrint lines with text containing one or more \"Z\"s:\n\nawk '/Z+/' data/wu_tang.txt\n# RZA   Robert Diggs\n# GZA   Gary Grice\n\n\n\nQuestion Mark: ?\n? makes the preceding element optional (matches zero or one occurrence).\nExamples\nUse grep with extended regular expressions to find lines with ‘Killah’ or ‘Killah’:\n\ngrep -E 'Kill?' data/wu_tang.txt\n# Ghostface Killah  Dennis Coles\n# Masta Killa   Jamel Irief\n\nsed: Replace Ghostface with Ghost Face:\n\nsed -E 's/Ghostface?/Ghost Face/' data/wu_tang.txt\n# Member    Name\n# RZA   Robert Diggs\n# GZA   Gary Grice\n# Method Man    Clifford Smith\n# Raekwon the Chef  Corey Woods\n# Ghost Face Killah Dennis Coles\n# Inspectah Deck    Jason Hunter\n# U-God     Lamont Hawkins\n# Masta Killa   Jamel Irief\n# Cappadonna    Darryl Hill\n# Ol Dirty Bastard  Russell Tyrone Jones\n\nawk: Print lines with one or more digits.\n\nawk '/[0-9]+/' data/wu_tang.txt\n\n\n\nCharacter Set: [abc]\n[abc] matches any single character listed in the set.\nExample\nUse grep to find lines containing ‘a’, ‘b’, or ‘c’:\ngrep '[abc]' filename.txt\n\n\nCaret: ^\n^ matches the start of a line.\nExample\nUse grep to find lines that start with ‘start’:\ngrep '^start' filename.txt\n\n\nDollar: $\n$ matches the end of a line.\nExample\nUse grep to find lines that end with ‘end’:\ngrep 'end$' filename.txt\nThese patterns are extremely powerful in scripting and command-line operations for filtering and manipulating text data efficiently. Here’s how you might use them in combination across different tools:\n\nsed for substitution: Replace ‘foo’ with ‘bar’ only if ‘foo’ appears at the beginning of a line:\n\nsed 's/^foo/bar/' filename.txt\n\nawk for selection: Print lines where the first field matches ‘start’:\n\nawk '/^start/ {print $0}' filename.txt\n\nperl for advanced manipulation: Increment numbers found at the end of each line:\n\nperl -pe 's/(\\d+)$/ $1+1 /e' filename.txt",
+    "text": "Wildcards\nWildcards (also known as glob patterns) are primarily used in shell environments for matching filenames or filtering text in a less complex manner.\nWildcards are used in commands for matching filenames and paths (ls, cp, mv, rm, and more).",
     "crumbs": [
       "Text",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Symbols</span>"
@@ -548,8 +577,19 @@
     "objectID": "symbols.html#sec-wildcards",
     "href": "symbols.html#sec-wildcards",
     "title": "Symbols",
-    "section": "Wildcards",
-    "text": "Wildcards\nWildcards (also known as glob patterns) are simpler than regex and are primarily used in shell environments for matching filenames or filtering text in a less complex manner.\nWildcards are used in commands for matching filenames and paths (ls, cp, mv, rm, and more).\n\nAsterisk: *\nGlob Patterns: * is the wildcard for matching zero or more characters. Arguments can include wildcards, which the shell expands into a list of files or directories that match the pattern. For example, *.txt would match all files in the current directory ending with .txt.\nExample\nls *.md lists all files in the current directory that end with .md:\n\nls *.md\n# README.md\n\n\n\nQuestion Mark: ?\n? is the wildcard for matching exactly one character.\nExample\nls myfile?.txt lists files like myfile2.txt, but not myfile.txt and my file 3.txt:\n\nls myfile?.txt\n# myfile2.txt\n\n\n\nSquare brackets: []\n[abc]: Matches any one character listed (a, b, or c).\nExample\n\nls [my]*.txt\n# my file 3.txt\n# myfile.txt\n# myfile2.txt\n\n[a-z]: Matches any one character in the range (from a to z).\nExample\n\nls [m-n]*.txt\n# my file 3.txt\n# myfile.txt\n# myfile2.txt\n# newfile.txt",
+    "section": "",
+    "text": "Asterisk: *\nGlob Patterns: * is the wildcard for matching zero or more characters. Arguments can include wildcards, which the shell expands into a list of files or directories that match the pattern. For example, *.txt would match all files in the current directory ending with .txt.\nExample\nls *.md lists all files in the current directory that end with .md:\n\nls *.md\n# README.md\n\n\n\nQuestion Mark: ?\n? is the wildcard for matching exactly one character.\nExample\nls myfile?.txt lists files like myfile2.txt, but not myfile.txt and my file 3.txt:\n\nls myfile?.txt\n# myfile2.txt\n\n\n\nSquare brackets: []\n[abc]: Matches any one character listed (a, b, or c).\nExample\n\nls [my]*.txt\n# my file 3.txt\n# myfile.txt\n# myfile2.txt\n\n[a-z]: Matches any one character in the range (from a to z).\nExample\n\nls [m-n]*.txt\n# my file 3.txt\n# myfile.txt\n# myfile2.txt\n# newfile.txt",
+    "crumbs": [
+      "Text",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Symbols</span>"
+    ]
+  },
+  {
+    "objectID": "symbols.html#sec-regexp",
+    "href": "symbols.html#sec-regexp",
+    "title": "Symbols",
+    "section": "Regular Expressions",
+    "text": "Regular Expressions\nRegular expressions (or the singular ‘regex’) are powerful tools for searching and manipulating text data. A regex is made up of special symbols that define specific patterns to be identified or transformed.\nRegular expressions operate on text–the sequence of characters that can include letters, digits, punctuation, and other character types. Text serves as the ‘data’ or ‘medium’ for which the patterns the regex describes are searched.\nRegular expressions are more complex than wildcards, and are typically used with tools like grep (global regular expression print), sed (stream editor), and awk.\n\nDot: .\n. matches any single character except a newline.\nExamples\nMatches lines containing “password” or similar patterns where any character stands between ‘p’ and ‘ssword’.\n\ngrep \"p.ssword\" data/pwrds.csv\n# password,rank,strength,online_crack\n# password,1,8,6.91 years\n\nReplaces “password” where any character is between ‘p’ and ‘ssword’ with “p@ssword”.\n\nsed 's/p.ssword/p@ssword/' data/pwrds.csv | head -n2\n# p@ssword,rank,strength,online_crack\n# p@ssword,1,8,6.91 years\n\nSelect records where “password” or similar patterns appear with any character between ‘p’, ‘ssw and rd’.\n\nawk '/p.ssw.rd/' data/pwrds.csv\n# password,rank,strength,online_crack\n# password,1,8,6.91 years\n# passw0rd,500,28,92.27 years\n\n\n\nAsterisk: *\n* matches zero or more of the preceding element.\nExamples\nWe can use grep to find lines where “i” is followed by zero or more “l”s (including none):\n\ngrep 'il*' data/wu_tang.txt\n# RZA   Robert Diggs\n# GZA   Gary Grice\n# Method Man    Clifford Smith\n# Ghostface Killah  Dennis Coles\n# U-God     Lamont Hawkins\n# Masta Killa   Jamel Irief\n# Cappadonna    Darryl Hill\n# Ol Dirty Bastard  Russell Tyrone Jones\n\nWe can use sed to replace two or more \"l\"s with 11:\n\nsed 's/lll*/11/g' data/wu_tang.txt\n# Member    Name\n# RZA   Robert Diggs\n# GZA   Gary Grice\n# Method Man    Clifford Smith\n# Raekwon the Chef  Corey Woods\n# Ghostface Ki11ah  Dennis Coles\n# Inspectah Deck    Jason Hunter\n# U-God     Lamont Hawkins\n# Masta Ki11a   Jamel Irief\n# Cappadonna    Darryl Hi11\n# Ol Dirty Bastard  Russe11 Tyrone Jones\n\nPrint lines that start with one or more \"R\"s\n\nawk '/^ *R/' data/wu_tang.txt\n# RZA   Robert Diggs\n# Raekwon the Chef  Corey Woods\n\n\n\nPlus: +\n+ matches one or more occurrences of the preceding element.\nExamples\nUse grep with extended regular expressions to find ‘i’ followed by one or more ’l’s:\n\ngrep -E 'il+' data/wu_tang.txt\n# Ghostface Killah  Dennis Coles\n# Masta Killa   Jamel Irief\n# Cappadonna    Darryl Hill\n\nReplace one or more \"a\"s with the @:\n\nsed -E 's/a+/@/g' data/wu_tang.txt\n# Member    N@me\n# RZA   Robert Diggs\n# GZA   G@ry Grice\n# Method M@n    Clifford Smith\n# R@ekwon the Chef  Corey Woods\n# Ghostf@ce Kill@h  Dennis Coles\n# Inspect@h Deck    J@son Hunter\n# U-God     L@mont H@wkins\n# M@st@ Kill@   J@mel Irief\n# C@pp@donn@    D@rryl Hill\n# Ol Dirty B@st@rd  Russell Tyrone Jones\n\nThe + operator needs the -E option to enable extended regular expressions.\nPrint lines with text containing one or more \"Z\"s:\n\nawk '/Z+/' data/wu_tang.txt\n# RZA   Robert Diggs\n# GZA   Gary Grice\n\n\n\nQuestion Mark: ?\n? makes the preceding element optional (matches zero or one occurrence).\nExamples\nUse grep with extended regular expressions to find lines with ‘Killah’ or ‘Killah’:\n\ngrep -E 'Kill?' data/wu_tang.txt\n# Ghostface Killah  Dennis Coles\n# Masta Killa   Jamel Irief\n\nsed: Replace Ghostface with Ghost Face:\n\nsed -E 's/Ghostface?/Ghost Face/' data/wu_tang.txt\n# Member    Name\n# RZA   Robert Diggs\n# GZA   Gary Grice\n# Method Man    Clifford Smith\n# Raekwon the Chef  Corey Woods\n# Ghost Face Killah Dennis Coles\n# Inspectah Deck    Jason Hunter\n# U-God     Lamont Hawkins\n# Masta Killa   Jamel Irief\n# Cappadonna    Darryl Hill\n# Ol Dirty Bastard  Russell Tyrone Jones\n\nawk: Print lines with one or more digits.\n\nawk '/[0-9]+/' data/wu_tang.txt\n\n\n\nCharacter Set: [abc]\n[abc] matches any single character listed in the set.\nExample\nUse grep to find lines containing ‘a’, ‘b’, or ‘c’:\ngrep '[abc]' filename.txt\n\n\nCaret: ^\n^ matches the start of a line.\nExample\nUse grep to find lines that start with ‘start’:\ngrep '^start' filename.txt\n\n\nDollar: $\n$ matches the end of a line.\nExample\nUse grep to find lines that end with ‘end’:\ngrep 'end$' filename.txt\nThese patterns are extremely powerful in scripting and command-line operations for filtering and manipulating text data efficiently. Here’s how you might use them in combination across different tools:\n\nsed for substitution: Replace ‘foo’ with ‘bar’ only if ‘foo’ appears at the beginning of a line:\n\nsed 's/^foo/bar/' filename.txt\n\nawk for selection: Print lines where the first field matches ‘start’:\n\nawk '/^start/ {print $0}' filename.txt\n\nperl for advanced manipulation: Increment numbers found at the end of each line:\n\nperl -pe 's/(\\d+)$/ $1+1 /e' filename.txt",
     "crumbs": [
       "Text",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Symbols</span>"
@@ -560,7 +600,7 @@
     "href": "symbols.html#special-characters",
     "title": "Symbols",
     "section": "Special Characters",
-    "text": "Special Characters\nSpecial Characters: Characters such as spaces, quotes, and others have special meanings in the shell. They need to be treated carefully when used within arguments.\n\nBraces: {}\nBrace Expansion: Similar to wildcards, brace expansion ({}) allows the creation of multiple text strings from a pattern containing braces.\nExample\ncat wu_tang.{txt,csv}\n\ncat data/wu_tang.{tsv,dat}\n# Member    Name\n# RZA   Robert Diggs\n# GZA   Gary Grice\n# Method Man    Clifford Smith\n# Raekwon the Chef  Corey Woods\n# Ghostface Killah  Dennis Coles\n# Inspectah Deck    Jason Hunter\n# U-God Lamont Hawkins\n# Masta Killa   Jamel Irief\n# Cappadonna    Darryl Hill\n# Ol Dirty Bastard  Russell Tyrone Jones\n# |Member           |Name                 |\n# |RZA              |Robert Diggs         |\n# |GZA              |Gary Grice           |\n# |Method Man       |Clifford Smith       |\n# |Raekwon the Chef |Corey Woods          |\n# |Ghostface Killah |Dennis Coles         |\n# |Inspectah Deck   |Jason Hunter         |\n# |U-God            |Lamont Hawkins       |\n# |Masta Killa      |Jamel Irief          |\n# |Cappadonna       |Darryl Hill          |\n# |Ol Dirty Bastard |Russell Tyrone Jones |\n\nExpands into:\n\ncat data/wu_tang.tsv \ncat data/wu_tang.dat\n# Member    Name\n# RZA   Robert Diggs\n# GZA   Gary Grice\n# Method Man    Clifford Smith\n# Raekwon the Chef  Corey Woods\n# Ghostface Killah  Dennis Coles\n# Inspectah Deck    Jason Hunter\n# U-God Lamont Hawkins\n# Masta Killa   Jamel Irief\n# Cappadonna    Darryl Hill\n# Ol Dirty Bastard  Russell Tyrone Jones\n# |Member           |Name                 |\n# |RZA              |Robert Diggs         |\n# |GZA              |Gary Grice           |\n# |Method Man       |Clifford Smith       |\n# |Raekwon the Chef |Corey Woods          |\n# |Ghostface Killah |Dennis Coles         |\n# |Inspectah Deck   |Jason Hunter         |\n# |U-God            |Lamont Hawkins       |\n# |Masta Killa      |Jamel Irief          |\n# |Cappadonna       |Darryl Hill          |\n# |Ol Dirty Bastard |Russell Tyrone Jones |\n\n\n\nBackslash: \\\n\\ escapes the following character, nullifying its special meaning\nExample\necho \"File name with spaces \\& special characters\" prints the text with spaces and the ampersand:\n\necho \"File name with spaces \\& special characters\"\n# File name with spaces & special characters\n\n\n\nSingle quotes: ''\nSingle quotes (' ') treat every character literally, ignoring the special meaning of all characters.\nExample\necho '$HOME' prints $HOME, not the path to the home directory:\n\necho '$HOME'\n# $HOME\n\n\n\nDouble quotes: \"\"\nDouble quotes (\" \") allow for the inclusion of special characters in an argument, except for the dollar sign ($), backticks (` `), and backslash (\\).\nExample\necho \"$HOME\" prints the path to the home directory:\n\necho \"$HOME\"\n#&gt; /Users/username\n\n\n\nTilde: ~\n~ represents the home directory of the current user.\nExample\nList the items in the user’s home directory:\n\nls ~\n#&gt; Applications\n#&gt; Creative Cloud Files\n#&gt; Desktop\n#&gt; Documents\n#&gt; Downloads\n#&gt; Dropbox\n#&gt; Fonts\n#&gt; Library\n#&gt; Movies\n#&gt; Music\n#&gt; Pictures\n#&gt; Public\n#&gt; R\n#&gt; Themes\n\n\n\nDollar Sign: $\n$ indicates a variable.\nExample\necho $PATH prints the value of the PATH environment variable:\n\necho $PATH\n\n\n\nAmpersand: &\n& runs a command in the background.\nExample\nfirefox & opens Firefox in the background, allowing the terminal to be used for other commands.\n\nfirefox &\n\n\n\nSemicolon: ;\n; separates multiple commands to be run in sequence.\nExample\ncd data; ls changes the directory to data and then lists its contents:\n\ncd data; ls\n# ajperlis_epigrams.txt\n# music_vids.tsv\n# roxanne.txt\n# roxanne_orig.txt\n# roxanne_rev.txt\n# trees.tsv\n# vg_hof.tsv\n# who-tb-data.tsv\n# who_tb_data.txt\n# wu_tang.csv\n# wu_tang.dat\n# wu_tang.tsv\n# wu_tang.txt\n\n\n\nGreater Than: &gt;\nRedirection operators: &gt; directs output to a file or a device.\nExample\necho \"This is my 2nd file\" &gt; myfile2.txt writes \"This is my 2nd file\" into myfile2.txt:\n\necho \"This is my 2nd file\" &gt; myfile2.txt\n\n\n\nLess Than: &lt;\nRedirection operators: &lt; takes input from a file or a device.\nExample\nThen wc &lt; myfile2.txt counts the words in myfile2.txt:\n\nwc &lt; myfile2.txt\n#        1       5      20\n\n\n\nParentheses: ()\nParentheses can be used to group commands or for command substitution with $( ).\nExample\n(cd /data; ls) runs ls in /data without changing the current directory:\n\n(cd data; ls)\n# ajperlis_epigrams.txt\n# music_vids.tsv\n# roxanne.txt\n# roxanne_orig.txt\n# roxanne_rev.txt\n# trees.tsv\n# vg_hof.tsv\n# who-tb-data.tsv\n# who_tb_data.txt\n# wu_tang.csv\n# wu_tang.dat\n# wu_tang.tsv\n# wu_tang.txt\n\n$(command) uses the output of command.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "text": "Special Characters\nSpecial Characters: Characters such as spaces, quotes, and others have special meanings in the shell. They need to be treated carefully when used within arguments.\n\nBraces: {}\nBrace Expansion: Similar to wildcards, brace expansion ({}) allows the creation of multiple text strings from a pattern containing braces.\nExample\ncat wu_tang.{txt,csv}\n\ncat data/wu_tang.{tsv,dat}\n# Member    Name\n# RZA   Robert Diggs\n# GZA   Gary Grice\n# Method Man    Clifford Smith\n# Raekwon the Chef  Corey Woods\n# Ghostface Killah  Dennis Coles\n# Inspectah Deck    Jason Hunter\n# U-God Lamont Hawkins\n# Masta Killa   Jamel Irief\n# Cappadonna    Darryl Hill\n# Ol Dirty Bastard  Russell Tyrone Jones\n# |Member           |Name                 |\n# |RZA              |Robert Diggs         |\n# |GZA              |Gary Grice           |\n# |Method Man       |Clifford Smith       |\n# |Raekwon the Chef |Corey Woods          |\n# |Ghostface Killah |Dennis Coles         |\n# |Inspectah Deck   |Jason Hunter         |\n# |U-God            |Lamont Hawkins       |\n# |Masta Killa      |Jamel Irief          |\n# |Cappadonna       |Darryl Hill          |\n# |Ol Dirty Bastard |Russell Tyrone Jones |\n\nExpands into:\n\ncat data/wu_tang.tsv \ncat data/wu_tang.dat\n# Member    Name\n# RZA   Robert Diggs\n# GZA   Gary Grice\n# Method Man    Clifford Smith\n# Raekwon the Chef  Corey Woods\n# Ghostface Killah  Dennis Coles\n# Inspectah Deck    Jason Hunter\n# U-God Lamont Hawkins\n# Masta Killa   Jamel Irief\n# Cappadonna    Darryl Hill\n# Ol Dirty Bastard  Russell Tyrone Jones\n# |Member           |Name                 |\n# |RZA              |Robert Diggs         |\n# |GZA              |Gary Grice           |\n# |Method Man       |Clifford Smith       |\n# |Raekwon the Chef |Corey Woods          |\n# |Ghostface Killah |Dennis Coles         |\n# |Inspectah Deck   |Jason Hunter         |\n# |U-God            |Lamont Hawkins       |\n# |Masta Killa      |Jamel Irief          |\n# |Cappadonna       |Darryl Hill          |\n# |Ol Dirty Bastard |Russell Tyrone Jones |\n\n\n\nBackslash: \\\n\\ escapes the following character, nullifying its special meaning\nExample\necho \"File name with spaces \\& special characters\" prints the text with spaces and the ampersand:\n\necho \"File name with spaces \\& special characters\"\n# File name with spaces & special characters\n\n\n\nSingle quotes: ''\nSingle quotes (' ') treat every character literally, ignoring the special meaning of all characters.\nExample\necho '$HOME' prints $HOME, not the path to the home directory:\n\necho '$HOME'\n# $HOME\n\n\n\nDouble quotes: \"\"\nDouble quotes (\" \") allow for the inclusion of special characters in an argument, except for the dollar sign ($), backticks (` `), and backslash (\\).\nExample\necho \"$HOME\" prints the path to the home directory:\n\necho \"$HOME\"\n#&gt; /Users/username\n\n\n\nTilde: ~\n~ represents the home directory of the current user.\nExample\nList the items in the user’s home directory:\n\nls ~\n#&gt; Applications\n#&gt; Creative Cloud Files\n#&gt; Desktop\n#&gt; Documents\n#&gt; Downloads\n#&gt; Dropbox\n#&gt; Fonts\n#&gt; Library\n#&gt; Movies\n#&gt; Music\n#&gt; Pictures\n#&gt; Public\n#&gt; R\n#&gt; Themes\n\n\n\nDollar Sign: $\n$ indicates a variable.\nExample\necho $PATH prints the value of the PATH environment variable:\n\necho $PATH\n\n\n\nAmpersand: &\n& runs a command in the background.\nExample\nfirefox & opens Firefox in the background, allowing the terminal to be used for other commands.\n\nfirefox &\n\n\n\nSemicolon: ;\n; separates multiple commands to be run in sequence.\nExample\ncd data; ls changes the directory to data and then lists its contents:\n\ncd data; ls\n# ajperlis_epigrams.txt\n# music_vids.tsv\n# pwrds.csv\n# pwrds.tsv\n# roxanne.txt\n# roxanne_orig.txt\n# roxanne_rev.txt\n# trees.tsv\n# vg_hof.tsv\n# who-tb-data.tsv\n# who_tb_data.txt\n# wu_tang.csv\n# wu_tang.dat\n# wu_tang.tsv\n# wu_tang.txt\n\n\n\nGreater Than: &gt;\nRedirection operators: &gt; directs output to a file or a device.\nExample\necho \"This is my 2nd file\" &gt; myfile2.txt writes \"This is my 2nd file\" into myfile2.txt:\n\necho \"This is my 2nd file\" &gt; myfile2.txt\n\n\n\nLess Than: &lt;\nRedirection operators: &lt; takes input from a file or a device.\nExample\nThen wc &lt; myfile2.txt counts the words in myfile2.txt:\n\nwc &lt; myfile2.txt\n#        1       5      20\n\n\n\nParentheses: ()\nParentheses can be used to group commands or for command substitution with $( ).\nExample\n(cd /data; ls) runs ls in /data without changing the current directory:\n\n(cd data; ls)\n# ajperlis_epigrams.txt\n# music_vids.tsv\n# pwrds.csv\n# pwrds.tsv\n# roxanne.txt\n# roxanne_orig.txt\n# roxanne_rev.txt\n# trees.tsv\n# vg_hof.tsv\n# who-tb-data.tsv\n# who_tb_data.txt\n# wu_tang.csv\n# wu_tang.dat\n# wu_tang.tsv\n# wu_tang.txt\n\n$(command) uses the output of command.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Text",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Symbols</span>"
@@ -685,6 +725,61 @@
     "crumbs": [
       "Shell Scripts",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Permissions</span>"
+    ]
+  },
+  {
+    "objectID": "file_size.html",
+    "href": "file_size.html",
+    "title": "Find Large Files",
+    "section": "",
+    "text": "find",
+    "crumbs": [
+      "Use Cases",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Find Large Files</span>"
+    ]
+  },
+  {
+    "objectID": "file_size.html#du-sort",
+    "href": "file_size.html#du-sort",
+    "title": "Find Large Files",
+    "section": "du & sort",
+    "text": "du & sort",
+    "crumbs": [
+      "Use Cases",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Find Large Files</span>"
+    ]
+  },
+  {
+    "objectID": "file_size.html#awk-ls",
+    "href": "file_size.html#awk-ls",
+    "title": "Find Large Files",
+    "section": "awk & ls",
+    "text": "awk & ls",
+    "crumbs": [
+      "Use Cases",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Find Large Files</span>"
+    ]
+  },
+  {
+    "objectID": "file_size.html#ncdu",
+    "href": "file_size.html#ncdu",
+    "title": "Find Large Files",
+    "section": "ncdu",
+    "text": "ncdu",
+    "crumbs": [
+      "Use Cases",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Find Large Files</span>"
+    ]
+  },
+  {
+    "objectID": "file_size.html#grep-find-or-du",
+    "href": "file_size.html#grep-find-or-du",
+    "title": "Find Large Files",
+    "section": "grep & find or du",
+    "text": "grep & find or du",
+    "crumbs": [
+      "Use Cases",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Find Large Files</span>"
     ]
   },
   {
@@ -831,6 +926,28 @@
     ]
   },
   {
+    "objectID": "glossary.html#sec-nfs",
+    "href": "glossary.html#sec-nfs",
+    "title": "Glossary",
+    "section": "Network File System (NFS)",
+    "text": "Network File System (NFS)\nNFS is a file system protocol that enables a user to access files over a network. It provides a central location for storing and sharing files across multiple computers and allows users to work with files on remote servers as if they were on their local machine.",
+    "crumbs": [
+      "Appendices",
+      "Glossary"
+    ]
+  },
+  {
+    "objectID": "glossary.html#sec-onprem",
+    "href": "glossary.html#sec-onprem",
+    "title": "Glossary",
+    "section": "On-prem",
+    "text": "On-prem\nOn-prem or on-premises refers to software and technology installed and running on computers on the premises of the user instead of a remote facility. On-prem can include data centers, servers, and other hardware within a company’s property. It is chosen for greater control over the computing environment and compliance reasons, as the organization is responsible for managing the security, maintenance, and updating of the systems.",
+    "crumbs": [
+      "Appendices",
+      "Glossary"
+    ]
+  },
+  {
     "objectID": "glossary.html#sec-quarto",
     "href": "glossary.html#sec-quarto",
     "title": "Glossary",
@@ -872,6 +989,16 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>macOS</span>"
+    ]
+  },
+  {
+    "objectID": "use_cases.html",
+    "href": "use_cases.html",
+    "title": "Use Cases",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.",
+    "crumbs": [
+      "Use Cases"
     ]
   },
   {

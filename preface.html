@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A Unix Field Manual">
+<meta name="description" content="A Unix/Linux Field Manual">
 
 <title>fm-unix – Preface</title>
 <style>
@@ -257,13 +257,29 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+            <a href="./use_cases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Cases</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./file_size.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Find Large Files</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./syntax_ref.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Syntax Reference</span></a>
@@ -292,8 +308,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"><!--# What This Book Is Not   --></a></li>
+  <li><a href="#book-outline" id="toc-book-outline" class="nav-link active" data-scroll-target="#book-outline">Book outline</a>
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#set-ups" id="toc-set-ups" class="nav-link" data-scroll-target="#set-ups">Set-Ups</a></li>
+  <li><a href="#syntax" id="toc-syntax" class="nav-link" data-scroll-target="#syntax">Syntax</a></li>
+  <li><a href="#the-basics" id="toc-the-basics" class="nav-link" data-scroll-target="#the-basics">The Basics</a></li>
+  </ul></li>
+  <li><a href="#manipulating-text" id="toc-manipulating-text" class="nav-link" data-scroll-target="#manipulating-text">Manipulating Text</a></li>
+  <li><a href="#shell-scripts-in-development" id="toc-shell-scripts-in-development" class="nav-link" data-scroll-target="#shell-scripts-in-development">Shell Scripts (in development)</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><!--# What This Book Is Not   --></a></li>
   <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><!--# Audience and Prerequisites --></a></li>
+  <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data files</a>
+  <ul>
+  <li><a href="#passwords" id="toc-passwords" class="nav-link" data-scroll-target="#passwords">Passwords</a></li>
+  <li><a href="#aj-perlis-epigrams" id="toc-aj-perlis-epigrams" class="nav-link" data-scroll-target="#aj-perlis-epigrams">AJ Perlis Epigrams</a></li>
+  <li><a href="#music-videos" id="toc-music-videos" class="nav-link" data-scroll-target="#music-videos">Music Videos</a></li>
+  <li><a href="#roxanne" id="toc-roxanne" class="nav-link" data-scroll-target="#roxanne">Roxanne</a></li>
+  <li><a href="#trees" id="toc-trees" class="nav-link" data-scroll-target="#trees">Trees</a></li>
+  <li><a href="#who-tb-data" id="toc-who-tb-data" class="nav-link" data-scroll-target="#who-tb-data">WHO TB Data</a></li>
+  <li><a href="#wu-tang-clan" id="toc-wu-tang-clan" class="nav-link" data-scroll-target="#wu-tang-clan">Wu Tang Clan</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -338,30 +373,71 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>Unix and Linux are powerful, versatile, and widely used operating systems that run on millions of devices worldwide, from smartphones to supercomputers. Learning about Unix/Linux can open doors to many career opportunities and help you better understand the digital world around you.</p>
-<p>This book is structured to gradually introduce you to the Unix/Linux environment, starting from the basics to more complex concepts. Here’s what each section covers:</p>
-<p><strong>Introduction</strong></p>
+<p>This book is structured to gradually introduce you to the Unix/Linux environment, starting from the basics to more complex concepts, then covering multiple case studies.</p>
+<section id="book-outline" class="level2">
+<h2 class="anchored" data-anchor-id="book-outline">Book outline</h2>
+<p>The first half (sections 1-5) of this manual cover concepts and materials for users who are new to Unix/Linux. If you’re familiar with command-line tools, regular expressions, and bash scripts, feel free to skip these chapters.</p>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
 <p>The <strong><a href="intro.html" class="quarto-xref"><span>Introduction</span></a></strong> acquaints you with some background that formed the landscape of Unix/Linux systems. It explains the Bash shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Unix/Linux systems.</p>
-<p><strong>Set-Ups</strong></p>
+</section>
+<section id="set-ups" class="level3">
+<h3 class="anchored" data-anchor-id="set-ups">Set-Ups</h3>
 <p>Before diving into the commands and scripts, setting up your Unix/Linux environment is crucial. This section guides you through various options for setting up <strong><a href="sh_term.html" class="quarto-xref"><span>Shells and Terminals</span></a></strong>, <strong><a href="vms.html" class="quarto-xref"><span>Virtual Machines</span></a></strong>, and <strong><a href="glossary.html#sec-quarto" class="quarto-xref"><span>Quarto</span></a></strong> documents.</p>
-<p><strong>Syntax</strong></p>
+</section>
+<section id="syntax" class="level3">
+<h3 class="anchored" data-anchor-id="syntax">Syntax</h3>
 <p>Understanding the syntax is vital for effectively communicating with the Unix/Linux system. This section demystifies the structure of commands, including how to differentiate between <strong><a href="commands.html" class="quarto-xref"><span>Commands</span></a></strong>, <strong><a href="arguments.html" class="quarto-xref"><span>Arguments</span></a></strong>, and <strong><a href="options.html" class="quarto-xref"><span>Options</span></a></strong> and manage inputs and outputs. This knowledge is critical to executing tasks efficiently in the command line.</p>
 <p><strong><a href="pipes.html" class="quarto-xref"><span>Pipes</span></a></strong> are a cornerstone of Unix/Linux productivity, enabling the output of one command to serve as the input to another. This section covers how to combine commands using <code>stdout</code> and <code>stdin</code>, allowing for robust command chains that can perform complex tasks with a simple syntax. Understanding pipes unlocks a higher level of command-line efficiency and is a step towards advanced Unix/Linux usage.</p>
-<p><strong>Files and Directories</strong></p>
+</section>
+<section id="the-basics" class="level3">
+<h3 class="anchored" data-anchor-id="the-basics">The Basics</h3>
 <p>Navigating and managing files and folders are daily tasks for Unix/Linux users. <strong><a href="dirs.html" class="quarto-xref"><span>Directories</span></a></strong> covers essential commands such as <code>cd</code> for changing directories, <code>pwd</code> to print the current directory, <code>ls</code> for listing files, and <code>mkdir</code> for making directories.</p>
 <p><strong><a href="files.html" class="quarto-xref"><span>Files</span></a></strong> chapter covers file manipulation commands like <code>cp</code> (copy), <code>mv</code> (move), <code>rm</code> (remove), and <code>less</code> for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Unix/Linux.</p>
-<p><strong>Manipulating Text</strong></p>
+<p><strong><a href="sys.html" class="quarto-xref"><span>System</span></a></strong> covers…</p>
+</section>
+</section>
+<section id="manipulating-text" class="level2">
+<h2 class="anchored" data-anchor-id="manipulating-text">Manipulating Text</h2>
 <p><strong>Text Commands</strong>: Unix/Linux systems are renowned for their powerful text manipulation capabilities. The <strong><a href="text_commands.html" class="quarto-xref"><span>Manipulating Text</span></a></strong> chapter introduces commands such as <code>cat</code> for displaying file contents, <code>grep</code> for searching within files, <code>sort</code> for sorting data, <code>uniq</code> for filtering unique lines, and <code>cut</code>, <code>paste</code>, and <code>join</code> for editing files. Mastering these commands will allow you to handle and process text data efficiently.</p>
 <p><strong>Text Editors:</strong> This section covers nano, vim, and emacs.</p>
-<p><strong>Shell Scripts (in development)</strong></p>
+</section>
+<section id="shell-scripts-in-development" class="level2">
+<h2 class="anchored" data-anchor-id="shell-scripts-in-development">Shell Scripts (in development)</h2>
 <p>Shell scripting is a powerful tool for automating repetitive tasks in Unix/Linux. This section introduces you to writing your shell scripts, covering the basics of script creation, execution, and debugging. You`ll learn how to automate simple tasks, making your Unix/Linux experience more productive and enjoyable.</p>
 <p><strong>Format</strong>: Shell scripts can be written in various formats, depending on your shell (e.g., Bash, Zsh). This section delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Unix/Linux systems.</p>
 <p><strong>Permissions</strong>: Understanding file permissions is crucial to managing the security of your files and directories in Unix/Linux. This section explains how Unix/Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.</p>
 <p>By the end of this book, you’ll have a solid understanding of the Unix/Linux operating system. You’ll be equipped to navigate, manage files, write scripts, and set permissions confidently. Whether you’re looking to enhance your career prospects, manage your Unix/Linux systems, or simply satisfy your curiosity, this book will be your companion on a fascinating journey into the world of Unix/Linux.</p>
+</section>
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section"><!--# What This Book Is Not   --></h2>
 </section>
 <section id="section-1" class="level2">
 <h2 class="anchored" data-anchor-id="section-1"><!--# Audience and Prerequisites --></h2>
+</section>
+<section id="data-files" class="level2">
+<h2 class="anchored" data-anchor-id="data-files">Data files</h2>
+<section id="passwords" class="level3">
+<h3 class="anchored" data-anchor-id="passwords">Passwords</h3>
+<p>This data file comes from <a href="https://docs.google.com/spreadsheets/d/1cz7TDhm0ebVpySqbTvrHrD3WpxeyE4hLZtifWSnoNTQ/edit#gid=16">Information is Beautiful</a> and includes the following variables:</p>
+</section>
+<section id="aj-perlis-epigrams" class="level3">
+<h3 class="anchored" data-anchor-id="aj-perlis-epigrams">AJ Perlis Epigrams</h3>
+</section>
+<section id="music-videos" class="level3">
+<h3 class="anchored" data-anchor-id="music-videos">Music Videos</h3>
+</section>
+<section id="roxanne" class="level3">
+<h3 class="anchored" data-anchor-id="roxanne">Roxanne</h3>
+</section>
+<section id="trees" class="level3">
+<h3 class="anchored" data-anchor-id="trees">Trees</h3>
+</section>
+<section id="who-tb-data" class="level3">
+<h3 class="anchored" data-anchor-id="who-tb-data">WHO TB Data</h3>
+</section>
+<section id="wu-tang-clan" class="level3">
+<h3 class="anchored" data-anchor-id="wu-tang-clan">Wu Tang Clan</h3>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -382,6 +458,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
