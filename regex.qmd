@@ -7,7 +7,7 @@ knitr:
     
 ---
 
-# Symbols {#sec-symbols}
+# Symbols & Patterns {#sec-symbols-patterns}
 
 ```{bash}
 #| label: setup

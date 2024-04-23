@@ -43,7 +43,7 @@ This book is structured to gradually introduce you to the Unix/Linux environment
 
 ## Book outline
 
-The first half (sections 1-5) of this manual cover concepts and materials for users who are new to Unix/Linux. If you're familiar with command-line tools, regular expressions, and bash scripts, feel free to skip these chapters.
+The first four sections of this manual cover concepts and materials for users who are new to Unix/Linux. If you're familiar with Unix/Linux command-line tools and regular expressions, feel free to skip these chapters.
 
 ### Introduction
 
@@ -85,7 +85,7 @@ By the end of this book, you'll have a solid understanding of the Unix/Linux ope
 
 ## <!--# What This Book Is Not   -->
 
-## <!--# Audience and Prerequisites -->
+<!--
 
 ## Data files 
 
@@ -109,6 +109,8 @@ This data file comes from [Information is Beautiful](https://docs.google.com/spr
 
 ### Wu Tang Clan
 
+-->
+ 
 ```{r}
 #| label: git_contrib_box
 #| echo: false

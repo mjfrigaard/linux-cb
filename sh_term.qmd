@@ -90,7 +90,8 @@ Bash provides an interactive command line editing environment with features:
 **Job Control**
 
 Bash offers comprehensive job control, which includes:  
--   Backgrounding (`&`), foregrounding (`fg`), and job management (`jobs`, `bg`)
+
+-   Backgrounding (`&`), foregrounding (`fg`), and job management (`jobs`, `bg`)   
 -   Stopping (suspending) processes and continuing them with `kill` and `kill -CONT`
 
 **Aliases and Shell Functions**

@@ -37,7 +37,7 @@ book:
         - sys.qmd
     - part: text.qmd
       chapters:
-        - symbols.qmd
+        - regex.qmd
         - text_commands.qmd
         - text_editors.qmd
     - part: scripts.qmd
