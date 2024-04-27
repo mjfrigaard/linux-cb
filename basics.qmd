@@ -6,7 +6,7 @@ knitr:
     comment: '# '
 ---
 
-# Basics  {#sec-basic-cmnds}
+# Basics  {#sec-basic-cmnds .unnumbered}
 
 ```{r}
 #| label: setup

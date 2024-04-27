@@ -3,6 +3,15 @@
 
 options(width = 50L, pillar.width = 50L)
 
+readme_stuff <- list.files(
+    path = "data",
+    pattern = "html|files",
+    full.names = TRUE,
+    include.dirs = TRUE,
+    all.files = TRUE)
+
+sapply(X = readme_stuff, FUN = unlink, force = TRUE, recursive = TRUE)
+
 co_box <- function(
   color = "b",
   header = "header",

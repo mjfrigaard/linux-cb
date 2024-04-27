@@ -6,7 +6,7 @@ knitr:
     comment: '# '
 ---
 
-# Text {#sec-manip-text}
+# Text {#sec-text .unnumbered}
 
 ```{r}
 #| label: setup

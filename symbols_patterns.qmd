@@ -38,24 +38,22 @@ co_box(
 )
 ```
 
-Regular expressions, or regex, are powerful tools for searching and manipulating text data. A regex is made up of special symbols that define specific patterns to be identified or transformed. The regular expressions are not the data themselves but rather a framework for locating or modifying the data. In this chapter, we will explore wildcards, regular expressions, and other special characters.
+Regular expressions are powerful tools for searching and manipulating text data. A regular expression (or 'regex') is made up of special symbols that define specific patterns to be identified or transformed. The regex patterns are not the data themselves, but rather a framework for locating or modifying text data. In this chapter, we'll explore wildcards, regular expressions, and other special characters.
 
 ## [Wildcards]{style="font-weight: bold;"}  {#sec-wildcards}
 
-Wildcards (also known as glob patterns) are primarily used in shell environments for matching filenames or filtering text in a less complex manner.
-
-Wildcards are used in commands for matching filenames and paths (`ls`, `cp`, `mv`, `rm`, and more).
+Wildcards (also known as glob patterns) are mostly used in commands to match filenames, paths, or filter text (`ls`, `cp`, `mv`, `rm`, etc.). Arguments can include wildcards, which the shell expands into a list of files or directories that match the pattern.
 
 ### Asterisk: `*` {#sec-wc-asterisk}
 
-**Glob Patterns**: `*` is the wildcard for matching **zero or more characters**. Arguments can include wildcards, which the shell expands into a list of files or directories that match the pattern. For example, `*.txt` would match all files in the current directory ending with `.txt`.
+`*` is a wildcard for matching **zero or more characters**. 
 
 **Example** 
 
-`ls *.md` lists all files in the current directory that end with `.md`:
+`ls *.md` lists all files in the `data/` directory that end with `.md`:
 
 ```{bash}
-ls *.md
+ls data/*.md
 ```
 
 ### Question Mark: `?` {#sec-wc-question}
@@ -76,18 +74,20 @@ ls myfile?.txt
 
 **Example** 
 
+`[a-z]`: Matches any one character (`n`, `e`, or `w`).
 
 ```{bash}
-ls [my]*.txt
+ls [new]*.txt
 ```
 
-`[a-z]`: Matches any one character in the range (from a to z).
+
 
 **Example** 
 
+Natch any one character in range (`a` to `p`).
 
 ```{bash}
-ls [m-n]*.txt
+ls data/[a-p]*
 ```
 
 

@@ -41,7 +41,7 @@ co_box(
 )
 ```
 
-Unix command options (sometimes called flags), often preceded by a hyphen (`-`) or two (`--` for long-form options), modify the behavior of commands to provide flexibility and control over their operation. Options can enable a vast array of additional functionalities, from altering the output format to specifying operational parameters that aren't set by default. 
+Unix command options (sometimes called flags) are often preceded by a hyphen (`-`) or two (`--` for long-form options) and modify the behavior of a command. Options provide flexibility, control, and, in some cases, enable a vast array of additional functionalities. 
 
 ## Short Options
  
