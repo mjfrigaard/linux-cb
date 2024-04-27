@@ -252,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./regex.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Symbols &amp; Patterns</span></a>
+  <a href="./symbols_patterns.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Symbols &amp; Patterns</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -394,7 +394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Unix command options (sometimes called flags), often preceded by a hyphen (<code>-</code>) or two (<code>--</code> for long-form options), modify the behavior of commands to provide flexibility and control over their operation. Options can enable a vast array of additional functionalities, from altering the output format to specifying operational parameters that aren’t set by default.</p>
+<p>Unix command options (sometimes called flags) are often preceded by a hyphen (<code>-</code>) or two (<code>--</code> for long-form options) and modify the behavior of a command. Options provide flexibility, control, and, in some cases, enable a vast array of additional functionalities.</p>
 <section id="short-options" class="level2">
 <h2 class="anchored" data-anchor-id="short-options">Short Options</h2>
 <p>Short options are typically a single dash followed by a single letter (e.g., <code>-l</code>) and they modify the command behavior in a specific, often concise way.</p>
@@ -412,7 +412,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    117 Apr 18 09:27 roxanne_rev.txt</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   4417 Apr 10 14:01 trees.tsv</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--  1 mjfrigaard  staff   4814 Apr 10 14:07 vg_hof.tsv</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    381 Mar 28  2023 who-tb-data.tsv</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    381 Mar 28  2023 who_tb_data.tsv</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    381 Apr 12 13:14 who_tb_data.txt</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:34 wu_tang.csv</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    462 Apr 15 14:07 wu_tang.dat</span></span>
@@ -428,7 +428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lrt</span> data</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># total 200</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    381 Mar 28  2023 who-tb-data.tsv</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    381 Mar 28  2023 who_tb_data.tsv</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   1315 Apr  6 05:38 roxanne.txt</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:34 wu_tang.csv</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    281 Apr 10 09:38 wu_tang.txt</span></span>
@@ -491,7 +491,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># roxanne_rev.txt</span></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># trees.tsv</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># vg_hof.tsv</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># who-tb-data.tsv</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># who_tb_data.tsv</span></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># who_tb_data.txt</span></span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># wu_tang.csv</span></span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># wu_tang.dat</span></span>
