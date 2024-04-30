@@ -236,6 +236,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
@@ -342,16 +347,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#install" id="toc-install" class="nav-link active" data-scroll-target="#install">Install</a></li>
-  <li><a href="#quarto-documents" id="toc-quarto-documents" class="nav-link" data-scroll-target="#quarto-documents">Quarto Documents</a>
+  <li><a href="#install" id="toc-install" class="nav-link active" data-scroll-target="#install"><span style="font-size: 1.15em; font-weight: bold;">Install</span></a></li>
+  <li><a href="#quarto-documents" id="toc-quarto-documents" class="nav-link" data-scroll-target="#quarto-documents"><span style="font-size: 1.15em; font-weight: bold;">Quarto Documents</span></a>
   <ul>
   <li><a href="#sec-quarto-yaml" id="toc-sec-quarto-yaml" class="nav-link" data-scroll-target="#sec-quarto-yaml">YAML header</a></li>
-  <li><a href="#sec-quarto-bash" id="toc-sec-quarto-bash" class="nav-link" data-scroll-target="#sec-quarto-bash">Bash Code Chunks</a></li>
+  <li><a href="#sec-quarto-bash" id="toc-sec-quarto-bash" class="nav-link" data-scroll-target="#sec-quarto-bash">Code Chunks</a></li>
   <li><a href="#code-chunk-isolation" id="toc-code-chunk-isolation" class="nav-link" data-scroll-target="#code-chunk-isolation">Code Chunk Isolation</a></li>
-  </ul></li>
-  <li><a href="#posit-workbench" id="toc-posit-workbench" class="nav-link" data-scroll-target="#posit-workbench">Posit Workbench</a>
-  <ul>
-  <li><a href="#terminal-pane-posit-workbench" id="toc-terminal-pane-posit-workbench" class="nav-link" data-scroll-target="#terminal-pane-posit-workbench">Terminal Pane (Posit Workbench)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -396,7 +397,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><a href="https://quarto.org/">Quarto</a> is an ‘<em>open-source scientific and technical publishing system</em>’ built on <a href="https://pandoc.org/">Pandoc</a> that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards. It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through downloading and installing Quarto, <code>.qmd</code> documents, <code>YAML</code> headers and Bash code chunks.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[20,80]">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/logo-quarto.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<p><a href="https://quarto.org/">Quarto</a> is an ‘<em>open-source scientific and technical publishing system</em>’ that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards.</p>
+</div>
+</div>
+</div>
+<p>It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through downloading and installing Quarto, <code>.qmd</code> documents, <code>YAML</code> headers and Bash code chunks.</p>
+<section id="install" class="level2">
+<h2 class="anchored" data-anchor-id="install"><span style="font-size: 1.15em; font-weight: bold;">Install</span></h2>
+<p>Quarto can be installed from its <a href="https://quarto.org/docs/get-started/">official website</a>. Follow the platform-specific instructions to install it on your system. Make sure Quarto has been installed correctly and is available in your system’s <code>PATH</code>.</p>
+<p>Check if Quarto is in <code>PATH</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">## 1.5.28</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If the Quarto version isn’t on your <code>PATH</code>, you’ll need to add the location of your quarto installation to <code>PATH</code>. You can do that with the commands below (depending on your shell).</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[20,80]">
+<div class="quarto-layout-row quarto-layout-valign-center">
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<p><strong>Bash</strong>:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'export PATH="$PATH:/path/to/quarto"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-center">
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<p><strong>Zsh</strong>:<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'export PATH="$PATH:/path/to/quarto"'</span> <span class="op">&gt;&gt;</span> ~/.zshrc</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.zshrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>You can also use <code>which</code> to locate quarto path:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> quarto</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">## /usr/local/bin/quarto</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>On macOS, you can use <code>find</code> in the Terminal:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> / <span class="at">-name</span> quarto <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="quarto-documents" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-documents"><span style="font-size: 1.15em; font-weight: bold;">Quarto Documents</span></h2>
+<p>Quarto documents are a flexible and powerful tool for creating dynamic and reproducible reports, presentations, and publications. Quarto documents can support multiple programming languages, including R, Python, Julia, and Bash. Users can combine narrative text with code in a single document, rendering it into various formats like HTML, PDF, and Word.</p>
+<p>This feature proves not only invaluable for data scientists, but for anyone looking to learn a new programming language. Quarto documents are a perfect ‘sandbox’ to experiment with code, take notes, and review the outputs. Moreover, Quarto has the supports cross-referencing, advanced layout options, and beautiful web and book publishing workflows.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Quarto documents consist of the following elements:</p>
+<ol type="1">
+<li><p><strong>YAML Header</strong>: This is used to specify the document’s title, author, and output format.</p></li>
+<li><p><strong>Narrative Text</strong>: Plain language explanations and context.</p></li>
+<li><p><strong>Code Chunks</strong>: Executable code blocks from languages like R, Python, Bash, or Julia.</p></li>
+</ol>
+<p>Additional features include:</p>
+<ul>
+<li><p><strong>Results</strong>: the output is displayed directly from the executable code chunks (tables, graphs, etc.).</p></li>
+<li><p><strong>Cross-references and Citations</strong>: Link to figures, tables, sections, or reference bibliographic sources.</p></li>
+<li><p><strong>Figures and Tables</strong>: Markdown syntax can be used to add images and tables.</p></li>
+<li><p><strong>Appendices and Bibliography</strong>: Footnotes and references.</p></li>
+</ul>
+<p>If you decide to use Quarto documents, you’ll need to decide on the tool (or development environment) you want to use. At the time of this writing, Quarto has tutorials for getting started in <a href="https://posit.co/download/rstudio-desktop/">RStudio</a>, <a href="https://code.visualstudio.com/">VS Code</a>, <a href="https://jupyter.org/">Jupyter</a>, <a href="https://neovim.io/">Neovim</a>, or a text editor (like <a href="https://www.sublimetext.com/">Sublime Text</a>).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -410,53 +486,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div style="font-size: 1.05em; color: #282b2d;">
+<p>Literate programming is a programming paradigm that intertwines code with human-readable narrative, allowing programmers to write programs in the order best suited for human understanding. Donald Knuth developed this approach to make code more understandable and maintainable.</p>
 <blockquote class="blockquote">
 <p>‘<em>Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.</em>’ - <a href="http://www.literateprogramming.com/index.html">Donald Knuth. Literate Programming (1984) in Literate Programming. CSLI, 1992, pg. 99.</a></p>
 </blockquote>
+<p>Literate programming can foster clearer communication of complex programming concepts and enhances collaboration among developers.</p>
 </div>
 </div>
 </div>
 </div>
-<section id="install" class="level2">
-<h2 class="anchored" data-anchor-id="install">Install</h2>
-</section>
-<section id="quarto-documents" class="level2">
-<h2 class="anchored" data-anchor-id="quarto-documents">Quarto Documents</h2>
 <section id="sec-quarto-yaml" class="level3">
 <h3 class="anchored" data-anchor-id="sec-quarto-yaml">YAML header</h3>
 <p><code><a href="glossary.html#sec-yaml" class="quarto-xref"><span>YAML</span></a></code> is a lightweight markup language that’s easy to write and read. In Quarto, the <code>YAML</code> header is used to configure document properties such as the title, engine, output format, and more. It serves as the foundation for controlling how your Quarto document behaves and appears.</p>
 <p>Quarto documents are written in markdown and can include executable code in various programming languages, including Unix commands. The <code>YAML</code> header is placed between three dashes <code>---</code> at the top of each Quarto document to specify metadata and global options.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Using Bash"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To run Bash commands, specify <code>knitr</code> in the <code>engine</code> field of in the <code>YAML</code> header of the Quarto file, and any additional key-value pairs:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Using Bash"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">engine</span><span class="kw">:</span><span class="at"> knitr</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">knitr</span><span class="kw">:</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">opts_chunk</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">collapse</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Using Bash"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To run Bash commands, specify <code>knitr</code> in the <code>engine</code> field of in the <code>YAML</code> header of the Quarto file, and any additional key-value pairs:<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Using Bash"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">engine</span><span class="kw">:</span><span class="at"> knitr</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">knitr</span><span class="kw">:</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">opts_chunk</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">collapse</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="sec-quarto-bash" class="level3">
-<h3 class="anchored" data-anchor-id="sec-quarto-bash">Bash Code Chunks</h3>
-<p>Introduced in 1989, Bash has become the default command-line interface or “shell” for most Linux distributions.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> We’ll use Bash commands and scripts to preproceess data files, render Quarto documents, and automate other operations in the data analysis pipeline, from downloading and ingesting data to creating and deploying analysis outputs.</p>
-<p>One of the powerful features of Quarto is the ability to integrate executable code chunks into Markdown documents.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> You can create bash code chunks using the following syntax:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">echo "foo" </span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bash code chunks allow you to include executable commands within your Quarto documents. You can also specify the code chunk options with the hash-pipe (<code>#|</code>):<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: show</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-summary: 'show/hide echo'</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">echo "foo" </span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 class="anchored" data-anchor-id="sec-quarto-bash">Code Chunks</h3>
+<p>One of the powerful features of Quarto is the ability to integrate executable code chunks into Markdown documents. You can create bash code chunks using the following syntax:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="in">echo "foo" </span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bash code chunks allow you to include executable commands within your Quarto documents. You can also specify the code chunk options with the hash-pipe (<code>#|</code>):<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: show</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-summary: 'show/hide echo'</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="in">echo "foo" </span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When the document is rendered, the narrative text is included with the output from the commnads.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>show/hide echo</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"foo"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">## foo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"foo"</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">## foo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>This simplicity allows authors to focus on their content rather than formatting.</p>
@@ -466,21 +538,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>When incorporating Bash code chunks into Quarto documents, an essential detail to remember is the behavior of the working directory during file rendering. By default, Quarto sets the working directory to the location of the current document within the project.</p>
 <p>Consider the following scenario in a Quarto project:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code chunk displays the current working directory</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">## /Users/mjfrigaard/projects/books/fm-unix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code chunk displays the current working directory</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">## /Users/mjfrigaard/projects/books/fm-unix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Although we can navigate to a different directory within a given code chunk:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> data <span class="co"># Change the current working directory to 'data' </span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span> <span class="co"># confirm the change</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">## /Users/mjfrigaard/projects/books/fm-unix/data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> data <span class="co"># Change the current working directory to 'data' </span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span> <span class="co"># confirm the change</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">## /Users/mjfrigaard/projects/books/fm-unix/data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It’s crucial to note that Quarto resets the working directory to the document’s location for each new code chunk:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verifying the working directory, which reverts to </span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span> <span class="co"># the document's location for each new code chunk</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">## /Users/mjfrigaard/projects/books/fm-unix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verifying the working directory, which reverts to </span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span> <span class="co"># the document's location for each new code chunk</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">## /Users/mjfrigaard/projects/books/fm-unix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This behavior is different than what we’d see in Posit Workbench’s Terminal on my local machine:</p>
 <ol type="1">
@@ -511,18 +583,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>This behavior can be frustrating, but it also means we’ll start with a ‘clean slate’ in each new code chunk!</p>
-</section>
-</section>
-<section id="posit-workbench" class="level2">
-<h2 class="anchored" data-anchor-id="posit-workbench">Posit Workbench</h2>
-<section id="terminal-pane-posit-workbench" class="level3">
-<h3 class="anchored" data-anchor-id="terminal-pane-posit-workbench">Terminal Pane (Posit Workbench)</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/term-simple.png" class="img-fluid figure-img"></p>
-<figcaption>Terminal Pane in Posit Workbench</figcaption>
-</figure>
-</div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -548,10 +608,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Read more about configuring shell code blocks in Quarto in the <a href="https://quarto.org/docs/computations/execution-options.html#shell-commands">documentation.</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Bash was the default command-line interface for Apple’s macOS (which is Unix-based) until the transition to <code>zsh</code> as the default shell in macOS Catalina.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>In fact, this entire book was created using Quarto and executable code chunks!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Consult the full list of code chunk options in the <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">Quarto documentation</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Bash is common in Linux and older macOS versions<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Zsh is now the default in shell in macOS<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>In fact, this <a href="https://github.com/mjfrigaard/fm-unix/tree/main">entire book</a> was written using Quarto documents.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>For what its worth, I’ve been using RStudio for years and love it. However, I’ve also used Quarto in VS Code and love many of it’s features.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Read more about configuring shell code blocks in Quarto in the <a href="https://quarto.org/docs/computations/execution-options.html#shell-commands">documentation.</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Consult the full list of code chunk options in the <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">Quarto documentation</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

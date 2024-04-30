@@ -236,6 +236,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
@@ -398,11 +403,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>In Unix/Linux environments, the terms “Shell” and “Terminal” are commonly used and are related, but they refer to different things:</p>
+<p>In Unix/Linux environments, the terms “Shell” and “Terminal” are commonly used and although they are related, they actually refer to different things:</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[50,50]">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><span style="font-size: 0.95em;">A <strong>Shell</strong> in Unix/Linux is a program that interprets commands and acts as an intermediary between the user and the kernel of the operating system.</span></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><span style="font-size: 0.95em;">A <strong>Terminal</strong> (or terminal emulator) is a software program that provides a text-based interface to the shell. The sections below cover common Shells and Terminals.</span></p>
+</div>
+</div>
+</div>
 <section id="sec-shells" class="level2">
 <h2 class="anchored" data-anchor-id="sec-shells"><span style="font-size: 1.15em; font-weight: bold;">Shells</span></h2>
-<p>A <strong>Shell</strong> in Unix/Linux is a program that interprets commands and acts as an intermediary between the user and the kernel of the operating system. The shell processes user commands, which might involve calling other programs, and returns the output to the user. Shells can be either command-line based or graphical. Some popular examples of shells include Bash, Zsh, and Fish.</p>
-<p>You can use the following commands to discover which shell you’re currently:</p>
+<p>The shell processes user commands, which might involve calling other programs, and returns the output to the user. Shells can be either command-line based or graphical. Some popular examples of shells include Bash, Zsh, and Fish.</p>
+<p>You can use the <strong><code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code></strong> and <strong><code><a href="syntax_ref.html#sec-ps" class="quarto-xref"><span>ps</span></a></code></strong> commands to discover which shell you’re currently using:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /bin/zsh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -412,11 +430,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   PID TTY           TIME CMD</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   683 ttys000    0:00.09 -zsh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span style="font-weight: bold; font-size: 1.10em;">Tip</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="font-size: 1.00em; color: #282b2d;">
+<p>As we can see from the outupt above, I’m currently using the Zsh shell. I’ll use a green callout box to indicate the programs or tools I’m using.</p>
+</div>
+</div>
+</div>
+</div>
 <section id="sec-bash" class="level3">
 <h3 class="anchored" data-anchor-id="sec-bash"><img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Bash</h3>
-<p><a href="https://www.gnu.org/software/bash/"><strong>Bash, or the Bourne Again SHell</strong></a>, is one of the most widely used shells in Unix and Linux environments. Incorporating features from the Korn shell (<a href="https://en.wikipedia.org/wiki/KornShell"><code>ksh</code></a>) and the C shell (<a href="https://en.wikipedia.org/wiki/C_shell"><code>csh</code></a>), Bash supports features like command history, tab completion, aliases and scripting tasks.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Introduced in 1989, <a href="https://www.gnu.org/software/bash/"><strong>Bash, or the Bourne Again SHell</strong></a> has become the default command-line interface or shell for most Linux distributions. Incorporating features from the Korn shell (<a href="https://en.wikipedia.org/wiki/KornShell"><code>ksh</code></a>) and the C shell (<a href="https://en.wikipedia.org/wiki/C_shell"><code>csh</code></a>), Bash supports features like command history, tab completion, aliases and scripting tasks.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -425,7 +461,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
@@ -481,7 +517,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="zsh"><img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Zsh</h3>
 <p><a href="https://ohmyz.sh/"><strong>Zsh (Z Shell or ‘Oh My ZSH!’)</strong></a> is noted for its interactive features and is often used with customization frameworks. Zsh is a powerful command-line interpreter for Unix systems that serves as both a scriptable shell and an interactive command interpreter.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div class="callout callout-style-simple callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -490,7 +526,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
@@ -534,7 +570,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="fish"><img src="img/fish-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Fish</h3>
 <p><a href="https://fishshell.com/"><strong>Fish, or the Friendly Interactive SHell</strong></a>, is a smart and user-friendly command line shell for Unix-like operating systems. It’s designed to be more interactive and user-friendly than traditional shells like Bash or Zsh.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -543,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
@@ -575,12 +611,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="sec-terminals" class="level2">
 <h2 class="anchored" data-anchor-id="sec-terminals"><span style="font-size: 1.15em; font-weight: bold;">Terminals</span></h2>
-<p>A <strong>Terminal</strong> (or terminal emulator) is a software program that provides a text-based interface to the shell. Terminals interpret keystrokes and commands from users and send these to the shell for execution. When the shell produces output, the terminal displays it to the user. <strong>Terminal emulators</strong> allow users to interact with the shell and other command-line tools. Below is an expanded look at some commonly used terminal emulators and their key features.</p>
+<p>Terminals interpret keystrokes and commands from users and send these to the shell for execution. When the shell produces output, the terminal displays it to the user. <strong>Terminal emulators</strong> allow users to interact with the shell and other command-line tools. Below is an expanded look at some commonly used terminal emulators and their key features.</p>
 <section id="gnome" class="level3">
 <h3 class="anchored" data-anchor-id="gnome"><img src="img/gnome-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> GNOME</h3>
 <p><a href="https://help.gnome.org/users/gnome-terminal/stable/">GNOME Terminal</a> is the default terminal emulator for the GNOME desktop environment, widely used in many Linux distributions.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -589,7 +625,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
@@ -608,7 +644,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="konsole"><img src="img/konsole-logo.jpeg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Konsole</h3>
 <p><a href="https://konsole.kde.org/">Konsole</a> is part of the KDE desktop environment. It is known for its deep integration with KDE and its high degree of customizability.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -617,7 +653,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
@@ -636,7 +672,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="iterm2"><img src="img/iterm2-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> iTerm2</h3>
 <p><a href="https://iterm2.com/">iTerm2</a> is a replacement for Terminal and the successor to iTerm for macOS. It offers features beyond what traditional terminals provide.</p>
 <div class="callout callout-style-simple callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -645,7 +681,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
@@ -669,7 +705,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.15em; font-weight: bold;">Recap</span></h2>
 <p>In summary, the shell is the command interpreter that executes the commands, while the terminal is the application that allows you to interact with the shell.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -678,7 +714,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 0.90em; color: #282b2d;">
 <p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
@@ -692,7 +728,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Since the release of macOS Catalina (2019), <a href="https://support.apple.com/en-us/102360">Apple transitioned</a> from using Bash as the default command-line interface to Zsh.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Bash was the default command-line interface for Apple’s macOS (which is Unix-based) until the transition to <code>zsh</code> as the default shell in <a href="https://support.apple.com/en-us/102360">macOS Catalina.</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Zsh is an <a href="https://en.wikipedia.org/wiki/Z_shell">extended version</a> of <strong>Bash (Bourne Again SHell)</strong>, with many improvements, and is fully compatible with the Bourne Shell.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Ars Technica has a great <a href="https://arstechnica.com/information-technology/2005/12/linux-20051218/">summary</a> comparing Fish to other shells.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>

@@ -236,6 +236,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
@@ -342,14 +347,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#repl" id="toc-repl" class="nav-link active" data-scroll-target="#repl">REPL</a>
+  <li><a href="#repl" id="toc-repl" class="nav-link active" data-scroll-target="#repl"><span style="font-size: 1.15em; font-weight: bold;">REPL</span></a>
   <ul>
   <li><a href="#read" id="toc-read" class="nav-link" data-scroll-target="#read">1. Read</a></li>
   <li><a href="#eval" id="toc-eval" class="nav-link" data-scroll-target="#eval">2. Eval</a></li>
   <li><a href="#print" id="toc-print" class="nav-link" data-scroll-target="#print">3. Print</a></li>
   <li><a href="#loop" id="toc-loop" class="nav-link" data-scroll-target="#loop">Loop</a></li>
   </ul></li>
-  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics">Basics</a>
+  <li><a href="#basic-commands" id="toc-basic-commands" class="nav-link" data-scroll-target="#basic-commands"><span style="font-size: 1.15em; font-weight: bold;">Basic commands</span></a>
   <ul>
   <li><a href="#who" id="toc-who" class="nav-link" data-scroll-target="#who"><code>who</code></a></li>
   <li><a href="#whoami" id="toc-whoami" class="nav-link" data-scroll-target="#whoami"><code>whoami</code></a></li>
@@ -360,7 +365,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exit" id="toc-exit" class="nav-link" data-scroll-target="#exit"><code>exit</code></a></li>
   <li><a href="#yes" id="toc-yes" class="nav-link" data-scroll-target="#yes"><code>yes</code></a></li>
   </ul></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.15em; font-weight: bold;">Recap</span></a></li>
   </ul>
 </nav>
     </div>
@@ -408,11 +413,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We’re going to start with a basic command: <code>date</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Tue Apr 23 08:50:29 MST 2024</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Sun Apr 28 12:28:20 MST 2024</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The command <code>date</code> returns the current date and time. What we’ve just done is referred to as the <a href="https://www.computerhope.com/jargon/r/repl.htm">read–eval–print loop</a>, or REPL, and it’s the underlying process of the command-line.</p>
 <section id="repl" class="level2">
-<h2 class="anchored" data-anchor-id="repl">REPL</h2>
+<h2 class="anchored" data-anchor-id="repl"><span style="font-size: 1.15em; font-weight: bold;">REPL</span></h2>
 <p>The REPL in Bash exemplifies a powerful and flexible interface for interacting with the system, running commands, and developing scripts, providing both novice and experienced users with an efficient way to manage their computing environment.</p>
 <p>Here is how it works:</p>
 <section id="read" class="level3">
@@ -451,8 +456,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This cycle repeats indefinitely until the user exits the REPL environment, typically with an <code>exit</code> command or by pressing <strong><kbd>Ctrl</kbd></strong> + <strong><kbd>D</kbd></strong>.</p>
 </section>
 </section>
-<section id="basics" class="level2">
-<h2 class="anchored" data-anchor-id="basics">Basics</h2>
+<section id="basic-commands" class="level2">
+<h2 class="anchored" data-anchor-id="basic-commands"><span style="font-size: 1.15em; font-weight: bold;">Basic commands</span></h2>
 <p>In Unix, several commands can operate without any options or arguments, performing their basic functions in their simplest form. Below are some of these commands:</p>
 <section id="who" class="level3">
 <h3 class="anchored" data-anchor-id="who"><code>who</code></h3>
@@ -531,7 +536,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="recap" class="level2">
-<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.15em; font-weight: bold;">Recap</span></h2>
 <p>Each of these commands performs a specific and often utilized function within the Unix environment, embodying the Unix philosophy of doing one thing well.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
