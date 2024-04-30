@@ -43,7 +43,7 @@ co_box(
 
 Arguments in Unix/Linux commands are values or data passed to commands for processing. Unlike options, which modify the behavior of commands, arguments typically specify what the command should *act upon*. This typically includes filenames, user names, data values, or other kinds of information the command needs to execute its task.
  
-## Anatomy
+## [Anatomy]{style="font-size: 1.15em; font-weight: bold;"}
 
 A Unix command can be broken down into the command name, followed by its options (which we'll address in the next chapter), and then its arguments:
 
@@ -52,60 +52,63 @@ A Unix command can be broken down into the command name, followed by its options
 command argument1 argument2 ... argument
 ```
 
-## Types 
+## [Argument Types]{style="font-size: 1.15em; font-weight: bold;"} 
 
 Below are a variety of command arguments types. This is not an exhaustive list, but includes many of the commands and arguments you'll encounter on a regular basis.
 
-### Direct and Indirect 
+### Direct arguments
 
 **Direct arguments** are the most straightforward type of arguments. They are typically the names of files or directories on which commands operate. 
 
 **Example** 
 
+In the command `echo myfile.txt`, `myfile.txt` is a direct argument to the <code>@sec-cat</code> command, telling it which file to display on the standard output.
+
 ```{bash}
 cat myfile.txt
 ```
 
-
-In the command `echo myfile.txt`, `myfile.txt` is a direct argument to the <code>@sec-cat</code> command, telling it which file to display on the standard output.
+###  Indirect arguments
 
 **Indirect arguments** are arguments that might specify additional information that commands need to complete their tasks.
 
 **Example** 
 
+The `file` search pattern for the <code>@sec-grep</code> command is an example of an indirect command, and `myfile.txt` is the direct argument.
+
 ```{bash}
 grep file myfile.txt
 ```
 
-The `file` search pattern for the <code>@sec-grep</code> command is an example of an indirect command, and `myfile.txt` is the direct argument.
-
 Most commonly, arguments are the names of **files and directory names** on which the command will operate.
 
 **Example**
+
+`myfile.txt` and `tmp/myfile.txt` are arguments representing the source and destination locations to move with <code>@sec-mv</code>, respectively.
 
 ```{bash}
 #| eval: true
 mv myfile.txt tmp/myfile.txt
 ```
 
-`myfile.txt` and `tmp/myfile.txt` are arguments representing the source and destination locations to move with <code>@sec-mv</code>, respectively.
-
 Commands related to user management might take **user and group names** names as arguments.
 
 **Example**
+
+<code>@sec-chown</code> changes the ownership of `file` to `user` and `group`.
 
 ```{bash}
 #| eval: false
 chown user:group myfile.txt
 ```
 
-<code>@sec-chown</code> changes the ownership of `file` to `user` and `group`.
-
 ### Command Targets
 
-Some commands take **other commands as arguments**. For example, <code>@sec-sudo</code> command runs command with superuser privileges.
+Some commands take **other commands as arguments**.
 
 **Example**
+
+For example, <code>@sec-sudo</code> command runs command with superuser privileges.
 
 ```{bash}
 #| eval: false
@@ -118,12 +121,12 @@ Commands might take **data values** as arguments for processing.
 
 **Example**
 
+In `echo Hello, World!`, `Hello, World!` is the argument value that <code>@sec-echo</code> prints to the terminal.
+
 ```{bash}
-#| eval: false
+#| eval: true
 echo Hello, World!
 ```
-
-In `echo Hello, World!`, `Hello, World!` is the argument value that <code>@sec-echo</code> prints to the terminal.
 
 ### Order and Position
 
@@ -131,12 +134,14 @@ For many commands, the **order** of the arguments is significant.
 
 **Example** 
 
+`tmp/myfile.txt` is the first argument (indicating the file to copy from), and `myfile.txt` is the second argument (indicating where to copy the file to). 
+
 ```{bash}
 #| eval: true
 cp tmp/myfile.txt myfile.txt
 ```
 
-`tmp/myfile.txt` is the first argument (indicating the file to copy from), and `myfile.txt` is the second argument (indicating where to copy the file to). Reversing these arguments would result in a completely different operation.
+Reversing these arguments would result in a completely different operation.
 
 Arguments that contain **spaces** must be quoted or escaped, so the shell understands them as a single argument rather than multiple arguments. 
 
@@ -175,6 +180,8 @@ echo $(grep file 'my file 2.txt')
 echo $HOME
 # /Users/username
 ```
+
+## [Recap]{style="font-size: 1.15em; font-weight: bold;"} 
 
 
 Understanding the nuances of Unix arguments is crucial for crafting precise and effective commands, allowing users to leverage the full power of the Unix command line for a wide array of tasks.

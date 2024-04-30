@@ -38,8 +38,96 @@ co_box(
 ```
 
 
-[Quarto](https://quarto.org/) is an '*open-source scientific and technical publishing system*' built on [Pandoc](https://pandoc.org/) that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards. It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through downloading and installing Quarto, `.qmd` documents, `YAML` headers and Bash code chunks.
+:::{layout="[20,80]" layout-valign="top"}
 
+![](img/logo-quarto.png){fig-align="center"}
+
+[Quarto](https://quarto.org/) is an '*open-source scientific and technical publishing system*' that enables users to create dynamic and beautiful documents, reports, presentations, and dashboards. 
+
+:::
+
+It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through downloading and installing Quarto, `.qmd` documents, `YAML` headers and Bash code chunks.
+
+
+## [Install]{style="font-size: 1.15em; font-weight: bold;"} 
+
+Quarto can be installed from its [official website](https://quarto.org/docs/get-started/). Follow the platform-specific instructions to install it on your system. Make sure Quarto has been installed correctly and is available in your system’s `PATH`.
+
+Check if Quarto is in `PATH`:
+
+```{bash}
+#| eval: true
+#| code-fold: false
+quarto --version
+```
+
+If the Quarto version isn't on your `PATH`, you'll need to add the location of your quarto installation to `PATH`. You can do that with the commands below (depending on your shell).
+
+:::{layout="[20,80]" layout-valign="center"}
+
+**Bash**:[^bash-macos]
+
+``` sh
+echo 'export PATH="$PATH:/path/to/quarto"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+**Zsh**:[^zsh-macos]
+
+``` sh
+echo 'export PATH="$PATH:/path/to/quarto"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+:::
+
+[^bash-macos]: Bash is common in Linux and older macOS versions
+
+[^zsh-macos]: Zsh is now the default in shell in macOS
+
+You can also use `which` to locate quarto path: 
+
+```{bash}
+#| eval: true
+#| code-fold: false
+which quarto
+```
+
+On macOS, you can use `find` in the Terminal: 
+
+```bash
+find / -name quarto 2>/dev/null
+```
+
+## [Quarto Documents]{style="font-size: 1.15em; font-weight: bold;"}
+
+Quarto documents are a flexible and powerful tool for creating dynamic and reproducible reports, presentations, and publications. Quarto documents can support multiple programming languages, including R, Python, Julia, and Bash. Users can combine narrative text with code in a single document, rendering it into various formats like HTML, PDF, and Word. 
+
+This feature proves not only invaluable for data scientists, but for anyone looking to learn a new programming language. Quarto documents are a perfect 'sandbox' to experiment with code, take notes, and review the outputs. Moreover, Quarto has the supports cross-referencing, advanced layout options, and beautiful web and book publishing workflows.[^quarto-book]
+
+[^quarto-book]: In fact, this [entire book](https://github.com/mjfrigaard/fm-unix/tree/main) was written using Quarto documents.
+
+Quarto documents consist of the following elements:
+
+1. **YAML Header**: This is used to specify the document's title, author, and output format.
+
+2. **Narrative Text**: Plain language explanations and context.
+
+3. **Code Chunks**: Executable code blocks from languages like R, Python, Bash, or Julia.
+
+Additional features include:
+
+-   **Results**: the output is displayed directly from the executable code chunks (tables, graphs, etc.).
+
+-   **Cross-references and Citations**: Link to figures, tables, sections, or reference bibliographic sources.
+
+-   **Figures and Tables**: Markdown syntax can be used to add images and tables.
+
+-   **Appendices and Bibliography**: Footnotes and references.
+
+If you decide to use Quarto documents, you'll need to decide on the tool (or development environment) you want to use. At the time of this writing, Quarto has tutorials for getting started in [RStudio](https://posit.co/download/rstudio-desktop/), [VS Code](https://code.visualstudio.com/), [Jupyter](https://jupyter.org/), [Neovim](https://neovim.io/), or a text editor (like [Sublime Text](https://www.sublimetext.com/)).[^rstudio-quarto-dev]
+
+[^rstudio-quarto-dev]: For what its worth, I've been using RStudio for years and love it. However, I've also used Quarto in VS Code and love many of it's features. 
 
 ```{r}
 #| label: co_box_knuth
@@ -54,13 +142,12 @@ co_box(
   header = "Literate Programming", 
   fold = TRUE,
   contents = "
-> '*Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.*' - [Donald Knuth. Literate Programming (1984) in Literate Programming. CSLI, 1992, pg. 99.](http://www.literateprogramming.com/index.html)")
+Literate programming is a programming paradigm that intertwines code with human-readable narrative, allowing programmers to write programs in the order best suited for human understanding. Donald Knuth developed this approach to make code more understandable and maintainable.
+  
+> '*Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.*' - [Donald Knuth. Literate Programming (1984) in Literate Programming. CSLI, 1992, pg. 99.](http://www.literateprogramming.com/index.html)
+  
+Literate programming can foster clearer communication of complex programming concepts and enhances collaboration among developers.")
 ```
-
-
-## Install 
-
-## Quarto Documents 
 
 ### YAML header {#sec-quarto-yaml}
 
@@ -88,19 +175,13 @@ knitr:
 
 [^shell-reference]: Read more about configuring shell code blocks in Quarto in the [documentation.](https://quarto.org/docs/computations/execution-options.html#shell-commands)
 
-### Bash Code Chunks {#sec-quarto-bash}
+### Code Chunks {#sec-quarto-bash}
 
-Introduced in 1989, Bash has become the default command-line interface or "shell" for most Linux distributions.[^bash-macos] We'll use Bash commands and scripts to preproceess data files, render Quarto documents, and automate other operations in the data analysis pipeline, from downloading and ingesting data to creating and deploying analysis outputs.  
-
-[^bash-macos]: Bash was the default command-line interface for Apple's macOS (which is Unix-based) until the transition to `zsh` as the default shell in macOS Catalina.
-
-One of the powerful features of Quarto is the ability to integrate executable code chunks into Markdown documents.[^quarto-bash-book] You can create bash code chunks using the following syntax:
+One of the powerful features of Quarto is the ability to integrate executable code chunks into Markdown documents. You can create bash code chunks using the following syntax:
 
 ```{{bash}}
 echo "foo" 
 ```
-
-[^quarto-bash-book]: In fact, this entire book was created using Quarto and executable code chunks!
 
 Bash code chunks allow you to include executable commands within your Quarto documents. You can also specify the code chunk options with the hash-pipe (`#|`):[^quarto-chunk-opts] 
 
@@ -162,14 +243,7 @@ This behavior is different than what we'd see in Posit Workbench's Terminal on m
 
 ![Still ~/](img/pwd-local-03.png){width='100%'}
 
-This behavior can be frustrating, but it also means we'll start with a 'clean slate' in each new code chunk! 
-
-## Posit Workbench
-
-### Terminal Pane (Posit Workbench)
-
-![Terminal Pane in Posit Workbench](img/term-simple.png)
-
+This behavior can be frustrating, but it also means we'll start with a 'clean slate' in each new code chunk!
 
 ```{r}
 #| label: git_contrib_box

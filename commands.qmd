@@ -51,7 +51,7 @@ date
 
 The command `date` returns the current date and time. What we've just done is referred to as the [read–eval–print loop](https://www.computerhope.com/jargon/r/repl.htm), or REPL, and it's the underlying process of the command-line. 
 
-## REPL
+## [REPL]{style="font-size: 1.15em; font-weight: bold;"}
 
 The REPL in Bash exemplifies a powerful and flexible interface for interacting with the system, running commands, and developing scripts, providing both novice and experienced users with an efficient way to manage their computing environment.
 
@@ -106,7 +106,7 @@ This cycle repeats indefinitely until the user exits the REPL environment, typic
 
 
 
-## Basics 
+## [Basic commands]{style="font-size: 1.15em; font-weight: bold;"} 
 
 In Unix, several commands can operate without any options or arguments, performing their basic functions in their simplest form. Below are some of these commands:
 
@@ -205,7 +205,7 @@ yes
 
 **NOTE:** Use **<kbd>Ctrl</kbd>** + **<kbd>C</kbd>** to interrupt the `yes` command.
 
-## Recap
+## [Recap]{style="font-size: 1.15em; font-weight: bold;"}
 
 Each of these commands performs a specific and often utilized function within the Unix environment, embodying the Unix philosophy of doing one thing well.
 

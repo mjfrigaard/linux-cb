@@ -95,8 +95,8 @@ git_contrib_box <- function(
                 repo = 'fm-unix', 
                 header = "See a typo, error, or something missing?",
                 contents = "Please open an issue on ",
-                size = "0.90",
-                hsize = "0.95",
+                hsize = "1.15", 
+                size = "1.00", 
                 fold = FALSE) {
   
   git_repo_root <- "https://github.com/mjfrigaard/"
@@ -109,7 +109,7 @@ git_contrib_box <- function(
   
   cat(paste0(
         "\n\n",
-        ":::: {.callout-note", " collapse='", fold, "'", " appearance='default' icon=false}", "\n\n",
+        ":::: {.callout-note", " collapse='", fold, "'", " appearance='simple' icon=false}", "\n\n",
         "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
         "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
         "\n", 

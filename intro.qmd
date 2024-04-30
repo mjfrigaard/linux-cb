@@ -37,8 +37,6 @@ co_box(
 )
 ```
 
-Unix and Linux are like the great ancestors and heroes of the computer world, with stories full of innovation, community, and evolution.
-
 ### The Tale of Unix
 
 Imagine Unix and Linux as the master and apprentice in the vast workshop of computer operating systems. Our story begins in the late 1960s at AT&T's Bell Labs. Unix was born out of a desire for a more flexible and portable operating system. It was a time when computers were as big as rooms and operated on specific, often incompatible, systems. Unix was a breath of fresh air because it was designed to be simple, elegant, and, most importantly, portable, meaning it could run on different types of hardware. 

@@ -36,13 +36,21 @@ co_box(
 )
 ```
 
-In Unix/Linux environments, the terms "Shell" and "Terminal" are commonly used and are related, but they refer to different things:
+In Unix/Linux environments, the terms "Shell" and "Terminal" are commonly used and although they are related, they actually refer to different things: 
+
+:::: {layout="[50,50]" layout-valign="top"}
+
+[A **Shell** in Unix/Linux is a program that interprets commands and acts as an intermediary between the user and the kernel of the operating system.]{style="font-size: 0.95em;"}
+
+[A **Terminal** (or terminal emulator) is a software program that provides a text-based interface to the shell. The sections below cover common Shells and Terminals.]{style="font-size: 0.95em;"}
+
+::::
 
 ## [Shells]{style="font-size: 1.15em; font-weight: bold;"} {#sec-shells}
 
-A **Shell** in Unix/Linux is a program that interprets commands and acts as an intermediary between the user and the kernel of the operating system. The shell processes user commands, which might involve calling other programs, and returns the output to the user. Shells can be either command-line based or graphical. Some popular examples of shells include Bash, Zsh, and Fish.
+The shell processes user commands, which might involve calling other programs, and returns the output to the user. Shells can be either command-line based or graphical. Some popular examples of shells include Bash, Zsh, and Fish.
 
-You can use the following commands to discover which shell you're currently:
+You can use the <strong><code>@sec-echo</code></strong> and <strong><code>@sec-ps</code></strong> commands to discover which shell you're currently using:
 
 ```{bash}
 #| eval: false
@@ -58,11 +66,27 @@ ps -p $$
 #   683 ttys000    0:00.09 -zsh
 ```
 
+```{r}
+#| label: co_box_zsh
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "g",
+  look = "default", 
+  hsize = "1.10", 
+  size = "1.00", 
+  header = "Tip", 
+  fold = TRUE,
+  contents = "As we can see from the outupt above, I'm currently using the Zsh shell. I'll use a green callout box to indicate the programs or tools I'm using."
+)
+```
+
 ### ![](img/bash-logo.svg){fig-align="right" width="12%"} Bash {#sec-bash}
 
-[**Bash, or the Bourne Again SHell**](https://www.gnu.org/software/bash/), is one of the most widely used shells in Unix and Linux environments. Incorporating features from the Korn shell ([`ksh`](https://en.wikipedia.org/wiki/KornShell)) and the C shell ([`csh`](https://en.wikipedia.org/wiki/C_shell)), Bash supports features like command history, tab completion, aliases and scripting tasks.[^bash-macos] 
+Introduced in 1989, [**Bash, or the Bourne Again SHell**](https://www.gnu.org/software/bash/) has become the default command-line interface or shell for most Linux distributions. Incorporating features from the Korn shell ([`ksh`](https://en.wikipedia.org/wiki/KornShell)) and the C shell ([`csh`](https://en.wikipedia.org/wiki/C_shell)), Bash supports features like command history, tab completion, aliases and scripting tasks.[^bash-macos] 
 
-[^bash-macos]: Since the release of macOS Catalina (2019), [Apple transitioned](https://support.apple.com/en-us/102360) from using Bash as the default command-line interface to Zsh.
+[^bash-macos]: Bash was the default command-line interface for Apple's macOS (which is Unix-based) until the transition to `zsh` as the default shell in [macOS Catalina.](https://support.apple.com/en-us/102360)
 
 ::: {.callout-note collapse="true"}
 
@@ -252,7 +276,7 @@ Fish uses a syntax that is slightly different from the traditional POSIX shell s
 
 ## [Terminals]{style="font-size: 1.15em; font-weight: bold;"} {#sec-terminals}
 
-A **Terminal** (or terminal emulator) is a software program that provides a text-based interface to the shell. Terminals interpret keystrokes and commands from users and send these to the shell for execution. When the shell produces output, the terminal displays it to the user. **Terminal emulators** allow users to interact with the shell and other command-line tools. Below is an expanded look at some commonly used terminal emulators and their key features.
+Terminals interpret keystrokes and commands from users and send these to the shell for execution. When the shell produces output, the terminal displays it to the user. **Terminal emulators** allow users to interact with the shell and other command-line tools. Below is an expanded look at some commonly used terminal emulators and their key features.
 
 ### ![](img/gnome-logo.png){fig-align="right" width="12%"} GNOME
 

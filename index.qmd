@@ -8,8 +8,6 @@ editor:
     wrap: 72
 ---
 
-# Welcome! {.unnumbered}
-
 ```{r}
 #| label: setup
 #| include: false
@@ -33,17 +31,39 @@ co_box(
 )
 ```
 
-
+# Welcome! {.unnumbered}
 
 Welcome to my Unix/Linux Field Manual! 
 
 <a href="https://github.com/mjfrigaard/fm-unix"><img src="img/fm-unix-logo-gray.png" width="80%" class="cover" alt="Github Repo" fig-align="center"/></a> 
+
 
 This book aims to provide a quick reference for basic concepts and common tasks when using Unix/Linux operating systems.[^zsh-bash]
 
 <!-- ## What This Book Is Not -->
 
 <!-- ## Audience and Prerequisites -->
+
+```{r}
+#| label: co_box_fms
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "g",
+  header = "What is a 'Field Manual'?", 
+  size = "1.00", 
+  hsize = "1.15", 
+  look = "simple",
+  fold = TRUE,
+  contents = "A field manual (FM) is an educational tool, providing standardized information, instructions, and techniques for operational concepts and procedures. 
+  
+![Example improvised litter made using tent poles and field jackets.](img/jacket-pole-litter.png)
+  
+FMs function as both reference material and living documentation, encouraging updates and adaptation based on the given situation, changes in technology, or the environment.[^field-manuals]
+  
+[^field-manuals]: Based on the [U.S. Army Field Manuals (FMs).](http://www.lexpev.nl/downloads/fm531boobytraps1965.pdf) ")
+```
 
 [^zsh-bash]: Most of these commands will work on any Shell (Zsh, Bash, etc.) program.
 

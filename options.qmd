@@ -41,11 +41,24 @@ co_box(
 )
 ```
 
+
+
 Unix command options (sometimes called flags) are often preceded by a hyphen (`-`) or two (`--` for long-form options) and modify the behavior of a command. Options provide flexibility, control, and, in some cases, enable a vast array of additional functionalities. 
 
-## Short Options
+## [Option types]{style="font-size: 1.15em; font-weight: bold;"} 
  
-Short options are typically a single dash followed by a single letter (e.g., `-l`) and they modify the command behavior in a specific, often concise way.
+Arguments can be short or long:
+
+:::{layout="[50,50]" layout-valign="top"}
+
+**Short options** are typically a single dash followed by a single letter (e.g., `-l`) and they modify the command behavior in a specific, often concise way. 
+
+
+**Long options** usually use two dashes followed by a word or compound words (e.g., `--long-listing`) and provide a more descriptive way to specify options, making scripts and commands more readable. 
+
+:::
+
+### Short options 
 
 **Example**
 
@@ -55,68 +68,76 @@ Short options are typically a single dash followed by a single letter (e.g., `-l
 ls -l data
 ```
 
-## Combining Short Options
+### Long options 
 
-Multiple short options can be combined after a single dash, without spaces (e.g., `-lrt`)
-allowing users to use multiple options at once, and reducing the need to type multiple dashes.
+**Example 1**
 
-
-**Example**
-
-`ls -lrt` combines three options: `-l` (long listing format), `-r` (reverse order), and `-t` (sort by modification time), providing a detailed, reverse-chronological list of files.
-
-```{bash}
-ls -lrt data
-```
-
-## Long Options
-
-Long options usually use two dashes followed by a word or compound words (e.g., `--long-listing`) and provide a more descriptive way to specify options, making scripts and commands more readable. 
-
-**Example**
-
-`ls --reverse` lists files in reverse order. 
+`tree data --sort size` lists files in order according to size:
 
 ```{bash}
 #| eval: false
-ls --reverse
-#> wu_tang.txt
-#> wu_tang.tsv
-#> wu_tang.dat
-#> wu_tang.csv
-#> who-tb-data.tsv
-#> vg_hof.tsv
-#> trees.tsv
-#> roxanne
-#> music_vids.tsv
+tree data --sort size
+# ├── ajperlis_epigrams.txt
+# ├── pwrds.csv
+# ├── pwrds.tsv
+# ├── README.md
+# ├── music_vids.tsv
+# ├── vg_hof.tsv
+# ├── trees.tsv
+# ├── roxanne.txt
+# ├── wu_tang.dat
+# ├── who_tb_data.tsv
+# ├── who_tb_data.txt
+# ├── wu_tang.txt
+# ├── wu_tang.csv
+# ├── wu_tang.tsv
+# ├── roxanne_rev.txt
+# └── roxanne_orig.txt
+# 
+# 1 directory, 16 files
 ```
+
+**Example 2**
+
+The `--version` option is commonly used to get version information for various commands.
+
+```{bash}
+grep --version  
+```
+
 
 **Note that not all commands support the long-form option syntax.**
 
-## Options and Arguments
+### Modifying behavior
 
-Options can be combined with arguments when they are followed by a space and then the argument (e.g., `-o filename`). Some options require or accept an argument to specify a value related to the option's action.
+Some options modify the commands behavior.
 
 **Example**
 
-<code>@sec-grep</code>`-i "FILE" myfile.txt` uses `-i` to ignore case when searching for `"FILE"` in `myfile.txt`:
+<code>@sec-cp</code>`-n source.txt dest.txt` does not overwrite the destination file if it already exists. 
 
 ```{bash}
-grep -i "FILE" myfile.txt
+#| eval: false
+cp -n myfile.txt myfile2.txt
 ```
 
-The `"FILE"` here is an argument to the `-i` option.
+The `-n` option modifies the default behavior of the `cp` command.
 
-## Options Affecting Output
+```{bash}
+cat myfile2.txt
+```
+
+### Modifying output
+
+Other options modify a commands output.
 
 **Example 1**
+
+`ls -a` lists all files, including hidden ones (those starting with a dot). This option alters the command's output by showing files that are not listed by default.
 
 ```{bash}
 ls -a data
 ```
-
-
-`ls -a` lists all files, including hidden ones (those starting with a dot). This option alters the command's output by showing files that are not listed by default.
 
 **Example 2**
 
@@ -135,28 +156,54 @@ df -h
 # map auto_home                        0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home
 ```
 
-## Options Modifying Command Behavior
+### Environment-specific options
+
+The `-u` option in <code>@sec-sort</code> removes duplicate lines. `-u`s behavior (considering case sensitivity) might vary depending on the locale and environment settings.
 
 **Example**
 
-<code>@sec-cp</code>`-n source.txt dest.txt` does not overwrite the destination file if it already exists. 
+`sort -u data/roxanne.txt` sorts the lines in `data/roxanne.txt`, removing duplicate lines.[^roxanne]
+
+[^roxanne]: `data/roxanne.txt` contains the lyrics to the 1978 song [Roxanne by The Police](https://en.wikipedia.org/wiki/Roxanne_(The_Police_song)). 
 
 ```{bash}
-#| eval: false
-cp -n myfile.txt myfile2.txt
+sort -u data/roxanne.txt
 ```
 
-The `-n` option modifies the default behavior of the `cp` command.
+## [Combining Options]{style="font-size: 1.15em; font-weight: bold;"} 
+
+Multiple short options can be combined after a single dash, without spaces (e.g., `-lrt`)
+allowing users to use multiple options at once, and reducing the need to type multiple dashes.
 
 ```{bash}
-cat myfile2.txt
+ls -lrt data
 ```
-
-## Options for Help and Information
 
 **Example**
 
-<code>@sec-grep</code>` --help` displays usage information for the `grep` command, helping users understand available options and syntax.
+`ls -lrt` combines three options: `-l` (long listing format), `-r` (reverse order), and `-t` (sort by modification time), providing a detailed, reverse-chronological list of files.
+
+```{bash}
+ls -lrt data
+```
+
+Options can be combined with arguments when they are followed by a space and then the argument (e.g., `-o filename`). Some options require or accept an argument to specify a value related to the option's action.
+
+**Example**
+
+<code>@sec-grep</code>`-i "FILE" myfile.txt` uses `-i` to ignore case when searching for `"FILE"` in `myfile.txt`:
+
+```{bash}
+grep -i "FILE" myfile.txt
+```
+
+The `"FILE"` here is an argument to the `-i` option.
+
+## Getting Help
+
+**Example**
+
+<code>@sec-grep</code> ` --help` displays usage information for the `grep` command, helping users understand available options and syntax.
 
 ```{bash}
 #| eval: false
@@ -168,15 +215,6 @@ grep --help
 ```
 
 **Example 2**
-
-The `--version` option is commonly used to get version information for various commands.
-
-```{bash}
-grep --version  
-```
-
-
-**Example 3**
 
 `man` shows the official manual for the command. 
 
@@ -224,21 +262,9 @@ man echo
 #> macOS 14.4                      April 12, 2003                      macOS 14.4
 ```
 
-## Environment-Specific Options
 
-<code>@sec-sort</code>`-u file.txt` sorts the lines in `file.txt`, removing duplicate lines. The `-u` option's behavior (considering case sensitivity) might vary depending on the locale and environment settings.
 
-**Example**
-
-`sort -u data/roxanne.txt` sorts the lines in `data/roxanne.txt`, removing duplicate lines.[^roxanne]
-
-[^roxanne]: `data/roxanne.txt` contains the lyrics to the 1978 song [Roxanne by The Police](https://en.wikipedia.org/wiki/Roxanne_(The_Police_song)). 
-
-```{bash}
-sort -u data/roxanne.txt
-```
-
-## Recap
+## [Recap]{style="font-size: 1.15em; font-weight: bold;"} 
 
 Options greatly enhance the power and versatility of Unix commands, allowing users to tailor operations to their specific needs and preferences.
 
