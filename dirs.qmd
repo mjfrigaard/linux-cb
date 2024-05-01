@@ -25,31 +25,34 @@ source("_common.R")
 
 
 ```{r}
-#| label: co_box_dev
+#| label: co_box_rev
 #| echo: false
 #| results: asis
 #| eval: true
 co_box(
-  color = "r",
+  color = "o",
   look = "default", 
   hsize = "1.25", 
   size = "1.00", 
   header = "Caution", 
   fold = FALSE,
-  contents = "This section is under development. Thank you for your patience.
-  "
+  contents = "This section is being revised. Thank you for your patience."
 )
 ```
 
 When presented with a new map, the most important thing to find is your location on it. It's hard to know where you're going without knowing where you are. 
 
-## Navigate {#sec-nav-dirs}
+## [Navigate]{style="font-size: 1.05em; font-weight: bold;"}  {#sec-nav-dirs}
+
+### `pwd`
 
 **`pwd` (Print Working Directory)** tells you exactly where you are in the filesystem.
 
 ```{bash}
 pwd # where am I?
 ```
+
+### `cd`
 
  **`cd` (Change Directory)** lets you move to a different folder on your computer. If you want to move from the one place to another, `cd` can get you there. For example, `cd /bin` takes you to the `/bin` folder, the toolshed of software tools.
 
@@ -58,6 +61,8 @@ cd /bin # change location
 pwd # now where am I?
 ```
 
+### `ls`
+
 **`ls` (List)** is like standing in one location, looking around, and seeing what files and folders are around you. In `/bin`, `ls` would show you the software tools available:
 
 ```{bash}
@@ -65,7 +70,15 @@ cd /bin # change location
 ls # what's in here?
 ```
 
+### `locate`
+
 **`locate`** 
+
+```{bash}
+#| eval: false
+locate "filename" /Users/username/path/to/directory
+```
+
 
 ```{r}
 #| label: co_box_dev_locate
@@ -84,9 +97,11 @@ co_box(
 )
 ```
 
-## Manage {#sec-manage-dirs}
+## [Manage]{style="font-size: 1.05em; font-weight: bold;"}  {#sec-manage-dirs}
 
 In the Unix/Linux world, file and directory management is a fundamental skill. This chapter dives deep into the commands that allow users to create, copy, move, remove, and link files and directories. Each section below introduces a different command, detailing its purpose and providing examples of its use.
+
+### `mkdir`
 
 **`mkdir` (Make Directory)** builds a new folder wherever you tell it to, like making a new folder in our project for outputs (`out/`) or documents (`doc/`).
 
@@ -95,7 +110,9 @@ mkdir out
 mkdir doc
 ```
 
-**`cp` (Copy)** duplicates files or folders. The `cp` command is used to Copy files or directories from one location to another. Imagine having a file (`myfile.txt`) on your root (`.`) directory that you want to copy to the `/data` folder; you could use `cp` to make a duplicate. 
+### `cp`
+
+**`cp` (Copy)** duplicates files or folders. The `cp` command is used to copy files or directories from one location to another. Imagine having a file (`myfile.txt`) on your root (`.`) directory that you want to copy to the `/data` folder; you could use `cp` to make a duplicate. 
 
 ```{bash}
 cp myfile.txt data/myfile.txt
@@ -103,7 +120,9 @@ cp myfile.txt data/myfile.txt
 ls data
 ```
 
-**`mv` (Move)**: `mv`, short for Move, functions similarly to picking up a book from your desk and placing it on a shelf. It moves files or directories from one location to another. It can also be used for renaming files. This command is especially useful for organizing files and directories that are in the wrong place.
+### `mv`
+
+**`mv` (Move)**: `mv`, short for move, moves files or directories from one location to another.
 
 ```{bash}
 # create folder
@@ -112,10 +131,21 @@ mkdir doc
 mv data/myfile.txt doc/myfile.txt 
 ```
 
+It can also be used for renaming files. 
+
+```{bash}
+# rename file
+mv doc/myfile.txt  doc/your_file.txt 
+```
+
+This command is especially useful for organizing files and directories that are in the wrong place.
+
 ```{bash}
 # confirm move
 ls doc
 ```
+
+### `rm`
 
 **`rm` (Remove)**: The `rm` command stands for **remove** and is used to delete files or directories.
 
@@ -154,6 +184,7 @@ It's important to note here that the command-line is not very forgiving. Using `
 rm -R doc
 ```
 
+### `ln`
 
 **`ln` (Link)**: `ln` creates Links to files or directories, making them accessible from multiple locations without duplicating the actual content. It's like creating a shortcut on your desktop to a program you frequently use. There are two types of links: hard links and symbolic (soft) links. Symbolic links are more commonly used because they can link to directories and provide more flexibility.
 
@@ -162,7 +193,7 @@ ln -s /path/to/original /path/to/link
 ```
 
 
-## Recap 
+## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 
 
 
 

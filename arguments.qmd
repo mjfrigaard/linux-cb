@@ -25,25 +25,24 @@ source("_common.R")
 ```
 
 ```{r}
-#| label: co_box_dev
+#| label: co_box_rev
 #| echo: false
 #| results: asis
 #| eval: true
 co_box(
-  color = "r",
+  color = "o",
   look = "default", 
   hsize = "1.25", 
   size = "1.00", 
   header = "Caution", 
   fold = FALSE,
-  contents = "This section is under development. Thank you for your patience.
-  "
+  contents = "This section is being revised. Thank you for your patience."
 )
 ```
 
 Arguments in Unix/Linux commands are values or data passed to commands for processing. Unlike options, which modify the behavior of commands, arguments typically specify what the command should *act upon*. This typically includes filenames, user names, data values, or other kinds of information the command needs to execute its task.
  
-## [Anatomy]{style="font-size: 1.15em; font-weight: bold;"}
+## [Anatomy]{style="font-size: 1.05em; font-weight: bold;"}
 
 A Unix command can be broken down into the command name, followed by its options (which we'll address in the next chapter), and then its arguments:
 
@@ -52,7 +51,7 @@ A Unix command can be broken down into the command name, followed by its options
 command argument1 argument2 ... argument
 ```
 
-## [Argument Types]{style="font-size: 1.15em; font-weight: bold;"} 
+## [Argument Types]{style="font-size: 1.05em; font-weight: bold;"} 
 
 Below are a variety of command arguments types. This is not an exhaustive list, but includes many of the commands and arguments you'll encounter on a regular basis.
 
@@ -62,7 +61,7 @@ Below are a variety of command arguments types. This is not an exhaustive list, 
 
 **Example** 
 
-In the command `echo myfile.txt`, `myfile.txt` is a direct argument to the <code>@sec-cat</code> command, telling it which file to display on the standard output.
+In the command `cat myfile.txt`, `myfile.txt` is a direct argument to the <code>@sec-cat</code> command, telling it which file to display on the standard output.
 
 ```{bash}
 cat myfile.txt
@@ -181,7 +180,7 @@ echo $HOME
 # /Users/username
 ```
 
-## [Recap]{style="font-size: 1.15em; font-weight: bold;"} 
+## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 
 
 
 Understanding the nuances of Unix arguments is crucial for crafting precise and effective commands, allowing users to leverage the full power of the Unix command line for a wide array of tasks.

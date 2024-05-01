@@ -22,23 +22,30 @@ source("_common.R")
 ```
 
 ```{r}
-#| label: co_box_dev
+#| label: co_box_rev
 #| echo: false
 #| results: asis
 #| eval: true
 co_box(
-  color = "r",
+  color = "o",
   look = "default", 
   hsize = "1.25", 
   size = "1.00", 
   header = "Caution", 
   fold = FALSE,
-  contents = "This section is under development. Thank you for your patience.
-  "
+  contents = "This section is being revised. Thank you for your patience."
 )
 ```
 
-In Unix-like operating systems, the terms commands, arguments, and options refer to the components of the syntax you type into the terminal.
+In Unix-like operating systems, the terms commands, arguments, and options refer to the components of the syntax you type into the terminal. Pipes give us the ability to combine commands.
+
+### Commands 
+
+### Arguments 
+
+### Options 
+
+### Pipes 
 
 
 ```{r}

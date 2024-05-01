@@ -25,19 +25,18 @@ source("_common.R")
 
 
 ```{r}
-#| label: co_box_dev
+#| label: co_box_rev
 #| echo: false
 #| results: asis
 #| eval: true
 co_box(
-  color = "r",
+  color = "o",
   look = "default", 
   hsize = "1.25", 
   size = "1.00", 
   header = "Caution", 
   fold = FALSE,
-  contents = "This section is under development. Thank you for your patience.
-  "
+  contents = "This section is being revised. Thank you for your patience."
 )
 ```
 
@@ -45,7 +44,7 @@ co_box(
 
 Unix command options (sometimes called flags) are often preceded by a hyphen (`-`) or two (`--` for long-form options) and modify the behavior of a command. Options provide flexibility, control, and, in some cases, enable a vast array of additional functionalities. 
 
-## [Option types]{style="font-size: 1.15em; font-weight: bold;"} 
+## [Option types]{style="font-size: 1.05em; font-weight: bold;"} 
  
 Arguments can be short or long:
 
@@ -98,6 +97,19 @@ tree data --sort size
 ```
 
 **Example 2**
+
+<code>@sec-grep</code> ` --help` displays usage information for the `grep` command, helping users understand available options and syntax.
+
+```{bash}
+#| eval: false
+grep --help
+#> usage: grep [-abcdDEFGHhIiJLlMmnOopqRSsUVvwXxZz] [-A num] [-B num] [-C[num]]
+#> 	[-e pattern] [-f file] [--binary-files=value] [--color=when]
+#> 	[--context[=num]] [--directories=action] [--label] [--line-buffered]
+#> 	[--null] [pattern] [file ...]
+```
+
+**Example 3**
 
 The `--version` option is commonly used to get version information for various commands.
 
@@ -170,14 +182,14 @@ The `-u` option in <code>@sec-sort</code> removes duplicate lines. `-u`s behavio
 sort -u data/roxanne.txt
 ```
 
-## [Combining Options]{style="font-size: 1.15em; font-weight: bold;"} 
+## [Combining Options]{style="font-size: 1.05em; font-weight: bold;"} 
 
 Multiple short options can be combined after a single dash, without spaces (e.g., `-lrt`)
 allowing users to use multiple options at once, and reducing the need to type multiple dashes.
 
-```{bash}
-ls -lrt data
-```
+### Multiple short options
+
+Options can be combined with arguments when they are followed by a space and then the argument (e.g., `-o filename`). 
 
 **Example**
 
@@ -187,7 +199,9 @@ ls -lrt data
 ls -lrt data
 ```
 
-Options can be combined with arguments when they are followed by a space and then the argument (e.g., `-o filename`). Some options require or accept an argument to specify a value related to the option's action.
+### Options with values
+
+Some options require or accept an argument to specify a value related to the option's action.
 
 **Example**
 
@@ -197,74 +211,9 @@ Options can be combined with arguments when they are followed by a space and the
 grep -i "FILE" myfile.txt
 ```
 
-The `"FILE"` here is an argument to the `-i` option.
+The `"FILE"` here is an argument for the `-i` option.
 
-## Getting Help
-
-**Example**
-
-<code>@sec-grep</code> ` --help` displays usage information for the `grep` command, helping users understand available options and syntax.
-
-```{bash}
-#| eval: false
-grep --help
-#> usage: grep [-abcdDEFGHhIiJLlMmnOopqRSsUVvwXxZz] [-A num] [-B num] [-C[num]]
-#> 	[-e pattern] [-f file] [--binary-files=value] [--color=when]
-#> 	[--context[=num]] [--directories=action] [--label] [--line-buffered]
-#> 	[--null] [pattern] [file ...]
-```
-
-**Example 2**
-
-`man` shows the official manual for the command. 
-
-```{bash}
-#| eval: false
-#
-man echo
-#> ECHO(1)                     General Commands Manual                    ECHO(1)
-#> 
-#> NAME
-#>      echo – write arguments to the standard output
-#> 
-#> SYNOPSIS
-#>      echo [-n] [string ...]
-#> 
-#> DESCRIPTION
-#>      The echo utility writes any specified operands, separated by single blank
-#>      (‘\n’) characters and followed by a newline (‘\n’) character, to the
-#>      standard output.
-#> 
-#>      The following option is available:
-#> 
-#>      -n    Do not print the trailing newline character.  This may also be
-#>            achieved by appending ‘\c’ to the end of the string, as is done by
-#>            iBCS2 compatible systems.  Note that this option as well as the
-#>            effect of ‘\c’ are implementation-defined in IEEE Std 1003.1-2001
-#>            (“POSIX.1”) as amended by Cor. 1-2002.  Applications aiming for
-#>            maximum portability are strongly encouraged to use printf(1) to
-#>            suppress the newline character.
-#> 
-#>      Some shells may provide a builtin eecchhoo command which is similar or
-#>      identical to this utility.  Most notably, the builtin eecchhoo in sh(1) does
-#>      not accept the --nn option.  Consult the builtin(1) manual page.
-#> 
-#> EXIT STATUS
-#>      The echo utility exits 0 on success, and >0 if an error occurs.
-#> 
-#> SEE ALSO
-#>      builtin(1), csh(1), printf(1), sh(1)
-#> 
-#> STANDARDS
-#>      The echo utility conforms to IEEE Std 1003.1-2001 (“POSIX.1”) as amended
-#>      by Cor. 1-2002.
-#> 
-#> macOS 14.4                      April 12, 2003                      macOS 14.4
-```
-
-
-
-## [Recap]{style="font-size: 1.15em; font-weight: bold;"} 
+## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 
 
 Options greatly enhance the power and versatility of Unix commands, allowing users to tailor operations to their specific needs and preferences.
 

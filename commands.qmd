@@ -25,19 +25,18 @@ source("_common.R")
 
 
 ```{r}
-#| label: co_box_dev
+#| label: co_box_rev
 #| echo: false
 #| results: asis
 #| eval: true
 co_box(
-  color = "r",
+  color = "o",
   look = "default", 
   hsize = "1.25", 
   size = "1.00", 
   header = "Caution", 
   fold = FALSE,
-  contents = "This section is under development. Thank you for your patience.
-  "
+  contents = "This section is being revised. Thank you for your patience."
 )
 ```
 
@@ -51,7 +50,7 @@ date
 
 The command `date` returns the current date and time. What we've just done is referred to as the [read–eval–print loop](https://www.computerhope.com/jargon/r/repl.htm), or REPL, and it's the underlying process of the command-line. 
 
-## [REPL]{style="font-size: 1.15em; font-weight: bold;"}
+## [REPL]{style="font-size: 1.05em; font-weight: bold;"}
 
 The REPL in Bash exemplifies a powerful and flexible interface for interacting with the system, running commands, and developing scripts, providing both novice and experienced users with an efficient way to manage their computing environment.
 
@@ -59,23 +58,30 @@ Here is how it works:
 
 ### 1. Read
 
-In Bash, the "Read" step occurs when the shell waits for input from the user. This is typically represented by the shell prompt, where we can type commands. 
-
-```{bash}
-#| eval: false
-username@hostname:current_directory$
-```
+In the Bash, the "Read" step occurs when the shell waits for input from the user. This is typically represented by the shell prompt, where we can type commands. 
 
 The prompt might display useful information, such as the current user (`username`), hostname (`hostname`), and working directory (`current_directory`), depending on its configuration.
+
+:::{style="font-size: 1.10em; color: #2c8475;"}
+
+<pre>
+  <strong>username</strong>@<strong>hostname</strong>:<strong>current_directory</strong>$
+</pre>
+
+:::
+
 
 ### 2. Eval
 
 Once a command is entered, Bash "evaluates" it. This step involves parsing the command and its arguments, checking for syntax correctness, and then executing it. 
 
-```{bash}
-#| eval: false
-username@hostname:current_directory$ date
-```
+:::{style="font-size: 1.10em; color: #2c8475;"}
+
+<pre>
+  username@hostname:current_directory$ <strong>date</strong>
+</pre>
+
+:::
 
 Commands can be simple, such as listing the current date and time, or complex scripts involving loops, conditionals, and functions.
 
@@ -83,12 +89,13 @@ Commands can be simple, such as listing the current date and time, or complex sc
 
 After evaluating the command, Bash "prints" the output or the result of the command execution to the screen (`stdout` or standard output) or another specified location. 
 
-```{bash}
-#| eval: false
-#> Wed Apr 10 02:55:23 MST 2024
-```
+:::{style="font-size: 1.10em; color: #2c8475;"}
 
-If the command results in an error, the error message is displayed instead (typically on standard error).
+<pre>
+  # Wed Apr 10 02:55:23 MST 2024
+</pre>
+
+:::
 
 ### Loop
 
@@ -104,15 +111,13 @@ username@hostname:current_directory$
 
 This cycle repeats indefinitely until the user exits the REPL environment, typically with an `exit` command or by pressing **<kbd>Ctrl</kbd>** + **<kbd>D</kbd>**.
 
-
-
-## [Basic commands]{style="font-size: 1.15em; font-weight: bold;"} 
+## [Basic commands]{style="font-size: 1.05em; font-weight: bold;"} 
 
 In Unix, several commands can operate without any options or arguments, performing their basic functions in their simplest form. Below are some of these commands:
 
 ### `who` 
 
-`who` shows who is logged on the system. 
+<code><strong>@sec-who</strong></code> shows who is logged on the system. 
 
 ```{bash}
 #| eval: false 
@@ -127,7 +132,7 @@ who
 
 ### `whoami` 
 
-`whoami` shows the username of the user currently logged into the system. 
+<code><strong>@sec-whoami</strong></code> shows the username of the user currently logged into the system. 
 
 ```{bash}
 #| eval: false 
@@ -137,7 +142,7 @@ whoami
 
 ### `hostname` 
 
-`hostname` displays the system's network name.
+<code><strong>@sec-hostname</strong></code> displays the system's network name.
 
 ```{bash}
 #| eval: false
@@ -147,7 +152,7 @@ hostname
 
 ### `cal` 
 
-`cal` displays a calender of the current month.
+<code><strong>@sec-cal</strong></code> displays a calender of the current month.
 
 ```{bash}
 #| eval: false 
@@ -164,7 +169,7 @@ cal
 
 ### `uptime` 
 
-`uptime` shows how long the system has been running.
+<code><strong>@sec-uptime</strong></code> shows how long the system has been running.
 
 ```{bash}
 #| eval: false 
@@ -174,7 +179,7 @@ uptime
 
 ### `clear` 
 
-`clear` clears the terminal screen and doesn’t print any return values.
+<code><strong>@sec-clear</strong></code> clears the terminal screen and doesn’t print any return values.
 
 ```{bash}
 #| eval: false
@@ -185,7 +190,7 @@ clear
 
 ### `exit` 
 
-`exit` exits the shell or your current session. 
+<code><strong>@sec-exit</strong></code> exits the shell or your current session. 
 
 ```{bash}
 #| eval: false
@@ -196,7 +201,7 @@ exit
 
 ###  `yes` 
 
-`yes` repeatedly outputs a string until killed. Without arguments, it defaults to outputting 'y'.
+<code><strong>@sec-yes</strong></code> repeatedly outputs a string until killed. Without arguments, it defaults to outputting 'y'.
 
 ```{bash}
 #| eval: false
@@ -205,7 +210,7 @@ yes
 
 **NOTE:** Use **<kbd>Ctrl</kbd>** + **<kbd>C</kbd>** to interrupt the `yes` command.
 
-## [Recap]{style="font-size: 1.15em; font-weight: bold;"}
+## [Recap]{style="font-size: 1.05em; font-weight: bold;"}
 
 Each of these commands performs a specific and often utilized function within the Unix environment, embodying the Unix philosophy of doing one thing well.
 

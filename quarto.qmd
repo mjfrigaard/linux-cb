@@ -21,19 +21,18 @@ source("_common.R")
 ```
 
 ```{r}
-#| label: co_box_dev
+#| label: co_box_rev
 #| echo: false
 #| results: asis
 #| eval: true
 co_box(
-  color = "r",
+  color = "o",
   look = "default", 
   hsize = "1.25", 
   size = "1.00", 
   header = "Caution", 
   fold = FALSE,
-  contents = "This section is under development. Thank you for your patience.
-  "
+  contents = "This section is being revised. Thank you for your patience."
 )
 ```
 
@@ -49,7 +48,7 @@ co_box(
 It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through downloading and installing Quarto, `.qmd` documents, `YAML` headers and Bash code chunks.
 
 
-## [Install]{style="font-size: 1.15em; font-weight: bold;"} 
+## [Install]{style="font-size: 1.05em; font-weight: bold;"}
 
 Quarto can be installed from its [official website](https://quarto.org/docs/get-started/). Follow the platform-specific instructions to install it on your system. Make sure Quarto has been installed correctly and is available in your system’s `PATH`.
 
@@ -99,7 +98,7 @@ On macOS, you can use `find` in the Terminal:
 find / -name quarto 2>/dev/null
 ```
 
-## [Quarto Documents]{style="font-size: 1.15em; font-weight: bold;"}
+## [Quarto Documents]{style="font-size: 1.05em; font-weight: bold;"}
 
 Quarto documents are a flexible and powerful tool for creating dynamic and reproducible reports, presentations, and publications. Quarto documents can support multiple programming languages, including R, Python, Julia, and Bash. Users can combine narrative text with code in a single document, rendering it into various formats like HTML, PDF, and Word. 
 

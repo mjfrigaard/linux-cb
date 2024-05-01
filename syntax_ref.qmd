@@ -38,152 +38,85 @@ co_box(
 )
 ```
 
-## Basics
+## [Help & Documentation]{style="font-size: 1.05em; font-weight: bold;"} 
 
-### `who` {#sec-who}
+### `man` {#sec-man}
 
-`who` shows who is logged on the system. 
+Interface to the on-line reference manuals.
 
-```{bash}
-#| eval: false 
-who
-#>  username       console      Apr  9 03:20 
-#>  username       ttys000      Apr  9 03:42
-```
+### `help` {#sec-help}
 
-`who` by itself, without options or arguments, lists the users currently logged into the system.
+Display help for built-in commands.
 
-### `whoami` {#sec-whoami}
-
-`whoami` shows the username of the user currently logged into the system. 
-
-```{bash}
-#| eval: false 
-whoami
-#> username
-```
-
-### `hostname` {#sec-hostname}
-
-`hostname` displays the system's network name.
-
-```{bash}
-#| eval: false
-hostname
-#>  Users-MacBook-Pro-2.local
-```
-
-### `date` {#sec-date}
-
-`date` displays the current date and time. 
-
-```{bash}
-#| eval: false 
-date
-#>  Wed Apr 10 03:39:52 MST 2024
-```
-
-### `cal` {#sec-cal}
-
-`cal` displays a calender of the current month.
-
-```{bash}
-#| eval: false 
-cal
-#>      April 2024       
-#> Su Mo Tu We Th Fr Sa  
-#>     1  2  3  4  5  6  
-#>  7  8  9 10 11 12 13  
-#> 14 15 16 17 18 19 20  
-#> 21 22 23 24 25 26 27  
-#> 28 29 30    
-```
-
-### `uptime` {#sec-uptime}
-
-`uptime` shows how long the system has been running.
-
-```{bash}
-#| eval: false 
-uptime
-#>  3:39  up 11:23, 2 users, load averages: 3.82 3.21 3.00
-```
-
-### `clear` {#sec-clear}
-
-`clear` clears the terminal screen and doesn’t print any return values.
-
-```{bash}
-#| eval: false
-clear
-```
-
-`clear` does its job without the need for additional input.
-
-### `exit` {#sec-exit}
-
-`exit` exits the shell or your current session. 
-
-```{bash}
-#| eval: false
-exit
-```
-
-`exit` requires no arguments or options to execute this action, and doesn't print any return values.
-
-## Navigate 
-
-### `pwd` {#sec-pwd}
-
-**`pwd` (Print Working Directory)** tells you exactly where you are in the filesystem.
-
-```{bash}
-pwd # where am I?
-```
+## [Files & Directories]{style="font-size: 1.05em; font-weight: bold;"} 
 
 ### `cd` {#sec-cd}
 
- **`cd` (Change Directory)** lets you move to a different folder on your computer.
-
-If you want to move from the one place to another, `cd` can get you there. For example, `cd /bin` takes you to the `/bin` folder, the toolshed of software tools.
+Change directory.
 
 ```{bash}
 cd /bin # change location
-pwd # now where am I?
 ```
 
 ### `ls` {#sec-ls}
 
-**`ls` (List)** is like standing in one location, looking around, and seeing what files and folders are around you. In `/bin`, `ls` would show you the software tools available:
+List directory contents.
 
 ```{bash}
 cd /bin # change location
 ls # what's in here?
 ```
 
-### `locate` {#sec-locate}
+### `pwd` {#sec-pwd}
+
+Print working directory.
 
 ```{bash}
-#| eval: false
-locate bin
+cd /bin # change location
+pwd # where am I?
 ```
-
-## Manage 
-
-In the Unix/Linux world, file and directory management is a fundamental skill. This chapter dives deep into the commands that allow users to create, copy, move, remove, and link files and directories. Each section below introduces a different command, detailing its purpose and providing examples of its use.
 
 ### `mkdir` {#sec-mkdir}
 
-**`mkdir` (Make Directory)** builds a new folder wherever you tell it to, like making a new folder in our project for outputs (`out/`) or documents (`doc/`).
+Create a directory.
 
 ```bash
 mkdir out
 mkdir doc
 ```
 
+### `tree` {#sec-tree}
+
+Display the directory structure of a path in a tree-like format, showing all the files and subdirectories under it.
+
+```{bash}
+#| eval: false
+tree data
+# data
+# ├── README.md
+# ├── ajperlis_epigrams.txt
+# ├── music_vids.tsv
+# ├── pwrds.csv
+# ├── pwrds.tsv
+# ├── roxanne.txt
+# ├── roxanne_orig.txt
+# ├── roxanne_rev.txt
+# ├── trees.tsv
+# ├── vg_hof.tsv
+# ├── who_tb_data.tsv
+# ├── who_tb_data.txt
+# ├── wu_tang.csv
+# ├── wu_tang.dat
+# ├── wu_tang.tsv
+# └── wu_tang.txt
+# 
+# 1 directory, 16 files
+```
+
+
 ### `cp` {#sec-cp}
 
-**`cp` (Copy)** duplicates files or folders. The `cp` command is used to Copy files or directories from one location to another. Imagine having a file (`myfile.txt`) on your root (`.`) directory that you want to copy to the `/data` folder; you could use `cp` to make a duplicate. 
+Copy files or directories.
 
 ```{bash}
 cp myfile.txt data/myfile.txt
@@ -193,23 +126,20 @@ ls data
 
 ### `mv` {#sec-mv}
 
-**`mv` (Move)**: `mv`, short for Move, functions similarly to picking up a book from your desk and placing it on a shelf. It moves files or directories from one location to another. It can also be used for renaming files. This command is especially useful for organizing files and directories that are in the wrong place.
+Move or rename files or directories.
 
 ```{bash}
 # create folder
 mkdir doc
 # move file
 mv data/myfile.txt doc/myfile.txt 
-```
-
-```{bash}
 # confirm move
 ls doc
 ```
 
 ### `rm` {#sec-rm}
 
-**`rm` (Remove)**: The `rm` command stands for **remove** and is used to delete files or directories.
+Remove files or directories.
 
 ```{bash}
 #| error: true
@@ -217,7 +147,9 @@ ls doc
 rm doc
 ```
 
-By default, it won't remove a directory without the `-R` or `-r` option.
+By default, `rm` won't remove a directory without the `-R` or `-r` option.
+
+<!--
 
 ```{r}
 #| label: co_box_rm
@@ -241,54 +173,239 @@ It's important to note here that the command-line is not very forgiving. Using `
 )
 ```
 
+-->
+
 ```{bash}
 # add option 
 rm -R doc
 ```
 
-
 ### `ln` {#sec-ln}
 
-**`ln` (Link)**: `ln` creates Links to files or directories, making them accessible from multiple locations without duplicating the actual content. It's like creating a shortcut on your desktop to a program you frequently use. There are two types of links: hard links and symbolic (soft) links. Symbolic links are more commonly used because they can link to directories and provide more flexibility.
+Create links between files.
 
 ```bash
 ln -s /path/to/original /path/to/link
 ```
 
-## System
-
-### `ps` {#sec-ps}
-
-`ps` (**Process Status**) reports a snapshot of information about all running processes, regardless of the owner, including the user, CPU and memory usage, process ID, and the command that started each process.. Command options can expand the selection to include other users' processes, full command lines, etc.
-
-### `df` {#sec-df}
-
-`df` (**Disk Free**) shows disk usage in a human-readable format, including the size, used space, available space, and the mount point of each filesystem. By default, it displays sizes in 1K blocks but can show them in a more readable format (like MB or GB) with the `-h` option (human-readable).
-
-## Files 
-
 ### `touch` {#sec-touch}
 
-**`touch`** creates a new empty file if the specified file does not exist. If the file does exist, `touch` updates its access and modification timestamps.
+Create a new file or update the timestamp of existing files.
 
 ```{bash}
 #| eval: false
 touch newfile.txt
 ```
 
-## View
+### `find` {#sec-find}
+
+Search for files in a directory hierarchy.
+
+### `locate` {#sec-locate}
+
+Find files by name quickly using a database.
+
+```{bash}
+#| eval: false
+locate bin
+```
 
 ### `file` {#sec-file}
 
-**`file`** gives you a summary of what a computer file is or what it contains, like telling you if a tool in `/bin/pax` is a program you can run or a text file.
+Determine file type.
 
 ```{bash}
-file /bin/pax
+#| eval: false
+file /usr/bin
 ```
+
+### `stat` {#sec-stat}
+
+Display file or file system status.
+
+## [System Administration]{style="font-size: 1.05em; font-weight: bold;"} 
+
+### `who` {#sec-who}
+
+Show who is logged in.
+
+```{bash}
+#| eval: false 
+who
+#  username       console      Apr  9 03:20 
+#  username       ttys000      Apr  9 03:42
+```
+
+### `whoami` {#sec-whoami}
+
+Display current user name.
+
+```{bash}
+#| eval: false 
+whoami
+# username
+```
+
+### `hostname` {#sec-hostname}
+
+Show or set system’s network name.
+
+```{bash}
+#| eval: false
+hostname
+#  Users-MacBook-Pro-2.local
+```
+
+### `date` {#sec-date}
+
+Display or set the date and time.
+
+```{bash}
+#| eval: false 
+date
+#  Wed Apr 10 03:39:52 MST 2024
+```
+
+### `uptime` {#sec-uptime}
+
+Show how long the system has been running.
+
+```{bash}
+#| eval: false 
+uptime
+#  3:39  up 11:23, 2 users, load averages: 3.82 3.21 3.00
+```
+
+### `cal` {#sec-cal}
+
+Shows a calendar of the current month or a specified month and year.
+
+```{bash}
+#| eval: false 
+cal
+#>      April 2024       
+#> Su Mo Tu We Th Fr Sa  
+#>     1  2  3  4  5  6  
+#>  7  8  9 10 11 12 13  
+#> 14 15 16 17 18 19 20  
+#> 21 22 23 24 25 26 27  
+#> 28 29 30    
+```
+
+### `df` {#sec-df}
+
+Report file system disk space usage.
+
+```{bash}
+#| eval: false 
+df
+# Filesystem                       512-blocks      Used Available Capacity iused     ifree %iused  Mounted on
+# /dev/disk1s1s1                    976490576  20002808  84066432    20%  403755 420332160    0%   /
+# devfs                                   395       395         0   100%     684         0  100%   /dev
+# /dev/disk1s3                      976490576   5059576  84066432     6%    5077 420332160    0%   /System/Volumes/Preboot
+# /dev/disk1s5                      976490576   4194808  84066432     5%       2 420332160    0%   /System/Volumes/VM
+# /dev/disk1s6                      976490576     39800  84066432     1%      19 420332160    0%   /System/Volumes/Update
+# /dev/disk1s2                      976490576 860380424  84066432    92% 6238430 420332160    1%   /System/Volumes/Data
+# map auto_home                             0         0         0   100%       0         0     -   /System/Volumes/Data/home
+```
+
+
+### `ps` {#sec-ps}
+
+Report a snapshot of the current processes.
+
+```{bash}
+#| eval: false 
+ps
+#   PID TTY           TIME CMD
+# 13692 ttys000    0:00.03 -zsh
+# 13703 ttys001    0:00.03 -zsh
+```
+
+### `top` {#sec-top}
+
+Display tasks and system status interactively.
+
+```{bash}
+#| eval: false 
+top
+```
+
+
+![`top` in iTerm2](img/top.gif){width='100%' fig-align='center'}
+
+### `iotop` {#sec-iotop}
+
+Monitor disk I/O usage by processes.
+
+### `htop` {#sec-htop}
+
+Interactive process viewer, similar to `top` but more configurable.
+
+### `vmstat` {#sec-vmstat}
+
+Report virtual memory statistics.
+
+### `dmesg` {#sec-dmesg}
+
+Display the kernel-related messages.
+
+### `clear` {#sec-clear}
+
+Clear the terminal screen.
+
+```{bash}
+#| eval: false
+clear
+```
+
+### `yes` {#sec-yes}
+
+Output a string repeatedly until killed.
+
+```{bash}
+#| eval: false
+yes
+```
+
+### `exit` {#sec-exit}
+
+Exits the shell or current command session.
+
+```{bash}
+#| eval: false
+exit
+```
+
+### `xargs` {#sec-xargs}
+
+Build and execute command lines from standard input.
+
+### `crontop` {#sec-crontop}
+
+Schedule periodic background work.
+
+### `systemctl` {#sec-systemctl}
+
+Control the systemd system and service manager.
+
+### `journalctl` {#sec-journalctl}
+
+Query and display messages from the journal.
+
+## [Text Processing]{style="font-size: 1.05em; font-weight: bold;"} 
+
+### `cat` {#sec-cat}
+
+Concatenate files and print on the standard output.
+
+### `echo` {#sec-echo}
+
+Outputs the strings it is given to the terminal.
 
 ### `less` {#sec-less}
 
-**`less`** lets you skim through a file on your computer, moving forwards and backwards as you please.
+View file contents interactively.
 
 ```{bash}
 #| eval: false
@@ -297,79 +414,29 @@ less data/vg_hof.tsv
 
 ![Enter `less` in the Terminal to scroll](img/less.gif){width='100%' fig-align='center'}
 
-## Search
-
-### `find` {#sec-find}
-
-`find` is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, file type, and modification time. 
-
-## Permissions & Priviledges 
-
-### `chown` {#sec-chown}
-
-### `sudo` {#sec-sudo}
-
-## Documentation 
-
-### `man` {#sec-man}
-
-`man` (**Manual**) displays the user manual of any command that we can run on the terminal. It's the go-to resource for learning about the options, arguments, and examples of how to use commands.
-
-### `help` {#sec-help}
-
-`help` or `--help` option provides information about built-in commands and usage guidelines. It's a quick way to get help for shell built-ins or to understand the basic usage of a command. 
-
-## Text
-
-### `echo` {#sec-echo}
-
-The `echo` command prints its arguments to the standard output. It's commonly used in scripts and on the command line to display messages or variables.
-
-### `cat` {#sec-cat}
-
-**`cat` (Concatenate)**: `cat` displays the content of files straight to your screen, useful for checking what's in a text file quickly.
-
-This is similar to printing a file and laying out the pages on the floor to see them all at once.
-
 ### `head` {#sec-head}
 
-**`head`** displays the first part of files, allowing you to see the beginning of a file. By default, it shows the first 10 lines.
+Output the first part of files.
 
 ### `tail` {#sec-tail}
 
-**`tail`** displays the last part of files, useful for viewing the end of a file or for monitoring changes to a file in real time with `-f`.
-
-### `seq` {#sec-seq}
-
-**`seq`** is a simple utility used to generate a sequence of numbers, which can be very handy for scripting and looping operations. `seq` is often used to provide numeric input for loops or to create numbered lists in files.
+Output the last part of files.
 
 ### `grep` {#sec-grep}
 
-**`grep`** stands for "global regular expression print" and it reads from `stdin` or a list of files and outputs the lines that contain matches for a specified pattern.
-
-### `sed` {#sec-sed}
-
-**`sed`** (Stream Editor) is a powerful utility in Unix and Linux systems designed for processing text in a stream, meaning it can filter and transform text in a pipeline. It's typically used to automate editing of large numbers of files and to modify files too large to open in a traditional text editor.
-
-### `awk` {#sec-awk}
-
-**`awk`** reads from a file or a stream, breaks up each line into fields, checks each line against patterns specified in the program, and then performs specified actions on matching lines.
-
-### `gsub` {#sec-gsub}
-
-**`gsub`** is not a standalone command but a function used within `awk`, `gsub` stands for "global substitution" and it is used to replace all occurrences of a specified pattern within each input record. It takes three arguments: the pattern to match, the replacement string, and the target string or field where the substitutions should be made. It operates on the entire line (or specified field) and replaces every occurrence of the pattern with the replacement.
+Print lines matching a pattern.
 
 ### `sort` {#sec-sort}
 
-**`sort`**: `sort` arranges the lines in a text file into order (similar to organizing our stack of papers alphabetically).
+Sort lines of text files.
 
 ### `uniq` {#sec-uniq}
 
-**`uniq`**: `uniq` helps by removing duplicate lines from a file, making sure every line is unique (i.e., you've accidentally printed duplicates of a document, and you remove the extra copies).
+Report or omit repeated lines.
 
 ### `cut` {#sec-cut}
 
-**`cut`**: `cut` extracts specific parts of lines in a file, like cutting out columns of text. The example below shows the names and log in times of the currently logged in users:
+Remove sections from each line of files.
 
 ```{bash}
 who | cut -c 1-16,26-42
@@ -377,28 +444,131 @@ who | cut -c 1-16,26-42
 
 ### `paste` {#sec-paste}
 
-**`paste`**: `paste` combines lines from multiple files side by side (like taking snippets of text from different documents and sticking them together into one).
+Merge lines of files.
 
 ### `join` {#sec-join}
 
-**`join`**: `join` merges lines from two files based on a common field.
+Join lines of two files on a common field.
 
-If you have two lists with common information, you might merge them based on what matches. 
 ### `comm` {#sec-comm}
 
-**`comm` (Compare)**: `comm` compares two sorted files line by line to see what items appear on both, only on one, or the other.
+Compare two sorted files line by line.
 
 ### `diff` {#sec-diff}
 
-**`diff` (Difference)**: Highlighting what changes have been made between your draft and the final copy of a letter, `diff` shows the differences between two files.
+Compare files line by line.
 
 ### `wc` {#sec-wc}
 
-`wc` (**word count**) counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.
+Print newline, word, and byte counts for each file.
 
-### `xargs` {#sec-xargs}
+### `sed` {#sec-sed}
 
-`xargs` builds and executes command lines from standard input (`stdin`). It's most often used in combination with other commands through pipes. `xargs` takes input from a pipe and passes it as arguments to another command, allowing for powerful command-line operations that process a list of inputs iteratively.
+Stream editor for filtering and transforming text.
+
+### `awk` {#sec-awk}
+
+Programming language for data extraction and reporting.
+
+## [Networking]{style="font-size: 1.05em; font-weight: bold;"} 
+
+### `ping` {#sec-ping}
+
+Check the network connection to another host.
+
+### `netstat` {#sec-netstat}
+
+Display network connections, routing tables, interface statistics, masquerade connections, and multicast memberships.
+
+### `ss` {#sec-ss}
+
+Utility to investigate sockets.
+
+### `ifconfig` {#sec-ifconfig}
+
+Configure or display network interface parameters for a network using TCP/IP.
+
+### `traceroute` {#sec-traceroute}
+
+Print the route packets take to network host.
+
+## [File Archiving & Transfer]{style="font-size: 1.05em; font-weight: bold;"} 
+
+### `tar` {#sec-tar}
+
+Store and extract files from a tape or disk archive.
+
+### `gzip` {#sec-gzip}
+
+Compress or expand files.
+
+### `zip` {#sec-zip}
+
+Package and compress (archive) files.
+
+### `scp` {#sec-scp}
+
+Secure copy (remote file copy program).
+
+### `rsync` {#sec-rsync}
+
+Fast, versatile, remote (and local) file-copying tool.
+
+## [User Management]{style="font-size: 1.05em; font-weight: bold;"} 
+
+### `chown` {#sec-chown}
+
+Change file owner and group.
+
+### `chmod` {#sec-chmod}
+
+Change file access permissions.
+
+### `sudo` {#sec-sudo}
+
+Execute a command as another user, typically the superuser.
+
+### `useradd` {#sec-useradd}
+
+Create a new user or update default new user information.
+
+### `usermod` {#sec-usermod}
+
+Modify a user's system information.
+
+### `userdel` {#sec-userdel}
+
+Delete a user account and related files.
+
+### `groupadd` {#sec-groupadd}
+
+Create a new group.
+
+### `passwd` {#sec-passwd}
+
+Update a user’s authentication tokens/password.
+
+## [Disk Management]{style="font-size: 1.05em; font-weight: bold;"} 
+
+### `fdisk` {#sec-fdisk}
+
+Partition table manipulator for Linux.
+
+### `parted` {#sec-parted}
+
+A partition manipulation program.
+
+### `mkfs` {#sec-mkfs}
+
+Build a Linux filesystem on a device, usually a hard disk partition.
+
+### `mount` {#sec-mount}
+
+Mount a filesystem.
+
+### `umount` {#sec-umount}
+
+Unmount file systems.
 
 ```{r}
 #| label: git_contrib_box

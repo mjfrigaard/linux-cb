@@ -34,8 +34,8 @@ book:
       chapters:
         - dirs.qmd
         - files.qmd
-        - vars.qmd
         - sys.qmd
+        - vars.qmd
     - part: text.qmd
       chapters:
         - symbols_patterns.qmd

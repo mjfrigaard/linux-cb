@@ -20,19 +20,18 @@ source("_common.R")
 ```
 
 ```{r}
-#| label: co_box_dev
+#| label: co_box_rev
 #| echo: false
 #| results: asis
 #| eval: true
 co_box(
-  color = "r",
+  color = "o",
   look = "default", 
   hsize = "1.25", 
   size = "1.00", 
   header = "Caution", 
   fold = FALSE,
-  contents = "This section is under development. Thank you for your patience.
-  "
+  contents = "This section is being revised. Thank you for your patience."
 )
 ```
 
@@ -46,7 +45,7 @@ In Unix/Linux environments, the terms "Shell" and "Terminal" are commonly used a
 
 ::::
 
-## [Shells]{style="font-size: 1.15em; font-weight: bold;"} {#sec-shells}
+## [Shells]{style="font-size: 1.05em; font-weight: bold;"} {#sec-shells}
 
 The shell processes user commands, which might involve calling other programs, and returns the output to the user. Shells can be either command-line based or graphical. Some popular examples of shells include Bash, Zsh, and Fish.
 
@@ -274,7 +273,7 @@ Fish uses a syntax that is slightly different from the traditional POSIX shell s
 :::
 :::
 
-## [Terminals]{style="font-size: 1.15em; font-weight: bold;"} {#sec-terminals}
+## [Terminals]{style="font-size: 1.05em; font-weight: bold;"} {#sec-terminals}
 
 Terminals interpret keystrokes and commands from users and send these to the shell for execution. When the shell produces output, the terminal displays it to the user. **Terminal emulators** allow users to interact with the shell and other command-line tools. Below is an expanded look at some commonly used terminal emulators and their key features.
 
@@ -346,7 +345,7 @@ Terminals interpret keystrokes and commands from users and send these to the she
 
 Each of these terminal emulators offers unique features that cater to different needs and preferences, enhancing the user's command-line experience. Whether you need deep customization, minimal resource usage, or advanced functionalities like search and shell integration, there's a terminal emulator that fits the requirement.
 
-## [Recap]{style="font-size: 1.15em; font-weight: bold;"}
+## [Recap]{style="font-size: 1.05em; font-weight: bold;"}
 
 In summary, the shell is the command interpreter that executes the commands, while the terminal is the application that allows you to interact with the shell.
 

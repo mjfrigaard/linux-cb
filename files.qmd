@@ -129,12 +129,6 @@ printf "%8s %7s %10s\n" $counts
 
 `chown` & `sudo`
 
-## Documentation 
-
-`man` (**Manual**) displays the user manual of any command that we can run on the terminal. It's the go-to resource for learning about the options, arguments, and examples of how to use commands.
-
-`help` or `--help` option provides information about built-in commands and usage guidelines. It's a quick way to get help for shell built-ins or to understand the basic usage of a command. 
-
 ```{r}
 #| label: git_contrib_box
 #| echo: false

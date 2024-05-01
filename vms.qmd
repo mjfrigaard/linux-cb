@@ -21,25 +21,24 @@ source("_common.R")
 ```
 
 ```{r}
-#| label: co_box_dev
+#| label: co_box_rev
 #| echo: false
 #| results: asis
 #| eval: true
 co_box(
-  color = "r",
+  color = "o",
   look = "default", 
   hsize = "1.25", 
   size = "1.00", 
   header = "Caution", 
   fold = FALSE,
-  contents = "This section is under development. Thank you for your patience.
-  "
+  contents = "This section is being revised. Thank you for your patience."
 )
 ```
 
 Virtual machines (VMs) offer a flexible way to run Unix/Linux environments on top of your existing operating system, regardless of whether it’s Windows, macOS, or another Linux distribution. This subsection explores the setup process for virtual machines, highlighting popular VM software like VirtualBox and VMware. It will guide readers through creating a new VM, installing a Unix/Linux distribution, configuring network settings, and optimizing performance. This part is essential for those experimenting with Unix/Linux systems in an isolated environment.
 
-### [Virtualization Software]{style="font-size: 1.15em; font-weight: bold;"}
+### [Virtualization Software]{style="font-size: 1.05em; font-weight: bold;"}
 
 Setting up Unix/Linux on virtual machines (VMs) is a valuable technique for running different operating systems on a single physical machine, which is helpful for development, testing, server deployment, and more. Several virtualization tools are available, but the most popular ones include:
 
@@ -63,7 +62,7 @@ Setting up Unix/Linux on virtual machines (VMs) is a valuable technique for runn
 
 **[Parallels Desktop](https://www.parallels.com/products/desktop/)** is a commercial product predominantly used on macOS. Parallels is known for its high performance and seamless integration with the host OS, making it easy to run Linux alongside macOS.
 
-### [Unix/Linux Distributions]{style="font-size: 1.15em; font-weight: bold;"}
+### [Unix/Linux Distributions]{style="font-size: 1.05em; font-weight: bold;"}
 
 Download the ISO file for the Unix or Linux distribution you want to install. Popular Linux distributions include [Ubuntu](https://ubuntu.com/), [Fedora](https://fedoraproject.org/), and [CentOS](https://www.centos.org/). For a more Unix-like experience, consider [FreeBSD](https://www.freebsd.org/) or [OpenBSD](https://www.openbsd.org/). Each distribution has its unique characteristics, making them suitable for different types of users and use cases:
 
@@ -99,7 +98,7 @@ Download the ISO file for the Unix or Linux distribution you want to install. Po
 
 **Binary Compatibility with RHEL**: Being binary compatible with RHEL means that software applications developed for RHEL can run seamlessly on CentOS, which is particularly important for ensuring the broad compatibility of software and services in professional environments.
 
-## [Recap]{style="font-size: 1.15em; font-weight: bold;"}
+## [Recap]{style="font-size: 1.05em; font-weight: bold;"}
 
 This chapter covered virtualization and Linux distributions. Specifically, we discussed: 
 

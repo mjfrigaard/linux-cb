@@ -25,27 +25,33 @@ source("_common.R")
 
 
 ```{r}
-#| label: co_box_dev
+#| label: co_box_rev
 #| echo: false
 #| results: asis
 #| eval: true
 co_box(
-  color = "r",
+  color = "o",
   look = "default", 
   hsize = "1.25", 
   size = "1.00", 
   header = "Caution", 
   fold = FALSE,
-  contents = "This section is under development. Thank you for your patience.
-  "
+  contents = "This section is being revised. Thank you for your patience."
 )
 ```
 
-This book section details the practical aspects of preparing your environment to work with Unix/Linux systems. It is designed to guide readers through various setup processes, catering to different preferences and requirements. We’ll cover working directly with shells and terminals, setting up a virtual machine, and using Quarto documents to execute Bash commands.
+This section details the practical aspects of preparing your environment to work with Unix/Linux systems. It is designed to guide you through various setup processes, catering to different preferences and requirements. We’ll cover working with shells and terminals, setting up a virtual machine, and using Quarto documents to execute Bash commands.
+
+### Shells and Terminals 
 
 <strong>@sec-sh-term</strong> covers the differences between shells and terminals, and some common options for both.
 
+### Virtual Machines 
+
 <strong>@sec-vms</strong> covers how to run Unix on a virtual machine.
+
+### Quarto 
+
 
 <strong>@sec-quarto</strong> covers how to setup up the [Quarto](https://iterm2.com/) publishing system.
 

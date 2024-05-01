@@ -21,33 +21,36 @@ source("_common.R")
 ```
 
 ```{r}
-#| label: co_box_dev
+#| label: co_box_rev
 #| echo: false
 #| results: asis
 #| eval: true
 co_box(
-  color = "r",
+  color = "o",
   look = "default", 
   hsize = "1.25", 
   size = "1.00", 
   header = "Caution", 
   fold = FALSE,
-  contents = "This section is under development. Thank you for your patience.
-  "
+  contents = "This section is being revised. Thank you for your patience."
 )
 ```
 
-### The Tale of Unix
+## [The Tale of Unix]{style="font-size: 1.05em; font-weight: bold;"}
 
 Imagine Unix and Linux as the master and apprentice in the vast workshop of computer operating systems. Our story begins in the late 1960s at AT&T's Bell Labs. Unix was born out of a desire for a more flexible and portable operating system. It was a time when computers were as big as rooms and operated on specific, often incompatible, systems. Unix was a breath of fresh air because it was designed to be simple, elegant, and, most importantly, portable, meaning it could run on different types of hardware. 
+
+### Unix Philosophy
 
 The Unix philosophy has been distilled into a comprehensive operating system of essential commands and operations, guiding other apprentices in creating their versions of tools and systems.
 
 Unix is like the master craftsman in this story, having laid the foundational tools and techniques, and crafting a blueprint for how computers could efficiently and securely manage tasks like organizing files or running software. 
 
-### The Emergence of Linux
+## [The Emergence of Linux]{style="font-size: 1.05em; font-weight: bold;"}
 
 Fast forward a couple of decades to 1991, when a Finnish student named Linus Torvalds decided to create his own free operating system kernel, inspired by Unix. This kernel, which is at the heart of the Linux operating system, was made freely available to anyone who wanted to use or improve it. 
+
+### Open-source
 
 Linux flourished with the help of developers around the world. It's a testament to what collaboration and shared goals can achieve. This global effort resulted in an operating system that is not only free but also incredibly powerful and reliable.
 
@@ -79,13 +82,13 @@ Today, Unix and Linux are everywhere. They're the invisible forces behind much o
 Unix and Linux have grown from niche systems used by academics and researchers to foundational elements that power much of the digital world. They exemplify the power of open collaboration and innovation, showing how a small project or idea can grow and change the world.")
 ```
 
-### The Shell
+## [The Shell]{style="font-size: 1.05em; font-weight: bold;"}
 
 In the story of Unix and Linux, @sec-shells are the interpreters that translate commands into actions a computer can understand and execute. If Unix and Linux are the environments *where* the heavy lifting of computing happens—managing files, running programs, and controlling hardware—then the shell commands are the language and syntax that spells out *how* the work happens. 
 
 ***
 
-## Recap
+## [Recap]{style="font-size: 1.05em; font-weight: bold;"}
 
 To summarize, Unix and Linux provide the underlying framework for computer programs. They're like the behind-the-scenes craftsmen ensuring the workshop runs smoothly, whether crafting a simple piece of furniture (like running a straightforward program on your computer), or constructing an elaborate mansion (like managing the complex operations of a large server). 
 
