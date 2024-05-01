@@ -308,8 +308,36 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#unixlinux-variables" id="toc-unixlinux-variables" class="nav-link active" data-scroll-target="#unixlinux-variables"><span style="font-size: 1.05em; font-weight: bold;">Unix/Linux Variables</span></a></li>
+  <li><a href="#types-of-variables" id="toc-types-of-variables" class="nav-link" data-scroll-target="#types-of-variables"><span style="font-size: 1.05em; font-weight: bold;">Types of Variables</span></a>
+  <ul>
+  <li><a href="#shell-variables" id="toc-shell-variables" class="nav-link" data-scroll-target="#shell-variables">Shell Variables</a></li>
+  <li><a href="#environment-variables" id="toc-environment-variables" class="nav-link" data-scroll-target="#environment-variables">Environment Variables</a></li>
+  </ul></li>
+  <li><a href="#setting-variables" id="toc-setting-variables" class="nav-link" data-scroll-target="#setting-variables"><span style="font-size: 1.05em; font-weight: bold;">Setting Variables</span></a>
+  <ul>
+  <li><a href="#setting-shell-variables" id="toc-setting-shell-variables" class="nav-link" data-scroll-target="#setting-shell-variables">Setting Shell Variables</a></li>
+  <li><a href="#setting-environment-variables" id="toc-setting-environment-variables" class="nav-link" data-scroll-target="#setting-environment-variables">Setting Environment Variables</a></li>
+  </ul></li>
+  <li><a href="#using-variables" id="toc-using-variables" class="nav-link" data-scroll-target="#using-variables"><span style="font-size: 1.05em; font-weight: bold;">Using Variables</span></a>
+  <ul>
+  <li><a href="#using-shell-variables" id="toc-using-shell-variables" class="nav-link" data-scroll-target="#using-shell-variables">Using Shell Variables</a></li>
+  <li><a href="#using-environment-variables" id="toc-using-environment-variables" class="nav-link" data-scroll-target="#using-environment-variables">Using Environment Variables</a></li>
+  </ul></li>
+  <li><a href="#variables-commands-and-utilities" id="toc-variables-commands-and-utilities" class="nav-link" data-scroll-target="#variables-commands-and-utilities"><span style="font-size: 1.05em; font-weight: bold;">Variables, Commands and Utilities</span></a>
+  <ul>
+  <li><a href="#variables-in-scripts" id="toc-variables-in-scripts" class="nav-link" data-scroll-target="#variables-in-scripts">Variables in Scripts</a></li>
+  <li><a href="#advanced-variable-features" id="toc-advanced-variable-features" class="nav-link" data-scroll-target="#advanced-variable-features">Advanced Variable Features</a></li>
+  <li><a href="#security-and-best-practices" id="toc-security-and-best-practices" class="nav-link" data-scroll-target="#security-and-best-practices">Security and Best Practices</a></li>
+  </ul></li>
+  <li><a href="#recp" id="toc-recp" class="nav-link" data-scroll-target="#recp"><span style="font-size: 1.05em; font-weight: bold;">Recp</span></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -351,8 +379,93 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p>This chapter covers the essential aspects of variables in Unix/Linux environments.</p>
+<section id="unixlinux-variables" class="level2">
+<h2 class="anchored" data-anchor-id="unixlinux-variables"><span style="font-size: 1.05em; font-weight: bold;">Unix/Linux Variables</span></h2>
+<p>Definition and significance of variables in Unix/Linux.</p>
+<p>Overview of environment variables vs.&nbsp;shell variables.</p>
+</section>
+<section id="types-of-variables" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-variables"><span style="font-size: 1.05em; font-weight: bold;">Types of Variables</span></h2>
+<p>Variables come in two flavors–Shell and Environment.</p>
+<section id="shell-variables" class="level3">
+<h3 class="anchored" data-anchor-id="shell-variables">Shell Variables</h3>
+<p>Local to the shell instance.</p>
+</section>
+<section id="environment-variables" class="level3">
+<h3 class="anchored" data-anchor-id="environment-variables">Environment Variables</h3>
+<p>Available system-wide and inherited by child processes.</p>
+<p>Differences and use cases.</p>
+</section>
+</section>
+<section id="setting-variables" class="level2">
+<h2 class="anchored" data-anchor-id="setting-variables"><span style="font-size: 1.05em; font-weight: bold;">Setting Variables</span></h2>
+<section id="setting-shell-variables" class="level3">
+<h3 class="anchored" data-anchor-id="setting-shell-variables">Setting Shell Variables</h3>
+<p>Basic syntax for setting variables (<code>varname=value</code>).</p>
+</section>
+<section id="setting-environment-variables" class="level3">
+<h3 class="anchored" data-anchor-id="setting-environment-variables">Setting Environment Variables</h3>
+<p>Basic syntax for exporting environment variables (<code>export VARNAME=value</code>).</p>
+</section>
+</section>
+<section id="using-variables" class="level2">
+<h2 class="anchored" data-anchor-id="using-variables"><span style="font-size: 1.05em; font-weight: bold;">Using Variables</span></h2>
+<section id="using-shell-variables" class="level3">
+<h3 class="anchored" data-anchor-id="using-shell-variables">Using Shell Variables</h3>
+<p>Accessing variable values (<code>echo $varname</code>).</p>
+<p>Examples of common shell variables.</p>
+</section>
+<section id="using-environment-variables" class="level3">
+<h3 class="anchored" data-anchor-id="using-environment-variables">Using Environment Variables</h3>
+<p>How to make environment variables persistent (<code>.bashrc</code>, <code>.profile</code>, etc.).</p>
+<p>Examples of critical environment variables (<code>PATH</code>, <code>HOME</code>, <code>USER</code>).</p>
+</section>
+</section>
+<section id="variables-commands-and-utilities" class="level2">
+<h2 class="anchored" data-anchor-id="variables-commands-and-utilities"><span style="font-size: 1.05em; font-weight: bold;">Variables, Commands and Utilities</span></h2>
+<ul>
+<li><p><code>printenv</code>: Displaying environment variables.</p></li>
+<li><p><code>set</code>: Viewing shell and environment variables.</p></li>
+<li><p><code>unset</code>: Deleting variables.</p></li>
+<li><p><code>export</code>: Marking variables to be exported to child processes.</p></li>
+<li><p>Using <code>env</code> for running programs in a modified environment.</p></li>
+</ul>
+<section id="variables-in-scripts" class="level3">
+<h3 class="anchored" data-anchor-id="variables-in-scripts">Variables in Scripts</h3>
+<ul>
+<li><p>How to use variables to customize scripts.</p></li>
+<li><p>Passing variables to scripts via command line.</p></li>
+<li><p>Reading and modifying variables within scripts.</p></li>
+<li><p>Example script demonstrating variable use.</p></li>
+</ul>
+</section>
+<section id="advanced-variable-features" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-variable-features">Advanced Variable Features</h3>
+<ul>
+<li><p>Arrays and associative arrays in Bash.</p></li>
+<li><p>Integer operations and manipulating string variables.</p></li>
+<li><p>Special variables (<code>$0</code>, <code>$1</code>, <code>$?</code>, <code>$$</code>, <code>$@</code>).</p></li>
+</ul>
+</section>
+<section id="security-and-best-practices" class="level3">
+<h3 class="anchored" data-anchor-id="security-and-best-practices">Security and Best Practices</h3>
+<ul>
+<li><p>Security implications of improperly handling variables.</p></li>
+<li><p>Best practices for naming and using variables.</p></li>
+<li><p>Avoiding common pitfalls (e.g., overwriting critical environment variables).</p></li>
+</ul>
+</section>
+</section>
+<section id="recp" class="level2">
+<h2 class="anchored" data-anchor-id="recp"><span style="font-size: 1.05em; font-weight: bold;">Recp</span></h2>
+<ul>
+<li><p>Recap of key points covered in the chapter.</p></li>
+<li><p>Additional resources for deeper exploration (books, online tutorials, communities).</p></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

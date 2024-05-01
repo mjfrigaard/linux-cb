@@ -417,9 +417,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="direct-arguments">Direct arguments</h3>
 <p><strong>Direct arguments</strong> are the most straightforward type of arguments. They are typically the names of files or directories on which commands operate.</p>
 <p><strong>Example</strong></p>
-<p>In the command <code>cat myfile.txt</code>, <code>myfile.txt</code> is a direct argument to the <code><a href="syntax_ref.html#sec-cat" class="quarto-xref"><span>cat</span></a></code> command, telling it which file to display on the standard output.</p>
+<p>In the command <code>cat my_file.txt</code>, <code>my_file.txt</code> is a direct argument to the <code><a href="syntax_ref.html#sec-cat" class="quarto-xref"><span>cat</span></a></code> command, telling it which file to display on the standard output.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> myfile.txt</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> my_file.txt</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -429,14 +429,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Example</strong></p>
 <p>The <code>file</code> search pattern for the <code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> command is an example of an indirect command, and <code>myfile.txt</code> is the direct argument.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> file myfile.txt</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> file my_file.txt</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Most commonly, arguments are the names of <strong>files and directory names</strong> on which the command will operate.</p>
 <p><strong>Example</strong></p>
-<p><code>myfile.txt</code> and <code>tmp/myfile.txt</code> are arguments representing the source and destination locations to move with <code><a href="syntax_ref.html#sec-mv" class="quarto-xref"><span>mv</span></a></code>, respectively.</p>
+<p><code>my_file.txt</code> and <code>tmp/tmp_file.txt</code> are arguments representing the source and destination locations to move with <code><a href="syntax_ref.html#sec-mv" class="quarto-xref"><span>mv</span></a></code>, respectively.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> myfile.txt tmp/myfile.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> my_file.txt tmp/tmp_file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Commands related to user management might take <strong>user and group names</strong> names as arguments.</p>
 <p><strong>Example</strong></p>
@@ -468,16 +468,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="order-and-position">Order and Position</h3>
 <p>For many commands, the <strong>order</strong> of the arguments is significant.</p>
 <p><strong>Example</strong></p>
-<p><code>tmp/myfile.txt</code> is the first argument (indicating the file to copy from), and <code>myfile.txt</code> is the second argument (indicating where to copy the file to).</p>
+<p><code>tmp/tmp_file.txt</code> is the first argument (indicating the file to copy from), and <code>new_file.txt</code> is the second argument (indicating where to copy the file to).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> tmp/myfile.txt myfile.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> tmp/tmp_file.txt new_file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Reversing these arguments would result in a completely different operation.</p>
 <p>Arguments that contain <strong>spaces</strong> must be quoted or escaped, so the shell understands them as a single argument rather than multiple arguments.</p>
 <p><strong>Example</strong></p>
-<p>To copy the contents of the new <code>myfile.txt</code> to <code>'my file 2.txt</code>, you would use:</p>
+<p>To copy the contents of the new <code>new_file.txt</code> to <code>'my new file.txt'</code>, you would use:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> myfile.txt <span class="st">'my file 2.txt'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> new_file.txt <span class="st">'my new file.txt'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="command-substitution" class="level3">
@@ -486,7 +486,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Example</strong></p>
 <p><code>echo $(grep file 'my file 2.txt')</code> uses the output of the <code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> command as an argument for <code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$(</span><span class="fu">grep</span> file <span class="st">'my file 2.txt'</span><span class="va">)</span></span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$(</span><span class="fu">grep</span> file <span class="st">'my new file.txt'</span><span class="va">)</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>

@@ -347,11 +347,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#create" id="toc-create" class="nav-link active" data-scroll-target="#create">Create</a></li>
-  <li><a href="#view" id="toc-view" class="nav-link" data-scroll-target="#view">View</a></li>
-  <li><a href="#search" id="toc-search" class="nav-link" data-scroll-target="#search">Search</a></li>
-  <li><a href="#count" id="toc-count" class="nav-link" data-scroll-target="#count">Count</a></li>
-  <li><a href="#permissions-priviledges" id="toc-permissions-priviledges" class="nav-link" data-scroll-target="#permissions-priviledges">Permissions &amp; Priviledges</a></li>
+  <li><a href="#create" id="toc-create" class="nav-link active" data-scroll-target="#create"><span style="font-size: 1.05em; font-weight: bold;">Create</span></a></li>
+  <li><a href="#view" id="toc-view" class="nav-link" data-scroll-target="#view"><span style="font-size: 1.05em; font-weight: bold;">View</span></a></li>
+  <li><a href="#search" id="toc-search" class="nav-link" data-scroll-target="#search"><span style="font-size: 1.05em; font-weight: bold;">Search</span></a></li>
+  <li><a href="#count" id="toc-count" class="nav-link" data-scroll-target="#count"><span style="font-size: 1.05em; font-weight: bold;">Count</span></a></li>
+  <li><a href="#permissions-priviledges" id="toc-permissions-priviledges" class="nav-link" data-scroll-target="#permissions-priviledges"><span style="font-size: 1.05em; font-weight: bold;">Permissions &amp; Priviledges</span></a></li>
   </ul>
 </nav>
     </div>
@@ -397,7 +397,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>The following commands are designed for creating, managing, and manipulating files. Some of these commands will also work on directories (which we covered in the previous chapter).</p>
 <section id="create" class="level2">
-<h2 class="anchored" data-anchor-id="create">Create</h2>
+<h2 class="anchored" data-anchor-id="create"><span style="font-size: 1.05em; font-weight: bold;">Create</span></h2>
 <p>To create a new file (<code>data/who_tb_data.txt</code>), use the <strong><code><a href="syntax_ref.html#sec-touch" class="quarto-xref"><span>touch</span></a></code></strong> command.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> data/who_tb_data.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -420,7 +420,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="view" class="level2">
-<h2 class="anchored" data-anchor-id="view">View</h2>
+<h2 class="anchored" data-anchor-id="view"><span style="font-size: 1.05em; font-weight: bold;">View</span></h2>
 <p><strong><code><a href="syntax_ref.html#sec-file" class="quarto-xref"><span>file</span></a></code></strong> gives us a summary of what a file is or what it contains, like telling us what’s in <code>data/who_tb_data.txt</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file</span> data/who_tb_data.txt</span>
@@ -465,7 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="search" class="level2">
-<h2 class="anchored" data-anchor-id="search">Search</h2>
+<h2 class="anchored" data-anchor-id="search"><span style="font-size: 1.05em; font-weight: bold;">Search</span></h2>
 <p><strong><code><a href="syntax_ref.html#sec-find" class="quarto-xref"><span>find</span></a></code></strong> is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, file type, and modification time. For example, the commands below look in the <code>data</code> directory for files with a <code>.txt</code> extension (<code>-name "*.txt"</code>) and finds files modified in the last 2 days (<code>-mtime -2</code>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> data <span class="at">-name</span> <span class="st">"*.txt"</span> <span class="at">-mtime</span> <span class="at">-1</span></span>
@@ -473,7 +473,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="count" class="level2">
-<h2 class="anchored" data-anchor-id="count">Count</h2>
+<h2 class="anchored" data-anchor-id="count"><span style="font-size: 1.05em; font-weight: bold;">Count</span></h2>
 <p><strong><code><a href="syntax_ref.html#sec-wc" class="quarto-xref"><span>wc</span></a></code></strong> (<strong>word count</strong>) counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> data <span class="at">-name</span> <span class="st">"*.txt"</span> <span class="at">-mtime</span> <span class="at">-1</span> <span class="kw">|</span> <span class="fu">wc</span></span>
@@ -481,8 +481,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="permissions-priviledges" class="level2">
-<h2 class="anchored" data-anchor-id="permissions-priviledges">Permissions &amp; Priviledges</h2>
+<h2 class="anchored" data-anchor-id="permissions-priviledges"><span style="font-size: 1.05em; font-weight: bold;">Permissions &amp; Priviledges</span></h2>
 <p><code>chown</code> &amp; <code>sudo</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chown</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
