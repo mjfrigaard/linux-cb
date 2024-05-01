@@ -236,12 +236,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
+  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
+  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
   </div>
 </li>
       </ul>
@@ -347,8 +347,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#install" id="toc-install" class="nav-link active" data-scroll-target="#install"><span style="font-size: 1.15em; font-weight: bold;">Install</span></a></li>
-  <li><a href="#quarto-documents" id="toc-quarto-documents" class="nav-link" data-scroll-target="#quarto-documents"><span style="font-size: 1.15em; font-weight: bold;">Quarto Documents</span></a>
+  <li><a href="#install" id="toc-install" class="nav-link active" data-scroll-target="#install"><span style="font-size: 1.05em; font-weight: bold;">Install</span></a></li>
+  <li><a href="#quarto-documents" id="toc-quarto-documents" class="nav-link" data-scroll-target="#quarto-documents"><span style="font-size: 1.05em; font-weight: bold;">Quarto Documents</span></a>
   <ul>
   <li><a href="#sec-quarto-yaml" id="toc-sec-quarto-yaml" class="nav-link" data-scroll-target="#sec-quarto-yaml">YAML header</a></li>
   <li><a href="#sec-quarto-bash" id="toc-sec-quarto-bash" class="nav-link" data-scroll-target="#sec-quarto-bash">Code Chunks</a></li>
@@ -379,7 +379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -392,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 1.00em; color: #282b2d;">
-<p>This section is under development. Thank you for your patience.</p>
+<p>This section is being revised. Thank you for your patience.</p>
 </div>
 </div>
 </div>
@@ -416,7 +416,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through downloading and installing Quarto, <code>.qmd</code> documents, <code>YAML</code> headers and Bash code chunks.</p>
 <section id="install" class="level2">
-<h2 class="anchored" data-anchor-id="install"><span style="font-size: 1.15em; font-weight: bold;">Install</span></h2>
+<h2 class="anchored" data-anchor-id="install"><span style="font-size: 1.05em; font-weight: bold;">Install</span></h2>
 <p>Quarto can be installed from its <a href="https://quarto.org/docs/get-started/">official website</a>. Follow the platform-specific instructions to install it on your system. Make sure Quarto has been installed correctly and is available in your system’s <code>PATH</code>.</p>
 <p>Check if Quarto is in <code>PATH</code>:</p>
 <div class="cell">
@@ -456,7 +456,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> / <span class="at">-name</span> quarto <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="quarto-documents" class="level2">
-<h2 class="anchored" data-anchor-id="quarto-documents"><span style="font-size: 1.15em; font-weight: bold;">Quarto Documents</span></h2>
+<h2 class="anchored" data-anchor-id="quarto-documents"><span style="font-size: 1.05em; font-weight: bold;">Quarto Documents</span></h2>
 <p>Quarto documents are a flexible and powerful tool for creating dynamic and reproducible reports, presentations, and publications. Quarto documents can support multiple programming languages, including R, Python, Julia, and Bash. Users can combine narrative text with code in a single document, rendering it into various formats like HTML, PDF, and Word.</p>
 <p>This feature proves not only invaluable for data scientists, but for anyone looking to learn a new programming language. Quarto documents are a perfect ‘sandbox’ to experiment with code, take notes, and review the outputs. Moreover, Quarto has the supports cross-referencing, advanced layout options, and beautiful web and book publishing workflows.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p>Quarto documents consist of the following elements:</p>
@@ -583,19 +583,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>This behavior can be frustrating, but it also means we’ll start with a ‘clean slate’ in each new code chunk!</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 0.95em;">See a typo, error, or something missing?</span>
+<span style="font-weight: bold; font-size: 1.15em;">See a typo, error, or something missing?</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<div style="font-size: 0.90em; color: #282b2d;">
+<div style="font-size: 1.00em; color: #282b2d;">
 <p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
 </div>
 </div>

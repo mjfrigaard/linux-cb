@@ -236,12 +236,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
+  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
+  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
   </div>
 </li>
       </ul>
@@ -544,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="sec-num-seq" class="level4">
 <h4 class="anchored" data-anchor-id="sec-num-seq">Number sequences</h4>
-<p>We’ll add numbers to each of the 130 epigrams in <code>data/ajperlis_epigrams.txt</code> to make them easier to reference. We can use the <strong><code><a href="syntax_ref.html#sec-seq" class="quarto-xref"><span>seq</span></a></code></strong> command piped into a formatting command like <strong><code><a href="syntax_ref.html#sec-awk" class="quarto-xref"><span>awk</span></a></code></strong>:</p>
+<p>We’ll add numbers to each of the 130 epigrams in <code>data/ajperlis_epigrams.txt</code> to make them easier to reference. We can use the <strong><code><span class="quarto-unresolved-ref">?sec-seq</span></code></strong> command piped into a formatting command like <strong><code><a href="syntax_ref.html#sec-awk" class="quarto-xref"><span>awk</span></a></code></strong>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span> 130 <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'{print $1"."}'</span> <span class="kw">|</span> <span class="fu">head</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.</span></span>

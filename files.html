@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./vars.html" rel="next">
+<link href="./sys.html" rel="next">
 <link href="./dirs.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -236,12 +236,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
+  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
+  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
   </div>
 </li>
       </ul>
@@ -351,16 +351,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#view" id="toc-view" class="nav-link" data-scroll-target="#view">View</a></li>
   <li><a href="#search" id="toc-search" class="nav-link" data-scroll-target="#search">Search</a></li>
   <li><a href="#count" id="toc-count" class="nav-link" data-scroll-target="#count">Count</a></li>
-  <li><a href="#permissions-priviledges" id="toc-permissions-priviledges" class="nav-link" data-scroll-target="#permissions-priviledges">Permissions &amp; Priviledges</a>
-  <ul>
-  <li><a href="#chown" id="toc-chown" class="nav-link" data-scroll-target="#chown"><code>chown</code></a></li>
-  <li><a href="#sudo" id="toc-sudo" class="nav-link" data-scroll-target="#sudo"><code>sudo</code></a></li>
-  </ul></li>
-  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a>
-  <ul>
-  <li><a href="#man" id="toc-man" class="nav-link" data-scroll-target="#man"><code>man</code></a></li>
-  <li><a href="#help" id="toc-help" class="nav-link" data-scroll-target="#help"><code>help</code></a></li>
-  </ul></li>
+  <li><a href="#permissions-priviledges" id="toc-permissions-priviledges" class="nav-link" data-scroll-target="#permissions-priviledges">Permissions &amp; Priviledges</a></li>
   </ul>
 </nav>
     </div>
@@ -433,34 +424,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong><code><a href="syntax_ref.html#sec-file" class="quarto-xref"><span>file</span></a></code></strong> gives us a summary of what a file is or what it contains, like telling us what’s in <code>data/who_tb_data.txt</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file</span> data/who_tb_data.txt</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/who_tb_data.txt: ASCII text</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data/who_tb_data.txt: ASCII text</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can use <strong><code><a href="syntax_ref.html#sec-head" class="quarto-xref"><span>head</span></a></code></strong> and <strong><code><a href="syntax_ref.html#sec-tail" class="quarto-xref"><span>tail</span></a></code></strong> to view the top and bottom of <code>data/who_tb_data.txt</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> data/vg_hof.tsv</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; year game    developer   year_released</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2015 DOOM    id Software 1993</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2015 Pac-Man Namco   1980</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2015 Pong    Atari   1972</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2015 Super Mario Bros.   Nintendo    1985</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2015 Tetris  Alexey Pajitnov 1985</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2015 World of Warcraft   Blizzard Entertainment  2004</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2015 Angry Birds Rovio Entertainment 2009</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2015 FIFA International Soccer   EA Canada   1993</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2015 The Legend of Zelda Nintendo    1986</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># year  game    developer   year_released</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2015  DOOM    id Software 1993</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2015  Pac-Man Namco   1980</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2015  Pong    Atari   1972</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 2015  Super Mario Bros.   Nintendo    1985</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2015  Tetris  Alexey Pajitnov 1985</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2015  World of Warcraft   Blizzard Entertainment  2004</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 2015  Angry Birds Rovio Entertainment 2009</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 2015  FIFA International Soccer   EA Canada   1993</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 2015  The Legend of Zelda Nintendo    1986</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span> data/vg_hof.tsv</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2024 Guitar Hero Harmonix    2005</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2024 Metroid Nintendo    1986</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2024 Myst    Cyan    1993</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2024 Neopets Adam Powell, Donna Powell   1999</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2024 Resident Evil   Capcom  1996</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2024 SimCity Maxis   1989</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2024 Tokimeki Memorial   Konami  1994</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2024 Tony Hawk's Pro Skater  Neversoft   1999</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2024 Ultima  Richard Garriott, Origin Systems    1981</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2024 You Don't Know Jack Jellyvision 1995</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024  Guitar Hero Harmonix    2005</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024  Metroid Nintendo    1986</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024  Myst    Cyan    1993</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024  Neopets Adam Powell, Donna Powell   1999</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024  Resident Evil   Capcom  1996</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024  SimCity Maxis   1989</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024  Tokimeki Memorial   Konami  1994</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024  Tony Hawk's Pro Skater  Neversoft   1999</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024  Ultima  Richard Garriott, Origin Systems    1981</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 2024  You Don't Know Jack Jellyvision 1995</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong><code><a href="syntax_ref.html#sec-less" class="quarto-xref"><span>less</span></a></code></strong> lets you skim through a file on your computer, moving forwards and backwards as you please. We’ll use less on the <code>data/vg_hof.tsv</code> file.</p>
 <div class="cell">
@@ -478,7 +469,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong><code><a href="syntax_ref.html#sec-find" class="quarto-xref"><span>find</span></a></code></strong> is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, file type, and modification time. For example, the commands below look in the <code>data</code> directory for files with a <code>.txt</code> extension (<code>-name "*.txt"</code>) and finds files modified in the last 2 days (<code>-mtime -2</code>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> data <span class="at">-name</span> <span class="st">"*.txt"</span> <span class="at">-mtime</span> <span class="at">-1</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data/who_tb_data.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data/who_tb_data.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="count" class="level2">
@@ -486,47 +477,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong><code><a href="syntax_ref.html#sec-wc" class="quarto-xref"><span>wc</span></a></code></strong> (<strong>word count</strong>) counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> data <span class="at">-name</span> <span class="st">"*.txt"</span> <span class="at">-mtime</span> <span class="at">-1</span> <span class="kw">|</span> <span class="fu">wc</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        1       1      21</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">counts</span><span class="op">=</span><span class="va">$(</span><span class="fu">wc</span> data/who_tb_data.txt <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'{print $1, $2, $3}'</span><span class="va">)</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">printf</span> <span class="st">"   lines   words characters\n"</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">printf</span> <span class="st">"%8s %7s %10s\n"</span> <span class="va">$counts</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    lines   words characters</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       13      52        381</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#        1       1      21</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="permissions-priviledges" class="level2">
 <h2 class="anchored" data-anchor-id="permissions-priviledges">Permissions &amp; Priviledges</h2>
-<section id="chown" class="level3">
-<h3 class="anchored" data-anchor-id="chown"><code>chown</code></h3>
-</section>
-<section id="sudo" class="level3">
-<h3 class="anchored" data-anchor-id="sudo"><code>sudo</code></h3>
-</section>
-</section>
-<section id="documentation" class="level2">
-<h2 class="anchored" data-anchor-id="documentation">Documentation</h2>
-<section id="man" class="level3">
-<h3 class="anchored" data-anchor-id="man"><code>man</code></h3>
-<p><code>man</code> (<strong>Manual</strong>) displays the user manual of any command that we can run on the terminal. It’s the go-to resource for learning about the options, arguments, and examples of how to use commands.</p>
-</section>
-<section id="help" class="level3">
-<h3 class="anchored" data-anchor-id="help"><code>help</code></h3>
-<p><code>help</code> or <code>--help</code> option provides information about built-in commands and usage guidelines. It’s a quick way to get help for shell built-ins or to understand the basic usage of a command.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<p><code>chown</code> &amp; <code>sudo</code></p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 0.95em;">See a typo, error, or something missing?</span>
+<span style="font-weight: bold; font-size: 1.15em;">See a typo, error, or something missing?</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<div style="font-size: 0.90em; color: #282b2d;">
+<div style="font-size: 1.00em; color: #282b2d;">
 <p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
 </div>
 </div>
@@ -534,7 +503,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -965,8 +933,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./vars.html" class="pagination-link" aria-label="Variables">
-        <span class="nav-page-text"><span class="chapter-title">Variables</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sys.html" class="pagination-link" aria-label="System">
+        <span class="nav-page-text"><span class="chapter-title">System</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

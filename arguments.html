@@ -236,12 +236,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
+  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
+  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
   </div>
 </li>
       </ul>
@@ -347,8 +347,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#anatomy" id="toc-anatomy" class="nav-link active" data-scroll-target="#anatomy"><span style="font-size: 1.15em; font-weight: bold;">Anatomy</span></a></li>
-  <li><a href="#argument-types" id="toc-argument-types" class="nav-link" data-scroll-target="#argument-types"><span style="font-size: 1.15em; font-weight: bold;">Argument Types</span></a>
+  <li><a href="#anatomy" id="toc-anatomy" class="nav-link active" data-scroll-target="#anatomy"><span style="font-size: 1.05em; font-weight: bold;">Anatomy</span></a></li>
+  <li><a href="#argument-types" id="toc-argument-types" class="nav-link" data-scroll-target="#argument-types"><span style="font-size: 1.05em; font-weight: bold;">Argument Types</span></a>
   <ul>
   <li><a href="#direct-arguments" id="toc-direct-arguments" class="nav-link" data-scroll-target="#direct-arguments">Direct arguments</a></li>
   <li><a href="#indirect-arguments" id="toc-indirect-arguments" class="nav-link" data-scroll-target="#indirect-arguments">Indirect arguments</a></li>
@@ -358,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#command-substitution" id="toc-command-substitution" class="nav-link" data-scroll-target="#command-substitution">Command Substitution</a></li>
   <li><a href="#variables-as-arguments" id="toc-variables-as-arguments" class="nav-link" data-scroll-target="#variables-as-arguments">Variables as Arguments</a></li>
   </ul></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.15em; font-weight: bold;">Recap</span></a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></a></li>
   </ul>
 </nav>
     </div>
@@ -384,7 +384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -397,27 +397,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 1.00em; color: #282b2d;">
-<p>This section is under development. Thank you for your patience.</p>
+<p>This section is being revised. Thank you for your patience.</p>
 </div>
 </div>
 </div>
 </div>
 <p>Arguments in Unix/Linux commands are values or data passed to commands for processing. Unlike options, which modify the behavior of commands, arguments typically specify what the command should <em>act upon</em>. This typically includes filenames, user names, data values, or other kinds of information the command needs to execute its task.</p>
 <section id="anatomy" class="level2">
-<h2 class="anchored" data-anchor-id="anatomy"><span style="font-size: 1.15em; font-weight: bold;">Anatomy</span></h2>
+<h2 class="anchored" data-anchor-id="anatomy"><span style="font-size: 1.05em; font-weight: bold;">Anatomy</span></h2>
 <p>A Unix command can be broken down into the command name, followed by its options (which we’ll address in the next chapter), and then its arguments:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> argument1 argument2 ... argument</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="argument-types" class="level2">
-<h2 class="anchored" data-anchor-id="argument-types"><span style="font-size: 1.15em; font-weight: bold;">Argument Types</span></h2>
+<h2 class="anchored" data-anchor-id="argument-types"><span style="font-size: 1.05em; font-weight: bold;">Argument Types</span></h2>
 <p>Below are a variety of command arguments types. This is not an exhaustive list, but includes many of the commands and arguments you’ll encounter on a regular basis.</p>
 <section id="direct-arguments" class="level3">
 <h3 class="anchored" data-anchor-id="direct-arguments">Direct arguments</h3>
 <p><strong>Direct arguments</strong> are the most straightforward type of arguments. They are typically the names of files or directories on which commands operate.</p>
 <p><strong>Example</strong></p>
-<p>In the command <code>echo myfile.txt</code>, <code>myfile.txt</code> is a direct argument to the <code><a href="syntax_ref.html#sec-cat" class="quarto-xref"><span>cat</span></a></code> command, telling it which file to display on the standard output.</p>
+<p>In the command <code>cat myfile.txt</code>, <code>myfile.txt</code> is a direct argument to the <code><a href="syntax_ref.html#sec-cat" class="quarto-xref"><span>cat</span></a></code> command, telling it which file to display on the standard output.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> myfile.txt</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -502,21 +502,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="recap" class="level2">
-<h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.15em; font-weight: bold;">Recap</span></h2>
+<h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></h2>
 <p>Understanding the nuances of Unix arguments is crucial for crafting precise and effective commands, allowing users to leverage the full power of the Unix command line for a wide array of tasks.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 0.95em;">See a typo, error, or something missing?</span>
+<span style="font-weight: bold; font-size: 1.15em;">See a typo, error, or something missing?</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<div style="font-size: 0.90em; color: #282b2d;">
+<div style="font-size: 1.00em; color: #282b2d;">
 <p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
 </div>
 </div>

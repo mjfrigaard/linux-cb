@@ -236,12 +236,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
+  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
+  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
   </div>
 </li>
       </ul>
@@ -347,7 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#option-types" id="toc-option-types" class="nav-link active" data-scroll-target="#option-types"><span style="font-size: 1.15em; font-weight: bold;">Option types</span></a>
+  <li><a href="#option-types" id="toc-option-types" class="nav-link active" data-scroll-target="#option-types"><span style="font-size: 1.05em; font-weight: bold;">Option types</span></a>
   <ul>
   <li><a href="#short-options" id="toc-short-options" class="nav-link" data-scroll-target="#short-options">Short options</a></li>
   <li><a href="#long-options" id="toc-long-options" class="nav-link" data-scroll-target="#long-options">Long options</a></li>
@@ -355,9 +355,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#modifying-output" id="toc-modifying-output" class="nav-link" data-scroll-target="#modifying-output">Modifying output</a></li>
   <li><a href="#environment-specific-options" id="toc-environment-specific-options" class="nav-link" data-scroll-target="#environment-specific-options">Environment-specific options</a></li>
   </ul></li>
-  <li><a href="#combining-options" id="toc-combining-options" class="nav-link" data-scroll-target="#combining-options"><span style="font-size: 1.15em; font-weight: bold;">Combining Options</span></a></li>
-  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.15em; font-weight: bold;">Recap</span></a></li>
+  <li><a href="#combining-options" id="toc-combining-options" class="nav-link" data-scroll-target="#combining-options"><span style="font-size: 1.05em; font-weight: bold;">Combining Options</span></a>
+  <ul>
+  <li><a href="#multiple-short-options" id="toc-multiple-short-options" class="nav-link" data-scroll-target="#multiple-short-options">Multiple short options</a></li>
+  <li><a href="#options-with-values" id="toc-options-with-values" class="nav-link" data-scroll-target="#options-with-values">Options with values</a></li>
+  </ul></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></a></li>
   </ul>
 </nav>
     </div>
@@ -383,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -396,14 +399,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 1.00em; color: #282b2d;">
-<p>This section is under development. Thank you for your patience.</p>
+<p>This section is being revised. Thank you for your patience.</p>
 </div>
 </div>
 </div>
 </div>
 <p>Unix command options (sometimes called flags) are often preceded by a hyphen (<code>-</code>) or two (<code>--</code> for long-form options) and modify the behavior of a command. Options provide flexibility, control, and, in some cases, enable a vast array of additional functionalities.</p>
 <section id="option-types" class="level2">
-<h2 class="anchored" data-anchor-id="option-types"><span style="font-size: 1.15em; font-weight: bold;">Option types</span></h2>
+<h2 class="anchored" data-anchor-id="option-types"><span style="font-size: 1.05em; font-weight: bold;">Option types</span></h2>
 <p>Arguments can be short or long:</p>
 <div>
 
@@ -469,10 +472,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 directory, 16 files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Example 2</strong></p>
+<p><code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> <code>--help</code> displays usage information for the <code>grep</code> command, helping users understand available options and syntax.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">--help</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; usage: grep [-abcdDEFGHhIiJLlMmnOopqRSsUVvwXxZz] [-A num] [-B num] [-C[num]]</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [-e pattern] [-f file] [--binary-files=value] [--color=when]</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [--context[=num]] [--directories=action] [--label] [--line-buffered]</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [--null] [pattern] [file ...]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Example 3</strong></p>
 <p>The <code>--version</code> option is commonly used to get version information for various commands.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">--version</span>  </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># grep (BSD grep, GNU compatible) 2.6.0-FreeBSD</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">--version</span>  </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># grep (BSD grep, GNU compatible) 2.6.0-FreeBSD</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Note that not all commands support the long-form option syntax.</strong></p>
 </section>
@@ -482,12 +494,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Example</strong></p>
 <p><code><a href="syntax_ref.html#sec-cp" class="quarto-xref"><span>cp</span></a></code><code>-n source.txt dest.txt</code> does not overwrite the destination file if it already exists.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-n</span> myfile.txt myfile2.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-n</span> myfile.txt myfile2.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>-n</code> option modifies the default behavior of the <code>cp</code> command.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> myfile2.txt</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is my 2nd file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> myfile2.txt</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is my 2nd file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="modifying-output" class="level3">
@@ -496,38 +508,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Example 1</strong></p>
 <p><code>ls -a</code> lists all files, including hidden ones (those starting with a dot). This option alters the command’s output by showing files that are not listed by default.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span> data</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># .</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ..</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># README.md</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ajperlis_epigrams.txt</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># music_vids.tsv</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># pwrds.csv</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># pwrds.tsv</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># roxanne.txt</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># roxanne_orig.txt</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># roxanne_rev.txt</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># trees.tsv</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># vg_hof.tsv</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># who_tb_data.tsv</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co"># who_tb_data.txt</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># wu_tang.csv</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># wu_tang.dat</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># wu_tang.tsv</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># wu_tang.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span> data</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># .</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ..</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># README.md</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ajperlis_epigrams.txt</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># music_vids.tsv</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># pwrds.csv</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># pwrds.tsv</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># roxanne.txt</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># roxanne_orig.txt</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># roxanne_rev.txt</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># trees.tsv</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># vg_hof.tsv</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># who_tb_data.tsv</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># who_tb_data.txt</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># wu_tang.csv</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># wu_tang.dat</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># wu_tang.tsv</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co"># wu_tang.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Example 2</strong></p>
 <p><code>df -h</code> shows disk space usage in human-readable form (e.g., KB, MB, GB), modifying the default output to be more easily understood.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Filesystem                          Size    Used   Avail Capacity iused ifree %iused  Mounted on</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s1s1                     466Gi   9.5Gi    40Gi    20%    404k  422M    0%   /</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># devfs                              201Ki   201Ki     0Bi   100%     696     0  100%   /dev</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s3                       466Gi   2.4Gi    40Gi     6%    5.1k  422M    0%   /System/Volumes/Preboot</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s5                       466Gi   1.0Gi    40Gi     3%       1  422M    0%   /System/Volumes/VM</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s6                       466Gi    19Mi    40Gi     1%      19  422M    0%   /System/Volumes/Update</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s2                       466Gi   411Gi    40Gi    92%    6.3M  422M    1%   /System/Volumes/Data</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># map auto_home                        0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Filesystem                          Size    Used   Avail Capacity iused ifree %iused  Mounted on</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s1s1                     466Gi   9.5Gi    40Gi    20%    404k  422M    0%   /</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># devfs                              201Ki   201Ki     0Bi   100%     696     0  100%   /dev</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s3                       466Gi   2.4Gi    40Gi     6%    5.1k  422M    0%   /System/Volumes/Preboot</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s5                       466Gi   1.0Gi    40Gi     3%       1  422M    0%   /System/Volumes/VM</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s6                       466Gi    19Mi    40Gi     1%      19  422M    0%   /System/Volumes/Update</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s2                       466Gi   411Gi    40Gi    92%    6.3M  422M    1%   /System/Volumes/Data</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># map auto_home                        0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="environment-specific-options" class="level3">
@@ -536,51 +548,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Example</strong></p>
 <p><code>sort -u data/roxanne.txt</code> sorts the lines in <code>data/roxanne.txt</code>, removing duplicate lines.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> <span class="at">-u</span> data/roxanne.txt</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># I have to tell you just how I feel</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># I know my mind is made up</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># I loved you since I knew you</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># I won't share you with another boy</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># I wouldn't talk down to you</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># It's a bad way</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ro...</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Roxanne</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Roxanne (Put on the red light)</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Roxanne (You don't have to put on the red light)</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># So put away your make up</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Those days are over</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Told you once I won't tell you again</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Walk the streets for money</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't care if it's wrong or if it's right</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't have to put on the red light</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't have to sell your body to the night</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't have to wear that dress tonight</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> <span class="at">-u</span> data/roxanne.txt</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># I have to tell you just how I feel</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># I know my mind is made up</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># I loved you since I knew you</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># I won't share you with another boy</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># I wouldn't talk down to you</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># It's a bad way</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ro...</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Roxanne</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Roxanne (Put on the red light)</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Roxanne (You don't have to put on the red light)</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># So put away your make up</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Those days are over</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Told you once I won't tell you again</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Walk the streets for money</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't care if it's wrong or if it's right</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't have to put on the red light</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't have to sell your body to the night</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't have to wear that dress tonight</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="combining-options" class="level2">
-<h2 class="anchored" data-anchor-id="combining-options"><span style="font-size: 1.15em; font-weight: bold;">Combining Options</span></h2>
+<h2 class="anchored" data-anchor-id="combining-options"><span style="font-size: 1.05em; font-weight: bold;">Combining Options</span></h2>
 <p>Multiple short options can be combined after a single dash, without spaces (e.g., <code>-lrt</code>) allowing users to use multiple options at once, and reducing the need to type multiple dashes.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lrt</span> data</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># total 224</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    381 Mar 28  2023 who_tb_data.tsv</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   1315 Apr  6 05:38 roxanne.txt</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:34 wu_tang.csv</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    281 Apr 10 09:38 wu_tang.txt</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:39 wu_tang.tsv</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   4417 Apr 10 14:01 trees.tsv</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   6122 Apr 10 14:04 music_vids.tsv</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--  1 mjfrigaard  staff   4814 Apr 10 14:07 vg_hof.tsv</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    381 Apr 12 13:14 who_tb_data.txt</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--  1 mjfrigaard  staff  12531 Apr 13 20:39 ajperlis_epigrams.txt</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    462 Apr 15 14:07 wu_tang.dat</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    113 Apr 18 09:27 roxanne_orig.txt</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    117 Apr 18 09:27 roxanne_rev.txt</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.tsv</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.csv</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   9067 Apr 26 22:13 README.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="multiple-short-options" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-short-options">Multiple short options</h3>
+<p>Options can be combined with arguments when they are followed by a space and then the argument (e.g., <code>-o filename</code>).</p>
 <p><strong>Example</strong></p>
 <p><code>ls -lrt</code> combines three options: <code>-l</code> (long listing format), <code>-r</code> (reverse order), and <code>-t</code> (sort by modification time), providing a detailed, reverse-chronological list of files.</p>
 <div class="cell">
@@ -603,88 +598,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.csv</span></span>
 <span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   9067 Apr 26 22:13 README.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Options can be combined with arguments when they are followed by a space and then the argument (e.g., <code>-o filename</code>). Some options require or accept an argument to specify a value related to the option’s action.</p>
+</section>
+<section id="options-with-values" class="level3">
+<h3 class="anchored" data-anchor-id="options-with-values">Options with values</h3>
+<p>Some options require or accept an argument to specify a value related to the option’s action.</p>
 <p><strong>Example</strong></p>
 <p><code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code><code>-i "FILE" myfile.txt</code> uses <code>-i</code> to ignore case when searching for <code>"FILE"</code> in <code>myfile.txt</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-i</span> <span class="st">"FILE"</span> myfile.txt</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The <code>"FILE"</code> here is an argument to the <code>-i</code> option.</p>
+<p>The <code>"FILE"</code> here is an argument for the <code>-i</code> option.</p>
 </section>
-<section id="getting-help" class="level2">
-<h2 class="anchored" data-anchor-id="getting-help">Getting Help</h2>
-<p><strong>Example</strong></p>
-<p><code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> <code>--help</code> displays usage information for the <code>grep</code> command, helping users understand available options and syntax.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">--help</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; usage: grep [-abcdDEFGHhIiJLlMmnOopqRSsUVvwXxZz] [-A num] [-B num] [-C[num]]</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [-e pattern] [-f file] [--binary-files=value] [--color=when]</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [--context[=num]] [--directories=action] [--label] [--line-buffered]</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [--null] [pattern] [file ...]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>Example 2</strong></p>
-<p><code>man</code> shows the official manual for the command.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> echo</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ECHO(1)                     General Commands Manual                    ECHO(1)</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NAME</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      echo – write arguments to the standard output</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; SYNOPSIS</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      echo [-n] [string ...]</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; DESCRIPTION</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      The echo utility writes any specified operands, separated by single blank</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      (‘\n’) characters and followed by a newline (‘\n’) character, to the</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      standard output.</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      The following option is available:</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      -n    Do not print the trailing newline character.  This may also be</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;            achieved by appending ‘\c’ to the end of the string, as is done by</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;            iBCS2 compatible systems.  Note that this option as well as the</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;            effect of ‘\c’ are implementation-defined in IEEE Std 1003.1-2001</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;            (“POSIX.1”) as amended by Cor. 1-2002.  Applications aiming for</span></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;            maximum portability are strongly encouraged to use printf(1) to</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;            suppress the newline character.</span></span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Some shells may provide a builtin eecchhoo command which is similar or</span></span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      identical to this utility.  Most notably, the builtin eecchhoo in sh(1) does</span></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      not accept the --nn option.  Consult the builtin(1) manual page.</span></span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; EXIT STATUS</span></span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      The echo utility exits 0 on success, and &gt;0 if an error occurs.</span></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; SEE ALSO</span></span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      builtin(1), csh(1), printf(1), sh(1)</span></span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; STANDARDS</span></span>
-<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      The echo utility conforms to IEEE Std 1003.1-2001 (“POSIX.1”) as amended</span></span>
-<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      by Cor. 1-2002.</span></span>
-<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; macOS 14.4                      April 12, 2003                      macOS 14.4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 <section id="recap" class="level2">
-<h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.15em; font-weight: bold;">Recap</span></h2>
+<h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></h2>
 <p>Options greatly enhance the power and versatility of Unix commands, allowing users to tailor operations to their specific needs and preferences.</p>
 <p>Not all Unix-like systems or shells may support the same options for a given command, and behavior can vary between implementations. It’s important to refer to a command’s manual page (using <code>man command</code> or <code>command --help</code>) for the most accurate and comprehensive list of options and their effects.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 0.95em;">See a typo, error, or something missing?</span>
+<span style="font-weight: bold; font-size: 1.15em;">See a typo, error, or something missing?</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<div style="font-size: 0.90em; color: #282b2d;">
+<div style="font-size: 1.00em; color: #282b2d;">
 <p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
 </div>
 </div>
