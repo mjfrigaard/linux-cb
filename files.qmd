@@ -43,7 +43,7 @@ co_box(
 
 The following commands are designed for creating, managing, and manipulating files. Some of these commands will also work on directories (which we covered in the previous chapter).
 
-## Create 
+## [Create]{style="font-size: 1.05em; font-weight: bold;"}  
 
 To create a new file (`data/who_tb_data.txt`), use the **<code>@sec-touch</code>** command. 
 
@@ -69,7 +69,7 @@ China	2000	cases	213766
 China	2000	population	1280428583" > data/who_tb_data.txt
 ```
 
-## View 
+## [View]{style="font-size: 1.05em; font-weight: bold;"} 
 
 **<code>@sec-file</code>** gives us a summary of what a file is or what it contains, like telling us what's in `data/who_tb_data.txt`.
 
@@ -100,7 +100,7 @@ less data/vg_hof.tsv
 ![Enter 'q' to exit the `less` scroll](img/less.gif){width='100%' fig-align='center'}
 
 
-## Search 
+## [Search]{style="font-size: 1.05em; font-weight: bold;"} 
 
 **<code>@sec-find</code>** is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, file type, and modification time. 
 For example, the commands below look in the `data` directory for files with a `.txt` extension (`-name "*.txt"`) and finds files modified in the last 2 days (`-mtime -2`).
@@ -109,7 +109,7 @@ For example, the commands below look in the `data` directory for files with a `.
 find data -name "*.txt" -mtime -1
 ```
 
-## Count
+## [Count]{style="font-size: 1.05em; font-weight: bold;"}
 
 **<code>@sec-wc</code>** (**word count**) counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.
 
@@ -125,9 +125,21 @@ printf "%8s %7s %10s\n" $counts
 ```
 
 
-## Permissions & Priviledges 
+## [Permissions & Priviledges]{style="font-size: 1.05em; font-weight: bold;"} 
 
 `chown` & `sudo`
+
+```{bash}
+#| eval: false
+chown
+```
+
+```{bash}
+#| eval: false
+sudo
+```
+
+
 
 ```{r}
 #| label: git_contrib_box

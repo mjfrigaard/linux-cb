@@ -40,7 +40,7 @@ co_box(
 )
 ```
 
-When presented with a new map, the most important thing to find is your location on it. It's hard to know where you're going without knowing where you are. 
+When presented with a new map, the most important thing to find is your location on it. It's hard to know where you're going without knowing where you are. This chapter covers commands you'll use every day to get around in a Unix/Linux system.
 
 ## [Navigate]{style="font-size: 1.05em; font-weight: bold;"}  {#sec-nav-dirs}
 
@@ -49,12 +49,43 @@ When presented with a new map, the most important thing to find is your location
 **`pwd` (Print Working Directory)** tells you exactly where you are in the filesystem.
 
 ```{bash}
-pwd # where am I?
+#| eval: true
+pwd 
+```
+
+#### Paths
+
+**Absolute file paths** provide the complete directory path from the root directory to the specified file, and therefore do not change regardless of the current working directory. `pwd` returns an absolute file path:
+
+```{bash}
+#| eval: false 
+/Users/mjfrigaard/projects/books/fm-unix
+```
+
+**Relative file paths**, on the other hand, specify the location of a file relative to the current working directory, changing meaning based on the directory from which they are referenced.
+
+We can use a relative file path to create a `report.txt` file in the `data` folder with the following text:
+
+```{bash}
+#| eval: true 
+echo "my important information" > data/report.txt
+```
+
+Confirm with `cat`:
+
+```{bash}
+#| eval: true
+cat data/report.txt
+```
+
+```{bash}
+#| echo: false
+rm data/report.txt
 ```
 
 ### `cd`
 
- **`cd` (Change Directory)** lets you move to a different folder on your computer. If you want to move from the one place to another, `cd` can get you there. For example, `cd /bin` takes you to the `/bin` folder, the toolshed of software tools.
+ **`cd` (Change Directory)** lets us move from one directory to a different directory. For example, `cd /bin` takes you to the `/bin` folder, the toolshed of software tools.
 
 ```{bash}
 cd /bin # change location
@@ -70,15 +101,26 @@ cd /bin # change location
 ls # what's in here?
 ```
 
+
+### `find`
+
+`find` can be used to locate files *or* directories using the `-type` and `-name` options. The example below looks in the `data` directory for a `roxanne.txt` file:
+
+```{bash}
+find data -type f -name roxanne.txt
+```
+
 ### `locate`
 
 **`locate`** 
 
 ```{bash}
 #| eval: false
-locate "filename" /Users/username/path/to/directory
+locate roxanne data | head -n3
+# /Users/mjfrigaard/projects/books/fm-unix/data/roxanne.txt
+# /Users/mjfrigaard/projects/books/fm-unix/data/roxanne_orig.txt
+# /Users/mjfrigaard/projects/books/fm-unix/data/roxanne_rev.txt
 ```
-
 
 ```{r}
 #| label: co_box_dev_locate
@@ -87,37 +129,69 @@ locate "filename" /Users/username/path/to/directory
 #| eval: true
 co_box(
   color = "o",
-  look = "default", 
-  hsize = "1.25", 
+  look = "simple", 
+  hsize = "1.15", 
   size = "1.00", 
-  header = "Warning", 
-  fold = FALSE,
-  contents = "This topic is under development. Thank you for your patience.
-  "
+  header = "Updating `locate` database", 
+  fold = TRUE,
+  contents = "
+Make sure your `locate` database is up-to-date using one of the commands below if you've recently added or moved files to get accurate results:
+  
+\`\`\` sh
+# on linux
+sudo updatedb
+\`\`\`
+
+\`\`\` sh
+# on macos
+sudo /usr/libexec/locate.updatedb
+\`\`\`
+  
+"
 )
 ```
 
 ## [Manage]{style="font-size: 1.05em; font-weight: bold;"}  {#sec-manage-dirs}
 
-In the Unix/Linux world, file and directory management is a fundamental skill. This chapter dives deep into the commands that allow users to create, copy, move, remove, and link files and directories. Each section below introduces a different command, detailing its purpose and providing examples of its use.
+In the Unix/Linux world, file and directory management is a fundamental skill. This chapter introduces some common commands that will allow you to create, copy, move, remove, and link files and directories. 
 
 ### `mkdir`
 
-**`mkdir` (Make Directory)** builds a new folder wherever you tell it to, like making a new folder in our project for outputs (`out/`) or documents (`doc/`).
+**`mkdir` (Make Directory)** builds a new folder wherever you tell it to, like making a new folder in data for inputs (`data/in`) or outputs (`data/out`) 
 
-```bash
-mkdir out
-mkdir doc
+```{bash}
+mkdir data/in
+mkdir data/out
+```
+
+```{bash}
+#| eval: false 
+tree data -d
+# data
+# ├── in
+# └── out
+# 
+# 3 directories
 ```
 
 ### `cp`
 
-**`cp` (Copy)** duplicates files or folders. The `cp` command is used to copy files or directories from one location to another. Imagine having a file (`myfile.txt`) on your root (`.`) directory that you want to copy to the `/data` folder; you could use `cp` to make a duplicate. 
+**`cp` (Copy)** duplicates files or folders. The `cp` command is used to copy files or directories from one location to another. Imagine having a file (`bin.dat`) on your root (`.`) directory that you want to copy to the `/data/in` folder; you could use `cp` to make a duplicate. 
 
 ```{bash}
-cp myfile.txt data/myfile.txt
+#| echo: false 
+touch bin.dat
+echo "0 1 0 1 0
+0 0 1 0 1
+1 0 1 0 1" > bin.dat
+# cat bin.dat
+```
+
+
+```{bash}
+cp bin.dat data/in/bin.dat
 # confirm copy
-ls data
+ls data/in
 ```
 
 ### `mv`
@@ -125,25 +199,32 @@ ls data
 **`mv` (Move)**: `mv`, short for move, moves files or directories from one location to another.
 
 ```{bash}
-# create folder
-mkdir doc
 # move file
-mv data/myfile.txt doc/myfile.txt 
+mv data/in/bin.dat data/out/bin.dat 
+# confirm move 
+ls data/out 
 ```
 
 It can also be used for renaming files. 
 
 ```{bash}
 # rename file
-mv doc/myfile.txt  doc/your_file.txt 
+mv data/out/bin.dat  data/out/binary_data.txt 
+# confirm rename 
+ls data/out 
 ```
 
 This command is especially useful for organizing files and directories that are in the wrong place.
 
 ```{bash}
-# confirm move
-ls doc
+#| eval: false
+tree data/out
+# data/out
+# └── binary_data.txt
+# 
+# 1 directory, 1 file
 ```
+
 
 ### `rm`
 
@@ -152,7 +233,7 @@ ls doc
 ```{bash}
 #| error: true
 # remove doc folder
-rm doc
+rm data/out
 ```
 
 By default, it won't remove a directory without the `-R` or `-r` option.
@@ -181,7 +262,7 @@ It's important to note here that the command-line is not very forgiving. Using `
 
 ```{bash}
 # add option 
-rm -R doc
+rm -R data/out
 ```
 
 ### `ln`
@@ -192,6 +273,12 @@ rm -R doc
 ln -s /path/to/original /path/to/link
 ```
 
+```{bash}
+#| echo: false
+rm -Rf data/in
+rm -Rf data/out
+rm bin.dat
+```
 
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 
 

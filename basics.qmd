@@ -30,15 +30,17 @@ co_box(
 )
 ```
 
-This section covers commands to help you navigate and manipulate files and folders using Unix commands. 
+This section covers commands that will help navigate folders (or directories), manipulate and manage files, check system processes, and use or create variables. 
 
 #### Basic Unix/Linux Commands
 
-- **Navigating the File System**: `cd`, `ls`, `pwd`
+[Directories](dirs.qmd) covers how to navigating the file system.
 
-- **File Operations**: `cp`, `mv`, `rm`, `mkdir`
+[Files](dirs.qmd) discusses common file operations.
 
-- **System Monitoring**: `top`, `htop`, `free`, `df`, `du`
+[System](sys.qmd) touches on system monitoring.
+
+[Variables](vars.qmd) dives into the definition, types, and use of variables. Environment variables (`PATH`, `HOME`, `USER`), commands used with variables (`printenv`, `set`, `unset`, `export`, `env`), scripts, integer and strings, and best practices.
 
 <!--
 

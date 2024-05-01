@@ -129,6 +129,18 @@ Some options modify the commands behavior.
 <code>@sec-cp</code>`-n source.txt dest.txt` does not overwrite the destination file if it already exists. 
 
 ```{bash}
+#| echo: false
+touch myfile.txt
+echo "This is my file" > myfile.txt
+touch myfile2.txt
+echo "This is my 2nd file" > myfile2.txt
+```
+
+```{bash}
+cat myfile.txt
+```
+
+```{bash}
 #| eval: false
 cp -n myfile.txt myfile2.txt
 ```
@@ -227,3 +239,9 @@ Not all Unix-like systems or shells may support the same options for a given com
 #| eval: true
 git_contrib_box()
 ```
+
+```{bash}
+rm myfile.txt
+rm myfile2.txt
+```
+
