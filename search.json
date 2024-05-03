@@ -34,7 +34,7 @@
     "href": "preface.html#book-outline",
     "title": "Preface",
     "section": "",
-    "text": "Introduction\nThe Introduction acquaints you with some background that formed the landscape of Unix/Linux systems. It explains the Bash shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Unix/Linux systems.\n\n\nSet-Ups\nBefore diving into the commands and scripts, setting up your Unix/Linux environment is crucial. Set-ups guides you through various options for setting up Shells and Terminals, Virtual Machines, and Quarto documents.\n\n\nSyntax\nUnderstanding the syntax is vital for effectively communicating with the Unix/Linux system. The Syntax section demystifies the structure of commands, including how to differentiate between Commands, Arguments, and Options and manage inputs and outputs. This knowledge is critical to executing tasks efficiently in the command line.\nPipes are a cornerstone of Unix/Linux productivity, enabling the output of one command to serve as the input to another. Syntax also covers how to combine commands using stdout and stdin, allowing for robust command chains that can perform complex tasks with a simple syntax. Understanding pipes unlocks a higher level of command-line efficiency and is a step towards advanced Unix/Linux usage.\n\n\nThe Basics\nNavigating and managing files and folders are daily tasks for Unix/Linux users. Directories covers essential commands such as cd for changing directories, pwd to print the current directory, ls for listing files, and mkdir for making directories.\nFiles chapter covers file manipulation commands like cp (copy), mv (move), rm (remove), and less for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Unix/Linux.\nThe System chapter goes over common system commands like top for monitoring processes in real-time, ps for listing currently running processes, kill to stop a process, df (Disk Free) to display disk space usage on all mounted filesystems, and du (Disk Usage) to estimate file space usage. These commands help you manage the system’s processes and resources efficiently, ensuring you have a clear view of resource allocation and consumption.\n\n\nManipulating Text (in development)\nThe Text section covers using Symbols & Patterns to build regular expressions (regex). Unix/Linux systems are renowned for their powerful text manipulation capabilities. The Manipulating Text chapter introduces commands such as cat for displaying file contents, grep for searching within files, sort for sorting data, uniq for filtering unique lines, and cut, paste, and join for editing files. Mastering these commands will allow you to handle and process text data efficiently. Text Editors covers nano, vim, and emacs.\n\n\nShell Scripts (in development)\nShell scripting is a powerful tool for automating repetitive tasks in Unix/Linux. This section introduces you to writing your shell scripts, covering the basics of script creation, execution, and debugging. You’ll learn how to automate simple tasks, making your Unix/Linux experience more productive and enjoyable.\nThe Format chapter delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Unix/Linux systems. Permissions explains how Unix/Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.\n\n\nUse cases (in development)",
+    "text": "Introduction\nThe Introduction acquaints you with some background that formed the landscape of Unix/Linux systems. It explains the Bash shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Unix/Linux systems.\n\n\nSet-Ups\nBefore diving into the commands and scripts, setting up your Unix/Linux environment is crucial. Set-ups guides you through various options for setting up Shells and Terminals, Virtual Machines, and Quarto documents.\n\n\nThe Basics\nNavigating and managing files and folders are daily tasks for Unix/Linux users. Directories covers essential commands such as cd for changing directories, pwd to print the current directory, ls for listing files, and mkdir for making directories.\nFiles chapter covers file manipulation commands like cp (copy), mv (move), rm (remove), and less for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Unix/Linux.\nThe System chapter goes over common system commands like top for monitoring processes in real-time, ps for listing currently running processes, kill to stop a process, df (Disk Free) to display disk space usage on all mounted filesystems, and du (Disk Usage) to estimate file space usage. These commands help you manage the system’s processes and resources efficiently, ensuring you have a clear view of resource allocation and consumption.\n\n\nSyntax\nUnderstanding the syntax is vital for effectively communicating with the Unix/Linux system. The Syntax section demystifies the structure of commands, including how to differentiate between Commands, Arguments, and Options and manage inputs and outputs. This knowledge is critical to executing tasks efficiently in the command line.\nPipes are a cornerstone of Unix/Linux productivity, enabling the output of one command to serve as the input to another. Syntax also covers how to combine commands using stdout and stdin, allowing for robust command chains that can perform complex tasks with a simple syntax. Understanding pipes unlocks a higher level of command-line efficiency and is a step towards advanced Unix/Linux usage.\n\n\nManipulating Text (in development)\nThe Text section covers using Symbols & Patterns to build regular expressions (regex). Unix/Linux systems are renowned for their powerful text manipulation capabilities. The Manipulating Text chapter introduces commands such as cat for displaying file contents, grep for searching within files, sort for sorting data, uniq for filtering unique lines, and cut, paste, and join for editing files. Mastering these commands will allow you to handle and process text data efficiently. Text Editors covers nano, vim, and emacs.\n\n\nShell Scripts (in development)\nShell scripting is a powerful tool for automating repetitive tasks in Unix/Linux. This section introduces you to writing your shell scripts, covering the basics of script creation, execution, and debugging. You’ll learn how to automate simple tasks, making your Unix/Linux experience more productive and enjoyable.\nThe Format chapter delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Unix/Linux systems. Permissions explains how Unix/Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.\n\n\nUse cases (in development)",
     "crumbs": [
       "Preface"
     ]
@@ -231,204 +231,6 @@
     ]
   },
   {
-    "objectID": "commands.html",
-    "href": "commands.html",
-    "title": "Commands",
-    "section": "",
-    "text": "REPL\nThe REPL in Bash exemplifies a powerful and flexible interface for interacting with the system, running commands, and developing scripts, providing both novice and experienced users with an efficient way to manage their computing environment.\nHere is how it works:",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Commands</span>"
-    ]
-  },
-  {
-    "objectID": "commands.html#repl",
-    "href": "commands.html#repl",
-    "title": "Commands",
-    "section": "",
-    "text": "1. Read\nIn the Bash, the “Read” step occurs when the shell waits for input from the user. This is typically represented by the shell prompt, where we can type commands.\nThe prompt might display useful information, such as the current user (username), hostname (hostname), and working directory (current_directory), depending on its configuration.\n\n  username@hostname:current_directory$\n\n\n\n\n2. Eval\nOnce a command is entered, Bash “evaluates” it. This step involves parsing the command and its arguments, checking for syntax correctness, and then executing it.\n\n  username@hostname:current_directory$ date\n\n\nCommands can be simple, such as listing the current date and time, or complex scripts involving loops, conditionals, and functions.\n\n\n3. Print\nAfter evaluating the command, Bash “prints” the output or the result of the command execution to the screen (stdout or standard output) or another specified location.\n\n  # Wed Apr 10 02:55:23 MST 2024\n\n\n\n\nLoop\nAfter executing a command and returning the output, Bash immediately returns to the “read” step, displaying the prompt and waiting for new user input.\n\nusername@hostname:current_directory$\nusername@hostname:current_directory$ date\n#&gt; Wed Apr 10 02:55:23 MST 2024\nusername@hostname:current_directory$\n\nThis cycle repeats indefinitely until the user exits the REPL environment, typically with an exit command or by pressing Ctrl + D.",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Commands</span>"
-    ]
-  },
-  {
-    "objectID": "commands.html#basic-commands",
-    "href": "commands.html#basic-commands",
-    "title": "Commands",
-    "section": "Basic commands",
-    "text": "Basic commands\nIn Unix, several commands can operate without any options or arguments, performing their basic functions in their simplest form. Below are some of these commands:\n\nwho\nwho shows who is logged on the system.\n\nwho\n# username       console      Apr 14 13:45 \n# username       ttys000      Apr 14 13:45 \n# username       ttys001      Apr 14 13:45 \n# username       ttys003      Apr 16 05:56\n\nwho by itself, without options or arguments, lists the users currently logged into the system.\n\n\nwhoami\nwhoami shows the username of the user currently logged into the system.\n\nwhoami\n# username\n\n\n\nhostname\nhostname displays the system’s network name.\n\nhostname\n# Users-MacBook-Pro-2.local\n\n\n\ncal\ncal displays a calender of the current month.\n\ncal\n#      April 2024       \n# Su Mo Tu We Th Fr Sa  \n#     1  2  3  4  5  6  \n#  7  8  9 10 11 12 13  \n# 14 15 16 17 18 19 20  \n# 21 22 23 24 25 26 27  \n# 28 29 30              \n# \n\n\n\nuptime\nuptime shows how long the system has been running.\n\nuptime\n# 11:39  up 15:05, 4 users, load averages: 3.85 3.08 2.93\n\n\n\nclear\nclear clears the terminal screen and doesn’t print any return values.\n\nclear\n\nclear does its job without the need for additional input.\n\n\nexit\nexit exits the shell or your current session.\n\nexit\n\nexit requires no arguments or options to execute this action, and doesn’t print any return values.\n\n\nyes\nyes repeatedly outputs a string until killed. Without arguments, it defaults to outputting ‘y’.\n\nyes\n\nNOTE: Use Ctrl + C to interrupt the yes command.",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Commands</span>"
-    ]
-  },
-  {
-    "objectID": "commands.html#recap",
-    "href": "commands.html#recap",
-    "title": "Commands",
-    "section": "Recap",
-    "text": "Recap\nEach of these commands performs a specific and often utilized function within the Unix environment, embodying the Unix philosophy of doing one thing well.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Commands</span>"
-    ]
-  },
-  {
-    "objectID": "arguments.html",
-    "href": "arguments.html",
-    "title": "Arguments",
-    "section": "",
-    "text": "Anatomy\nA Unix command can be broken down into the command name, followed by its options (which we’ll address in the next chapter), and then its arguments:\ncommand argument1 argument2 ... argument",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arguments</span>"
-    ]
-  },
-  {
-    "objectID": "arguments.html#argument-types",
-    "href": "arguments.html#argument-types",
-    "title": "Arguments",
-    "section": "Argument Types",
-    "text": "Argument Types\nBelow are a variety of command arguments types. This is not an exhaustive list, but includes many of the commands and arguments you’ll encounter on a regular basis.\n\nDirect arguments\nDirect arguments are the most straightforward type of arguments. They are typically the names of files or directories on which commands operate.\nExample\nIn the command cat my_file.txt, my_file.txt is a direct argument to the cat command, telling it which file to display on the standard output.\n\ncat my_file.txt\n# This is my file\n\n\n\nIndirect arguments\nIndirect arguments are arguments that might specify additional information that commands need to complete their tasks.\nExample\nThe file search pattern for the grep command is an example of an indirect command, and myfile.txt is the direct argument.\n\ngrep file my_file.txt\n# This is my file\n\nMost commonly, arguments are the names of files and directory names on which the command will operate.\nExample\nmy_file.txt and tmp/tmp_file.txt are arguments representing the source and destination locations to move with mv, respectively.\n\nmv my_file.txt tmp/tmp_file.txt\n\nCommands related to user management might take user and group names names as arguments.\nExample\nchown changes the ownership of file to user and group.\n\nchown user:group myfile.txt\n\n\n\nCommand Targets\nSome commands take other commands as arguments.\nExample\nFor example, sudo command runs command with superuser privileges.\n\nsudo vi path/to/file.config\n\n\n\nData Values\nCommands might take data values as arguments for processing.\nExample\nIn echo Hello, World!, Hello, World! is the argument value that echo prints to the terminal.\n\necho Hello, World!\n# Hello, World!\n\n\n\nOrder and Position\nFor many commands, the order of the arguments is significant.\nExample\ntmp/tmp_file.txt is the first argument (indicating the file to copy from), and new_file.txt is the second argument (indicating where to copy the file to).\n\ncp tmp/tmp_file.txt new_file.txt\n\nReversing these arguments would result in a completely different operation.\nArguments that contain spaces must be quoted or escaped, so the shell understands them as a single argument rather than multiple arguments.\nExample\nTo copy the contents of the new new_file.txt to 'my new file.txt', you would use:\n\ncp new_file.txt 'my new file.txt'\n\n\n\nCommand Substitution\nThe output of a command can be used as an argument for another command using backticks (` `) or $( ).\nExample\necho $(grep file 'my file 2.txt') uses the output of the grep command as an argument for echo:\n\necho $(grep file 'my new file.txt')\n# This is my file\n\n\n\nVariables as Arguments\nEnvironment variables can be used as arguments in commands.\nExample\necho $HOME prints the path to the user’s home directory, where $HOME is an argument that the echo command interprets:\n\necho $HOME\n# /Users/username",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arguments</span>"
-    ]
-  },
-  {
-    "objectID": "arguments.html#recap",
-    "href": "arguments.html#recap",
-    "title": "Arguments",
-    "section": "Recap",
-    "text": "Recap\nUnderstanding the nuances of Unix arguments is crucial for crafting precise and effective commands, allowing users to leverage the full power of the Unix command line for a wide array of tasks.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arguments</span>"
-    ]
-  },
-  {
-    "objectID": "options.html",
-    "href": "options.html",
-    "title": "Options",
-    "section": "",
-    "text": "Option types\nArguments can be short or long:",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Options</span>"
-    ]
-  },
-  {
-    "objectID": "options.html#option-types",
-    "href": "options.html#option-types",
-    "title": "Options",
-    "section": "",
-    "text": "Short options are typically a single dash followed by a single letter (e.g., -l) and they modify the command behavior in a specific, often concise way.\n\n\nLong options usually use two dashes followed by a word or compound words (e.g., --long-listing) and provide a more descriptive way to specify options, making scripts and commands more readable.\n\n\n\n\nShort options\nExample\nls -l data lists files in data in a long format, showing detailed information like permissions, owner, size, and modification date:\n\nls -l data\n# total 224\n# -rw-r--r--@ 1 mjfrigaard  staff   9067 Apr 26 22:13 README.md\n# -rw-r--r--  1 mjfrigaard  staff  12531 Apr 13 20:39 ajperlis_epigrams.txt\n# -rw-r--r--@ 1 mjfrigaard  staff   6122 Apr 10 14:04 music_vids.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.csv\n# -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff   1315 Apr  6 05:38 roxanne.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    113 Apr 18 09:27 roxanne_orig.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    117 Apr 18 09:27 roxanne_rev.txt\n# -rw-r--r--@ 1 mjfrigaard  staff   4417 Apr 10 14:01 trees.tsv\n# -rw-r--r--  1 mjfrigaard  staff   4814 Apr 10 14:07 vg_hof.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff    381 Mar 28  2023 who_tb_data.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff    381 May  1 10:17 who_tb_data.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:34 wu_tang.csv\n# -rw-r--r--@ 1 mjfrigaard  staff    462 Apr 15 14:07 wu_tang.dat\n# -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:39 wu_tang.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff    281 Apr 10 09:38 wu_tang.txt\n\n\n\nLong options\nExample 1\ntree data --sort size lists files in order according to size:\n\ntree data --sort size\n# ├── ajperlis_epigrams.txt\n# ├── pwrds.csv\n# ├── pwrds.tsv\n# ├── README.md\n# ├── music_vids.tsv\n# ├── vg_hof.tsv\n# ├── trees.tsv\n# ├── roxanne.txt\n# ├── wu_tang.dat\n# ├── who_tb_data.tsv\n# ├── who_tb_data.txt\n# ├── wu_tang.txt\n# ├── wu_tang.csv\n# ├── wu_tang.tsv\n# ├── roxanne_rev.txt\n# └── roxanne_orig.txt\n# \n# 1 directory, 16 files\n\nExample 2\ngrep --help displays usage information for the grep command, helping users understand available options and syntax.\n\ngrep --help\n#&gt; usage: grep [-abcdDEFGHhIiJLlMmnOopqRSsUVvwXxZz] [-A num] [-B num] [-C[num]]\n#&gt;  [-e pattern] [-f file] [--binary-files=value] [--color=when]\n#&gt;  [--context[=num]] [--directories=action] [--label] [--line-buffered]\n#&gt;  [--null] [pattern] [file ...]\n\nExample 3\nThe --version option is commonly used to get version information for various commands.\n\ngrep --version  \n# grep (BSD grep, GNU compatible) 2.6.0-FreeBSD\n\nNote that not all commands support the long-form option syntax.\n\n\nModifying behavior\nSome options modify the commands behavior.\nExample\ncp-n source.txt dest.txt does not overwrite the destination file if it already exists.\n\ncat myfile.txt\n# This is my file\n\n\ncp -n myfile.txt myfile2.txt\n\nThe -n option modifies the default behavior of the cp command.\n\ncat myfile2.txt\n# This is my 2nd file\n\n\n\nModifying output\nOther options modify a commands output.\nExample 1\nls -a lists all files, including hidden ones (those starting with a dot). This option alters the command’s output by showing files that are not listed by default.\n\nls -a data\n# .\n# ..\n# README.md\n# ajperlis_epigrams.txt\n# music_vids.tsv\n# pwrds.csv\n# pwrds.tsv\n# roxanne.txt\n# roxanne_orig.txt\n# roxanne_rev.txt\n# trees.tsv\n# vg_hof.tsv\n# who_tb_data.tsv\n# who_tb_data.txt\n# wu_tang.csv\n# wu_tang.dat\n# wu_tang.tsv\n# wu_tang.txt\n\nExample 2\ndf -h shows disk space usage in human-readable form (e.g., KB, MB, GB), modifying the default output to be more easily understood.\n\ndf -h\n# Filesystem                          Size    Used   Avail Capacity iused ifree %iused  Mounted on\n# /dev/disk1s1s1                     466Gi   9.5Gi    40Gi    20%    404k  422M    0%   /\n# devfs                              201Ki   201Ki     0Bi   100%     696     0  100%   /dev\n# /dev/disk1s3                       466Gi   2.4Gi    40Gi     6%    5.1k  422M    0%   /System/Volumes/Preboot\n# /dev/disk1s5                       466Gi   1.0Gi    40Gi     3%       1  422M    0%   /System/Volumes/VM\n# /dev/disk1s6                       466Gi    19Mi    40Gi     1%      19  422M    0%   /System/Volumes/Update\n# /dev/disk1s2                       466Gi   411Gi    40Gi    92%    6.3M  422M    1%   /System/Volumes/Data\n# map auto_home                        0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home\n\n\n\nEnvironment-specific options\nThe -u option in sort removes duplicate lines. -us behavior (considering case sensitivity) might vary depending on the locale and environment settings.\nExample\nsort -u data/roxanne.txt sorts the lines in data/roxanne.txt, removing duplicate lines.1\n\nsort -u data/roxanne.txt\n# I have to tell you just how I feel\n# I know my mind is made up\n# I loved you since I knew you\n# I won't share you with another boy\n# I wouldn't talk down to you\n# It's a bad way\n# Ro...\n# Roxanne\n# Roxanne (Put on the red light)\n# Roxanne (You don't have to put on the red light)\n# So put away your make up\n# Those days are over\n# Told you once I won't tell you again\n# Walk the streets for money\n# You don't care if it's wrong or if it's right\n# You don't have to put on the red light\n# You don't have to sell your body to the night\n# You don't have to wear that dress tonight",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Options</span>"
-    ]
-  },
-  {
-    "objectID": "options.html#combining-options",
-    "href": "options.html#combining-options",
-    "title": "Options",
-    "section": "Combining Options",
-    "text": "Combining Options\nMultiple short options can be combined after a single dash, without spaces (e.g., -lrt) allowing users to use multiple options at once, and reducing the need to type multiple dashes.\n\nMultiple short options\nOptions can be combined with arguments when they are followed by a space and then the argument (e.g., -o filename).\nExample\nls -lrt combines three options: -l (long listing format), -r (reverse order), and -t (sort by modification time), providing a detailed, reverse-chronological list of files.\n\nls -lrt data\n# total 224\n# -rw-r--r--@ 1 mjfrigaard  staff    381 Mar 28  2023 who_tb_data.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff   1315 Apr  6 05:38 roxanne.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:34 wu_tang.csv\n# -rw-r--r--@ 1 mjfrigaard  staff    281 Apr 10 09:38 wu_tang.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:39 wu_tang.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff   4417 Apr 10 14:01 trees.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff   6122 Apr 10 14:04 music_vids.tsv\n# -rw-r--r--  1 mjfrigaard  staff   4814 Apr 10 14:07 vg_hof.tsv\n# -rw-r--r--  1 mjfrigaard  staff  12531 Apr 13 20:39 ajperlis_epigrams.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    462 Apr 15 14:07 wu_tang.dat\n# -rw-r--r--@ 1 mjfrigaard  staff    113 Apr 18 09:27 roxanne_orig.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    117 Apr 18 09:27 roxanne_rev.txt\n# -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.csv\n# -rw-r--r--@ 1 mjfrigaard  staff   9067 Apr 26 22:13 README.md\n# -rw-r--r--@ 1 mjfrigaard  staff    381 May  1 10:17 who_tb_data.txt\n\n\n\nOptions with values\nSome options require or accept an argument to specify a value related to the option’s action.\nExample\ngrep-i \"FILE\" myfile.txt uses -i to ignore case when searching for \"FILE\" in myfile.txt:\n\ngrep -i \"FILE\" myfile.txt\n# This is my file\n\nThe \"FILE\" here is an argument for the -i option.",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Options</span>"
-    ]
-  },
-  {
-    "objectID": "options.html#recap",
-    "href": "options.html#recap",
-    "title": "Options",
-    "section": "Recap",
-    "text": "Recap\nOptions greatly enhance the power and versatility of Unix commands, allowing users to tailor operations to their specific needs and preferences.\nNot all Unix-like systems or shells may support the same options for a given command, and behavior can vary between implementations. It’s important to refer to a command’s manual page (using man command or command --help) for the most accurate and comprehensive list of options and their effects.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.\n\n\n\n\n\nrm myfile.txt\nrm myfile2.txt",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Options</span>"
-    ]
-  },
-  {
-    "objectID": "options.html#footnotes",
-    "href": "options.html#footnotes",
-    "title": "Options",
-    "section": "",
-    "text": "data/roxanne.txt contains the lyrics to the 1978 song Roxanne by The Police.↩︎",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Options</span>"
-    ]
-  },
-  {
-    "objectID": "pipes.html",
-    "href": "pipes.html",
-    "title": "Pipes",
-    "section": "",
-    "text": "Fundamental Concept\nThe pipe is placed between two commands and directs the standard output (stdout) of the command to the left of the pipe to the standard input (stdin) of the command to the right.\nExample\necho \"Hello, World!\" | wc -w sends the output of the echo command to wc, which then counts the words.\necho \"Hello, World!\" | wc -w\n#        2\nThe output is 2, indicating there are two words in “Hello, World!”.",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Pipes</span>"
-    ]
-  },
-  {
-    "objectID": "pipes.html#fundamental-concept",
-    "href": "pipes.html#fundamental-concept",
-    "title": "Pipes",
-    "section": "",
-    "text": "Standard Input and Output\n\n\n\n\n\n\n\n\nstdin (standard input) is a text stream from which a command reads its input. By default, it’s the keyboard, but it can be redirected to read from a file or another command’s output.\nstdout (standard output) is a text stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command’s input.",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Pipes</span>"
-    ]
-  },
-  {
-    "objectID": "pipes.html#combining-pipes",
-    "href": "pipes.html#combining-pipes",
-    "title": "Pipes",
-    "section": "Combining Pipes",
-    "text": "Combining Pipes\nCommands can be chained together using multiple pipes, allowing for the creation of command pipelines where data is processed in stages.\nExample\npsaux |grep httpd lists all processes, filters those containing “httpd” (HTTPD = web server processes running):\n\nps aux | grep httpd\n# mjfrigaard       29958   0.0  0.0 33597016    628   ??  S     2:11PM   0:00.00 grep httpd\n# mjfrigaard       29956   0.0  0.0 33597548    904   ??  S     2:11PM   0:00.00 bash -c ps aux | grep httpd\n# mjfrigaard       29955   0.0  0.0 33615980    964   ??  S     2:11PM   0:00.01 sh -c 'bash'  -c 'ps aux | grep httpd' 2&gt;&1\n\nExample\nwc-l counts the number of lines:\n\nps aux | grep httpd | wc -l\n#        3\n\n\nFiltering and Processing\nExample 1\ncatdata/roxanne.txt |grep\"night\" displays lines from data/roxanne.txt that contain the number \"2\".\n\ncat data/roxanne.txt | grep \"night\"\n# You don't have to sell your body to the night\n# You don't have to wear that dress tonight\n\nHere, cat outputs the file’s contents, which grep filters.\nExample 2\nls-l data |sort-r lists the files in data in a detailed format, then sorts them in reverse order.\n\nls -l data | sort -r\n# total 224\n# -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.csv\n# -rw-r--r--@ 1 mjfrigaard  staff   9067 Apr 26 22:13 README.md\n# -rw-r--r--@ 1 mjfrigaard  staff   6122 Apr 10 14:04 music_vids.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff   4417 Apr 10 14:01 trees.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff   1315 Apr  6 05:38 roxanne.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    462 Apr 15 14:07 wu_tang.dat\n# -rw-r--r--@ 1 mjfrigaard  staff    381 May  1 10:17 who_tb_data.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    381 Mar 28  2023 who_tb_data.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff    281 Apr 10 09:38 wu_tang.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:39 wu_tang.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:34 wu_tang.csv\n# -rw-r--r--@ 1 mjfrigaard  staff    117 Apr 18 09:27 roxanne_rev.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    113 Apr 18 09:27 roxanne_orig.txt\n# -rw-r--r--  1 mjfrigaard  staff  12531 Apr 13 20:39 ajperlis_epigrams.txt\n# -rw-r--r--  1 mjfrigaard  staff   4814 Apr 10 14:07 vg_hof.tsv\n\nIt showcases how to reverse the listing of directory contents.\n\n\nTransformation and Reduction\nExample\nfind. -type f |xargsdu -sh |sort-h finds files (-type f) in the current directory and subdirectories, calculates their sizes (du -sh), and sorts them by size (sort -h):\n\nfind data -type f | xargs du -sh | sort -h\n# 4.0K  data/roxanne.txt\n# 4.0K  data/roxanne_orig.txt\n# 4.0K  data/roxanne_rev.txt\n# 4.0K  data/who_tb_data.tsv\n# 4.0K  data/who_tb_data.txt\n# 4.0K  data/wu_tang.csv\n# 4.0K  data/wu_tang.dat\n# 4.0K  data/wu_tang.tsv\n# 4.0K  data/wu_tang.txt\n# 8.0K  data/music_vids.tsv\n# 8.0K  data/trees.tsv\n# 8.0K  data/vg_hof.tsv\n#  12K  data/README.md\n#  12K  data/pwrds.csv\n#  12K  data/pwrds.tsv\n#  16K  data/ajperlis_epigrams.txt\n\nThis pipeline not only identifies files but also sorts them by their disk usage, illustrating a complex operation made simple through pipes.\n\n\nReal-time Streaming and Monitoring\nExample\ncat /var/log/system.log | grep DEAD_PROCESS prints the system.log file, continuously monitoring for new entries, filters for those containing DEAD_PROCESS, then counts the number of lines:1\n\ncat /var/log/system.log | grep \"DEAD_PROCESS\" \n## Apr 10 06:35:23 Users-MacBook-Pro login[3596]: DEAD_PROCESS: 3596 ttys000\n## Apr 10 06:35:25 Users-MacBook-Pro sessionlogoutd[19895]: DEAD_PROCESS: 225 console\n## Apr 10 10:20:25 Users-MacBook-Pro login[715]: DEAD_PROCESS: 715 ttys000\n\n\n\nData Manipulation\nExample\ncut -d':' -f1 data/roxanne.txt | sort | uniq extracts the first field from each line in data/roxanne.txt, sorts the contents alphabetically, and removes duplicates.\n\ncut -d':' -f1 data/roxanne.txt | sort | uniq\n# I have to tell you just how I feel\n# I know my mind is made up\n# I loved you since I knew you\n# I won't share you with another boy\n# I wouldn't talk down to you\n# It's a bad way\n# Ro...\n# Roxanne\n# Roxanne (Put on the red light)\n# Roxanne (You don't have to put on the red light)\n# So put away your make up\n# Those days are over\n# Told you once I won't tell you again\n# Walk the streets for money\n# You don't care if it's wrong or if it's right\n# You don't have to put on the red light\n# You don't have to sell your body to the night\n# You don't have to wear that dress tonight\n\nThis sequence is an example of performing data extraction and deduplication.",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Pipes</span>"
-    ]
-  },
-  {
-    "objectID": "pipes.html#pipes-with-loops",
-    "href": "pipes.html#pipes-with-loops",
-    "title": "Pipes",
-    "section": "Pipes with Loops",
-    "text": "Pipes with Loops\nThe example below demonstrates how to use the while loop with pipes with find, echo, grep, and wc.\n\nFilter with find\nfind data -name \"*.tsv\" starts in the data directory, looking for all files that end with the .tsv extension. The search is recursive, meaning it includes all subdirectories of data as well. Produces a list of paths to .tsv files, each path on a new line. This list is piped to the next command.\n\nfind data -name \"*.tsv\" \n# data/pwrds.tsv\n# data/music_vids.tsv\n# data/vg_hof.tsv\n# data/who_tb_data.tsv\n# data/trees.tsv\n# data/wu_tang.tsv\n\n\n\nIterate with while and do\n| while read fname; do: The pipe (|) feeds the output from the find command into a while loop, which reads each line (file name) into the variable fname, one at a time. For each iteration of the loop (i.e., for each file name read into fname), the commands within the do ... done block are executed.\n\nfind data -name \"*.tsv\" | while read fname; do\n  # do this!\ndone\n\n\n\nPrint with echo\necho -n \"$fname: \": Prints the current file’s name being processed. echo-n outputs the value of fname (the path to the current .tsv file) followed by a colon and a space, without adding a newline at the end. This means the count returned by wc will be printed on the same line, right after the file name.\n\nfind data -name \"*.tsv\" | while read fname; do\n  echo -n \"$fname: \"\ndone\n# data/pwrds.tsv: data/music_vids.tsv: data/vg_hof.tsv: data/who_tb_data.tsv: data/trees.tsv: data/wu_tang.tsv:\n\n\n\nSearch with grep\ngrep \"RZA\" \"$fname\": Searches for a specific pattern within the file. grep looks through the contents of the file (whose path is in fname) for lines containing the string “RZA”. Only the lines that match this pattern are printed to stdout, which is then piped to wc.\n\nfind data -name \"*.tsv\" | while read fname; do\n  echo -n \"$fname: \"\n  grep \"RZA\" \"$fname\"\ndone\n# data/pwrds.tsv: data/music_vids.tsv: data/vg_hof.tsv: data/who_tb_data.tsv: data/trees.tsv: data/wu_tang.tsv: RZA Robert Diggs\n\n\n\nCount with wc\nwc: For each file processed by the loop, wc outputs three numbers: the line count, word count, and character/byte count of the lines that grep found to contain “RZA”. Since no specific option is given to wc, it defaults to displaying all three counts.\n\nfind data -name \"*.tsv\" | while read fname; do\n  echo -n \"$fname: \"\n  grep \"RZA\" \"$fname\" | wc \ndone\n# data/pwrds.tsv:        0       0       0\n# data/music_vids.tsv:        0       0       0\n# data/vg_hof.tsv:        0       0       0\n# data/who_tb_data.tsv:        0       0       0\n# data/trees.tsv:        0       0       0\n# data/wu_tang.tsv:        1       3      17\n\nThis Bash command sequence combines find, a while loop, echo, grep, and wc to search through .tsv (Tab-Separated Values) files for lines containing a specific pattern (“RZA”) and reports the count of lines, words, and characters for each occurrence. Combining pipelines with loops is an efficient way to sift through a potentially large set of files within a directory, facilitating a detailed aggregation of specified conditions across multiple files.\n\n\n\n\n\n\nConsiderations when using pipes\n\n\n\n\n\n\nEfficiency and Performance\nWhile pipes are incredibly powerful, their use can impact performance, especially when processing large amounts of data. Each pipe involves creating a new subprocess, and data is copied between processes, which can lead to overhead.\nError Handling\nError handling in pipes can be non-trivial, as each command in a pipeline executes independently. Users need to consider how each command handles errors and ensure that the pipeline as a whole behaves as expected even when errors occur.",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Pipes</span>"
-    ]
-  },
-  {
-    "objectID": "pipes.html#recap",
-    "href": "pipes.html#recap",
-    "title": "Pipes",
-    "section": "Recap",
-    "text": "Recap\nPipes (|) allow the output of one command (stdout) to be used as the input (stdin) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next. Unix pipes embody the concept of composability in Unix, enabling users to build complex workflows out of simple, single-purpose programs. They are a testament to the flexibility and power of the Unix command line, facilitating a wide range of tasks from simple text processing to sophisticated data analysis and system monitoring.\nThis framework of commands, arguments, options, and the interplay of input (stdin), output (stdout) , and pipes enables sophisticated data processing and manipulation directly from the terminal.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Pipes</span>"
-    ]
-  },
-  {
-    "objectID": "pipes.html#footnotes",
-    "href": "pipes.html#footnotes",
-    "title": "Pipes",
-    "section": "",
-    "text": "tail -f /var/log/syslog | grep sshd is useful for real-time monitoring of SSH daemon logs.↩︎",
-    "crumbs": [
-      "Syntax",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Pipes</span>"
-    ]
-  },
-  {
     "objectID": "dirs.html",
     "href": "dirs.html",
     "title": "Directories",
@@ -436,7 +238,7 @@
     "text": "Navigate",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Directories</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Directories</span>"
     ]
   },
   {
@@ -444,10 +246,10 @@
     "href": "dirs.html#sec-nav-dirs",
     "title": "Directories",
     "section": "",
-    "text": "pwd\npwd (Print Working Directory) tells you exactly where you are in the filesystem.\n\npwd \n# /Users/mjfrigaard/projects/books/fm-unix\n\n\nPaths\nAbsolute file paths provide the complete directory path from the root directory to the specified file, and therefore do not change regardless of the current working directory. pwd returns an absolute file path:\n\n/Users/mjfrigaard/projects/books/fm-unix\n\nRelative file paths, on the other hand, specify the location of a file relative to the current working directory, changing meaning based on the directory from which they are referenced.\nWe can use a relative file path to create a report.txt file in the data folder with the following text:\n\necho \"my important information\" &gt; data/report.txt\n\nConfirm with cat:\n\ncat data/report.txt\n# my important information\n\n\n\n\ncd\ncd (Change Directory) lets us move from one directory to a different directory. For example, cd /bin takes you to the /bin folder, the toolshed of software tools.\n\ncd /bin # change location\npwd # now where am I?\n# /bin\n\n\n\nls\nls (List) is like standing in one location, looking around, and seeing what files and folders are around you. In /bin, ls would show you the software tools available:\n\ncd /bin # change location\nls # what's in here?\n# [\n# bash\n# cat\n# chmod\n# cp\n# csh\n# dash\n# date\n# dd\n# df\n# echo\n# ed\n# expr\n# hostname\n# kill\n# ksh\n# launchctl\n# link\n# ln\n# ls\n# mkdir\n# mv\n# pax\n# ps\n# pwd\n# realpath\n# rm\n# rmdir\n# sh\n# sleep\n# stty\n# sync\n# tcsh\n# test\n# unlink\n# wait4path\n# zsh\n\n\n\nfind\nfind can be used to locate files or directories using the -type and -name options. The example below looks in the data directory for a roxanne.txt file:\n\nfind data -type f -name roxanne.txt\n# data/roxanne.txt\n\n\n\nlocate\nlocate\n\nlocate roxanne data | head -n3\n# /Users/mjfrigaard/projects/books/fm-unix/data/roxanne.txt\n# /Users/mjfrigaard/projects/books/fm-unix/data/roxanne_orig.txt\n# /Users/mjfrigaard/projects/books/fm-unix/data/roxanne_rev.txt\n\n\n\n\n\n\n\nUpdating locate database\n\n\n\n\n\n\nMake sure your locate database is up-to-date using one of the commands below if you’ve recently added or moved files to get accurate results:\n# on linux\nsudo updatedb\n# on macos\nsudo /usr/libexec/locate.updatedb",
+    "text": "pwd\npwd (print working directory) tells you exactly where you are in the filesystem.\n\npwd \n# /Users/mjfrigaard/projects/books/fm-unix\n\n\nPaths\nAbsolute file paths provide the complete directory path from the root directory to the specified file, and therefore do not change regardless of the current working directory. pwd returns an absolute file path:\n\n/Users/mjfrigaard/projects/books/fm-unix\n\nRelative file paths, on the other hand, specify the location of a file relative to the current working directory, changing meaning based on the directory from which they are referenced.\nWe can use a relative file path to create a report.txt file in the data folder with the following text:\n\necho \"my important information\" &gt; data/report.txt\n\ndata/report.txt is the relative file path (i.e., relative to the current working directory).\nConfirm contents of report.txt with cat:\n\ncat data/report.txt\n# my important information\n\n\n\n\ncd\ncd lets us move from one directory to a different directory. For example, cd /bin takes you to the /bin folder, the toolshed of software tools.\n\ncd /bin # change location\npwd # now where am I?\n# /bin\n\n\n\nls\nls (list) lists the files and folders in a given location. In /bin, ls would show you the software tools available:\n\ncd /bin # change location\nls # what's in here?\n# [\n# bash\n# cat\n# chmod\n# cp\n# csh\n# dash\n# date\n# dd\n# df\n# echo\n# ed\n# expr\n# hostname\n# kill\n# ksh\n# launchctl\n# link\n# ln\n# ls\n# mkdir\n# mv\n# pax\n# ps\n# pwd\n# realpath\n# rm\n# rmdir\n# sh\n# sleep\n# stty\n# sync\n# tcsh\n# test\n# unlink\n# wait4path\n# zsh\n\n\n\nfind\nfind can be used to locate files or directories using the -type and -name options. The example below looks in the current working directory (.) for a folder named data:\n\nfind . -type d -name data\n# ./data",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Directories</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Directories</span>"
     ]
   },
   {
@@ -455,10 +257,10 @@
     "href": "dirs.html#sec-manage-dirs",
     "title": "Directories",
     "section": "Manage",
-    "text": "Manage\nIn the Unix/Linux world, file and directory management is a fundamental skill. This chapter introduces some common commands that will allow you to create, copy, move, remove, and link files and directories.\n\nmkdir\nmkdir (Make Directory) builds a new folder wherever you tell it to, like making a new folder in data for inputs (data/in) or outputs (data/out)\n\nmkdir data/in\nmkdir data/out\n\n\ntree data -d\n# data\n# ├── in\n# └── out\n# \n# 3 directories\n\n\n\ncp\ncp (Copy) duplicates files or folders. The cp command is used to copy files or directories from one location to another. Imagine having a file (bin.dat) on your root (.) directory that you want to copy to the /data/in folder; you could use cp to make a duplicate.\n\ncp bin.dat data/in/bin.dat\n# confirm copy\nls data/in\n# bin.dat\n\n\n\nmv\nmv (Move): mv, short for move, moves files or directories from one location to another.\n\n# move file\nmv data/in/bin.dat data/out/bin.dat \n# confirm move \nls data/out \n# bin.dat\n\nIt can also be used for renaming files.\n\n# rename file\nmv data/out/bin.dat  data/out/binary_data.txt \n# confirm rename \nls data/out \n# binary_data.txt\n\nThis command is especially useful for organizing files and directories that are in the wrong place.\n\ntree data/out\n# data/out\n# └── binary_data.txt\n# \n# 1 directory, 1 file\n\n\n\nrm\nrm (Remove): The rm command stands for remove and is used to delete files or directories.\n\n# remove doc folder\nrm data/out\n# rm: data/out: is a directory\n\nBy default, it won’t remove a directory without the -R or -r option.\n\n\n\n\n\n\nWarning\n\n\n\n\n\n\nIt’s important to note here that the command-line is not very forgiving. Using rm is a powerful action with significant consequences, as it permanently deletes files, akin to shredding documents. There’s usually no easy way to recover deleted files unless you have a backup.\n\n‘Unix is like a chainsaw. Chainsaws are powerful tools, and make many difficult tasks like cutting through thick logs quite easy. Unfortunately, this power comes with danger: chainsaws can cut just as easily through your leg.’ - Gary Bernhardt1\n\n\n\n\n\n\n# add option \nrm -R data/out\n\n\n\nln\nln (Link): ln creates Links to files or directories, making them accessible from multiple locations without duplicating the actual content. It’s like creating a shortcut on your desktop to a program you frequently use. There are two types of links: hard links and symbolic (soft) links. Symbolic links are more commonly used because they can link to directories and provide more flexibility.\nln -s /path/to/original /path/to/link",
+    "text": "Manage\nIn the Unix/Linux world, file and directory management is a fundamental skill. This chapter introduces some common commands that will allow you to create, copy, move, remove, and link files and directories.\n\nmkdir\nmkdir (Make Directory) builds a new folder wherever you tell it to, like making a new folder in data for inputs (data/in) or outputs (data/out)\n\nmkdir data/in\nmkdir data/out\n\nConfirm with tree -d (the -d is for directories):\n\ntree data -d\n# data\n# ├── in\n# └── out\n# \n# 3 directories\n\n\n\ncp\ncp duplicates files or folders. The cp command is used to copy files or directories from one location to another. Imagine having a file (binary_data.tsv) on your root (.) directory that you want to copy to the /data/in folder; you could use cp to make a duplicate.\n\ncp binary_data.tsv data/in/binary_data.tsv\n\nConfirm with tree\n\ntree data/in\n# data/in\n# └── binary_data.tsv\n# \n# 1 directory, 1 file\n\n\n\nmv\nmv, short for move, moves files or directories from one location to another. We’ll use it to move data/binary_data.tsv to data/out/binary_data.tsv:\n\n# move file\nmv data/in/binary_data.tsv data/out/binary_data.tsv \n\nConfirm move with tree:1\n\ntree data -P *.tsv\n# data\n# ├── in\n# └── out\n#     └── binary_data.tsv\n# \n# 3 directories, 1 file\n\nIt can also be used for renaming files.\n\n# rename file\nmv data/out/binary_data.tsv  data/out/bin_dat.tsv \n\n\n# confirm rename \ntree data/out\n# data/out\n# └── bin_dat.tsv\n# \n# 1 directory, 1 file\n# \u001b[01;34mdata/out\u001b[0m\n# └── \u001b[00mbin_dat.tsv\u001b[0m\n# \n# 1 directory, 1 file\n\nmv is especially useful for organizing files and directories that are in the wrong place.\n\n\nrm\nThe rm command stands for remove and is used to delete files or directories.\n\n# remove doc folder\nrm data/out\n# rm: data/out: is a directory\n\nBy default, it won’t remove a directory without the -R or -r option.\n\n\n\n\n\n\nWarning\n\n\n\n\n\n\nIt’s important to note here that the command-line is not very forgiving. Using rm is a powerful action with significant consequences, as it permanently deletes files, akin to shredding documents. There’s usually no easy way to recover deleted files unless you have a backup.\n\n‘Unix is like a chainsaw. Chainsaws are powerful tools, and make many difficult tasks like cutting through thick logs quite easy. Unfortunately, this power comes with danger: chainsaws can cut just as easily through your leg.’ - Gary Bernhardt2\n\n\n\n\n\n\n# add option \nrm -R data/out",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Directories</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Directories</span>"
     ]
   },
   {
@@ -469,7 +271,7 @@
     "text": "Recap\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Directories</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Directories</span>"
     ]
   },
   {
@@ -477,10 +279,10 @@
     "href": "dirs.html#footnotes",
     "title": "Directories",
     "section": "",
-    "text": "As quoted in Bioinformatics Data Skills: Reproducible and Robust Research with Open Source Tools (2015) by Vince Buffalo.↩︎",
+    "text": "The -P *.tsv option for tree tells it to look in data for files or folders with a .tsv extension. We’ll cover wildcards and patterns in the Symbols & Patterns chapter.↩︎\nAs quoted in Bioinformatics Data Skills: Reproducible and Robust Research with Open Source Tools (2015) by Vince Buffalo.↩︎",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Directories</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Directories</span>"
     ]
   },
   {
@@ -488,10 +290,21 @@
     "href": "files.html",
     "title": "Files",
     "section": "",
-    "text": "Create\nTo create a new file (data/who_tb_data.txt), use the touch command.\ntouch data/who_tb_data.txt\nWe can add some contents to the data/who_tb_data.txt file using echo and the &gt; operator.\necho \"country   year    type    count\nAfghanistan 1999    cases   745\nAfghanistan 1999    population  19987071\nAfghanistan 2000    cases   2666\nAfghanistan 2000    population  20595360\nBrazil  1999    cases   37737\nBrazil  1999    population  172006362\nBrazil  2000    cases   80488\nBrazil  2000    population  174504898\nChina   1999    cases   212258\nChina   1999    population  1272915272\nChina   2000    cases   213766\nChina   2000    population  1280428583\" &gt; data/who_tb_data.txt",
+    "text": "Create\ntouch can create new files or update the timestamp of an existing file.",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Files</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Files</span>"
+    ]
+  },
+  {
+    "objectID": "files.html#create",
+    "href": "files.html#create",
+    "title": "Files",
+    "section": "",
+    "text": "touch\nWe’ll start by creating a new file (data/who_tb_data.tsv) with touch:\n\ntouch data/who_tb_data.tsv\n\nWe can confirm the new who_tb_data.tsv file was created, we’ll use the tree command to check the data folder:\n\ntree -P who_tb_data.tsv data\n# data\n# └── who_tb_data.tsv\n# \n# 1 directory, 1 file\n\nThe -P option lets us specify a pattern to search for in the data folder, which we’ll cover more in Symbols & Patterns.\n\n\necho\nWe can add some contents to the data/who_tb_data.tsv file using echo and the &gt; operator.1\n\necho \"country   year    type    count\nAfghanistan 1999    cases   745\nAfghanistan 1999    population  19987071\nAfghanistan 2000    cases   2666\nAfghanistan 2000    population  20595360\nBrazil  1999    cases   37737\nBrazil  1999    population  172006362\nBrazil  2000    cases   80488\nBrazil  2000    population  174504898\nChina   1999    cases   212258\nChina   1999    population  1272915272\nChina   2000    cases   213766\nChina   2000    population  1280428583\" &gt; data/who_tb_data.tsv",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Files</span>"
     ]
   },
   {
@@ -499,43 +312,54 @@
     "href": "files.html#view",
     "title": "Files",
     "section": "View",
-    "text": "View\nfile gives us a summary of what a file is or what it contains, like telling us what’s in data/who_tb_data.txt.\n\nfile data/who_tb_data.txt\n# data/who_tb_data.txt: ASCII text\n\nWe can use head and tail to view the top and bottom of data/who_tb_data.txt.\n\nhead data/vg_hof.tsv\n# year  game    developer   year_released\n# 2015  DOOM    id Software 1993\n# 2015  Pac-Man Namco   1980\n# 2015  Pong    Atari   1972\n# 2015  Super Mario Bros.   Nintendo    1985\n# 2015  Tetris  Alexey Pajitnov 1985\n# 2015  World of Warcraft   Blizzard Entertainment  2004\n# 2015  Angry Birds Rovio Entertainment 2009\n# 2015  FIFA International Soccer   EA Canada   1993\n# 2015  The Legend of Zelda Nintendo    1986\n\n\ntail data/vg_hof.tsv\n# 2024  Guitar Hero Harmonix    2005\n# 2024  Metroid Nintendo    1986\n# 2024  Myst    Cyan    1993\n# 2024  Neopets Adam Powell, Donna Powell   1999\n# 2024  Resident Evil   Capcom  1996\n# 2024  SimCity Maxis   1989\n# 2024  Tokimeki Memorial   Konami  1994\n# 2024  Tony Hawk's Pro Skater  Neversoft   1999\n# 2024  Ultima  Richard Garriott, Origin Systems    1981\n# 2024  You Don't Know Jack Jellyvision 1995\n\nless lets you skim through a file on your computer, moving forwards and backwards as you please. We’ll use less on the data/vg_hof.tsv file.\n\nless data/vg_hof.tsv\n\n\n\n\nEnter ‘q’ to exit the less scroll",
+    "text": "View\ncat concatenates and displays file contents. We can use this to view the entire data/who_tb_data.tsv file we just created:\n\ncat\n\ncat data/who_tb_data.tsv\n# country   year    type    count\n# Afghanistan   1999    cases   745\n# Afghanistan   1999    population  19987071\n# Afghanistan   2000    cases   2666\n# Afghanistan   2000    population  20595360\n# Brazil    1999    cases   37737\n# Brazil    1999    population  172006362\n# Brazil    2000    cases   80488\n# Brazil    2000    population  174504898\n# China 1999    cases   212258\n# China 1999    population  1272915272\n# China 2000    cases   213766\n# China 2000    population  1280428583\n\n\n\nmore & less\nless and more lets you skim through a file on your computer, moving forwards and backwards as you please. These commands are helpful for larger files, like the Video Game Hall of Fame data stored in the data/vg_hof.tsv file:2\n\nmore data/vg_hof.tsv\n\n\n\n\nEnter ‘q’ to exit the more scroll\n\n\n\nless data/vg_hof.tsv\n\n\n\n\nEnter ‘q’ to exit the less scroll\n\n\n\n\nhead & tail\nThe head and tail commands let us view the tops and bottoms of files (the -n3 specifies three rows from data/vg_hof.tsv).\n\nhead -n3 data/vg_hof.tsv\n# year  game    developer   year_released\n# 2015  DOOM    id Software 1993\n# 2015  Pac-Man Namco   1980\n\n\ntail -n3 data/vg_hof.tsv\n# 2024  Tony Hawk's Pro Skater  Neversoft   1999\n# 2024  Ultima  Richard Garriott, Origin Systems    1981\n# 2024  You Don't Know Jack Jellyvision 1995",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Files</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Files</span>"
     ]
   },
   {
-    "objectID": "files.html#search",
-    "href": "files.html#search",
+    "objectID": "files.html#manage",
+    "href": "files.html#manage",
     "title": "Files",
-    "section": "Search",
-    "text": "Search\nfind is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, file type, and modification time. For example, the commands below look in the data directory for files with a .txt extension (-name \"*.txt\") and finds files modified in the last 2 days (-mtime -2).\n\nfind data -name \"*.txt\" -mtime -1\n# data/who_tb_data.txt",
+    "section": "Manage",
+    "text": "Manage\nThe following commands are helpful for searching, copying, moving, renaming, and creating links to files.\n\ngrep\ngrep searches files for lines matching a pattern. We’ll use it to search for a specfic video game title in data/vg_hof.tsv:\n\ngrep \"The Oregon Trail\" data/vg_hof.tsv\n# 2015  The Oregon Trail    Don Rawitsch, Bill Heinemann, and Paul Dillenberger 1971\n# 2016  The Oregon Trail    Don Rawitsch, Bill Heinemann, and Paul Dillenberger 1971\n\nfind is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, file type, and modification time.\n\n\nfind\nThe .psv extension is used for pipe-separated files (|). We’ll use find to locate any .psv files in data/:\n\nfind data -name \"*.psv\"\n# data/wu_tang.psv\n\nfind can be very specific, too. For example, the commands below look in the data directory for tab-delimited files (i.e., with a .tsv extension modified in the last day.\n\nfind data -name \"*.tsv\" -mtime -1\n# data/who_tb_data.tsv\n\n\n\nlocate\nlocate finds files by name quickly using a database.3\n\nlocate who_tb_data data | head -n3\n# /Users/mjfrigaard/projects/books/fm-unix/data/who_tb_data.csv\n# /Users/mjfrigaard/projects/books/fm-unix/data/who_tb_data.psv\n# /Users/mjfrigaard/projects/books/fm-unix/data/who_tb_data.tsv\n\n\n\n\n\n\n\nUpdating locate database\n\n\n\n\n\n\nMake sure your locate database is up-to-date using one of the commands below if you’ve recently added or moved files to get accurate results:\n# on linux\nsudo updatedb\n# on macos\nsudo /usr/libexec/locate.updatedb\n\n\n\n\nLets assume we want to create backups of the delimiter-separated data files by their extensions. First we’ll create folder for each type of delimiter (.csv, .tsv, and .psv), then we’ll copy this files into their respective folder (based their extension):\n\nmkdir data/csv\nmkdir data/tsv\nmkdir data/psv\n\nConfirm with tree -d\n\ntree data -d\n# data\n# ├── csv\n# ├── psv\n# └── tsv\n# \n# 4 directories\n\n\n\ncp\nWe can use the * pattern to copy the files (cp):\n\ncp data/*.csv data/csv/\n\n\ntree data/csv/\n# data/csv/\n# ├── pwrds.csv\n# └── wu_tang.csv\n# \n# 1 directory, 2 files\n\n\ncp data/*.tsv data/tsv/\n\n\ntree data/tsv/\n# data/tsv/\n# ├── music_vids.tsv\n# ├── pwrds.tsv\n# ├── trees.tsv\n# ├── vg_hof.tsv\n# ├── who_tb_data.tsv\n# └── wu_tang.tsv\n# \n# 1 directory, 6 files\n\n\ncp data/*.psv data/psv/\n\n\ntree data/psv/\n# data/psv/\n# ├── who_tb_data.psv\n# └── wu_tang.psv\n# \n# 1 directory, 2 files\n\nLet’s create a .psv and .csv version of the who_tb_data.tsv file:\n\ntouch data/csv/who_tb_data.csv\necho \"country,year,type,count\nAfghanistan,1999,cases,745\nAfghanistan,1999,population,19987071\nAfghanistan,2000,cases,2666\nAfghanistan,2000,population,20595360\nBrazil,1999,cases,37737\nBrazil,1999,population,172006362\nBrazil,2000,cases,80488\nBrazil,2000,population,174504898\nChina,1999,cases,212258\nChina,1999,population,1272915272\nChina,2000,cases,213766\nChina,2000,population,1280428583\" &gt; data/csv/who_tb_data.csv\n\ntouch data/who_tb_data.psv\necho \"| country     | year | type       | count      |\n|-------------|------|------------|------------|\n| Afghanistan | 1999 | cases      | 745        |\n| Afghanistan | 1999 | population | 19987071   |\n| Afghanistan | 2000 | cases      | 2666       |\n| Afghanistan | 2000 | population | 20595360   |\n| Brazil      | 1999 | cases      | 37737      |\n| Brazil      | 1999 | population | 172006362  |\n| Brazil      | 2000 | cases      | 80488      |\n| Brazil      | 2000 | population | 174504898  |\n| China       | 1999 | cases      | 212258     |\n| China       | 1999 | population | 1272915272 |\n| China       | 2000 | cases      | 213766     |\n| China       | 2000 | population | 1280428583 |\" &gt; data/who_tb_data.psv\n\nOops–we created the who_tb_data.psv file in the data folder!4\n\ntree data -L 2 -P '*who_tb_data.psv|*who_tb_data.csv'\n# data\n# ├── csv\n# │   └── who_tb_data.csv\n# ├── psv\n# ├── tsv\n# └── who_tb_data.psv\n# \n# 4 directories, 2 files\n\n\n\nmv\nWe’ll use mv to move the who_tb_data.psv and data/who_tb_data.psv files into data/psv/ and confirm with tree:5\n\nmv data/who_tb_data.psv data/psv/who_tb_data.psv\n\n\ntree data/psv\n# data/psv\n# ├── who_tb_data.psv\n# └── wu_tang.psv\n# \n# 1 directory, 2 files\n\n\n\nln\nln is used to create links between files. It can create two types of links: hard links and symbolic (or soft) links.\nA hard link is an additional name for an existing file on the same file system, and is effectively an additional directory entry for the file.\nA symbolic link (often called a symlink) is a file that points to another file or directory, and it contains a path to another entry somewhere in the file system.\n\n\n\n\n\n\nTip: ln\n\n\n\n\n\n\nWith the ln command, you need to specify the target file first (the original file) and then the name of the new link:\nln original_file.txt new_link.txt\n\n\n\n\nWe’ll use ln to create data/who_tb_data.psv, a hard link for the data file in data/psv/who_tb_data.psv:\n\nln data/psv/who_tb_data.psv data/who_tb_data.psv\n\nIf we check the data folder with tree, we see the new who_tb_data.psv file looks identical to the other files:\n\ntree data -P *.psv\n# data\n# ├── csv\n# ├── psv\n# │   ├── who_tb_data.psv\n# │   └── wu_tang.psv\n# ├── tsv\n# ├── who_tb_data.psv\n# └── wu_tang.psv\n# \n# 4 directories, 4 files\n\nNow we’ll use ln -s to create data/who_tb_data.csv, a symlink for the data file in data/csv/who_tb_data.csv.\n\nln -s data/csv/who_tb_data.csv data/who_tb_data.csv\n\nWhen we look at the folder with tree now, we see the symlink is listed with a special pointer (-&gt;) to the original file:\n\ntree data -P *.csv\n# data\n# ├── csv\n# │   ├── pwrds.csv\n# │   ├── who_tb_data.csv\n# │   └── wu_tang.csv\n# ├── psv\n# ├── pwrds.csv\n# ├── tsv\n# ├── who_tb_data.csv -&gt; data/csv/who_tb_data.csv\n# └── wu_tang.csv\n# \n# 4 directories, 6 files\n\nWe can check with diff, which compares the contents of two files.\n\n\ndiff\nWe’ll start by comparing the pipe-separated values file (data/wu_tang.psv) to the comma-separated separated values file (data/wu_tang.csv)\n\ndiff data/wu_tang.psv data/wu_tang.csv\n\n\n\n\n\n\n\n# 1,11c1,11\n\n\nThe first line of the output indicates that lines 1 through 11 in the first file (data/wu_tang.psv) have been changed compared to lines 1 through 11 in the second file (data/wu_tang.csv).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLines starting with &lt; indicate the content from the first file (data/wu_tang.psv). These entries are separated by pipes or spaces (as commonly used in PSV files).\n\n\n&lt; |Member           |Name                 |\n&lt; |RZA              |Robert Diggs         |\n&lt; |GZA              |Gary Grice           |\n&lt; |Method Man       |Clifford Smith       |\n&lt; |Raekwon the Chef |Corey Woods          |\n&lt; |Ghostface Killah |Dennis Coles         |\n&lt; |Inspectah Deck   |Jason Hunter         |\n&lt; |U-God            |Lamont Hawkins       |\n&lt; |Masta Killa      |Jamel Irief          |\n&lt; |Cappadonna       |Darryl Hill          |\n&lt; |Ol Dirty Bastard |Russell Tyrone Jones |\n\n\n\n\n\n\n\n\n\n&gt; Member,Name\n&gt; RZA,Robert Diggs\n&gt; GZA,Gary Grice\n&gt; Method Man,Clifford Smith\n&gt; Raekwon the Chef,Corey Woods\n&gt; Ghostface Killah,Dennis Coles\n&gt; Inspectah Deck,Jason Hunter\n&gt; U-God,Lamont Hawkins\n&gt; Masta Killa,Jamel Irief\n&gt; Cappadonna,Darryl Hill\n&gt; Ol Dirty Bastard,Russell Tyrone Jones\n\n\nLines starting with &gt; show the content from the second file (data/wu_tang.csv). These entries are separated by commas, as is typical for CSV files.\n\n\n\nThere is no difference in the actual data (Member or Name)–both files contain the same information, so the primary difference is purely in the formatting of the data: the PSV (pipe-separated Values) file uses vertical bars (|) and spaces to separate data fields, whereas the CSV (comma-separated values) file uses commas (,).6\nWhat happens when we run diff on the symlink and it’s original file?\n\ndiff data/csv/who_tb_data.csv data/who_tb_data.csv\n# diff: data/who_tb_data.csv: No such file or directory\n\nWe’re told data/who_tb_data.csv is not a file or directory, because strictly speaking, it isn’t.\nDeleting, moving, or renaming the original file does not affect the integrity of a hard link.\nIf the original file is deleted, moved, or renamed, the symbolic link breaks and typically becomes a ‘dangling’ link that points to a non-existent path.",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Files</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Files</span>"
     ]
   },
   {
-    "objectID": "files.html#count",
-    "href": "files.html#count",
+    "objectID": "files.html#file-information",
+    "href": "files.html#file-information",
     "title": "Files",
-    "section": "Count",
-    "text": "Count\nwc (word count) counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.\n\nfind data -name \"*.txt\" -mtime -1 | wc\n#        1       1      21",
+    "section": "File Information",
+    "text": "File Information\n\nfile\n\nfile data/who_tb_data.tsv\n# data/who_tb_data.tsv: ASCII text\n\nwc (word count) counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.\n\nfind data -name \"*.psv\" -mtime -1 | wc\n#        3       3      67\n\nstat displays detailed information about files.\n\n\n\ndu estimates file space usage.\nfile gives us a summary of what a file is or what it contains, like telling us what’s in data/who_tb_data.txt.",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Files</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Files</span>"
     ]
   },
   {
-    "objectID": "files.html#permissions-priviledges",
-    "href": "files.html#permissions-priviledges",
+    "objectID": "files.html#permissions-and-ownership",
+    "href": "files.html#permissions-and-ownership",
     "title": "Files",
-    "section": "Permissions & Priviledges",
-    "text": "Permissions & Priviledges\nchown & sudo\n\nchown\n\n\nsudo\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "section": "Permissions and Ownership",
+    "text": "Permissions and Ownership\nchmod changes file permissions, and chown changes file ownership.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Files</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Files</span>"
+    ]
+  },
+  {
+    "objectID": "files.html#footnotes",
+    "href": "files.html#footnotes",
+    "title": "Files",
+    "section": "",
+    "text": "data/who_tb_data.tsv comes from the WHO global tuberculosis programme.↩︎\ndata/vg_hof.tsv is the Video Game Hall of Fame data↩︎\nlocate sometimes requires the search database is generated/updated. Read more here↩︎\nThe -L 2 option tells tree to only look in the data folder (no subfolders) and -P '*who_tb_data.psv|*who_tb_data.csv' matches the who_tb_data.psv or the who_tb_data.csv file.↩︎\ncp and mv also work with directories.↩︎\nThis type of difference is significant if the format impacts how data is parsed or used. For example, a software program expecting data in CSV format might not correctly parse a PSV file, and vice versa.↩︎",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Files</span>"
     ]
   },
   {
@@ -546,7 +370,7 @@
     "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\nSystem Monitoring: top, htop, free, df, du",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>System</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>System</span>"
     ]
   },
   {
@@ -557,7 +381,7 @@
     "text": "Unix/Linux Variables\nDefinition and significance of variables in Unix/Linux.\nOverview of environment variables vs. shell variables.",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Variables</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables</span>"
     ]
   },
   {
@@ -568,7 +392,7 @@
     "text": "Types of Variables\nVariables come in two flavors–Shell and Environment.\n\nShell Variables\nLocal to the shell instance.\n\n\nEnvironment Variables\nAvailable system-wide and inherited by child processes.\nDifferences and use cases.",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Variables</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables</span>"
     ]
   },
   {
@@ -579,7 +403,7 @@
     "text": "Setting Variables\n\nSetting Shell Variables\nBasic syntax for setting variables (varname=value).\n\n\nSetting Environment Variables\nBasic syntax for exporting environment variables (export VARNAME=value).",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Variables</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables</span>"
     ]
   },
   {
@@ -590,7 +414,7 @@
     "text": "Using Variables\n\nUsing Shell Variables\nAccessing variable values (echo $varname).\nExamples of common shell variables.\n\n\nUsing Environment Variables\nHow to make environment variables persistent (.bashrc, .profile, etc.).\nExamples of critical environment variables (PATH, HOME, USER).",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Variables</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables</span>"
     ]
   },
   {
@@ -601,7 +425,7 @@
     "text": "Variables, Commands and Utilities\n\nprintenv: Displaying environment variables.\nset: Viewing shell and environment variables.\nunset: Deleting variables.\nexport: Marking variables to be exported to child processes.\nUsing env for running programs in a modified environment.\n\n\nVariables in Scripts\n\nHow to use variables to customize scripts.\nPassing variables to scripts via command line.\nReading and modifying variables within scripts.\nExample script demonstrating variable use.\n\n\n\nAdvanced Variable Features\n\nArrays and associative arrays in Bash.\nInteger operations and manipulating string variables.\nSpecial variables ($0, $1, $?, $$, $@).\n\n\n\nSecurity and Best Practices\n\nSecurity implications of improperly handling variables.\nBest practices for naming and using variables.\nAvoiding common pitfalls (e.g., overwriting critical environment variables).",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Variables</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables</span>"
     ]
   },
   {
@@ -612,7 +436,205 @@
     "text": "Recp\n\nRecap of key points covered in the chapter.\nAdditional resources for deeper exploration (books, online tutorials, communities).",
     "crumbs": [
       "Basics",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Variables</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables</span>"
+    ]
+  },
+  {
+    "objectID": "commands.html",
+    "href": "commands.html",
+    "title": "Commands",
+    "section": "",
+    "text": "REPL\nThe REPL in Bash exemplifies a powerful and flexible interface for interacting with the system, running commands, and developing scripts, providing both novice and experienced users with an efficient way to manage their computing environment.\nHere is how it works:",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Commands</span>"
+    ]
+  },
+  {
+    "objectID": "commands.html#repl",
+    "href": "commands.html#repl",
+    "title": "Commands",
+    "section": "",
+    "text": "1. Read\nIn the Bash, the “Read” step occurs when the shell waits for input from the user. This is typically represented by the shell prompt, where we can type commands.\nThe prompt might display useful information, such as the current user (username), hostname (hostname), and working directory (current_directory), depending on its configuration.\n\n  username@hostname:current_directory$\n\n\n\n\n2. Eval\nOnce a command is entered, Bash “evaluates” it. This step involves parsing the command and its arguments, checking for syntax correctness, and then executing it.\n\n  username@hostname:current_directory$ date\n\n\nCommands can be simple, such as listing the current date and time, or complex scripts involving loops, conditionals, and functions.\n\n\n3. Print\nAfter evaluating the command, Bash “prints” the output or the result of the command execution to the screen (stdout or standard output) or another specified location.\n\n  # Wed Apr 10 02:55:23 MST 2024\n\n\n\n\nLoop\nAfter executing a command and returning the output, Bash immediately returns to the “read” step, displaying the prompt and waiting for new user input.\n\nusername@hostname:current_directory$\nusername@hostname:current_directory$ date\n#&gt; Wed Apr 10 02:55:23 MST 2024\nusername@hostname:current_directory$\n\nThis cycle repeats indefinitely until the user exits the REPL environment, typically with an exit command or by pressing Ctrl + D.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Commands</span>"
+    ]
+  },
+  {
+    "objectID": "commands.html#basic-commands",
+    "href": "commands.html#basic-commands",
+    "title": "Commands",
+    "section": "Basic commands",
+    "text": "Basic commands\nIn Unix, several commands can operate without any options or arguments, performing their basic functions in their simplest form. Below are some of these commands:\n\nwho\nwho shows who is logged on the system.\n\nwho\n# username       console      Apr 14 13:45 \n# username       ttys000      Apr 14 13:45 \n# username       ttys001      Apr 14 13:45 \n# username       ttys003      Apr 16 05:56\n\nwho by itself, without options or arguments, lists the users currently logged into the system.\n\n\nwhoami\nwhoami shows the username of the user currently logged into the system.\n\nwhoami\n# username\n\n\n\nhostname\nhostname displays the system’s network name.\n\nhostname\n# Users-MacBook-Pro-2.local\n\n\n\ncal\ncal displays a calender of the current month.\n\ncal\n#      April 2024       \n# Su Mo Tu We Th Fr Sa  \n#     1  2  3  4  5  6  \n#  7  8  9 10 11 12 13  \n# 14 15 16 17 18 19 20  \n# 21 22 23 24 25 26 27  \n# 28 29 30              \n# \n\n\n\nuptime\nuptime shows how long the system has been running.\n\nuptime\n# 11:39  up 15:05, 4 users, load averages: 3.85 3.08 2.93\n\n\n\nclear\nclear clears the terminal screen and doesn’t print any return values.\n\nclear\n\nclear does its job without the need for additional input.\n\n\nexit\nexit exits the shell or your current session.\n\nexit\n\nexit requires no arguments or options to execute this action, and doesn’t print any return values.\n\n\nyes\nyes repeatedly outputs a string until killed. Without arguments, it defaults to outputting ‘y’.\n\nyes\n\nNOTE: Use Ctrl + C to interrupt the yes command.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Commands</span>"
+    ]
+  },
+  {
+    "objectID": "commands.html#recap",
+    "href": "commands.html#recap",
+    "title": "Commands",
+    "section": "Recap",
+    "text": "Recap\nEach of these commands performs a specific and often utilized function within the Unix environment, embodying the Unix philosophy of doing one thing well.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Commands</span>"
+    ]
+  },
+  {
+    "objectID": "arguments.html",
+    "href": "arguments.html",
+    "title": "Arguments",
+    "section": "",
+    "text": "Anatomy\nA Unix command can be broken down into the command name, followed by its options (which we’ll address in the next chapter), and then its arguments:\ncommand argument1 argument2 ... argument",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Arguments</span>"
+    ]
+  },
+  {
+    "objectID": "arguments.html#argument-types",
+    "href": "arguments.html#argument-types",
+    "title": "Arguments",
+    "section": "Argument Types",
+    "text": "Argument Types\nBelow are a variety of command arguments types. This is not an exhaustive list, but includes many of the commands and arguments you’ll encounter on a regular basis.\n\nDirect arguments\nDirect arguments are the most straightforward type of arguments. They are typically the names of files or directories on which commands operate.\nExample\nIn the command cat my_file.txt, my_file.txt is a direct argument to the cat command, telling it which file to display on the standard output.\n\ncat my_file.txt\n# This is my file\n\n\n\nIndirect arguments\nIndirect arguments are arguments that might specify additional information that commands need to complete their tasks.\nExample\nThe file search pattern for the grep command is an example of an indirect command, and myfile.txt is the direct argument.\n\ngrep file my_file.txt\n# This is my file\n\nMost commonly, arguments are the names of files and directory names on which the command will operate.\nExample\nmy_file.txt and tmp/tmp_file.txt are arguments representing the source and destination locations to move with mv, respectively.\n\nmv my_file.txt tmp/tmp_file.txt\n\nCommands related to user management might take user and group names names as arguments.\nExample\nchown changes the ownership of file to user and group.\n\nchown user:group myfile.txt\n\n\n\nCommand Targets\nSome commands take other commands as arguments.\nExample\nFor example, sudo command runs command with superuser privileges.\n\nsudo vi path/to/file.config\n\n\n\nData Values\nCommands might take data values as arguments for processing.\nExample\nIn echo Hello, World!, Hello, World! is the argument value that echo prints to the terminal.\n\necho Hello, World!\n# Hello, World!\n\n\n\nOrder and Position\nFor many commands, the order of the arguments is significant.\nExample\ntmp/tmp_file.txt is the first argument (indicating the file to copy from), and new_file.txt is the second argument (indicating where to copy the file to).\n\ncp tmp/tmp_file.txt new_file.txt\n\nReversing these arguments would result in a completely different operation.\nArguments that contain spaces must be quoted or escaped, so the shell understands them as a single argument rather than multiple arguments.\nExample\nTo copy the contents of the new new_file.txt to 'my new file.txt', you would use:\n\ncp new_file.txt 'my new file.txt'\n\n\n\nCommand Substitution\nThe output of a command can be used as an argument for another command using backticks (` `) or $( ).\nExample\necho $(grep file 'my file 2.txt') uses the output of the grep command as an argument for echo:\n\necho $(grep file 'my new file.txt')\n# This is my file\n\n\n\nVariables as Arguments\nEnvironment variables can be used as arguments in commands.\nExample\necho $HOME prints the path to the user’s home directory, where $HOME is an argument that the echo command interprets:\n\necho $HOME\n# /Users/username",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Arguments</span>"
+    ]
+  },
+  {
+    "objectID": "arguments.html#recap",
+    "href": "arguments.html#recap",
+    "title": "Arguments",
+    "section": "Recap",
+    "text": "Recap\nUnderstanding the nuances of Unix arguments is crucial for crafting precise and effective commands, allowing users to leverage the full power of the Unix command line for a wide array of tasks.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Arguments</span>"
+    ]
+  },
+  {
+    "objectID": "options.html",
+    "href": "options.html",
+    "title": "Options",
+    "section": "",
+    "text": "Option types\nArguments can be short or long:",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Options</span>"
+    ]
+  },
+  {
+    "objectID": "options.html#option-types",
+    "href": "options.html#option-types",
+    "title": "Options",
+    "section": "",
+    "text": "Short options are typically a single dash followed by a single letter (e.g., -l) and they modify the command behavior in a specific, often concise way.\n\n\nLong options usually use two dashes followed by a word or compound words (e.g., --long-listing) and provide a more descriptive way to specify options, making scripts and commands more readable.\n\n\n\n\nShort options\nExample\nls -l data lists files in data in a long format, showing detailed information like permissions, owner, size, and modification date:\n\nls -l data\n# total 224\n# -rw-r--r--@ 1 mjfrigaard  staff   9067 Apr 26 22:13 README.md\n# -rw-r--r--  1 mjfrigaard  staff  12531 Apr 13 20:39 ajperlis_epigrams.txt\n# -rw-r--r--@ 1 mjfrigaard  staff   6122 Apr 10 14:04 music_vids.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.csv\n# -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff   1315 Apr  6 05:38 roxanne.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    113 Apr 18 09:27 roxanne_orig.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    117 Apr 18 09:27 roxanne_rev.txt\n# -rw-r--r--@ 1 mjfrigaard  staff   4417 Apr 10 14:01 trees.tsv\n# -rw-r--r--  1 mjfrigaard  staff   4814 Apr 10 14:07 vg_hof.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff    381 Mar 28  2023 who_tb_data.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff    381 May  1 10:17 who_tb_data.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:34 wu_tang.csv\n# -rw-r--r--@ 1 mjfrigaard  staff    462 Apr 15 14:07 wu_tang.dat\n# -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:39 wu_tang.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff    281 Apr 10 09:38 wu_tang.txt\n\n\n\nLong options\nExample 1\ntree data --sort size lists files in order according to size:\n\ntree data --sort size\n# ├── ajperlis_epigrams.txt\n# ├── pwrds.csv\n# ├── pwrds.tsv\n# ├── README.md\n# ├── music_vids.tsv\n# ├── vg_hof.tsv\n# ├── trees.tsv\n# ├── roxanne.txt\n# ├── wu_tang.dat\n# ├── who_tb_data.tsv\n# ├── who_tb_data.txt\n# ├── wu_tang.txt\n# ├── wu_tang.csv\n# ├── wu_tang.tsv\n# ├── roxanne_rev.txt\n# └── roxanne_orig.txt\n# \n# 1 directory, 16 files\n\nExample 2\ngrep --help displays usage information for the grep command, helping users understand available options and syntax.\n\ngrep --help\n#&gt; usage: grep [-abcdDEFGHhIiJLlMmnOopqRSsUVvwXxZz] [-A num] [-B num] [-C[num]]\n#&gt;  [-e pattern] [-f file] [--binary-files=value] [--color=when]\n#&gt;  [--context[=num]] [--directories=action] [--label] [--line-buffered]\n#&gt;  [--null] [pattern] [file ...]\n\nExample 3\nThe --version option is commonly used to get version information for various commands.\n\ngrep --version  \n# grep (BSD grep, GNU compatible) 2.6.0-FreeBSD\n\nNote that not all commands support the long-form option syntax.\n\n\nModifying behavior\nSome options modify the commands behavior.\nExample\ncp-n source.txt dest.txt does not overwrite the destination file if it already exists.\n\ncat myfile.txt\n# This is my file\n\n\ncp -n myfile.txt myfile2.txt\n\nThe -n option modifies the default behavior of the cp command.\n\ncat myfile2.txt\n# This is my 2nd file\n\n\n\nModifying output\nOther options modify a commands output.\nExample 1\nls -a lists all files, including hidden ones (those starting with a dot). This option alters the command’s output by showing files that are not listed by default.\n\nls -a data\n# .\n# ..\n# README.md\n# ajperlis_epigrams.txt\n# music_vids.tsv\n# pwrds.csv\n# pwrds.tsv\n# roxanne.txt\n# roxanne_orig.txt\n# roxanne_rev.txt\n# trees.tsv\n# vg_hof.tsv\n# who_tb_data.tsv\n# who_tb_data.txt\n# wu_tang.csv\n# wu_tang.dat\n# wu_tang.tsv\n# wu_tang.txt\n\nExample 2\ndf -h shows disk space usage in human-readable form (e.g., KB, MB, GB), modifying the default output to be more easily understood.\n\ndf -h\n# Filesystem                          Size    Used   Avail Capacity iused ifree %iused  Mounted on\n# /dev/disk1s1s1                     466Gi   9.5Gi    40Gi    20%    404k  422M    0%   /\n# devfs                              201Ki   201Ki     0Bi   100%     696     0  100%   /dev\n# /dev/disk1s3                       466Gi   2.4Gi    40Gi     6%    5.1k  422M    0%   /System/Volumes/Preboot\n# /dev/disk1s5                       466Gi   1.0Gi    40Gi     3%       1  422M    0%   /System/Volumes/VM\n# /dev/disk1s6                       466Gi    19Mi    40Gi     1%      19  422M    0%   /System/Volumes/Update\n# /dev/disk1s2                       466Gi   411Gi    40Gi    92%    6.3M  422M    1%   /System/Volumes/Data\n# map auto_home                        0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home\n\n\n\nEnvironment-specific options\nThe -u option in sort removes duplicate lines. -us behavior (considering case sensitivity) might vary depending on the locale and environment settings.\nExample\nsort -u data/roxanne.txt sorts the lines in data/roxanne.txt, removing duplicate lines.1\n\nsort -u data/roxanne.txt\n# I have to tell you just how I feel\n# I know my mind is made up\n# I loved you since I knew you\n# I won't share you with another boy\n# I wouldn't talk down to you\n# It's a bad way\n# Ro...\n# Roxanne\n# Roxanne (Put on the red light)\n# Roxanne (You don't have to put on the red light)\n# So put away your make up\n# Those days are over\n# Told you once I won't tell you again\n# Walk the streets for money\n# You don't care if it's wrong or if it's right\n# You don't have to put on the red light\n# You don't have to sell your body to the night\n# You don't have to wear that dress tonight",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Options</span>"
+    ]
+  },
+  {
+    "objectID": "options.html#combining-options",
+    "href": "options.html#combining-options",
+    "title": "Options",
+    "section": "Combining Options",
+    "text": "Combining Options\nMultiple short options can be combined after a single dash, without spaces (e.g., -lrt) allowing users to use multiple options at once, and reducing the need to type multiple dashes.\n\nMultiple short options\nOptions can be combined with arguments when they are followed by a space and then the argument (e.g., -o filename).\nExample\nls -lrt combines three options: -l (long listing format), -r (reverse order), and -t (sort by modification time), providing a detailed, reverse-chronological list of files.\n\nls -lrt data\n# total 224\n# -rw-r--r--@ 1 mjfrigaard  staff    381 Mar 28  2023 who_tb_data.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff   1315 Apr  6 05:38 roxanne.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:34 wu_tang.csv\n# -rw-r--r--@ 1 mjfrigaard  staff    281 Apr 10 09:38 wu_tang.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:39 wu_tang.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff   4417 Apr 10 14:01 trees.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff   6122 Apr 10 14:04 music_vids.tsv\n# -rw-r--r--  1 mjfrigaard  staff   4814 Apr 10 14:07 vg_hof.tsv\n# -rw-r--r--  1 mjfrigaard  staff  12531 Apr 13 20:39 ajperlis_epigrams.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    462 Apr 15 14:07 wu_tang.dat\n# -rw-r--r--@ 1 mjfrigaard  staff    113 Apr 18 09:27 roxanne_orig.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    117 Apr 18 09:27 roxanne_rev.txt\n# -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.csv\n# -rw-r--r--@ 1 mjfrigaard  staff   9067 Apr 26 22:13 README.md\n# -rw-r--r--@ 1 mjfrigaard  staff    381 May  1 10:17 who_tb_data.txt\n\n\n\nOptions with values\nSome options require or accept an argument to specify a value related to the option’s action.\nExample\ngrep-i \"FILE\" myfile.txt uses -i to ignore case when searching for \"FILE\" in myfile.txt:\n\ngrep -i \"FILE\" myfile.txt\n# This is my file\n\nThe \"FILE\" here is an argument for the -i option.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Options</span>"
+    ]
+  },
+  {
+    "objectID": "options.html#recap",
+    "href": "options.html#recap",
+    "title": "Options",
+    "section": "Recap",
+    "text": "Recap\nOptions greatly enhance the power and versatility of Unix commands, allowing users to tailor operations to their specific needs and preferences.\nNot all Unix-like systems or shells may support the same options for a given command, and behavior can vary between implementations. It’s important to refer to a command’s manual page (using man command or command --help) for the most accurate and comprehensive list of options and their effects.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.\n\n\n\n\n\nrm myfile.txt\nrm myfile2.txt",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Options</span>"
+    ]
+  },
+  {
+    "objectID": "options.html#footnotes",
+    "href": "options.html#footnotes",
+    "title": "Options",
+    "section": "",
+    "text": "data/roxanne.txt contains the lyrics to the 1978 song Roxanne by The Police.↩︎",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Options</span>"
+    ]
+  },
+  {
+    "objectID": "pipes.html",
+    "href": "pipes.html",
+    "title": "Pipes",
+    "section": "",
+    "text": "Fundamental Concept\nThe pipe is placed between two commands and directs the standard output (stdout) of the command to the left of the pipe to the standard input (stdin) of the command to the right.\nExample\necho \"Hello, World!\" | wc -w sends the output of the echo command to wc, which then counts the words.\necho \"Hello, World!\" | wc -w\n#        2\nThe output is 2, indicating there are two words in “Hello, World!”.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Pipes</span>"
+    ]
+  },
+  {
+    "objectID": "pipes.html#fundamental-concept",
+    "href": "pipes.html#fundamental-concept",
+    "title": "Pipes",
+    "section": "",
+    "text": "Standard Input and Output\n\n\n\n\n\n\n\n\nstdin (standard input) is a text stream from which a command reads its input. By default, it’s the keyboard, but it can be redirected to read from a file or another command’s output.\nstdout (standard output) is a text stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command’s input.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Pipes</span>"
+    ]
+  },
+  {
+    "objectID": "pipes.html#combining-pipes",
+    "href": "pipes.html#combining-pipes",
+    "title": "Pipes",
+    "section": "Combining Pipes",
+    "text": "Combining Pipes\nCommands can be chained together using multiple pipes, allowing for the creation of command pipelines where data is processed in stages.\nExample\npsaux |grep httpd lists all processes, filters those containing “httpd” (HTTPD = web server processes running):\n\nps aux | grep httpd\n# mjfrigaard        3323   0.0  0.0 33606232    648   ??  S     9:15AM   0:00.00 grep httpd\n# mjfrigaard        3321   0.0  0.0 33597548    904   ??  S     9:15AM   0:00.00 bash -c ps aux | grep httpd\n# mjfrigaard        3320   0.0  0.0 33597548    924   ??  S     9:15AM   0:00.01 sh -c 'bash'  -c 'ps aux | grep httpd' 2&gt;&1\n\nExample\nwc-l counts the number of lines:\n\nps aux | grep httpd | wc -l\n#        3\n\n\nFiltering and Processing\nExample 1\ncatdata/roxanne.txt |grep\"night\" displays lines from data/roxanne.txt that contain the number \"2\".\n\ncat data/roxanne.txt | grep \"night\"\n# You don't have to sell your body to the night\n# You don't have to wear that dress tonight\n\nHere, cat outputs the file’s contents, which grep filters.\nExample 2\nls-l data |sort-r lists the files in data in a detailed format, then sorts them in reverse order.\n\nls -l data | sort -r\n# total 224\n# -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.csv\n# -rw-r--r--@ 1 mjfrigaard  staff   9067 Apr 26 22:13 README.md\n# -rw-r--r--@ 1 mjfrigaard  staff   6122 Apr 10 14:04 music_vids.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff   4417 Apr 10 14:01 trees.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff   1315 Apr  6 05:38 roxanne.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    462 Apr 15 14:07 wu_tang.dat\n# -rw-r--r--@ 1 mjfrigaard  staff    381 May  1 10:17 who_tb_data.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    381 Mar 28  2023 who_tb_data.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff    281 Apr 10 09:38 wu_tang.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:39 wu_tang.tsv\n# -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:34 wu_tang.csv\n# -rw-r--r--@ 1 mjfrigaard  staff    117 Apr 18 09:27 roxanne_rev.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    113 Apr 18 09:27 roxanne_orig.txt\n# -rw-r--r--  1 mjfrigaard  staff  12531 Apr 13 20:39 ajperlis_epigrams.txt\n# -rw-r--r--  1 mjfrigaard  staff   4814 Apr 10 14:07 vg_hof.tsv\n\nIt showcases how to reverse the listing of directory contents.\n\n\nTransformation and Reduction\nExample\nfind. -type f |xargsdu -sh |sort-h finds files (-type f) in the current directory and subdirectories, calculates their sizes (du -sh), and sorts them by size (sort -h):\n\nfind data -type f | xargs du -sh | sort -h\n# 4.0K  data/roxanne.txt\n# 4.0K  data/roxanne_orig.txt\n# 4.0K  data/roxanne_rev.txt\n# 4.0K  data/who_tb_data.tsv\n# 4.0K  data/who_tb_data.txt\n# 4.0K  data/wu_tang.csv\n# 4.0K  data/wu_tang.dat\n# 4.0K  data/wu_tang.tsv\n# 4.0K  data/wu_tang.txt\n# 8.0K  data/music_vids.tsv\n# 8.0K  data/trees.tsv\n# 8.0K  data/vg_hof.tsv\n#  12K  data/README.md\n#  12K  data/pwrds.csv\n#  12K  data/pwrds.tsv\n#  16K  data/ajperlis_epigrams.txt\n\nThis pipeline not only identifies files but also sorts them by their disk usage, illustrating a complex operation made simple through pipes.\n\n\nReal-time Streaming and Monitoring\nExample\ncat /var/log/system.log | grep DEAD_PROCESS prints the system.log file, continuously monitoring for new entries, filters for those containing DEAD_PROCESS, then counts the number of lines:1\n\ncat /var/log/system.log | grep \"DEAD_PROCESS\" \n## Apr 10 06:35:23 Users-MacBook-Pro login[3596]: DEAD_PROCESS: 3596 ttys000\n## Apr 10 06:35:25 Users-MacBook-Pro sessionlogoutd[19895]: DEAD_PROCESS: 225 console\n## Apr 10 10:20:25 Users-MacBook-Pro login[715]: DEAD_PROCESS: 715 ttys000\n\n\n\nData Manipulation\nExample\ncut -d':' -f1 data/roxanne.txt | sort | uniq extracts the first field from each line in data/roxanne.txt, sorts the contents alphabetically, and removes duplicates.\n\ncut -d':' -f1 data/roxanne.txt | sort | uniq\n# I have to tell you just how I feel\n# I know my mind is made up\n# I loved you since I knew you\n# I won't share you with another boy\n# I wouldn't talk down to you\n# It's a bad way\n# Ro...\n# Roxanne\n# Roxanne (Put on the red light)\n# Roxanne (You don't have to put on the red light)\n# So put away your make up\n# Those days are over\n# Told you once I won't tell you again\n# Walk the streets for money\n# You don't care if it's wrong or if it's right\n# You don't have to put on the red light\n# You don't have to sell your body to the night\n# You don't have to wear that dress tonight\n\nThis sequence is an example of performing data extraction and deduplication.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Pipes</span>"
+    ]
+  },
+  {
+    "objectID": "pipes.html#pipes-with-loops",
+    "href": "pipes.html#pipes-with-loops",
+    "title": "Pipes",
+    "section": "Pipes with Loops",
+    "text": "Pipes with Loops\nThe example below demonstrates how to use the while loop with pipes with find, echo, grep, and wc.\n\nFilter with find\nfind data -name \"*.tsv\" starts in the data directory, looking for all files that end with the .tsv extension. The search is recursive, meaning it includes all subdirectories of data as well. Produces a list of paths to .tsv files, each path on a new line. This list is piped to the next command.\n\nfind data -name \"*.tsv\" \n# data/pwrds.tsv\n# data/music_vids.tsv\n# data/vg_hof.tsv\n# data/who_tb_data.tsv\n# data/trees.tsv\n# data/wu_tang.tsv\n\n\n\nIterate with while and do\n| while read fname; do: The pipe (|) feeds the output from the find command into a while loop, which reads each line (file name) into the variable fname, one at a time. For each iteration of the loop (i.e., for each file name read into fname), the commands within the do ... done block are executed.\n\nfind data -name \"*.tsv\" | while read fname; do\n  # do this!\ndone\n\n\n\nPrint with echo\necho -n \"$fname: \": Prints the current file’s name being processed. echo-n outputs the value of fname (the path to the current .tsv file) followed by a colon and a space, without adding a newline at the end. This means the count returned by wc will be printed on the same line, right after the file name.\n\nfind data -name \"*.tsv\" | while read fname; do\n  echo -n \"$fname: \"\ndone\n# data/pwrds.tsv: data/music_vids.tsv: data/vg_hof.tsv: data/who_tb_data.tsv: data/trees.tsv: data/wu_tang.tsv:\n\n\n\nSearch with grep\ngrep \"RZA\" \"$fname\": Searches for a specific pattern within the file. grep looks through the contents of the file (whose path is in fname) for lines containing the string “RZA”. Only the lines that match this pattern are printed to stdout, which is then piped to wc.\n\nfind data -name \"*.tsv\" | while read fname; do\n  echo -n \"$fname: \"\n  grep \"RZA\" \"$fname\"\ndone\n# data/pwrds.tsv: data/music_vids.tsv: data/vg_hof.tsv: data/who_tb_data.tsv: data/trees.tsv: data/wu_tang.tsv: RZA Robert Diggs\n\n\n\nCount with wc\nwc: For each file processed by the loop, wc outputs three numbers: the line count, word count, and character/byte count of the lines that grep found to contain “RZA”. Since no specific option is given to wc, it defaults to displaying all three counts.\n\nfind data -name \"*.tsv\" | while read fname; do\n  echo -n \"$fname: \"\n  grep \"RZA\" \"$fname\" | wc \ndone\n# data/pwrds.tsv:        0       0       0\n# data/music_vids.tsv:        0       0       0\n# data/vg_hof.tsv:        0       0       0\n# data/who_tb_data.tsv:        0       0       0\n# data/trees.tsv:        0       0       0\n# data/wu_tang.tsv:        1       3      17\n\nThis Bash command sequence combines find, a while loop, echo, grep, and wc to search through .tsv (Tab-Separated Values) files for lines containing a specific pattern (“RZA”) and reports the count of lines, words, and characters for each occurrence. Combining pipelines with loops is an efficient way to sift through a potentially large set of files within a directory, facilitating a detailed aggregation of specified conditions across multiple files.\n\n\n\n\n\n\nConsiderations when using pipes\n\n\n\n\n\n\nEfficiency and Performance\nWhile pipes are incredibly powerful, their use can impact performance, especially when processing large amounts of data. Each pipe involves creating a new subprocess, and data is copied between processes, which can lead to overhead.\nError Handling\nError handling in pipes can be non-trivial, as each command in a pipeline executes independently. Users need to consider how each command handles errors and ensure that the pipeline as a whole behaves as expected even when errors occur.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Pipes</span>"
+    ]
+  },
+  {
+    "objectID": "pipes.html#recap",
+    "href": "pipes.html#recap",
+    "title": "Pipes",
+    "section": "Recap",
+    "text": "Recap\nPipes (|) allow the output of one command (stdout) to be used as the input (stdin) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next. Unix pipes embody the concept of composability in Unix, enabling users to build complex workflows out of simple, single-purpose programs. They are a testament to the flexibility and power of the Unix command line, facilitating a wide range of tasks from simple text processing to sophisticated data analysis and system monitoring.\nThis framework of commands, arguments, options, and the interplay of input (stdin), output (stdout) , and pipes enables sophisticated data processing and manipulation directly from the terminal.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Pipes</span>"
+    ]
+  },
+  {
+    "objectID": "pipes.html#footnotes",
+    "href": "pipes.html#footnotes",
+    "title": "Pipes",
+    "section": "",
+    "text": "tail -f /var/log/syslog | grep sshd is useful for real-time monitoring of SSH daemon logs.↩︎",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Pipes</span>"
     ]
   },
   {
@@ -862,7 +884,7 @@
     "href": "syntax_ref.html#files-directories",
     "title": "Appendix A — Syntax Reference",
     "section": "Files & Directories",
-    "text": "Files & Directories\n\ncd\nChange directory.\n\ncd /bin # change location\n\n\n\nls\nList directory contents.\n\ncd /bin # change location\nls # what's in here?\n# [\n# bash\n# cat\n# chmod\n# cp\n# csh\n# dash\n# date\n# dd\n# df\n# echo\n# ed\n# expr\n# hostname\n# kill\n# ksh\n# launchctl\n# link\n# ln\n# ls\n# mkdir\n# mv\n# pax\n# ps\n# pwd\n# realpath\n# rm\n# rmdir\n# sh\n# sleep\n# stty\n# sync\n# tcsh\n# test\n# unlink\n# wait4path\n# zsh\n\n\n\npwd\nPrint working directory.\n\ncd /bin # change location\npwd # where am I?\n# /bin\n\n\n\nmkdir\nCreate a directory.\nmkdir out\nmkdir doc\n\n\ntree\nDisplay the directory structure of a path in a tree-like format, showing all the files and subdirectories under it.\n\ntree data\n# data\n# ├── README.md\n# ├── ajperlis_epigrams.txt\n# ├── music_vids.tsv\n# ├── pwrds.csv\n# ├── pwrds.tsv\n# ├── roxanne.txt\n# ├── roxanne_orig.txt\n# ├── roxanne_rev.txt\n# ├── trees.tsv\n# ├── vg_hof.tsv\n# ├── who_tb_data.tsv\n# ├── who_tb_data.txt\n# ├── wu_tang.csv\n# ├── wu_tang.dat\n# ├── wu_tang.tsv\n# └── wu_tang.txt\n# \n# 1 directory, 16 files\n\n\n\ncp\nCopy files or directories.\n\ncp myfile.txt data/myfile.txt\n# confirm copy\nls data\n# cp: myfile.txt: No such file or directory\n# README.md\n# ajperlis_epigrams.txt\n# music_vids.tsv\n# pwrds.csv\n# pwrds.tsv\n# roxanne.txt\n# roxanne_orig.txt\n# roxanne_rev.txt\n# trees.tsv\n# vg_hof.tsv\n# who_tb_data.tsv\n# who_tb_data.txt\n# wu_tang.csv\n# wu_tang.dat\n# wu_tang.tsv\n# wu_tang.txt\n\n\n\nmv\nMove or rename files or directories.\n\n# create folder\nmkdir doc\n# move file\nmv data/myfile.txt doc/myfile.txt \n# confirm move\nls doc\n# mv: rename data/myfile.txt to doc/myfile.txt: No such file or directory\n\n\n\nrm\nRemove files or directories.\n\n# remove doc folder\nrm doc\n# rm: doc: is a directory\n\nBy default, rm won’t remove a directory without the -R or -r option.\n\n\n# add option \nrm -R doc\n\n\n\nln\nCreate links between files.\nln -s /path/to/original /path/to/link\n\n\ntouch\nCreate a new file or update the timestamp of existing files.\n\ntouch newfile.txt\n\n\n\nfind\nSearch for files in a directory hierarchy.\n\n\nlocate\nFind files by name quickly using a database.\n\nlocate bin\n\n\n\nfile\nDetermine file type.\n\nfile /usr/bin\n\n\n\nstat\nDisplay file or file system status.",
+    "text": "Files & Directories\n\ncd\nChange directory.\n\ncd /bin # change location\n\n\n\nls\nList directory contents.\n\ncd /bin # change location\nls # what's in here?\n# [\n# bash\n# cat\n# chmod\n# cp\n# csh\n# dash\n# date\n# dd\n# df\n# echo\n# ed\n# expr\n# hostname\n# kill\n# ksh\n# launchctl\n# link\n# ln\n# ls\n# mkdir\n# mv\n# pax\n# ps\n# pwd\n# realpath\n# rm\n# rmdir\n# sh\n# sleep\n# stty\n# sync\n# tcsh\n# test\n# unlink\n# wait4path\n# zsh\n\n\n\npwd\nPrint working directory.\n\ncd /bin # change location\npwd # where am I?\n# /bin\n\n\n\nmkdir\nCreate a directory.\nmkdir out\nmkdir doc\n\n\ntree\nDisplay the directory structure of a path in a tree-like format, showing all the files and subdirectories under it.\n\ntree data\n# data\n# ├── README.md\n# ├── ajperlis_epigrams.txt\n# ├── music_vids.tsv\n# ├── pwrds.csv\n# ├── pwrds.tsv\n# ├── roxanne.txt\n# ├── roxanne_orig.txt\n# ├── roxanne_rev.txt\n# ├── trees.tsv\n# ├── vg_hof.tsv\n# ├── who_tb_data.tsv\n# ├── who_tb_data.txt\n# ├── wu_tang.csv\n# ├── wu_tang.dat\n# ├── wu_tang.tsv\n# └── wu_tang.txt\n# \n# 1 directory, 16 files\n\n\n\ncp\nCopy files or directories.\n\ncp myfile.txt data/myfile.txt\n# confirm copy\nls data\n# cp: myfile.txt: No such file or directory\n# README.md\n# ajperlis_epigrams.txt\n# music_vids.tsv\n# pwrds.csv\n# pwrds.tsv\n# roxanne.txt\n# roxanne_orig.txt\n# roxanne_rev.txt\n# trees.tsv\n# vg_hof.tsv\n# who_tb_data.csv\n# who_tb_data.dat\n# who_tb_data.tsv\n# who_tb_data.txt\n# wu_tang.csv\n# wu_tang.dat\n# wu_tang.tsv\n# wu_tang.txt\n\n\n\nmv\nMove or rename files or directories.\n\n# create folder\nmkdir doc\n# move file\nmv data/myfile.txt doc/myfile.txt \n# confirm move\nls doc\n# mv: rename data/myfile.txt to doc/myfile.txt: No such file or directory\n\n\n\nrm\nRemove files or directories.\n\n# remove doc folder\nrm doc\n# rm: doc: is a directory\n\nBy default, rm won’t remove a directory without the -R or -r option.\n\n\n# add option \nrm -R doc\n\n\n\nln\nCreate links between files.\nln -s /path/to/original /path/to/link\n\n\ntouch\nCreate a new file or update the timestamp of existing files.\n\ntouch newfile.txt\n\n\n\nfind\nSearch for files in a directory hierarchy.\n\n\nlocate\nFind files by name quickly using a database.\n\nlocate bin\n\n\n\nfile\nDetermine file type.\n\nfile /usr/bin\n\n\n\nstat\nDisplay file or file system status.\n\n\nmore\nView file contents interactively.\n\nmore data/vg_hof.tsv\n\n\n\n\nmore iTerm2\n\n\n\n\nless\nView file contents interactively.\n\nless data/vg_hof.tsv\n\n\n\n\nless iTerm2\n\n\n\n\nhead\nOutput the first part of files.\n\n\ntail\nOutput the last part of files.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Syntax Reference</span>"
@@ -884,7 +906,7 @@
     "href": "syntax_ref.html#text-processing",
     "title": "Appendix A — Syntax Reference",
     "section": "Text Processing",
-    "text": "Text Processing\n\ncat\nConcatenate files and print on the standard output.\n\n\necho\nOutputs the strings it is given to the terminal.\n\n\nless\nView file contents interactively.\n\nless data/vg_hof.tsv\n\n\n\n\nEnter less in the Terminal to scroll\n\n\n\n\nhead\nOutput the first part of files.\n\n\ntail\nOutput the last part of files.\n\n\ngrep\nPrint lines matching a pattern.\n\n\nsort\nSort lines of text files.\n\n\nuniq\nReport or omit repeated lines.\n\n\ncut\nRemove sections from each line of files.\n\nwho | cut -c 1-16,26-42\n# mjfrigaard           Apr 30 10:25\n# mjfrigaard           May  1 06:37\n# mjfrigaard           May  1 12:16\n\n\n\npaste\nMerge lines of files.\n\n\njoin\nJoin lines of two files on a common field.\n\n\ncomm\nCompare two sorted files line by line.\n\n\ndiff\nCompare files line by line.\n\n\nwc\nPrint newline, word, and byte counts for each file.\n\n\nsed\nStream editor for filtering and transforming text.\n\n\nawk\nProgramming language for data extraction and reporting.",
+    "text": "Text Processing\n\ncat\nConcatenate files and print on the standard output.\n\n\necho\nOutputs the strings it is given to the terminal.\n\n\ngrep\nPrint lines matching a pattern.\n\n\nsort\nSort lines of text files.\n\n\nuniq\nReport or omit repeated lines.\n\n\ncut\nRemove sections from each line of files.\n\nwho | cut -c 1-16,26-42\n# mjfrigaard           May  1 17:27\n# mjfrigaard           May  2 12:17\n\n\n\npaste\nMerge lines of files.\n\n\njoin\nJoin lines of two files on a common field.\n\n\ncomm\nCompare two sorted files line by line.\n\n\ndiff\nCompare files line by line.\n\n\nwc\nPrint newline, word, and byte counts for each file.\n\n\nsed\nStream editor for filtering and transforming text.\n\n\nawk\nProgramming language for data extraction and reporting.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Syntax Reference</span>"
