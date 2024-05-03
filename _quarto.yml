@@ -24,18 +24,18 @@ book:
         - sh_term.qmd
         - vms.qmd
         - quarto.qmd
-    - part: syntax.qmd
-      chapters:
-        - commands.qmd
-        - arguments.qmd
-        - options.qmd
-        - pipes.qmd
     - part: basics.qmd
       chapters:
         - dirs.qmd
         - files.qmd
         - sys.qmd
         - vars.qmd
+    - part: syntax.qmd
+      chapters:
+        - commands.qmd
+        - arguments.qmd
+        - options.qmd
+        - pipes.qmd
     - part: text.qmd
       chapters:
         - symbols_patterns.qmd
@@ -61,8 +61,10 @@ format:
     code-block-border-left: "#696969"
     code-overflow: scroll
     number-sections: false
-    callout-appearance: simple
+    callout-appearance: simple 
     callout-icon: false
+    code-link: false
+    code-annotations: hover
     toc: true
     toc-depth: 4
     toc-expand: true

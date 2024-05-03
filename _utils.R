@@ -107,3 +107,6 @@ vroom::vroom_write(
   file = "data/music_vids.tsv", 
   delim = "\t", 
   eol = '\n')
+
+# vroom::vroom("data/who_tb_data.csv") |> 
+#   vroom::vroom_write(delim = "\t", file = "data/who_tb_data.tsv")

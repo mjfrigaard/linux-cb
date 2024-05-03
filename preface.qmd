@@ -52,12 +52,6 @@ The <strong>@sec-intro</strong> acquaints you with some background that formed t
 
 Before diving into the commands and scripts, setting up your Unix/Linux environment is crucial. <strong>[Set-ups](setups.qmd)</strong> guides you through various options for setting up <strong>@sec-sh-term</strong>, <strong>@sec-vms</strong>, and <strong>@sec-quarto</strong> documents.
 
-### Syntax
-
-Understanding the syntax is vital for effectively communicating with the Unix/Linux system. The <strong>[Syntax](syntax.qmd)</strong> section demystifies the structure of commands, including how to differentiate between <strong>@sec-commands</strong>, <strong>@sec-args</strong>, and <strong>@sec-options</strong> and manage inputs and outputs. This knowledge is critical to executing tasks efficiently in the command line.
-
-<strong>@sec-pipes</strong> are a cornerstone of Unix/Linux productivity, enabling the output of one command to serve as the input to another. <strong>[Syntax](syntax.qmd)</strong> also covers how to combine commands using `stdout` and `stdin`, allowing for robust command chains that can perform complex tasks with a simple syntax. Understanding pipes unlocks a higher level of command-line efficiency and is a step towards advanced Unix/Linux usage.
-
 ### The Basics
 
 Navigating and managing files and folders are daily tasks for Unix/Linux users. <strong>@sec-dirs</strong> covers essential commands such as `cd` for changing directories, `pwd` to print the current directory, `ls` for listing files, and `mkdir` for making directories.
@@ -65,6 +59,12 @@ Navigating and managing files and folders are daily tasks for Unix/Linux users. 
 <strong>@sec-files</strong> chapter covers file manipulation commands like `cp` (copy), `mv` (move), `rm` (remove), and `less` for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Unix/Linux.
 
 The <strong>@sec-sys</strong> chapter goes over common system commands like `top` for monitoring processes in real-time, `ps` for listing currently running processes, `kill` to stop a process, `df` (Disk Free) to display disk space usage on all mounted filesystems, and `du` (Disk Usage) to estimate file space usage. These commands help you manage the system's processes and resources efficiently, ensuring you have a clear view of resource allocation and consumption.
+
+### Syntax
+
+Understanding the syntax is vital for effectively communicating with the Unix/Linux system. The <strong>[Syntax](syntax.qmd)</strong> section demystifies the structure of commands, including how to differentiate between <strong>@sec-commands</strong>, <strong>@sec-args</strong>, and <strong>@sec-options</strong> and manage inputs and outputs. This knowledge is critical to executing tasks efficiently in the command line.
+
+<strong>@sec-pipes</strong> are a cornerstone of Unix/Linux productivity, enabling the output of one command to serve as the input to another. <strong>[Syntax](syntax.qmd)</strong> also covers how to combine commands using `stdout` and `stdin`, allowing for robust command chains that can perform complex tasks with a simple syntax. Understanding pipes unlocks a higher level of command-line efficiency and is a step towards advanced Unix/Linux usage.
 
 ### Manipulating Text (in development)
 

@@ -46,7 +46,7 @@ When presented with a new map, the most important thing to find is your location
 
 ### `pwd`
 
-**`pwd` (Print Working Directory)** tells you exactly where you are in the filesystem.
+**<code>@sec-pwd</code>** (print working directory) tells you exactly where you are in the filesystem.
 
 ```{bash}
 #| eval: true
@@ -71,7 +71,9 @@ We can use a relative file path to create a `report.txt` file in the `data` fold
 echo "my important information" > data/report.txt
 ```
 
-Confirm with `cat`:
+`data/report.txt` is the relative file path (i.e., relative to the current working directory).
+
+Confirm contents of `report.txt` with `cat`:
 
 ```{bash}
 #| eval: true
@@ -85,7 +87,7 @@ rm data/report.txt
 
 ### `cd`
 
- **`cd` (Change Directory)** lets us move from one directory to a different directory. For example, `cd /bin` takes you to the `/bin` folder, the toolshed of software tools.
+ **<code>@sec-cd</code>** lets us move from one directory to a different directory. For example, `cd /bin` takes you to the `/bin` folder, the toolshed of software tools.
 
 ```{bash}
 cd /bin # change location
@@ -94,7 +96,7 @@ pwd # now where am I?
 
 ### `ls`
 
-**`ls` (List)** is like standing in one location, looking around, and seeing what files and folders are around you. In `/bin`, `ls` would show you the software tools available:
+**<code>@sec-ls</code>** (list) lists the files and folders in a given location. In `/bin`, `ls` would show you the software tools available:
 
 ```{bash}
 cd /bin # change location
@@ -104,51 +106,10 @@ ls # what's in here?
 
 ### `find`
 
-`find` can be used to locate files *or* directories using the `-type` and `-name` options. The example below looks in the `data` directory for a `roxanne.txt` file:
+**<code>@sec-find</code>** can be used to locate files *or* directories using the `-type` and `-name` options. The example below looks in the current working directory (`.`) for a folder named `data`:
 
 ```{bash}
-find data -type f -name roxanne.txt
-```
-
-### `locate`
-
-**`locate`** 
-
-```{bash}
-#| eval: false
-locate roxanne data | head -n3
-# /Users/mjfrigaard/projects/books/fm-unix/data/roxanne.txt
-# /Users/mjfrigaard/projects/books/fm-unix/data/roxanne_orig.txt
-# /Users/mjfrigaard/projects/books/fm-unix/data/roxanne_rev.txt
-```
-
-```{r}
-#| label: co_box_dev_locate
-#| echo: false
-#| results: asis
-#| eval: true
-co_box(
-  color = "o",
-  look = "simple", 
-  hsize = "1.15", 
-  size = "1.00", 
-  header = "Updating `locate` database", 
-  fold = TRUE,
-  contents = "
-Make sure your `locate` database is up-to-date using one of the commands below if you've recently added or moved files to get accurate results:
-  
-\`\`\` sh
-# on linux
-sudo updatedb
-\`\`\`
-
-\`\`\` sh
-# on macos
-sudo /usr/libexec/locate.updatedb
-\`\`\`
-  
-"
-)
+find . -type d -name data
 ```
 
 ## [Manage]{style="font-size: 1.05em; font-weight: bold;"}  {#sec-manage-dirs}
@@ -157,12 +118,14 @@ In the Unix/Linux world, file and directory management is a fundamental skill. T
 
 ### `mkdir`
 
-**`mkdir` (Make Directory)** builds a new folder wherever you tell it to, like making a new folder in data for inputs (`data/in`) or outputs (`data/out`) 
+**<code>@sec-mkdir</code>** (Make Directory) builds a new folder wherever you tell it to, like making a new folder in data for inputs (`data/in`) or outputs (`data/out`) 
 
 ```{bash}
 mkdir data/in
 mkdir data/out
 ```
+
+Confirm with `tree -d` (the `-d` is for directories):
 
 ```{bash}
 #| eval: false 
@@ -176,59 +139,77 @@ tree data -d
 
 ### `cp`
 
-**`cp` (Copy)** duplicates files or folders. The `cp` command is used to copy files or directories from one location to another. Imagine having a file (`bin.dat`) on your root (`.`) directory that you want to copy to the `/data/in` folder; you could use `cp` to make a duplicate. 
+**<code>@sec-cp</code>** duplicates files or folders. The `cp` command is used to copy files or directories from one location to another. Imagine having a file (`binary_data.tsv`) on your root (`.`) directory that you want to copy to the `/data/in` folder; you could use `cp` to make a duplicate. 
 
 ```{bash}
-#| echo: false 
-touch bin.dat
+#| include: false 
+touch binary_data.tsv
 echo "0 1 0 1 0
 0 0 1 0 1
-1 0 1 0 1" > bin.dat
-# cat bin.dat
+1 0 1 0 1" > binary_data.tsv
+cat binary_data.tsv
 ```
 
+```{bash}
+cp binary_data.tsv data/in/binary_data.tsv
+```
+
+Confirm with `tree`
 
 ```{bash}
-cp bin.dat data/in/bin.dat
-# confirm copy
-ls data/in
+#| eval: false
+tree data/in
+# data/in
+# └── binary_data.tsv
+# 
+# 1 directory, 1 file
 ```
 
 ### `mv`
 
-**`mv` (Move)**: `mv`, short for move, moves files or directories from one location to another.
+**<code>@sec-mv</code>**, short for move, moves files or directories from one location to another. We'll use it to move `data/binary_data.tsv` to `data/out/binary_data.tsv`:
 
 ```{bash}
 # move file
-mv data/in/bin.dat data/out/bin.dat 
-# confirm move 
-ls data/out 
+mv data/in/binary_data.tsv data/out/binary_data.tsv 
 ```
+
+Confirm move with `tree`:[^tree-pattern]
+
+```{bash}
+#| eval: false
+tree data -P *.tsv
+# data
+# ├── in
+# └── out
+#     └── binary_data.tsv
+# 
+# 3 directories, 1 file
+```
+
+[^tree-pattern]: The `-P *.tsv` option for `tree` tells it to look in `data` for files or folders with a `.tsv` extension. We'll cover wildcards and patterns in the @sec-symbols-patterns chapter.
 
 It can also be used for renaming files. 
 
 ```{bash}
 # rename file
-mv data/out/bin.dat  data/out/binary_data.txt 
-# confirm rename 
-ls data/out 
+mv data/out/binary_data.tsv  data/out/bin_dat.tsv 
 ```
 
-This command is especially useful for organizing files and directories that are in the wrong place.
-
 ```{bash}
-#| eval: false
+# confirm rename 
 tree data/out
 # data/out
-# └── binary_data.txt
+# └── bin_dat.tsv
 # 
 # 1 directory, 1 file
 ```
 
+`mv` is especially useful for organizing files and directories that are in the wrong place.
 
 ### `rm`
 
-**`rm` (Remove)**: The `rm` command stands for **remove** and is used to delete files or directories.
+The **<code>@sec-rm</code>** command stands for **remove** and is used to delete files or directories.
 
 ```{bash}
 #| error: true
@@ -265,19 +246,11 @@ It's important to note here that the command-line is not very forgiving. Using `
 rm -R data/out
 ```
 
-### `ln`
-
-**`ln` (Link)**: `ln` creates Links to files or directories, making them accessible from multiple locations without duplicating the actual content. It's like creating a shortcut on your desktop to a program you frequently use. There are two types of links: hard links and symbolic (soft) links. Symbolic links are more commonly used because they can link to directories and provide more flexibility.
-
-```bash
-ln -s /path/to/original /path/to/link
-```
-
 ```{bash}
+#| label: reset
 #| echo: false
 rm -Rf data/in
 rm -Rf data/out
-rm bin.dat
 ```
 
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 

@@ -223,6 +223,37 @@ file /usr/bin
 
 Display file or file system status.
 
+
+### `more` {#sec-more}
+
+View file contents interactively.
+
+```{bash}
+#| eval: false
+more data/vg_hof.tsv
+```
+
+![`more` iTerm2](img/more.gif){width='100%' fig-align='center'}
+
+### `less` {#sec-less}
+
+View file contents interactively.
+
+```{bash}
+#| eval: false
+less data/vg_hof.tsv
+```
+
+![`less` iTerm2](img/less.gif){width='100%' fig-align='center'}
+
+### `head` {#sec-head}
+
+Output the first part of files.
+
+### `tail` {#sec-tail}
+
+Output the last part of files.
+
 ## [System Administration]{style="font-size: 1.05em; font-weight: bold;"} 
 
 ### `who` {#sec-who}
@@ -402,25 +433,6 @@ Concatenate files and print on the standard output.
 ### `echo` {#sec-echo}
 
 Outputs the strings it is given to the terminal.
-
-### `less` {#sec-less}
-
-View file contents interactively.
-
-```{bash}
-#| eval: false
-less data/vg_hof.tsv
-```
-
-![Enter `less` in the Terminal to scroll](img/less.gif){width='100%' fig-align='center'}
-
-### `head` {#sec-head}
-
-Output the first part of files.
-
-### `tail` {#sec-tail}
-
-Output the last part of files.
 
 ### `grep` {#sec-grep}
 
