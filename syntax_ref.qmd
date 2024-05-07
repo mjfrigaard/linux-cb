@@ -80,7 +80,7 @@ pwd # where am I?
 
 Create a directory.
 
-```bash
+``` bash
 mkdir out
 mkdir doc
 ```
@@ -184,8 +184,16 @@ rm -R doc
 
 Create links between files.
 
-```bash
+``` bash
 ln -s /path/to/original /path/to/link
+```
+
+### `readlink` {#sec-readlink}
+
+`readlink` displays the target of a symbolic link.
+
+``` bash
+readlink /path/to/symlink
 ```
 
 ### `touch` {#sec-touch}

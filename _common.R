@@ -19,7 +19,8 @@ co_box <- function(
   size = "1.05",
   hsize = "1.10",
   fold = FALSE,
-  look = "default") {
+  look = "default", 
+  icon = FALSE) {
   
   if (look == "simple") {
     look <- "simple"
@@ -30,6 +31,7 @@ co_box <- function(
   }
   
   fold <- tolower(as.character(fold))
+  ico <- tolower(as.character(icon))
   size <- as.character(size)
   
   class <- switch(color,
@@ -44,7 +46,7 @@ co_box <- function(
   switch(color,
     b = cat(paste0(
       "\n\n",
-      ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon=false}", "\n\n",
+      ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
       "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
       "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
       "\n", glue::glue_collapse(contents), "\n\n",
@@ -53,7 +55,7 @@ co_box <- function(
     )),
     g = cat(paste0(
       "\n\n",
-      ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon=false}", "\n\n",
+      ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
       "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
       "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
       "\n", glue::glue_collapse(contents), "\n\n",
@@ -62,7 +64,7 @@ co_box <- function(
     )),
     y = cat(paste0(
       "\n\n",
-      ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon=false}", "\n\n",
+      ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
       "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
       "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
       "\n", glue::glue_collapse(contents), "\n\n",
@@ -71,7 +73,7 @@ co_box <- function(
     )),
     o = cat(paste0(
       "\n\n",
-      ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon=false}", "\n\n",
+      ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
       "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
       "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
       "\n", glue::glue_collapse(contents), "\n\n",
@@ -80,7 +82,7 @@ co_box <- function(
     )),
     r = cat(paste0(
       "\n\n",
-      ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon=false}", "\n\n",
+      ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
       "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
       "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
       "\n", glue::glue_collapse(contents), "\n\n",

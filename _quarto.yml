@@ -62,7 +62,7 @@ format:
     code-overflow: scroll
     number-sections: false
     callout-appearance: simple 
-    callout-icon: false
+    #callout-icon: false
     code-link: false
     code-annotations: hover
     toc: true
