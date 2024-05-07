@@ -358,21 +358,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#more-less" id="toc-more-less" class="nav-link" data-scroll-target="#more-less"><code>more</code> &amp; <code>less</code></a></li>
   <li><a href="#head-tail" id="toc-head-tail" class="nav-link" data-scroll-target="#head-tail"><code>head</code> &amp; <code>tail</code></a></li>
   </ul></li>
-  <li><a href="#manage" id="toc-manage" class="nav-link" data-scroll-target="#manage"><span style="font-size: 1.05em; font-weight: bold;">Manage</span></a>
+  <li><a href="#look" id="toc-look" class="nav-link" data-scroll-target="#look"><span style="font-size: 1.05em; font-weight: bold;">Look</span></a>
   <ul>
   <li><a href="#grep" id="toc-grep" class="nav-link" data-scroll-target="#grep"><code>grep</code></a></li>
   <li><a href="#find" id="toc-find" class="nav-link" data-scroll-target="#find"><code>find</code></a></li>
   <li><a href="#locate" id="toc-locate" class="nav-link" data-scroll-target="#locate"><code>locate</code></a></li>
+  </ul></li>
+  <li><a href="#manage" id="toc-manage" class="nav-link" data-scroll-target="#manage"><span style="font-size: 1.05em; font-weight: bold;">Manage</span></a>
+  <ul>
   <li><a href="#cp" id="toc-cp" class="nav-link" data-scroll-target="#cp"><code>cp</code></a></li>
   <li><a href="#mv" id="toc-mv" class="nav-link" data-scroll-target="#mv"><code>mv</code></a></li>
   <li><a href="#ln" id="toc-ln" class="nav-link" data-scroll-target="#ln"><code>ln</code></a></li>
-  <li><a href="#diff" id="toc-diff" class="nav-link" data-scroll-target="#diff"><code>diff</code></a></li>
   </ul></li>
-  <li><a href="#file-information" id="toc-file-information" class="nav-link" data-scroll-target="#file-information"><span style="font-size: 1.05em; font-weight: bold;">File Information</span></a>
+  <li><a href="#info" id="toc-info" class="nav-link" data-scroll-target="#info"><span style="font-size: 1.05em; font-weight: bold;">Info</span></a>
   <ul>
+  <li><a href="#ls" id="toc-ls" class="nav-link" data-scroll-target="#ls"><code>ls</code></a></li>
+  <li><a href="#diff" id="toc-diff" class="nav-link" data-scroll-target="#diff"><code>diff</code></a></li>
   <li><a href="#file" id="toc-file" class="nav-link" data-scroll-target="#file"><code>file</code></a></li>
+  <li><a href="#readlink" id="toc-readlink" class="nav-link" data-scroll-target="#readlink"><code>readlink</code></a></li>
+  <li><a href="#wc" id="toc-wc" class="nav-link" data-scroll-target="#wc"><code>wc</code></a></li>
+  <li><a href="#stat" id="toc-stat" class="nav-link" data-scroll-target="#stat"><code>stat</code></a></li>
+  <li><a href="#du" id="toc-du" class="nav-link" data-scroll-target="#du"><code>du</code></a></li>
   </ul></li>
-  <li><a href="#permissions-and-ownership" id="toc-permissions-and-ownership" class="nav-link" data-scroll-target="#permissions-and-ownership"><span style="font-size: 1.05em; font-weight: bold;">Permissions and Ownership</span></a></li>
+  <li><a href="#sec-file-permissions" id="toc-sec-file-permissions" class="nav-link" data-scroll-target="#sec-file-permissions"><span style="font-size: 1.05em; font-weight: bold;">Permissions and Ownership</span></a></li>
   </ul>
 </nav>
     </div>
@@ -517,9 +525,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="manage" class="level2">
-<h2 class="anchored" data-anchor-id="manage"><span style="font-size: 1.05em; font-weight: bold;">Manage</span></h2>
-<p>The following commands are helpful for searching, copying, moving, renaming, and creating links to files.</p>
+<section id="look" class="level2">
+<h2 class="anchored" data-anchor-id="look"><span style="font-size: 1.05em; font-weight: bold;">Look</span></h2>
+<p>These commands can help you search for files (and directories).</p>
 <section id="grep" class="level3">
 <h3 class="anchored" data-anchor-id="grep"><code>grep</code></h3>
 <p><strong><code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code></strong> searches files for lines matching a pattern. We’ll use it to search for a specfic video game title in <code>data/vg_hof.tsv</code>:</p>
@@ -574,7 +582,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Lets assume we want to create backups of the delimiter-separated data files by their extensions. First we’ll create folder for each type of delimiter (<code>.csv</code>, <code>.tsv</code>, and <code>.psv</code>), then we’ll copy this files into their respective folder (based their extension):</p>
+</section>
+</section>
+<section id="manage" class="level2">
+<h2 class="anchored" data-anchor-id="manage"><span style="font-size: 1.05em; font-weight: bold;">Manage</span></h2>
+<p>The commands below can be used for copying, moving, renaming, and creating links to files.</p>
+<section id="cp" class="level3">
+<h3 class="anchored" data-anchor-id="cp"><code>cp</code></h3>
+<p>Assume we want to create backups of the delimiter-separated data files in the <code>data/</code> folder. We’ll store these backups in folders according the file extension.</p>
+<p>First we’ll create folder for each type of delimiter (<code>.csv</code>, <code>.tsv</code>, and <code>.psv</code>):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> data/csv</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> data/tsv</span>
@@ -590,10 +606,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 4 directories</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="cp" class="level3">
-<h3 class="anchored" data-anchor-id="cp"><code>cp</code></h3>
-<p>We can use the <code>*</code> pattern to copy the files (<strong><code><a href="syntax_ref.html#sec-cp" class="quarto-xref"><span>cp</span></a></code></strong>):</p>
+<p>Then we’ll copy the files into their respective folder (based their extension) using <code>*</code> and <strong><code><a href="syntax_ref.html#sec-cp" class="quarto-xref"><span>cp</span></a></code></strong>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> data/<span class="pp">*</span>.csv data/csv/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -631,7 +644,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 directory, 2 files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Let’s create a <code>.psv</code> and <code>.csv</code> version of the <code>who_tb_data.tsv</code> file:</p>
+</section>
+<section id="mv" class="level3">
+<h3 class="anchored" data-anchor-id="mv"><code>mv</code></h3>
+<p>The commands below creates <code>.psv</code> and <code>.csv</code> versions of the <code>who_tb_data.tsv</code> file.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> data/csv/who_tb_data.csv</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"country,year,type,count</span></span>
@@ -664,7 +680,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a><span class="st">| China       | 2000 | cases      | 213766     |</span></span>
 <span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a><span class="st">| China       | 2000 | population | 1280428583 |"</span> <span class="op">&gt;</span> data/who_tb_data.psv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Oops–we created the <code>who_tb_data.psv</code> file in the data folder!<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>Oops–it looks like the <code>who_tb_data.psv</code> file was created in the <code>data</code> folder! (and not the <code>data/psv</code> folder). <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span> data <span class="at">-L</span> 2 <span class="at">-P</span> <span class="st">'*who_tb_data.psv|*who_tb_data.csv'</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data</span></span>
@@ -676,9 +692,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 4 directories, 2 files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="mv" class="level3">
-<h3 class="anchored" data-anchor-id="mv"><code>mv</code></h3>
 <p>We’ll use <strong><code><a href="syntax_ref.html#sec-mv" class="quarto-xref"><span>mv</span></a></code></strong> to move the <code>who_tb_data.psv</code> and <code>data/who_tb_data.psv</code> files into <code>data/psv/</code> and confirm with <code>tree</code>:<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> data/who_tb_data.psv data/psv/who_tb_data.psv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -695,23 +708,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ln" class="level3">
 <h3 class="anchored" data-anchor-id="ln"><code>ln</code></h3>
 <p><strong><code><a href="syntax_ref.html#sec-ln" class="quarto-xref"><span>ln</span></a></code></strong> is used to create links between files. It can create two types of links: hard links and symbolic (or soft) links.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[50,50]">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p><strong>A hard link</strong> is an additional name for an existing file on the same file system, and is effectively an additional directory entry for the file.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p><strong>A symbolic link</strong> (often called a symlink) is a file that points to another file or directory, and it contains a path to another entry somewhere in the file system.</p>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+</div>
+</div>
+</div>
+<p>With the <code>ln</code> command, you need to specify the target file first (the original file) and then the name of the new link:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> original_file.txt new_link.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 1.15em;">Tip: <code>ln</code></span>
+<span style="font-weight: bold; font-size: 1.10em;"><code>ln</code></span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div style="font-size: 1.00em; color: #282b2d;">
-<p>With the <code>ln</code> command, you need to specify the target file first (the original file) and then the name of the new link:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> original_file.txt new_link.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="font-size: 1.05em; color: #282b2d;">
+<p><code>ln</code> doesn’t produce any output and returns zero when it’s successful.</p>
 </div>
 </div>
 </div>
@@ -722,7 +749,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>If we check the <code>data</code> folder with <code>tree</code>, we see the new <code>who_tb_data.psv</code> file looks identical to the other files:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span> data <span class="at">-P</span> <span class="pp">*</span>.psv</span>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span> data <span class="at">-P</span> <span class="st">'*.psv'</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── csv</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── psv</span></span>
@@ -734,13 +761,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 4 directories, 4 files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Hard links are basically copies–changes made to one will reflect in the other since they both refer to the same data.</p>
 <p>Now we’ll use <code>ln -s</code> to create <code>data/who_tb_data.csv</code>, a <em>symlink</em> for the data file in <code>data/csv/who_tb_data.csv</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> data/csv/who_tb_data.csv data/who_tb_data.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> csv/who_tb_data.csv data/who_tb_data.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>When we look at the folder with <code>tree</code> now, we see the symlink is listed with a special pointer (<code>-&gt;</code>) to the original file:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span> data <span class="at">-P</span> <span class="pp">*</span>.csv</span>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span> data <span class="at">-P</span> <span class="st">'*.csv'</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── csv</span></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># │   ├── pwrds.csv</span></span>
@@ -754,13 +782,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 4 directories, 6 files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We can check with <strong><code><a href="syntax_ref.html#sec-diff" class="quarto-xref"><span>diff</span></a></code></strong>, which compares the contents of two files.</p>
+<p>The symbolic link only references the actual file, but doesn’t store the data itself.</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span style="font-weight: bold; font-size: 1.15em;">Tip: <code>ln</code> &amp; <code>tree</code></span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="font-size: 1.00em; color: #282b2d;">
+<p>The <code>tree</code> command displays the target file first (the original file) and the link using color:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/symlink-color.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Color for symlinks with <code>tree</code></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="info" class="level2">
+<h2 class="anchored" data-anchor-id="info"><span style="font-size: 1.05em; font-weight: bold;">Info</span></h2>
+<p>The commands below return different types of information from a files (or files).</p>
+<section id="ls" class="level3">
+<h3 class="anchored" data-anchor-id="ls"><code>ls</code></h3>
+<p>The <strong><code><a href="syntax_ref.html#sec-ls" class="quarto-xref"><span>ls</span></a></code></strong> command lists the contents of a directory. Adding <code>-l</code> returns the contents in a detailed long format, showing information such as file permissions, number of links, owner, group, file size, and last modification date for each item.</p>
+<p>We’ll use <code>ls -l</code> on the hardlink we created and it’s original file:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> data/who_tb_data.psv</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 2 username  staff  686 May  7 11:01 data/who_tb_data.psv</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> data/psv/who_tb_data.psv</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 2 username  staff  686 May  7 11:01 data/psv/who_tb_data.psv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Compare this to the symlink we created with it’s original file:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> data/who_tb_data.csv</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># lrwxr-xr-x@ 1 username  staff  19 May  7 10:56 data/who_tb_data.csv -&gt; csv/who_tb_data.csv</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> data/csv/who_tb_data.csv</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 username  staff  381 May  7 11:01 data/csv/who_tb_data.csv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We’ll cover this output more in the <a href="#sec-file-permissions" class="quarto-xref"><span>Permissions and Ownership</span></a> section below, but here is a quick summary:</p>
+<p>Both <code>ls -l</code> commands return similar information for the <code>who_tb_data.psv</code> files, indicating these aren’t treated as two separate files, but rather two paths to the <em>same file</em>. The <code>@ 2</code> indicates this file has two hard links, meaning <code>who_tb_data.psv</code> is physically located in one place but can be accessed from two locations: <code>data/who_tb_data.psv</code> and <code>data/psv/who_tb_data.psv</code>.</p>
+<p>The <code>ls -l</code> output for <code>data/who_tb_data.csv</code> (the symlink) returns <code>lrwxr-xr-x@</code> (file permissions for a symbolic link) and includes <code>@ 1</code>, indicating a single hard link (symbolic links always have one link).</p>
 </section>
 <section id="diff" class="level3">
 <h3 class="anchored" data-anchor-id="diff"><code>diff</code></h3>
-<p>We’ll start by comparing the pipe-separated values file (<code>data/wu_tang.psv</code>) to the comma-separated separated values file (<code>data/wu_tang.csv</code>)</p>
+<p><strong><code><a href="syntax_ref.html#sec-diff" class="quarto-xref"><span>diff</span></a></code></strong> compare the contents of two files line-by-line. We’ll use <code>diff</code> to compare the pipe-separated values file (<code>data/wu_tang.psv</code>) to the comma-separated separated values file (<code>data/wu_tang.csv</code>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span> data/wu_tang.psv data/wu_tang.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span> data/wu_tang.psv data/wu_tang.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
 
@@ -768,7 +845,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-panel" data-layout="[50,50]">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="sourceCode" id="cb33"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1,11c1,11</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1,11c1,11</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p>The first line of the output indicates that lines 1 through 11 in the first file (<code>data/wu_tang.psv</code>) have been changed compared to lines 1 through 11 in the second file (<code>data/wu_tang.csv</code>).</p>
@@ -792,17 +869,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Lines starting with <code>&lt;</code> indicate the content from the first file (<code>data/wu_tang.psv</code>). These entries are separated by pipes or spaces (as commonly used in PSV files).</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="sourceCode" id="cb34"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Member</span>           <span class="kw">|</span><span class="ex">Name</span>                 <span class="kw">|</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">RZA</span>              <span class="kw">|</span><span class="ex">Robert</span> Diggs         <span class="kw">|</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">GZA</span>              <span class="kw">|</span><span class="ex">Gary</span> Grice           <span class="kw">|</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Method</span> Man       <span class="kw">|</span><span class="ex">Clifford</span> Smith       <span class="kw">|</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Raekwon</span> the Chef <span class="kw">|</span><span class="ex">Corey</span> Woods          <span class="kw">|</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Ghostface</span> Killah <span class="kw">|</span><span class="ex">Dennis</span> Coles         <span class="kw">|</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Inspectah</span> Deck   <span class="kw">|</span><span class="ex">Jason</span> Hunter         <span class="kw">|</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">U-God</span>            <span class="kw">|</span><span class="ex">Lamont</span> Hawkins       <span class="kw">|</span></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Masta</span> Killa      <span class="kw">|</span><span class="ex">Jamel</span> Irief          <span class="kw">|</span></span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Cappadonna</span>       <span class="kw">|</span><span class="ex">Darryl</span> Hill          <span class="kw">|</span></span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Ol</span> Dirty Bastard <span class="kw">|</span><span class="ex">Russell</span> Tyrone Jones <span class="kw">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Member</span>           <span class="kw">|</span><span class="ex">Name</span>                 <span class="kw">|</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">RZA</span>              <span class="kw">|</span><span class="ex">Robert</span> Diggs         <span class="kw">|</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">GZA</span>              <span class="kw">|</span><span class="ex">Gary</span> Grice           <span class="kw">|</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Method</span> Man       <span class="kw">|</span><span class="ex">Clifford</span> Smith       <span class="kw">|</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Raekwon</span> the Chef <span class="kw">|</span><span class="ex">Corey</span> Woods          <span class="kw">|</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Ghostface</span> Killah <span class="kw">|</span><span class="ex">Dennis</span> Coles         <span class="kw">|</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Inspectah</span> Deck   <span class="kw">|</span><span class="ex">Jason</span> Hunter         <span class="kw">|</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">U-God</span>            <span class="kw">|</span><span class="ex">Lamont</span> Hawkins       <span class="kw">|</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Masta</span> Killa      <span class="kw">|</span><span class="ex">Jamel</span> Irief          <span class="kw">|</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Cappadonna</span>       <span class="kw">|</span><span class="ex">Darryl</span> Hill          <span class="kw">|</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="kw">|</span><span class="ex">Ol</span> Dirty Bastard <span class="kw">|</span><span class="ex">Russell</span> Tyrone Jones <span class="kw">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -812,17 +889,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-panel" data-layout="[50,50]">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="sourceCode" id="cb35"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Member,Name</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> RZA,Robert <span class="ex">Diggs</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> GZA,Gary <span class="ex">Grice</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Method <span class="ex">Man,Clifford</span> Smith</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Raekwon <span class="ex">the</span> Chef,Corey Woods</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Ghostface <span class="ex">Killah,Dennis</span> Coles</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Inspectah <span class="ex">Deck,Jason</span> Hunter</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> U-God,Lamont <span class="ex">Hawkins</span></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Masta <span class="ex">Killa,Jamel</span> Irief</span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Cappadonna,Darryl <span class="ex">Hill</span></span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Ol <span class="ex">Dirty</span> Bastard,Russell Tyrone Jones</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Member,Name</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> RZA,Robert <span class="ex">Diggs</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> GZA,Gary <span class="ex">Grice</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Method <span class="ex">Man,Clifford</span> Smith</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Raekwon <span class="ex">the</span> Chef,Corey Woods</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Ghostface <span class="ex">Killah,Dennis</span> Coles</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Inspectah <span class="ex">Deck,Jason</span> Hunter</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> U-God,Lamont <span class="ex">Hawkins</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Masta <span class="ex">Killa,Jamel</span> Irief</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Cappadonna,Darryl <span class="ex">Hill</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Ol <span class="ex">Dirty</span> Bastard,Russell Tyrone Jones</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p>Lines starting with <code>&gt;</code> show the content from the second file (<code>data/wu_tang.csv</code>). These entries are separated by commas, as is typical for CSV files.</p>
@@ -830,42 +907,88 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>There is no difference in the actual data (<code>Member</code> or <code>Name</code>)–both files contain the same information, so the primary difference is purely in the formatting of the data: the PSV (pipe-separated Values) file uses vertical bars (<code>|</code>) and spaces to separate data fields, whereas the CSV (comma-separated values) file uses commas (<code>,</code>).<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
-<p>What happens when we run <code>diff</code> on the symlink and it’s original file?</p>
+<p>What happens when we compare the symlink (<code>data/who_tb_data.csv</code>) and it’s original file (<code>data/csv/who_tb_data.csv</code>) with <code>diff</code>?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span> data/csv/who_tb_data.csv data/who_tb_data.csv</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co"># diff: data/who_tb_data.csv: No such file or directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span> data/who_tb_data.csv data/csv/who_tb_data.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We’re told <code>data/who_tb_data.csv</code> is not a file or directory, because strictly speaking, it isn’t.</p>
-<p>Deleting, moving, or renaming the original file does not affect the integrity of a hard link.</p>
-<p>If the original file is deleted, moved, or renamed, the symbolic link breaks and typically becomes a ‘dangling’ link that points to a non-existent path.</p>
+<p><strong><code>diff</code> returns nothing and doesn’t produce any output if there are no differences between the two files.</strong></p>
+<p>Deleting, moving, or renaming the original file does not affect the integrity of a hard link:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove original file</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> data/psv/who_tb_data.psv</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># check hard link</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/who_tb_data.psv</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co"># | country     | year | type       | count      |</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co"># |-------------|------|------------|------------|</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="co"># | Afghanistan | 1999 | cases      | 745        |</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="co"># | Afghanistan | 1999 | population | 19987071   |</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="co"># | Afghanistan | 2000 | cases      | 2666       |</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="co"># | Afghanistan | 2000 | population | 20595360   |</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="co"># | Brazil      | 1999 | cases      | 37737      |</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="co"># | Brazil      | 1999 | population | 172006362  |</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="co"># | Brazil      | 2000 | cases      | 80488      |</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="co"># | Brazil      | 2000 | population | 174504898  |</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="co"># | China       | 1999 | cases      | 212258     |</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a><span class="co"># | China       | 1999 | population | 1272915272 |</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a><span class="co"># | China       | 2000 | cases      | 213766     |</span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a><span class="co"># | China       | 2000 | population | 1280428583 |</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>However, if the original file for a symlink is deleted, moved, or renamed, the symbolic link breaks and typically becomes a ‘dangling’ link that points to a non-existent path.</p>
 </section>
-</section>
-<section id="file-information" class="level2">
-<h2 class="anchored" data-anchor-id="file-information"><span style="font-size: 1.05em; font-weight: bold;">File Information</span></h2>
 <section id="file" class="level3">
 <h3 class="anchored" data-anchor-id="file"><code>file</code></h3>
+<p><strong><code><a href="syntax_ref.html#sec-file" class="quarto-xref"><span>file</span></a></code></strong> gives us a summary of what a file is or what it contains, like telling us what’s in <code>data/who_tb_data.txt</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file</span> data/who_tb_data.tsv</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data/who_tb_data.tsv: ASCII text</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file</span> data/who_tb_data.csv</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data/who_tb_data.csv: CSV text</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="readlink" class="level3">
+<h3 class="anchored" data-anchor-id="readlink"><code>readlink</code></h3>
+<p><code>readlink</code> displays the target of a symbolic link.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">readlink</span> data/who_tb_data.csv</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># csv/who_tb_data.csv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>-f</code> option provides the target’s absolute path.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">readlink</span> <span class="at">-f</span> data/who_tb_data.csv</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /Users/username/path/to/data/csv/who_tb_data.csv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="wc" class="level3">
+<h3 class="anchored" data-anchor-id="wc"><code>wc</code></h3>
 <p><strong><code><a href="syntax_ref.html#sec-wc" class="quarto-xref"><span>wc</span></a></code></strong> (<strong>word count</strong>) counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> data <span class="at">-name</span> <span class="st">"*.psv"</span> <span class="at">-mtime</span> <span class="at">-1</span> <span class="kw">|</span> <span class="fu">wc</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co">#        3       3      67</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> data/who_tb_data.csv</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co">#       13      13     381 data/who_tb_data.csv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="stat" class="level3">
+<h3 class="anchored" data-anchor-id="stat"><code>stat</code></h3>
 <p><strong><code>stat</code></strong> displays detailed information about files.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stat</span> data/who_tb_data.csv</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 16777221 317111083 lrwxr-xr-x 1 mjfrigaard staff 0 19 "May  7 11:29:49 2024" "May  7 11:29:49 2024" "May  7 11:29:49 2024" "May  7 11:29:49 2024" 4096 0 0 data/who_tb_data.csv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stat</span> <span class="at">-l</span> data/who_tb_data.csv</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co"># lrwxr-xr-x 1 mjfrigaard staff 19 May  7 11:29:49 2024 data/who_tb_data.csv -&gt; csv/who_tb_data.csv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="du" class="level3">
+<h3 class="anchored" data-anchor-id="du"><code>du</code></h3>
 <p><strong><code>du</code></strong> estimates file space usage.</p>
-<p><strong><code><a href="syntax_ref.html#sec-file" class="quarto-xref"><span>file</span></a></code></strong> gives us a summary of what a file is or what it contains, like telling us what’s in <code>data/who_tb_data.txt</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 </section>
-<section id="permissions-and-ownership" class="level2">
-<h2 class="anchored" data-anchor-id="permissions-and-ownership"><span style="font-size: 1.05em; font-weight: bold;">Permissions and Ownership</span></h2>
+<section id="sec-file-permissions" class="level2">
+<h2 class="anchored" data-anchor-id="sec-file-permissions"><span style="font-size: 1.05em; font-weight: bold;">Permissions and Ownership</span></h2>
 <p><strong><code><a href="syntax_ref.html#sec-chmod" class="quarto-xref"><span>chmod</span></a></code></strong> changes file permissions, and <strong><code><a href="syntax_ref.html#sec-chown" class="quarto-xref"><span>chown</span></a></code></strong> changes file ownership.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -874,7 +997,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 1.00em; color: #282b2d;">
 <p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
