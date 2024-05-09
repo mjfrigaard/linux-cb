@@ -46,11 +46,11 @@ The following commands are designed for creating, managing, and manipulating fil
 
 ## [Create]{style="font-size: 1.05em; font-weight: bold;"} 
 
-**<code>@sec-touch</code>** can create new files *or* update the timestamp of an existing file.
+The commands below can be used to create new files *or* update the timestamp of an existing file.
 
 ### `touch`
 
-We'll start by creating a new file (`data/who_tb_data.tsv`) with `touch`:
+We'll start by creating a new file (`data/who_tb_data.tsv`) with **<code>@sec-touch</code>**:
 
 ```{bash}
 #| label: touch
@@ -59,9 +59,7 @@ touch data/who_tb_data.tsv
 
 We can confirm the new `who_tb_data.tsv` file was created, we'll use the `tree` command to check the `data` folder:
 
-```{bash}
-#| eval: false
-#| label: tree_touch
+```{.bash style='background-color: #f8f8f8;'}
 tree -P who_tb_data.tsv data
 # data
 # └── who_tb_data.tsv
@@ -185,9 +183,9 @@ find data -name "*.tsv" -mtime -1
 #| eval: false
 #| label: locate
 locate who_tb_data data | head -n3
-# /Users/mjfrigaard/projects/books/fm-unix/data/who_tb_data.csv
-# /Users/mjfrigaard/projects/books/fm-unix/data/who_tb_data.psv
-# /Users/mjfrigaard/projects/books/fm-unix/data/who_tb_data.tsv
+# /Users/username/projects/books/fm-unix/data/who_tb_data.csv
+# /Users/username/projects/books/fm-unix/data/who_tb_data.psv
+# /Users/username/projects/books/fm-unix/data/who_tb_data.tsv
 ```
 
 ```{r}
@@ -501,30 +499,44 @@ The **<code>@sec-ls</code>** command lists the contents of a directory. Adding `
 We'll use `ls -l` on the hardlink we created and it's original file:
 
 ```{bash}
-#| label: ls_l_hardlink
+#| label: ls_l_hardlink_1
 #| eval: false
 ls -l data/who_tb_data.psv
 # -rw-r--r--@ 2 username  staff  686 May  7 11:01 data/who_tb_data.psv
+```
+
+```{bash}
+#| label: ls_l_hardlink_2
+#| eval: false
 ls -l data/psv/who_tb_data.psv
 # -rw-r--r--@ 2 username  staff  686 May  7 11:01 data/psv/who_tb_data.psv
 ```
 
+Both `ls -l` commands return similar information for the `who_tb_data.psv` files, indicating they're not treated as separate files, but rather two paths to the *same file*. 
+
+The preceding `@ 2` indicates both files have two hard links, meaning `who_tb_data.psv` is physically located in one place but can be accessed from two locations: `data/who_tb_data.psv` and `data/psv/who_tb_data.psv`.
+
 Compare this to the symlink we created with it's original file:
 
 ```{bash}
-#| label: ls_l_symlink
+#| label: ls_l_symlink_1
 #| eval: false
 ls -l data/who_tb_data.csv
 # lrwxr-xr-x@ 1 username  staff  19 May  7 10:56 data/who_tb_data.csv -> csv/who_tb_data.csv
+```
+
+```{bash}
+#| label: ls_l_symlink_2
+#| eval: false
 ls -l data/csv/who_tb_data.csv
 # -rw-r--r--@ 1 username  staff  381 May  7 11:01 data/csv/who_tb_data.csv
 ```
 
-We'll cover this output more in the @sec-file-permissions section below, but here is a quick summary: 
+The `ls -l` output for `data/who_tb_data.csv` (the symlink) returns `lrwxr-xr-x` (file permissions for a symbolic link) and includes `@ 1`,  indicating a single hard link (symbolic links always have one link). 
 
-Both `ls -l` commands return similar information for the `who_tb_data.psv` files, indicating these aren't treated as two separate files, but rather two paths to the *same file*. The `@ 2` indicates this file has two hard links, meaning `who_tb_data.psv` is physically located in one place but can be accessed from two locations: `data/who_tb_data.psv` and `data/psv/who_tb_data.psv`.
+The `who_tb_data.csv` file in `data/csv` returns `-rw-r--r--` (standard file permissions), 
 
-The `ls -l` output for `data/who_tb_data.csv` (the symlink) returns `lrwxr-xr-x@` (file permissions for a symbolic link) and includes `@ 1`,  indicating a single hard link (symbolic links always have one link). 
+We'll cover this output more in the @sec-file-permissions section below.
 
 ### `diff`
 
@@ -537,14 +549,11 @@ diff data/wu_tang.psv data/wu_tang.csv
 
 :::: {layout="[50,50]" layout-valign="top"}
 
-``` sh
+```{.sh style="background-color: #f8f8f8; font-style: italic;"}
 # 1,11c1,11
 ```
 
 The first line of the output indicates that lines 1 through 11 in the first file (`data/wu_tang.psv`) have been changed compared to lines 1 through 11 in the second file (`data/wu_tang.csv`).
-
-<!-- :::{style="background-color: #FF0000; font-size: 0.90em; font-weight: bold;"}  -->
-<!-- ::: -->
 
 ::::
 
@@ -554,36 +563,36 @@ The first line of the output indicates that lines 1 through 11 in the first file
 
 Lines starting with `<` indicate the content from the first file (`data/wu_tang.psv`). These entries are separated by pipes or spaces (as commonly used in PSV files).
 
-``` sh
-< |Member           |Name                 |
-< |RZA              |Robert Diggs         |
-< |GZA              |Gary Grice           |
-< |Method Man       |Clifford Smith       |
-< |Raekwon the Chef |Corey Woods          |
-< |Ghostface Killah |Dennis Coles         |
-< |Inspectah Deck   |Jason Hunter         |
-< |U-God            |Lamont Hawkins       |
-< |Masta Killa      |Jamel Irief          |
-< |Cappadonna       |Darryl Hill          |
-< |Ol Dirty Bastard |Russell Tyrone Jones |
+```{.sh style="background-color: #f8f8f8; font-style: italic;"}
+# < |Member           |Name                 |
+# < |RZA              |Robert Diggs         |
+# < |GZA              |Gary Grice           |
+# < |Method Man       |Clifford Smith       |
+# < |Raekwon the Chef |Corey Woods          |
+# < |Ghostface Killah |Dennis Coles         |
+# < |Inspectah Deck   |Jason Hunter         |
+# < |U-God            |Lamont Hawkins       |
+# < |Masta Killa      |Jamel Irief          |
+# < |Cappadonna       |Darryl Hill          |
+# < |Ol Dirty Bastard |Russell Tyrone Jones |
 ```
 
 ::::
 
 :::: {layout="[50,50]" layout-valign="top"}
 
-``` sh
-> Member,Name
-> RZA,Robert Diggs
-> GZA,Gary Grice
-> Method Man,Clifford Smith
-> Raekwon the Chef,Corey Woods
-> Ghostface Killah,Dennis Coles
-> Inspectah Deck,Jason Hunter
-> U-God,Lamont Hawkins
-> Masta Killa,Jamel Irief
-> Cappadonna,Darryl Hill
-> Ol Dirty Bastard,Russell Tyrone Jones
+```{.sh style="background-color: #f8f8f8; font-style: italic;"}
+# > Member,Name
+# > RZA,Robert Diggs
+# > GZA,Gary Grice
+# > Method Man,Clifford Smith
+# > Raekwon the Chef,Corey Woods
+# > Ghostface Killah,Dennis Coles
+# > Inspectah Deck,Jason Hunter
+# > U-God,Lamont Hawkins
+# > Masta Killa,Jamel Irief
+# > Cappadonna,Darryl Hill
+# > Ol Dirty Bastard,Russell Tyrone Jones
 ```
 
 Lines starting with `>` show the content from the second file (`data/wu_tang.csv`). These entries are separated by commas, as is typical for CSV files.
@@ -621,10 +630,16 @@ However, if the original file for a symlink is deleted, moved, or renamed, the s
 
 ### `file`
 
-**<code>@sec-file</code>** gives us a summary of what a file is or what it contains, like telling us what's in `data/who_tb_data.txt`.
+**<code>@sec-file</code>** gives us a summary of what a file is or what it contains, like telling us what's in `data/who_tb_data.csv`.
 
 ```{bash}
+#| label: file
 file data/who_tb_data.csv
+```
+
+```{bash}
+#| label: file_options
+file -i data/who_tb_data.csv
 ```
 
 ### `readlink`
@@ -654,38 +669,33 @@ readlink -f data/who_tb_data.csv
 wc data/who_tb_data.csv
 ```
 
-```{bash}
-#| include: false
-counts=$(wc data/who_tb_data.psv | awk '{print $1, $2, $3}')
-printf "   lines   words characters\n"
-printf "%8s %7s %10s\n" $counts
-```
-
 ### `stat`
 
-**`stat`** displays detailed information about files.
+**<code>@sec-stat</code>** displays detailed information about files.
 
 ```{bash}
 #| label: stat
+#| eval: false
 stat data/who_tb_data.csv
+# 16777221 317259283 lrwxr-xr-x 1 username staff 0 19 "May  8 13:20:37 2024" "May  8 13:20:37 2024" "May  8 13:20:37 2024" "May  8 13:20:37 2024" 4096 0 0 data/who_tb_data.csv
 ```
 
 ```{bash}
 #| label: stat_l
+#| eval: false
 stat -l data/who_tb_data.csv
+# lrwxr-xr-x 1 username staff 19 May  8 13:20:37 2024 data/who_tb_data.csv -> csv/who_tb_data.csv
 ```
 
 ### `du`
 
-**`du`** estimates file space usage.
+**<code>@sec-du</code>** estimates file space usage.
 
 ```{bash}
 #| label: du
 ```
 
-
-
-## [Permissions and Ownership]{style="font-size: 1.05em; font-weight: bold;"} {#sec-file-permissions}
+## [Permissions]{style="font-size: 1.05em; font-weight: bold;"} {#sec-file-permissions}
 
 **<code>@sec-chmod</code>** changes file permissions, and **<code>@sec-chown</code>** changes file ownership.
 

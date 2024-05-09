@@ -57,8 +57,8 @@ format:
   html:
     theme: [cosmo, styles.scss]
     highlight-style: arrow
-    code-block-bg: "#eff0ef"
-    code-block-border-left: "#696969"
+    code-block-bg: "#f8f8f8"
+    code-block-border-left: "#02577A"
     code-overflow: scroll
     number-sections: false
     callout-appearance: simple 

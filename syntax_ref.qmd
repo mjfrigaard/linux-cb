@@ -348,6 +348,10 @@ df
 # map auto_home                             0         0         0   100%       0         0     -   /System/Volumes/Data/home
 ```
 
+### `du` {#sec-du}
+
+Show disk usage statistics. 
+
 
 ### `ps` {#sec-ps}
 

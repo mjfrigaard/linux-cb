@@ -214,6 +214,22 @@ find data -name "*.tsv" | while read fname; do
 done
 ```
 
+```{bash}
+#| include: false
+#| eval: true 
+find data -name "*.tsv" | while read fname; do
+  echo -n "$fname: "
+  grep "RZA" "$fname" | wc 
+done
+```
+
+```{bash}
+#| include: false
+counts=$(wc data/who_tb_data.psv | awk '{print $1, $2, $3}')
+printf "   lines   words characters\n"
+printf "%8s %7s %10s\n" $counts
+```
+
 This Bash command sequence combines <code>@sec-find</code>, a `while` loop, <code>@sec-echo</code>, <code>@sec-grep</code>, and <code>@sec-wc</code> to search through `.tsv` (Tab-Separated Values) files for lines containing a specific pattern ("RZA") and reports the count of lines, words, and characters for each occurrence. Combining pipelines with loops is an efficient way to sift through a potentially large set of files within a directory, facilitating a detailed aggregation of specified conditions across multiple files.
 
 ```{r}
