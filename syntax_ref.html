@@ -383,6 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sec-uptime" id="toc-sec-uptime" class="nav-link" data-scroll-target="#sec-uptime"><code>uptime</code></a></li>
   <li><a href="#sec-cal" id="toc-sec-cal" class="nav-link" data-scroll-target="#sec-cal"><code>cal</code></a></li>
   <li><a href="#sec-df" id="toc-sec-df" class="nav-link" data-scroll-target="#sec-df"><code>df</code></a></li>
+  <li><a href="#sec-du" id="toc-sec-du" class="nav-link" data-scroll-target="#sec-du"><code>du</code></a></li>
   <li><a href="#sec-ps" id="toc-sec-ps" class="nav-link" data-scroll-target="#sec-ps"><code>ps</code></a></li>
   <li><a href="#sec-top" id="toc-sec-top" class="nav-link" data-scroll-target="#sec-top"><code>top</code></a></li>
   <li><a href="#sec-iotop" id="toc-sec-iotop" class="nav-link" data-scroll-target="#sec-iotop"><code>iotop</code></a></li>
@@ -647,7 +648,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-:::: {.callout-warning collapse='false' appearance='default' icon=false}
+:::: {.callout-warning collapse='false' appearance='default' icon='false'}
 
 ## [Warning]{style='font-weight: bold; font-size: 1.15em;'}
 
@@ -824,6 +825,10 @@ It's important to note here that the command-line is not very forgiving. Using `
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co"># map auto_home                             0         0         0   100%       0         0     -   /System/Volumes/Data/home</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="sec-du" class="level3">
+<h3 class="anchored" data-anchor-id="sec-du"><code>du</code></h3>
+<p>Show disk usage statistics.</p>
+</section>
 <section id="sec-ps" class="level3">
 <h3 class="anchored" data-anchor-id="sec-ps"><code>ps</code></h3>
 <p>Report a snapshot of the current processes.</p>
@@ -928,8 +933,8 @@ It's important to note here that the command-line is not very forgiving. Using `
 <p>Remove sections from each line of files.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">who</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-c</span> 1-16,26-42</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mjfrigaard           May  7 00:20</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mjfrigaard           May  7 00:20</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mjfrigaard           May  7 05:49</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mjfrigaard           May  7 05:49</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="sec-paste" class="level3">
