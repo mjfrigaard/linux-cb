@@ -351,7 +351,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#sec-bash" id="toc-sec-bash" class="nav-link" data-scroll-target="#sec-bash"><img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Bash</a></li>
   <li><a href="#zsh" id="toc-zsh" class="nav-link" data-scroll-target="#zsh"><img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Zsh</a></li>
-  <li><a href="#fish" id="toc-fish" class="nav-link" data-scroll-target="#fish"><img src="img/fish-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Fish</a></li>
+  <li><a href="#fish" id="toc-fish" class="nav-link" data-scroll-target="#fish"><img src="img/fish-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Fish</a>
+  <ul class="collapse">
+  <li><a href="#sec-shell-change" id="toc-sec-shell-change" class="nav-link" data-scroll-target="#sec-shell-change">Changing the Shell</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#sec-terminals" id="toc-sec-terminals" class="nav-link" data-scroll-target="#sec-terminals"><span style="font-size: 1.05em; font-weight: bold;">Terminals</span></a>
   <ul>
@@ -423,12 +426,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You can use the <strong><code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code></strong> and <strong><code><a href="syntax_ref.html#sec-ps" class="quarto-xref"><span>ps</span></a></code></strong> commands to discover which shell you’re currently using:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /bin/zsh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /bin/bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-p</span> <span class="va">$$</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   PID TTY           TIME CMD</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   683 ttys000    0:00.09 -zsh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 16082 ttys003    0:00.02 -bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -443,7 +446,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div style="font-size: 1.00em; color: #282b2d;">
-<p>As we can see from the outupt above, I’m currently using the Zsh shell. I’ll use a green callout box to indicate the programs or tools I’m using.</p>
+<p>As we can see from the outupt above, I’m currently using the Bash shell. I’ll use a green callout box to indicate the programs or tools I’m using.</p>
 </div>
 </div>
 </div>
@@ -451,7 +454,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="sec-bash" class="level3">
 <h3 class="anchored" data-anchor-id="sec-bash"><img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Bash</h3>
 <p>Introduced in 1989, <a href="https://www.gnu.org/software/bash/"><strong>Bash, or the Bourne Again SHell</strong></a> has become the default command-line interface or shell for most Linux distributions. Incorporating features from the Korn shell (<a href="https://en.wikipedia.org/wiki/KornShell"><code>ksh</code></a>) and the C shell (<a href="https://en.wikipedia.org/wiki/C_shell"><code>csh</code></a>), Bash supports features like command history, tab completion, aliases and scripting tasks.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -465,35 +468,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
-<p><strong>Programming Features</strong></p>
-<p>Bash includes an array of programming constructs that make it a powerful tool for scripting, which includes:<br>
-- Conditional statements (<code>if</code>, <code>then</code>, <code>else</code>, <code>elif</code>, <code>fi</code>) - Looping statements (<code>for</code>, <code>while</code>, <code>until</code>) - Functions that allow code reusability</p>
-<p><strong>Command Line Editing</strong></p>
-<p>Bash provides an interactive command line editing environment with features:</p>
+<p><strong>Programming</strong></p>
+<p>Bash includes an array of programming constructs for scripting:</p>
 <ul>
-<li>History expansion: Commands can be re-executed by recalling them from the history</li>
-<li>Command line editing: Users can navigate and edit commands directly on the command line using Emacs or Vi editing modes</li>
-<li>Tab Completion: Bash supports tab completion for command names, file names, and even command arguments, speeding up the input process and reducing typos</li>
+<li>Conditional statements (<code>if</code>, <code>then</code>, <code>else</code>, <code>elif</code>, <code>fi</code>)<br>
+</li>
+<li>Looping statements (<code>for</code>, <code>while</code>, <code>until</code>)</li>
 </ul>
-<p><strong>Job Control</strong></p>
-<p>Bash offers comprehensive job control, which includes:</p>
+<p><strong>Interactive Command Line Editing</strong></p>
+<p>Bash provides an interactive command line editing environment where users can navigate and edit commands directly on the command line using Emacs or Vi editing modes.</p>
+<p><strong>History expansion</strong></p>
+<p>Commands can be re-executed by recalling them from the history</p>
+<p><strong>Tab Completion</strong></p>
+<p>Bash supports tab completion for command names, file names, and even command arguments, speeding up the input process and reducing typos</p>
+<p><strong>Comprehensive Job Control</strong></p>
 <ul>
 <li>Backgrounding (<code>&amp;</code>), foregrounding (<code>fg</code>), and job management (<code>jobs</code>, <code>bg</code>)<br>
 </li>
 <li>Stopping (suspending) processes and continuing them with <code>kill</code> and <code>kill -CONT</code></li>
 </ul>
-<p><strong>Aliases and Shell Functions</strong></p>
-<p>Users can create shorter commands to represent longer sequences of commands using aliases. Bash also supports more powerful functions that can take arguments like small scripts.</p>
-<p><strong>Redirection and Piping</strong></p>
-<p>Bash allows for advanced redirection and piping:</p>
-<ul>
-<li>Redirecting input and output (<code>&gt;</code>, <code>&lt;</code>, <code>&gt;&gt;</code>, <code>2&gt;</code>, etc.)</li>
-<li>Piping commands (<code>|</code>) are used to pass the output of one command as input to another</li>
-</ul>
+<p><strong>Aliases</strong></p>
+<p>Users can create shorter commands to represent longer sequences of commands using aliases</p>
+<p><strong>Shell Functions</strong></p>
+<p>Bash also supports more powerful functions that can take arguments like small scripts.</p>
 <p><strong>Script Debugging</strong></p>
 <p>Bash scripts can be debugged using options like <code>set -x</code> to print commands and their arguments as they are executed, which is invaluable for troubleshooting scripts</p>
 <p><strong>Environment Control</strong></p>
-<p>Bash allows users to control their shell environment extensively through:</p>
 <ul>
 <li>Environment variables configuration and management</li>
 <li>Variables are exported to make them available to sub-processes</li>
@@ -516,7 +516,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="zsh" class="level3">
 <h3 class="anchored" data-anchor-id="zsh"><img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Zsh</h3>
 <p><a href="https://ohmyz.sh/"><strong>Zsh (Z Shell or ‘Oh My ZSH!’)</strong></a> is noted for its interactive features and is often used with customization frameworks. Zsh is a powerful command-line interpreter for Unix systems that serves as both a scriptable shell and an interactive command interpreter.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -607,6 +607,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<section id="sec-shell-change" class="level4">
+<h4 class="anchored" data-anchor-id="sec-shell-change">Changing the Shell</h4>
+<p>On macOS Sonoma (or any other recent version of macOS), you can change your default shell using the Terminal.</p>
+<p>List all the available shells with the commands below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /etc/shells</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">## # List of acceptable shells for chpass(1).</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">## # Ftpd will not allow users to connect who are not using</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">## # one of these shells.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">## </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/bash</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/csh</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/dash</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/ksh</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/sh</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/tcsh</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/zsh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To change the default shell, use the <code>chsh</code> command (change shell). For example, if you want to switch to <code>bash</code>, use this command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chsh</span> <span class="at">-s</span> /bin/bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can verify your new default shell by using <code>echo</code> with the <code>$SHELL</code> variable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /bin/bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To change the Shell prompt, add the following to the <code>~/.bash_profile</code> file:</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[50,50]">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Use the <code>export PS1=</code> to customize the prompt:<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>This will change Terminal prompt to:</p>
+</div>
+</div>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[50,50]">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PS1</span><span class="op">=</span><span class="st">"username@\W:</span><span class="dt">\$</span><span class="st"> "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">username@~:$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 <section id="sec-terminals" class="level2">
@@ -629,12 +684,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
-<ul>
-<li><p><strong>Profiles</strong>: Users can create multiple profiles, each with its own set of preferences, including colors, fonts, and keyboard shortcuts.</p></li>
-<li><p><strong>Tabs and Splitting</strong>: Supports opening multiple tabs and can split the terminal window into multiple panes.</p></li>
-<li><p><strong>Transparency and Backgrounds</strong>: Allows setting background images and adjusting the transparency of the terminal window.</p></li>
-<li><p><strong>Compatibility</strong>: Supports UTF-8 for a wide range of characters, making it suitable for international use.</p></li>
-</ul>
+<p><strong>Profiles</strong></p>
+<p>Users can create multiple profiles, each with its own set of preferences, including colors, fonts, and keyboard shortcuts.</p>
+<p><strong>Tabs and Splitting</strong></p>
+<p>Supports opening multiple tabs and can split the terminal window into multiple panes.</p>
+<p><strong>Transparency and Backgrounds</strong></p>
+<p>Allows setting background images and adjusting the transparency of the terminal window.</p>
+<p><strong>Compatibility</strong></p>
+<p>Supports UTF-8 for a wide range of characters, making it suitable for international use.</p>
 </div>
 </div>
 </div>
@@ -657,12 +714,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
-<ul>
-<li><p><strong>Tabbed Interface</strong>: Allows multiple tabs within a single window, facilitating multitasking.</p></li>
-<li><p><strong>Profiles</strong>: Supports multiple profiles, enabling different settings for each session.</p></li>
-<li><p><strong>Split Views</strong>: Users can split Konsole windows horizontally or vertically.</p></li>
-<li><p><strong>Transparency and Theming</strong>: Supports background transparency and themes, which can be customized easily.</p></li>
-</ul>
+<p><strong>Tabbed Interface</strong></p>
+<p>Allows multiple tabs within a single window, facilitating multitasking.</p>
+<p><strong>Profiles</strong></p>
+<p>Supports multiple profiles, enabling different settings for each session.</p>
+<p><strong>Split Views</strong></p>
+<p>Users can split Konsole windows horizontally or vertically.</p>
+<p><strong>Transparency and Theming</strong></p>
+<p>Supports background transparency and themes, which can be customized easily.</p>
 </div>
 </div>
 </div>
@@ -685,15 +744,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <p><br></p>
 <div style="font-size: 1.10em;">
-<ul>
-<li><p><strong>Split Panes</strong>: Users can divide iTerm2 into multiple panes, each with its own session.</p></li>
-<li><p><strong>Search</strong>: iTerm2 allows users to search through text and highlights occurrences.</p></li>
-<li><p><strong>Profiles</strong>: Supports detailed profiles, each with its custom colors, fonts, window transparency, and key bindings.</p></li>
-<li><p><strong>Advanced Paste Features</strong>: Offers a paste history and allows pasting with escape codes to avoid issues with unintended command executions.</p></li>
-<li><p><strong>Mouseless Copy</strong>: iTerm2 lets you use keyboard shortcuts to select and copy text without needing the mouse.</p></li>
-<li><p><strong>Shell Integration</strong>: iTerm2 can integrate with the shell to display badges, track command statuses, and more.</p></li>
-<li><p><strong>Trigger Support</strong>: Executes user-defined actions based on text output to the terminal.</p></li>
-</ul>
+<p><strong>Split Panes</strong></p>
+<p>Users can divide iTerm2 into multiple panes, each with its own session.</p>
+<p><strong>Search</strong></p>
+<p>iTerm2 allows users to search through text and highlights occurrences.</p>
+<p><strong>Profiles</strong></p>
+<p>Supports detailed profiles, each with its custom colors, fonts, window transparency, and key bindings.</p>
+<p><strong>Advanced Paste Features</strong></p>
+<p>Offers a paste history and allows pasting with escape codes to avoid issues with unintended command executions.</p>
+<p><strong>Mouseless Copy</strong></p>
+<p>iTerm2 lets you use keyboard shortcuts to select and copy text without needing the mouse.</p>
+<p><strong>Shell Integration</strong></p>
+<p>iTerm2 can integrate with the shell to display badges, track command statuses, and more.</p>
+<p><strong>Trigger Support</strong></p>
+<p>Executes user-defined actions based on text output to the terminal.</p>
 </div>
 </div>
 </div>
@@ -731,6 +795,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li id="fn1"><p>Bash was the default command-line interface for Apple’s macOS (which is Unix-based) until the transition to <code>zsh</code> as the default shell in <a href="https://support.apple.com/en-us/102360">macOS Catalina.</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Zsh is an <a href="https://en.wikipedia.org/wiki/Z_shell">extended version</a> of <strong>Bash (Bourne Again SHell)</strong>, with many improvements, and is fully compatible with the Bourne Shell.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Ars Technica has a great <a href="https://arstechnica.com/information-technology/2005/12/linux-20051218/">summary</a> comparing Fish to other shells.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p><code>\W</code> prints the basename of the current working directory. You can also specify the username (<code>\u</code>) and the host name up to the first period (<code>\h</code>).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
