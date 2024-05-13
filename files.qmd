@@ -42,15 +42,15 @@ co_box(
 )
 ```
 
-The following commands are designed for creating, managing, and manipulating files. Some of these commands will also work on directories (which we covered in the previous chapter).
+The following commands can be used for creating, managing, and manipulating files. Some of these commands also work on directories (which we covered in the previous chapter).
 
 ## [Create]{style="font-size: 1.05em; font-weight: bold;"} 
 
-The commands below can be used to create new files *or* update the timestamp of an existing file.
+The commands below can be used to create new files *or* update the time stamp of an existing file.
 
 ### `touch`
 
-We'll start by creating a new file (`data/who_tb_data.tsv`) with **<code>@sec-touch</code>**:
+We'll start by creating a new empty file (`data/who_tb_data.tsv`) with **<code>@sec-touch</code>**:
 
 ```{bash}
 #| label: touch
@@ -219,14 +219,9 @@ sudo /usr/libexec/locate.updatedb
 
 ## [Manage]{style="font-size: 1.05em; font-weight: bold;"} 
 
+The commands below can be used for copying, moving, renaming, and creating links to files. Assume we want to create backups of the delimiter-separated data files in the `data/` folder. We'll store these backups in folders according the file extension.
 
-The commands below can be used for copying, moving, renaming, and creating links to files.
-
-### `cp`
-
-Assume we want to create backups of the delimiter-separated data files in the `data/` folder. We'll store these backups in folders according the file extension.
-
-First we'll create folder for each type of delimiter (`.csv`, `.tsv`, and `.psv`):
+First we need to create folders for each type of delimiter (`.csv`, `.tsv`, and `.psv`):
 
 ```{bash}
 #| label: mkdir_data_types
@@ -235,7 +230,7 @@ mkdir data/tsv
 mkdir data/psv
 ```
 
-Confirm with `tree -d`
+Confirm these new folders with `tree -d`
 
 ```{bash}
 #| eval: false
@@ -249,33 +244,67 @@ tree data -d
 # 4 directories
 ```
 
-Then we'll copy the files into their respective folder (based their extension) using `*` and **<code>@sec-cp</code>**:
+### `cp`
+
+We'll copy the files into their respective folder based their extension using **<code>@sec-cp</code>** and `*`. For reference, here is a look of the `data/` folder before and after copying the `.csv` files:
 
 ```{bash}
 #| label: cp_data_csv
 cp data/*.csv data/csv/
 ```
 
-```{bash}
-#| eval: false
-#| label: tree_data_csv
-tree data/csv/
-# data/csv/
+:::{layout="[50,50]" layout-valign="bottom"}
+
+*Before copying `.csv` files into `data/csv/`:*
+
+*After copying `.csv` files into `data/csv/`:*[^tree-pattern-csv]
+
+:::
+
+[^tree-pattern-csv]: The `-L 2` option tells tree to only look in the data folder (no subfolders) and `-P '*.csv'` matches the `.csv` files.
+
+:::{layout="[50,50]" layout-valign="top"}
+
+```{.bash}
+tree data -L 2 -P '*.csv'
+# data
+# ├── csv
+# ├── psv
 # ├── pwrds.csv
+# ├── tsv
 # └── wu_tang.csv
 # 
-# 1 directory, 2 files
+# 4 directories, 2 files
 ```
 
 
+```{.bash}
+tree data -L 2 -P '*.csv'
+# data
+# ├── csv
+# │   ├── pwrds.csv
+# │   └── wu_tang.csv
+# ├── psv
+# ├── pwrds.csv
+# ├── tsv
+# └── wu_tang.csv
+
+4 directories, 4 files
+```
+
+:::
+
+Note that the number of `.csv` files doubled (from two files to four files). We'll do the same for the `.tsv` and `.psv` files.
+
 ```{bash}
-#| label: cp_data_csv_tsv
+#| label: cp_data_tsv
 cp data/*.tsv data/tsv/
 ```
 
+Confirm the `.tsv` files were copied:
+
 ```{bash}
 #| eval: false
-#| label: cp_data_tsv
 tree data/tsv/
 # data/tsv/
 # ├── music_vids.tsv
@@ -289,22 +318,24 @@ tree data/tsv/
 ```
 
 ```{bash}
+#| label: cp_data_psv
 cp data/*.psv data/psv/
 ```
+
+Confirm the `.psv` files were copied:
 
 ```{bash}
 #| eval: false
 tree data/psv/
 # data/psv/
-# ├── who_tb_data.psv
 # └── wu_tang.psv
 # 
-# 1 directory, 2 files
+# 1 directory, 1 file
 ```
 
 ### `mv`
 
-The commands below creates `.psv` and `.csv` versions of the `who_tb_data.tsv` file.
+The commands below create `.csv` and `.psv` versions of the `who_tb_data.tsv` we created above:
 
 ```{bash}
 touch data/csv/who_tb_data.csv
@@ -339,7 +370,7 @@ echo "| country     | year | type       | count      |
 | China       | 2000 | population | 1280428583 |" > data/who_tb_data.psv
 ```
 
-Oops--it looks like the `who_tb_data.psv` file was created in the `data` folder! (and not the `data/psv` folder). [^tree-pattern]
+Oops--it looks like the `who_tb_data.psv` file was created in the `data` folder (and not the `data/psv` folder): [^tree-pattern-or]
 
 ```{bash}
 #| eval: false
@@ -354,7 +385,7 @@ tree data -L 2 -P '*who_tb_data.psv|*who_tb_data.csv'
 # 4 directories, 2 files
 ```
 
-[^tree-pattern]: The `-L 2` option tells tree to only look in the data folder (no subfolders) and `-P '*who_tb_data.psv|*who_tb_data.csv'` matches the `who_tb_data.psv` *or* the `who_tb_data.csv` file.
+[^tree-pattern-or]: The `-L 2` option tells tree to only look in the data folder (no subfolders) and `-P '*who_tb_data.psv|*who_tb_data.csv'` matches the `who_tb_data.psv` *or* the `who_tb_data.csv` file.
 
 We'll use **<code>@sec-mv</code>** to move the `who_tb_data.psv` and `data/who_tb_data.psv` files into `data/psv/` and confirm with `tree`:[^cp-mv-dirs]
 
@@ -417,7 +448,7 @@ We'll use `ln` to create `data/who_tb_data.psv`, a hard link for the data file i
 
 ```{bash}
 #| label: ln_hard_link
-ln data/psv/who_tb_data.psv data/who_tb_data.psv
+ln data/psv/who_tb_data.psv data/who_tb_hardlink.psv
 ```
 
 If we check the `data` folder with `tree`, we see the new `who_tb_data.psv` file looks identical to the other files:
@@ -431,7 +462,7 @@ tree data -P '*.psv'
 # │   ├── who_tb_data.psv
 # │   └── wu_tang.psv
 # ├── tsv
-# ├── who_tb_data.psv
+# ├── who_tb_hardlink.psv
 # └── wu_tang.psv
 # 
 # 4 directories, 4 files
@@ -439,11 +470,11 @@ tree data -P '*.psv'
 
 Hard links are basically copies--changes made to one will reflect in the other since they both refer to the same data.
 
-Now we'll use `ln -s` to create `data/who_tb_data.csv`, a *symlink* for the data file in `data/csv/who_tb_data.csv`.
+Now we'll use `ln -s` to create `data/who_tb_symlink.csv`, a *symlink* for the data file in `data/csv/who_tb_data.csv`.
 
 ```{bash}
 #| label: ln_symlink
-ln -s csv/who_tb_data.csv data/who_tb_data.csv
+ln -s csv/who_tb_data.csv data/who_tb_symlink.csv
 ```
 
 When we look at the folder with `tree` now, we see the symlink is listed with a special pointer (`->`) to the original file:
@@ -459,7 +490,7 @@ tree data -P '*.csv'
 # ├── psv
 # ├── pwrds.csv
 # ├── tsv
-# ├── who_tb_data.csv -> data/csv/who_tb_data.csv
+# ├── who_tb_symlink.csv -> csv/who_tb_data.csv
 # └── wu_tang.csv
 # 
 # 4 directories, 6 files
@@ -468,7 +499,7 @@ tree data -P '*.csv'
 The symbolic link only references the actual file, but doesn't store the data itself.
 
 ```{r}
-#| label: co_box_ln
+#| label: co_box_tree_ln
 #| echo: false
 #| results: asis
 #| eval: true
@@ -482,7 +513,7 @@ co_box(
   contents = "
 The `tree` command displays the target file first (the original file) and the link using color:
 
-![Color for symlinks with `tree`](img/symlink-color.png){width='80%' fig-align='center'}
+![Color for symlinks with `tree`](img/symlink-color.png){width='70%' fig-align='center'}
 
 "
 )
@@ -494,22 +525,31 @@ The commands below return different types of information from a files (or files)
 
 ### `ls`
 
-The **<code>@sec-ls</code>** command lists the contents of a directory. Adding `-l` returns the contents in a detailed long format, showing information such as file permissions, number of links, owner, group, file size, and last modification date for each item.
+The **<code>@sec-ls</code>** command lists the contents of a directory. 
 
-We'll use `ls -l` on the hardlink we created and it's original file:
+```{bash}
+#| label: ls_hardlink_1
+ls data/who_tb_hardlink.psv
+```
+
+Adding `-l` returns the contents in a detailed long format. The information below is from the hardlink for the `.psv` file.
+
+```{bash}
+#| label: ls_l_original_psv
+#| eval: false
+ls -l data/psv/who_tb_data.psv
+# -rw-r--r--@ 2 username  staff  686 May 13 13:09 data/psv/who_tb_data.psv
+```
+
+`-l` will add information like file permissions, number of links, owner, group, file size, and last modification date for each item.
+
+If we check the hardlink for the `.psv` file:
 
 ```{bash}
 #| label: ls_l_hardlink_1
 #| eval: false
-ls -l data/who_tb_data.psv
-# -rw-r--r--@ 2 username  staff  686 May  7 11:01 data/who_tb_data.psv
-```
-
-```{bash}
-#| label: ls_l_hardlink_2
-#| eval: false
-ls -l data/psv/who_tb_data.psv
-# -rw-r--r--@ 2 username  staff  686 May  7 11:01 data/psv/who_tb_data.psv
+ls -l data/who_tb_hardlink.psv
+# -rw-r--r--@ 2 username  staff  686 May 13 13:09 data/who_tb_hardlink.psv
 ```
 
 Both `ls -l` commands return similar information for the `who_tb_data.psv` files, indicating they're not treated as separate files, but rather two paths to the *same file*. 
@@ -521,18 +561,18 @@ Compare this to the symlink we created with it's original file:
 ```{bash}
 #| label: ls_l_symlink_1
 #| eval: false
-ls -l data/who_tb_data.csv
-# lrwxr-xr-x@ 1 username  staff  19 May  7 10:56 data/who_tb_data.csv -> csv/who_tb_data.csv
+ls -l data/who_tb_symlink.csv
+# lrwxr-xr-x@ 1 username  staff  19 May 13 13:10 data/who_tb_symlink.csv -> csv/who_tb_data.csv
 ```
+
+The `ls -l` output for `data/who_tb_data.csv` (the symlink) returns `lrwxr-xr-x` (file permissions for a symbolic link) and includes `@ 1`,  indicating a single hard link (symbolic links always have one link). 
 
 ```{bash}
 #| label: ls_l_symlink_2
 #| eval: false
 ls -l data/csv/who_tb_data.csv
-# -rw-r--r--@ 1 username  staff  381 May  7 11:01 data/csv/who_tb_data.csv
+# -rw-r--r--@ 1 username  staff  381 May 13 13:09 data/csv/who_tb_data.csv
 ```
-
-The `ls -l` output for `data/who_tb_data.csv` (the symlink) returns `lrwxr-xr-x` (file permissions for a symbolic link) and includes `@ 1`,  indicating a single hard link (symbolic links always have one link). 
 
 The `who_tb_data.csv` file in `data/csv` returns `-rw-r--r--` (standard file permissions), 
 
@@ -607,26 +647,22 @@ What happens when we compare the symlink (`data/who_tb_data.csv`) and it's origi
 
 ```{bash}
 #| eval: false
-diff data/who_tb_data.csv data/csv/who_tb_data.csv
+diff data/who_tb_symlink.csv data/csv/who_tb_data.csv
 ```
 
 **`diff` returns nothing and doesn’t produce any output if there are no differences between the two files.**
 
-Deleting, moving, or renaming the original file does not affect the integrity of a hard link:
+Deleting, moving, or renaming the original file does not affect the integrity of a hardlink:
 
 ```{bash}
 #| label: remove_hard_link
 # remove original file
 rm data/psv/who_tb_data.psv
 # check hard link
-cat data/who_tb_data.psv
+cat data/who_tb_hardlink.psv
 ```
 
-
-
 However, if the original file for a symlink is deleted, moved, or renamed, the symbolic link breaks and typically becomes a 'dangling' link that points to a non-existent path.
-
-
 
 ### `file`
 
@@ -634,12 +670,14 @@ However, if the original file for a symlink is deleted, moved, or renamed, the s
 
 ```{bash}
 #| label: file
-file data/who_tb_data.csv
+file data/who_tb_symlink.csv
 ```
+
+The `-i` option will tell us if this is a regular file:
 
 ```{bash}
 #| label: file_options
-file -i data/who_tb_data.csv
+file -i data/who_tb_symlink.csv
 ```
 
 ### `readlink`
@@ -648,7 +686,7 @@ file -i data/who_tb_data.csv
 
 ```{bash}
 #| label: readlink_symlink
-readlink data/who_tb_data.csv
+readlink data/who_tb_symlink.csv
 ```
 
 The `-f` option provides the target's absolute path.
@@ -656,8 +694,8 @@ The `-f` option provides the target's absolute path.
 ```{bash}
 #| label: readlink_f_symlink
 #| eval: false
-readlink -f data/who_tb_data.csv
-# /Users/username/path/to/data/csv/who_tb_data.csv
+readlink -f data/who_tb_symlink.csv
+# path/to/data/csv/who_tb_data.csv
 ```
 
 ### `wc`
@@ -666,7 +704,7 @@ readlink -f data/who_tb_data.csv
 
 ```{bash}
 #| label: wc
-wc data/who_tb_data.csv
+wc data/who_tb_symlink.csv
 ```
 
 ### `stat`
@@ -676,15 +714,20 @@ wc data/who_tb_data.csv
 ```{bash}
 #| label: stat
 #| eval: false
-stat data/who_tb_data.csv
-# 16777221 317259283 lrwxr-xr-x 1 username staff 0 19 "May  8 13:20:37 2024" "May  8 13:20:37 2024" "May  8 13:20:37 2024" "May  8 13:20:37 2024" 4096 0 0 data/who_tb_data.csv
+stat data/who_tb_symlink.csv
+# 16777221 317774438 lrwxr-xr-x 1 username staff 0 19 "May 13 13:10:34 2024" \
+#     "May 13 13:10:34 2024" "May 13 13:10:34 2024" "May 13 13:10:34 2024"     \ 
+#     4096 0 0 data/who_tb_symlink.csv
 ```
+
+Adding the `-l` includes the symbolic link to the original file.
 
 ```{bash}
 #| label: stat_l
 #| eval: false
-stat -l data/who_tb_data.csv
-# lrwxr-xr-x 1 username staff 19 May  8 13:20:37 2024 data/who_tb_data.csv -> csv/who_tb_data.csv
+stat -l data/who_tb_symlink.csv
+# lrwxr-xr-x 1 username staff 19 May 13 13:10:34 2024 \
+#     data/who_tb_symlink.csv -> csv/who_tb_data.csv
 ```
 
 ### `du`
@@ -692,12 +735,38 @@ stat -l data/who_tb_data.csv
 **<code>@sec-du</code>** estimates file space usage.
 
 ```{bash}
-#| label: du
+#| label: du_file
+du data/pwrds.csv
+```
+
+The `-h` makes the output human readable.
+
+```{bash}
+#| label: du_symlink
+du -h data/pwrds.csv
+```
+
+If we pass the original and symlink of `who_tb_data.csv` to `du`, we see the symlink doesn't contain any *actual* data:
+
+```{bash}
+#| label: du_file_csv
+du -h data/csv/who_tb_data.csv
+```
+
+```{bash}
+#| label: du_file_symlink_csv
+du -h data/who_tb_symlink.csv
 ```
 
 ## [Permissions]{style="font-size: 1.05em; font-weight: bold;"} {#sec-file-permissions}
 
 **<code>@sec-chmod</code>** changes file permissions, and **<code>@sec-chown</code>** changes file ownership.
+
+### `chmod`
+
+
+
+### `chown`
 
 
 ```{bash}
@@ -706,9 +775,10 @@ stat -l data/who_tb_data.csv
 rm -Rf data/csv
 rm -Rf data/tsv
 rm -Rf data/psv
-rm data/who_tb_data.csv
 rm data/who_tb_data.psv
 rm data/who_tb_data.tsv
+rm data/who_tb_symlink.csv
+rm data/who_tb_hardlink.psv
 ```
 
 ```{r}

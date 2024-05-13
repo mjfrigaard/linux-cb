@@ -49,36 +49,48 @@ When presented with a new map, the most important thing to find is your location
 **<code>@sec-pwd</code>** (print working directory) tells you exactly where you are in the filesystem.
 
 ```{bash}
-#| eval: true
+#| eval: false
 pwd 
+# /Users/username/projects/books/fm-unix
 ```
 
 #### Paths
 
-**Absolute file paths** provide the complete directory path from the root directory to the specified file, and therefore do not change regardless of the current working directory. `pwd` returns an absolute file path:
-
-```{bash}
-#| eval: false 
-/Users/mjfrigaard/projects/books/fm-unix
-```
-
-**Relative file paths**, on the other hand, specify the location of a file relative to the current working directory, changing meaning based on the directory from which they are referenced.
-
-We can use a relative file path to create a `report.txt` file in the `data` folder with the following text:
-
 ```{bash}
 #| eval: true 
+#| echo: false
 echo "my important information" > data/report.txt
 ```
 
-`data/report.txt` is the relative file path (i.e., relative to the current working directory).
+:::{layout="[50,50]" layout-valign="bottom"}
 
-Confirm contents of `report.txt` with `cat`:
+**Absolute file paths** do not change regardless of the current working directory. `pwd` returns an absolute file path:
 
-```{bash}
-#| eval: true
-cat data/report.txt
+
+``` sh 
+/Users/username/projects/books/fm-unix
 ```
+
+:::
+
+
+Absolute paths always start with `/` and identifies a specific location from the root directory.
+
+:::{layout="[50,50]" layout-valign="bottom"}
+
+**Relative file paths** specify the location of a file *relative to the current working directory*. We can use a relative file path to view the `report.txt` file in the `data` folder with `cat`:
+
+``` sh
+cat data/report.txt
+# my important information
+```
+
+:::
+
+`data/report.txt` is the relative file path (i.e., relative to the current working directory), and it's meaning is based on the directory from which it is referenced.
+
+
+
 
 ```{bash}
 #| echo: false

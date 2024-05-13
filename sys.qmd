@@ -43,19 +43,30 @@ co_box(
 
 <!-- **System Monitoring**: `top`, `htop`, `free`, `df`, `du` -->
 
-`ps` (**Process Status**) reports a snapshot of information about all running processes, regardless of the owner, including the user, CPU and memory usage, process ID, and the command that started each process.. Command options can expand the selection to include other users' processes, full command lines, etc.
+### `top`
+
+**<code>@sec-top</code>** 
 
 ```{bash}
+#| label: top
 #| eval: false
-ps
-#>   PID TTY           TIME CMD
-#>  2637 ttys000    0:00.04 -zsh
-#>  2646 ttys001    0:00.04 -zsh
-#>  2791 ttys002    0:00.03 -zsh
+top
 ```
 
+![`top` in iTerm2](img/top.gif){width='100%' fig-align='center'}
 
-`df` (**Disk Free**) shows disk usage in a human-readable format, including the size, used space, available space, and the mount point of each filesystem. By default, it displays sizes in 1K blocks but can show them in a more readable format (like MB or GB) with the `-h` option (human-readable).
+
+### `htop`
+
+**<code>@sec-htop</code>** 
+
+### `free`
+
+**<code>@sec-free</code>** 
+
+### `df`
+
+**<code>@sec-df</code>** (disk free) shows disk usage in a human-readable format, including the size, used space, available space, and the mount point of each filesystem. By default, it displays sizes in 1K blocks but can show them in a more readable format (like MB or GB) with the `-h` option (human-readable).
 
 ```{bash}
 #| eval: false
@@ -69,3 +80,25 @@ df
 #> /dev/disk1s2                      976490576 861746736  84798224    92% 5662798 423991120    1%   /System/Volumes/Data
 #> map auto_home                             0         0         0   100%       0         0     -   /System/Volumes/Data/home
 ```
+
+### `du`
+
+**<code>@sec-du</code>** 
+
+### `ps`
+
+**<code>@sec-ps</code>** (process status) reports a snapshot of information about all running processes, regardless of the owner, including the user, CPU and memory usage, process ID, and the command that started each process. Command options can expand the selection to include other users' processes, full command lines, etc.
+
+```{bash}
+#| eval: false
+ps
+#>   PID TTY           TIME CMD
+#>  2637 ttys000    0:00.04 -zsh
+#>  2646 ttys001    0:00.04 -zsh
+#>  2791 ttys002    0:00.03 -zsh
+```
+
+
+
+
+

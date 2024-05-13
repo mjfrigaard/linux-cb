@@ -365,6 +365,8 @@ ps
 # 13703 ttys001    0:00.03 -zsh
 ```
 
+### `free` {#sec-free}
+
 ### `top` {#sec-top}
 
 Display tasks and system status interactively.
