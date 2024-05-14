@@ -51,18 +51,18 @@ This book aims to provide a quick reference for basic concepts and common tasks 
 #| eval: true
 co_box(
   color = "g",
-  header = "What is a 'Field Manual'?", 
-  size = "1.00", 
-  hsize = "1.15", 
+  header = "What is in a Field Manual?", 
+  size = "0.90", 
+  hsize = "1.05", 
   look = "simple",
   fold = TRUE,
-  contents = "A field manual (FM) is an educational tool, providing standardized information, instructions, and techniques for operational concepts and procedures. 
+  contents = "A field manual (FM) is an educational tool that provides information, instructions, and techniques for various concepts and practices. 
   
-![Example improvised litter made using tent poles and field jackets.](img/jacket-pole-litter.png)
+Fiels Manuals function as both reference material and living documentation, encouraging updates and adaptations based on the given situation, available technology, or broader environment.[^field-manuals]
+
+![Example improvised litter made using tent poles and field jackets.](img/jacket-pole-litter.png){width='70%' fig-align='center'}
   
-FMs function as both reference material and living documentation, encouraging updates and adaptation based on the given situation, changes in technology, or the environment.[^field-manuals]
-  
-[^field-manuals]: Based on the [U.S. Army Field Manuals (FMs).](http://www.lexpev.nl/downloads/fm531boobytraps1965.pdf) ")
+[^field-manuals]: This definition is based on the [U.S. Army Field Manuals (FMs).](https://github.com/mjfrigaard/fm-unix/tree/main/_assets/1965-fm531-boobytraps.pdf)")
 ```
 
 [^zsh-bash]: Most of these commands will work on any Shell (Zsh, Bash, etc.) program.
