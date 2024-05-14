@@ -544,11 +544,11 @@ Fast, versatile, remote (and local) file-copying tool.
 
 ### `chown` {#sec-chown}
 
-Change file owner and group.
+The `chown` command changes the owner and/or group of specified files or directories, thereby altering who has control over these resources.
 
 ### `chmod` {#sec-chmod}
 
-Change file access permissions.
+The `chmod` command changes the access permissions of file system objects (files and directories), allowing users to specify who can read, write, or execute them.
 
 ### `sudo` {#sec-sudo}
 

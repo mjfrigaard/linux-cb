@@ -14,7 +14,6 @@ knitr:
 whoami
 ```
 
-
 ```{r}
 #| label: common
 #| include: false
@@ -22,7 +21,6 @@ whoami
 # Sys.getenv('QUARTO_PROJECT_DIR')
 source("_common.R")
 ```
-
 
 ```{r}
 #| label: co_box_dev
@@ -44,13 +42,13 @@ co_box(
 
 The following commands can be used for creating, managing, and manipulating files. Some of these commands also work on directories (which we covered in the previous chapter).
 
-## [Create]{style="font-size: 1.05em; font-weight: bold;"} 
+## [Create]{style="font-size: 1.05em; font-weight: bold;"}
 
 The commands below can be used to create new files *or* update the time stamp of an existing file.
 
 ### `touch`
 
-We'll start by creating a new empty file (`data/who_tb_data.tsv`) with **<code>@sec-touch</code>**:
+We'll start by creating a new empty file (`data/who_tb_data.tsv`) with <code>@sec-touch</code>:
 
 ```{bash}
 #| label: touch
@@ -59,7 +57,7 @@ touch data/who_tb_data.tsv
 
 We can confirm the new `who_tb_data.tsv` file was created, we'll use the `tree` command to check the `data` folder:
 
-```{.bash style='background-color: #f8f8f8;'}
+``` {.bash style="background-color: #f8f8f8;"}
 tree -P who_tb_data.tsv data
 # data
 # └── who_tb_data.tsv
@@ -71,7 +69,9 @@ The `-P` option lets us specify a pattern to search for in the `data` folder, wh
 
 ### `echo`
 
-We can add some contents to the `data/who_tb_data.tsv` file using **<code>@sec-echo</code>** and the `>` operator.[^who-tb-data-tsv] 
+We can add some contents to the `data/who_tb_data.tsv` file using <code>@sec-echo</code> and the `>` operator.[^files-1]
+
+[^files-1]: `data/who_tb_data.tsv` comes from the [WHO global tuberculosis programme](https://www.who.int/teams/global-tuberculosis-programme/data#csv_files).
 
 ```{bash}
 #| label: echo
@@ -90,11 +90,9 @@ China	2000	cases	213766
 China	2000	population	1280428583" > data/who_tb_data.tsv
 ```
 
-[^who-tb-data-tsv]: `data/who_tb_data.tsv` comes from the [WHO global tuberculosis programme](https://www.who.int/teams/global-tuberculosis-programme/data#csv_files).
+## [View]{style="font-size: 1.05em; font-weight: bold;"}
 
-## [View]{style="font-size: 1.05em; font-weight: bold;"} 
-
-**<code>@sec-cat</code>** concatenates and displays file contents. We can use this to view the entire `data/who_tb_data.tsv` file we just created: 
+<code>@sec-cat</code> concatenates and displays file contents. We can use this to view the entire `data/who_tb_data.tsv` file we just created:
 
 ### `cat`
 
@@ -105,7 +103,9 @@ cat data/who_tb_data.tsv
 
 ### `more` & `less`
 
-**<code>@sec-less</code>** and **<code>@sec-more</code>** lets you skim through a file on your computer, moving forwards and backwards as you please. These commands are helpful for larger files, like the Video Game Hall of Fame data stored in the `data/vg_hof.tsv` file:[^vg-hof-data]
+<code>@sec-less</code> and <code>@sec-more</code> lets you skim through a file on your computer, moving forwards and backwards as you please. These commands are helpful for larger files, like the Video Game Hall of Fame data stored in the `data/vg_hof.tsv` file:[^files-2]
+
+[^files-2]: `data/vg_hof.tsv` is the [Video Game Hall of Fame data](https://en.wikipedia.org/wiki/World_Video_Game_Hall_of_Fame)
 
 ```{bash}
 #| eval: false
@@ -113,7 +113,7 @@ cat data/who_tb_data.tsv
 more data/vg_hof.tsv
 ```
 
-![Enter 'q' to exit the `more` scroll](img/more.gif){width='100%' fig-align='center'}
+![Enter 'q' to exit the `more` scroll](img/more.gif){width="100%" fig-align="center"}
 
 ```{bash}
 #| eval: false
@@ -121,12 +121,11 @@ more data/vg_hof.tsv
 less data/vg_hof.tsv
 ```
 
-
-![Enter 'q' to exit the `less` scroll](img/less.gif){width='100%' fig-align='center'}
+![Enter 'q' to exit the `less` scroll](img/less.gif){width="100%" fig-align="center"}
 
 ### `head` & `tail`
 
-The **<code>@sec-head</code>** and **<code>@sec-tail</code>** commands let us view the tops and bottoms of files (the `-n3` specifies three rows from `data/vg_hof.tsv`).
+The <code>@sec-head</code> and <code>@sec-tail</code> commands let us view the tops and bottoms of files (the `-n3` specifies three rows from `data/vg_hof.tsv`).
 
 ```{bash}
 #| label: head
@@ -138,24 +137,20 @@ head -n3 data/vg_hof.tsv
 tail -n3 data/vg_hof.tsv
 ```
 
-
-[^vg-hof-data]: `data/vg_hof.tsv` is the [Video Game Hall of Fame data](https://en.wikipedia.org/wiki/World_Video_Game_Hall_of_Fame)
-
-## [Look]{style="font-size: 1.05em; font-weight: bold;"} 
+## [Look]{style="font-size: 1.05em; font-weight: bold;"}
 
 These commands can help you search for files (and directories).
 
 ### `grep`
 
-**<code>@sec-grep</code>** searches files for lines matching a pattern. We'll use it to search for a specfic video game title in `data/vg_hof.tsv`:
+<code>@sec-grep</code> searches files for lines matching a pattern. We'll use it to search for a specfic video game title in `data/vg_hof.tsv`:
 
 ```{bash}
 #| label: grep
 grep "The Oregon Trail" data/vg_hof.tsv
 ```
 
-
-**<code>@sec-find</code>** is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, file type, and modification time. 
+<code>@sec-find</code> is used to search for files and directories in a directory hierarchy based on various criteria such as name, size, file type, and modification time.
 
 ### `find`
 
@@ -175,9 +170,9 @@ find data -name "*.tsv" -mtime -1
 
 ### `locate`
 
-**<code>@sec-locate</code>** finds files by name quickly using a database.[^locate-setup]
+<code>@sec-locate</code> finds files by name quickly using a database.[^files-3]
 
-[^locate-setup]: `locate` sometimes requires the search database is generated/updated. Read more [here](https://linuxize.com/post/locate-command-in-linux/)
+[^files-3]: `locate` sometimes requires the search database is generated/updated. Read more [here](https://linuxize.com/post/locate-command-in-linux/)
 
 ```{bash}
 #| eval: false
@@ -217,7 +212,7 @@ sudo /usr/libexec/locate.updatedb
 )
 ```
 
-## [Manage]{style="font-size: 1.05em; font-weight: bold;"} 
+## [Manage]{style="font-size: 1.05em; font-weight: bold;"}
 
 The commands below can be used for copying, moving, renaming, and creating links to files. Assume we want to create backups of the delimiter-separated data files in the `data/` folder. We'll store these backups in folders according the file extension.
 
@@ -246,26 +241,23 @@ tree data -d
 
 ### `cp`
 
-We'll copy the files into their respective folder based their extension using **<code>@sec-cp</code>** and `*`. For reference, here is a look of the `data/` folder before and after copying the `.csv` files:
+We'll copy the files into their respective folder based their extension using <code>@sec-cp</code> and `*`. For reference, here is a look of the `data/` folder before and after copying the `.csv` files:
 
 ```{bash}
 #| label: cp_data_csv
 cp data/*.csv data/csv/
 ```
 
-:::{layout="[50,50]" layout-valign="bottom"}
-
+::: {layout="[50,50]" layout-valign="bottom"}
 *Before copying `.csv` files into `data/csv/`:*
 
-*After copying `.csv` files into `data/csv/`:*[^tree-pattern-csv]
-
+*After copying `.csv` files into `data/csv/`:*[^files-4]
 :::
 
-[^tree-pattern-csv]: The `-L 2` option tells tree to only look in the data folder (no subfolders) and `-P '*.csv'` matches the `.csv` files.
+[^files-4]: The `-L 2` option tells tree to only look in the data folder (no subfolders) and `-P '*.csv'` matches the `.csv` files.
 
-:::{layout="[50,50]" layout-valign="top"}
-
-```{.bash}
+::: {layout="[50,50]" layout-valign="top"}
+``` bash
 tree data -L 2 -P '*.csv'
 # data
 # ├── csv
@@ -277,8 +269,7 @@ tree data -L 2 -P '*.csv'
 # 4 directories, 2 files
 ```
 
-
-```{.bash}
+``` bash
 tree data -L 2 -P '*.csv'
 # data
 # ├── csv
@@ -291,7 +282,6 @@ tree data -L 2 -P '*.csv'
 
 4 directories, 4 files
 ```
-
 :::
 
 Note that the number of `.csv` files doubled (from two files to four files). We'll do the same for the `.tsv` and `.psv` files.
@@ -370,7 +360,9 @@ echo "| country     | year | type       | count      |
 | China       | 2000 | population | 1280428583 |" > data/who_tb_data.psv
 ```
 
-Oops--it looks like the `who_tb_data.psv` file was created in the `data` folder (and not the `data/psv` folder): [^tree-pattern-or]
+Oops--it looks like the `who_tb_data.psv` file was created in the `data` folder (and not the `data/psv` folder): [^files-5]
+
+[^files-5]: The `-L 2` option tells tree to only look in the data folder (no subfolders) and `-P '*who_tb_data.psv|*who_tb_data.csv'` matches the `who_tb_data.psv` *or* the `who_tb_data.csv` file.
 
 ```{bash}
 #| eval: false
@@ -385,9 +377,9 @@ tree data -L 2 -P '*who_tb_data.psv|*who_tb_data.csv'
 # 4 directories, 2 files
 ```
 
-[^tree-pattern-or]: The `-L 2` option tells tree to only look in the data folder (no subfolders) and `-P '*who_tb_data.psv|*who_tb_data.csv'` matches the `who_tb_data.psv` *or* the `who_tb_data.csv` file.
+We'll use <code>@sec-mv</code> to move the `who_tb_data.psv` and `data/who_tb_data.psv` files into `data/psv/` and confirm with `tree`:[^files-6]
 
-We'll use **<code>@sec-mv</code>** to move the `who_tb_data.psv` and `data/who_tb_data.psv` files into `data/psv/` and confirm with `tree`:[^cp-mv-dirs]
+[^files-6]: `cp` and `mv` also work with directories.
 
 ```{bash}
 mv data/who_tb_data.psv data/psv/who_tb_data.psv
@@ -403,22 +395,18 @@ tree data/psv
 # 1 directory, 2 files
 ```
 
-[^cp-mv-dirs]: `cp` and `mv` also work with directories. 
-
 ### `ln`
 
-**<code>@sec-ln</code>** is used to create links between files. It can create two types of links: hard links and symbolic (or soft) links.
+<code>@sec-ln</code> is used to create links between files. It can create two types of links: hard links and symbolic (or soft) links.
 
-:::{layout="[50,50]" layout-valign="top"}
-
-**A hard link** is an additional name for an existing file on the same file system, and is effectively an additional directory entry for the file. 
+::: {layout="[50,50]" layout-valign="top"}
+**A hard link** is an additional name for an existing file on the same file system, and is effectively an additional directory entry for the file. In Unix/Linux file systems, all file names are technically hard links.
 
 **A symbolic link** (often called a symlink) is a file that points to another file or directory, and it contains a path to another entry somewhere in the file system.
-
 :::
 
 With the `ln` command, you need to specify the target file first (the original file) and then the name of the new link:
-  
+
 ```{bash}
 #| label: ln_example
 #| eval: false
@@ -519,13 +507,13 @@ The `tree` command displays the target file first (the original file) and the li
 )
 ```
 
-## [Info]{style="font-size: 1.05em; font-weight: bold;"} 
+## [Info]{style="font-size: 1.05em; font-weight: bold;"}
 
 The commands below return different types of information from a files (or files).
 
 ### `ls`
 
-The **<code>@sec-ls</code>** command lists the contents of a directory. 
+The <code>@sec-ls</code> command lists the contents of a directory.
 
 ```{bash}
 #| label: ls_hardlink_1
@@ -552,7 +540,7 @@ ls -l data/who_tb_hardlink.psv
 # -rw-r--r--@ 2 username  staff  686 May 13 13:09 data/who_tb_hardlink.psv
 ```
 
-Both `ls -l` commands return similar information for the `who_tb_data.psv` files, indicating they're not treated as separate files, but rather two paths to the *same file*. 
+Both `ls -l` commands return similar information for the `who_tb_data.psv` files, indicating they're not treated as separate files, but rather two paths to the *same file*.
 
 The preceding `@ 2` indicates both files have two hard links, meaning `who_tb_data.psv` is physically located in one place but can be accessed from two locations: `data/who_tb_data.psv` and `data/psv/who_tb_data.psv`.
 
@@ -565,7 +553,7 @@ ls -l data/who_tb_symlink.csv
 # lrwxr-xr-x@ 1 username  staff  19 May 13 13:10 data/who_tb_symlink.csv -> csv/who_tb_data.csv
 ```
 
-The `ls -l` output for `data/who_tb_data.csv` (the symlink) returns `lrwxr-xr-x` (file permissions for a symbolic link) and includes `@ 1`,  indicating a single hard link (symbolic links always have one link). 
+The `ls -l` output for `data/who_tb_data.csv` (the symlink) returns `lrwxr-xr-x` (file permissions for a symbolic link) and includes `@ 1`, indicating a single hard link (symbolic links always have one link).
 
 ```{bash}
 #| label: ls_l_symlink_2
@@ -574,36 +562,31 @@ ls -l data/csv/who_tb_data.csv
 # -rw-r--r--@ 1 username  staff  381 May 13 13:09 data/csv/who_tb_data.csv
 ```
 
-The `who_tb_data.csv` file in `data/csv` returns `-rw-r--r--` (standard file permissions), 
+The `who_tb_data.csv` file in `data/csv` returns `-rw-r--r--` (standard file permissions),
 
 We'll cover this output more in the @sec-file-permissions section below.
 
 ### `diff`
 
-**<code>@sec-diff</code>** compare the contents of two files line-by-line. We'll use `diff` to compare the pipe-separated values file (`data/wu_tang.psv`) to the comma-separated separated values file (`data/wu_tang.csv`)
+<code>@sec-diff</code> compare the contents of two files line-by-line. We'll use `diff` to compare the pipe-separated values file (`data/wu_tang.psv`) to the comma-separated separated values file (`data/wu_tang.csv`)
 
 ```{bash}
 #| eval: false
 diff data/wu_tang.psv data/wu_tang.csv
 ```
 
-:::: {layout="[50,50]" layout-valign="top"}
-
-```{.sh style="background-color: #f8f8f8; font-style: italic;"}
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
 # 1,11c1,11
 ```
 
 The first line of the output indicates that lines 1 through 11 in the first file (`data/wu_tang.psv`) have been changed compared to lines 1 through 11 in the second file (`data/wu_tang.csv`).
+:::
 
-::::
-
-
-
-:::: {layout="[50,50]" layout-valign="top"}
-
+::: {layout="[50,50]" layout-valign="top"}
 Lines starting with `<` indicate the content from the first file (`data/wu_tang.psv`). These entries are separated by pipes or spaces (as commonly used in PSV files).
 
-```{.sh style="background-color: #f8f8f8; font-style: italic;"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
 # < |Member           |Name                 |
 # < |RZA              |Robert Diggs         |
 # < |GZA              |Gary Grice           |
@@ -616,12 +599,10 @@ Lines starting with `<` indicate the content from the first file (`data/wu_tang.
 # < |Cappadonna       |Darryl Hill          |
 # < |Ol Dirty Bastard |Russell Tyrone Jones |
 ```
+:::
 
-::::
-
-:::: {layout="[50,50]" layout-valign="top"}
-
-```{.sh style="background-color: #f8f8f8; font-style: italic;"}
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
 # > Member,Name
 # > RZA,Robert Diggs
 # > GZA,Gary Grice
@@ -636,12 +617,11 @@ Lines starting with `<` indicate the content from the first file (`data/wu_tang.
 ```
 
 Lines starting with `>` show the content from the second file (`data/wu_tang.csv`). These entries are separated by commas, as is typical for CSV files.
+:::
 
-::::
+There is no difference in the actual data (`Member` or `Name`)--both files contain the same information, so the primary difference is purely in the formatting of the data: the PSV (pipe-separated Values) file uses vertical bars (`|`) and spaces to separate data fields, whereas the CSV (comma-separated values) file uses commas (`,`).[^files-7]
 
-There is no difference in the actual data (`Member` or `Name`)--both files contain the same information, so the primary difference is purely in the formatting of the data: the PSV (pipe-separated Values) file uses vertical bars (`|`) and spaces to separate data fields, whereas the CSV (comma-separated values) file uses commas (`,`).[^tsv-csv-psv]
-
-[^tsv-csv-psv]: This type of difference is significant if the format impacts how data is parsed or used. For example, a software program expecting data in CSV format might not correctly parse a PSV file, and vice versa.
+[^files-7]: This type of difference is significant if the format impacts how data is parsed or used. For example, a software program expecting data in CSV format might not correctly parse a PSV file, and vice versa.
 
 What happens when we compare the symlink (`data/who_tb_data.csv`) and it's original file (`data/csv/who_tb_data.csv`) with `diff`?
 
@@ -666,7 +646,7 @@ However, if the original file for a symlink is deleted, moved, or renamed, the s
 
 ### `file`
 
-**<code>@sec-file</code>** gives us a summary of what a file is or what it contains, like telling us what's in `data/who_tb_data.csv`.
+<code>@sec-file</code> gives us a summary of what a file is or what it contains, like telling us what's in `data/who_tb_data.csv`.
 
 ```{bash}
 #| label: file
@@ -700,7 +680,7 @@ readlink -f data/who_tb_symlink.csv
 
 ### `wc`
 
-**<code>@sec-wc</code>** (**word count**) counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.
+<code>@sec-wc</code> (**word count**) counts the number of lines, words, and characters in the given input. If a file name is provided, it performs the count on the file; otherwise, it reads from the standard input.
 
 ```{bash}
 #| label: wc
@@ -709,7 +689,7 @@ wc data/who_tb_symlink.csv
 
 ### `stat`
 
-**<code>@sec-stat</code>** displays detailed information about files.
+<code>@sec-stat</code> displays detailed information about files.
 
 ```{bash}
 #| label: stat
@@ -732,7 +712,7 @@ stat -l data/who_tb_symlink.csv
 
 ### `du`
 
-**<code>@sec-du</code>** estimates file space usage.
+<code>@sec-du</code> estimates file space usage.
 
 ```{bash}
 #| label: du_file
@@ -760,14 +740,125 @@ du -h data/who_tb_symlink.csv
 
 ## [Permissions]{style="font-size: 1.05em; font-weight: bold;"} {#sec-file-permissions}
 
-**<code>@sec-chmod</code>** changes file permissions, and **<code>@sec-chown</code>** changes file ownership.
+We'll go over file permissions in-depth in the @sec-perms chapter, but I'll quickly summarize two common uses of `chmod` and `chown` below.
 
+First we'll check the permissions with `ls -l`:
+
+``` bash
+ls -l data/README.md
+# -rw-r--r--@ 1 username  staff  8834 May 14 09:33 data/README.md
+```
+
+The file permissions for `data/README.md` are stored in the combination of characters and symbols returned from `ls -l`:
+
+Breakdown of **`-rw-r--r--@`**:
+
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
+# -
+```
+
+The `-` indicates that the item is a regular file.
+:::
+
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
+# -rw-
+```
+
+The first three characters after the dash represent the user (owner) permissions. The user has read (`r`) and write (`w`) permissions but no execute (`x`) permission.
+:::
+
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
+# -rw-r--
+```
+
+The next three characters represent the group permissions. The group has read (`r`) permission only, with no write (`w`) or execute (`x`) permissions.
+:::
+
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
+# -rw-r--r--
+```
+
+The final three characters represent the permissions for others (everyone else). Like the group, others have only read (`r`) permission, with no write (`w`) or execute (`x`) permissions.
+:::
+
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
+# -rw-r--r--@
+```
+
+The `@` symbol indicates that the file has extended attributes, which are additional metadata stored by the operating system.
+:::
+
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
+# -rw-r--r--@ 1
+```
+
+The `1` indicates the count of hard links pointing to the file, which in this case is the file itself. This is typical for regular files that haven't been explicitly linked elsewhere.
+:::
+
+```{=html}
+<!--
+Overall, the permissions `644` (as represented numerically) allow the owner to read and write the file, while the group and others can only read it.
+-->
+```
 ### `chmod`
 
+<code>@sec-chmod</code> changes file permissions. To change the file permissions using `chmod`, using either symbolic notation or numeric (octal) notation. Below are some simple examples using both methods.
 
+**Symbolic Notation**
+
+To grant the permissions above (i.e., `-rw-r--r--`) with symbolic notation with `chmod`, we could use:
+
+``` {.sh}
+chmod u=rw,g=r,o=r data/README.md
+```
+
+**`u=rw`**: sets the `u`ser (owner) permissions to `r`ead and `w`rite.
+
+**`g=r`**: sets the `g`roup permissions to `r`ead.
+
+**`o=r`**: set the permissions for `o`thers to `r`ead.
+
+We could also group the permissions and settings using the follow `chmod` command:
+
+``` {.sh}
+chmod u=rw,go=r filename
+```
+
+In this case,
+
+**`u=rw`**: specifies that the `u`ser (owner) can `r`ead and `w`rite
+
+**`go=r`**: specifies that *both* the `g`roup and `o`thers can `r`ead, but not `w`rite or `e`xecute.
+
+We can also use `chmod` to add permissions with `+`. The code below grants execute permissions to the user (owner) of the file named `data/README.md`:
+
+``` {.sh}
+chmod u+x data/README.md
+```
+
+This command adds (`+`) execute (`x`) permission to the user (`u`) of the file.
+
+**Numeric Notation**
+
+To set the permissions of the file `data/README.md` so that the user can read and execute it, the group can read it, and others have no permissions, you would use:
+
+``` bash
+chmod 750 data/README.md
+```
+
+Here, `7` stands for read (`4`), write (`2`), and execute (`1`) permissions for the user. `5` represents read and execute permissions for the group (`4+1`), and `0` means no permissions for others.
+
+Both of these examples modify the permissions of `data/README.md` to enhance or restrict access as specified.
 
 ### `chown`
 
+<code>@sec-chown</code> changes file ownership
 
 ```{bash}
 #| include: false

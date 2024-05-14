@@ -45,7 +45,7 @@ co_box(
 
 ### `top`
 
-**<code>@sec-top</code>** 
+**<code>@sec-top</code>** displays the 
 
 ```{bash}
 #| label: top
