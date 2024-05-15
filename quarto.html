@@ -348,6 +348,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#install" id="toc-install" class="nav-link active" data-scroll-target="#install"><span style="font-size: 1.05em; font-weight: bold;">Install</span></a></li>
+  <li><a href="#development" id="toc-development" class="nav-link" data-scroll-target="#development"><span style="font-size: 1.05em; font-weight: bold;">Development</span></a>
+  <ul>
+  <li><a href="#ide-features" id="toc-ide-features" class="nav-link" data-scroll-target="#ide-features">IDE Features</a></li>
+  <li><a href="#extensibility" id="toc-extensibility" class="nav-link" data-scroll-target="#extensibility">Extensibility</a></li>
+  <li><a href="#git-integration" id="toc-git-integration" class="nav-link" data-scroll-target="#git-integration">Git Integration</a></li>
+  <li><a href="#customization" id="toc-customization" class="nav-link" data-scroll-target="#customization">Customization</a></li>
+  <li><a href="#quarto-preview" id="toc-quarto-preview" class="nav-link" data-scroll-target="#quarto-preview">Quarto Preview</a></li>
+  <li><a href="#shell-integration" id="toc-shell-integration" class="nav-link" data-scroll-target="#shell-integration">Shell integration</a></li>
+  </ul></li>
   <li><a href="#quarto-documents" id="toc-quarto-documents" class="nav-link" data-scroll-target="#quarto-documents"><span style="font-size: 1.05em; font-weight: bold;">Quarto Documents</span></a>
   <ul>
   <li><a href="#sec-quarto-yaml" id="toc-sec-quarto-yaml" class="nav-link" data-scroll-target="#sec-quarto-yaml">YAML header</a></li>
@@ -455,10 +464,93 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>On macOS, you can use <code>find</code> in the Terminal:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> / <span class="at">-name</span> quarto <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="development" class="level2">
+<h2 class="anchored" data-anchor-id="development"><span style="font-size: 1.05em; font-weight: bold;">Development</span></h2>
+<p>If you decide to use Quarto documents, you’ll need to decide on the tool (or development environment) you want to use. At the time of this writing, Quarto has tutorials for getting started in <a href="https://posit.co/download/rstudio-desktop/">RStudio</a>, <a href="https://code.visualstudio.com/">VS Code</a>, <a href="https://jupyter.org/">Jupyter</a>, <a href="https://neovim.io/">Neovim</a>, or a text editor (like <a href="https://www.sublimetext.com/">Sublime Text</a>).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> I recommend using an IDE like <a href="https://code.visualstudio.com/">Visual Studio Code</a> (VS Code) for several reasons:<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<section id="ide-features" class="level3">
+<h3 class="anchored" data-anchor-id="ide-features">IDE Features</h3>
+<p>VS Code offers typical IDE features (syntax highlighting, code completion, linting, formatting, debugging, etc.) and a wide range of extensions for Bash scripting that can significantly streamline development.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/vscode_source.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</section>
+<section id="extensibility" class="level3">
+<h3 class="anchored" data-anchor-id="extensibility">Extensibility</h3>
+<p>VS Code runs on multiple platforms (Windows, macOS, and Linux), which means you can maintain scripts across different environments using the same tool.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[35, 65]">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p>VS Code also supports remote development (i.e., the ability to write and debug scripts running on remote servers and containers from your local machine).</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/vscode_remote.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="git-integration" class="level3">
+<h3 class="anchored" data-anchor-id="git-integration">Git Integration</h3>
+<p>VS Code also has excellent support for version control systems, especially Git.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[35, 65]">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p>This integration makes it easier to track changes, revert to previous versions of scripts, and manage updates, all within the same editor environment.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/vscode_git.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="customization" class="level3">
+<h3 class="anchored" data-anchor-id="customization">Customization</h3>
+<p>VS Code can be customized and configured to suit each user’s specific needs, including setting up a personalized development environment with their preferred settings, key bindings, and even look and feel.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/vscode_fold.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</section>
+<section id="quarto-preview" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-preview">Quarto Preview</h3>
+<p>Quarto documents can be configured to render automatically, which gives users the ability to view document outputs as they’re developed in real-time.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/vscode_quarto_preview.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</section>
+<section id="shell-integration" class="level3">
+<h3 class="anchored" data-anchor-id="shell-integration">Shell integration</h3>
+<p>A Terminal window is available in the IDE as a separate window, giving quick access to the command line (with multiple shell options):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/vscode_shells.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p>Overall, VS Code provides a powerful, versatile, and user-friendly platform to develop, maintain, and manage Shell scripts. There is also a large community around VS Code with lots of tutorials, guides, and forums where users can find support.</p>
+</section>
+</section>
 <section id="quarto-documents" class="level2">
 <h2 class="anchored" data-anchor-id="quarto-documents"><span style="font-size: 1.05em; font-weight: bold;">Quarto Documents</span></h2>
 <p>Quarto documents are a flexible and powerful tool for creating dynamic and reproducible reports, presentations, and publications. Quarto documents can support multiple programming languages, including R, Python, Julia, and Bash. Users can combine narrative text with code in a single document, rendering it into various formats like HTML, PDF, and Word.</p>
-<p>This feature proves not only invaluable for data scientists, but for anyone looking to learn a new programming language. Quarto documents are a perfect ‘sandbox’ to experiment with code, take notes, and review the outputs. Moreover, Quarto has the supports cross-referencing, advanced layout options, and beautiful web and book publishing workflows.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>This feature proves not only invaluable for data scientists, but for anyone looking to learn a new programming language. Quarto documents are a perfect ‘sandbox’ to experiment with code, take notes, and review the outputs. Moreover, Quarto has the supports cross-referencing, advanced layout options, and beautiful web and book publishing workflows.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
 <p>Quarto documents consist of the following elements:</p>
 <ol type="1">
 <li><p><strong>YAML Header</strong>: This is used to specify the document’s title, author, and output format.</p></li>
@@ -472,7 +564,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Figures and Tables</strong>: Markdown syntax can be used to add images and tables.</p></li>
 <li><p><strong>Appendices and Bibliography</strong>: Footnotes and references.</p></li>
 </ul>
-<p>If you decide to use Quarto documents, you’ll need to decide on the tool (or development environment) you want to use. At the time of this writing, Quarto has tutorials for getting started in <a href="https://posit.co/download/rstudio-desktop/">RStudio</a>, <a href="https://code.visualstudio.com/">VS Code</a>, <a href="https://jupyter.org/">Jupyter</a>, <a href="https://neovim.io/">Neovim</a>, or a text editor (like <a href="https://www.sublimetext.com/">Sublime Text</a>).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -502,7 +593,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Using Bash"</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To run Bash commands, specify <code>knitr</code> in the <code>engine</code> field of in the <code>YAML</code> header of the Quarto file, and any additional key-value pairs:<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>To run Bash commands, specify <code>knitr</code> in the <code>engine</code> field of in the <code>YAML</code> header of the Quarto file, and any additional key-value pairs:<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Using Bash"</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">engine</span><span class="kw">:</span><span class="at"> knitr</span></span>
@@ -517,7 +608,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="in">echo "foo" </span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bash code chunks allow you to include executable commands within your Quarto documents. You can also specify the code chunk options with the hash-pipe (<code>#|</code>):<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>Bash code chunks allow you to include executable commands within your Quarto documents. You can also specify the code chunk options with the hash-pipe (<code>#|</code>):<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: show</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-summary: 'show/hide echo'</span></span>
@@ -556,30 +647,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>This behavior is different than what we’d see in Posit Workbench’s Terminal on my local machine:</p>
 <ol type="1">
-<li>Assume the current working directory is <code>~/projects/</code> (as indicated by the blue highlighted area in the Terminal pane)</li>
+<li>The current working directory is <code>~/projects/books/fm-unix/</code> (as indicated by the <code>@fm-unix</code> in the Terminal prompt):</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/pwd-local-01.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>~/projects/</figcaption>
+<figcaption><code>fm-unix/</code> directory</figcaption>
 </figure>
 </div>
 <ol start="2" type="1">
-<li>If we change my working directory with <code>..</code>, we are in the home directory <code>~</code>.</li>
+<li>If we change my working directory with <code>..</code>, we are in the <code>books/</code> directory (as indicated by the <strong>books</strong> in the Shell window):</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/pwd-local-02.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>~/</figcaption>
+<figcaption><code>books/</code> directory</figcaption>
 </figure>
 </div>
 <ol start="3" type="1">
-<li>When we check the current working directory again with <code>pwd</code>, we see the location has been <em>permanently</em> changed to <code>~</code>.</li>
+<li>When we check the current working directory again with <code>pwd</code>, we see the location is still <code>~/projects/books/</code>.</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/pwd-local-03.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Still ~/</figcaption>
+<figcaption>Still <code>books/</code> directory</figcaption>
 </figure>
 </div>
 <p>This behavior can be frustrating, but it also means we’ll start with a ‘clean slate’ in each new code chunk!</p>
@@ -610,10 +701,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol>
 <li id="fn1"><p>Bash is common in Linux and older macOS versions<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Zsh is now the default in shell in macOS<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>In fact, this <a href="https://github.com/mjfrigaard/fm-unix/tree/main">entire book</a> was written using Quarto documents.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>For what its worth, I’ve been using RStudio for years and love it. However, I’ve also used Quarto in VS Code and love many of it’s features.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Read more about configuring shell code blocks in Quarto in the <a href="https://quarto.org/docs/computations/execution-options.html#shell-commands">documentation.</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Consult the full list of code chunk options in the <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">Quarto documentation</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>For what its worth, I’ve been using RStudio for years and love it. However, I’ve also used Quarto in VS Code and love many of it’s features.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>If you prefer a ‘Free/Libre Open Source Software Binary of VS Code’, check out <a href="https://vscodium.com/">vscodium</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p><a href="https://marketplace.visualstudio.com/items?itemName=rogalmic.bash-debug">Bash Debug</a> and <a href="https://marketplace.visualstudio.com/items?itemName=mads-hartmann.bash-ide-vscode">Bash IDE</a> are VS Code extensions specifically designed for Bash scripting, which we’ll cover in a later chapter.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>In fact, this <a href="https://github.com/mjfrigaard/fm-unix/tree/main">entire book</a> was written using Quarto documents.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Read more about configuring shell code blocks in Quarto in the <a href="https://quarto.org/docs/computations/execution-options.html#shell-commands">documentation.</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Consult the full list of code chunk options in the <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">Quarto documentation</a>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

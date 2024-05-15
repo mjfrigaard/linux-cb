@@ -372,7 +372,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#info" id="toc-info" class="nav-link" data-scroll-target="#info"><span style="font-size: 1.05em; font-weight: bold;">Info</span></a>
   <ul>
-  <li><a href="#ls" id="toc-ls" class="nav-link" data-scroll-target="#ls"><code>ls</code></a></li>
+  <li><a href="#ls" id="toc-ls" class="nav-link" data-scroll-target="#ls"><code>ls</code></a>
+  <ul class="collapse">
+  <li><a href="#file-link-info" id="toc-file-link-info" class="nav-link" data-scroll-target="#file-link-info">File link info (<code>@</code>)</a></li>
+  </ul></li>
   <li><a href="#diff" id="toc-diff" class="nav-link" data-scroll-target="#diff"><code>diff</code></a></li>
   <li><a href="#file" id="toc-file" class="nav-link" data-scroll-target="#file"><code>file</code></a></li>
   <li><a href="#readlink" id="toc-readlink" class="nav-link" data-scroll-target="#readlink"><code>readlink</code></a></li>
@@ -870,6 +873,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 2 username  staff  686 May 13 13:09 data/who_tb_hardlink.psv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Both <code>ls -l</code> commands return similar information for the <code>who_tb_data.psv</code> files, indicating they’re not treated as separate files, but rather two paths to the <em>same file</em>.</p>
+<section id="file-link-info" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="file-link-info">File link info (<code>@</code>)</h4>
 <p>The preceding <code>@ 2</code> indicates both files have two hard links, meaning <code>who_tb_data.psv</code> is physically located in one place but can be accessed from two locations: <code>data/who_tb_data.psv</code> and <code>data/psv/who_tb_data.psv</code>.</p>
 <p>Compare this to the symlink we created with it’s original file:</p>
 <div class="cell">
@@ -883,6 +888,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>The <code>who_tb_data.csv</code> file in <code>data/csv</code> returns <code>-rw-r--r--</code> (standard file permissions),</p>
 <p>We’ll cover this output more in the <a href="#sec-file-permissions" class="quarto-xref"><span>Permissions</span></a> section below.</p>
+</section>
 </section>
 <section id="diff" class="level3">
 <h3 class="anchored" data-anchor-id="diff"><code>diff</code></h3>
@@ -1149,7 +1155,7 @@ Overall, the permissions `644` (as represented numerically) allow the owner to r
 <p><strong><code>u=rw</code></strong>: sets the <code>u</code>ser (owner) permissions to <code>r</code>ead and <code>w</code>rite.</p>
 <p><strong><code>g=r</code></strong>: sets the <code>g</code>roup permissions to <code>r</code>ead.</p>
 <p><strong><code>o=r</code></strong>: set the permissions for <code>o</code>thers to <code>r</code>ead.</p>
-<p>We could also group the permissions and settings using the follow <code>chmod</code> command:</p>
+<p>Arguments to <code>chmod</code> can also be grouped:</p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> u=rw,go=r filename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In this case,</p>
 <p><strong><code>u=rw</code></strong>: specifies that the <code>u</code>ser (owner) can <code>r</code>ead and <code>w</code>rite</p>
