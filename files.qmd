@@ -542,6 +542,8 @@ ls -l data/who_tb_hardlink.psv
 
 Both `ls -l` commands return similar information for the `who_tb_data.psv` files, indicating they're not treated as separate files, but rather two paths to the *same file*.
 
+#### File link info (`@`) {.unnumbered}
+
 The preceding `@ 2` indicates both files have two hard links, meaning `who_tb_data.psv` is physically located in one place but can be accessed from two locations: `data/who_tb_data.psv` and `data/psv/who_tb_data.psv`.
 
 Compare this to the symlink we created with it's original file:
@@ -824,7 +826,7 @@ chmod u=rw,g=r,o=r data/README.md
 
 **`o=r`**: set the permissions for `o`thers to `r`ead.
 
-We could also group the permissions and settings using the follow `chmod` command:
+Arguments to `chmod` can also be grouped:
 
 ``` {.sh}
 chmod u=rw,go=r filename

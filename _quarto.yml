@@ -3,7 +3,8 @@ project:
   output-dir: _book
   execute-dir: project
   
-editor: source
+editor:
+  render-on-save: true
 
 book:
   title: "fm-unix"

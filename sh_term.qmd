@@ -84,7 +84,7 @@ Introduced in 1989, [**Bash, or the Bourne Again SHell**](https://www.gnu.org/so
 
 [^sh_term-1]: Bash was the default command-line interface for Apple's macOS (which is Unix-based) until the transition to `zsh` as the default shell in [macOS Catalina.](https://support.apple.com/en-us/102360)
 
-::: {.callout-tip collapse="true"}
+::: {.callout-tip collapse="true" appearance="default"}
 #### [Key features of ![](img/bash-logo.svg){width="8%"} Bash]{style="font-size: 1.15em;"}
 
 <br>
@@ -152,7 +152,7 @@ Bash maintains a history of commands that users have executed, which can be navi
 
 [^sh_term-2]: Zsh is an [extended version](https://en.wikipedia.org/wiki/Z_shell) of **Bash (Bourne Again SHell)**, with many improvements, and is fully compatible with the Bourne Shell.
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" appearance="simple"}
 #### [Key features of ![](img/zshell-logo.png){width="8%"} Zsh]{style="font-size: 1.15em;"}
 
 <br>
@@ -209,7 +209,7 @@ Zsh's file globbing allows for more complex pattern matching than traditional Un
 
 [^sh_term-3]: Ars Technica has a great [summary](https://arstechnica.com/information-technology/2005/12/linux-20051218/) comparing Fish to other shells.
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" appearance="simple"}
 #### [Key features of ![](img/fish-small-logo.png){fig-align="right" width="10%"} Fish]{style="font-size: 1.15em;"}
 
 <br>
@@ -370,7 +370,7 @@ Supports background transparency and themes, which can be customized easily.
 
 [iTerm2](https://iterm2.com/) is a replacement for Terminal and the successor to iTerm for macOS. It offers features beyond what traditional terminals provide.
 
-::: {.callout-tip collapse="true"}
+::: {.callout-tip collapse="true" appearance="default"}
 #### [Key features of iTerm2]{style="font-size: 1.15em;"}
 
 <br>

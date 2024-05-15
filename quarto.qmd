@@ -98,6 +98,67 @@ On macOS, you can use `find` in the Terminal:
 find / -name quarto 2>/dev/null
 ```
 
+## [Development]{style="font-size: 1.05em; font-weight: bold;"} 
+
+If you decide to use Quarto documents, you'll need to decide on the tool (or development environment) you want to use. At the time of this writing, Quarto has tutorials for getting started in [RStudio](https://posit.co/download/rstudio-desktop/), [VS Code](https://code.visualstudio.com/), [Jupyter](https://jupyter.org/), [Neovim](https://neovim.io/), or a text editor (like [Sublime Text](https://www.sublimetext.com/)).[^rstudio-quarto-dev] I recommend using an IDE like [Visual Studio Code](https://code.visualstudio.com/) (VS Code) for several reasons:[^vs-codium]
+
+[^rstudio-quarto-dev]: For what its worth, I've been using RStudio for years and love it. However, I've also used Quarto in VS Code and love many of it's features. 
+
+[^vs-codium]: If you prefer a 'Free/Libre Open Source Software Binary of VS Code', check out [vscodium](https://vscodium.com/)
+
+### IDE Features
+
+VS Code offers typical IDE features (syntax highlighting, code completion, linting, formatting, debugging, etc.) and a wide range of extensions for Bash scripting that can significantly streamline development.[^bash-scripting-vscode]
+
+![](img/vscode_source.png){width='80%' fig-align='center'}
+
+[^bash-scripting-vscode]: [Bash Debug](https://marketplace.visualstudio.com/items?itemName=rogalmic.bash-debug) and [Bash IDE](https://marketplace.visualstudio.com/items?itemName=mads-hartmann.bash-ide-vscode) are VS Code extensions specifically designed for Bash scripting, which we'll cover in a later chapter.
+
+### Extensibility
+
+VS Code runs on multiple platforms (Windows, macOS, and Linux), which means you can maintain scripts across different environments using the same tool. 
+
+:::{layout="[35, 65]" layout-valign="top"}
+
+VS Code also supports remote development (i.e., the ability to write and debug scripts running on remote servers and containers from your local machine).
+
+![](img/vscode_remote.png){width='80%' fig-align='center'}
+
+:::
+
+### Git Integration
+
+VS Code also has excellent support for version control systems, especially Git.
+
+:::{layout="[35, 65]" layout-valign="top"}
+
+This integration makes it easier to track changes, revert to previous versions of scripts, and manage updates, all within the same editor environment.
+
+![](img/vscode_git.png){width='80%' fig-align='center'}
+
+:::
+
+### Customization
+
+VS Code can be customized and configured to suit each user's specific needs, including setting up a personalized development environment with their preferred settings, key bindings, and even look and feel.
+
+![](img/vscode_fold.png){width='80%' fig-align='center'}
+
+### Quarto Preview
+
+Quarto documents can be configured to render automatically, which gives users the ability to view document outputs as they're developed in real-time.
+
+![](img/vscode_quarto_preview.png){width='80%' fig-align='center'}
+
+### Shell integration 
+
+A Terminal window is available in the IDE as a separate window, giving quick access to the command line (with multiple shell options):
+
+![](img/vscode_shells.png){width='80%' fig-align='center'}
+
+Overall, VS Code provides a powerful, versatile, and user-friendly platform to develop, maintain, and manage Shell scripts. There is also a large community around VS Code with lots of tutorials, guides, and forums where users can find support.
+
+
 ## [Quarto Documents]{style="font-size: 1.05em; font-weight: bold;"}
 
 Quarto documents are a flexible and powerful tool for creating dynamic and reproducible reports, presentations, and publications. Quarto documents can support multiple programming languages, including R, Python, Julia, and Bash. Users can combine narrative text with code in a single document, rendering it into various formats like HTML, PDF, and Word. 
@@ -123,10 +184,6 @@ Additional features include:
 -   **Figures and Tables**: Markdown syntax can be used to add images and tables.
 
 -   **Appendices and Bibliography**: Footnotes and references.
-
-If you decide to use Quarto documents, you'll need to decide on the tool (or development environment) you want to use. At the time of this writing, Quarto has tutorials for getting started in [RStudio](https://posit.co/download/rstudio-desktop/), [VS Code](https://code.visualstudio.com/), [Jupyter](https://jupyter.org/), [Neovim](https://neovim.io/), or a text editor (like [Sublime Text](https://www.sublimetext.com/)).[^rstudio-quarto-dev]
-
-[^rstudio-quarto-dev]: For what its worth, I've been using RStudio for years and love it. However, I've also used Quarto in VS Code and love many of it's features. 
 
 ```{r}
 #| label: co_box_knuth
@@ -230,17 +287,17 @@ pwd # the document's location for each new code chunk
 
 This behavior is different than what we'd see in Posit Workbench's Terminal on my local machine:
 
-1. Assume the current working directory is `~/projects/` (as indicated by the blue highlighted area in the Terminal pane) 
+1. The current working directory is `~/projects/books/fm-unix/` (as indicated by the `@fm-unix` in the Terminal prompt):
 
-![~/projects/](img/pwd-local-01.png){width='100%'}
+![`fm-unix/` directory](img/pwd-local-01.png){width='100%'}
 
-2. If we change my working directory with `..`, we are in the home directory `~`.
+2. If we change my working directory with `..`, we are in the `books/` directory (as indicated by the **books** in the Shell window):
 
-![~/](img/pwd-local-02.png){width='100%'}
+![`books/` directory](img/pwd-local-02.png){width='100%'}
 
-3. When we check the current working directory again with `pwd`, we see the location has been *permanently* changed to `~`. 
+3. When we check the current working directory again with `pwd`, we see the location is still `~/projects/books/`. 
 
-![Still ~/](img/pwd-local-03.png){width='100%'}
+![Still `books/` directory](img/pwd-local-03.png){width='100%'}
 
 This behavior can be frustrating, but it also means we'll start with a 'clean slate' in each new code chunk!
 
