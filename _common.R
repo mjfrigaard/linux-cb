@@ -230,3 +230,43 @@ glue::glue("\n:::: {{layout='[ 30, 50, 20 ]'}}
 ::::")
   }
 }
+
+margin_box <- function(shell = "bash", sys = 'macos', sh_w = '30', sys_w = '30') {
+  sh_img <- switch(
+    shell,
+    bash = paste0(
+      "Bash ![](img/bash-logo.svg){fig-align='center' width='",
+      sh_w,
+      "'}"
+    ),
+    zsh = paste0(
+      "Zsh ![](img/zshell-logo.png){fig-align='center' width='",
+      sh_w,
+      "'}"
+    ))
+  
+  sys_img <- switch(sys,
+    linux = paste0("Linux ![](img/tut.png){fig-align='center' width='", sys_w, "'}"),
+    macos = paste0("macOS ![](img/macos.png){fig-align='center' width='", sys_w, "'}")
+  )
+
+  switch(sys,
+  macos = cat(paste0(
+      "\n",
+      "::::{.column-margin}\n\n",
+      ":::{style='font-size: 0.90rem;'}\n\n",
+      sh_img, " on ", sys_img, ".\n\n",
+      ":::\n",
+      ":::: \n\n"
+    )),
+  linux = cat(paste0(
+      "\n",
+      "::::{.column-margin}\n\n",
+      ":::{style='font-size: 0.90rem;'}\n\n",
+      sh_img, " on ", sys_img, ".\n\n",
+      ":::\n",
+      ":::: \n\n"
+    )),
+    stop("Invalid `type`", call. = FALSE)
+  )
+}

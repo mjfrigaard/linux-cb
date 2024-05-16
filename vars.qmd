@@ -3,6 +3,7 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
+    comment: '#'
 ---
 
 # Variables {#sec-vars}
@@ -36,29 +37,255 @@ co_box(
 )
 ```
 
-This chapter covers the essential aspects of variables in Unix/Linux environments.
+This chapter covers the essential aspects of variables in Unix/Linux environments. I'll be using VS Code because I can quickly switch between shells in the Terminal window.
 
-## [Unix/Linux Variables]{style="font-size: 1.05em; font-weight: bold;"} 
+## [Unix/Linux Variables]{style="font-size: 1.05em; font-weight: bold;"}
 
-Definition and significance of variables in Unix/Linux.
+Variables in Unix/Linux are used to store data that can be accessed and manipulated by the operating system and applications. They play a crucial role in scripting, programming, and managing system configurations. By storing values in variables, users and scripts can dynamically reference and change these values without hard-coding them, making scripts more flexible and maintainable.
 
-Overview of environment variables vs. shell variables.
+In Unix/Linux, variables can hold different types of data, such as strings, integers, or file paths. They can be used for various purposes, including:
 
-## [Types of Variables]{style="font-size: 1.05em; font-weight: bold;"} 
+-   Customizing the user environment (e.g., setting the default editor).\
+-   Storing temporary data within scripts.\
+-   Passing data between programs and scripts.\
+-   Configuring system and application settings.
 
-Variables come in two flavors--Shell and Environment. 
+The significance of variables lies in their ability to simplify complex tasks, enhance automation, and improve the overall efficiency of the Unix/Linux environment.
 
-### Shell Variables
+### Environment vs. Shell
 
-Local to the shell instance.
+In Unix/Linux, variables are broadly categorized into environment variables and shell variables.
 
-### Environment Variables
+**Environment variables** are global variables that are available system-wide and can influence the behavior of the shell and other programs. They are inherited by all child processes.
 
-Available system-wide and inherited by child processes.
+Environment variables are often used to configure the shell environment, set application settings, and pass data to child processes.
 
-Differences and use cases.
+| Variable | Description                                                |
+|----------|------------------------------------------------------------|
+| `PATH`   | Specifies the directories to search for executable files.  |
+| `HOME`   | Represents the current user’s home directory.              |
+| `USER`   | Contains the name of the current user.                     |
+| `LANG`   | Defines the language and locale settings for applications. |
 
-## [Setting Variables]{style="font-size: 1.05em; font-weight: bold;"} 
+: Common environment variables
+
+**Shell variables** are local to the shell session in which they are defined. They are not inherited by child processes unless explicitly exported.
+
+Shell variables are typically used for temporary data storage within scripts, customizing the shell prompt, and managing session-specific settings.
+
+| Variable | Description                          |
+|----------|--------------------------------------|
+| `PS1`    | Defines the primary prompt string.   |
+| `PS2`    | Defines the secondary prompt string. |
+
+: Common shell variables
+
+## [Setting Variables]{style="font-size: 1.05em; font-weight: bold;"}
+
+In the following sections we'll cover setting shell and environment variables in your shell. These commands will work in Bash or Zsh.
+
+### Setting Shell Variables
+
+Shell variables in Unix/Linux are defined within the context of the current shell session. To set a shell variable, simply assign a value to a variable name using the following syntax:
+
+``` sh
+VARIABLE_NAME=value
+```
+
+Variable names are case-sensitive and traditionally use uppercase letters. When creating a new variable, there should be no spaces around the `=` sign. We can check the value of the new variable using `echo`:
+
+```{bash}
+#| eval: false
+MY_VAR="Hello, World"
+```
+
+```{bash}
+#| eval: false
+echo $MY_VAR
+# Hello, World
+```
+
+```{r}
+#| label: margin_box_shell_vars
+#| echo: false
+#| results: asis
+#| eval: true
+margin_box(shell = "zsh", sys = "macos")
+```
+
+### Removing Shell Variables
+
+To remove a shell variable, use the **<code>@sec-unset</code>** command followed by the variable name:
+
+```{bash}
+#| eval: false
+unset MY_VAR
+```
+
+After running unset, the variable `MY_VAR` will no longer exist in the current shell session.
+
+
+To list all shell variables, use the **<code>@sec-set</code>** command:
+
+``` sh
+set
+```
+
+### Setting Environment Variables
+
+Environment variables are set similarly to shell variables but are made available to child processes by using the **<code>@sec-export</code>** command. To set an environment variable, follow these steps:
+
+1.  Assign a value to a variable.
+2.  Export the variable.
+
+```{bash}
+#| eval: false
+MY_ENV_VAR="This is an environment variable"
+export MY_ENV_VAR
+```
+
+You can also combine these steps into a single command:
+
+```{bash}
+#| eval: false
+export MY_ENV_VAR="This is an environment variable"
+```
+
+To verify the value of an environment variable, use the `echo` command:
+
+```{r}
+#| label: margin_box_env_vars
+#| echo: false
+#| results: asis
+#| eval: true
+margin_box(shell = "zsh", sys = "macos")
+```
+
+```{bash}
+#| eval: false
+echo $MY_ENV_VAR
+# This is an environment variable
+```
+
+To list all environment variables, use the `printenv` or `env` command:
+
+```{bash}
+#| eval: false
+printenv
+```
+
+or
+
+```{bash}
+#| eval: false
+env
+```
+
+## [Using Variables]{style="font-size: 1.05em; font-weight: bold;"}
+
+The section below covers how to use environment and shell variables in the terminal and in shell script (`.sh`) files.
+
+### Using Shell Variables
+
+Using shell variables involves referencing them within scripts or commands with a dollar sign (`$`) prefix and the variable. Below is an example of using a shell variable in an `if`/`then` loop:
+
+```{bash}
+count=5
+if [ $count -gt 3 ]; then 
+  echo "Count is greater than 3"; 
+fi
+```
+
+The code above could be stored in a script (`if_count.sh`), where the shell variables could be used to store and manipulate data dynamically by calling `source`:
+
+```{bash}
+touch if_count.sh
+echo "count=5
+if [ $count -gt 3 ]; then 
+  echo "Count is greater than 3"; 
+fi" > if_count.sh
+```
+
+
+```{bash}
+source if_count.sh
+```
+
+```{bash}
+#| echo: false
+rm if_count.sh
+```
+
+### Using Environment Variables
+
+Environment variables can be accessed in the same way as shell variables by prefixing the variable name with a dollar sign (`$`). Since they are available to child processes, environment variables are particularly useful for configuring application settings and passing data to scripts and programs.
+
+For example, `PWD` works similar to the `pwd` command, but the path is stored as a string to use in scripts or programs.
+
+```{bash}
+#| eval: false
+echo $PWD
+# /Users/username/projects/books/fm-unix
+```
+
+In a script, we can use environment variables to ensure that certain settings or configurations are applied (like `HOME` and `USER`)
+
+Assume the following is stored in `my_config.sh`
+
+```{r}
+#| label: create_my_config.sh
+#| echo: false
+#| eval: true
+if (!exists("my_config.sh")) {
+  file.create("my_config.sh")
+  writeLines(text = '#!/bin/bash
+echo "Users home directory: $HOME"
+echo "Current user: $USER"
+echo "Current language: $LANG"', con = "my_config.sh")
+}
+```
+
+```sh
+#!/bin/bash
+echo "User's home directory: $HOME"
+echo "Current user: $USER"
+echo "Current language: $LANG"
+```
+
+These variables don't need to be defined in the script--they can just be stored and called directly: 
+
+```{bash}
+#| eval: false
+source my_config.sh
+# User's home directory: /Users/username
+# Current user: username
+# Current language: en_US.UTF-8
+```
+
+```{bash}
+#| echo: false
+rm my_config.sh
+```
+
+## [Key Differences]{style="font-size: 1.05em; font-weight: bold;"}
+
+**Scope:** Environment variables have a global scope and are available to all processes, whereas shell variables have a local scope and are limited to the shell session.
+
+**Inheritance:** Environment variables are inherited by child processes, while shell variables need to be exported to be available to child processes.
+
+**Purpose:** Environment variables are generally used for system-wide configuration and application settings, while shell variables are used for script-specific or session-specific tasks.
+
+Understanding the distinction between environment and shell variables is essential for effective Unix/Linux system administration and scripting. It allows users to manage and customize their environment efficiently, ensuring that scripts and applications behave as intended.
+
+## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 
+
+By understanding and utilizing shell and environment variables effectively, you can enhance the functionality and flexibility of your Unix/Linux scripts and system configurations. We'll touch on this topic again in the [shell scripts](scripts.qmd) section.
+
+````{=html}
+<!--
+## Using Variables
+
+
 
 ### Setting Shell Variables
 
@@ -125,3 +352,6 @@ Examples of critical environment variables (`PATH`, `HOME`, `USER`).
 - Recap of key points covered in the chapter.
 
 - Additional resources for deeper exploration (books, online tutorials, communities).
+
+-->
+````

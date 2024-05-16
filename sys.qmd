@@ -76,24 +76,15 @@ top
 
 ### `free` 
 
+**<code>@sec-free</code>** displays the amount of free and used memory in the system, giving you a quick snapshot of memory allocation and availability:
+
 ```{r}
-#| label: co_box_free
+#| label: margin_box_free
 #| echo: false
 #| results: asis
 #| eval: true
-co_box(
-  color = "o",
-  look = "default", 
-  hsize = "1.25", 
-  size = "1.00", 
-  header = "![](img/tut.png){height=30} free command", 
-  fold = TRUE,
-  contents = "`free` is only available on Linux opertating systems. For a similar command on macOS, see thread [here](https://apple.stackexchange.com/questions/4286/is-there-a-mac-os-x-terminal-version-of-the-free-command-in-linux-systems) and  [here](https://superuser.com/questions/521681/what-is-the-mac-osx-equivalent-of-free-m)
-  "
-)
+margin_box(shell = "bash", sys = "linux")
 ```
-
-**<code>@sec-free</code>** displays the amount of free and used memory in the system, giving you a quick snapshot of memory allocation and availability:
 
 ```{bash}
 #| eval: false
@@ -173,13 +164,14 @@ ps -o lstart,sess,pmem,pcpu,etime,command
 ```
 
 
-The specified columns are:  
--   `lstart`: The exact date and time the process was started  
--   `sess`: The session ID of the process  
--   `pmem`: The percentage of the physical memory used by the process  
--   `pcpu`: The percentage of the CPU time used by the process  
--   `etime`: The elapsed time since the process started 
--   `command`: The command and arguments
+The specified columns are: 
+
+  -   `lstart`: The exact date and time the process was started  
+  -   `sess`: The session ID of the process  
+  -   `pmem`: The percentage of the physical memory used by the process  
+  -   `pcpu`: The percentage of the CPU time used by the process  
+  -   `etime`: The elapsed time since the process started 
+  -   `command`: The command and arguments
 
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 
 
