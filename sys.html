@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -364,7 +364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basics.html">Basics</a></li><li class="breadcrumb-item"><a href="./sys.html"><span class="chapter-title">System</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -433,30 +433,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>htop</code> enhances usability with features like color coding, an interactive interface, and the ability to scroll through processes.</p>
 </section>
 </section>
-<section id="snapshots" class="level2">
+<section id="snapshots" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="snapshots"><span style="font-size: 1.05em; font-weight: bold;">Snapshots</span></h2>
-<section id="free" class="level3">
+<section id="free" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="free"><code>free</code></h3>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 1.25em;"><img src="img/tut.png" height="30"> free command</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div style="font-size: 1.00em; color: #282b2d;">
-<p><code>free</code> is only available on Linux opertating systems. For a similar command on macOS, see thread <a href="https://apple.stackexchange.com/questions/4286/is-there-a-mac-os-x-terminal-version-of-the-free-command-in-linux-systems">here</a> and <a href="https://superuser.com/questions/521681/what-is-the-mac-osx-equivalent-of-free-m">here</a></p>
-</div>
-</div>
-</div>
-</div>
 <p><strong><code><a href="syntax_ref.html#sec-free" class="quarto-xref"><span>free</span></a></code></strong> displays the amount of free and used memory in the system, giving you a quick snapshot of memory allocation and availability:</p>
-<div class="cell">
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div style="font-size: 0.90rem;">
+<p>Bash <img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-center" width="30"> on Linux <img src="img/tut.png" class="img-fluid quarto-figure quarto-figure-center" width="30">.</p>
+</div>
+</div></div><div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">free</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -508,8 +495,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   PID TTY           TIME CMD</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 13343 ttys000    0:00.04 bash --rcfile /Applications/RStudio.app/Contents/Resources/app/resources/terminal/bash/.bash_profile</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   711 ttys001    0:00.14 -bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   711 ttys001    0:00.14 -bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Command options can also expand the selection to include other users’ processes, full command lines, etc.</p>
 <div class="cell">
@@ -521,12 +507,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Thu May 16 09:10:07 2024          0  0.0   0.0    00:22 /bin/sh /usr/bin/man ps</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Thu May 16 09:10:07 2024          0  0.0   0.0    00:22 /usr/bin/less -s</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The specified columns are:<br>
-- <code>lstart</code>: The exact date and time the process was started<br>
-- <code>sess</code>: The session ID of the process<br>
-- <code>pmem</code>: The percentage of the physical memory used by the process<br>
-- <code>pcpu</code>: The percentage of the CPU time used by the process<br>
-- <code>etime</code>: The elapsed time since the process started - <code>command</code>: The command and arguments</p>
+<p>The specified columns are:</p>
+<ul>
+<li><code>lstart</code>: The exact date and time the process was started<br>
+</li>
+<li><code>sess</code>: The session ID of the process<br>
+</li>
+<li><code>pmem</code>: The percentage of the physical memory used by the process<br>
+</li>
+<li><code>pcpu</code>: The percentage of the CPU time used by the process<br>
+</li>
+<li><code>etime</code>: The elapsed time since the process started</li>
+<li><code>command</code>: The command and arguments</li>
+</ul>
 </section>
 </section>
 <section id="recap" class="level2">

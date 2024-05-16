@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -73,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -313,15 +347,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#unixlinux-variables" id="toc-unixlinux-variables" class="nav-link active" data-scroll-target="#unixlinux-variables"><span style="font-size: 1.05em; font-weight: bold;">Unix/Linux Variables</span></a></li>
-  <li><a href="#types-of-variables" id="toc-types-of-variables" class="nav-link" data-scroll-target="#types-of-variables"><span style="font-size: 1.05em; font-weight: bold;">Types of Variables</span></a>
+  <li><a href="#unixlinux-variables" id="toc-unixlinux-variables" class="nav-link active" data-scroll-target="#unixlinux-variables"><span style="font-size: 1.05em; font-weight: bold;">Unix/Linux Variables</span></a>
   <ul>
-  <li><a href="#shell-variables" id="toc-shell-variables" class="nav-link" data-scroll-target="#shell-variables">Shell Variables</a></li>
-  <li><a href="#environment-variables" id="toc-environment-variables" class="nav-link" data-scroll-target="#environment-variables">Environment Variables</a></li>
+  <li><a href="#environment-vs.-shell" id="toc-environment-vs.-shell" class="nav-link" data-scroll-target="#environment-vs.-shell">Environment vs.&nbsp;Shell</a></li>
   </ul></li>
   <li><a href="#setting-variables" id="toc-setting-variables" class="nav-link" data-scroll-target="#setting-variables"><span style="font-size: 1.05em; font-weight: bold;">Setting Variables</span></a>
   <ul>
   <li><a href="#setting-shell-variables" id="toc-setting-shell-variables" class="nav-link" data-scroll-target="#setting-shell-variables">Setting Shell Variables</a></li>
+  <li><a href="#removing-shell-variables" id="toc-removing-shell-variables" class="nav-link" data-scroll-target="#removing-shell-variables">Removing Shell Variables</a></li>
   <li><a href="#setting-environment-variables" id="toc-setting-environment-variables" class="nav-link" data-scroll-target="#setting-environment-variables">Setting Environment Variables</a></li>
   </ul></li>
   <li><a href="#using-variables" id="toc-using-variables" class="nav-link" data-scroll-target="#using-variables"><span style="font-size: 1.05em; font-weight: bold;">Using Variables</span></a>
@@ -329,18 +362,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#using-shell-variables" id="toc-using-shell-variables" class="nav-link" data-scroll-target="#using-shell-variables">Using Shell Variables</a></li>
   <li><a href="#using-environment-variables" id="toc-using-environment-variables" class="nav-link" data-scroll-target="#using-environment-variables">Using Environment Variables</a></li>
   </ul></li>
-  <li><a href="#variables-commands-and-utilities" id="toc-variables-commands-and-utilities" class="nav-link" data-scroll-target="#variables-commands-and-utilities"><span style="font-size: 1.05em; font-weight: bold;">Variables, Commands and Utilities</span></a>
-  <ul>
-  <li><a href="#variables-in-scripts" id="toc-variables-in-scripts" class="nav-link" data-scroll-target="#variables-in-scripts">Variables in Scripts</a></li>
-  <li><a href="#advanced-variable-features" id="toc-advanced-variable-features" class="nav-link" data-scroll-target="#advanced-variable-features">Advanced Variable Features</a></li>
-  <li><a href="#security-and-best-practices" id="toc-security-and-best-practices" class="nav-link" data-scroll-target="#security-and-best-practices">Security and Best Practices</a></li>
-  </ul></li>
-  <li><a href="#recp" id="toc-recp" class="nav-link" data-scroll-target="#recp"><span style="font-size: 1.05em; font-weight: bold;">Recp</span></a></li>
+  <li><a href="#key-differences" id="toc-key-differences" class="nav-link" data-scroll-target="#key-differences"><span style="font-size: 1.05em; font-weight: bold;">Key Differences</span></a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basics.html">Basics</a></li><li class="breadcrumb-item"><a href="./vars.html"><span class="chapter-title">Variables</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -379,90 +407,277 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>This chapter covers the essential aspects of variables in Unix/Linux environments.</p>
+<p>This chapter covers the essential aspects of variables in Unix/Linux environments. I’ll be using VS Code because I can quickly switch between shells in the Terminal window.</p>
 <section id="unixlinux-variables" class="level2">
 <h2 class="anchored" data-anchor-id="unixlinux-variables"><span style="font-size: 1.05em; font-weight: bold;">Unix/Linux Variables</span></h2>
-<p>Definition and significance of variables in Unix/Linux.</p>
-<p>Overview of environment variables vs.&nbsp;shell variables.</p>
+<p>Variables in Unix/Linux are used to store data that can be accessed and manipulated by the operating system and applications. They play a crucial role in scripting, programming, and managing system configurations. By storing values in variables, users and scripts can dynamically reference and change these values without hard-coding them, making scripts more flexible and maintainable.</p>
+<p>In Unix/Linux, variables can hold different types of data, such as strings, integers, or file paths. They can be used for various purposes, including:</p>
+<ul>
+<li>Customizing the user environment (e.g., setting the default editor).<br>
+</li>
+<li>Storing temporary data within scripts.<br>
+</li>
+<li>Passing data between programs and scripts.<br>
+</li>
+<li>Configuring system and application settings.</li>
+</ul>
+<p>The significance of variables lies in their ability to simplify complex tasks, enhance automation, and improve the overall efficiency of the Unix/Linux environment.</p>
+<section id="environment-vs.-shell" class="level3">
+<h3 class="anchored" data-anchor-id="environment-vs.-shell">Environment vs.&nbsp;Shell</h3>
+<p>In Unix/Linux, variables are broadly categorized into environment variables and shell variables.</p>
+<p><strong>Environment variables</strong> are global variables that are available system-wide and can influence the behavior of the shell and other programs. They are inherited by all child processes.</p>
+<p>Environment variables are often used to configure the shell environment, set application settings, and pass data to child processes.</p>
+<table class="table">
+<caption>Common environment variables</caption>
+<colgroup>
+<col style="width: 14%">
+<col style="width: 85%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>PATH</code></td>
+<td>Specifies the directories to search for executable files.</td>
+</tr>
+<tr class="even">
+<td><code>HOME</code></td>
+<td>Represents the current user’s home directory.</td>
+</tr>
+<tr class="odd">
+<td><code>USER</code></td>
+<td>Contains the name of the current user.</td>
+</tr>
+<tr class="even">
+<td><code>LANG</code></td>
+<td>Defines the language and locale settings for applications.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Shell variables</strong> are local to the shell session in which they are defined. They are not inherited by child processes unless explicitly exported.</p>
+<p>Shell variables are typically used for temporary data storage within scripts, customizing the shell prompt, and managing session-specific settings.</p>
+<table class="table">
+<caption>Common shell variables</caption>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>PS1</code></td>
+<td>Defines the primary prompt string.</td>
+</tr>
+<tr class="even">
+<td><code>PS2</code></td>
+<td>Defines the secondary prompt string.</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="types-of-variables" class="level2">
-<h2 class="anchored" data-anchor-id="types-of-variables"><span style="font-size: 1.05em; font-weight: bold;">Types of Variables</span></h2>
-<p>Variables come in two flavors–Shell and Environment.</p>
-<section id="shell-variables" class="level3">
-<h3 class="anchored" data-anchor-id="shell-variables">Shell Variables</h3>
-<p>Local to the shell instance.</p>
 </section>
-<section id="environment-variables" class="level3">
-<h3 class="anchored" data-anchor-id="environment-variables">Environment Variables</h3>
-<p>Available system-wide and inherited by child processes.</p>
-<p>Differences and use cases.</p>
-</section>
-</section>
-<section id="setting-variables" class="level2">
+<section id="setting-variables" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="setting-variables"><span style="font-size: 1.05em; font-weight: bold;">Setting Variables</span></h2>
-<section id="setting-shell-variables" class="level3">
+<p>In the following sections we’ll cover setting shell and environment variables in your shell. These commands will work in Bash or Zsh.</p>
+<section id="setting-shell-variables" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="setting-shell-variables">Setting Shell Variables</h3>
-<p>Basic syntax for setting variables (<code>varname=value</code>).</p>
+<p>Shell variables in Unix/Linux are defined within the context of the current shell session. To set a shell variable, simply assign a value to a variable name using the following syntax:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">VARIABLE_NAME</span><span class="op">=</span>value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Variable names are case-sensitive and traditionally use uppercase letters. When creating a new variable, there should be no spaces around the <code>=</code> sign. We can check the value of the new variable using <code>echo</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">MY_VAR</span><span class="op">=</span><span class="st">"Hello, World"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$MY_VAR</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Hello, World</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div style="font-size: 0.90rem;">
+<p>Zsh <img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-center" width="30"> on macOS <img src="img/macos.png" class="img-fluid quarto-figure quarto-figure-center" width="30">.</p>
+</div>
+</div></div></section>
+<section id="removing-shell-variables" class="level3">
+<h3 class="anchored" data-anchor-id="removing-shell-variables">Removing Shell Variables</h3>
+<p>To remove a shell variable, use the <strong><code><a href="syntax_ref.html#sec-unset" class="quarto-xref"><span>export</span></a></code></strong> command followed by the variable name:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">unset</span> <span class="va">MY_VAR</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>After running unset, the variable <code>MY_VAR</code> will no longer exist in the current shell session.</p>
+<p>To list all shell variables, use the <strong><code><a href="syntax_ref.html#sec-set" class="quarto-xref"><span>set</span></a></code></strong> command:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="setting-environment-variables" class="level3">
+<section id="setting-environment-variables" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="setting-environment-variables">Setting Environment Variables</h3>
-<p>Basic syntax for exporting environment variables (<code>export VARNAME=value</code>).</p>
+<p>Environment variables are set similarly to shell variables but are made available to child processes by using the <strong><code><span class="quarto-unresolved-ref">?sec-export</span></code></strong> command. To set an environment variable, follow these steps:</p>
+<ol type="1">
+<li>Assign a value to a variable.</li>
+<li>Export the variable.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">MY_ENV_VAR</span><span class="op">=</span><span class="st">"This is an environment variable"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MY_ENV_VAR</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can also combine these steps into a single command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MY_ENV_VAR</span><span class="op">=</span><span class="st">"This is an environment variable"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To verify the value of an environment variable, use the <code>echo</code> command:</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div style="font-size: 0.90rem;">
+<p>Zsh <img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-center" width="30"> on macOS <img src="img/macos.png" class="img-fluid quarto-figure quarto-figure-center" width="30">.</p>
+</div>
+</div></div><div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$MY_ENV_VAR</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is an environment variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To list all environment variables, use the <code>printenv</code> or <code>env</code> command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">printenv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>or</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">env</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 </section>
 <section id="using-variables" class="level2">
 <h2 class="anchored" data-anchor-id="using-variables"><span style="font-size: 1.05em; font-weight: bold;">Using Variables</span></h2>
+<p>The section below covers how to use environment and shell variables in the terminal and in shell script (<code>.sh</code>) files.</p>
 <section id="using-shell-variables" class="level3">
 <h3 class="anchored" data-anchor-id="using-shell-variables">Using Shell Variables</h3>
-<p>Accessing variable values (<code>echo $varname</code>).</p>
-<p>Examples of common shell variables.</p>
+<p>Using shell variables involves referencing them within scripts or commands with a dollar sign (<code>$</code>) prefix and the variable. Below is an example of using a shell variable in an <code>if</code>/<code>then</code> loop:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">count</span><span class="op">=</span>5</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$count</span> <span class="ot">-gt</span> 3 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"Count is greater than 3"</span><span class="kw">;</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Count is greater than 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The code above could be stored in a script (<code>if_count.sh</code>), where the shell variables could be used to store and manipulate data dynamically by calling <code>source</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> if_count.sh</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"count=5</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="st">if [ </span><span class="va">$count</span><span class="st"> -gt 3 ]; then </span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="st">  echo "</span>Count is greater than 3<span class="st">"; </span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="st">fi"</span> <span class="op">&gt;</span> if_count.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> if_count.sh</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># if_count.sh: line 2: [: -gt: unary operator expected</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="using-environment-variables" class="level3">
 <h3 class="anchored" data-anchor-id="using-environment-variables">Using Environment Variables</h3>
-<p>How to make environment variables persistent (<code>.bashrc</code>, <code>.profile</code>, etc.).</p>
-<p>Examples of critical environment variables (<code>PATH</code>, <code>HOME</code>, <code>USER</code>).</p>
+<p>Environment variables can be accessed in the same way as shell variables by prefixing the variable name with a dollar sign (<code>$</code>). Since they are available to child processes, environment variables are particularly useful for configuring application settings and passing data to scripts and programs.</p>
+<p>For example, <code>PWD</code> works similar to the <code>pwd</code> command, but the path is stored as a string to use in scripts or programs.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$PWD</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /Users/username/projects/books/fm-unix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In a script, we can use environment variables to ensure that certain settings or configurations are applied (like <code>HOME</code> and <code>USER</code>)</p>
+<p>Assume the following is stored in <code>my_config.sh</code></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"User's home directory: </span><span class="va">$HOME</span><span class="st">"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Current user: </span><span class="va">$USER</span><span class="st">"</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Current language: </span><span class="va">$LANG</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These variables don’t need to be defined in the script–they can just be stored and called directly:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> my_config.sh</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># User's home directory: /Users/username</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Current user: username</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Current language: en_US.UTF-8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 </section>
-<section id="variables-commands-and-utilities" class="level2">
-<h2 class="anchored" data-anchor-id="variables-commands-and-utilities"><span style="font-size: 1.05em; font-weight: bold;">Variables, Commands and Utilities</span></h2>
-<ul>
-<li><p><code>printenv</code>: Displaying environment variables.</p></li>
-<li><p><code>set</code>: Viewing shell and environment variables.</p></li>
-<li><p><code>unset</code>: Deleting variables.</p></li>
-<li><p><code>export</code>: Marking variables to be exported to child processes.</p></li>
-<li><p>Using <code>env</code> for running programs in a modified environment.</p></li>
-</ul>
-<section id="variables-in-scripts" class="level3">
-<h3 class="anchored" data-anchor-id="variables-in-scripts">Variables in Scripts</h3>
-<ul>
-<li><p>How to use variables to customize scripts.</p></li>
-<li><p>Passing variables to scripts via command line.</p></li>
-<li><p>Reading and modifying variables within scripts.</p></li>
-<li><p>Example script demonstrating variable use.</p></li>
-</ul>
+<section id="key-differences" class="level2">
+<h2 class="anchored" data-anchor-id="key-differences"><span style="font-size: 1.05em; font-weight: bold;">Key Differences</span></h2>
+<p><strong>Scope:</strong> Environment variables have a global scope and are available to all processes, whereas shell variables have a local scope and are limited to the shell session.</p>
+<p><strong>Inheritance:</strong> Environment variables are inherited by child processes, while shell variables need to be exported to be available to child processes.</p>
+<p><strong>Purpose:</strong> Environment variables are generally used for system-wide configuration and application settings, while shell variables are used for script-specific or session-specific tasks.</p>
+<p>Understanding the distinction between environment and shell variables is essential for effective Unix/Linux system administration and scripting. It allows users to manage and customize their environment efficiently, ensuring that scripts and applications behave as intended.</p>
 </section>
-<section id="advanced-variable-features" class="level3">
-<h3 class="anchored" data-anchor-id="advanced-variable-features">Advanced Variable Features</h3>
-<ul>
-<li><p>Arrays and associative arrays in Bash.</p></li>
-<li><p>Integer operations and manipulating string variables.</p></li>
-<li><p>Special variables (<code>$0</code>, <code>$1</code>, <code>$?</code>, <code>$$</code>, <code>$@</code>).</p></li>
-</ul>
-</section>
-<section id="security-and-best-practices" class="level3">
-<h3 class="anchored" data-anchor-id="security-and-best-practices">Security and Best Practices</h3>
-<ul>
-<li><p>Security implications of improperly handling variables.</p></li>
-<li><p>Best practices for naming and using variables.</p></li>
-<li><p>Avoiding common pitfalls (e.g., overwriting critical environment variables).</p></li>
-</ul>
-</section>
-</section>
-<section id="recp" class="level2">
-<h2 class="anchored" data-anchor-id="recp"><span style="font-size: 1.05em; font-weight: bold;">Recp</span></h2>
-<ul>
-<li><p>Recap of key points covered in the chapter.</p></li>
-<li><p>Additional resources for deeper exploration (books, online tutorials, communities).</p></li>
-</ul>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></h2>
+<p>By understanding and utilizing shell and environment variables effectively, you can enhance the functionality and flexibility of your Unix/Linux scripts and system configurations. We’ll touch on this topic again in the <a href="./scripts.html">shell scripts</a> section.</p>
+<!--
+## Using Variables
+
+
+
+### Setting Shell Variables
+
+Basic syntax for setting variables (`varname=value`).
+
+### Setting Environment Variables
+
+Basic syntax for exporting environment variables (`export VARNAME=value`).
+
+## [Using Variables]{style="font-size: 1.05em; font-weight: bold;"} 
+
+### Using Shell Variables
+
+Accessing variable values (`echo $varname`).
+
+Examples of common shell variables.
+
+### Using Environment Variables
+
+How to make environment variables persistent (`.bashrc`, `.profile`, etc.).
+
+Examples of critical environment variables (`PATH`, `HOME`, `USER`).
+
+## [Variables, Commands and Utilities]{style="font-size: 1.05em; font-weight: bold;"} 
+
+- `printenv`: Displaying environment variables.
+
+- `set`: Viewing shell and environment variables.
+
+- `unset`: Deleting variables.
+
+- `export`: Marking variables to be exported to child processes.
+
+- Using `env` for running programs in a modified environment.
+
+### Variables in Scripts
+
+- How to use variables to customize scripts.
+
+- Passing variables to scripts via command line.
+
+- Reading and modifying variables within scripts.
+
+- Example script demonstrating variable use.
+
+### Advanced Variable Features
+
+- Arrays and associative arrays in Bash.
+
+- Integer operations and manipulating string variables.
+
+- Special variables (`$0`, `$1`, `$?`, `$$`, `$@`).
+
+### Security and Best Practices
+
+- Security implications of improperly handling variables.
+
+- Best practices for naming and using variables.
+
+- Avoiding common pitfalls (e.g., overwriting critical environment variables).
+
+## [Recp]{style="font-size: 1.05em; font-weight: bold;"} 
+
+- Recap of key points covered in the chapter.
+
+- Additional resources for deeper exploration (books, online tutorials, communities).
+
+-->
 
 
 </section>
