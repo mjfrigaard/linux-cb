@@ -43,9 +43,15 @@ co_box(
 
 <!-- **System Monitoring**: `top`, `htop`, `free`, `df`, `du` -->
 
+This chapter covers monitoring performance and resource usage in the Unix/Linux systems. These commands will help ensure that the servers and applications are running efficiently and can help you preemptively address potential issues before they escalate into major problems. 
+
+We'll delve into some of the most essential and widely-used system monitoring commands: `top`, `htop`, `free`, `df`, and `du`
+
+## [Real-time monitoring]{style="font-size: 1.05em; font-weight: bold;"} 
+
 ### `top`
 
-**<code>@sec-top</code>** displays the 
+**<code>@sec-top</code>** displays a dynamic, real-time view of the system’s processes, including CPU and memory usage. 
 
 ```{bash}
 #| label: top
@@ -58,15 +64,46 @@ top
 
 ### `htop`
 
-**<code>@sec-htop</code>** 
+**<code>@sec-htop</code>** is a more user-friendly and visually appealing alternative to `top`.[^htop]
 
-### `free`
+![`htop` in iTerm2](img/htop.gif){width='100%' fig-align='center'}
 
-**<code>@sec-free</code>** 
+`htop` enhances usability with features like color coding, an interactive interface, and the ability to scroll through processes.
+
+[^htop]: You can install htop on macOS with [homebrew.](https://formulae.brew.sh/formula/htop) Read more [here](https://htop.dev/)
+
+## [Snapshots]{style="font-size: 1.05em; font-weight: bold;"} 
+
+### `free` 
+
+```{r}
+#| label: co_box_free
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "o",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "![](img/tut.png){height=30} free command", 
+  fold = TRUE,
+  contents = "`free` is only available on Linux opertating systems. For a similar command on macOS, see thread [here](https://apple.stackexchange.com/questions/4286/is-there-a-mac-os-x-terminal-version-of-the-free-command-in-linux-systems) and  [here](https://superuser.com/questions/521681/what-is-the-mac-osx-equivalent-of-free-m)
+  "
+)
+```
+
+**<code>@sec-free</code>** displays the amount of free and used memory in the system, giving you a quick snapshot of memory allocation and availability:
+
+```{bash}
+#| eval: false
+free
+```
+
 
 ### `df`
 
-**<code>@sec-df</code>** (disk free) shows disk usage in a human-readable format, including the size, used space, available space, and the mount point of each filesystem. By default, it displays sizes in 1K blocks but can show them in a more readable format (like MB or GB) with the `-h` option (human-readable).
+**<code>@sec-df</code>** (disk free) shows disk usage in a human-readable format, including the size, used space, available space, and the mount point of each filesystem. 
 
 ```{bash}
 #| eval: false
@@ -81,24 +118,72 @@ df
 #> map auto_home                             0         0         0   100%       0         0     -   /System/Volumes/Data/home
 ```
 
-### `du`
-
-**<code>@sec-du</code>** 
-
-### `ps`
-
-**<code>@sec-ps</code>** (process status) reports a snapshot of information about all running processes, regardless of the owner, including the user, CPU and memory usage, process ID, and the command that started each process. Command options can expand the selection to include other users' processes, full command lines, etc.
+By default, it displays sizes in 1K blocks but can show them in a more readable format (like MB or GB) with the `-h` option (human-readable).
 
 ```{bash}
 #| eval: false
+df -h
+# Filesystem                          Size    Used   Avail Capacity iused ifree %iused  Mounted on
+# /dev/disk1s1s1                     466Gi   9.5Gi    35Gi    22%    404k  367M    0%   /
+# devfs                              197Ki   197Ki     0Bi   100%     682     0  100%   /dev
+# /dev/disk1s3                       466Gi   2.4Gi    35Gi     7%    5.1k  367M    0%   /System/Volumes/Preboot
+# /dev/disk1s5                       466Gi   2.0Gi    35Gi     6%       2  367M    0%   /System/Volumes/VM
+# /dev/disk1s6                       466Gi    20Mi    35Gi     1%      19  367M    0%   /System/Volumes/Update
+# /dev/disk1s2                       466Gi   415Gi    35Gi    93%    6.2M  367M    2%   /System/Volumes/Data
+# map auto_home                        0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home
+
+```
+
+### `du`
+
+**<code>@sec-du</code>** summarizes disk usage for directories and files, allowing you to pinpoint large files and directories that may be consuming excessive disk space.
+
+```{bash}
+#| eval: true
+du data
+```
+
+Just like `df`, show the output in a more readable format (like MB or GB) with the `-h` (human-readable) option:
+
+```{bash}
+#| eval: true
+du -h data
+```
+
+### `ps`
+
+**<code>@sec-ps</code>** reports a snapshot of the process status for all running processes, regardless of the owner, including the process ID (`PID`), terminal type (`TTY`), cumulative CPU time (`TIME`), and the command (`CMD`) that started each process:
+
+```{bash}
 ps
-#>   PID TTY           TIME CMD
-#>  2637 ttys000    0:00.04 -zsh
-#>  2646 ttys001    0:00.04 -zsh
-#>  2791 ttys002    0:00.03 -zsh
 ```
 
 
+Command options can also expand the selection to include other users' processes, full command lines, etc.
+
+```{bash}
+#| eval: false
+ps -o lstart,sess,pmem,pcpu,etime,command
+# STARTED                        SESS %MEM  %CPU  ELAPSED COMMAND
+# Thu May 16 07:51:12 2024          0  0.0   0.0 01:19:17 bash --rcfile 
+# Wed May 15 21:12:58 2024          0  0.0   0.0 11:57:31 -bash
+# Thu May 16 09:10:06 2024          0  0.0   0.0    00:23 /bin/sh /usr/bin/man ps
+# Thu May 16 09:10:07 2024          0  0.0   0.0    00:22 /bin/sh /usr/bin/man ps
+# Thu May 16 09:10:07 2024          0  0.0   0.0    00:22 /usr/bin/less -s
+```
 
 
+The specified columns are:  
+-   `lstart`: The exact date and time the process was started  
+-   `sess`: The session ID of the process  
+-   `pmem`: The percentage of the physical memory used by the process  
+-   `pcpu`: The percentage of the CPU time used by the process  
+-   `etime`: The elapsed time since the process started 
+-   `command`: The command and arguments
+
+## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 
+
+In this chapter, we explored five essential system monitoring commands in Linux: `top`, `htop`, `free`, `df`, and `du`. These commands provide crucial insights into system performance and resource utilization, enabling efficient monitoring and troubleshooting of Linux systems.
+
+Mastering these commands will help you monitor and maintain optimal system performance, ensure efficient resource utilization, and quickly address potential issues.
 

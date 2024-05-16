@@ -33,7 +33,7 @@ produced.[^readme-2] Key information captured in the file includes:
     Wikipedia](https://en.wikipedia.org/wiki/List_of_most_expensive_music_videos)
 
 | Variable       | Description                                                                                   |
-|------------------|------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | `rank`         | The music video's position based on the production cost.                                      |
 | `title`        | The name of the music video.                                                                  |
 | `artists`      | The artist(s) who performed the song.                                                         |
@@ -44,17 +44,17 @@ produced.[^readme-2] Key information captured in the file includes:
 
 ## Passwords
 
-The files `pwrds.csv` and `pwrds.tsv`are CSV (comma-separated values)
-files containing a comprehensive list of commonly used passwords and
-attributes.[^readme-3] The dataset contains information about passwords'
-strength, popularity rank, and resilience against online attacks. The
-dataset includes the following variables:
+`pwrds.csv` is a CSV (comma-separated values) file containing a
+comprehensive list of commonly used passwords and attributes.[^readme-3]
+The dataset contains information about passwords' strength, popularity
+rank, and resilience against online attacks. The dataset includes the
+following variables:
 
 [^readme-3]: The original data comes from [Information is
     Beautiful](https://docs.google.com/spreadsheets/d/1cz7TDhm0ebVpySqbTvrHrD3WpxeyE4hLZtifWSnoNTQ/edit#gid=16)
 
 | Variable           | Description                                                                                                                         |
-|------------------|------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | **`password`**     | The actual password text.                                                                                                           |
 | **`rank`**         | Numerical ranking based on the frequency or commonness of the password.                                                             |
 | **`strength`**     | A numerical value representing the estimated password strength, where higher numbers indicate stronger passwords.                   |
@@ -72,7 +72,7 @@ for not having to engage in prostitution.
 
 ## Trees
 
-The file `trees.txt` is a tab-separated value (TSV) document that
+The file `trees.csv` is a comma-separated value (CSV) document that
 catalogs some of the tallest trees in the world, providing detailed
 information on each tree listed.[^readme-5] This file is structured to
 provide a quick reference to some of the most significant trees around
@@ -84,7 +84,7 @@ fields:
     Wikipedia.](https://en.wikipedia.org/wiki/List_of_tallest_trees)
 
 | Variable        | Description                                                 |
-|--------------------|----------------------------------------------------|
+|---------------------|---------------------------------------------------|
 | **`tree`**      | Identifier or common name used for the tree.                |
 | **`species`**   | Scientific name of the tree species.                        |
 | **`class`**     | Biological classification (e.g., Conifer, Flowering plant). |
@@ -96,7 +96,7 @@ fields:
 
 ## Video Game Hall of Fame
 
-The file `vg_hof.tsv` is a tab-separated values (TSV) document that
+The file `vg_hof.csv` is a comma-separated values (CSV) document that
 contains a list of video games inducted into a hall of fame over several
 years, from 2015 to 2024.[^readme-6] Each record in the dataset includes
 the year of induction, the game's name, the developer, and the year the
@@ -108,7 +108,7 @@ game was initially released.
 The fields detailed in the dataset are:
 
 | Variable            | Description                                           |
-|----------------------|-------------------------------------------------|
+|-----------------------|-------------------------------------------------|
 | **`year`**          | The year the game was inducted into the hall of fame. |
 | **`game`**          | The name of the video game.                           |
 | **`developer`**     | The company or individual who developed the game.     |
@@ -116,8 +116,8 @@ The fields detailed in the dataset are:
 
 ## World Health Organization Tuberculosis
 
-The files `who_tb_data.tsv` and `who_tb_data.txt` are tab-separated
-values (TSV) documents that provides tuberculosis (TB) case data
+`who_tb_data.csv` and `who_tb_data.tsv` are comma and tab-separated
+values (CSV and TSV) files that provides tuberculosis (TB) case data
 alongside population figures for selected countries over specific years,
 as reported by the World Health Organization (WHO).[^readme-7]
 
@@ -127,7 +127,7 @@ as reported by the World Health Organization (WHO).[^readme-7]
 The dataset includes the following fields:
 
 | Variable      | Description                                                                                                                                                                                     |
-|------------------|------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | **`country`** | The name of the country where the data was recorded.                                                                                                                                            |
 | **`year`**    | The year in which the data was collected.                                                                                                                                                       |
 | **`type`**    | A descriptor of the data type, which can be either 'cases' indicating the number of tuberculosis cases reported, or 'population' representing the total population of the country in that year. |
@@ -135,12 +135,12 @@ The dataset includes the following fields:
 
 ## Wu-Tang Clan
 
-`wu_tang.dat`, `wu_tang.txt`, and `wu_tang.csv` are data files that
-provides the stage names and real names of the members of the Wu-Tang
-Clan, a highly influential hip-hop group.[^readme-8] Each entry in the
-dataset correlates a member's popularly known stage name with their
-legal name, offering insight into the identities behind the personas.
-The data structure includes two main fields:
+`wu_tang.csv` is a comma-separated data file that provides the stage
+names and real names of the members of the Wu-Tang Clan, a highly
+influential hip-hop group.[^readme-8] Each entry in the dataset
+correlates a member's popularly known stage name with their legal name,
+offering insight into the identities behind the personas. The data
+structure includes two main fields:
 
 [^readme-8]: From the [Wu-Tang Clan Wikipedia
     page](https://en.wikipedia.org/wiki/Wu-Tang_Clan).
@@ -149,5 +149,3 @@ The data structure includes two main fields:
 |--------------|--------------------------------------------|
 | **`Member`** | The stage name of the Wu-Tang Clan member. |
 | **`Name`**   | The real name of the member.               |
-
-

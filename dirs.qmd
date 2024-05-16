@@ -54,7 +54,7 @@ pwd
 # /Users/username/projects/books/fm-unix
 ```
 
-#### Paths
+[File paths]{style="font-size: 1.25em; font-weight: bold; font-style: italic;"} 
 
 ```{bash}
 #| eval: true 
@@ -62,48 +62,76 @@ pwd
 echo "my important information" > data/report.txt
 ```
 
-:::{layout="[50,50]" layout-valign="bottom"}
+The output from `pwd` is the file path to our local working directory. A file path is a character string specifying the unique location of a file or directory within the hierarchical file system. File paths can be **absolute** (starting from the root  (`/`) directory) or **relative** (starting from the current (`.`) directory). 
 
-**Absolute file paths** do not change regardless of the current working directory. `pwd` returns an absolute file path:
+In Unix/Linux systems, the `~` represents the user's 'home' directory.
 
-
-``` sh 
-/Users/username/projects/books/fm-unix
+```{bash}
+#| eval: false
+cd ~
+pwd
+# /Users/username
 ```
 
-:::
+
+### `tree`
+
+The `tree` command will recursively print the directory structure of a file path in a 'tree-like' format, visually representing the hierarchy of files and directories.
+
+Below is an example 'folder tree' for the current working directory returned from the `pwd` command above:
+
+```{bash}
+#| eval: false 
+# /Users/ 
+#   └─ username/ -> represented as '~'
+#        └─ project/ 
+#             └─ books/ 
+#                 └─ fm-unix/
+```
 
 
-Absolute paths always start with `/` and identifies a specific location from the root directory.
+The output from `pwd` is an absolute file path, and **absolute file paths** do not change regardless of the current working directory. 
 
-:::{layout="[50,50]" layout-valign="bottom"}
+### `cd`
 
-**Relative file paths** specify the location of a file *relative to the current working directory*. We can use a relative file path to view the `report.txt` file in the `data` folder with `cat`:
+Move from one directory to another with **<code>@sec-cd</code>** (change directory). For example, `cd data` takes you to the `data` folder *inside* our current working directory.  
+
+```{bash}
+#| eval: false
+cd data
+```
+
+In the command above, `data` is a relative file path. **Relative file paths** specify the location of a file *relative to the current working directory*.
+
+:::{layout="[50,50]" layout-valign="top"}
+
+If we view our current directory with `tree` after changing it to `data`, we see the current location listed as `.`:
 
 ``` sh
-cat data/report.txt
-# my important information
+cd data 
+tree -d
+# .
+# └── raw
+# 
+# 2 directories
 ```
 
 :::
 
+It's important to notice the difference between absolute and relative paths, because it makes it easier to navigate the operating system and manipulate files and folders.
+
+For example, can use a relative file path to view the `report.txt` file in the `data` folder with `cat`:
+
+```{bash}
+cd data
+cat report.txt
+```
+
 `data/report.txt` is the relative file path (i.e., relative to the current working directory), and it's meaning is based on the directory from which it is referenced.
-
-
-
 
 ```{bash}
 #| echo: false
 rm data/report.txt
-```
-
-### `cd`
-
- **<code>@sec-cd</code>** lets us move from one directory to a different directory. For example, `cd /bin` takes you to the `/bin` folder, the toolshed of software tools.
-
-```{bash}
-cd /bin # change location
-pwd # now where am I?
 ```
 
 ### `ls`
@@ -209,6 +237,7 @@ mv data/out/binary_data.tsv  data/out/bin_dat.tsv
 ```
 
 ```{bash}
+#| eval: false
 # confirm rename 
 tree data/out
 # data/out

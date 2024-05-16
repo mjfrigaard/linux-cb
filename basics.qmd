@@ -30,15 +30,15 @@ co_box(
 )
 ```
 
-This section covers commands that will help navigate folders (or directories), manipulate and manage files, check system processes, and use or create variables. 
+The next three section introduce common commands that will help users navigate folders (or directories), manipulate and manage files, check system processes, and use or create variables. These sections focus on executing single commands at a Terminal. In the next section we'll dive into the Unix/Linux syntax (i.e., arguments, options, and pipes).
 
 #### Basic Unix/Linux Commands
 
-[Directories](dirs.qmd) covers how to navigating the file system.
+[Directories](dirs.qmd) covers how to navigating the file system. 
 
 [Files](dirs.qmd) discusses common file operations.
 
-[System](sys.qmd) touches on system monitoring.
+[System](sys.qmd) This chapter covers common system monitoring commands in Unix/Linux: `top` and `htop` for real-time process monitoring, `free` for memory usage, `df` for disk space usage, and `du` for directory and file size. These tools help efficiently manage and troubleshoot system performance and resource usage.
 
 [Variables](vars.qmd) dives into the definition, types, and use of variables. Environment variables (`PATH`, `HOME`, `USER`), commands used with variables (`printenv`, `set`, `unset`, `export`, `env`), scripts, integer and strings, and best practices.
 

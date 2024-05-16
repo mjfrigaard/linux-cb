@@ -108,7 +108,7 @@ If you decide to use Quarto documents, you'll need to decide on the tool (or dev
 
 ### IDE Features
 
-VS Code offers typical IDE features (syntax highlighting, code completion, linting, formatting, debugging, etc.) and a wide range of extensions for Bash scripting that can significantly streamline development.[^bash-scripting-vscode]
+VS Code offers typical IDE features (syntax highlighting, code completion, linting, formatting, debugging, etc.) and a [Quarto extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto). VS Code also has a wide range of extensions for Bash scripting that can significantly streamline development.[^bash-scripting-vscode] 
 
 ![](img/vscode_source.png){width='80%' fig-align='center'}
 
@@ -287,19 +287,29 @@ pwd # the document's location for each new code chunk
 
 This behavior is different than what we'd see in Posit Workbench's Terminal on my local machine:
 
-1. The current working directory is `~/projects/books/fm-unix/` (as indicated by the `@fm-unix` in the Terminal prompt):
+1. The current working directory is `~/projects/books/fm-unix/` (as indicated by the Terminal prompt):
 
 ![`fm-unix/` directory](img/pwd-local-01.png){width='100%'}
 
-2. If we change my working directory with `..`, we are in the `books/` directory (as indicated by the **books** in the Shell window):
+2. If we change the working directory with `..`, we are in the `books/` directory (as indicated by the **books** in the Shell window):
 
 ![`books/` directory](img/pwd-local-02.png){width='100%'}
 
 3. When we check the current working directory again with `pwd`, we see the location is still `~/projects/books/`. 
 
-![Still `books/` directory](img/pwd-local-03.png){width='100%'}
+![Still in the `books/` directory](img/pwd-local-03.png){width='100%'}
 
-This behavior can be frustrating, but it also means we'll start with a 'clean slate' in each new code chunk!
+This difference in behavior can be frustrating, but it also means we'll start with a 'clean slate' in each new code chunk!
+
+## [Recap]{style="font-size: 1.05em; font-weight: bold;"}
+
+This chapter covered a guide on how to use Quarto for embedding and executing Bash code, a powerful feature for Unix/Linux users and developers who need to document and automate command line tasks. 
+
+  -   **Setting Up Quarto:** We covered the resources and prerequisites for installing Quarto, and how to use Quarto within Visual Studio Code (VS Code). We included setting VS Code with the Quarto extension, and options for configuring the IDE. 
+
+  -   **Writing and Executing Bash Code:** We discussed setting up Bash in Quarto documents, including how to configure the YAML header in the Quarto document to include Bash as the programming language, and ensuring Quarto documents can recognize and execute Bash code.
+
+VS Code and Quarto are powerful tools. The IDE provides a user-friendly interface, extensive plugin ecosystem, and strong support for Quarto’s interactive capabilities. 
 
 ```{r}
 #| label: git_contrib_box

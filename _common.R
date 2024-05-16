@@ -3,6 +3,16 @@
 
 options(width = 50L, pillar.width = 50L)
 
+if (dir.exists('data/README_files')) {
+  unlink("data/README_files", recursive = TRUE, force = TRUE)
+} 
+
+if (file.exists('data/README.html')) {
+  unlink("data/README.html", force = TRUE)
+} 
+
+unlink("data/README.html")
+
 readme_stuff <- list.files(
     path = "data",
     pattern = "html|files",

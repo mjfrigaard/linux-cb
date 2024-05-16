@@ -257,7 +257,7 @@ Fish uses a syntax that is slightly different from the traditional POSIX shell s
 :::
 :::
 
-#### Changing the Shell {#sec-shell-change}
+#### Changing your shell {#sec-shell-change}
 
 On macOS Sonoma (or any other recent version of macOS), you can change your default shell using the Terminal.
 
@@ -282,6 +282,8 @@ echo $SHELL
 # /bin/bash
 ```
 
+#### Changing the shell prompt {#sec-shell-prompts}
+
 To change the Shell prompt, add the following to the `~/.bash_profile` file:
 
 :::{layout="[50,50]" layout-valign="bottom"}
@@ -295,16 +297,59 @@ This will change Terminal prompt to:
 :::{layout="[50,50]" layout-valign="bottom"}
 
 ``` sh
-export PS1="username@\W:\$ "
+export PS1="Bash@MacBook \W\$ "
 ```
 
 ``` sh
-username@~:$
+Bash@MacBook ~$ 
 ```
 
 :::
 
 [^prompt-vars]: `\W` prints the basename of the current working directory. You can also specify the username (`\u`) and the host name up to the first period (`\h`).
+
+```{r}
+#| label: co_box_zsh_prompt
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "g",
+  look = "default", 
+  hsize = "1.15", 
+  size = "1.00", 
+  header = "Changing prompts in Zsh", 
+  fold = TRUE,
+  contents = "
+
+1. Open your `.zshrc` file in your home directory with a text editor.
+
+    \`\`\` sh
+    ~/.zshrc
+    \`\`\`
+
+2. Add or change the line that defines `PROMPT`. For example:
+
+    \`\`\` sh
+    export PROMPT=\"Zsh@MacBook %1~%% \"
+    \`\`\`
+
+This sets a prompt similar to Bash's example above.
+
+\`\`\` sh
+Zsh@MacBook ~% 
+\`\`\`
+
+3. Save the file and apply the changes by sourcing the profile:
+
+    \`\`\` sh
+    source ~/.zshrc
+    \`\`\`
+
+")
+
+```
+
 
 ## [Terminals]{style="font-size: 1.05em; font-weight: bold;"} {#sec-terminals}
 
