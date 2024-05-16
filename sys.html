@@ -347,12 +347,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#top" id="toc-top" class="nav-link active" data-scroll-target="#top"><code>top</code></a></li>
+  <li><a href="#real-time-monitoring" id="toc-real-time-monitoring" class="nav-link active" data-scroll-target="#real-time-monitoring"><span style="font-size: 1.05em; font-weight: bold;">Real-time monitoring</span></a>
+  <ul>
+  <li><a href="#top" id="toc-top" class="nav-link" data-scroll-target="#top"><code>top</code></a></li>
   <li><a href="#htop" id="toc-htop" class="nav-link" data-scroll-target="#htop"><code>htop</code></a></li>
+  </ul></li>
+  <li><a href="#snapshots" id="toc-snapshots" class="nav-link" data-scroll-target="#snapshots"><span style="font-size: 1.05em; font-weight: bold;">Snapshots</span></a>
+  <ul>
   <li><a href="#free" id="toc-free" class="nav-link" data-scroll-target="#free"><code>free</code></a></li>
   <li><a href="#df" id="toc-df" class="nav-link" data-scroll-target="#df"><code>df</code></a></li>
   <li><a href="#du" id="toc-du" class="nav-link" data-scroll-target="#du"><code>du</code></a></li>
   <li><a href="#ps" id="toc-ps" class="nav-link" data-scroll-target="#ps"><code>ps</code></a></li>
+  </ul></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></a></li>
   </ul>
 </nav>
     </div>
@@ -397,9 +404,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <!-- **System Monitoring**: `top`, `htop`, `free`, `df`, `du` -->
+<p>This chapter covers monitoring performance and resource usage in the Unix/Linux systems. These commands will help ensure that the servers and applications are running efficiently and can help you preemptively address potential issues before they escalate into major problems.</p>
+<p>We’ll delve into some of the most essential and widely-used system monitoring commands: <code>top</code>, <code>htop</code>, <code>free</code>, <code>df</code>, and <code>du</code></p>
+<section id="real-time-monitoring" class="level2">
+<h2 class="anchored" data-anchor-id="real-time-monitoring"><span style="font-size: 1.05em; font-weight: bold;">Real-time monitoring</span></h2>
 <section id="top" class="level3">
 <h3 class="anchored" data-anchor-id="top"><code>top</code></h3>
-<p><strong><code><a href="syntax_ref.html#sec-top" class="quarto-xref"><span>top</span></a></code></strong> displays the</p>
+<p><strong><code><a href="syntax_ref.html#sec-top" class="quarto-xref"><span>top</span></a></code></strong> displays a dynamic, real-time view of the system’s processes, including CPU and memory usage.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">top</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -412,43 +423,124 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="htop" class="level3">
 <h3 class="anchored" data-anchor-id="htop"><code>htop</code></h3>
-<p><strong><code><a href="syntax_ref.html#sec-htop" class="quarto-xref"><span>htop</span></a></code></strong></p>
+<p><strong><code><a href="syntax_ref.html#sec-htop" class="quarto-xref"><span>htop</span></a></code></strong> is a more user-friendly and visually appealing alternative to <code>top</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/htop.gif" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption><code>htop</code> in iTerm2</figcaption>
+</figure>
+</div>
+<p><code>htop</code> enhances usability with features like color coding, an interactive interface, and the ability to scroll through processes.</p>
 </section>
+</section>
+<section id="snapshots" class="level2">
+<h2 class="anchored" data-anchor-id="snapshots"><span style="font-size: 1.05em; font-weight: bold;">Snapshots</span></h2>
 <section id="free" class="level3">
 <h3 class="anchored" data-anchor-id="free"><code>free</code></h3>
-<p><strong><code><a href="syntax_ref.html#sec-free" class="quarto-xref"><span>free</span></a></code></strong></p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span style="font-weight: bold; font-size: 1.25em;"><img src="img/tut.png" height="30"> free command</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="font-size: 1.00em; color: #282b2d;">
+<p><code>free</code> is only available on Linux opertating systems. For a similar command on macOS, see thread <a href="https://apple.stackexchange.com/questions/4286/is-there-a-mac-os-x-terminal-version-of-the-free-command-in-linux-systems">here</a> and <a href="https://superuser.com/questions/521681/what-is-the-mac-osx-equivalent-of-free-m">here</a></p>
+</div>
+</div>
+</div>
+</div>
+<p><strong><code><a href="syntax_ref.html#sec-free" class="quarto-xref"><span>free</span></a></code></strong> displays the amount of free and used memory in the system, giving you a quick snapshot of memory allocation and availability:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">free</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="df" class="level3">
 <h3 class="anchored" data-anchor-id="df"><code>df</code></h3>
-<p><strong><code><a href="syntax_ref.html#sec-df" class="quarto-xref"><span>df</span></a></code></strong> (disk free) shows disk usage in a human-readable format, including the size, used space, available space, and the mount point of each filesystem. By default, it displays sizes in 1K blocks but can show them in a more readable format (like MB or GB) with the <code>-h</code> option (human-readable).</p>
+<p><strong><code><a href="syntax_ref.html#sec-df" class="quarto-xref"><span>df</span></a></code></strong> (disk free) shows disk usage in a human-readable format, including the size, used space, available space, and the mount point of each filesystem.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Filesystem                       512-blocks      Used Available Capacity iused     ifree %iused  Mounted on</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /dev/disk1s1s1                    976490576  20002808  84798224    20%  403755 423991120    0%   /</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; devfs                                   395       395         0   100%     684         0  100%   /dev</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /dev/disk1s3                      976490576   5059568  84798224     6%    5077 423991120    0%   /System/Volumes/Preboot</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /dev/disk1s5                      976490576   2097312  84798224     3%       1 423991120    0%   /System/Volumes/VM</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /dev/disk1s6                      976490576     39200  84798224     1%      19 423991120    0%   /System/Volumes/Update</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /dev/disk1s2                      976490576 861746736  84798224    92% 5662798 423991120    1%   /System/Volumes/Data</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; map auto_home                             0         0         0   100%       0         0     -   /System/Volumes/Data/home</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Filesystem                       512-blocks      Used Available Capacity iused     ifree %iused  Mounted on</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /dev/disk1s1s1                    976490576  20002808  84798224    20%  403755 423991120    0%   /</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; devfs                                   395       395         0   100%     684         0  100%   /dev</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /dev/disk1s3                      976490576   5059568  84798224     6%    5077 423991120    0%   /System/Volumes/Preboot</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /dev/disk1s5                      976490576   2097312  84798224     3%       1 423991120    0%   /System/Volumes/VM</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /dev/disk1s6                      976490576     39200  84798224     1%      19 423991120    0%   /System/Volumes/Update</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; /dev/disk1s2                      976490576 861746736  84798224    92% 5662798 423991120    1%   /System/Volumes/Data</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; map auto_home                             0         0         0   100%       0         0     -   /System/Volumes/Data/home</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>By default, it displays sizes in 1K blocks but can show them in a more readable format (like MB or GB) with the <code>-h</code> option (human-readable).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Filesystem                          Size    Used   Avail Capacity iused ifree %iused  Mounted on</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s1s1                     466Gi   9.5Gi    35Gi    22%    404k  367M    0%   /</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># devfs                              197Ki   197Ki     0Bi   100%     682     0  100%   /dev</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s3                       466Gi   2.4Gi    35Gi     7%    5.1k  367M    0%   /System/Volumes/Preboot</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s5                       466Gi   2.0Gi    35Gi     6%       2  367M    0%   /System/Volumes/VM</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s6                       466Gi    20Mi    35Gi     1%      19  367M    0%   /System/Volumes/Update</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s2                       466Gi   415Gi    35Gi    93%    6.2M  367M    2%   /System/Volumes/Data</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># map auto_home                        0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="du" class="level3">
 <h3 class="anchored" data-anchor-id="du"><code>du</code></h3>
-<p><strong><code><a href="syntax_ref.html#sec-du" class="quarto-xref"><span>du</span></a></code></strong></p>
+<p><strong><code><a href="syntax_ref.html#sec-du" class="quarto-xref"><span>du</span></a></code></strong> summarizes disk usage for directories and files, allowing you to pinpoint large files and directories that may be consuming excessive disk space.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">du</span> data</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 128   data/raw</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 240   data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Just like <code>df</code>, show the output in a more readable format (like MB or GB) with the <code>-h</code> (human-readable) option:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">du</span> <span class="at">-h</span> data</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  64K  data/raw</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 120K  data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="ps" class="level3">
 <h3 class="anchored" data-anchor-id="ps"><code>ps</code></h3>
-<p><strong><code><a href="syntax_ref.html#sec-ps" class="quarto-xref"><span>ps</span></a></code></strong> (process status) reports a snapshot of information about all running processes, regardless of the owner, including the user, CPU and memory usage, process ID, and the command that started each process. Command options can expand the selection to include other users’ processes, full command lines, etc.</p>
+<p><strong><code><a href="syntax_ref.html#sec-ps" class="quarto-xref"><span>ps</span></a></code></strong> reports a snapshot of the process status for all running processes, regardless of the owner, including the process ID (<code>PID</code>), terminal type (<code>TTY</code>), cumulative CPU time (<code>TIME</code>), and the command (<code>CMD</code>) that started each process:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   PID TTY           TIME CMD</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2637 ttys000    0:00.04 -zsh</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2646 ttys001    0:00.04 -zsh</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2791 ttys002    0:00.03 -zsh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   PID TTY           TIME CMD</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 13343 ttys000    0:00.04 bash --rcfile /Applications/RStudio.app/Contents/Resources/app/resources/terminal/bash/.bash_profile</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   711 ttys001    0:00.14 -bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Command options can also expand the selection to include other users’ processes, full command lines, etc.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-o</span> lstart,sess,pmem,pcpu,etime,command</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># STARTED                        SESS %MEM  %CPU  ELAPSED COMMAND</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Thu May 16 07:51:12 2024          0  0.0   0.0 01:19:17 bash --rcfile </span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Wed May 15 21:12:58 2024          0  0.0   0.0 11:57:31 -bash</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Thu May 16 09:10:06 2024          0  0.0   0.0    00:23 /bin/sh /usr/bin/man ps</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Thu May 16 09:10:07 2024          0  0.0   0.0    00:22 /bin/sh /usr/bin/man ps</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Thu May 16 09:10:07 2024          0  0.0   0.0    00:22 /usr/bin/less -s</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The specified columns are:<br>
+- <code>lstart</code>: The exact date and time the process was started<br>
+- <code>sess</code>: The session ID of the process<br>
+- <code>pmem</code>: The percentage of the physical memory used by the process<br>
+- <code>pcpu</code>: The percentage of the CPU time used by the process<br>
+- <code>etime</code>: The elapsed time since the process started - <code>command</code>: The command and arguments</p>
+</section>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></h2>
+<p>In this chapter, we explored five essential system monitoring commands in Linux: <code>top</code>, <code>htop</code>, <code>free</code>, <code>df</code>, and <code>du</code>. These commands provide crucial insights into system performance and resource utilization, enabling efficient monitoring and troubleshooting of Linux systems.</p>
+<p>Mastering these commands will help you monitor and maintain optimal system performance, ensure efficient resource utilization, and quickly address potential issues.</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>You can install htop on macOS with <a href="https://formulae.brew.sh/formula/htop">homebrew.</a> Read more <a href="https://htop.dev/">here</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->

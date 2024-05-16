@@ -363,6 +363,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sec-quarto-bash" id="toc-sec-quarto-bash" class="nav-link" data-scroll-target="#sec-quarto-bash">Code Chunks</a></li>
   <li><a href="#code-chunk-isolation" id="toc-code-chunk-isolation" class="nav-link" data-scroll-target="#code-chunk-isolation">Code Chunk Isolation</a></li>
   </ul></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></a></li>
   </ul>
 </nav>
     </div>
@@ -469,7 +470,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If you decide to use Quarto documents, you’ll need to decide on the tool (or development environment) you want to use. At the time of this writing, Quarto has tutorials for getting started in <a href="https://posit.co/download/rstudio-desktop/">RStudio</a>, <a href="https://code.visualstudio.com/">VS Code</a>, <a href="https://jupyter.org/">Jupyter</a>, <a href="https://neovim.io/">Neovim</a>, or a text editor (like <a href="https://www.sublimetext.com/">Sublime Text</a>).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> I recommend using an IDE like <a href="https://code.visualstudio.com/">Visual Studio Code</a> (VS Code) for several reasons:<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <section id="ide-features" class="level3">
 <h3 class="anchored" data-anchor-id="ide-features">IDE Features</h3>
-<p>VS Code offers typical IDE features (syntax highlighting, code completion, linting, formatting, debugging, etc.) and a wide range of extensions for Bash scripting that can significantly streamline development.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>VS Code offers typical IDE features (syntax highlighting, code completion, linting, formatting, debugging, etc.) and a <a href="https://marketplace.visualstudio.com/items?itemName=quarto.quarto">Quarto extension</a>. VS Code also has a wide range of extensions for Bash scripting that can significantly streamline development.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/vscode_source.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
@@ -647,7 +648,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>This behavior is different than what we’d see in Posit Workbench’s Terminal on my local machine:</p>
 <ol type="1">
-<li>The current working directory is <code>~/projects/books/fm-unix/</code> (as indicated by the <code>@fm-unix</code> in the Terminal prompt):</li>
+<li>The current working directory is <code>~/projects/books/fm-unix/</code> (as indicated by the Terminal prompt):</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -656,7 +657,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <ol start="2" type="1">
-<li>If we change my working directory with <code>..</code>, we are in the <code>books/</code> directory (as indicated by the <strong>books</strong> in the Shell window):</li>
+<li>If we change the working directory with <code>..</code>, we are in the <code>books/</code> directory (as indicated by the <strong>books</strong> in the Shell window):</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -670,10 +671,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/pwd-local-03.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Still <code>books/</code> directory</figcaption>
+<figcaption>Still in the <code>books/</code> directory</figcaption>
 </figure>
 </div>
-<p>This behavior can be frustrating, but it also means we’ll start with a ‘clean slate’ in each new code chunk!</p>
+<p>This difference in behavior can be frustrating, but it also means we’ll start with a ‘clean slate’ in each new code chunk!</p>
+</section>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></h2>
+<p>This chapter covered a guide on how to use Quarto for embedding and executing Bash code, a powerful feature for Unix/Linux users and developers who need to document and automate command line tasks.</p>
+<ul>
+<li><p><strong>Setting Up Quarto:</strong> We covered the resources and prerequisites for installing Quarto, and how to use Quarto within Visual Studio Code (VS Code). We included setting VS Code with the Quarto extension, and options for configuring the IDE.</p></li>
+<li><p><strong>Writing and Executing Bash Code:</strong> We discussed setting up Bash in Quarto documents, including how to configure the YAML header in the Quarto document to include Bash as the programming language, and ensuring Quarto documents can recognize and execute Bash code.</p></li>
+</ul>
+<p>VS Code and Quarto are powerful tools. The IDE provides a user-friendly interface, extensive plugin ecosystem, and strong support for Quarto’s interactive capabilities.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -694,7 +705,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
-</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
