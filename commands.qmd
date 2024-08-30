@@ -40,7 +40,7 @@ co_box(
 )
 ```
 
-Commands are the first part of a command line instruction, specifying the program or built-in functionality to be executed. In Unix/Linux, several commands can operate without any options or arguments, performing their basic functions in their simplest form.
+Commands are the first part of a command line instruction, specifying the program or built-in functionality to be executed. In Linux, several commands can operate without any options or arguments, performing their basic functions in their simplest form.
 
 We're going to start with a basic command: `date`:
 
@@ -65,7 +65,7 @@ The prompt might display useful information, such as the current user (`username
 :::{style="font-size: 1.10em; color: #2c8475;"}
 
 <pre>
-  <strong>username</strong>@<strong>hostname</strong>:<strong>current_directory</strong>$
+  <strong>user</strong>@<strong>host</strong>:<strong>directory</strong>$
 </pre>
 
 :::
@@ -78,7 +78,7 @@ Once a command is entered, Bash "evaluates" it. This step involves parsing the c
 :::{style="font-size: 1.10em; color: #2c8475;"}
 
 <pre>
-  username@hostname:current_directory$ <strong>date</strong>
+  user@host:directory$ <strong>date</strong>
 </pre>
 
 :::
@@ -103,17 +103,17 @@ After executing a command and returning the output, Bash immediately returns to 
 
 ```{bash}
 #| eval: false
-username@hostname:current_directory$
-username@hostname:current_directory$ date
+user@host:directory$
+user@host:directory$ date
 #> Wed Apr 10 02:55:23 MST 2024
-username@hostname:current_directory$
+user@host:directory$
 ```
 
 This cycle repeats indefinitely until the user exits the REPL environment, typically with an `exit` command or by pressing **<kbd>Ctrl</kbd>** + **<kbd>D</kbd>**.
 
-## [Basic commands]{style="font-size: 1.05em; font-weight: bold;"} 
+## [Commands]{style="font-size: 1.05em; font-weight: bold;"} 
 
-In Unix, several commands can operate without any options or arguments, performing their basic functions in their simplest form. Below are some of these commands:
+In Linux, several commands can operate without any options or arguments, performing their basic functions in their simplest form. Below are some of these commands:
 
 ### `who` 
 
@@ -147,7 +147,7 @@ whoami
 ```{bash}
 #| eval: false
 hostname
-# Users-MacBook-Pro-2.local
+# Users-MacBook-Pro.local
 ```
 
 ### `cal` 
@@ -199,20 +199,9 @@ exit
 
 `exit` requires no arguments or options to execute this action, and doesn't print any return values.
 
-###  `yes` 
-
-<code><strong>@sec-yes</strong></code> repeatedly outputs a string until killed. Without arguments, it defaults to outputting 'y'.
-
-```{bash}
-#| eval: false
-yes
-```
-
-**NOTE:** Use **<kbd>Ctrl</kbd>** + **<kbd>C</kbd>** to interrupt the `yes` command.
-
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"}
 
-Each of these commands performs a specific and often utilized function within the Unix environment, embodying the Unix philosophy of doing one thing well.
+Each of these commands performs a specific and often utilized function within the Linux environment, embodying the Linux philosophy of doing one thing well.
 
 ```{r}
 #| label: git_contrib_box

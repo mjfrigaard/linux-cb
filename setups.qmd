@@ -40,7 +40,7 @@ co_box(
 )
 ```
 
-This section details the practical aspects of preparing your environment to work with Unix/Linux systems. It is designed to guide you through various setup processes, catering to different preferences and requirements. We’ll cover working with shells and terminals, setting up a virtual machine, and using Quarto documents to execute Bash commands.
+This section details the practical aspects of preparing your environment to work with Linux systems. It is designed to guide you through various setup processes, catering to different preferences and requirements. We’ll cover working with shells and terminals, setting up a virtual machine, and using Quarto documents to execute Bash commands.
 
 ### Shells and Terminals 
 
@@ -48,7 +48,7 @@ This section details the practical aspects of preparing your environment to work
 
 ### Virtual Machines 
 
-<strong>@sec-vms</strong> covers how to run Unix on a virtual machine.
+<strong>@sec-vms</strong> covers how to run Linux on a virtual machine.
 
 ### Quarto 
 

@@ -37,24 +37,24 @@ co_box(
 )
 ```
 
-This chapter covers the essential aspects of variables in Unix/Linux environments. I'll be using VS Code because I can quickly switch between shells in the Terminal window.
+This chapter covers the essential aspects of variables in Linux environments. I'll be using VS Code because I can quickly switch between shells in the Terminal window.
 
-## [Unix/Linux Variables]{style="font-size: 1.05em; font-weight: bold;"}
+## [Linux Variables]{style="font-size: 1.05em; font-weight: bold;"}
 
-Variables in Unix/Linux are used to store data that can be accessed and manipulated by the operating system and applications. They play a crucial role in scripting, programming, and managing system configurations. By storing values in variables, users and scripts can dynamically reference and change these values without hard-coding them, making scripts more flexible and maintainable.
+Variables in Linux are used to store data that can be accessed and manipulated by the operating system and applications. They play a crucial role in scripting, programming, and managing system configurations. By storing values in variables, users and scripts can dynamically reference and change these values without hard-coding them, making scripts more flexible and maintainable.
 
-In Unix/Linux, variables can hold different types of data, such as strings, integers, or file paths. They can be used for various purposes, including:
+In Linux, variables can hold different types of data, such as strings, integers, or file paths. They can be used for various purposes, including:
 
 -   Customizing the user environment (e.g., setting the default editor).\
 -   Storing temporary data within scripts.\
 -   Passing data between programs and scripts.\
 -   Configuring system and application settings.
 
-The significance of variables lies in their ability to simplify complex tasks, enhance automation, and improve the overall efficiency of the Unix/Linux environment.
+The significance of variables lies in their ability to simplify complex tasks, enhance automation, and improve the overall efficiency of the Linux environment.
 
 ### Environment vs. Shell
 
-In Unix/Linux, variables are broadly categorized into environment variables and shell variables.
+In Linux, variables are broadly categorized into environment variables and shell variables.
 
 **Environment variables** are global variables that are available system-wide and can influence the behavior of the shell and other programs. They are inherited by all child processes.
 
@@ -86,7 +86,7 @@ In the following sections we'll cover setting shell and environment variables in
 
 ### Setting Shell Variables
 
-Shell variables in Unix/Linux are defined within the context of the current shell session. To set a shell variable, simply assign a value to a variable name using the following syntax:
+Shell variables in Linux are defined within the context of the current shell session. To set a shell variable, simply assign a value to a variable name using the following syntax:
 
 ``` sh
 VARIABLE_NAME=value
@@ -269,17 +269,41 @@ rm my_config.sh
 
 ## [Key Differences]{style="font-size: 1.05em; font-weight: bold;"}
 
-**Scope:** Environment variables have a global scope and are available to all processes, whereas shell variables have a local scope and are limited to the shell session.
+Understanding the difference between environment and shell variables is essential for effective Linux system administration and scripting. It helps users manage and customize their environment efficiently, ensuring that scripts and applications work as intended.
 
-**Inheritance:** Environment variables are inherited by child processes, while shell variables need to be exported to be available to child processes.
+### Scope
 
-**Purpose:** Environment variables are generally used for system-wide configuration and application settings, while shell variables are used for script-specific or session-specific tasks.
+:::{layout="[50,50]" layout-valign="top"}
 
-Understanding the distinction between environment and shell variables is essential for effective Unix/Linux system administration and scripting. It allows users to manage and customize their environment efficiently, ensuring that scripts and applications behave as intended.
+Environment variables have a global scope and are available to all processes. 
+
+Shell variables have a local scope and are limited to the shell session.
+  
+:::
+
+### Inheritance
+
+:::{layout="[50,50]" layout-valign="top"}
+
+Environment variables are inherited by child processes.
+
+Shell variables need to be exported to be available to child processes.
+
+:::
+
+### Purpose
+
+:::{layout="[50,50]" layout-valign="top"}
+
+Environment variables are generally used for system-wide configuration and application settings.
+  
+Shell variables are used for script-specific or session-specific tasks.
+
+:::
 
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 
 
-By understanding and utilizing shell and environment variables effectively, you can enhance the functionality and flexibility of your Unix/Linux scripts and system configurations. We'll touch on this topic again in the [shell scripts](scripts.qmd) section.
+By understanding and utilizing shell and environment variables effectively, you can enhance the functionality and flexibility of your Linux scripts and system configurations. We'll touch on this topic again in the [shell scripts](scripts.qmd) section.
 
 ````{=html}
 <!--

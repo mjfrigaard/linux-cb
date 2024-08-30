@@ -45,7 +45,7 @@ co_box(
 
 :::
 
-It is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through downloading and installing Quarto, `.qmd` documents, `YAML` headers and Bash code chunks.
+It is particularly useful for those looking to combine Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through downloading and installing Quarto, `.qmd` documents, `YAML` headers and Bash code chunks.
 
 
 ## [Install]{style="font-size: 1.05em; font-weight: bold;"}
@@ -209,7 +209,7 @@ Literate programming can foster clearer communication of complex programming con
 
 <code>@sec-yaml</code> is a lightweight markup language that’s easy to write and read. In Quarto, the `YAML` header is used to configure document properties such as the title, engine, output format, and more. It serves as the foundation for controlling how your Quarto document behaves and appears.
 
-Quarto documents are written in markdown and can include executable code in various programming languages, including Unix commands. The `YAML` header is placed between three dashes `---` at the top of each Quarto document to specify metadata and global options. 
+Quarto documents are written in markdown and can include executable code in various programming languages, including Linux commands. The `YAML` header is placed between three dashes `---` at the top of each Quarto document to specify metadata and global options. 
 
 ```yaml
 ---
@@ -303,7 +303,7 @@ This difference in behavior can be frustrating, but it also means we'll start wi
 
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"}
 
-This chapter covered a guide on how to use Quarto for embedding and executing Bash code, a powerful feature for Unix/Linux users and developers who need to document and automate command line tasks. 
+This chapter covered a guide on how to use Quarto for embedding and executing Bash code, a powerful feature for Linux users and developers who need to document and automate command line tasks. 
 
   -   **Setting Up Quarto:** We covered the resources and prerequisites for installing Quarto, and how to use Quarto within Visual Studio Code (VS Code). We included setting VS Code with the Quarto extension, and options for configuring the IDE. 
 

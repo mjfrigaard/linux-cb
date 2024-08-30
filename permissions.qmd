@@ -30,8 +30,110 @@ co_box(
 )
 ```
 
-File permissions with `chmod`
+### `chmod`
 
+<code>@sec-chmod</code> changes file permissions. 
+
+``` bash
+ls -l data/README.md
+# -rw-r--r--@ 1 username  staff  8834 May 14 09:33 data/README.md
+```
+
+The file permissions for `data/README.md` are stored in the combination of characters and symbols returned from `ls -l`:
+
+Breakdown of **`-rw-r--r--@`**:
+
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
+# -
+```
+
+The `-` indicates that the item is a regular file.
+:::
+
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
+# -rw-
+```
+
+The first three characters after the dash represent the user (owner) permissions. The user has read (`r`) and write (`w`) permissions but no execute (`x`) permission.
+:::
+
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
+# -rw-r--
+```
+
+The next three characters represent the group permissions. The group has read (`r`) permission only, with no write (`w`) or execute (`x`) permissions.
+:::
+
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
+# -rw-r--r--
+```
+
+The final three characters represent the permissions for others (everyone else). Like the group, others have only read (`r`) permission, with no write (`w`) or execute (`x`) permissions.
+:::
+
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
+# -rw-r--r--@
+```
+
+The `@` symbol indicates that the file has extended attributes, which are additional metadata stored by the operating system.
+:::
+
+::: {layout="[50,50]" layout-valign="top"}
+``` {.sh style="background-color: #f8f8f8; font-style: italic;"}
+# -rw-r--r--@ 1
+```
+
+The `1` indicates the count of hard links pointing to the file, which in this case is the file itself. This is typical for regular files that haven't been explicitly linked elsewhere.
+:::
+
+**Symbolic Notation**
+
+To grant the permissions above (i.e., `-rw-r--r--`), we can group the arguments to `chmod`:
+
+``` sh
+chmod u=rw,go=r filename
+```
+
+In this case,
+
+**`u=rw`**: specifies that the `u`ser (owner) can `r`ead and `w`rite
+
+**`go=r`**: specifies that *both* the `g`roup and `o`thers can `r`ead, but not `w`rite or `e`xecute.
+
+We can also use `chmod` to add permissions with `+`. The code below grants execute permissions to the user (owner) of the file named `data/README.md`:
+
+``` sh
+chmod u+x data/README.md
+```
+
+This command adds (`+`) execute (`x`) permission to the user (`u`) of the file.
+
+**Numeric Notation**
+
+To set the permissions of the file `data/README.md` so that the user can read and execute it, the group can read it, and others have no permissions, we would use:
+
+``` bash
+chmod 750 data/README.md
+```
+
+Here, `7` stands for read (`4`), write (`2`), and execute (`1`) permissions for the user. `5` represents read and execute permissions for the group (`4+1`), and `0` means no permissions for others.
+
+Both of these examples modify the permissions of `data/README.md` to enhance or restrict access as specified.
+
+```{=html}
+<!--
+Overall, the permissions `644` (as represented numerically) allow the owner to read and write the file, while the group and others can only read it.
+-->
+```
+
+### `chown`
+
+<code>@sec-chown</code> changes file ownership
 
 ```{r}
 #| label: git_contrib_box

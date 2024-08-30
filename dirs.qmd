@@ -40,7 +40,7 @@ co_box(
 )
 ```
 
-When presented with a new map, the most important thing to find is your location on it. It's hard to know where you're going without knowing where you are. This chapter covers commands you'll use every day to get around in a Unix/Linux system.
+When presented with a new map, the most important thing to find is your location on it. It's hard to know where you're going without knowing where you are. This chapter covers commands you'll use every day to get around in a Linux system.
 
 ## [Navigate]{style="font-size: 1.05em; font-weight: bold;"}  {#sec-nav-dirs}
 
@@ -64,7 +64,7 @@ echo "my important information" > data/report.txt
 
 The output from `pwd` is the file path to our local working directory. A file path is a character string specifying the unique location of a file or directory within the hierarchical file system. File paths can be **absolute** (starting from the root  (`/`) directory) or **relative** (starting from the current (`.`) directory). 
 
-In Unix/Linux systems, the `~` represents the user's 'home' directory.
+In Linux systems, the `~` represents the user's 'home' directory.
 
 ```{bash}
 #| eval: false
@@ -154,7 +154,7 @@ find . -type d -name data
 
 ## [Manage]{style="font-size: 1.05em; font-weight: bold;"}  {#sec-manage-dirs}
 
-In the Unix/Linux world, file and directory management is a fundamental skill. This chapter introduces some common commands that will allow you to create, copy, move, remove, and link files and directories. 
+In the Linux world, file and directory management is a fundamental skill. This chapter introduces some common commands that will allow you to create, copy, move, remove, and link files and directories. 
 
 ### `mkdir`
 
@@ -275,7 +275,7 @@ co_box(
   contents = "\n
 It's important to note here that the command-line is not very forgiving. Using `rm` is a powerful action with significant consequences, as it permanently deletes files, akin to shredding documents. There's usually no easy way to recover deleted files unless you have a backup.
 
-> '*Unix is like a chainsaw. Chainsaws are powerful tools, and make many difficult tasks like cutting through thick logs quite easy. Unfortunately, this power comes with danger: chainsaws can cut just as easily through your leg.*' - Gary Bernhardt[^bernhardt]
+> '*Linux is like a chainsaw. Chainsaws are powerful tools, and make many difficult tasks like cutting through thick logs quite easy. Unfortunately, this power comes with danger: chainsaws can cut just as easily through your leg.*' - Gary Bernhardt[^bernhardt]
 
 [^bernhardt]: As quoted in [Bioinformatics Data Skills: Reproducible and Robust Research with Open Source Tools (2015) by Vince Buffalo](https://bit.ly/3sVBSne).
 \n"
@@ -292,6 +292,7 @@ rm -R data/out
 #| echo: false
 rm -Rf data/in
 rm -Rf data/out
+rm -R binary_data.tsv
 ```
 
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 

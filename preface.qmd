@@ -35,48 +35,123 @@ co_box(
 )
 ```
 
-Unix and Linux are powerful, versatile, and widely used operating systems that run on millions of devices worldwide, from smartphones to supercomputers. Learning about Unix/Linux can open doors to many career opportunities and help you better understand the digital world around you.
+I began writing this book when I started a new position as a Posit System Administrator with CDC's Enterprise Data, Analytics, and Visualization (EDAV) platform.[^edav] EDAV houses multiple enterprise data science products (Databricks, Power BI, Tableau, SAS Viya, etc.) including Posit Workbench, Connect, and Package Manager. The chapters contain the topics and tools I encountered regularly in my daily work (and some on my wish list).
 
-This book is structured to gradually introduce you to the Unix/Linux environment, starting from the basics to more complex concepts, then covering multiple case studies.
-
+[^edav]: Read more about EDAV and the Data Modernization Initiative [here](https://www.cdc.gov/data-modernization/php/technologies/edav.html).
 
 ## [Book outline]{style="font-size: 1.05em; font-weight: bold;"}
 
-The first four sections of this manual cover concepts and materials for users who are new to Unix/Linux. If you're familiar with Unix/Linux command-line tools and regular expressions, feel free to skip these chapters.
+This book is structured to gradually introduce you to the Linux environment, starting from the basics to more complex concepts, then covering multiple case studies.[^zsh-bash]
+
+[^zsh-bash]: Most of these commands will work on any Shell (Zsh, Bash, etc.) program.
+
+The first four sections of this manual cover concepts and materials for users who are new to Linux. If you're familiar with command-line tools and regular expressions, feel free to skip these chapters.
+
+```{r}
+#| label: co_box_fms
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "g",
+  header = "What is in a Field Manual?", 
+  size = "0.95", 
+  hsize = "1.10", 
+  look = "default",
+  fold = TRUE,
+  contents = "A field manual (FM) is an educational tool that provides information, instructions, and techniques for various concepts and practices. 
+  
+Fiels Manuals function as both reference material and living documentation, encouraging updates and adaptations based on the given situation, available technology, or broader environment.[^field-manuals]
+
+![Example improvised litter made using tent poles and field jackets.](img/jacket-pole-litter.png){width='70%' fig-align='center'}
+  
+[^field-manuals]: This definition is based on the [U.S. Army Field Manuals (FMs).](https://github.com/mjfrigaard/fm-unix/tree/main/_assets/1965-fm531-boobytraps.pdf)")
+```
 
 ### Introduction
 
-The <strong>@sec-intro</strong> acquaints you with some background that formed the landscape of Unix/Linux systems. It explains the Bash shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Unix/Linux systems.
+The <strong>@sec-intro</strong> acquaints you with some background that formed the landscape of Unix systems. It explains the shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Linux.
 
 ### Set-Ups
 
-Before diving into the commands and scripts, setting up your Unix/Linux environment is crucial. <strong>[Set-ups](setups.qmd)</strong> guides you through various options for setting up <strong>@sec-sh-term</strong>, <strong>@sec-vms</strong>, and <strong>@sec-quarto</strong> documents.
+Before diving into writing commands and scripts, setting up your Linux environment is crucial. <strong>[Set-ups](setups.qmd)</strong> guides you through various options for setting up <strong>@sec-sh-term</strong>, <strong>@sec-vms</strong>, and <strong>@sec-quarto</strong> documents.
 
 ### The Basics
 
-Navigating and managing files and folders are daily tasks for Unix/Linux users. <strong>@sec-dirs</strong> covers essential commands such as `cd` for changing directories, `pwd` to print the current directory, `ls` for listing files, and `mkdir` for making directories.
+Navigating and managing files and folders are daily tasks for Linux users. <strong>@sec-dirs</strong> covers essential commands such as `cd` for changing directories, `pwd` to print the current directory, `ls` for listing files, and `mkdir` for making directories.
 
-<strong>@sec-files</strong> chapter covers file manipulation commands like `cp` (copy), `mv` (move), `rm` (remove), and `less` for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Unix/Linux.
+The <strong>@sec-files</strong> chapter covers file manipulation commands like `cp` (copy), `mv` (move), `rm` (remove), and `less` for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Linux.
 
-The <strong>@sec-sys</strong> chapter goes over common system commands like `top` for monitoring processes in real-time, `ps` for listing currently running processes, `kill` to stop a process, `df` (Disk Free) to display disk space usage on all mounted filesystems, and `du` (Disk Usage) to estimate file space usage. These commands help you manage the system's processes and resources efficiently, ensuring you have a clear view of resource allocation and consumption.
+<strong>@sec-sys</strong> goes over common system commands like `top` for monitoring processes in real-time, `ps` for listing currently running processes, `kill` to stop a process, `df` (Disk Free) to display disk space usage on all mounted filesystems, and `du` (Disk Usage) to estimate file space usage. These commands help manage the system's processes and resources efficiently, ensuring a clear view of resource allocation and consumption.
 
 ### Syntax
 
-Understanding the syntax is vital for effectively communicating with the Unix/Linux system. The <strong>[Syntax](syntax.qmd)</strong> section demystifies the structure of commands, including how to differentiate between <strong>@sec-commands</strong>, <strong>@sec-args</strong>, and <strong>@sec-options</strong> and manage inputs and outputs. This knowledge is critical to executing tasks efficiently in the command line.
+Understanding the shell syntax is vital for effectively communicating with a Linux system. The <strong>[Syntax](syntax.qmd)</strong> section demystifies the structure of commands, including how to differentiate between <strong>@sec-commands</strong>, <strong>@sec-args</strong>, and <strong>@sec-options</strong> and manage inputs and outputs. This knowledge is critical to executing tasks reliably at the command line.
 
-<strong>@sec-pipes</strong> are a cornerstone of Unix/Linux productivity, enabling the output of one command to serve as the input to another. <strong>[Syntax](syntax.qmd)</strong> also covers how to combine commands using `stdout` and `stdin`, allowing for robust command chains that can perform complex tasks with a simple syntax. Understanding pipes unlocks a higher level of command-line efficiency and is a step towards advanced Unix/Linux usage.
+<strong>@sec-pipes</strong> are a cornerstone of Linux productivity, enabling the output of one command to serve as the input to another. <strong>[Syntax](syntax.qmd)</strong> also covers how to combine commands using `stdout` and `stdin`, allowing for robust command chains that can perform complex tasks. Understanding pipes unlocks a higher level of command-line efficiency.
 
-### Manipulating Text (in development)
+### Manipulating Text
 
-The <strong>[Text](text.qmd)</strong> section covers using <strong>@sec-symbols-patterns</strong> to build regular expressions (regex). Unix/Linux systems are renowned for their powerful text manipulation capabilities. The <strong>@sec-txt-cmds</strong> chapter introduces commands such as `cat` for displaying file contents, `grep` for searching within files, `sort` for sorting data, `uniq` for filtering unique lines, and `cut`, `paste`, and `join` for editing files. Mastering these commands will allow you to handle and process text data efficiently. <strong>[Text Editors](text_editors.qmd)</strong> covers nano, vim, and emacs.
+Linux systems are renowned for their powerful text manipulation capabilities. <strong>[Text](text.qmd)</strong> covers using <strong>@sec-symbols-patterns</strong> to build regular expressions (regex). <strong>@sec-txt-cmds</strong> introduces commands such as `cat` for displaying file contents, `grep` for searching within files, `sort` for sorting data, `uniq` for filtering unique lines, and `cut`, `paste`, and `join` for editing files. Mastering these commands will allow you to handle and process text data efficiently. <strong>[Text Editors](text_editors.qmd)</strong> covers nano, vim, and emacs.
 
-### Shell Scripts (in development)
+```{r}
+#| label: co_box_dev_manip_text
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "o",
+  margin = TRUE,
+  look = "default", 
+  hsize = "0.95", 
+  size = "0.95", 
+  header = "Under Development", 
+  fold = TRUE,
+  contents = "Thank you for your patience."
+)
+```
 
-Shell scripting is a powerful tool for automating repetitive tasks in Unix/Linux. This section introduces you to writing your shell scripts, covering the basics of script creation, execution, and debugging. You'll learn how to automate simple tasks, making your Unix/Linux experience more productive and enjoyable.
+### Shell Scripts 
 
-The <strong>[Format](format.qmd)</strong> chapter delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Unix/Linux systems. <strong>[Permissions](permissions.qmd)</strong> explains how Unix/Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.
+Shell scripting is a powerful tool for automating repetitive tasks in Linux. This section introduces writing shell scripts, covering the basics of script creation, execution, and debugging. We'll discuss how to automate simple tasks, making Linux tasks productive and enjoyable.
 
-### Use cases (in development)
+```{r}
+#| label: co_box_dev_scripts
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "o",
+  margin = TRUE,
+  look = "default", 
+  hsize = "0.95", 
+  size = "0.95", 
+  header = "Under Development", 
+  fold = TRUE,
+  contents = "Thank you for your patience."
+)
+```
+
+The <strong>[Format](format.qmd)</strong> chapter delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Linux systems. <strong>[Permissions](permissions.qmd)</strong> explains how Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.
+
+### Use cases 
+
+```{r}
+#| label: co_box_use_cases
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "o",
+  margin = TRUE,
+  look = "default", 
+  hsize = "0.95", 
+  size = "0.95",  
+  header = "Under Development", 
+  fold = TRUE,
+  contents = "Thank you for your patience."
+)
+```
 
 ## [Data files]{style="font-size: 1.05em; font-weight: bold;"}
 
@@ -84,7 +159,7 @@ The data files used in this book are documented in [`data/README.md`](https://gi
 
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"}
 
-By the end of this book, you'll have a solid understanding of the Unix/Linux operating system. You'll be equipped to navigate, manage files, write scripts, and set permissions confidently. Whether you're looking to enhance your career prospects, manage your Unix/Linux systems, or simply satisfy your curiosity, this book will be your companion on a fascinating journey into the world of Unix/Linux.
+By the end of this book, you'll have a solid understanding of the Linux operating system. You'll be equipped to navigate, manage files, write scripts, and set permissions confidently. Whether you're looking to enhance your career prospects, manage a new system, or simply satisfy your curiosity, this book will be your companion on a fascinating journey into the world of Linux.
 
 ```{r}
 #| label: git_contrib_box

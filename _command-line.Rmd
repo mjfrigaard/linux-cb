@@ -93,23 +93,23 @@ knitr::include_graphics(path = "www/term-simple.png")
 
 ### What we'll cover 
 
-First, we're going to cover some background on Unix systems, why they're so powerful, and some of the different command-line interfaces you might see outside of this tutorial and RStudio's Terminal Pane. Second, we'll cover a few commands that expose you to how the command-line works. Third, we'll use the command-line to navigate folders and understand their structure (the command-line calls these 'directories'). Finally, we will cover how to view, open, create, move, copy, and yes--even delete--files. 
+First, we're going to cover some background on Linux systems, why they're so powerful, and some of the different command-line interfaces you might see outside of this tutorial and RStudio's Terminal Pane. Second, we'll cover a few commands that expose you to how the command-line works. Third, we'll use the command-line to navigate folders and understand their structure (the command-line calls these 'directories'). Finally, we will cover how to view, open, create, move, copy, and yes--even delete--files. 
 
-## Unix Systems
+## Linux Systems
 
-[Unix](https://en.wikipedia.org/wiki/Unix) refers to a family of operating systems that serve as a 'backbone' for Linux (Android, Chrome OS) and Darwin (macOS, iOS, watchOS, tvOS, audioOS, iPadOS). Linux and Unix-like systems are the [dominant operating system](https://en.wikipedia.org/wiki/Usage_share_of_operating_systems#Supercomputers) for mainframes, web servers, phones and tablets, and even supercomputers. Throughout this tutorial, I'll use the term 'Unix' to refer to both Linux or other Unix-like operating system because they all will have access to the command-line (which is another reason to have these skills!). 
+[Linux](https://en.wikipedia.org/wiki/Linux) refers to a family of operating systems that serve as a 'backbone' for Linux (Android, Chrome OS) and Darwin (macOS, iOS, watchOS, tvOS, audioOS, iPadOS). Linux and Linux-like systems are the [dominant operating system](https://en.wikipedia.org/wiki/Usage_share_of_operating_systems#Supercomputers) for mainframes, web servers, phones and tablets, and even supercomputers. Throughout this tutorial, I'll use the term 'Linux' to refer to both Linux or other Linux-like operating system because they all will have access to the command-line (which is another reason to have these skills!). 
 
 ###
 
-Microsoft Windows is the only exception here. Windows machines aren't based on Unix, but installing a Linux command-line tool [is possible](https://docs.microsoft.com/en-us/windows/wsl/about), although not necessary if you're using RStudio on your local machine.
+Microsoft Windows is the only exception here. Windows machines aren't based on Linux, but installing a Linux command-line tool [is possible](https://docs.microsoft.com/en-us/windows/wsl/about), although not necessary if you're using RStudio on your local machine.
 
-### The Unix Philosophy 
+### The Linux Philosophy 
 
 > "*Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.*" — [Doug McIlory](https://en.wikipedia.org/wiki/Unix_philosophy#Doug_McIlroy_on_Unix_programming)
 
 ###
 
-The Unix command-line is powerful because of its strict adherence to a division of labor *and* the ability to combine commands to solve increasingly complex tasks. The term 'text streams' refers to using plain text formatted files (which are common in open source software, like R and RStudio).
+The Linux command-line is powerful because of its strict adherence to a division of labor *and* the ability to combine commands to solve increasingly complex tasks. The term 'text streams' refers to using plain text formatted files (which are common in open source software, like R and RStudio).
 
 #### Do one thing, do it well
 
@@ -272,7 +272,7 @@ All command-line tools are modular, which means they work best when connected to
 
 ###
 
-Now that we've downloaded the file, let's count how many times the name `Ahab` occurs. We can do this by combining two more command-line tools (`grep` and `wc`) with the Unix pipe (`|`). The additional characters you see are options (`-o`, `i`, and `-l`).
+Now that we've downloaded the file, let's count how many times the name `Ahab` occurs. We can do this by combining two more command-line tools (`grep` and `wc`) with the Linux pipe (`|`). The additional characters you see are options (`-o`, `i`, and `-l`).
 
 ```bash
 # count the number of times 
@@ -315,9 +315,9 @@ Used this way, even having a few command-line tools at your disposal can supplem
 
 ## Terminals, Shells and Prompts
 
-As with anything technical, there is some terminology to cover before we can move into writing commands. Below is a simplistic diagram of how the Unix architecture works:
+As with anything technical, there is some terminology to cover before we can move into writing commands. Below is a simplistic diagram of how the Linux architecture works:
 
-```{r unix-architecture.png, echo=FALSE, eval=TRUE, fig.align='center', out.height='70%', out.width='70%', fig.cap="Unix Architecture"}
+```{r unix-architecture.png, echo=FALSE, eval=TRUE, fig.align='center', out.height='70%', out.width='70%', fig.cap="Linux Architecture"}
 knitr::include_graphics(path = "www/unix-architecture.png")
 ```
 
@@ -331,7 +331,7 @@ command [option] [argument]
 
 ###
 
-**Terminals**: an emulator program that provides a text-based interface to type commands into. RStudio comes with a Terminal pane, and so do Unix-based operating systems (if you're using macOS, it's the application in the Utilities folder). 
+**Terminals**: an emulator program that provides a text-based interface to type commands into. RStudio comes with a Terminal pane, and so do Linux-based operating systems (if you're using macOS, it's the application in the Utilities folder). 
 
 ###
 
@@ -393,7 +393,7 @@ Don't worry though! We're working in your browser, so you won't be deleting any 
 
 ## Commands 
 
-Terminal commands (or command-line commands) can be a little cryptic and hard to interpret at first, but fortunately Unix has excellent [online documentation](https://unixguide.readthedocs.io/en/latest/unixcheatsheet/).
+Terminal commands (or command-line commands) can be a little cryptic and hard to interpret at first, but fortunately Linux has excellent [online documentation](https://unixguide.readthedocs.io/en/latest/unixcheatsheet/).
 
 ### Who am I?
 
@@ -479,7 +479,7 @@ $ command [argument]
 
 ###
 
-Unix systems use a single period (`.`) to represent the current working directory, and two periods (`..`) to represent the **parent directory** (i.e. the folder directly 'above' your working folder). Use the code chunk below to move from your current working directory to the parent directory (one folder 'up').
+Linux systems use a single period (`.`) to represent the current working directory, and two periods (`..`) to represent the **parent directory** (i.e. the folder directly 'above' your working folder). Use the code chunk below to move from your current working directory to the parent directory (one folder 'up').
 
 ```{bash cd-dot-dot, exercise = TRUE, exercise.lines = 6}
 # print current working directory with 'pwd'
@@ -679,7 +679,7 @@ Operators help redirect the output from commands from the Terminal output to ano
 
 ###
 
-+ `>` redirects a commands output to a file, but overwrites any existing contents of the file. You might recall this operator from the 'Unix Systems' section example with the `curl` command (use this operator carefully!).
++ `>` redirects a commands output to a file, but overwrites any existing contents of the file. You might recall this operator from the 'Linux Systems' section example with the `curl` command (use this operator carefully!).
 
 ###
 
@@ -774,7 +774,7 @@ We can also view the last 5 lines of a file with `tail`.
 
 ## Pipes 
 
-In the previous exercises, we learned how to view the first and last lines in a text file with `head` and `tail`. What if we wanted to combine these and get a specific row from `data/who-tb-data.tsv`? We could use the Unix pipe operator: `|`
+In the previous exercises, we learned how to view the first and last lines in a text file with `head` and `tail`. What if we wanted to combine these and get a specific row from `data/who-tb-data.tsv`? We could use the Linux pipe operator: `|`
 
 ### Combine commands 
 

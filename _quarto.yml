@@ -7,10 +7,10 @@ editor:
   render-on-save: true
 
 book:
-  title: "fm-unix"
+  title: "fm-linux"
   author: "Martin Frigaard"
   description: |
-    A Unix/Linux Field Manual
+    A Linux Field Manual
   search: true
   #site-url: https://mjfrigaard.github.io/fm-unix/
   #repo-url: https://github.com/mjfrigaard/fm-unix
@@ -22,9 +22,9 @@ book:
     - intro.qmd
     - part: setups.qmd
       chapters:
-        - sh_term.qmd
         - vms.qmd
-        - quarto.qmd
+        - shells.qmd
+        - terminals.qmd
     - part: basics.qmd
       chapters:
         - dirs.qmd
@@ -53,6 +53,7 @@ book:
         - syntax_ref.qmd
         - glossary.qmd
         - macos.qmd
+        - quarto.qmd
 
 format:
   html:
@@ -66,6 +67,8 @@ format:
     #callout-icon: false
     code-link: false
     code-annotations: hover
+    date: last-modified
+    date-format: iso
     toc: true
     toc-depth: 4
     toc-expand: true

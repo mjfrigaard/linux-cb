@@ -24,6 +24,7 @@ sapply(X = readme_stuff, FUN = unlink, force = TRUE, recursive = TRUE)
 
 co_box <- function(
   color = "b",
+  margin = FALSE,
   header = "header",
   contents = "Your text",
   size = "1.05",
@@ -39,7 +40,6 @@ co_box <- function(
   } else {
     look <- "default"
   }
-  
   fold <- tolower(as.character(fold))
   ico <- tolower(as.character(icon))
   size <- as.character(size)
@@ -52,55 +52,125 @@ co_box <- function(
     y = "caution",
     stop("Invalid `type`", call. = FALSE)
   )
-  
-  switch(color,
+  if (isFALSE(margin)) {
+    switch(color,
+        b = cat(paste0(
+          "\n\n",
+          ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
+          "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
+          "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
+          "\n", glue::glue_collapse(contents), "\n\n",
+          "::: \n\n",
+          "::::", "\n"
+        )),
+        g = cat(paste0(
+          "\n\n",
+          ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
+          "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
+          "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
+          "\n", glue::glue_collapse(contents), "\n\n",
+          "::: \n\n",
+          "::::", "\n"
+        )),
+        y = cat(paste0(
+          "\n\n",
+          ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
+          "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
+          "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
+          "\n", glue::glue_collapse(contents), "\n\n",
+          "::: \n\n",
+          "::::", "\n"
+        )),
+        o = cat(paste0(
+          "\n\n",
+          ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
+          "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
+          "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
+          "\n", glue::glue_collapse(contents), "\n\n",
+          "::: \n\n",
+          "::::", "\n"
+        )),
+        r = cat(paste0(
+          "\n\n",
+          ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
+          "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
+          "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
+          "\n", glue::glue_collapse(contents), "\n\n",
+          "::: \n\n",
+          "::::", "\n"
+        )),
+        stop("Invalid `type`", call. = FALSE)
+      )
+  } else {
+switch(color,
     b = cat(paste0(
+      "\n\n",
+      "::::: {.column-margin}",
       "\n\n",
       ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
       "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
       "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
       "\n", glue::glue_collapse(contents), "\n\n",
       "::: \n\n",
-      "::::", "\n"
+      "::::", 
+      "\n\n",
+      ":::::"
     )),
     g = cat(paste0(
       "\n\n",
+      "::::: {.column-margin}",
+      "\n\n",
       ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
       "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
       "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
       "\n", glue::glue_collapse(contents), "\n\n",
       "::: \n\n",
-      "::::", "\n"
+      "::::", 
+      "\n\n",
+      ":::::" 
     )),
     y = cat(paste0(
       "\n\n",
+      "::::: {.column-margin}",
+      "\n\n",
       ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
       "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
       "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
       "\n", glue::glue_collapse(contents), "\n\n",
       "::: \n\n",
-      "::::", "\n"
+      "::::", 
+      "\n\n",
+      ":::::" 
     )),
     o = cat(paste0(
       "\n\n",
-      ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
-      "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
-      "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
-      "\n", glue::glue_collapse(contents), "\n\n",
-      "::: \n\n",
-      "::::", "\n"
-    )),
-    r = cat(paste0(
+      "::::: {.column-margin}",
       "\n\n",
       ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
       "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
       "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
       "\n", glue::glue_collapse(contents), "\n\n",
       "::: \n\n",
-      "::::", "\n"
+      "::::", 
+      "\n\n",
+      ":::::"
+    )),
+    r = cat(paste0(
+      "\n\n",
+      "::::: {.column-margin}",
+      "\n\n",
+      ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "' icon='", ico, "'}", "\n\n",
+      "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
+      "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
+      "\n", glue::glue_collapse(contents), "\n\n",
+      "::: \n\n",
+      "::::", 
+      "\n\n",
+      ":::::"
     )),
     stop("Invalid `type`", call. = FALSE)
-  )
+    )
+  }
 }
 
 git_contrib_box <- function(
@@ -133,102 +203,6 @@ git_contrib_box <- function(
       ))
   
   
-}
-
-hot_key <- function(fun = "L") {
-  if (fun == "all") {
-glue::glue("\n:::: {{layout='[ 15, 33, 16 ]'}}
-
-::: {{#first-column}}
-
-:::
-
-::: {{#second-column}}
-
-::: {{style='font-weight: bold; font-size: 1.15em' layout-valign='bottom'}}
-
-<br><br>
-
-<kbd>Ctrl/Cmd</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd> / <kbd>D</kbd> / <kbd>B</kbd>
-:::
-
-:::
-
-::: {{#third-column}}
-
-:::
-
-::::")
-  } else if (fun == 'tf') {
-glue::glue("\n:::: {{layout='[ 30, 50, 20 ]'}}
-
-::: {{#first-column}}
-
-:::
-
-::: {{#second-column}}
-
-::: {{style='font-weight: bold; font-size: 1.15em' layout-valign='bottom'}}
-
-<br>
-
-<kbd>Ctrl/Cmd</kbd> + <kbd>T</kbd>
-:::
-
-:::
-
-::: {{#third-column}}
-
-:::
-
-::::")
-  } else if (fun == 'cf') {
-glue::glue("\n:::: {{layout='[ 30, 50, 20 ]'}}
-
-::: {{#first-column}}
-
-:::
-
-::: {{#second-column}}
-
-::: {{style='font-weight: bold; font-size: 1.15em' layout-valign='bottom'}}
-
-<br>
-
-<kbd>Ctrl/Cmd</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>
-:::
-
-:::
-
-::: {{#third-column}}
-
-:::
-
-::::")
-  } else {
-glue::glue("\n:::: {{layout='[ 30, 50, 20 ]'}}
-
-::: {{#first-column}}
-
-:::
-
-::: {{#second-column}}
-
-::: {{style='font-weight: bold; font-size: 1.25em' layout-valign='bottom'}}
-
-<br>
-
-<kbd>Ctrl/Cmd</kbd> + <kbd>Shift</kbd> + <kbd>{fun}</kbd>
-:::
-
-:::
-
-::: {{#third-column}}
-
-:::
-
-::::")
-  }
 }
 
 margin_box <- function(shell = "bash", sys = 'macos', sh_w = '30', sys_w = '30') {

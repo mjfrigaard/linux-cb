@@ -2,13 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.28">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A Unix/Linux Field Manual">
+<meta name="dcterms.date" content="2024-08-28">
+<meta name="description" content="A Linux Field Manual">
 
-<title>fm-unix – Introduction</title>
+<title>Introduction – fm-linux</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,13 +80,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-title">Introduction</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -97,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">fm-unix</a> 
+      <a href="./">fm-linux</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -128,16 +129,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./setups.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Set-Ups</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sh_term.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Shells and Terminals</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./vms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Virtual Machines</span></a>
@@ -145,7 +141,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  <a href="./shells.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Shells</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./terminals.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Terminals</span></a>
   </div>
 </li>
       </ul>
@@ -154,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -185,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./syntax.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syntax</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./text.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Text</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -243,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./scripts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Shell Scripts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -264,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./use_cases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use Cases</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -278,9 +279,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -299,6 +300,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./macos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">macOS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
   </div>
 </li>
       </ul>
@@ -339,6 +345,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2024-08-28</p>
+    </div>
+  </div>
   
     
   </div>
@@ -368,27 +380,27 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="the-tale-of-unix" class="level2">
 <h2 class="anchored" data-anchor-id="the-tale-of-unix"><span style="font-size: 1.05em; font-weight: bold;">The Tale of Unix</span></h2>
-<p>Imagine Unix and Linux as the master and apprentice in the vast workshop of computer operating systems. Our story begins in the late 1960s at AT&amp;T’s Bell Labs. Unix was born out of a desire for a more flexible and portable operating system. It was a time when computers were as big as rooms and operated on specific, often incompatible, systems. Unix was a breath of fresh air because it was designed to be simple, elegant, and, most importantly, portable, meaning it could run on different types of hardware.</p>
+<p>Imagine Unix and Linux as cars in the vast landscape of automobile manufacturers. Our story begins in the late 1960s at AT&amp;T’s Bell Labs—a significant moment in the history of technology. Unix was born out of a desire for a more flexible and portable operating system. In a time when computers were as big as rooms, Unix represented the custom-built car designed by a prestigious automaker. It was tailored to specific customers who needed top-end performance and reliability and was often used by large corporations or organizations.</p>
 <section id="unix-philosophy" class="level3">
 <h3 class="anchored" data-anchor-id="unix-philosophy">Unix Philosophy</h3>
-<p>The Unix philosophy has been distilled into a comprehensive operating system of essential commands and operations, guiding other apprentices in creating their versions of tools and systems.</p>
-<p>Unix is like the master craftsman in this story, having laid the foundational tools and techniques, and crafting a blueprint for how computers could efficiently and securely manage tasks like organizing files or running software.</p>
+<p>Unix was a breath of fresh air, designed with a simplicity and elegance that set it apart. Its portability, the ability to run on different types of hardware, was a game-changer. Over time, Unix evolved into a comprehensive operating system, incorporating essential commands and operations and setting a new standard for efficiency and innovation.</p>
+<p>The Unix philosophy (i.e., the foundational tools and techniques) became a blueprint for how computers could efficiently and securely manage tasks like organizing files or running software. This philosophy would eventually guide other ‘car manufacturers’ in creating their versions.</p>
 </section>
 </section>
 <section id="the-emergence-of-linux" class="level2">
 <h2 class="anchored" data-anchor-id="the-emergence-of-linux"><span style="font-size: 1.05em; font-weight: bold;">The Emergence of Linux</span></h2>
-<p>Fast forward a couple of decades to 1991, when a Finnish student named Linus Torvalds decided to create his own free operating system kernel, inspired by Unix. This kernel, which is at the heart of the Linux operating system, was made freely available to anyone who wanted to use or improve it.</p>
+<p>Fast forward a few decades to 1991, when a Finnish student named Linus Torvalds decided to create his free operating system kernel inspired by Unix. At the heart of the Linux operating system, this kernel was made freely available to anyone who wanted to use or improve it.</p>
 <section id="open-source" class="level3">
 <h3 class="anchored" data-anchor-id="open-source">Open-source</h3>
-<p>Linux flourished with the help of developers around the world. It’s a testament to what collaboration and shared goals can achieve. This global effort resulted in an operating system that is not only free but also incredibly powerful and reliable.</p>
-<p>Linux, inspired by the teachings of Unix, was the eager apprentice who learned from the master’s manual and decided to share its own set of tools with the world for free. Making it free meant anyone could contribute their skills, refine the tools, and share the fruits of their labor. This open-source community of developers eventually cultivated various specialties, known as “distributions,” each with ts unique set of tools and embellishments, yet all rooted in the same foundational teachings.</p>
+<p>Linux flourished with the help of developers around the world. It’s a testament to what collaboration and shared goals can achieve. Like a kit car designed by a community of enthusiasts, Linux allows anyone to assemble it with different parts, engines, and even paint (i.e., a fully customizable operating system). This global effort resulted in an operating system that is free, incredibly powerful, and reliable.</p>
+<p>Making Linux free also meant anyone could contribute their skills, refine the codebase, and share the fruits of their labor. This open-source community of developers eventually cultivated various specialties, known as “distributions,” each with a unique set of tools and embellishments, yet all rooted in the same foundational teachings.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 1.10em;">Modern Uses of Unix/Linux</span>
+<span style="font-weight: bold; font-size: 1.10em;">Modern Uses of Linux</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -411,13 +423,18 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-shell" class="level2">
 <h2 class="anchored" data-anchor-id="the-shell"><span style="font-size: 1.05em; font-weight: bold;">The Shell</span></h2>
-<p>In the story of Unix and Linux, <a href="sh_term.html#sec-shells" class="quarto-xref"><span>Shells</span></a> are the interpreters that translate commands into actions a computer can understand and execute. If Unix and Linux are the environments <em>where</em> the heavy lifting of computing happens—managing files, running programs, and controlling hardware—then the shell commands are the language and syntax that spells out <em>how</em> the work happens.</p>
+<p>In the story of Unix and Linux, <a href="shells.html" class="quarto-xref"><span>Shells</span></a> are the car’s dashboards and controls–the interface between the driver and the car’s engine. Shells translate commands into actions a computer can understand and execute.</p>
+<p>If Linux is the environment <em>where</em> the heavy lifting of computing happens–managing files, running programs, and controlling hardware–then the shell commands are the language and syntax that spell out <em>what</em> computational work happens.</p>
 <hr>
 </section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></h2>
-<p>To summarize, Unix and Linux provide the underlying framework for computer programs. They’re like the behind-the-scenes craftsmen ensuring the workshop runs smoothly, whether crafting a simple piece of furniture (like running a straightforward program on your computer), or constructing an elaborate mansion (like managing the complex operations of a large server).</p>
-<p>The shell is like the skilled artisan’s primary tool within the grand workshop of Unix and Linux, serving as a bridge between the user and the system’s deeper capabilities. Just as a master carpenter relies on a trusted hammer or saw, users of Unix and Linux turn to the shell for navigating and manipulating the vast landscape of these operating systems.</p>
+<p>To summarize, both are Unix and Linux are analogous to vehicles designed for transportation, but with a few important differences:</p>
+<ul>
+<li><p>Unix is like a high-end, custom-built car designed for a specific market, offering luxury, reliability, and exclusivity.</p></li>
+<li><p>Linux is like a kit car that can be built, modified, and customized however the user likes, with support from a large and active community of other enthusiasts.</p></li>
+</ul>
+<p>In both Unix and Linux, Shells are essential for accessing the full power of the system, whether we’re making routine adjustments or performing complex configurations.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">

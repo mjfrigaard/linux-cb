@@ -38,11 +38,11 @@ co_box(
 )
 ```
 
-The Unix and Linux operating systems thrive on simplicity and efficiency, principles elegantly manifested in text handling. Central to this ecosystem are the commands explicitly designed for text manipulation.
+The Linux and Linux operating systems thrive on simplicity and efficiency, principles elegantly manifested in text handling. Central to this ecosystem are the commands explicitly designed for text manipulation.
 
 ## The Text Stream
 
-Unix/Linux conceptualizes text as a stream, a continuous sequence of characters that can be manipulated in real-time. Streams are crucial for understanding how Unix/Linux commands process text. A text stream can originate from files, input devices, or even the output of other commands. Treating text as a steady stream of inputs offers a versatile and powerful method for text manipulation.
+Linux conceptualizes text as a stream, a continuous sequence of characters that can be manipulated in real-time. Streams are crucial for understanding how Linux commands process text. A text stream can originate from files, input devices, or even the output of other commands. Treating text as a steady stream of inputs offers a versatile and powerful method for text manipulation.
 
 ```{r}
 #| label: co_box_stdin_stdout
@@ -56,18 +56,18 @@ co_box(
   size = "1.05", 
   header = " Refresher: Standard Input and Standard Output", 
   fold = TRUE,
-  contents = "Two key concepts in Unix text processing are standard input (`stdin`) and standard output (`stdout`). `stdin` is the default input stream, which often comes from the keyboard or the output of another command. `stdout` is the default output stream, typically the terminal screen. Many Unix commands read from `stdin` when no file is specified and write to `stdout`, allowing the output of one command to become the input of another. This design facilitates the chaining of commands (piping) to perform complex operations in a streamlined manner.
+  contents = "Two key concepts in Linux text processing are standard input (`stdin`) and standard output (`stdout`). `stdin` is the default input stream, which often comes from the keyboard or the output of another command. `stdout` is the default output stream, typically the terminal screen. Many Linux commands read from `stdin` when no file is specified and write to `stdout`, allowing the output of one command to become the input of another. This design facilitates the chaining of commands (piping) to perform complex operations in a streamlined manner.
 
 -   **Input** generally refers to the data fed into a command, which can come from `stdin` or be specified as arguments.
 
 -   **Output** is the data produced by a command, displayed on `stdout` unless redirected.
   
-This interconnectivity of `stdin` and `stdout`, all communicating through text streams, exemplifies the efficiency and flexibility of Unix-like systems.")
+This interconnectivity of `stdin` and `stdout`, all communicating through text streams, exemplifies the efficiency and flexibility of Linux-like systems.")
 ```
 
 ## Text Manipulation 
 
-Text manipulation commands embody the Unix philosophy of '*do one thing and do it well*' and demonstrate the system’s power in processing text streams. This section will explore these fundamental commands, illustrating how they easily interact with text streams, standard input (`stdin`), and standard output (`stdout`) to perform complex text manipulations.
+Text manipulation commands embody the Linux philosophy of '*do one thing and do it well*' and demonstrate the system’s power in processing text streams. This section will explore these fundamental commands, illustrating how they easily interact with text streams, standard input (`stdin`), and standard output (`stdout`) to perform complex text manipulations.
 
 ### Wu-Tang
 
@@ -239,7 +239,7 @@ rm data/turing_tarpit.txt
 
 ### Roxanne
 
-The `data/roxanne.txt` file contains the lyrics to the 1979 song [Roxanne by The Police](https://en.wikipedia.org/wiki/Roxanne_(The_Police_song)). We'll use this file to explore several powerful Unix/Linux command-line utilities that are invaluable for searching, editing, and manipulating text data in files.
+The `data/roxanne.txt` file contains the lyrics to the 1979 song [Roxanne by The Police](https://en.wikipedia.org/wiki/Roxanne_(The_Police_song)). We'll use this file to explore several powerful Linux command-line utilities that are invaluable for searching, editing, and manipulating text data in files.
 
 #### Global substitutions {#sec-glob-sub}
 
@@ -532,7 +532,7 @@ rm data/roxanne_meta.txt
 
 ## Recap 
 
-Using these commands can dramatically enhance productivity and efficiency when working with text files in Unix/Linux environments.
+Using these commands can dramatically enhance productivity and efficiency when working with text files in Linux environments.
 
 ```{r}
 #| label: git_contrib_box

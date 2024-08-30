@@ -31,35 +31,35 @@ co_box(
 )
 ```
 
-The essence of Unix and Linux systems is their powerful simplicity, and nowhere is this more evident than in how they handle text. Text commands and editors form the backbone of these operating systems, enabling users to perform complex tasks with a few keystrokes. This chapter will delve into pattern matching with regular expressions, the fundamental concepts of plain text files, text streams, and the Unix philosophy that prioritizes text as a universal interface for programming and system administration.
+The essence of Linux and Linux systems is their powerful simplicity, and nowhere is this more evident than in how they handle text. Text commands and editors form the backbone of these operating systems, enabling users to perform complex tasks with a few keystrokes. This chapter will delve into pattern matching with regular expressions, the fundamental concepts of plain text files, text streams, and the Linux philosophy that prioritizes text as a universal interface for programming and system administration.
 
 ## Plain Text Files 
 
-Plain text files are vital to Unix/Linux systems, embodying their philosophy of 'simple and beautiful.'[^mcilroy] These files only contain text, making them versatile and powerful. Unix/Linux believes that '*everything is a file*,' including devices, configurations, and processes.[^file-vs-bits] Plain text files are the universal interface between systems, programs, and users. Standard Unix/Linux tools can easily create, manipulate, and read plain text, making it an essential interface for system administration, programming, and process management.
+Plain text files are vital to Linux systems, embodying their philosophy of 'simple and beautiful.'[^mcilroy] These files only contain text, making them versatile and powerful. Linux believes that '*everything is a file*,' including devices, configurations, and processes.[^file-vs-bits] Plain text files are the universal interface between systems, programs, and users. Standard Linux tools can easily create, manipulate, and read plain text, making it an essential interface for system administration, programming, and process management.
 
-[^mcilroy]: Doug McIlroy on Unix programming: "*Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.*" - [Wikipedia](https://en.wikipedia.org/wiki/Unix_philosophy#Doug_McIlroy_on_Unix_programming)
+[^mcilroy]: Doug McIlroy on Linux programming: "*Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.*" - [Wikipedia](https://en.wikipedia.org/wiki/Unix_philosophy#Doug_McIlroy_on_Unix_programming)
 
 [^file-vs-bits]: Linus Torvalds (creator and lead developer of the Linux kernel) has [clarified](https://yarchive.net/comp/linux/everything_is_file.html) this to, "*The UNIX philosophy is often quoted as "everything is a file", but that really means "everything is a stream of bytes.*"
 
 ### Simple and Efficient
 
-Plain text files are simple, versatile, and easy to work with. They can be edited with any text editor and don't require specialized software, making actions transparent and learning accelerated. Plain text can also be easily manipulated using standard Unix/Linux text-processing tools such as **<code>@sec-grep</code>**, **<code>@sec-sed</code>**, and **<code>@sec-awk</code>**. With simple one-liners from the command line, users can search for a specific line, replace text across multiple files, or transform data formats.
+Plain text files are simple, versatile, and easy to work with. They can be edited with any text editor and don't require specialized software, making actions transparent and learning accelerated. Plain text can also be easily manipulated using standard Linux text-processing tools such as **<code>@sec-grep</code>**, **<code>@sec-sed</code>**, and **<code>@sec-awk</code>**. With simple one-liners from the command line, users can search for a specific line, replace text across multiple files, or transform data formats.
 
 ### Communication Between Programs
 
-Unix/Linux philosophy values specialized programs that work together efficiently. Plain text files are used as inputs or outputs in pipelines of simple, single-purpose programs to perform complex operations.
+Linux philosophy values specialized programs that work together efficiently. Plain text files are used as inputs or outputs in pipelines of simple, single-purpose programs to perform complex operations.
 
 ## Text Streams
 
-A text stream in Unix and Linux is a simple, sequential flow of characters. Text streams can be inputs from keyboards, outputs to a display screen, or the data within a file. The concept of text streams is fundamental to the Unix philosophy; it allows for the chaining together of commands, where the output of one command can be seamlessly passed as input to another through a mechanism known as piping.
+A text stream in Linux and Linux is a simple, sequential flow of characters. Text streams can be inputs from keyboards, outputs to a display screen, or the data within a file. The concept of text streams is fundamental to the Linux philosophy; it allows for the chaining together of commands, where the output of one command can be seamlessly passed as input to another through a mechanism known as piping.
 
-## Text Editors and The Unix Philosophy
+## Text Editors and The Linux Philosophy
 
-The Unix philosophy emphasizes simplicity, clarity, and the principle of “doing one thing well.” Plain text embodies this philosophy, serving as a simple, straightforward, and versatile means of interaction between the user, the system, and the programs running on it. This philosophy also underpins the design of Unix text editors, which range from the simple (like nano) to the powerful and extensible (like vi and emacs).
+The Linux philosophy emphasizes simplicity, clarity, and the principle of “doing one thing well.” Plain text embodies this philosophy, serving as a simple, straightforward, and versatile means of interaction between the user, the system, and the programs running on it. This philosophy also underpins the design of Linux text editors, which range from the simple (like nano) to the powerful and extensible (like vi and emacs).
 
 Text commands and editors are not just tools but the medium through which users communicate with the system and manipulate it to their will. Mastering these commands and editors opens up a world of possibilities for efficient system management, programming, and beyond.
 
-This section will explore the core text commands that every Unix and Linux user should know, from file manipulation to text processing and searching. We will also introduce the most popular text editors, guiding you through their primary usage and highlighting their unique features. 
+This section will explore the core text commands that every Linux and Linux user should know, from file manipulation to text processing and searching. We will also introduce the most popular text editors, guiding you through their primary usage and highlighting their unique features. 
 
 
 ```{r}

@@ -36,7 +36,7 @@ co_box(
 )
 ```
 
-The Unix pipe, denoted by the vertical bar `|`, is a powerful feature of Unix and Unix-like operating systems that allows the output of one command (`stdout`) to be used as the input to another (`stdin`). This capability forms the basis of the Unix philosophy of building small, modular utilities that do one thing well and connecting them together to perform complex tasks.
+The Linux pipe, denoted by the vertical bar `|`, is a powerful feature of Linux and Linux-like operating systems that allows the output of one command (`stdout`) to be used as the input to another (`stdin`). This capability forms the basis of the Linux philosophy of building small, modular utilities that do one thing well and connecting them together to perform complex tasks.
 
 ## [Fundamental Concept]{style="font-size: 1.05em; font-weight: bold;"} 
 
@@ -100,17 +100,17 @@ ps aux | grep httpd | wc -l
 **<code>@sec-cat</code>`data/roxanne.txt | `<code>@sec-grep</code>` "night"`** displays lines from `data/roxanne.txt` that contain the number `"2"`.
 
 ```{bash}
-cat data/roxanne.txt | grep "night"
+cat data/raw/roxanne.txt | grep "night"
 ```
 
 Here, <code>@sec-cat</code> outputs the file's contents, which <code>@sec-grep</code> filters.
 
 **Example 2**
 
-**<code>@sec-ls</code>` -l data | `<code>@sec-sort</code>` -r`** lists the files in `data` in a detailed format, then sorts them in reverse order.
+**<code>@sec-ls</code>` -l data/raw | `<code>@sec-sort</code>` -r`** lists the files in `data/raw` in a detailed format, then sorts them in reverse order.
 
 ```{bash}
-ls -l data | sort -r
+ls -l data/raw | sort -r
 ```
 
 It showcases how to reverse the listing of directory contents.
@@ -150,7 +150,7 @@ cat /var/log/system.log | grep "DEAD_PROCESS"
 **`cut -d':' -f1 data/roxanne.txt | sort | uniq`** extracts the first field from each line in `data/roxanne.txt`, sorts the contents alphabetically, and removes duplicates.
 
 ```{bash}
-cut -d':' -f1 data/roxanne.txt | sort | uniq
+cut -d':' -f1 data/raw/roxanne.txt | sort | uniq
 ```
 
 This sequence is an example of performing data extraction and deduplication.
@@ -225,7 +225,7 @@ done
 
 ```{bash}
 #| include: false
-counts=$(wc data/who_tb_data.psv | awk '{print $1, $2, $3}')
+counts=$(wc data/music_vids.tsv | awk '{print $1, $2, $3}')
 printf "   lines   words characters\n"
 printf "%8s %7s %10s\n" $counts
 ```
@@ -258,7 +258,7 @@ Error handling in pipes can be non-trivial, as each command in a pipeline execut
 
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 
 
-Pipes (`|`) allow the output of one command (`stdout`) to be used as the input (`stdin`) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next. Unix pipes embody the concept of composability in Unix, enabling users to build complex workflows out of simple, single-purpose programs. They are a testament to the flexibility and power of the Unix command line, facilitating a wide range of tasks from simple text processing to sophisticated data analysis and system monitoring.
+Pipes (`|`) allow the output of one command (`stdout`) to be used as the input (`stdin`) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next. Linux pipes embody the concept of composability in Linux, enabling users to build complex workflows out of simple, single-purpose programs. They are a testament to the flexibility and power of the Linux command line, facilitating a wide range of tasks from simple text processing to sophisticated data analysis and system monitoring.
 
 This framework of commands, arguments, options, and the interplay of input (`stdin`), output (`stdout`) , and pipes enables sophisticated data processing and manipulation directly from the terminal.
 

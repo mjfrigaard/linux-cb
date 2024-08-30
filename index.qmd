@@ -20,52 +20,27 @@ source("_common.R")
 #| results: asis
 #| eval: true
 co_box(
-  color = "r",
+  color = "o",
   look = "default", 
-  hsize = "1.25", 
+  hsize = "1.15", 
   size = "1.00", 
   header = "Caution", 
   fold = FALSE,
-  contents = "This book is under development. Thank you for your patience.
+  contents = "This project is under development. Thank you for your patience.
   "
 )
 ```
 
 # Welcome! {.unnumbered}
 
-Welcome to my Unix/Linux Field Manual! 
+Welcome to the Linux Field Manual! 
 
-<a href="https://github.com/mjfrigaard/fm-unix"><img src="img/fm-unix-logo-gray.png" width="80%" class="cover" alt="Github Repo" fig-align="center"/></a> 
+<a href="https://github.com/mjfrigaard/fm-unix"><img src="img/fm_linux_logo.png" width="80%" class="cover" alt="Github Repo" fig-align="center"/></a> 
 
 
-This book aims to provide a quick reference for basic concepts and common tasks when using Unix/Linux operating systems.[^zsh-bash]
+Linux is a powerful, versatile, and widely used operating system that runs on millions of devices worldwide, from smartphones to supercomputers.
 
-<!-- ## What This Book Is Not -->
-
-<!-- ## Audience and Prerequisites -->
-
-```{r}
-#| label: co_box_fms
-#| echo: false
-#| results: asis
-#| eval: true
-co_box(
-  color = "g",
-  header = "What is in a Field Manual?", 
-  size = "0.90", 
-  hsize = "1.05", 
-  look = "simple",
-  fold = TRUE,
-  contents = "A field manual (FM) is an educational tool that provides information, instructions, and techniques for various concepts and practices. 
-  
-Fiels Manuals function as both reference material and living documentation, encouraging updates and adaptations based on the given situation, available technology, or broader environment.[^field-manuals]
-
-![Example improvised litter made using tent poles and field jackets.](img/jacket-pole-litter.png){width='70%' fig-align='center'}
-  
-[^field-manuals]: This definition is based on the [U.S. Army Field Manuals (FMs).](https://github.com/mjfrigaard/fm-unix/tree/main/_assets/1965-fm531-boobytraps.pdf)")
-```
-
-[^zsh-bash]: Most of these commands will work on any Shell (Zsh, Bash, etc.) program.
+This book covers an introduction to terminals and shells, the Linux filesystem hierarchy, moving around directories, file permissions, executing commands, and writing scripts with a text editor. 
 
 ```{r}
 #| label: git_contrib_box

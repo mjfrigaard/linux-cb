@@ -2,13 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.28">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A Unix/Linux Field Manual">
+<meta name="dcterms.date" content="2024-08-28">
+<meta name="description" content="A Linux Field Manual">
 
-<title>fm-unix – Pipes</title>
+<title>Pipes – fm-linux</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -113,13 +114,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syntax.html">Syntax</a></li><li class="breadcrumb-item"><a href="./pipes.html"><span class="chapter-title">Pipes</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -131,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">fm-unix</a> 
+      <a href="./">fm-linux</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -162,16 +163,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./setups.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Set-Ups</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sh_term.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Shells and Terminals</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./vms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Virtual Machines</span></a>
@@ -179,7 +175,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  <a href="./shells.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Shells</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./terminals.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Terminals</span></a>
   </div>
 </li>
       </ul>
@@ -188,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -219,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./syntax.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syntax</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -250,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./text.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Text</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -277,7 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./scripts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Shell Scripts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -298,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./use_cases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use Cases</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -312,9 +313,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -333,6 +334,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./macos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">macOS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
   </div>
 </li>
       </ul>
@@ -380,6 +386,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2024-08-28</p>
+    </div>
+  </div>
   
     
   </div>
@@ -448,9 +460,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong><code><a href="syntax_ref.html#sec-ps" class="quarto-xref"><span>ps</span></a></code><code>aux |</code><code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> <code>httpd</code></strong> lists all processes, filters those containing “httpd” (HTTPD = web server processes running):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> aux <span class="kw">|</span> <span class="fu">grep</span> httpd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mjfrigaard       30613   0.0  0.0 33597016    632   ??  S     1:36PM   0:00.00 grep httpd</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mjfrigaard       30611   0.0  0.0 33597548    904   ??  S     1:36PM   0:00.00 bash -c ps aux | grep httpd</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># mjfrigaard       30610   0.0  0.0 33597548    924   ??  S     1:36PM   0:00.01 sh -c 'bash'  -c 'ps aux | grep httpd' 2&gt;&amp;1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mjfrigaard       23601   0.0  0.0 33597016    632   ??  S     6:44AM   0:00.00 grep httpd</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mjfrigaard       23599   0.0  0.0 33599596    928   ??  S     6:44AM   0:00.01 bash -c ps aux | grep httpd</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># mjfrigaard       23598   0.0  0.0 33598572    932   ??  S     6:44AM   0:00.01 sh -c 'bash'  -c 'ps aux | grep httpd' 2&gt;&amp;1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Example</strong></p>
 <p><strong><code><a href="syntax_ref.html#sec-wc" class="quarto-xref"><span>wc</span></a></code><code>-l</code></strong> counts the number of lines:</p>
@@ -463,27 +475,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Example 1</strong></p>
 <p><strong><code><a href="syntax_ref.html#sec-cat" class="quarto-xref"><span>cat</span></a></code><code>data/roxanne.txt |</code><code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code><code>"night"</code></strong> displays lines from <code>data/roxanne.txt</code> that contain the number <code>"2"</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/roxanne.txt <span class="kw">|</span> <span class="fu">grep</span> <span class="st">"night"</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/raw/roxanne.txt <span class="kw">|</span> <span class="fu">grep</span> <span class="st">"night"</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't have to sell your body to the night</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't have to wear that dress tonight</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here, <code><a href="syntax_ref.html#sec-cat" class="quarto-xref"><span>cat</span></a></code> outputs the file’s contents, which <code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> filters.</p>
 <p><strong>Example 2</strong></p>
-<p><strong><code><a href="syntax_ref.html#sec-ls" class="quarto-xref"><span>ls</span></a></code><code>-l data |</code><code><a href="syntax_ref.html#sec-sort" class="quarto-xref"><span>sort</span></a></code><code>-r</code></strong> lists the files in <code>data</code> in a detailed format, then sorts them in reverse order.</p>
+<p><strong><code><a href="syntax_ref.html#sec-ls" class="quarto-xref"><span>ls</span></a></code><code>-l data/raw |</code><code><a href="syntax_ref.html#sec-sort" class="quarto-xref"><span>sort</span></a></code><code>-r</code></strong> lists the files in <code>data/raw</code> in a detailed format, then sorts them in reverse order.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> data <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-r</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># total 184</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.tsv</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> data/raw <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-r</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># total 128</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff  12531 Apr 13 20:39 ajperlis_epigrams.txt</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.csv</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   8834 May  2 10:32 README.md</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   6122 Apr 10 14:04 music_vids.tsv</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   4417 Apr 10 14:01 trees.tsv</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   6452 May 15 21:48 music_vids.csv</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   4828 May 15 21:49 vg_hof.csv</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   4462 May 15 21:48 trees.csv</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff   1315 Apr  6 05:38 roxanne.txt</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    462 Apr 15 14:07 wu_tang.psv</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:39 wu_tang.tsv</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:34 wu_tang.csv</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--  1 mjfrigaard  staff  12531 Apr 13 20:39 ajperlis_epigrams.txt</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--  1 mjfrigaard  staff   4814 Apr 10 14:07 vg_hof.tsv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    381 May 15 21:55 who_tb_data.csv</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:34 wu_tang.csv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It showcases how to reverse the listing of directory contents.</p>
 </section>
@@ -493,17 +502,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong><code><a href="syntax_ref.html#sec-find" class="quarto-xref"><span>find</span></a></code><code>. -type f |</code><code><a href="syntax_ref.html#sec-xargs" class="quarto-xref"><span>xargs</span></a></code><code>du -sh |</code><code><a href="syntax_ref.html#sec-sort" class="quarto-xref"><span>sort</span></a></code><code>-h</code></strong> finds files (<code>-type f</code>) in the current directory and subdirectories, calculates their sizes (<code>du -sh</code>), and sorts them by size (<code>sort -h</code>):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> data <span class="at">-type</span> f <span class="kw">|</span> <span class="fu">xargs</span> du <span class="at">-sh</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-h</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.0K  data/roxanne.txt</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.0K  data/wu_tang.csv</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.0K  data/wu_tang.psv</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.0K  data/wu_tang.tsv</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 8.0K  data/music_vids.tsv</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 8.0K  data/trees.tsv</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 8.0K  data/vg_hof.tsv</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#  12K  data/README.md</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#  12K  data/pwrds.csv</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#  12K  data/pwrds.tsv</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#  16K  data/ajperlis_epigrams.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.0K  data/raw/roxanne.txt</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.0K  data/raw/who_tb_data.csv</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.0K  data/raw/wu_tang.csv</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.0K  data/wu_tang.psv</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.0K  data/wu_tang.tsv</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 8.0K  data/music_vids.tsv</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 8.0K  data/raw/music_vids.csv</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 8.0K  data/raw/trees.csv</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 8.0K  data/raw/vg_hof.csv</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 8.0K  data/trees.tsv</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 8.0K  data/vg_hof.tsv</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#  12K  data/README.md</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#  12K  data/pwrds.tsv</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#  12K  data/raw/pwrds.csv</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">#  16K  data/raw/ajperlis_epigrams.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This pipeline not only identifies files but also sorts them by their disk usage, illustrating a complex operation made simple through pipes.</p>
 </section>
@@ -523,7 +536,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Example</strong></p>
 <p><strong><code>cut -d':' -f1 data/roxanne.txt | sort | uniq</code></strong> extracts the first field from each line in <code>data/roxanne.txt</code>, sorts the contents alphabetically, and removes duplicates.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cut</span> <span class="at">-d</span><span class="st">':'</span> <span class="at">-f1</span> data/roxanne.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span></span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cut</span> <span class="at">-d</span><span class="st">':'</span> <span class="at">-f1</span> data/raw/roxanne.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># I have to tell you just how I feel</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># I know my mind is made up</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># I loved you since I knew you</span></span>

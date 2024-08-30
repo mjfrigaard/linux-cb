@@ -99,7 +99,7 @@ co_box(
   contents = "\n
 It's important to note here that the command-line is not very forgiving. Using `rm` is a powerful action with significant consequences, as it permanently deletes files, akin to shredding documents. There's usually no easy way to recover deleted files unless you have a backup.
 
-> '*Unix is like a chainsaw. Chainsaws are powerful tools, and make many difficult tasks like cutting through thick logs quite easy. Unfortunately, this power comes with danger: chainsaws can cut just as easily through your leg.*' - Gary Bernhardt[^bernhardt]
+> '*Linux is like a chainsaw. Chainsaws are powerful tools, and make many difficult tasks like cutting through thick logs quite easy. Unfortunately, this power comes with danger: chainsaws can cut just as easily through your leg.*' - Gary Bernhardt[^bernhardt]
 
 [^bernhardt]: As quoted in [Bioinformatics Data Skills: Reproducible and Robust Research with Open Source Tools (2015) by Vince Buffalo](https://bit.ly/3sVBSne).
 \n"
@@ -229,7 +229,9 @@ Clear the terminal screen.
 
 ### `yes` {#sec-yes}
 
-Output a string repeatedly until killed.
+Output a string repeatedly until killed. 
+
+**NOTE:** Use **<kbd>Ctrl</kbd>** + **<kbd>C</kbd>** to interrupt the `yes` command.
 
 ### `exit` {#sec-exit}
 
@@ -251,6 +253,8 @@ Control the systemd system and service manager.
 
 Query and display messages from the journal.
 
+## [Variables]{style="font-size: 1.05em; font-weight: bold;"}
+
 ### `set` {#sec-set}
 
 `set` is used to display all shell variables and functions, and to configure shell options and positional parameters.
@@ -259,7 +263,7 @@ Query and display messages from the journal.
 
 `unset` is used to remove a shell or environment variable, effectively deleting it from the current shell session.
 
-### `export` {#sec-unset}
+### `export` {#sec-export}
 
 `export`is used to set an environment variable and make it available to child processes spawned from the current shell session.
 
@@ -308,6 +312,10 @@ Compare files line by line.
 ### `wc` {#sec-wc}
 
 Print newline, word, and byte counts for each file.
+
+### `seq` {#sec-seq}
+
+The `seq` command generates a sequence of numbers, with customizable start, stop, and step values, and outputs them to standard output.
 
 ### `sed` {#sec-sed}
 

@@ -36,17 +36,17 @@ co_box(
 )
 ```
 
-Virtual machines (VMs) offer a flexible way to run Unix/Linux environments on top of your existing operating system, regardless of whether it’s Windows, macOS, or another Linux distribution. This subsection explores the setup process for virtual machines, highlighting popular VM software like VirtualBox and VMware. It will guide readers through creating a new VM, installing a Unix/Linux distribution, configuring network settings, and optimizing performance. This part is essential for those experimenting with Unix/Linux systems in an isolated environment.
+Virtual machines (VMs) offer a flexible way to run Linux environments on top of your existing operating system, regardless of whether it’s Windows, macOS, or another Linux distribution. This chapter explores the setup process for virtual machines, highlighting popular VM software like VirtualBox and VMware.
 
 ### [Virtualization Software]{style="font-size: 1.05em; font-weight: bold;"}
 
-Setting up Unix/Linux on virtual machines (VMs) is a valuable technique for running different operating systems on a single physical machine, which is helpful for development, testing, server deployment, and more. Several virtualization tools are available, but the most popular ones include:
+Setting up Linux on virtual machines (VMs) is a valuable technique for running different operating systems on a single physical machine, which is helpful for development, testing, server deployment, and more. Several virtualization tools are available, but the most popular ones include:
 
 <br>
 
 #### ![](img/virtualbox-logo.png){fig-align='right' width='15%'} VirtualBox
 
-**[VirtualBox](https://www.virtualbox.org/)** is an open-source option that provides a good balance of features and simplicity. It runs on Windows, Linux, and macOS and supports numerous Linux distributions and Unix variants.
+**[VirtualBox](https://www.virtualbox.org/)** is an open-source option that provides a good balance of features and simplicity. It runs on Windows, Linux, and macOS and supports numerous Linux distributions and Linux variants.
 
 
 #### ![](img/vmware-workstation-logo.png){fig-align='right' width='10%'} VMware Workstation 
@@ -62,9 +62,9 @@ Setting up Unix/Linux on virtual machines (VMs) is a valuable technique for runn
 
 **[Parallels Desktop](https://www.parallels.com/products/desktop/)** is a commercial product predominantly used on macOS. Parallels is known for its high performance and seamless integration with the host OS, making it easy to run Linux alongside macOS.
 
-### [Unix/Linux Distributions]{style="font-size: 1.05em; font-weight: bold;"}
+### [Linux Distributions]{style="font-size: 1.05em; font-weight: bold;"}
 
-Download the ISO file for the Unix or Linux distribution you want to install. Popular Linux distributions include [Ubuntu](https://ubuntu.com/), [Fedora](https://fedoraproject.org/), and [CentOS](https://www.centos.org/). For a more Unix-like experience, consider [FreeBSD](https://www.freebsd.org/) or [OpenBSD](https://www.openbsd.org/). Each distribution has its unique characteristics, making them suitable for different types of users and use cases:
+Download the ISO file for the Linux or Linux distribution you want to install. Popular Linux distributions include [Ubuntu](https://ubuntu.com/), [Fedora](https://fedoraproject.org/), and [CentOS](https://www.centos.org/). For a more Linux-like experience, consider [FreeBSD](https://www.freebsd.org/) or [OpenBSD](https://www.openbsd.org/). Each distribution has its unique characteristics, making them suitable for different types of users and use cases:
 
 <br>
 
@@ -98,18 +98,129 @@ Download the ISO file for the Unix or Linux distribution you want to install. Po
 
 **Binary Compatibility with RHEL**: Being binary compatible with RHEL means that software applications developed for RHEL can run seamlessly on CentOS, which is particularly important for ensuring the broad compatibility of software and services in professional environments.
 
+## [![](img/virtualbox-logo.png){fig-align='right' width='10%'} VirtualBox & ![](img/ubuntu-logo.png){fig-align='right' width='8%'} Ubuntu]{style="font-size: .99em; font-weight: bold;"}
+
+In this section we'll cover how to setup VirtualBox and Ubuntu. We'll download VirtualBox, select a Linux distribution, configuring the hardware and storage, and launch the virtual machine.
+
+### Download
+
+Download and install VirtualBox from their [website](https://www.virtualbox.org/wiki/Downloads). I'm using macOS, so it's a `VirtualBox-7.0.20-163906-OSX.dmg` file: 
+
+:::{#fig-virtualbox-install}
+
+![](img/virtualbox-install.png){#fig-virtualbox-install fig-align='center' width='90%'}
+
+Double-click the `VirtualBox.pkg` file to install
+:::
+
+After installing VirtualBox, download a Linux distribution (I'm using Ubuntu). I saved this `.iso` file in the same folder as the `VirtualBox` file:
+
+```sh
+/Applications/VirtualBox/
+├── VirtualBox-7.0.20-163906-OSX.dmg
+└── ubuntu-24.04-desktop-amd64.iso
+
+1 directory, 2 files
+```
+
+Click **New** in the VirtualBox manager and name the Virtual Machine and Operating System:
+
+::: {#fig-virtualbox-manager-new}
+
+![](img/virtualbox-manager-new.png){#fig-virtualbox-manager-new fig-align='center' width='90%'}
+
+New Virtual Machine on VirtualBox
+:::
+
+### Create
+
+Create the new ISO image be adding the path to the downloaded Ubuntu file (`ubuntu-24.04-desktop-amd64.iso`).
+
+::: {#fig-virtualbox-create-image}
+
+![](img/virtualbox-create-image.png){#fig-virtualbox-ceate-image fig-align='center' width='90%'}
+
+Creating new Ubuntu ISO image
+:::
+
+Click the **Skip Unattended Installation** checkbox and **Next**.
+
+### Configure
+
+In this window we'll configure the Ubuntu image. I've chosen to allocate 1/4 of the memory and processors on my machine to the image, but you can experiment with both settings to find the best configuration that fits your needs. 
+
+::: {#fig-virtualbox-configure-image}
+
+![](img/virtualbox-configure-image.png){#fig-virtualbox-ceate-image fig-align='center' width='90%'}
+
+Configure base memory and processors on Ubuntu ISO image
+:::
+
+In the next window we'll set the storage for this image (I've left the default). 
+
+::: {#fig-virtualbox-image-storage}
+
+![](img/virtualbox-image-storage.png){#fig-virtualbox-image-storage fig-align='center' width='90%'}
+
+Configure hard disk on Ubuntu ISO image
+:::
+
+The final window is a summary of our new virtual machine. 
+
+::: {#fig-virtualbox-image-summary}
+
+![](img/virtualbox-image-summary.png){#fig-virtualbox-image-summary fig-align='center' width='90%'}
+
+Ubuntu ISO image Summary 
+:::
+
+Click **Finish** to create the image. 
+
+### Launch
+
+Back in the VirtualBox Manager, we can run this new virtual machine by clicking **Start**. 
+
+::: {#fig-virtualbox-launch-ubuntu-image}
+
+![](img/virtualbox-launch-ubuntu-image.png){#fig-virtualbox-launch-ubuntu-image fig-align='center' width='90%'}
+
+Start virtual machine
+:::
+
+After clicking **Start**, a new window will open and attempt to start the virtual machine. Use the arrow keys to select *Try or Install Ubuntu*:
+
+::: {#fig-virtualbox-try-install-ubuntu}
+
+![](img/virtualbox-try-install-ubuntu.png){#fig-virtualbox-try-install-ubuntu fig-align='center' width='90%'}
+
+Try or Install Ubuntu
+:::
+
+Finish the installation steps for Ubuntu for your liking.
+
+
+::: {#fig-virtualbox-install-ubuntu}
+
+![](img/virtualbox-install-ubuntu.png){#fig-virtualbox-install-ubuntu fig-align='center' width='90%'}
+
+Complete Ubuntu Installation
+:::
+
+Creating virtual machines is an essential skill for those experimenting with Linux systems in an isolated environment.
+
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"}
 
-This chapter covered virtualization and Linux distributions. Specifically, we discussed: 
+This chapter covered virtual machines and Linux distributions. Specifically, we discussed: 
 
-1. Setting up Unix/Linux on virtual machines, highlighting the process and popular virtualization software options.
-    * Commercial options: VMware Workstation, VMware Fusion, and Parallels Desktop
-    * Open-source option: VirtualBox
+1. Setting up Linux on virtual machines, highlighting the process and popular virtualization software options.   
+    * **Open-source option**: VirtualBox
+    * **Commercial options**: VMware Workstation, VMware Fusion, and Parallels Desktop
+    
 
 2. The key features of three major Linux distributions: 
-    * Ubuntu, known for its user-friendliness
-    * Fedora, recognized for its cutting-edge technology
-    * CentOS, valued for its enterprise-level stability
+    * **Ubuntu**: known for its user-friendliness
+    * **Fedora**: recognized for its cutting-edge technology
+    * **CentOS**: valued for its enterprise-level stability
     
 Each of these distributions brings its strengths and is tailored to different segments of the Linux user base, from desktop users and hobbyists to developers and enterprise clients.
 
@@ -123,7 +234,7 @@ In **VMware or Parallels**: Launch the software, select “Create a New Virtual 
 
 ### Install
 
-After setting up the VM and booting from the ISO, you’ll enter the setup process of your chosen Unix/Linux OS. Install the OS by following the on-screen instructions, which typically involve setting up partitions, selecting your time zone, and creating user accounts.
+After setting up the VM and booting from the ISO, you’ll enter the setup process of your chosen Linux OS. Install the OS by following the on-screen instructions, which typically involve setting up partitions, selecting your time zone, and creating user accounts.
 
 ### Configure
 
@@ -135,13 +246,13 @@ After installation, you might need to install additional tools for enhanced func
 
 ### Reboot
 
-Once everything is installed, reboot the VM. We should now be able to use our Unix/Linux system like a physical machine. We can install software, access the internet, and perform other tasks.
+Once everything is installed, reboot the VM. We should now be able to use our Linux system like a physical machine. We can install software, access the internet, and perform other tasks.
 
 ### Snapshots/Backups
 
 Finally, once everything is configured to our liking, we should take regular snapshots of our VM setup. Snapshots allow us to return to a known 'good state' if (when) anything goes wrong.
 
-By following these steps, we can effectively set up a Unix/Linux virtual environment, which is excellent for learning new skills, testing applications, or running software that requires Unix/Linux.
+By following these steps, we can effectively set up a Linux virtual environment, which is excellent for learning new skills, testing applications, or running software that requires Linux.
 
 -->
 

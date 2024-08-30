@@ -1,7 +1,7 @@
 fm-unix
 ==========
 
-A Unix Field Manual
+A Linux Field Manual
 
 # Contents
 

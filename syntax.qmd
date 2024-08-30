@@ -37,7 +37,7 @@ co_box(
 )
 ```
 
-In Unix-like operating systems, the terms commands, arguments, and options refer to the components of the syntax you type into the terminal. Pipes give us the ability to combine commands.
+In the previous section we covered some of the basic common commands you'll use in a Linux-like operating systems. This section dives deeper into the syntax--the commands, arguments, and options--you'll type into the terminal or write in a shell script. We'll also discuss how to chain commands together using pipes. 
 
 ### Commands 
 

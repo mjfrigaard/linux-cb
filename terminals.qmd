@@ -1,0 +1,156 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+---
+
+# Terminals {#sec-terminals}
+
+```{bash}
+#| label: setup
+#| include: false
+whoami
+```
+
+```{r}
+#| label: common
+#| include: false
+source("_common.R")
+```
+
+```{r}
+#| label: co_box_rev
+#| echo: false
+#| results: asis
+#| eval: true
+co_box(
+  color = "o",
+  look = "default", 
+  hsize = "1.25", 
+  size = "1.00", 
+  header = "Caution", 
+  fold = FALSE,
+  contents = "This section is being revised. Thank you for your patience."
+)
+```
+
+
+In Linux environments, the terms 'Shell' and 'Terminal' are commonly used and although they are related, they actually refer to different things: A **terminal** (or terminal emulator) is a software program that provides a text-based interface to the **shell**, the program that processes user commands--which might also involve calling other programs--and returns the output. 
+
+Below is an expanded look at some commonly used terminal emulators and their key features.
+
+## ![](img/gnome-logo.png){fig-align="right" width="12%"} [GNOME]{style="font-weight: bold;"}
+
+[GNOME](https://help.gnome.org/users/gnome-terminal/stable/) is the default terminal emulator for the GNOME desktop environment, widely used in many Linux distributions.
+
+:::{#fig-gnome}
+
+![](https://help.gnome.org/users/gnome-terminal/stable/figures/gnome-terminal.png){#fig-gnome fig-align='center'}
+
+Read more about the GNOME Terminal in the [official documentation.](https://help.gnome.org/users/gnome-terminal/stable/introduction.html.en)
+:::
+
+### Key features
+
+**Profiles**
+
+Users can create multiple profiles, each with its own set of preferences, including colors, fonts, and keyboard shortcuts.
+
+**Tabs and Splitting**
+
+Supports opening multiple tabs and can split the terminal window into multiple panes.
+
+**Transparency and Backgrounds**
+
+Allows setting background images and adjusting the transparency of the terminal window.
+
+**Compatibility**
+
+Supports UTF-8 for a wide range of characters, making it suitable for international use.
+
+## ![](img/konsole-logo.jpeg){fig-align="right" width="12%"} [Konsole]{style="font-weight: bold;"}
+
+[Konsole](https://konsole.kde.org/) is part of the KDE desktop environment. It is known for its deep integration with KDE and its high degree of customizability.
+
+:::{#fig-konsole}
+
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*gIK9EXCqVo2wmPB2SmXR4A.png){#fig-konsole fig-align='center'}
+
+Read how to customize your Konsole terminal in [KDE Users: Up Your Konsole Game](https://medium.com/for-linux-users/kde-users-up-your-konsole-game-720d3ab799b8) by [Al Williams](https://medium.com/@al-williams)
+:::
+
+
+### Key features
+
+
+**Tabbed Interface**
+
+Allows multiple tabs within a single window, facilitating multitasking.
+
+**Profiles**
+
+Supports multiple profiles, enabling different settings for each session.
+
+**Split Views**
+
+Users can split Konsole windows horizontally or vertically.
+
+**Transparency and Theming**
+
+Supports background transparency and themes, which can be customized easily.
+
+## ![](img/iterm2-logo.png){fig-align="right" width="12%"} [iTerm2]{style="font-weight: bold;"}
+
+[iTerm2](https://iterm2.com/) is a replacement for Terminal and the successor to iTerm for macOS. It offers features beyond what traditional terminals provide.
+
+::: {#fig-iterm2}
+
+![](img/iterm2-cowsay.png)
+
+Execution of [`feature`](https://formulae.brew.sh/formula/fortune) and [`cowsay`](https://formulae.brew.sh/formula/cowsay) in [`iterm2` on macOS](https://iterm2.com/) 
+:::
+
+
+
+### Key features 
+
+**Split Panes**
+
+Users can divide iTerm2 into multiple panes, each with its own session.
+
+**Search**
+
+iTerm2 allows users to search through text and highlights occurrences.
+
+**Profiles**
+
+Supports detailed profiles, each with its custom colors, fonts, window transparency, and key bindings.
+
+**Advanced Paste Features**
+
+Offers a paste history and allows pasting with escape codes to avoid issues with unintended command executions.
+
+**Mouseless Copy**
+
+iTerm2 lets you use keyboard shortcuts to select and copy text without needing the mouse.
+
+**Shell Integration**
+
+iTerm2 can integrate with the shell to display badges, track command statuses, and more.
+
+**Trigger Support**
+
+Executes user-defined actions based on text output to the terminal.
+
+## [Recap]{style="font-size: 1.05em; font-weight: bold;"}
+
+Each of these terminal emulators offers unique features that cater to different needs and preferences, enhancing the user's command-line experience. Whether you need deep customization, minimal resource usage, or advanced functionalities like search and shell integration, there's a terminal emulator that fits the requirement.
+
+```{r}
+#| label: git_contrib_box
+#| echo: false
+#| results: asis
+#| eval: true
+git_contrib_box()
+```

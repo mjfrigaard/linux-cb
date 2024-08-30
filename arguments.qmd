@@ -41,11 +41,12 @@ co_box(
 )
 ```
 
-Arguments in Unix/Linux commands are values or data passed to commands for processing. Unlike options, which modify the behavior of commands, arguments typically specify what the command should *act upon*. This typically includes filenames, user names, data values, or other kinds of information the command needs to execute its task.
- 
+Arguments in Linux commands are values or data passed to commands for processing. Unlike options, which modify the behavior of commands, arguments typically specify what the command should *act upon*. This typically includes filenames, user names, data values, or other kinds of information the command needs to execute its task.
+
+
 ## [Anatomy]{style="font-size: 1.05em; font-weight: bold;"}
 
-A Unix command can be broken down into the command name, followed by its options (which we'll address in the next chapter), and then its arguments:
+A Linux command can be broken down into the command name, followed by its options (which we'll address in the next chapter), and then its arguments:
 
 ```{bash}
 #| eval: false
@@ -184,7 +185,7 @@ echo $HOME
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 
 
 
-Understanding the nuances of Unix arguments is crucial for crafting precise and effective commands, allowing users to leverage the full power of the Unix command line for a wide array of tasks.
+Understanding the nuances of Linux arguments is crucial for crafting precise and effective commands, allowing users to leverage the full power of the Linux command line for a wide array of tasks.
 
 ```{r}
 #| label: git_contrib_box

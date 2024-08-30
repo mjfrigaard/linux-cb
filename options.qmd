@@ -40,9 +40,7 @@ co_box(
 )
 ```
 
-
-
-Unix command options (sometimes called flags) are often preceded by a hyphen (`-`) or two (`--` for long-form options) and modify the behavior of a command. Options provide flexibility, control, and, in some cases, enable a vast array of additional functionalities. 
+Linux command options (sometimes called flags) are often preceded by a hyphen (`-`) or two (`--` for long-form options) and modify the behavior of a command. Options provide flexibility, control, and, in some cases, enable a vast array of additional functionalities. 
 
 ## [Option types]{style="font-size: 1.05em; font-weight: bold;"} 
  
@@ -191,7 +189,7 @@ The `-u` option in <code>@sec-sort</code> removes duplicate lines. `-u`s behavio
 [^roxanne]: `data/roxanne.txt` contains the lyrics to the 1978 song [Roxanne by The Police](https://en.wikipedia.org/wiki/Roxanne_(The_Police_song)). 
 
 ```{bash}
-sort -u data/roxanne.txt
+sort -u data/raw/roxanne.txt
 ```
 
 ## [Combining Options]{style="font-size: 1.05em; font-weight: bold;"} 
@@ -227,9 +225,9 @@ The `"FILE"` here is an argument for the `-i` option.
 
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 
 
-Options greatly enhance the power and versatility of Unix commands, allowing users to tailor operations to their specific needs and preferences.
+Options greatly enhance the power and versatility of Linux commands, allowing users to tailor operations to their specific needs and preferences.
 
-Not all Unix-like systems or shells may support the same options for a given command, and behavior can vary between implementations. It's important to refer to a command's manual page (using `man command` or `command --help`) for the most accurate and comprehensive list of options and their effects.
+Not all Linux-like systems or shells may support the same options for a given command, and behavior can vary between implementations. It's important to refer to a command's manual page (using `man command` or `command --help`) for the most accurate and comprehensive list of options and their effects.
 
 
 ```{r}
