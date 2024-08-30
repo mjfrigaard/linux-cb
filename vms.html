@@ -2,13 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.28">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A Unix/Linux Field Manual">
+<meta name="dcterms.date" content="2024-08-30">
+<meta name="description" content="A Linux Field Manual">
 
-<title>fm-unix – Virtual Machines</title>
+<title>Virtual Machines – fm-linux</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +66,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./quarto.html" rel="next">
-<link href="./sh_term.html" rel="prev">
+<link href="./shells.html" rel="next">
+<link href="./setups.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -79,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setups.html">Set-Ups</a></li><li class="breadcrumb-item"><a href="./vms.html"><span class="chapter-title">Virtual Machines</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -97,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">fm-unix</a> 
+      <a href="./">fm-linux</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -128,16 +163,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./setups.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Set-Ups</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sh_term.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Shells and Terminals</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./vms.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Virtual Machines</span></a>
@@ -145,7 +175,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  <a href="./shells.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Shells</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./terminals.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Terminals</span></a>
   </div>
 </li>
       </ul>
@@ -154,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -185,7 +220,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./syntax.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syntax</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./text.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Text</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -243,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./scripts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Shell Scripts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -264,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./use_cases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use Cases</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -278,9 +313,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -299,6 +334,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./macos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">macOS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
   </div>
 </li>
       </ul>
@@ -320,11 +360,18 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#vmware-fusion" id="toc-vmware-fusion" class="nav-link" data-scroll-target="#vmware-fusion"><img src="img/vmware-fusion-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> VMware Fusion</a></li>
   <li><a href="#parallels-desktop" id="toc-parallels-desktop" class="nav-link" data-scroll-target="#parallels-desktop"><img src="img/vmware-parallels-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> Parallels Desktop</a></li>
   </ul></li>
-  <li><a href="#unixlinux-distributions" id="toc-unixlinux-distributions" class="nav-link" data-scroll-target="#unixlinux-distributions"><span style="font-size: 1.05em; font-weight: bold;">Unix/Linux Distributions</span></a>
+  <li><a href="#linux-distributions" id="toc-linux-distributions" class="nav-link" data-scroll-target="#linux-distributions"><span style="font-size: 1.05em; font-weight: bold;">Linux Distributions</span></a>
   <ul>
   <li><a href="#ubuntu" id="toc-ubuntu" class="nav-link" data-scroll-target="#ubuntu"><img src="img/ubuntu-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> Ubuntu</a></li>
   <li><a href="#fedora" id="toc-fedora" class="nav-link" data-scroll-target="#fedora"><img src="img/fedora-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> Fedora</a></li>
   <li><a href="#centos" id="toc-centos" class="nav-link" data-scroll-target="#centos"><img src="img/centos-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> CentOS</a></li>
+  </ul></li>
+  <li><a href="#virtualbox-ubuntu" id="toc-virtualbox-ubuntu" class="nav-link" data-scroll-target="#virtualbox-ubuntu"><span style="font-size: .99em; font-weight: bold;"><img src="img/virtualbox-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> VirtualBox &amp; <img src="img/ubuntu-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:8.0%"> Ubuntu</span></a>
+  <ul>
+  <li><a href="#download" id="toc-download" class="nav-link" data-scroll-target="#download">Download</a></li>
+  <li><a href="#create" id="toc-create" class="nav-link" data-scroll-target="#create">Create</a></li>
+  <li><a href="#configure" id="toc-configure" class="nav-link" data-scroll-target="#configure">Configure</a></li>
+  <li><a href="#launch" id="toc-launch" class="nav-link" data-scroll-target="#launch">Launch</a></li>
   </ul></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></a></li>
   </ul>
@@ -343,6 +390,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2024-08-30</p>
+    </div>
+  </div>
   
     
   </div>
@@ -370,14 +423,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Virtual machines (VMs) offer a flexible way to run Unix/Linux environments on top of your existing operating system, regardless of whether it’s Windows, macOS, or another Linux distribution. This subsection explores the setup process for virtual machines, highlighting popular VM software like VirtualBox and VMware. It will guide readers through creating a new VM, installing a Unix/Linux distribution, configuring network settings, and optimizing performance. This part is essential for those experimenting with Unix/Linux systems in an isolated environment.</p>
+<p>Virtual machines (VMs) offer a flexible way to run Linux environments on top of your existing operating system, regardless of whether it’s Windows, macOS, or another Linux distribution. This chapter explores the setup process for virtual machines, highlighting popular VM software like VirtualBox and VMware.</p>
 <section id="virtualization-software" class="level3">
 <h3 class="anchored" data-anchor-id="virtualization-software"><span style="font-size: 1.05em; font-weight: bold;">Virtualization Software</span></h3>
-<p>Setting up Unix/Linux on virtual machines (VMs) is a valuable technique for running different operating systems on a single physical machine, which is helpful for development, testing, server deployment, and more. Several virtualization tools are available, but the most popular ones include:</p>
+<p>Setting up Linux on virtual machines (VMs) is a valuable technique for running different operating systems on a single physical machine, which is helpful for development, testing, server deployment, and more. Several virtualization tools are available, but the most popular ones include:</p>
 <p><br></p>
 <section id="virtualbox" class="level4">
 <h4 class="anchored" data-anchor-id="virtualbox"><img src="img/virtualbox-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:15.0%"> VirtualBox</h4>
-<p><strong><a href="https://www.virtualbox.org/">VirtualBox</a></strong> is an open-source option that provides a good balance of features and simplicity. It runs on Windows, Linux, and macOS and supports numerous Linux distributions and Unix variants.</p>
+<p><strong><a href="https://www.virtualbox.org/">VirtualBox</a></strong> is an open-source option that provides a good balance of features and simplicity. It runs on Windows, Linux, and macOS and supports numerous Linux distributions and Linux variants.</p>
 </section>
 <section id="vmware-workstation" class="level4">
 <h4 class="anchored" data-anchor-id="vmware-workstation"><img src="img/vmware-workstation-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> VMware Workstation</h4>
@@ -392,9 +445,9 @@ ul.task-list li input[type="checkbox"] {
 <p><strong><a href="https://www.parallels.com/products/desktop/">Parallels Desktop</a></strong> is a commercial product predominantly used on macOS. Parallels is known for its high performance and seamless integration with the host OS, making it easy to run Linux alongside macOS.</p>
 </section>
 </section>
-<section id="unixlinux-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="unixlinux-distributions"><span style="font-size: 1.05em; font-weight: bold;">Unix/Linux Distributions</span></h3>
-<p>Download the ISO file for the Unix or Linux distribution you want to install. Popular Linux distributions include <a href="https://ubuntu.com/">Ubuntu</a>, <a href="https://fedoraproject.org/">Fedora</a>, and <a href="https://www.centos.org/">CentOS</a>. For a more Unix-like experience, consider <a href="https://www.freebsd.org/">FreeBSD</a> or <a href="https://www.openbsd.org/">OpenBSD</a>. Each distribution has its unique characteristics, making them suitable for different types of users and use cases:</p>
+<section id="linux-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="linux-distributions"><span style="font-size: 1.05em; font-weight: bold;">Linux Distributions</span></h3>
+<p>Download the ISO file for the Linux or Linux distribution you want to install. Popular Linux distributions include <a href="https://ubuntu.com/">Ubuntu</a>, <a href="https://fedoraproject.org/">Fedora</a>, and <a href="https://www.centos.org/">CentOS</a>. For a more Linux-like experience, consider <a href="https://www.freebsd.org/">FreeBSD</a> or <a href="https://www.openbsd.org/">OpenBSD</a>. Each distribution has its unique characteristics, making them suitable for different types of users and use cases:</p>
 <p><br></p>
 <section id="ubuntu" class="level4">
 <h4 class="anchored" data-anchor-id="ubuntu"><img src="img/ubuntu-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> Ubuntu</h4>
@@ -418,20 +471,144 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Binary Compatibility with RHEL</strong>: Being binary compatible with RHEL means that software applications developed for RHEL can run seamlessly on CentOS, which is particularly important for ensuring the broad compatibility of software and services in professional environments.</p>
 </section>
 </section>
+<section id="virtualbox-ubuntu" class="level2">
+<h2 class="anchored" data-anchor-id="virtualbox-ubuntu"><span style="font-size: .99em; font-weight: bold;"><img src="img/virtualbox-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> VirtualBox &amp; <img src="img/ubuntu-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:8.0%"> Ubuntu</span></h2>
+<p>In this section we’ll cover how to setup VirtualBox and Ubuntu. We’ll download VirtualBox, select a Linux distribution, configuring the hardware and storage, and launch the virtual machine.</p>
+<section id="download" class="level3">
+<h3 class="anchored" data-anchor-id="download">Download</h3>
+<p>Download and install VirtualBox from their <a href="https://www.virtualbox.org/wiki/Downloads">website</a>. I’m using macOS, so it’s a <code>VirtualBox-7.0.20-163906-OSX.dmg</code> file:</p>
+<div id="fig-virtualbox-install" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-virtualbox-install-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/virtualbox-install.png" id="fig-virtualbox-install" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-virtualbox-install-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Double-click the <code>VirtualBox.pkg</code> file to install
+</figcaption>
+</figure>
+</div>
+<p>After installing VirtualBox, download a Linux distribution (I’m using Ubuntu). I saved this <code>.iso</code> file in the same folder as the <code>VirtualBox</code> file:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/Applications/VirtualBox/</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> VirtualBox-7.0.20-163906-OSX.dmg</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> ubuntu-24.04-desktop-amd64.iso</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">1</span> directory, 2 files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Click <strong>New</strong> in the VirtualBox manager and name the Virtual Machine and Operating System:</p>
+<div id="fig-virtualbox-manager-new" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-virtualbox-manager-new-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/virtualbox-manager-new.png" id="fig-virtualbox-manager-new" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-virtualbox-manager-new-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: New Virtual Machine on VirtualBox
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="create" class="level3">
+<h3 class="anchored" data-anchor-id="create">Create</h3>
+<p>Create the new ISO image be adding the path to the downloaded Ubuntu file (<code>ubuntu-24.04-desktop-amd64.iso</code>).</p>
+<div id="fig-virtualbox-create-image" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-virtualbox-create-image-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/virtualbox-create-image.png" id="fig-virtualbox-ceate-image" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-virtualbox-create-image-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: Creating new Ubuntu ISO image
+</figcaption>
+</figure>
+</div>
+<p>Click the <strong>Skip Unattended Installation</strong> checkbox and <strong>Next</strong>.</p>
+</section>
+<section id="configure" class="level3">
+<h3 class="anchored" data-anchor-id="configure">Configure</h3>
+<p>In this window we’ll configure the Ubuntu image. I’ve chosen to allocate 1/4 of the memory and processors on my machine to the image, but you can experiment with both settings to find the best configuration that fits your needs.</p>
+<div id="fig-virtualbox-configure-image" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-virtualbox-configure-image-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/virtualbox-configure-image.png" id="fig-virtualbox-ceate-image" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-virtualbox-configure-image-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.4: Configure base memory and processors on Ubuntu ISO image
+</figcaption>
+</figure>
+</div>
+<p>In the next window we’ll set the storage for this image (I’ve left the default).</p>
+<div id="fig-virtualbox-image-storage" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-virtualbox-image-storage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/virtualbox-image-storage.png" id="fig-virtualbox-image-storage" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-virtualbox-image-storage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.5: Configure hard disk on Ubuntu ISO image
+</figcaption>
+</figure>
+</div>
+<p>The final window is a summary of our new virtual machine.</p>
+<div id="fig-virtualbox-image-summary" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-virtualbox-image-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/virtualbox-image-summary.png" id="fig-virtualbox-image-summary" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-virtualbox-image-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.6: Ubuntu ISO image Summary
+</figcaption>
+</figure>
+</div>
+<p>Click <strong>Finish</strong> to create the image.</p>
+</section>
+<section id="launch" class="level3">
+<h3 class="anchored" data-anchor-id="launch">Launch</h3>
+<p>Back in the VirtualBox Manager, we can run this new virtual machine by clicking <strong>Start</strong>.</p>
+<div id="fig-virtualbox-launch-ubuntu-image" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-virtualbox-launch-ubuntu-image-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/virtualbox-launch-ubuntu-image.png" id="fig-virtualbox-launch-ubuntu-image" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-virtualbox-launch-ubuntu-image-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.7: Start virtual machine
+</figcaption>
+</figure>
+</div>
+<p>After clicking <strong>Start</strong>, a new window will open and attempt to start the virtual machine. Use the arrow keys to select <em>Try or Install Ubuntu</em>:</p>
+<div id="fig-virtualbox-try-install-ubuntu" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-virtualbox-try-install-ubuntu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/virtualbox-try-install-ubuntu.png" id="fig-virtualbox-try-install-ubuntu" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-virtualbox-try-install-ubuntu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.8: Try or Install Ubuntu
+</figcaption>
+</figure>
+</div>
+<p>Finish the installation steps for Ubuntu for your liking.</p>
+<div id="fig-virtualbox-install-ubuntu" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-virtualbox-install-ubuntu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/virtualbox-install-ubuntu.png" id="fig-virtualbox-install-ubuntu" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-virtualbox-install-ubuntu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.9: Complete Ubuntu Installation
+</figcaption>
+</figure>
+</div>
+<p>Creating virtual machines is an essential skill for those experimenting with Linux systems in an isolated environment.</p>
+</section>
+</section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></h2>
-<p>This chapter covered virtualization and Linux distributions. Specifically, we discussed:</p>
+<p>This chapter covered virtual machines and Linux distributions. Specifically, we discussed:</p>
 <ol type="1">
-<li>Setting up Unix/Linux on virtual machines, highlighting the process and popular virtualization software options.
+<li>Setting up Linux on virtual machines, highlighting the process and popular virtualization software options.
 <ul>
-<li>Commercial options: VMware Workstation, VMware Fusion, and Parallels Desktop</li>
-<li>Open-source option: VirtualBox</li>
+<li><strong>Open-source option</strong>: VirtualBox</li>
+<li><strong>Commercial options</strong>: VMware Workstation, VMware Fusion, and Parallels Desktop</li>
 </ul></li>
 <li>The key features of three major Linux distributions:
 <ul>
-<li>Ubuntu, known for its user-friendliness</li>
-<li>Fedora, recognized for its cutting-edge technology</li>
-<li>CentOS, valued for its enterprise-level stability</li>
+<li><strong>Ubuntu</strong>: known for its user-friendliness</li>
+<li><strong>Fedora</strong>: recognized for its cutting-edge technology</li>
+<li><strong>CentOS</strong>: valued for its enterprise-level stability</li>
 </ul></li>
 </ol>
 <p>Each of these distributions brings its strengths and is tailored to different segments of the Linux user base, from desktop users and hobbyists to developers and enterprise clients.</p>
@@ -444,7 +621,7 @@ In **VMware or Parallels**: Launch the software, select “Create a New Virtual 
 
 ### Install
 
-After setting up the VM and booting from the ISO, you’ll enter the setup process of your chosen Unix/Linux OS. Install the OS by following the on-screen instructions, which typically involve setting up partitions, selecting your time zone, and creating user accounts.
+After setting up the VM and booting from the ISO, you’ll enter the setup process of your chosen Linux OS. Install the OS by following the on-screen instructions, which typically involve setting up partitions, selecting your time zone, and creating user accounts.
 
 ### Configure
 
@@ -456,13 +633,13 @@ After installation, you might need to install additional tools for enhanced func
 
 ### Reboot
 
-Once everything is installed, reboot the VM. We should now be able to use our Unix/Linux system like a physical machine. We can install software, access the internet, and perform other tasks.
+Once everything is installed, reboot the VM. We should now be able to use our Linux system like a physical machine. We can install software, access the internet, and perform other tasks.
 
 ### Snapshots/Backups
 
 Finally, once everything is configured to our liking, we should take regular snapshots of our VM setup. Snapshots allow us to return to a known 'good state' if (when) anything goes wrong.
 
-By following these steps, we can effectively set up a Unix/Linux virtual environment, which is excellent for learning new skills, testing applications, or running software that requires Unix/Linux.
+By following these steps, we can effectively set up a Linux virtual environment, which is excellent for learning new skills, testing applications, or running software that requires Linux.
 
 -->
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
@@ -949,13 +1126,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./sh_term.html" class="pagination-link" aria-label="Shells and Terminals">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Shells and Terminals</span></span>
+      <a href="./setups.html" class="pagination-link" aria-label="Set-Ups">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Set-Ups</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./quarto.html" class="pagination-link" aria-label="Quarto">
-        <span class="nav-page-text"><span class="chapter-title">Quarto</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./shells.html" class="pagination-link" aria-label="Shells">
+        <span class="nav-page-text"><span class="chapter-title">Shells</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

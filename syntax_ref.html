@@ -2,13 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.28">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A Unix/Linux Field Manual">
+<meta name="dcterms.date" content="2024-08-28">
+<meta name="description" content="A Linux Field Manual">
 
-<title>fm-unix – Appendix A — Syntax Reference</title>
+<title>Appendix A — Syntax Reference – fm-linux</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,13 +80,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syntax_ref.html">Appendices</a></li><li class="breadcrumb-item"><a href="./syntax_ref.html"><span class="chapter-title">Syntax Reference</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -97,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">fm-unix</a> 
+      <a href="./">fm-linux</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -128,16 +129,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./setups.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Set-Ups</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sh_term.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Shells and Terminals</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./vms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Virtual Machines</span></a>
@@ -145,7 +141,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  <a href="./shells.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Shells</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./terminals.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Terminals</span></a>
   </div>
 </li>
       </ul>
@@ -154,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -185,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./syntax.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syntax</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./text.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Text</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -243,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./scripts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Shell Scripts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -264,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./use_cases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use Cases</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -278,9 +279,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -299,6 +300,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./macos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">macOS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
   </div>
 </li>
       </ul>
@@ -364,9 +370,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sec-crontop" id="toc-sec-crontop" class="nav-link" data-scroll-target="#sec-crontop"><code>crontop</code></a></li>
   <li><a href="#sec-systemctl" id="toc-sec-systemctl" class="nav-link" data-scroll-target="#sec-systemctl"><code>systemctl</code></a></li>
   <li><a href="#sec-journalctl" id="toc-sec-journalctl" class="nav-link" data-scroll-target="#sec-journalctl"><code>journalctl</code></a></li>
+  </ul></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span style="font-size: 1.05em; font-weight: bold;">Variables</span></a>
+  <ul>
   <li><a href="#sec-set" id="toc-sec-set" class="nav-link" data-scroll-target="#sec-set"><code>set</code></a></li>
   <li><a href="#sec-unset" id="toc-sec-unset" class="nav-link" data-scroll-target="#sec-unset"><code>unset</code></a></li>
-  <li><a href="#sec-unset" id="toc-sec-unset" class="nav-link" data-scroll-target="#sec-unset"><code>export</code></a></li>
+  <li><a href="#sec-export" id="toc-sec-export" class="nav-link" data-scroll-target="#sec-export"><code>export</code></a></li>
   </ul></li>
   <li><a href="#text-processing" id="toc-text-processing" class="nav-link" data-scroll-target="#text-processing"><span style="font-size: 1.05em; font-weight: bold;">Text Processing</span></a>
   <ul>
@@ -381,6 +390,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sec-comm" id="toc-sec-comm" class="nav-link" data-scroll-target="#sec-comm"><code>comm</code></a></li>
   <li><a href="#sec-diff" id="toc-sec-diff" class="nav-link" data-scroll-target="#sec-diff"><code>diff</code></a></li>
   <li><a href="#sec-wc" id="toc-sec-wc" class="nav-link" data-scroll-target="#sec-wc"><code>wc</code></a></li>
+  <li><a href="#sec-seq" id="toc-sec-seq" class="nav-link" data-scroll-target="#sec-seq"><code>seq</code></a></li>
   <li><a href="#sec-sed" id="toc-sec-sed" class="nav-link" data-scroll-target="#sec-sed"><code>sed</code></a></li>
   <li><a href="#sec-awk" id="toc-sec-awk" class="nav-link" data-scroll-target="#sec-awk"><code>awk</code></a></li>
   </ul></li>
@@ -435,6 +445,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2024-08-28</p>
+    </div>
+  </div>
   
     
   </div>
@@ -672,6 +688,7 @@ It's important to note here that the command-line is not very forgiving. Using `
 <section id="sec-yes" class="level3">
 <h3 class="anchored" data-anchor-id="sec-yes"><code>yes</code></h3>
 <p>Output a string repeatedly until killed.</p>
+<p><strong>NOTE:</strong> Use <strong><kbd>Ctrl</kbd></strong> + <strong><kbd>C</kbd></strong> to interrupt the <code>yes</code> command.</p>
 </section>
 <section id="sec-exit" class="level3">
 <h3 class="anchored" data-anchor-id="sec-exit"><code>exit</code></h3>
@@ -693,6 +710,9 @@ It's important to note here that the command-line is not very forgiving. Using `
 <h3 class="anchored" data-anchor-id="sec-journalctl"><code>journalctl</code></h3>
 <p>Query and display messages from the journal.</p>
 </section>
+</section>
+<section id="variables" class="level2">
+<h2 class="anchored" data-anchor-id="variables"><span style="font-size: 1.05em; font-weight: bold;">Variables</span></h2>
 <section id="sec-set" class="level3">
 <h3 class="anchored" data-anchor-id="sec-set"><code>set</code></h3>
 <p><code>set</code> is used to display all shell variables and functions, and to configure shell options and positional parameters.</p>
@@ -701,8 +721,8 @@ It's important to note here that the command-line is not very forgiving. Using `
 <h3 class="anchored" data-anchor-id="sec-unset"><code>unset</code></h3>
 <p><code>unset</code> is used to remove a shell or environment variable, effectively deleting it from the current shell session.</p>
 </section>
-<section id="sec-unset" class="level3">
-<h3 class="anchored" data-anchor-id="sec-unset"><code>export</code></h3>
+<section id="sec-export" class="level3">
+<h3 class="anchored" data-anchor-id="sec-export"><code>export</code></h3>
 <p><code>export</code>is used to set an environment variable and make it available to child processes spawned from the current shell session.</p>
 </section>
 </section>
@@ -751,6 +771,10 @@ It's important to note here that the command-line is not very forgiving. Using `
 <section id="sec-wc" class="level3">
 <h3 class="anchored" data-anchor-id="sec-wc"><code>wc</code></h3>
 <p>Print newline, word, and byte counts for each file.</p>
+</section>
+<section id="sec-seq" class="level3">
+<h3 class="anchored" data-anchor-id="sec-seq"><code>seq</code></h3>
+<p>The <code>seq</code> command generates a sequence of numbers, with customizable start, stop, and step values, and outputs them to standard output.</p>
 </section>
 <section id="sec-sed" class="level3">
 <h3 class="anchored" data-anchor-id="sec-sed"><code>sed</code></h3>

@@ -2,13 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.28">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A Unix/Linux Field Manual">
+<meta name="dcterms.date" content="2024-08-30">
+<meta name="description" content="A Linux Field Manual">
 
-<title>fm-unix – Shells and Terminals</title>
+<title>Shells – fm-linux</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -65,8 +66,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./vms.html" rel="next">
-<link href="./setups.html" rel="prev">
+<link href="./terminals.html" rel="next">
+<link href="./vms.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -113,13 +114,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setups.html">Set-Ups</a></li><li class="breadcrumb-item"><a href="./sh_term.html"><span class="chapter-title">Shells and Terminals</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setups.html">Set-Ups</a></li><li class="breadcrumb-item"><a href="./shells.html"><span class="chapter-title">Shells</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -131,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">fm-unix</a> 
+      <a href="./">fm-linux</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -162,16 +163,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./setups.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Set-Ups</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sh_term.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Shells and Terminals</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./vms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Virtual Machines</span></a>
@@ -179,7 +175,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  <a href="./shells.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Shells</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./terminals.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Terminals</span></a>
   </div>
 </li>
       </ul>
@@ -188,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -219,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./syntax.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syntax</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -250,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./text.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Text</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -277,7 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./scripts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Shell Scripts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -298,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./use_cases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use Cases</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -312,9 +313,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -335,6 +336,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="./macos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">macOS</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -347,21 +353,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#sec-shells" id="toc-sec-shells" class="nav-link active" data-scroll-target="#sec-shells"><span style="font-size: 1.05em; font-weight: bold;">Shells</span></a>
+  <li><a href="#sec-bash" id="toc-sec-bash" class="nav-link active" data-scroll-target="#sec-bash"><img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> <span style="font-weight: bold;">Bash</span></a>
   <ul>
-  <li><a href="#sec-bash" id="toc-sec-bash" class="nav-link" data-scroll-target="#sec-bash"><img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Bash</a></li>
-  <li><a href="#zsh" id="toc-zsh" class="nav-link" data-scroll-target="#zsh"><img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Zsh</a></li>
-  <li><a href="#fish" id="toc-fish" class="nav-link" data-scroll-target="#fish"><img src="img/fish-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Fish</a>
-  <ul class="collapse">
-  <li><a href="#sec-shell-change" id="toc-sec-shell-change" class="nav-link" data-scroll-target="#sec-shell-change">Changing your shell</a></li>
-  <li><a href="#sec-shell-prompts" id="toc-sec-shell-prompts" class="nav-link" data-scroll-target="#sec-shell-prompts">Changing the shell prompt</a></li>
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key features</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#sec-terminals" id="toc-sec-terminals" class="nav-link" data-scroll-target="#sec-terminals"><span style="font-size: 1.05em; font-weight: bold;">Terminals</span></a>
+  <li><a href="#zsh" id="toc-zsh" class="nav-link" data-scroll-target="#zsh"><img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> <span style="font-weight: bold;">Zsh</span></a>
   <ul>
-  <li><a href="#gnome" id="toc-gnome" class="nav-link" data-scroll-target="#gnome"><img src="img/gnome-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> GNOME</a></li>
-  <li><a href="#konsole" id="toc-konsole" class="nav-link" data-scroll-target="#konsole"><img src="img/konsole-logo.jpeg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Konsole</a></li>
-  <li><a href="#iterm2" id="toc-iterm2" class="nav-link" data-scroll-target="#iterm2"><img src="img/iterm2-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> iTerm2</a></li>
+  <li><a href="#key-features-1" id="toc-key-features-1" class="nav-link" data-scroll-target="#key-features-1">Key features</a></li>
+  </ul></li>
+  <li><a href="#fish" id="toc-fish" class="nav-link" data-scroll-target="#fish"><img src="img/fish-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> <span style="font-weight: bold;">Fish</span></a>
+  <ul>
+  <li><a href="#key-features-2" id="toc-key-features-2" class="nav-link" data-scroll-target="#key-features-2">Key features</a></li>
+  </ul></li>
+  <li><a href="#customizations" id="toc-customizations" class="nav-link" data-scroll-target="#customizations"><span style="font-weight: bold;">Customizations</span></a>
+  <ul>
+  <li><a href="#sec-shell-prompts" id="toc-sec-shell-prompts" class="nav-link" data-scroll-target="#sec-shell-prompts">Prompts</a></li>
+  <li><a href="#sec-shell-aliases" id="toc-sec-shell-aliases" class="nav-link" data-scroll-target="#sec-shell-aliases">Aliases</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
+  <li><a href="#advanced" id="toc-advanced" class="nav-link" data-scroll-target="#advanced">Advanced</a></li>
   </ul></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></a></li>
   </ul>
@@ -370,9 +379,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setups.html">Set-Ups</a></li><li class="breadcrumb-item"><a href="./sh_term.html"><span class="chapter-title">Shells and Terminals</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setups.html">Set-Ups</a></li><li class="breadcrumb-item"><a href="./shells.html"><span class="chapter-title">Shells</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-sh-term" class="quarto-section-identifier"><span class="chapter-title">Shells and Terminals</span></span></h1>
+<h1 class="title"><span id="sec-shells" class="quarto-section-identifier"><span class="chapter-title">Shells</span></span></h1>
 </div>
 
 
@@ -380,6 +389,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2024-08-30</p>
+    </div>
+  </div>
   
     
   </div>
@@ -407,68 +422,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>In Unix/Linux environments, the terms “Shell” and “Terminal” are commonly used and although they are related, they actually refer to different things:</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[50,50]">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><span style="font-size: 0.95em;">A <strong>Shell</strong> in Unix/Linux is a program that interprets commands and acts as an intermediary between the user and the kernel of the operating system.</span></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><span style="font-size: 0.95em;">A <strong>Terminal</strong> (or terminal emulator) is a software program that provides a text-based interface to the shell. The sections below cover common Shells and Terminals.</span></p>
-</div>
-</div>
-</div>
-<section id="sec-shells" class="level2">
-<h2 class="anchored" data-anchor-id="sec-shells"><span style="font-size: 1.05em; font-weight: bold;">Shells</span></h2>
-<p>The shell processes user commands, which might involve calling other programs, and returns the output to the user. Shells can be either command-line based or graphical. Some popular examples of shells include Bash, Zsh, and Fish.</p>
-<p>You can use the <strong><code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code></strong> and <strong><code><a href="syntax_ref.html#sec-ps" class="quarto-xref"><span>ps</span></a></code></strong> commands to discover which shell you’re currently using:</p>
+<p>A <strong>Shell</strong> is a program that interprets commands and acts as an intermediary between the user and the kernel of the operating system. The sections below cover common Shells. Shells can be either command-line based or graphical. Some popular examples of shells include Bash, Zsh, and Fish.</p>
+<p>List all the available shells with the commands below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /bin/bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /etc/shells</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">## # List of acceptable shells for chpass(1).</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">## # Ftpd will not allow users to connect who are not using</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">## # one of these shells.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">## </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/bash</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/csh</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/dash</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/ksh</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/sh</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/tcsh</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/zsh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To change the default shell, use the <code>chsh</code> command (change shell). For example, if you want to switch to <code>bash</code>, use the command below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chsh</span> <span class="at">-s</span> /bin/bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can use the <strong><code><a href="syntax_ref.html#sec-echo" class="quarto-xref"><span>echo</span></a></code></strong> and <strong><code><a href="syntax_ref.html#sec-ps" class="quarto-xref"><span>ps</span></a></code></strong> commands to verify the shell you’re currently using:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /bin/bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-p</span> <span class="va">$$</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   PID TTY           TIME CMD</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 16082 ttys003    0:00.02 -bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-p</span> <span class="va">$$</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   PID TTY           TIME CMD</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 16082 ttys003    0:00.02 -bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 1.10em;">Tip</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div style="font-size: 1.00em; color: #282b2d;">
-<p>As we can see from the outupt above, I’m currently using the Bash shell. I’ll use a green callout box to indicate the programs or tools I’m using.</p>
-</div>
-</div>
-</div>
-</div>
-<section id="sec-bash" class="level3">
-<h3 class="anchored" data-anchor-id="sec-bash"><img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Bash</h3>
+<section id="sec-bash" class="level2">
+<h2 class="anchored" data-anchor-id="sec-bash"><img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> <span style="font-weight: bold;">Bash</span></h2>
 <p>Introduced in 1989, <a href="https://www.gnu.org/software/bash/"><strong>Bash, or the Bourne Again SHell</strong></a> has become the default command-line interface or shell for most Linux distributions. Incorporating features from the Korn shell (<a href="https://en.wikipedia.org/wiki/KornShell"><code>ksh</code></a>) and the C shell (<a href="https://en.wikipedia.org/wiki/C_shell"><code>csh</code></a>), Bash supports features like command history, tab completion, aliases and scripting tasks.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-size: 1.15em;">Key features of <img src="img/bash-logo.svg" class="img-fluid" style="width:8.0%"> Bash</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><br></p>
-<div style="font-size: 1.10em;">
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key features</h3>
 <p><strong>Programming</strong></p>
 <p>Bash includes an array of programming constructs for scripting:</p>
 <ul>
@@ -509,28 +497,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p><strong>History Features</strong></p>
 <p>Bash maintains a history of commands that users have executed, which can be navigated, searched, and reused. It also supports configuring the history size and behavior through various environment variables like <code>HISTSIZE</code> and <code>HISTFILESIZE</code>.</p>
-</div>
-</div>
-</div>
-</div>
 </section>
-<section id="zsh" class="level3">
-<h3 class="anchored" data-anchor-id="zsh"><img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Zsh</h3>
-<p><a href="https://ohmyz.sh/"><strong>Zsh (Z Shell or ‘Oh My ZSH!’)</strong></a> is noted for its interactive features and is often used with customization frameworks. Zsh is a powerful command-line interpreter for Unix systems that serves as both a scriptable shell and an interactive command interpreter.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-size: 1.15em;">Key features of <img src="img/zshell-logo.png" class="img-fluid" style="width:8.0%"> Zsh</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><br></p>
-<div style="font-size: 1.10em;">
+</section>
+<section id="zsh" class="level2">
+<h2 class="anchored" data-anchor-id="zsh"><img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> <span style="font-weight: bold;">Zsh</span></h2>
+<p><a href="https://ohmyz.sh/"><strong>Zsh (Z Shell or ‘Oh My ZSH!’)</strong></a> is noted for its interactive features and is often used with customization frameworks. Zsh is a powerful command-line interpreter for Linux systems that serves as both a scriptable shell and an interactive command interpreter.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<section id="key-features-1" class="level3">
+<h3 class="anchored" data-anchor-id="key-features-1">Key features</h3>
 <p><strong>Command Line Editing</strong></p>
 <p>Zsh provides an advanced and customizable command-line editing environment. Users can configure key bindings and have extensive control over the text editing capabilities directly within the command prompt.</p>
 <p><strong>Tab Completion</strong></p>
@@ -561,29 +534,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Spell Check and Correction</strong></p>
 <p>Zsh can be configured to correct commands automatically if misspelled and to suggest corrections or alternatives. This feature helps in reducing syntax errors and improves user efficiency.</p>
 <p><strong>Extended Globbing</strong></p>
-<p>Zsh’s file globbing allows for more complex pattern matching than traditional Unix shells. You can specify patterns in a more expressive and powerful way, which is particularly useful in scripts.</p>
-</div>
-</div>
-</div>
-</div>
+<p>Zsh’s file globbing allows for more complex pattern matching than traditional Linux shells. You can specify patterns in a more expressive and powerful way, which is particularly useful in scripts.</p>
 </section>
-<section id="fish" class="level3">
-<h3 class="anchored" data-anchor-id="fish"><img src="img/fish-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Fish</h3>
-<p><a href="https://fishshell.com/"><strong>Fish, or the Friendly Interactive SHell</strong></a>, is a smart and user-friendly command line shell for Unix-like operating systems. It’s designed to be more interactive and user-friendly than traditional shells like Bash or Zsh.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-size: 1.15em;">Key features of <img src="img/fish-small-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> Fish</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><br></p>
-<div style="font-size: 1.10em;">
+</section>
+<section id="fish" class="level2">
+<h2 class="anchored" data-anchor-id="fish"><img src="img/fish-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> <span style="font-weight: bold;">Fish</span></h2>
+<p><a href="https://fishshell.com/"><strong>Fish, or the Friendly Interactive SHell</strong></a>, is a smart and user-friendly command line shell for Linux-like operating systems. It’s designed to be more interactive and user-friendly than traditional shells like Bash or Zsh.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<section id="key-features-2" class="level3">
+<h3 class="anchored" data-anchor-id="key-features-2">Key features</h3>
 <p><strong>Autosuggestions</strong></p>
 <p>Fish suggests commands as you type based on history and completions, just like a web browser. This feature allows users to see and reuse previous commands by simply pressing the right arrow key to complete the suggested command, which can significantly speed up typing and reduce errors.</p>
 <p><strong>Syntax Highlighting</strong></p>
@@ -604,69 +562,134 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Fish is designed to work properly out of the box, without needing to configure it extensively. This makes it very accessible for new users or those who want a powerful shell without the need to customize or configure it heavily.</p>
 <p><strong>User-Friendly Scripts</strong></p>
 <p>Fish uses a syntax that is slightly different from the traditional POSIX shell syntax, which is often simpler and easier to understand. For example, loops and conditionals are clearer, and there is no need for explicit subshell management.</p>
-</div>
-</div>
-</div>
-</div>
-<section id="sec-shell-change" class="level4">
-<h4 class="anchored" data-anchor-id="sec-shell-change">Changing your shell</h4>
-<p>On macOS Sonoma (or any other recent version of macOS), you can change your default shell using the Terminal.</p>
-<p>List all the available shells with the commands below:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /etc/shells</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">## # List of acceptable shells for chpass(1).</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">## # Ftpd will not allow users to connect who are not using</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">## # one of these shells.</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">## </span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/bash</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/csh</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/dash</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/ksh</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/sh</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/tcsh</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">## /bin/zsh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>To change the default shell, use the <code>chsh</code> command (change shell). For example, if you want to switch to <code>bash</code>, use this command:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chsh</span> <span class="at">-s</span> /bin/bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You can verify your new default shell by using <code>echo</code> with the <code>$SHELL</code> variable:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /bin/bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
-<section id="sec-shell-prompts" class="level4">
-<h4 class="anchored" data-anchor-id="sec-shell-prompts">Changing the shell prompt</h4>
-<p>To change the Shell prompt, add the following to the <code>~/.bash_profile</code> file:</p>
+</section>
+<section id="customizations" class="level2">
+<h2 class="anchored" data-anchor-id="customizations"><span style="font-weight: bold;">Customizations</span></h2>
+<p>Customizing the shell environment can significantly enhance your productivity by tailoring it to your specific needs and preferences. The next sections cover the basics of Bash, Zsh, and Fish customization.</p>
+<section id="sec-shell-prompts" class="level3">
+<h3 class="anchored" data-anchor-id="sec-shell-prompts">Prompts</h3>
+<p><img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> <span style="font-size: 1.05em;">Bash</span></p>
+<p>Bash offers a wide range of customization options through the <code>.bash_profile</code> file, which is sourced every time a new terminal session is started.</p>
+<p>The <code>PS1</code> variable defines the appearance of your command prompt. Use <code>export PS1=</code> to customize the prompt in the <code>~/.bash_profile</code> file:<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[50,50]">
+
+</div>
 <div>
 
 </div>
 <div class="quarto-layout-panel" data-layout="[50,50]">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Use the <code>export PS1=</code> to customize the prompt:<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># in ~/.bash_profile</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PS1</span><span class="op">=</span><span class="st">"Bash@MacBook \W</span><span class="dt">\$</span><span class="st"> "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>This will change Terminal prompt to:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># prompt</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Bash@MacBook</span> ~$ </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[50,50]">
-<div class="quarto-layout-row quarto-layout-valign-bottom">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PS1</span><span class="op">=</span><span class="st">"Bash@MacBook \W</span><span class="dt">\$</span><span class="st"> "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Bash@MacBook</span> ~$ </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
+<p>This command customizes the prompt to show the username in green, the hostname, and the current working directory in blue, followed by a dollar sign.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">PS1</span><span class="op">=</span><span class="st">"\[\e[32m\]\u@\h \[\e[34m\]\w\[\e[0m\] </span><span class="dt">\$</span><span class="st"> "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> <span style="font-size: 1.05em;">Zsh</span></p>
+<p>Customizations in Zsh are typically done through the <code>.zshrc</code> file.</p>
+<p>Zsh’s <code>PROMPT</code> variable is similar to Bash’s <code>PS1</code>, but with more advanced capabilities.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">PROMPT</span><span class="op">=</span><span class="st">'%F{green}%n@%m %F{blue}%~ %f%# '</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This prompt shows the username in green, the hostname, and the current directory in blue, followed by a prompt character.</p>
+<p><img src="img/fish-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> <span style="font-size: 1.05em;">Fish</span></p>
+<p>Fish customizations are generally done through the <code>config.fish</code> file, typically located in <code>~/.config/fish/</code>. Fish makes it easy to customize the prompt using the <code>fish_prompt</code> function.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span><span class="fu"> fish_prompt</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">set_color</span> green</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="at">-n</span> <span class="er">(</span><span class="fu">whoami</span><span class="kw">)</span> <span class="st">"@"</span> <span class="er">(</span><span class="fu">hostname</span><span class="kw">)</span> <span class="st">" "</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">set_color</span> blue</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="at">-n</span> <span class="er">(</span><span class="ex">prompt_pwd</span><span class="kw">)</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">set_color</span> normal</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="at">-n</span> <span class="st">"&gt; "</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="ex">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This prompt shows the username in green, the hostname, and the current working directory in blue, followed by a <code>&gt;</code> symbol.</p>
+</section>
+<section id="sec-shell-aliases" class="level3">
+<h3 class="anchored" data-anchor-id="sec-shell-aliases">Aliases</h3>
+<p>Aliases allow you to create shortcuts for commonly used commands.</p>
+<p><img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> <span style="font-size: 1.05em;">Bash</span></p>
+<p><strong>Bash aliases</strong>: These aliases simplify the <code>ls -la</code> command to <code>ll</code> and <code>git status</code> to <code>gs</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ll=<span class="st">'ls -la --color=auto'</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> gs=<span class="st">'git status'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> <span style="font-size: 1.05em;">Zsh</span></p>
+<p><strong>Zsh Aliases</strong>: Zsh supports aliases in a similar manner to Bash.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ll=<span class="st">'ls -lh'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="img/fish-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> <span style="font-size: 1.05em;">Fish</span></p>
+<p><strong>Aliases</strong>: Fish uses the <code>alias</code> command similar to Bash and Zsh.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ll=<span class="st">"ls -la"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="functions" class="level3">
+<h3 class="anchored" data-anchor-id="functions">Functions</h3>
+<p><img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> <span style="font-size: 1.05em;">Bash</span></p>
+<p><strong>Bash Functions</strong>: Bash functions allow you to create reusable scripts within your shell environment.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span><span class="fu"> mkcd()</span> <span class="kw">{</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">"</span><span class="va">$1</span><span class="st">"</span> <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> <span class="st">"</span><span class="va">$1</span><span class="st">"</span><span class="kw">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>mkcd</code> function creates a directory and then navigates into it.</p>
+<p><img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> <span style="font-size: 1.05em;">Zsh</span></p>
+<p><strong>Zsh Functions</strong>: Zsh supports functions in a similar manner to Bash.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span><span class="fu"> extract()</span> <span class="kw">{</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-f</span> <span class="va">$1</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">case</span> <span class="va">$1</span> <span class="kw">in</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>            <span class="pp">*</span><span class="ss">.tar.bz2</span><span class="kw">)</span>   <span class="fu">tar</span> xjf <span class="va">$1</span>   <span class="cf">;;</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>            <span class="pp">*</span><span class="ss">.tar.gz</span><span class="kw">)</span>    <span class="fu">tar</span> xzf <span class="va">$1</span>   <span class="cf">;;</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>            <span class="pp">*</span><span class="ss">.bz2</span><span class="kw">)</span>       <span class="fu">bunzip2</span> <span class="va">$1</span>   <span class="cf">;;</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>            <span class="pp">*</span><span class="ss">.rar</span><span class="kw">)</span>       <span class="ex">unrar</span> e <span class="va">$1</span>   <span class="cf">;;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>            <span class="pp">*</span><span class="ss">.gz</span><span class="kw">)</span>        <span class="fu">gunzip</span> <span class="va">$1</span>    <span class="cf">;;</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>            <span class="pp">*</span><span class="ss">.tar</span><span class="kw">)</span>       <span class="fu">tar</span> xf <span class="va">$1</span>    <span class="cf">;;</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>            <span class="pp">*</span><span class="ss">.tbz2</span><span class="kw">)</span>      <span class="fu">tar</span> xjf <span class="va">$1</span>   <span class="cf">;;</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>            <span class="pp">*</span><span class="ss">.tgz</span><span class="kw">)</span>       <span class="fu">tar</span> xzf <span class="va">$1</span>   <span class="cf">;;</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>            <span class="pp">*</span><span class="ss">.zip</span><span class="kw">)</span>       <span class="fu">unzip</span> <span class="va">$1</span>     <span class="cf">;;</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>            <span class="pp">*</span><span class="ss">.Z</span><span class="kw">)</span>         <span class="ex">uncompress</span> <span class="va">$1</span><span class="cf">;;</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>            <span class="pp">*</span><span class="ss">.7z</span><span class="kw">)</span>        <span class="ex">7z</span> x <span class="va">$1</span>      <span class="cf">;;</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>            <span class="pp">*</span><span class="kw">)</span>           <span class="bu">echo</span> <span class="st">"don't know how to extract '</span><span class="va">$1</span><span class="st">'..."</span> <span class="cf">;;</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">esac</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">"'</span><span class="va">$1</span><span class="st">' is not a valid file!"</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="img/fish-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> <span style="font-size: 1.05em;">Fish</span></p>
+<p><strong>Fish Functions</strong>: In Fish, functions are first-class citizens and are easy to define.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span><span class="fu"> mkcd</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$argv</span><span class="kw">;</span> <span class="ex">and</span> cd <span class="va">$argv</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="advanced" class="level3">
+<h3 class="anchored" data-anchor-id="advanced">Advanced</h3>
+<p>Below we cover some advanced customizations.</p>
+<p><img src="img/bash-logo.svg" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> <span style="font-size: 1.05em;">Bash</span></p>
+<p><strong>Bash Completion</strong></p>
+<p>Enhance command-line efficiency by enabling tab completion for various commands.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-f</span> /etc/bash_completion <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">.</span> /etc/bash_completion</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="img/zshell-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> <span style="font-size: 1.05em;">Zsh</span></p>
+<p><strong>Oh My Zsh</strong></p>
+<p>A popular framework for managing Zsh configuration, making it easy to apply themes and plugins.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once installed, you can easily switch themes by editing the <code>ZSH_THEME</code> variable in your <code>.zshrc</code> file.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="va">ZSH_THEME</span><span class="op">=</span><span class="st">"agnoster"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Zsh Completions and Plugins</strong></p>
+<p>Zsh offers extensive tab-completion support and a variety of plugins that can be enabled for additional functionality.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="va">plugins</span><span class="op">=</span><span class="va">(</span>git docker kubectl<span class="va">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="img/fish-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:10.0%"> <span style="font-size: 1.05em;">Fish</span></p>
+<p><strong>Universal Variables</strong></p>
+<p>Fish supports universal variables that persist across sessions and are shared among all Fish instances.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-U</span> fish_greeting <span class="st">"Welcome to Fish Shell"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Plugins and Themes</strong></p>
+<p>Fish has a growing ecosystem of plugins and themes, often managed by the <code>fisher</code> plugin manager.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-sL</span> https://git.io/fisher <span class="kw">|</span> <span class="bu">source</span> <span class="kw">&amp;&amp;</span> <span class="ex">fisher</span> install jorgebucaran/fisher</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fisher</span> install oh-my-fish/theme-bobthefish</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -675,157 +698,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div style="font-size: 1.00em; color: #282b2d;">
 <ol type="1">
 <li><p>Open your <code>.zshrc</code> file in your home directory with a text editor.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~/.zshrc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~/.zshrc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Add or change the line that defines <code>PROMPT</code>. For example:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PROMPT</span><span class="op">=</span><span class="st">"Zsh@MacBook %1~%% "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PROMPT</span><span class="op">=</span><span class="st">"Zsh@MacBook %1~%% "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 <p>This sets a prompt similar to Bash’s example above.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Zsh@MacBook</span> ~% </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Zsh@MacBook</span> ~% </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li><p>Save the file and apply the changes by sourcing the profile:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.zshrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.zshrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </div>
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="sec-terminals" class="level2">
-<h2 class="anchored" data-anchor-id="sec-terminals"><span style="font-size: 1.05em; font-weight: bold;">Terminals</span></h2>
-<p>Terminals interpret keystrokes and commands from users and send these to the shell for execution. When the shell produces output, the terminal displays it to the user. <strong>Terminal emulators</strong> allow users to interact with the shell and other command-line tools. Below is an expanded look at some commonly used terminal emulators and their key features.</p>
-<section id="gnome" class="level3">
-<h3 class="anchored" data-anchor-id="gnome"><img src="img/gnome-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> GNOME</h3>
-<p><a href="https://help.gnome.org/users/gnome-terminal/stable/">GNOME Terminal</a> is the default terminal emulator for the GNOME desktop environment, widely used in many Linux distributions.</p>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-size: 1.15em;">Key features of GNOME</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><br></p>
-<div style="font-size: 1.10em;">
-<p><strong>Profiles</strong></p>
-<p>Users can create multiple profiles, each with its own set of preferences, including colors, fonts, and keyboard shortcuts.</p>
-<p><strong>Tabs and Splitting</strong></p>
-<p>Supports opening multiple tabs and can split the terminal window into multiple panes.</p>
-<p><strong>Transparency and Backgrounds</strong></p>
-<p>Allows setting background images and adjusting the transparency of the terminal window.</p>
-<p><strong>Compatibility</strong></p>
-<p>Supports UTF-8 for a wide range of characters, making it suitable for international use.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="konsole" class="level3">
-<h3 class="anchored" data-anchor-id="konsole"><img src="img/konsole-logo.jpeg" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> Konsole</h3>
-<p><a href="https://konsole.kde.org/">Konsole</a> is part of the KDE desktop environment. It is known for its deep integration with KDE and its high degree of customizability.</p>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-size: 1.15em;">Key features of Konsole</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><br></p>
-<div style="font-size: 1.10em;">
-<p><strong>Tabbed Interface</strong></p>
-<p>Allows multiple tabs within a single window, facilitating multitasking.</p>
-<p><strong>Profiles</strong></p>
-<p>Supports multiple profiles, enabling different settings for each session.</p>
-<p><strong>Split Views</strong></p>
-<p>Users can split Konsole windows horizontally or vertically.</p>
-<p><strong>Transparency and Theming</strong></p>
-<p>Supports background transparency and themes, which can be customized easily.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="iterm2" class="level3">
-<h3 class="anchored" data-anchor-id="iterm2"><img src="img/iterm2-logo.png" class="img-fluid quarto-figure quarto-figure-right" style="width:12.0%"> iTerm2</h3>
-<p><a href="https://iterm2.com/">iTerm2</a> is a replacement for Terminal and the successor to iTerm for macOS. It offers features beyond what traditional terminals provide.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-size: 1.15em;">Key features of iTerm2</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><br></p>
-<div style="font-size: 1.10em;">
-<p><strong>Split Panes</strong></p>
-<p>Users can divide iTerm2 into multiple panes, each with its own session.</p>
-<p><strong>Search</strong></p>
-<p>iTerm2 allows users to search through text and highlights occurrences.</p>
-<p><strong>Profiles</strong></p>
-<p>Supports detailed profiles, each with its custom colors, fonts, window transparency, and key bindings.</p>
-<p><strong>Advanced Paste Features</strong></p>
-<p>Offers a paste history and allows pasting with escape codes to avoid issues with unintended command executions.</p>
-<p><strong>Mouseless Copy</strong></p>
-<p>iTerm2 lets you use keyboard shortcuts to select and copy text without needing the mouse.</p>
-<p><strong>Shell Integration</strong></p>
-<p>iTerm2 can integrate with the shell to display badges, track command statuses, and more.</p>
-<p><strong>Trigger Support</strong></p>
-<p>Executes user-defined actions based on text output to the terminal.</p>
-</div>
-</div>
-</div>
-</div>
-<p>Each of these terminal emulators offers unique features that cater to different needs and preferences, enhancing the user’s command-line experience. Whether you need deep customization, minimal resource usage, or advanced functionalities like search and shell integration, there’s a terminal emulator that fits the requirement.</p>
 </section>
 </section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></h2>
-<p>In summary, the shell is the command interpreter that executes the commands, while the terminal is the application that allows you to interact with the shell.</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 1.15em;">See a typo, error, or something missing?</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<div style="font-size: 1.00em; color: #282b2d;">
-<p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
-</div>
-</div>
-</div>
-</div>
+<p>In summary, the shell is the command interpreter that executes the commands, calls other programs (when necessary), and returns the output for the user.</p>
 
 
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Bash was the default command-line interface for Apple’s macOS (which is Unix-based) until the transition to <code>zsh</code> as the default shell in <a href="https://support.apple.com/en-us/102360">macOS Catalina.</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Bash was the default command-line interface for Apple’s macOS (which is Linux-based) until the transition to <code>zsh</code> as the default shell in <a href="https://support.apple.com/en-us/102360">macOS Catalina.</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Zsh is an <a href="https://en.wikipedia.org/wiki/Z_shell">extended version</a> of <strong>Bash (Bourne Again SHell)</strong>, with many improvements, and is fully compatible with the Bourne Shell.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Ars Technica has a great <a href="https://arstechnica.com/information-technology/2005/12/linux-20051218/">summary</a> comparing Fish to other shells.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p><code>\W</code> prints the basename of the current working directory. You can also specify the username (<code>\u</code>) and the host name up to the first period (<code>\h</code>).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -1294,13 +1197,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./setups.html" class="pagination-link" aria-label="Set-Ups">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Set-Ups</span>
+      <a href="./vms.html" class="pagination-link" aria-label="Virtual Machines">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Virtual Machines</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./vms.html" class="pagination-link" aria-label="Virtual Machines">
-        <span class="nav-page-text"><span class="chapter-title">Virtual Machines</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./terminals.html" class="pagination-link" aria-label="Terminals">
+        <span class="nav-page-text"><span class="chapter-title">Terminals</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
