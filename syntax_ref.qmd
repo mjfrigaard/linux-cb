@@ -171,6 +171,10 @@ Display current user name.
 
 Show or set system’s network name.
 
+### `chsh` {#sec-chsh}
+
+Change a user's default login shell.
+
 ### `date` {#sec-date}
 
 Display or set the date and time.

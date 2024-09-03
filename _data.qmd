@@ -1,6 +1,6 @@
-# Data Files
+### [Data files]{style="font-size: 1.05em; font-weight: bold;"}
 
-## Alan J. Perlis' Epigrams
+#### Alan J. Perlis' Epigrams
 
 The `ajperlis_epigrams.txt` file contains a collection of witty
 programming and systems design epigrams by Alan J. Perlis.[^readme-1]
@@ -17,7 +17,7 @@ cultural and intellectual history of computing.
     or download the [original
     PDF](https://iiif.library.cmu.edu/file/Simon_box00075_fld05959_bdl0003_doc0002/Simon_box00075_fld05959_bdl0003_doc0002.pdf).
 
-## Music Videos
+#### Music Videos
 
 The file `music_vids.tsv` is a tab-separated values (TSV) data file that
 details some of the most expensive music videos ever
@@ -36,7 +36,7 @@ produced.[^readme-2] Key information captured in the file includes:
 | `cost_nominal` | The production cost at the release time, presented in U.S. dollars.                           |
 | `cost_adj`     | The production cost adjusted to current values for inflation, also presented in U.S. dollars. |
 
-## Passwords
+#### Passwords
 
 `pwrds.csv` is a CSV (comma-separated values) file containing a
 comprehensive list of commonly used passwords and attributes.[^readme-3]
@@ -54,7 +54,7 @@ following variables:
 | **`strength`**     | A numerical value representing the estimated password strength, where higher numbers indicate stronger passwords.                   |
 | **`online_crack`** | An estimate of how long it would take to crack this password using online attack methods, expressed in units from seconds to years. |
 
-## Roxanne
+#### Roxanne
 
 The file `roxanne.txt` contains the lyrics to the song "Roxanne" by The
 Police.[^readme-4] The structure of the lyrics emphasizes the repeated
@@ -64,7 +64,7 @@ for not having to engage in prostitution.
 [^readme-4]: Read more about Roxanne (The Police song) on the [Wikipedia
     page.](https://en.wikipedia.org/wiki/Roxanne_(The_Police_song))
 
-## Trees
+#### Trees
 
 The file `trees.csv` is a comma-separated value (CSV) document that
 catalogs some of the tallest trees in the world, providing detailed
@@ -88,7 +88,7 @@ fields:
 | **`continent`** | Continent on which the tree is located.                     |
 | **`name`**      | The colloquial name given to the tree, if applicable.       |
 
-## Video Game Hall of Fame
+#### Video Game Hall of Fame
 
 The file `vg_hof.csv` is a comma-separated values (CSV) document that
 contains a list of video games inducted into a hall of fame over several
@@ -108,7 +108,7 @@ The fields detailed in the dataset are:
 | **`developer`**     | The company or individual who developed the game.     |
 | **`year_released`** | The original year of the game's release.              |
 
-## World Health Organization Tuberculosis
+#### World Health Organization Tuberculosis
 
 `who_tb_data.csv` and `who_tb_data.tsv` are comma and tab-separated
 values (CSV and TSV) files that provides tuberculosis (TB) case data
@@ -127,7 +127,7 @@ The dataset includes the following fields:
 | **`type`**    | A descriptor of the data type, which can be either 'cases' indicating the number of tuberculosis cases reported, or 'population' representing the total population of the country in that year. |
 | **`count`**   | The numerical value corresponding to the type, either the number of TB cases or the population size.                                                                                            |
 
-## Wu-Tang Clan
+#### Wu-Tang Clan
 
 `wu_tang.csv` is a comma-separated data file that provides the stage
 names and real names of the members of the Wu-Tang Clan, a highly

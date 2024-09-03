@@ -30,13 +30,13 @@ book:
         - dirs.qmd
         - files.qmd
         - sys.qmd
-        - vars.qmd
     - part: syntax.qmd
       chapters:
         - commands.qmd
         - arguments.qmd
         - options.qmd
         - pipes.qmd
+        - vars.qmd
     - part: text.qmd
       chapters:
         - symbols_patterns.qmd
@@ -52,6 +52,7 @@ book:
   appendices:
         - syntax_ref.qmd
         - glossary.qmd
+        - fish.qmd
         - macos.qmd
         - quarto.qmd
 
@@ -83,6 +84,8 @@ format:
     fig-width: 7
     fig-height: 5
     engine: knitr
+    #mermaid:
+      #theme: neutral
 
 execute:
   freeze: true

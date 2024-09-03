@@ -35,15 +35,23 @@ co_box(
 )
 ```
 
-A **Shell** is a program that interprets commands and acts as an intermediary between the user and the kernel of the operating system. The sections below cover common Shells. Shells can be either command-line based or graphical. Some popular examples of shells include Bash, Zsh, and Fish.
+Framed in the context of the car manufacturers analogy, @sec-shells are the car's dashboards and controls--the interface between the driver and the car’s engine. Shells translate commands into actions a computer can understand and execute. Below I'll cover two popular shells: Bash and Zsh.[^fish]
 
-List all the available shells with the commands below:
+[^fish]: The appendix also covers the key features and customizations of the [Fish shell](fish.qmd)
+
+## [The Command Interpreter]{style="font-weight: bold;"} 
+
+A **Shell** is a program that interprets commands (i.e., the 'command interpreter') and acts as an intermediary between the user and the kernel of the operating system. Shells can be either command-line based or graphical. 
+
+The available shells are stored in `/etc/shells`, and we can view them with the command below:
 
 ```{bash}
 cat /etc/shells
 ```
 
-To change the default shell, use the `chsh` command (change shell). For example, if you want to switch to `bash`, use the command below:
+### Change shells
+
+To change the default shell, use the <strong><code>@sec-chsh</code></strong>  command (change shell). For example, if you want to switch to `bash`, use the command below:
 
 ```{bash}
 #| eval: false
@@ -157,7 +165,9 @@ Zsh allows extensive customization of its prompt, supporting themes that can com
 
 Zsh scripting is robust, with features like arrays, associative arrays, and floating-point arithmetic which are not typically available in all shells. It enhances scripting capabilities and improves on the scripting syntax of the Bourne Shell.
 
-**Loadable Modules**: Zsh supports dynamically loadable modules, expanding its capabilities with features like:
+**Loadable Modules**
+
+Zsh supports dynamically loadable modules, expanding its capabilities with features like:
 
 -   FTP client
 -   TCP and UDP socket operations
@@ -180,58 +190,9 @@ Zsh can be configured to correct commands automatically if misspelled and to sug
 
 Zsh's file globbing allows for more complex pattern matching than traditional Linux shells. You can specify patterns in a more expressive and powerful way, which is particularly useful in scripts.
 
-## ![](img/fish-logo.png){fig-align="right" width="12%"} [Fish]{style="font-weight: bold;"}
-
-[**Fish, or the Friendly Interactive SHell**](https://fishshell.com/), is a smart and user-friendly command line shell for Linux-like operating systems. It's designed to be more interactive and user-friendly than traditional shells like Bash or Zsh.[^sh_term-3]
-
-[^sh_term-3]: Ars Technica has a great [summary](https://arstechnica.com/information-technology/2005/12/linux-20051218/) comparing Fish to other shells.
-
-
-### Key features 
-
-**Autosuggestions**
-
-Fish suggests commands as you type based on history and completions, just like a web browser. This feature allows users to see and reuse previous commands by simply pressing the right arrow key to complete the suggested command, which can significantly speed up typing and reduce errors.
-
-**Syntax Highlighting**
-
-One of Fish's most noticeable features is its real-time syntax highlighting. Commands that are valid change color as you type them. It also helps users catch errors before the command is executed, such as highlighting misspelled commands or incorrect paths in red.
-
-**Web-Based Configuration**
-
-Fish includes a web-based configuration interface (accessible via the `fish_config` command), which makes customizing the shell settings and prompt easier for users who prefer a graphical interface over editing configuration files manually (or if you're new to the command line).
-
-**Enhanced Tab Completion**
-
-Fish provides intelligent tab completions for commands, file names, variables, and user-defined functions. It not only completes based on the prefix but also considers the whole line context, making the completions more relevant.
-
-**Improved Variables and Scoping**
-
-Fish simplifies variable management, including universal variables that are automatically shared between all running shells and persist across restarts without needing explicit saving to a file. Variable scoping is also more straightforward, helping avoid common bugs seen in other shells.
-
-**Function Autoloads**
-
-Fish allows functions to be defined in individual files and automatically loads them only when needed. This lazy-loading of functions helps speed up the start time of the shell.
-
-**Extensible**
-
-Fish is designed to be easily extensible through plugins. The Fisherman and Oh My Fish frameworks offer many plugins and themes designed to enhance Fish's capabilities or customize its appearance.
-
-**Man Page Completions**
-
-Fish generates command completions automatically from `man` pages, which means it often supports completions for all the installed commands without needing special configuration.
-
-**No Configuration Needed**
-
-Fish is designed to work properly out of the box, without needing to configure it extensively. This makes it very accessible for new users or those who want a powerful shell without the need to customize or configure it heavily.
-
-**User-Friendly Scripts**
-
-Fish uses a syntax that is slightly different from the traditional POSIX shell syntax, which is often simpler and easier to understand. For example, loops and conditionals are clearer, and there is no need for explicit subshell management.
-
 ## [Customizations]{style="font-weight: bold;"} 
 
-Customizing the shell environment can significantly enhance your productivity by tailoring it to your specific needs and preferences. The next sections cover the basics of Bash, Zsh, and Fish customization. 
+Customizing the shell environment can significantly enhance your productivity by tailoring it to your specific needs and preferences. The next sections cover come basic customizations for Bash and Zsh.
 
 ### Prompts {#sec-shell-prompts}
 
@@ -240,12 +201,6 @@ Customizing the shell environment can significantly enhance your productivity by
 Bash offers a wide range of customization options through the `.bash_profile` file, which is sourced every time a new terminal session is started.
 
 The `PS1` variable defines the appearance of your command prompt. Use `export PS1=` to customize the prompt in the `~/.bash_profile` file:[^prompt-vars]
-
-:::{layout="[50,50]" layout-valign="bottom"}
-
-
-
-:::
 
 :::{layout="[50,50]" layout-valign="bottom"}
 
@@ -261,43 +216,67 @@ Bash@MacBook ~$
 
 :::
 
+
 [^prompt-vars]: `\W` prints the basename of the current working directory. You can also specify the username (`\u`) and the host name up to the first period (`\h`).
 
-This command customizes the prompt to show the username in green, the hostname, and the current working directory in blue, followed by a dollar sign.
+Below we'll customizes the prompt to show `Bash` in green, `@MacBook` in blue, and the current working directory (`\W`) in red, followed by a dollar sign (`$`).
 
-```sh
-PS1="\[\e[32m\]\u@\h \[\e[34m\]\w\[\e[0m\] \$ "
+**Defining ANSI Colors in `~/.bash_profile`**
+
+```{bash}
+#| eval: false 
+#| code-overflow: wrap
+# define colors
+GREEN="\[\e[32m\]"
+BLUE="\[\e[34m\]"
+RED="\[\e[31m\]"
+RESET="\[\e[0m\]"
 ```
+
+- `GREEN="\[\e[32m\]"`: ANSI escape code for green  
+- `BLUE="\[\e[34m\]"`: ANSI escape code for blue  
+- `RED="\[\e[31m\]"`: ANSI escape code for red  
+- `RESET="\[\e[0m\]"`: Resets color back to default terminal color 
+
+**Using Colors in `PS1`**
+
+```{bash}
+#| eval: false 
+#| code-overflow: wrap
+# customize PS1 prompt with colors
+export PS1="${GREEN}Bash${RESET}${BLUE}@MacBook${RESET} ${RED}\W${RESET}\$ "
+```
+
+
+- `${GREEN}`: Inserts green color before `Bash`   
+- `${RESET}`: Resets the color after `Bash` and `MacBook` to ensure that only `Bash` and `MacBook` are colored  
+- `${BLUE}`: Inserts the blue color before `@MacBook`   
+- `${RED}`: Inserts the red color before the working directory (`\W`)  
+- `${RESET}` at the end ensures that the prompt returns to the default color after displaying the prompt  
+
+After updating the `~/.bash_profile` file, run `source ~/.bash_profile` to apply the changes to the current session.
+
+![Customized prompt on bash shell](img/bash_prompt_cust.png){width='100%' fig-align='center'}
+
+
 
 ![](img/zshell-logo.png){fig-align="right" width="10%"} [Zsh]{style="font-size: 1.05em;"}
 
-Customizations in Zsh are typically done through the `.zshrc` file.
-
-Zsh's `PROMPT` variable is similar to Bash's `PS1`, but with more advanced capabilities.
+Customizations in Zsh are similar to Bash, but they done using the `.zshrc` file. Zsh has `PROMPT` variable to customize the prompt, but with more advanced capabilities:
 
 ```zsh
-PROMPT='%F{green}%n@%m %F{blue}%~ %f%# '
+# Define color variables
+GREEN="%F{green}"
+BLUE="%F{blue}"
+RED="%F{red}"
+RESET="%f"
+
+# Customize the prompt using the variables
+export PROMPT="${GREEN}Zsh${RESET}${BLUE}@MacBook${RESET} ${RED}<%~>${RESET} "
 ```
 
-This prompt shows the username in green, the hostname, and the current directory in blue, followed by a prompt character.
 
-![](img/fish-logo.png){fig-align="right" width="10%"} [Fish]{style="font-size: 1.05em;"}
 
-Fish customizations are generally done through the `config.fish` file, typically located in `~/.config/fish/`. Fish makes it easy to customize the prompt using the `fish_prompt` function.
-
-  
-```sh
-function fish_prompt
-    set_color green
-    echo -n (whoami) "@" (hostname) " "
-    set_color blue
-    echo -n (prompt_pwd)
-    set_color normal
-    echo -n "> "
-end
-```
-
-This prompt shows the username in green, the hostname, and the current working directory in blue, followed by a `>` symbol.
 
 ### Aliases {#sec-shell-aliases}
 
@@ -318,14 +297,6 @@ alias gs='git status'
 
 ```sh
 alias ll='ls -lh'
-```
-
-![](img/fish-logo.png){fig-align="right" width="10%"} [Fish]{style="font-size: 1.05em;"} 
-
-**Aliases**: Fish uses the `alias` command similar to Bash and Zsh.
-
-```sh
-alias ll="ls -la"
 ```
 
 ### Functions
@@ -370,15 +341,7 @@ function extract() {
 }
 ```
 
-![](img/fish-logo.png){fig-align="right" width="10%"} [Fish]{style="font-size: 1.05em;"} 
 
-**Fish Functions**: In Fish, functions are first-class citizens and are easy to define.
-
-```sh
-function mkcd
-    mkdir -p $argv; and cd $argv
-end
-```
 
 ### Advanced 
 
@@ -420,25 +383,8 @@ Zsh offers extensive tab-completion support and a variety of plugins that can be
 plugins=(git docker kubectl)
 ```
 
-![](img/fish-logo.png){fig-align="right" width="10%"} [Fish]{style="font-size: 1.05em;"}
 
-**Universal Variables**
 
-Fish supports universal variables that persist across sessions and are shared among all Fish instances.
-
-  
-```sh
-set -U fish_greeting "Welcome to Fish Shell"
-```
-
-**Plugins and Themes**
-
-Fish has a growing ecosystem of plugins and themes, often managed by the `fisher` plugin manager.
-
-```sh
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-fisher install oh-my-fish/theme-bobthefish
-```
 
 ```{r}
 #| label: co_box_zsh_prompt
@@ -485,4 +431,4 @@ Zsh@MacBook ~%
 
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"}
 
-In summary, the shell is the command interpreter that executes the commands, calls other programs (when necessary), and returns the output for the user.
+If Linux is the environment *where* the heavy lifting of computing happens--managing files, running programs, and controlling hardware--then the shell commands are the language and syntax that spell out *what* computational work happens. 

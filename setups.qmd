@@ -40,20 +40,19 @@ co_box(
 )
 ```
 
-This section details the practical aspects of preparing your environment to work with Linux systems. It is designed to guide you through various setup processes, catering to different preferences and requirements. We’ll cover working with shells and terminals, setting up a virtual machine, and using Quarto documents to execute Bash commands.
-
-### Shells and Terminals 
-
-<strong>@sec-sh-term</strong> covers the differences between shells and terminals, and some common options for both.
+This section details the practical aspects of preparing your environment to work with a Linux system. We’ll cover setting up a virtual machine and working with shells and terminals. It is designed to guide you through various setup processes, catering to different preferences and requirements.
 
 ### Virtual Machines 
 
 <strong>@sec-vms</strong> covers how to run Linux on a virtual machine.
 
-### Quarto 
+### Shells 
 
+<strong>@sec-shells</strong>
 
-<strong>@sec-quarto</strong> covers how to setup up the [Quarto](https://iterm2.com/) publishing system.
+### Terminals 
+
+<strong>@sec-terminals</strong>
 
 ```{r}
 #| label: git_contrib_box

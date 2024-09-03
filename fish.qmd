@@ -1,0 +1,107 @@
+# Fish {#sec-fish}
+
+## The ![](img/fish-logo.png){fig-align="right" width="12%"} [Fish]{style="font-weight: bold;"} shell
+
+[**Fish, or the Friendly Interactive SHell**](https://fishshell.com/), is a smart and user-friendly command line shell for Linux-like operating systems. It's designed to be more interactive and user-friendly than traditional shells like Bash or Zsh.[^sh_term-3]
+
+[^sh_term-3]: Ars Technica has a great [summary](https://arstechnica.com/information-technology/2005/12/linux-20051218/) comparing Fish to other shells.
+
+
+### Key features 
+
+**Autosuggestions**
+
+Fish suggests commands as you type based on history and completions, just like a web browser. This feature allows users to see and reuse previous commands by simply pressing the right arrow key to complete the suggested command, which can significantly speed up typing and reduce errors.
+
+**Syntax Highlighting**
+
+One of Fish's most noticeable features is its real-time syntax highlighting. Commands that are valid change color as you type them. It also helps users catch errors before the command is executed, such as highlighting misspelled commands or incorrect paths in red.
+
+**Web-Based Configuration**
+
+Fish includes a web-based configuration interface (accessible via the `fish_config` command), which makes customizing the shell settings and prompt easier for users who prefer a graphical interface over editing configuration files manually (or if you're new to the command line).
+
+**Enhanced Tab Completion**
+
+Fish provides intelligent tab completions for commands, file names, variables, and user-defined functions. It not only completes based on the prefix but also considers the whole line context, making the completions more relevant.
+
+**Improved Variables and Scoping**
+
+Fish simplifies variable management, including universal variables that are automatically shared between all running shells and persist across restarts without needing explicit saving to a file. Variable scoping is also more straightforward, helping avoid common bugs seen in other shells.
+
+**Function Autoloads**
+
+Fish allows functions to be defined in individual files and automatically loads them only when needed. This lazy-loading of functions helps speed up the start time of the shell.
+
+**Extensible**
+
+Fish is designed to be easily extensible through plugins. The Fisherman and Oh My Fish frameworks offer many plugins and themes designed to enhance Fish's capabilities or customize its appearance.
+
+**Man Page Completions**
+
+Fish generates command completions automatically from `man` pages, which means it often supports completions for all the installed commands without needing special configuration.
+
+**No Configuration Needed**
+
+Fish is designed to work properly out of the box, without needing to configure it extensively. This makes it very accessible for new users or those who want a powerful shell without the need to customize or configure it heavily.
+
+**User-Friendly Scripts**
+
+Fish uses a syntax that is slightly different from the traditional POSIX shell syntax, which is often simpler and easier to understand. For example, loops and conditionals are clearer, and there is no need for explicit subshell management.
+
+### Customizations
+
+
+![](img/fish-logo.png){fig-align="right" width="10%"} [Fish]{style="font-size: 1.05em;"}
+
+Fish customizations are generally done through the `config.fish` file, typically located in `~/.config/fish/`. Fish makes it easy to customize the prompt using the `fish_prompt` function.
+
+  
+```sh
+function fish_prompt
+    set_color green
+    echo -n (whoami) "@" (hostname) " "
+    set_color blue
+    echo -n (prompt_pwd)
+    set_color normal
+    echo -n "> "
+end
+```
+
+This prompt shows the username in green, the hostname, and the current working directory in blue, followed by a `>` symbol.
+
+**Aliases**: Fish uses the `alias` command similar to Bash and Zsh.
+
+```sh
+alias ll="ls -la"
+```
+
+
+
+**Functions**: In Fish, functions are first-class citizens and are easy to define.
+
+```sh
+function mkcd
+    mkdir -p $argv; and cd $argv
+end
+```
+
+### Advanced 
+
+**Universal Variables**
+
+Fish supports universal variables that persist across sessions and are shared among all Fish instances.
+
+  
+```sh
+set -U fish_greeting "Welcome to Fish Shell"
+```
+
+**Plugins and Themes**
+
+Fish has a growing ecosystem of plugins and themes, often managed by the `fisher` plugin manager.
+
+```sh
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher install oh-my-fish/theme-bobthefish
+```

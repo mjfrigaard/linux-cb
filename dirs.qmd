@@ -40,7 +40,68 @@ co_box(
 )
 ```
 
-When presented with a new map, the most important thing to find is your location on it. It's hard to know where you're going without knowing where you are. This chapter covers commands you'll use every day to get around in a Linux system.
+When presented with a new map, the most important thing to find is your location on it. It's hard to know where you're going without knowing where you are. In Linux, directories are more than just containers for files; they are a critical part of the hierarchical file system, which is organized in a tree-like structure starting from the root directory (`/`).
+
+## [Root Directory]{style="font-size: 1.05em; font-weight: bold;"} 
+
+The root directory is the topmost directory in the Linux file system hierarchy. All other directories and files are nested within it. It is represented by a single forward slash `/` and contains critical system directories like `/bin`, `/etc`, `/home`, and `/var`.
+
+```{=html}
+
+<style>
+
+.codeStyle span:not(.nodeLabel) {
+  font-family: monospace;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #9753b8 !important;
+  background-color: #faf9ed;
+  padding: 0.2em;
+}
+
+</style>
+```
+
+```{mermaid}
+%%| fig-width: 6.5
+%%| fig-align: center
+%%| fig-cap: 'The `root` directory'
+%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'Inconsolata', 'primaryColor': '#89D6FB', 'edgeLabelBackground':'#02577A'}}}%%
+
+flowchart TD
+  Root(<code>/</code>)
+  bin(<code>/bin</code>)
+  etc(<code>/etc</code>)
+  home(<code>/home</code>)
+  usr(<code>/usr</code>)
+  var(<code>/var</code>)
+  tmp(<code>/tmp</code>)
+
+  Root --> bin
+  Root --> etc
+  Root --> home
+  Root --> usr
+  Root --> var
+  Root --> tmp
+```
+
+### Subdirectories
+
+Beneath the root directory, the Linux file system is organized into various subdirectories, each serving specific purposes:
+
+`/bin` – Contains essential user command binaries 
+
+`/etc` – Stores system-wide configuration files.
+
+`/home` – Houses personal directories for each user.
+
+`/var` – Contains variable data like logs and spool files.
+
+In Linux systems, the `~` represents the user's 'home' directory.
+
+### File paths
+
+A file path is a character string specifying the unique location of a file or directory within the hierarchical file system. File paths can be **absolute** (starting from the root  (`/`) directory) or **relative** (starting from the current (`.`) directory). 
 
 ## [Navigate]{style="font-size: 1.05em; font-weight: bold;"}  {#sec-nav-dirs}
 
@@ -54,7 +115,7 @@ pwd
 # /Users/username/projects/books/fm-unix
 ```
 
-[File paths]{style="font-size: 1.25em; font-weight: bold; font-style: italic;"} 
+[]{style="font-size: 1.25em; font-weight: bold; font-style: italic;"} 
 
 ```{bash}
 #| eval: true 
@@ -62,9 +123,7 @@ pwd
 echo "my important information" > data/report.txt
 ```
 
-The output from `pwd` is the file path to our local working directory. A file path is a character string specifying the unique location of a file or directory within the hierarchical file system. File paths can be **absolute** (starting from the root  (`/`) directory) or **relative** (starting from the current (`.`) directory). 
-
-In Linux systems, the `~` represents the user's 'home' directory.
+The output from `pwd` is the file path to our local working directory.
 
 ```{bash}
 #| eval: false
@@ -297,7 +356,9 @@ rm -R binary_data.tsv
 
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"} 
 
+Given the principle that **everything is a file** in Linux, directories are treated as special types of files that contain references to other files and directories, facilitating the organization and management of data. 
 
+Understanding how to navigate, manipulate, and manage directories is essential for effective use of the Linux operating system. 
 
 ```{r}
 #| label: git_contrib_box
