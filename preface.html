@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-08-29">
+<meta name="dcterms.date" content="2025-01-22">
 <meta name="description" content="A Linux Field Manual">
 
-<title>Preface – fm-linux</title>
+<title>Preface – linux-cb</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2c272e4a77f9976b39c4fc697268e7b0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -98,7 +98,10 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">fm-linux</a> 
+      <a href="./">linux-cb</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/mjfrigaard/linux-cb" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -175,11 +178,6 @@ ul.task-list li input[type="checkbox"] {
   <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -209,6 +207,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pipes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Pipes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
   </div>
 </li>
       </ul>
@@ -293,8 +296,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Glossary</span></a>
+  <a href="./data.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fish.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fish</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -305,6 +312,12 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
       </ul>
@@ -319,7 +332,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#book-outline" id="toc-book-outline" class="nav-link active" data-scroll-target="#book-outline"><span style="font-size: 1.05em; font-weight: bold;">Book outline</span></a>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span style="font-size: 1.05em; font-weight: bold;">Background</span></a></li>
+  <li><a href="#outline" id="toc-outline" class="nav-link" data-scroll-target="#outline"><span style="font-size: 1.05em; font-weight: bold;">Outline</span></a>
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#set-ups" id="toc-set-ups" class="nav-link" data-scroll-target="#set-ups">Set-Ups</a></li>
@@ -329,7 +343,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#shell-scripts" id="toc-shell-scripts" class="nav-link" data-scroll-target="#shell-scripts">Shell Scripts</a></li>
   <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use cases</a></li>
   </ul></li>
-  <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files"><span style="font-size: 1.05em; font-weight: bold;">Data files</span></a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></a></li>
   </ul>
 </nav>
@@ -350,7 +363,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024-08-29</p>
+      <p class="date">2025-01-22</p>
     </div>
   </div>
   
@@ -380,11 +393,19 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>I began writing this book when I started a new position as a Posit System Administrator with CDC’s Enterprise Data, Analytics, and Visualization (EDAV) platform.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> EDAV houses multiple enterprise data science products (Databricks, Power BI, Tableau, SAS Viya, etc.) including Posit Workbench, Connect, and Package Manager. The chapters contain the topics and tools I encountered regularly in my daily work (and some on my wish list).</p>
-<section id="book-outline" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="book-outline"><span style="font-size: 1.05em; font-weight: bold;">Book outline</span></h2>
-<p>This book is structured to gradually introduce you to the Linux environment, starting from the basics to more complex concepts, then covering multiple case studies.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>The first four sections of this manual cover concepts and materials for users who are new to Linux. If you’re familiar with command-line tools and regular expressions, feel free to skip these chapters.</p>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background"><span style="font-size: 1.05em; font-weight: bold;">Background</span></h2>
+<p>I began writing this book when I started a new position as a Posit System Administrator with CDC’s Enterprise Data, Analytics, and Visualization (EDAV) platform.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> EDAV houses multiple enterprise data science products (Databricks, Power BI, Tableau, SAS Viya, etc.), including Posit Workbench, Connect, and Package Manager.</p>
+<p>I’d been an R programmer for over ten years and spent the last five years working primarily on Shiny apps. My new responsibilities included (but were not limited to) maintaining, updating, monitoring and improving the Posit services for CDC users.</p>
+<blockquote class="blockquote">
+<p>“<em>If there’s a book that you want to read, but it hasn’t been written yet, then you must write it.</em>” - <a href="https://www.goodreads.com/quotes/321-if-there-s-a-book-that-you-want-to-read-but">Toni Morrison</a></p>
+</blockquote>
+<p>I wrote the book I wish I had when transitioning from an R Developer to a System Administrator.</p>
+</section>
+<section id="outline" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="outline"><span style="font-size: 1.05em; font-weight: bold;">Outline</span></h2>
+<p>The first half of this book gradually introduces the Linux environment, starting with some history and operating system basics before moving into more complex concepts. These sections (<strong>Set-Ups</strong>, <strong>Basics</strong>, <strong>Syntax</strong>, <strong>Text</strong>, and <strong>Shell Scripts</strong>) cover concepts and topics for users new to Linux.</p>
+<p>The second half of the book covers case studies (or common tasks). If you’re familiar with Linux/Unix, command-line tools, and regular expressions, skip to these sections.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -399,7 +420,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <div style="font-size: 0.95em; color: #282b2d;">
 <p>A field manual (FM) is an educational tool that provides information, instructions, and techniques for various concepts and practices.</p>
-<p>Fiels Manuals function as both reference material and living documentation, encouraging updates and adaptations based on the given situation, available technology, or broader environment.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Fiels Manuals function as both reference material and living documentation, encouraging updates and adaptations based on the given situation, available technology, or broader environment.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/jacket-pole-litter.png" class="img-fluid figure-img" style="width:70.0%"></p>
@@ -416,13 +437,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="set-ups" class="level3">
 <h3 class="anchored" data-anchor-id="set-ups">Set-Ups</h3>
-<p>Before diving into writing commands and scripts, setting up your Linux environment is crucial. <strong><a href="./setups.html">Set-ups</a></strong> guides you through various options for setting up <strong><span class="quarto-unresolved-ref">?sec-sh-term</span></strong>, <strong><a href="vms.html" class="quarto-xref"><span>Virtual Machines</span></a></strong>, and <strong><a href="quarto.html" class="quarto-xref"><span>Appendix C — Quarto</span></a></strong> documents.</p>
+<p>Setting up your Linux environment is crucial before diving into writing commands and scripts. <strong><a href="./setups.html">Set-ups</a></strong> guide you through various options for setting up <strong><a href="vms.html" class="quarto-xref"><span>Virtual Machines</span></a></strong>, <strong><a href="shells.html" class="quarto-xref"><span>Shells</span></a></strong>, and <strong><a href="terminals.html" class="quarto-xref"><span>Terminals</span></a></strong>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 </section>
 <section id="the-basics" class="level3">
 <h3 class="anchored" data-anchor-id="the-basics">The Basics</h3>
-<p>Navigating and managing files and folders are daily tasks for Linux users. <strong><a href="dirs.html" class="quarto-xref"><span>Directories</span></a></strong> covers essential commands such as <code>cd</code> for changing directories, <code>pwd</code> to print the current directory, <code>ls</code> for listing files, and <code>mkdir</code> for making directories.</p>
+<p>Navigating and managing files and folders are daily tasks for Linux users. <strong><a href="dirs.html" class="quarto-xref"><span>Directories</span></a></strong> cover essential commands such as cd for changing directories, <code>pwd</code> to print the current directory, <code>ls</code> for listing files, and <code>mkdir</code> for making directories.</p>
 <p>The <strong><a href="files.html" class="quarto-xref"><span>Files</span></a></strong> chapter covers file manipulation commands like <code>cp</code> (copy), <code>mv</code> (move), <code>rm</code> (remove), and <code>less</code> for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Linux.</p>
-<p><strong><a href="sys.html" class="quarto-xref"><span>System</span></a></strong> goes over common system commands like <code>top</code> for monitoring processes in real-time, <code>ps</code> for listing currently running processes, <code>kill</code> to stop a process, <code>df</code> (Disk Free) to display disk space usage on all mounted filesystems, and <code>du</code> (Disk Usage) to estimate file space usage. These commands help manage the system’s processes and resources efficiently, ensuring a clear view of resource allocation and consumption.</p>
+<p><strong><a href="sys.html" class="quarto-xref"><span>System</span></a></strong> goes over common system commands like top for monitoring processes in real-time, <code>ps</code> for listing currently running processes, <code>kill</code> to stop a process, <code>df</code> (Disk Free) to display disk space usage on all mounted filesystems, and <code>du</code> (Disk Usage) to estimate file space usage. These commands help efficiently manage the system’s processes and resources, ensuring a clear view of resource allocation and consumption.</p>
 </section>
 <section id="syntax" class="level3">
 <h3 class="anchored" data-anchor-id="syntax">Syntax</h3>
@@ -431,7 +452,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="manipulating-text" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="manipulating-text">Manipulating Text</h3>
-<p>Linux systems are renowned for their powerful text manipulation capabilities. <strong><a href="./text.html">Text</a></strong> covers using <strong><a href="symbols_patterns.html" class="quarto-xref"><span>Symbols &amp; Patterns</span></a></strong> to build regular expressions (regex). <strong><a href="text_commands.html" class="quarto-xref"><span>Manipulating Text</span></a></strong> introduces commands such as <code>cat</code> for displaying file contents, <code>grep</code> for searching within files, <code>sort</code> for sorting data, <code>uniq</code> for filtering unique lines, and <code>cut</code>, <code>paste</code>, and <code>join</code> for editing files. Mastering these commands will allow you to handle and process text data efficiently. <strong><a href="./text_editors.html">Text Editors</a></strong> covers nano, vim, and emacs.</p>
+<p>Linux systems are renowned for their powerful text manipulation capabilities. <strong><a href="./text.html">The Text</a></strong> section covers using <strong><a href="symbols_patterns.html" class="quarto-xref"><span>Symbols &amp; Patterns</span></a></strong> to build regular expressions (regex). <strong><a href="text_commands.html" class="quarto-xref"><span>Manipulating Text</span></a></strong> introduces commands such as <code>cat</code> for displaying file contents, <code>grep</code> for searching within files, sorting data, sorting data, <code>uniq</code> for filtering unique lines, and cutting, pasting, and joining for editing files. Mastering these commands will allow you to handle and process text data efficiently. <strong><a href="./text_editors.html">Text Editors</a></strong> cover Nano, vim, and Emacs.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
@@ -500,11 +521,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-</div></div></section>
+</div></div><p>The data files used in this book are documented in the <a href="./data.html">data</a> appendix.</p>
 </section>
-<section id="data-files" class="level2">
-<h2 class="anchored" data-anchor-id="data-files"><span style="font-size: 1.05em; font-weight: bold;">Data files</span></h2>
-<p>The data files used in this book are documented in <a href="https://github.com/mjfrigaard/fm-unix/tree/main/data/README.md"><code>data/README.md</code></a>.</p>
 </section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></h2>
@@ -534,8 +552,8 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 <ol>
 <li id="fn1"><p>Read more about EDAV and the Data Modernization Initiative <a href="https://www.cdc.gov/data-modernization/php/technologies/edav.html">here</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Most of these commands will work on any Shell (Zsh, Bash, etc.) program.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>This definition is based on the <a href="https://github.com/mjfrigaard/fm-unix/tree/main/_assets/1965-fm531-boobytraps.pdf">U.S. Army Field Manuals (FMs).</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This definition is based on the <a href="https://github.com/mjfrigaard/fm-unix/tree/main/_assets/1965-fm531-boobytraps.pdf">U.S. Army Field Manuals (FMs).</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Most of these commands will work on any Shell (Zsh, Bash, etc.) program.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -622,8 +640,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -632,7 +648,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/mjfrigaard\.github\.io\/linux-cb\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -734,7 +750,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

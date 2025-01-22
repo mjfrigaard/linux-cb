@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-08-28">
+<meta name="dcterms.date" content="2024-10-03">
 <meta name="description" content="A Linux Field Manual">
 
-<title>Appendix A — Syntax Reference – fm-linux</title>
+<title>Appendix A — Syntax Reference – linux-cb</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,17 +32,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./glossary.html" rel="next">
+<link href="./data.html" rel="next">
 <link href="./file_size.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2c272e4a77f9976b39c4fc697268e7b0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -98,7 +98,10 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">fm-linux</a> 
+      <a href="./">linux-cb</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/mjfrigaard/linux-cb" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -175,11 +178,6 @@ ul.task-list li input[type="checkbox"] {
   <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -209,6 +207,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pipes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Pipes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
   </div>
 </li>
       </ul>
@@ -293,8 +296,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Glossary</span></a>
+  <a href="./data.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fish.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fish</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -305,6 +312,12 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
       </ul>
@@ -351,6 +364,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sec-who" id="toc-sec-who" class="nav-link" data-scroll-target="#sec-who"><code>who</code></a></li>
   <li><a href="#sec-whoami" id="toc-sec-whoami" class="nav-link" data-scroll-target="#sec-whoami"><code>whoami</code></a></li>
   <li><a href="#sec-hostname" id="toc-sec-hostname" class="nav-link" data-scroll-target="#sec-hostname"><code>hostname</code></a></li>
+  <li><a href="#sec-chsh" id="toc-sec-chsh" class="nav-link" data-scroll-target="#sec-chsh"><code>chsh</code></a></li>
   <li><a href="#sec-date" id="toc-sec-date" class="nav-link" data-scroll-target="#sec-date"><code>date</code></a></li>
   <li><a href="#sec-uptime" id="toc-sec-uptime" class="nav-link" data-scroll-target="#sec-uptime"><code>uptime</code></a></li>
   <li><a href="#sec-cal" id="toc-sec-cal" class="nav-link" data-scroll-target="#sec-cal"><code>cal</code></a></li>
@@ -448,7 +462,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024-08-28</p>
+      <p class="date">2024-10-03</p>
     </div>
   </div>
   
@@ -540,7 +554,7 @@ ul.task-list li input[type="checkbox"] {
 
 It's important to note here that the command-line is not very forgiving. Using `rm` is a powerful action with significant consequences, as it permanently deletes files, akin to shredding documents. There's usually no easy way to recover deleted files unless you have a backup.
 
-> '*Unix is like a chainsaw. Chainsaws are powerful tools, and make many difficult tasks like cutting through thick logs quite easy. Unfortunately, this power comes with danger: chainsaws can cut just as easily through your leg.*' - Gary Bernhardt[^bernhardt]
+> '*Linux is like a chainsaw. Chainsaws are powerful tools, and make many difficult tasks like cutting through thick logs quite easy. Unfortunately, this power comes with danger: chainsaws can cut just as easily through your leg.*' - Gary Bernhardt[^bernhardt]
 
 [^bernhardt]: As quoted in [Bioinformatics Data Skills: Reproducible and Robust Research with Open Source Tools (2015) by Vince Buffalo](https://bit.ly/3sVBSne).
 
@@ -626,6 +640,10 @@ It's important to note here that the command-line is not very forgiving. Using `
 <section id="sec-hostname" class="level3">
 <h3 class="anchored" data-anchor-id="sec-hostname"><code>hostname</code></h3>
 <p>Show or set system’s network name.</p>
+</section>
+<section id="sec-chsh" class="level3">
+<h3 class="anchored" data-anchor-id="sec-chsh"><code>chsh</code></h3>
+<p>Change a user’s default login shell.</p>
 </section>
 <section id="sec-date" class="level3">
 <h3 class="anchored" data-anchor-id="sec-date"><code>date</code></h3>
@@ -993,8 +1011,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1003,7 +1019,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/mjfrigaard\.github\.io\/linux-cb\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1105,7 +1121,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1377,8 +1392,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./glossary.html" class="pagination-link" aria-label="Glossary">
-        <span class="nav-page-text">Glossary</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./data.html" class="pagination-link" aria-label="Data files">
+        <span class="nav-page-text"><span class="chapter-title">Data files</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

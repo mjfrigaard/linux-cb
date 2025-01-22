@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-08-28">
+<meta name="dcterms.date" content="2024-10-03">
 <meta name="description" content="A Linux Field Manual">
 
-<title>Set-Ups – fm-linux</title>
+<title>Set-Ups – linux-cb</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2c272e4a77f9976b39c4fc697268e7b0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,6 +70,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="default">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -98,7 +102,10 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">fm-linux</a> 
+      <a href="./">linux-cb</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/mjfrigaard/linux-cb" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -175,11 +182,6 @@ ul.task-list li input[type="checkbox"] {
   <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -209,6 +211,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pipes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Pipes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
   </div>
 </li>
       </ul>
@@ -293,8 +300,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Glossary</span></a>
+  <a href="./data.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fish.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fish</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -305,6 +316,12 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
       </ul>
@@ -319,9 +336,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#shells-and-terminals" id="toc-shells-and-terminals" class="nav-link active" data-scroll-target="#shells-and-terminals">Shells and Terminals</a></li>
-  <li><a href="#virtual-machines" id="toc-virtual-machines" class="nav-link" data-scroll-target="#virtual-machines">Virtual Machines</a></li>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#virtual-machines" id="toc-virtual-machines" class="nav-link active" data-scroll-target="#virtual-machines">Virtual Machines</a></li>
+  <li><a href="#shells" id="toc-shells" class="nav-link" data-scroll-target="#shells">Shells</a></li>
+  <li><a href="#terminals" id="toc-terminals" class="nav-link" data-scroll-target="#terminals">Terminals</a></li>
   </ul>
 </nav>
     </div>
@@ -341,7 +358,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024-08-28</p>
+      <p class="date">2024-10-03</p>
     </div>
   </div>
   
@@ -371,18 +388,59 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>This section details the practical aspects of preparing your environment to work with Unix/Linux systems. It is designed to guide you through various setup processes, catering to different preferences and requirements. We’ll cover working with shells and terminals, setting up a virtual machine, and using Quarto documents to execute Bash commands.</p>
-<section id="shells-and-terminals" class="level3">
-<h3 class="anchored" data-anchor-id="shells-and-terminals">Shells and Terminals</h3>
-<p><strong><span class="quarto-unresolved-ref">?sec-sh-term</span></strong> covers the differences between shells and terminals, and some common options for both.</p>
-</section>
+<p>This section details the practical aspects of preparing your environment to work with a Linux system. We’ll cover options for setting up a virtual machine and working with shells and terminals.</p>
 <section id="virtual-machines" class="level3">
 <h3 class="anchored" data-anchor-id="virtual-machines">Virtual Machines</h3>
-<p><strong><a href="vms.html" class="quarto-xref"><span>Virtual Machines</span></a></strong> covers how to run Unix on a virtual machine.</p>
+<p><strong><a href="vms.html" class="quarto-xref"><span>Virtual Machines</span></a></strong> are software-based emulations of a physical computer that allow users to run Linux distributions in an isolated environment, utilizing virtualized hardware resources from the host system.</p>
+
+<style>
+
+.codeStyle span:not(.nodeLabel) {
+  font-family: monospace;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #9753b8 !important;
+  background-color: #faf9ed;
+  padding: 0.2em;
+}
+
+</style>
+<div class="cell" data-fig-width="8" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'Inconsolata', 'primaryColor': '#89D6FB', 'edgeLabelBackground':'#02577A'}}}%%
+
+flowchart TD
+  VM("Virtual Machine")
+  Linux("Linux Distribution 🐧")
+  HostSystem{"Host System"}
+  CPU("Virtualized CPU")
+  RAM("Virtualized RAM 🧠")
+  Disk("Virtualized Disk 💽")
+
+  HostSystem--&gt;VM
+  VM--&gt;Linux
+  VM--&gt;CPU
+  VM--&gt;RAM
+  VM--&gt;Disk
+
+</pre>
+</div>
+<p></p><figcaption> Running Virtual Machines</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<p>This chapter covers virtualization software options, various Linux distributions, and provides an example of setting up Ubuntu on VirtualBox.</p>
 </section>
-<section id="quarto" class="level3">
-<h3 class="anchored" data-anchor-id="quarto">Quarto</h3>
-<p><strong><a href="quarto.html" class="quarto-xref"><span>Appendix C — Quarto</span></a></strong> covers how to setup up the <a href="https://iterm2.com/">Quarto</a> publishing system.</p>
+<section id="shells" class="level3">
+<h3 class="anchored" data-anchor-id="shells">Shells</h3>
+<p><strong><a href="shells.html" class="quarto-xref"><span>Shells</span></a></strong> are the command-line interpreters that allow users to interact with the operating system by executing commands and running scripts.</p>
+</section>
+<section id="terminals" class="level3">
+<h3 class="anchored" data-anchor-id="terminals">Terminals</h3>
+<p><strong><a href="terminals.html" class="quarto-xref"><span>Terminals</span></a></strong></p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -488,8 +546,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -498,7 +554,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/mjfrigaard\.github\.io\/linux-cb\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -600,7 +656,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

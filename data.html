@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-08-28">
+<meta name="dcterms.date" content="2024-09-19">
 <meta name="description" content="A Linux Field Manual">
 
-<title>Text – linux-cb</title>
+<title>Appendix B — Data files – linux-cb</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./symbols_patterns.html" rel="next">
-<link href="./vars.html" rel="prev">
+<link href="./fish.html" rel="next">
+<link href="./syntax_ref.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./text.html">Text</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syntax_ref.html">Appendices</a></li><li class="breadcrumb-item"><a href="./data.html"><span class="chapter-title">Data files</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -218,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./text.html" class="sidebar-item-text sidebar-link active">
+            <a href="./text.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Text</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -296,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data files</span></a>
+  <a href="./data.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Data files</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -332,22 +332,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#plain-text-files" id="toc-plain-text-files" class="nav-link active" data-scroll-target="#plain-text-files">Plain Text Files</a>
-  <ul>
-  <li><a href="#simple-and-efficient" id="toc-simple-and-efficient" class="nav-link" data-scroll-target="#simple-and-efficient">Simple and Efficient</a></li>
-  <li><a href="#communication-between-programs" id="toc-communication-between-programs" class="nav-link" data-scroll-target="#communication-between-programs">Communication Between Programs</a></li>
-  </ul></li>
-  <li><a href="#text-streams" id="toc-text-streams" class="nav-link" data-scroll-target="#text-streams">Text Streams</a></li>
-  <li><a href="#text-editors-and-the-unix-philosophy" id="toc-text-editors-and-the-unix-philosophy" class="nav-link" data-scroll-target="#text-editors-and-the-unix-philosophy">Text Editors and The Unix Philosophy</a></li>
+  <li><a href="#alan-j.-perlis-epigrams" id="toc-alan-j.-perlis-epigrams" class="nav-link active" data-scroll-target="#alan-j.-perlis-epigrams">Alan J. Perlis’ Epigrams</a></li>
+  <li><a href="#music-videos" id="toc-music-videos" class="nav-link" data-scroll-target="#music-videos">Music Videos</a></li>
+  <li><a href="#passwords" id="toc-passwords" class="nav-link" data-scroll-target="#passwords">Passwords</a></li>
+  <li><a href="#roxanne" id="toc-roxanne" class="nav-link" data-scroll-target="#roxanne">Roxanne</a></li>
+  <li><a href="#trees" id="toc-trees" class="nav-link" data-scroll-target="#trees">Trees</a></li>
+  <li><a href="#video-game-hall-of-fame" id="toc-video-game-hall-of-fame" class="nav-link" data-scroll-target="#video-game-hall-of-fame">Video Game Hall of Fame</a></li>
+  <li><a href="#world-health-organization-tuberculosis" id="toc-world-health-organization-tuberculosis" class="nav-link" data-scroll-target="#world-health-organization-tuberculosis">World Health Organization Tuberculosis</a></li>
+  <li><a href="#wu-tang-clan" id="toc-wu-tang-clan" class="nav-link" data-scroll-target="#wu-tang-clan">Wu-Tang Clan</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syntax_ref.html">Appendices</a></li><li class="breadcrumb-item"><a href="./data.html"><span class="chapter-title">Data files</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-text" class="quarto-section-identifier">Text</span></h1>
+<h1 class="title"><span id="sec-data" class="quarto-section-identifier">Appendix B — Data files</span></h1>
 </div>
 
 
@@ -358,7 +359,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024-08-28</p>
+      <p class="date">2024-09-19</p>
     </div>
   </div>
   
@@ -370,72 +371,249 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-important no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 1.25em;">Caution</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<div style="font-size: 1.00em; color: #282b2d;">
-<p>This section is under development. Thank you for your patience.</p>
-</div>
-</div>
-</div>
-</div>
-<p>The essence of Unix and Linux systems is their powerful simplicity, and nowhere is this more evident than in how they handle text. Text commands and editors form the backbone of these operating systems, enabling users to perform complex tasks with a few keystrokes. This chapter will delve into pattern matching with regular expressions, the fundamental concepts of plain text files, text streams, and the Unix philosophy that prioritizes text as a universal interface for programming and system administration.</p>
-<section id="plain-text-files" class="level2">
-<h2 class="anchored" data-anchor-id="plain-text-files">Plain Text Files</h2>
-<p>Plain text files are vital to Unix/Linux systems, embodying their philosophy of ‘simple and beautiful.’<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> These files only contain text, making them versatile and powerful. Unix/Linux believes that ‘<em>everything is a file</em>,’ including devices, configurations, and processes.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Plain text files are the universal interface between systems, programs, and users. Standard Unix/Linux tools can easily create, manipulate, and read plain text, making it an essential interface for system administration, programming, and process management.</p>
-<section id="simple-and-efficient" class="level3">
-<h3 class="anchored" data-anchor-id="simple-and-efficient">Simple and Efficient</h3>
-<p>Plain text files are simple, versatile, and easy to work with. They can be edited with any text editor and don’t require specialized software, making actions transparent and learning accelerated. Plain text can also be easily manipulated using standard Unix/Linux text-processing tools such as <strong><code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code></strong>, <strong><code><a href="syntax_ref.html#sec-sed" class="quarto-xref"><span>sed</span></a></code></strong>, and <strong><code><a href="syntax_ref.html#sec-awk" class="quarto-xref"><span>awk</span></a></code></strong>. With simple one-liners from the command line, users can search for a specific line, replace text across multiple files, or transform data formats.</p>
+<section id="alan-j.-perlis-epigrams" class="level2">
+<h2 class="anchored" data-anchor-id="alan-j.-perlis-epigrams">Alan J. Perlis’ Epigrams</h2>
+<p>The <code>ajperlis_epigrams.txt</code> file contains a collection of witty programming and systems design epigrams by Alan J. Perlis.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> These statements cover various topics related to computer programming, software architecture, and philosophy. The epigrams offer nuggets of reflective and forward-thinking wisdom that provoke thought on the complexities of technology, the art of programming, and the interplay between human cognition and computational logic. This collection is invaluable for programmers and computer scientists interested in the cultural and intellectual history of computing.</p>
 </section>
-<section id="communication-between-programs" class="level3">
-<h3 class="anchored" data-anchor-id="communication-between-programs">Communication Between Programs</h3>
-<p>Unix/Linux philosophy values specialized programs that work together efficiently. Plain text files are used as inputs or outputs in pipelines of simple, single-purpose programs to perform complex operations.</p>
+<section id="music-videos" class="level2">
+<h2 class="anchored" data-anchor-id="music-videos">Music Videos</h2>
+<p>The file <code>music_vids.tsv</code> is a tab-separated values (TSV) data file that details some of the most expensive music videos ever produced.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Key information captured in the file includes:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 85%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>rank</code></td>
+<td>The music video’s position based on the production cost.</td>
+</tr>
+<tr class="even">
+<td><code>title</code></td>
+<td>The name of the music video.</td>
+</tr>
+<tr class="odd">
+<td><code>artists</code></td>
+<td>The artist(s) who performed the song.</td>
+</tr>
+<tr class="even">
+<td><code>director</code></td>
+<td>The director of the music video.</td>
+</tr>
+<tr class="odd">
+<td><code>year</code></td>
+<td>The year the music video was released.</td>
+</tr>
+<tr class="even">
+<td><code>cost_nominal</code></td>
+<td>The production cost at the release time, presented in U.S. dollars.</td>
+</tr>
+<tr class="odd">
+<td><code>cost_adj</code></td>
+<td>The production cost adjusted to current values for inflation, also presented in U.S. dollars.</td>
+</tr>
+</tbody>
+</table>
 </section>
+<section id="passwords" class="level2">
+<h2 class="anchored" data-anchor-id="passwords">Passwords</h2>
+<p><code>pwrds.csv</code> is a CSV (comma-separated values) file containing a comprehensive list of commonly used passwords and attributes.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> The dataset contains information about passwords’ strength, popularity rank, and resilience against online attacks. The dataset includes the following variables:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>password</code></strong></td>
+<td>The actual password text.</td>
+</tr>
+<tr class="even">
+<td><strong><code>rank</code></strong></td>
+<td>Numerical ranking based on the frequency or commonness of the password.</td>
+</tr>
+<tr class="odd">
+<td><strong><code>strength</code></strong></td>
+<td>A numerical value representing the estimated password strength, where higher numbers indicate stronger passwords.</td>
+</tr>
+<tr class="even">
+<td><strong><code>online_crack</code></strong></td>
+<td>An estimate of how long it would take to crack this password using online attack methods, expressed in units from seconds to years.</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="text-streams" class="level2">
-<h2 class="anchored" data-anchor-id="text-streams">Text Streams</h2>
-<p>A text stream in Unix and Linux is a simple, sequential flow of characters. Text streams can be inputs from keyboards, outputs to a display screen, or the data within a file. The concept of text streams is fundamental to the Unix philosophy; it allows for the chaining together of commands, where the output of one command can be seamlessly passed as input to another through a mechanism known as piping.</p>
+<section id="roxanne" class="level2">
+<h2 class="anchored" data-anchor-id="roxanne">Roxanne</h2>
+<p>The file <code>roxanne.txt</code> contains the lyrics to the song “Roxanne” by The Police.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> The structure of the lyrics emphasizes the repeated refrain, “You don’t have to put on the red light,” which is a metaphor for not having to engage in prostitution.</p>
 </section>
-<section id="text-editors-and-the-unix-philosophy" class="level2">
-<h2 class="anchored" data-anchor-id="text-editors-and-the-unix-philosophy">Text Editors and The Unix Philosophy</h2>
-<p>The Unix philosophy emphasizes simplicity, clarity, and the principle of “doing one thing well.” Plain text embodies this philosophy, serving as a simple, straightforward, and versatile means of interaction between the user, the system, and the programs running on it. This philosophy also underpins the design of Unix text editors, which range from the simple (like nano) to the powerful and extensible (like vi and emacs).</p>
-<p>Text commands and editors are not just tools but the medium through which users communicate with the system and manipulate it to their will. Mastering these commands and editors opens up a world of possibilities for efficient system management, programming, and beyond.</p>
-<p>This section will explore the core text commands that every Unix and Linux user should know, from file manipulation to text processing and searching. We will also introduce the most popular text editors, guiding you through their primary usage and highlighting their unique features.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 0.95em;">See a typo, error, or something missing?</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<div style="font-size: 0.90em; color: #282b2d;">
-<p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
-</div>
-</div>
-</div>
-</div>
+<section id="trees" class="level2">
+<h2 class="anchored" data-anchor-id="trees">Trees</h2>
+<p>The file <code>trees.csv</code> is a comma-separated value (CSV) document that catalogs some of the tallest trees in the world, providing detailed information on each tree listed.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> This file is structured to provide a quick reference to some of the most significant trees around the world, highlighting their impressive heights and the diverse locations they inhabit. Each entry in the dataset includes the following fields:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 78%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>tree</code></strong></td>
+<td>Identifier or common name used for the tree.</td>
+</tr>
+<tr class="even">
+<td><strong><code>species</code></strong></td>
+<td>Scientific name of the tree species.</td>
+</tr>
+<tr class="odd">
+<td><strong><code>class</code></strong></td>
+<td>Biological classification (e.g., Conifer, Flowering plant).</td>
+</tr>
+<tr class="even">
+<td><strong><code>ht_meters</code></strong></td>
+<td>Height&nbsp;of the tree in meters.</td>
+</tr>
+<tr class="odd">
+<td><strong><code>ht_feet</code></strong></td>
+<td>Height&nbsp;of the tree in feet.</td>
+</tr>
+<tr class="even">
+<td><strong><code>location</code></strong></td>
+<td>Specific location where the tree is found.</td>
+</tr>
+<tr class="odd">
+<td><strong><code>continent</code></strong></td>
+<td>Continent&nbsp;on which the tree is located.</td>
+</tr>
+<tr class="even">
+<td><strong><code>name</code></strong></td>
+<td>The colloquial name given to the tree, if applicable.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="video-game-hall-of-fame" class="level2">
+<h2 class="anchored" data-anchor-id="video-game-hall-of-fame">Video Game Hall of Fame</h2>
+<p>The file <code>vg_hof.csv</code> is a comma-separated values (CSV) document that contains a list of video games inducted into a hall of fame over several years, from 2015 to 2024.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> Each record in the dataset includes the year of induction, the game’s name, the developer, and the year the game was initially released.</p>
+<p>The fields detailed in the dataset are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>year</code></strong></td>
+<td>The year the game was inducted into the hall of fame.</td>
+</tr>
+<tr class="even">
+<td><strong><code>game</code></strong></td>
+<td>The name of the video game.</td>
+</tr>
+<tr class="odd">
+<td><strong><code>developer</code></strong></td>
+<td>The company or individual who developed the game.</td>
+</tr>
+<tr class="even">
+<td><strong><code>year_released</code></strong></td>
+<td>The original year of the game’s release.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="world-health-organization-tuberculosis" class="level2">
+<h2 class="anchored" data-anchor-id="world-health-organization-tuberculosis">World Health Organization Tuberculosis</h2>
+<p><code>who_tb_data.csv</code> and <code>who_tb_data.tsv</code> are comma and tab-separated values (CSV and TSV) files that provides tuberculosis (TB) case data alongside population figures for selected countries over specific years, as reported by the World Health Organization (WHO).<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<p>The dataset includes the following fields:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 92%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>country</code></strong></td>
+<td>The name of the country where the data was recorded.</td>
+</tr>
+<tr class="even">
+<td><strong><code>year</code></strong></td>
+<td>The year in which the data was collected.</td>
+</tr>
+<tr class="odd">
+<td><strong><code>type</code></strong></td>
+<td>A descriptor of the data type, which can be either ‘cases’ indicating the number of tuberculosis cases reported, or ‘population’ representing the total population of the country in that year.</td>
+</tr>
+<tr class="even">
+<td><strong><code>count</code></strong></td>
+<td>The numerical value corresponding to the type, either the number of TB cases or the population size.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="wu-tang-clan" class="level2">
+<h2 class="anchored" data-anchor-id="wu-tang-clan">Wu-Tang Clan</h2>
+<p><code>wu_tang.csv</code> is a comma-separated data file that provides the stage names and real names of the members of the Wu-Tang Clan, a highly influential hip-hop group.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> Each entry in the dataset correlates a member’s popularly known stage name with their legal name, offering insight into the identities behind the personas. The data structure includes two main fields:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>Member</code></strong></td>
+<td>The stage name of the Wu-Tang Clan member.</td>
+</tr>
+<tr class="even">
+<td><strong><code>Name</code></strong></td>
+<td>The real name of the member.</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Doug McIlroy on Unix programming: “<em>Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.</em>” - <a href="https://en.wikipedia.org/wiki/Unix_philosophy#Doug_McIlroy_on_Unix_programming">Wikipedia</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Linus Torvalds (creator and lead developer of the Linux kernel) has <a href="https://yarchive.net/comp/linux/everything_is_file.html">clarified</a> this to, “<em>The UNIX philosophy is often quoted as ”everything is a file”, but that really means ”everything is a stream of bytes.</em>”<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Read the <a href="https://en.wikipedia.org/wiki/Epigrams_on_Programming">Wikipedia</a> or download the <a href="https://iiif.library.cmu.edu/file/Simon_box00075_fld05959_bdl0003_doc0002/Simon_box00075_fld05959_bdl0003_doc0002.pdf">original PDF</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>From the <a href="https://en.wikipedia.org/wiki/List_of_most_expensive_music_videos">List of most expensive music videos on Wikipedia</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The original data comes from <a href="https://docs.google.com/spreadsheets/d/1cz7TDhm0ebVpySqbTvrHrD3WpxeyE4hLZtifWSnoNTQ/edit#gid=16">Information is Beautiful</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Read more about Roxanne (The Police song) on the <a href="https://en.wikipedia.org/wiki/Roxanne_(The_Police_song)">Wikipedia page.</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>From the <a href="https://en.wikipedia.org/wiki/List_of_tallest_trees">List of tallest trees on Wikipedia.</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>From the <a href="https://en.wikipedia.org/wiki/World_Video_Game_Hall_of_Fame">World Video Game Hall of Fame Wikipedia page.</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>From the <a href="https://www.who.int/teams/global-tuberculosis-programme/data#csv_files">WHO global tuberculosis programme</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>From the <a href="https://en.wikipedia.org/wiki/Wu-Tang_Clan">Wu-Tang Clan Wikipedia page</a>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -898,13 +1076,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./vars.html" class="pagination-link" aria-label="Variables">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Variables</span></span>
+      <a href="./syntax_ref.html" class="pagination-link" aria-label="Syntax Reference">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Syntax Reference</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./symbols_patterns.html" class="pagination-link" aria-label="Symbols &amp; Patterns">
-        <span class="nav-page-text"><span class="chapter-title">Symbols &amp; Patterns</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./fish.html" class="pagination-link" aria-label="Fish">
+        <span class="nav-page-text"><span class="chapter-title">Fish</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

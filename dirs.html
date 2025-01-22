@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-08-30">
+<meta name="dcterms.date" content="2025-01-22">
 <meta name="description" content="A Linux Field Manual">
 
-<title>Directories – fm-linux</title>
+<title>Directories – linux-cb</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,10 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2c272e4a77f9976b39c4fc697268e7b0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,6 +104,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="default">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -132,7 +136,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">fm-linux</a> 
+      <a href="./">linux-cb</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/mjfrigaard/linux-cb" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -209,11 +216,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="./sys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">System</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -243,6 +245,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pipes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Pipes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vars.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables</span></a>
   </div>
 </li>
       </ul>
@@ -327,8 +334,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Glossary</span></a>
+  <a href="./data.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fish.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fish</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -339,6 +350,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
       </ul>
@@ -353,7 +370,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#sec-nav-dirs" id="toc-sec-nav-dirs" class="nav-link active" data-scroll-target="#sec-nav-dirs"><span style="font-size: 1.05em; font-weight: bold;">Navigate</span></a>
+  <li><a href="#root-directory" id="toc-root-directory" class="nav-link active" data-scroll-target="#root-directory"><span style="font-size: 1.05em; font-weight: bold;">Root Directory</span></a>
+  <ul>
+  <li><a href="#subdirectories" id="toc-subdirectories" class="nav-link" data-scroll-target="#subdirectories">Subdirectories</a></li>
+  <li><a href="#file-paths" id="toc-file-paths" class="nav-link" data-scroll-target="#file-paths">File paths</a></li>
+  </ul></li>
+  <li><a href="#sec-nav-dirs" id="toc-sec-nav-dirs" class="nav-link" data-scroll-target="#sec-nav-dirs"><span style="font-size: 1.05em; font-weight: bold;">Navigate</span></a>
   <ul>
   <li><a href="#pwd" id="toc-pwd" class="nav-link" data-scroll-target="#pwd"><code>pwd</code></a></li>
   <li><a href="#tree" id="toc-tree" class="nav-link" data-scroll-target="#tree"><code>tree</code></a></li>
@@ -388,7 +410,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024-08-30</p>
+      <p class="date">2025-01-22</p>
     </div>
   </div>
   
@@ -418,7 +440,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>When presented with a new map, the most important thing to find is your location on it. It’s hard to know where you’re going without knowing where you are. This chapter covers commands you’ll use every day to get around in a Linux system.</p>
+<p>When presented with a new map, the most important thing to find is your location on it. It’s hard to know where you’re going without knowing where you are. In Linux, directories are more than just containers for files; they are a critical part of the hierarchical file system, which is organized in a tree-like structure starting from the root directory (<code>/</code>).</p>
+<section id="root-directory" class="level2">
+<h2 class="anchored" data-anchor-id="root-directory"><span style="font-size: 1.05em; font-weight: bold;">Root Directory</span></h2>
+<p>The root directory is the topmost directory in the Linux file system hierarchy. All other directories and files are nested within it. It is represented by a single forward slash <code>/</code> and contains critical system directories like <code>/bin</code>, <code>/etc</code>, <code>/home</code>, and <code>/var</code>.</p>
+
+<style>
+
+.codeStyle span:not(.nodeLabel) {
+  font-family: monospace;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #9753b8 !important;
+  background-color: #faf9ed;
+  padding: 0.2em;
+}
+
+</style>
+<div class="cell" data-fig-width="6.5" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'Inconsolata', 'primaryColor': '#89D6FB', 'edgeLabelBackground':'#02577A'}}}%%
+
+flowchart TD
+  Root(&lt;code&gt;/&lt;/code&gt;)
+  bin(&lt;code&gt;/bin&lt;/code&gt;)
+  etc(&lt;code&gt;/etc&lt;/code&gt;)
+  home(&lt;code&gt;/home&lt;/code&gt;)
+  usr(&lt;code&gt;/usr&lt;/code&gt;)
+  var(&lt;code&gt;/var&lt;/code&gt;)
+  tmp(&lt;code&gt;/tmp&lt;/code&gt;)
+
+  Root --&gt; bin
+  Root --&gt; etc
+  Root --&gt; home
+  Root --&gt; usr
+  Root --&gt; var
+  Root --&gt; tmp
+</pre>
+</div>
+<p></p><figcaption> The <code>root</code> directory</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<section id="subdirectories" class="level3">
+<h3 class="anchored" data-anchor-id="subdirectories">Subdirectories</h3>
+<p>Beneath the root directory, the Linux file system is organized into various subdirectories, each serving specific purposes:</p>
+<p><code>/bin</code> – Contains essential user command binaries</p>
+<p><code>/etc</code> – Stores system-wide configuration files.</p>
+<p><code>/home</code> – Houses personal directories for each user.</p>
+<p><code>/var</code> – Contains variable data like logs and spool files.</p>
+<p>In Linux systems, the <code>~</code> represents the user’s ‘home’ directory.</p>
+</section>
+<section id="file-paths" class="level3">
+<h3 class="anchored" data-anchor-id="file-paths">File paths</h3>
+<p>A file path is a character string specifying the unique location of a file or directory within the hierarchical file system. File paths can be <strong>absolute</strong> (starting from the root (<code>/</code>) directory) or <strong>relative</strong> (starting from the current (<code>.</code>) directory).</p>
+</section>
+</section>
 <section id="sec-nav-dirs" class="level2">
 <h2 class="anchored" data-anchor-id="sec-nav-dirs"><span style="font-size: 1.05em; font-weight: bold;">Navigate</span></h2>
 <section id="pwd" class="level3">
@@ -428,9 +508,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span> </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /Users/username/projects/books/fm-unix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><span style="font-size: 1.25em; font-weight: bold; font-style: italic;">File paths</span></p>
-<p>The output from <code>pwd</code> is the file path to our local working directory. A file path is a character string specifying the unique location of a file or directory within the hierarchical file system. File paths can be <strong>absolute</strong> (starting from the root (<code>/</code>) directory) or <strong>relative</strong> (starting from the current (<code>.</code>) directory).</p>
-<p>In Linux systems, the <code>~</code> represents the user’s ‘home’ directory.</p>
+<p><span style="font-size: 1.25em; font-weight: bold; font-style: italic;"></span></p>
+<p>The output from <code>pwd</code> is the file path to our local working directory.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span>
@@ -643,6 +722,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></h2>
+<p>Given the principle that <strong>everything is a file</strong> in Linux, directories are treated as special types of files that contain references to other files and directories, facilitating the organization and management of data.</p>
+<p>Understanding how to navigate, manipulate, and manage directories is essential for effective use of the Linux operating system.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -755,8 +836,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -765,7 +844,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/mjfrigaard\.github\.io\/linux-cb\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -867,7 +946,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

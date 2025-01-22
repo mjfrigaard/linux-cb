@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "fm-linux",
+    "title": "linux-cb",
     "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis project is under development. Thank you for your patience.\n\n\n\n\n\nWelcome!\nWelcome to the Linux Field Manual!\n\nLinux is a powerful, versatile, and widely used operating system that runs on millions of devices worldwide, from smartphones to supercomputers.\nThis book covers an introduction to terminals and shells, the Linux filesystem hierarchy, moving around directories, file permissions, executing commands, and writing scripts with a text editor.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "text": "Caution\n\n\n\n\n\n\nThis project is under development. Thank you for your patience.\n\n\n\n\n\nWelcome!\nLinux is a powerful, versatile, and widely used operating system that runs on millions of devices worldwide, from smartphones to supercomputers.\n\nThis cookbook covers an introduction to terminals and shells, the Linux filesystem hierarchy, moving around directories, file permissions, executing commands, and writing scripts with a text editor.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Welcome!"
     ]
@@ -14,27 +14,27 @@
     "href": "preface.html",
     "title": "Preface",
     "section": "",
-    "text": "Book outline\nThis book is structured to gradually introduce you to the Linux environment, starting from the basics to more complex concepts, then covering multiple case studies.2\nThe first four sections of this manual cover concepts and materials for users who are new to Linux. If you’re familiar with command-line tools and regular expressions, feel free to skip these chapters.",
+    "text": "Background\nI began writing this book when I started a new position as a Posit System Administrator with CDC’s Enterprise Data, Analytics, and Visualization (EDAV) platform.1 EDAV houses multiple enterprise data science products (Databricks, Power BI, Tableau, SAS Viya, etc.), including Posit Workbench, Connect, and Package Manager.\nI’d been an R programmer for over ten years and spent the last five years working primarily on Shiny apps. My new responsibilities included (but were not limited to) maintaining, updating, monitoring and improving the Posit services for CDC users.\nI wrote the book I wish I had when transitioning from an R Developer to a System Administrator.",
     "crumbs": [
       "Preface"
     ]
   },
   {
-    "objectID": "preface.html#book-outline",
-    "href": "preface.html#book-outline",
+    "objectID": "preface.html#background",
+    "href": "preface.html#background",
     "title": "Preface",
     "section": "",
-    "text": "What is in a Field Manual?\n\n\n\n\n\n\nA field manual (FM) is an educational tool that provides information, instructions, and techniques for various concepts and practices.\nFiels Manuals function as both reference material and living documentation, encouraging updates and adaptations based on the given situation, available technology, or broader environment.3\n\n\n\nExample improvised litter made using tent poles and field jackets.\n\n\n\n\n\n\n\nIntroduction\nThe Introduction acquaints you with some background that formed the landscape of Unix systems. It explains the shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Linux.\n\n\nSet-Ups\nBefore diving into writing commands and scripts, setting up your Linux environment is crucial. Set-ups guides you through various options for setting up ?sec-sh-term, Virtual Machines, and Appendix C — Quarto documents.\n\n\nThe Basics\nNavigating and managing files and folders are daily tasks for Linux users. Directories covers essential commands such as cd for changing directories, pwd to print the current directory, ls for listing files, and mkdir for making directories.\nThe Files chapter covers file manipulation commands like cp (copy), mv (move), rm (remove), and less for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Linux.\nSystem goes over common system commands like top for monitoring processes in real-time, ps for listing currently running processes, kill to stop a process, df (Disk Free) to display disk space usage on all mounted filesystems, and du (Disk Usage) to estimate file space usage. These commands help manage the system’s processes and resources efficiently, ensuring a clear view of resource allocation and consumption.\n\n\nSyntax\nUnderstanding the shell syntax is vital for effectively communicating with a Linux system. The Syntax section demystifies the structure of commands, including how to differentiate between Commands, Arguments, and Options and manage inputs and outputs. This knowledge is critical to executing tasks reliably at the command line.\nPipes are a cornerstone of Linux productivity, enabling the output of one command to serve as the input to another. Syntax also covers how to combine commands using stdout and stdin, allowing for robust command chains that can perform complex tasks. Understanding pipes unlocks a higher level of command-line efficiency.\n\n\nManipulating Text\nLinux systems are renowned for their powerful text manipulation capabilities. Text covers using Symbols & Patterns to build regular expressions (regex). Manipulating Text introduces commands such as cat for displaying file contents, grep for searching within files, sort for sorting data, uniq for filtering unique lines, and cut, paste, and join for editing files. Mastering these commands will allow you to handle and process text data efficiently. Text Editors covers nano, vim, and emacs.\n\n\n\n\n\n\n\n\nUnder Development\n\n\n\n\n\n\nThank you for your patience.\n\n\n\n\n\n\nShell Scripts\nShell scripting is a powerful tool for automating repetitive tasks in Linux. This section introduces writing shell scripts, covering the basics of script creation, execution, and debugging. We’ll discuss how to automate simple tasks, making Linux tasks productive and enjoyable.\n\n\n\n\n\n\n\n\nUnder Development\n\n\n\n\n\n\nThank you for your patience.\n\n\n\n\nThe Format chapter delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Linux systems. Permissions explains how Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.\n\n\nUse cases\n\n\n\n\n\n\n\n\nUnder Development\n\n\n\n\n\n\nThank you for your patience.",
+    "text": "“If there’s a book that you want to read, but it hasn’t been written yet, then you must write it.” - Toni Morrison",
     "crumbs": [
       "Preface"
     ]
   },
   {
-    "objectID": "preface.html#data-files",
-    "href": "preface.html#data-files",
+    "objectID": "preface.html#outline",
+    "href": "preface.html#outline",
     "title": "Preface",
-    "section": "Data files",
-    "text": "Data files\nThe data files used in this book are documented in data/README.md.",
+    "section": "Outline",
+    "text": "Outline\nThe first half of this book gradually introduces the Linux environment, starting with some history and operating system basics before moving into more complex concepts. These sections (Set-Ups, Basics, Syntax, Text, and Shell Scripts) cover concepts and topics for users new to Linux.\nThe second half of the book covers case studies (or common tasks). If you’re familiar with Linux/Unix, command-line tools, and regular expressions, skip to these sections.\n\n\n\n\n\n\nWhat is in a Field Manual?\n\n\n\n\n\n\nA field manual (FM) is an educational tool that provides information, instructions, and techniques for various concepts and practices.\nFiels Manuals function as both reference material and living documentation, encouraging updates and adaptations based on the given situation, available technology, or broader environment.2\n\n\n\nExample improvised litter made using tent poles and field jackets.\n\n\n\n\n\n\n\nIntroduction\nThe Introduction acquaints you with some background that formed the landscape of Unix systems. It explains the shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Linux.\n\n\nSet-Ups\nSetting up your Linux environment is crucial before diving into writing commands and scripts. Set-ups guide you through various options for setting up Virtual Machines, Shells, and Terminals.3\n\n\nThe Basics\nNavigating and managing files and folders are daily tasks for Linux users. Directories cover essential commands such as cd for changing directories, pwd to print the current directory, ls for listing files, and mkdir for making directories.\nThe Files chapter covers file manipulation commands like cp (copy), mv (move), rm (remove), and less for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Linux.\nSystem goes over common system commands like top for monitoring processes in real-time, ps for listing currently running processes, kill to stop a process, df (Disk Free) to display disk space usage on all mounted filesystems, and du (Disk Usage) to estimate file space usage. These commands help efficiently manage the system’s processes and resources, ensuring a clear view of resource allocation and consumption.\n\n\nSyntax\nUnderstanding the shell syntax is vital for effectively communicating with a Linux system. The Syntax section demystifies the structure of commands, including how to differentiate between Commands, Arguments, and Options and manage inputs and outputs. This knowledge is critical to executing tasks reliably at the command line.\nPipes are a cornerstone of Linux productivity, enabling the output of one command to serve as the input to another. Syntax also covers how to combine commands using stdout and stdin, allowing for robust command chains that can perform complex tasks. Understanding pipes unlocks a higher level of command-line efficiency.\n\n\nManipulating Text\nLinux systems are renowned for their powerful text manipulation capabilities. The Text section covers using Symbols & Patterns to build regular expressions (regex). Manipulating Text introduces commands such as cat for displaying file contents, grep for searching within files, sorting data, sorting data, uniq for filtering unique lines, and cutting, pasting, and joining for editing files. Mastering these commands will allow you to handle and process text data efficiently. Text Editors cover Nano, vim, and Emacs.\n\n\n\n\n\n\n\n\nUnder Development\n\n\n\n\n\n\nThank you for your patience.\n\n\n\n\n\n\nShell Scripts\nShell scripting is a powerful tool for automating repetitive tasks in Linux. This section introduces writing shell scripts, covering the basics of script creation, execution, and debugging. We’ll discuss how to automate simple tasks, making Linux tasks productive and enjoyable.\n\n\n\n\n\n\n\n\nUnder Development\n\n\n\n\n\n\nThank you for your patience.\n\n\n\n\nThe Format chapter delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Linux systems. Permissions explains how Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.\n\n\nUse cases\n\n\n\n\n\n\n\n\nUnder Development\n\n\n\n\n\n\nThank you for your patience.\n\n\n\n\nThe data files used in this book are documented in the data appendix.",
     "crumbs": [
       "Preface"
     ]
@@ -54,7 +54,7 @@
     "href": "preface.html#footnotes",
     "title": "Preface",
     "section": "",
-    "text": "Read more about EDAV and the Data Modernization Initiative here.↩︎\nMost of these commands will work on any Shell (Zsh, Bash, etc.) program.↩︎\nThis definition is based on the U.S. Army Field Manuals (FMs).↩︎",
+    "text": "Read more about EDAV and the Data Modernization Initiative here.↩︎\nThis definition is based on the U.S. Army Field Manuals (FMs).↩︎\nMost of these commands will work on any Shell (Zsh, Bash, etc.) program.↩︎",
     "crumbs": [
       "Preface"
     ]
@@ -74,7 +74,7 @@
     "href": "intro.html#the-tale-of-unix",
     "title": "Introduction",
     "section": "",
-    "text": "Unix Philosophy\nUnix was a breath of fresh air, designed with a simplicity and elegance that set it apart. Its portability, the ability to run on different types of hardware, was a game-changer. Over time, Unix evolved into a comprehensive operating system, incorporating essential commands and operations and setting a new standard for efficiency and innovation.\nThe Unix philosophy (i.e., the foundational tools and techniques) became a blueprint for how computers could efficiently and securely manage tasks like organizing files or running software. This philosophy would eventually guide other ‘car manufacturers’ in creating their versions.",
+    "text": "Unix Philosophy\nUnix was a breath of fresh air, designed with a simplicity and elegance that set it apart. Its portability, the ability to run on different types of hardware, was a game-changer. Over time, Unix evolved into a comprehensive operating system, incorporating essential commands and operations and setting a new standard for efficiency and innovation.\nThe Unix philosophy (i.e., the foundational tools and techniques) became a blueprint for how computers could efficiently and securely manage tasks like organizing files or running software. The general tenets of the Unix philosophy are:\n\nFocus: Design programs to perform a single task effectively.\nSynergy: Programs should be designed to work well with others, ensuring programs can handle input and output via standard streams, allowing them to be combined in powerful ways.\nText: Unix tools are designed to read from and write to text streams.\nExtensibility: Tools should be designed with the expectation that users will extend them beyond their intended purpose.\nSimplicity: Simple, clear, straightforward code is preferred over complex code (even if it means sacrificing functionality).",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -84,17 +84,7 @@
     "href": "intro.html#the-emergence-of-linux",
     "title": "Introduction",
     "section": "The Emergence of Linux",
-    "text": "The Emergence of Linux\nFast forward a few decades to 1991, when a Finnish student named Linus Torvalds decided to create his free operating system kernel inspired by Unix. At the heart of the Linux operating system, this kernel was made freely available to anyone who wanted to use or improve it.\n\nOpen-source\nLinux flourished with the help of developers around the world. It’s a testament to what collaboration and shared goals can achieve. Like a kit car designed by a community of enthusiasts, Linux allows anyone to assemble it with different parts, engines, and even paint (i.e., a fully customizable operating system). This global effort resulted in an operating system that is free, incredibly powerful, and reliable.\nMaking Linux free also meant anyone could contribute their skills, refine the codebase, and share the fruits of their labor. This open-source community of developers eventually cultivated various specialties, known as “distributions,” each with a unique set of tools and embellishments, yet all rooted in the same foundational teachings.\n\n\n\n\n\n\nModern Uses of Linux\n\n\n\n\n\n\nToday, Unix and Linux are everywhere. They’re the invisible forces behind much of the Internet and are responsible for running servers, desktops, smartphones, and even household appliances.\n\nServers and Supercomputers: The majority of the web servers powering the internet, as well as the world’s most powerful supercomputers, run on Linux due to its stability, security, and efficiency.\nDesktops: Although not as common on desktops as Windows or macOS, Linux distributions offer a free, customizable alternative for users.\nSmartphones: Android, the most popular mobile operating system, is powered by a Linux kernel, making Linux the silent workhorse behind billions of smartphones.\nEmbedded Systems: From smartwatches to smart home devices, Linux is often the go-to choice for running embedded systems thanks to its scalability and low cost.\n\nUnix and Linux have grown from niche systems used by academics and researchers to foundational elements that power much of the digital world. They exemplify the power of open collaboration and innovation, showing how a small project or idea can grow and change the world.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
-    ]
-  },
-  {
-    "objectID": "intro.html#the-shell",
-    "href": "intro.html#the-shell",
-    "title": "Introduction",
-    "section": "The Shell",
-    "text": "The Shell\nIn the story of Unix and Linux, Shells are the car’s dashboards and controls–the interface between the driver and the car’s engine. Shells translate commands into actions a computer can understand and execute.\nIf Linux is the environment where the heavy lifting of computing happens–managing files, running programs, and controlling hardware–then the shell commands are the language and syntax that spell out what computational work happens.",
+    "text": "The Emergence of Linux\nFast-forward a few decades to 1991, when a Finnish student named Linus Torvalds decided to create his free operating system kernel inspired by Unix. The Linux operating system was modeled after the principles of Unix but not directly derived from Unix source code and made freely available to anyone who wanted to use or improve it.\n\nOpen-source\nLinux flourished with the help of developers around the world. It’s a testament to what collaboration and shared goals can achieve. Whereas the development of Unix was largely driven by a specific group of organizations (like AT&T and Sun Microsystems), Linux was like a kit car designed by a community of enthusiasts, allowing anyone to assemble it with different parts, engines, and even paint (i.e., a fully customizable operating system). This global effort led to rapid evolution and various distributions, each interpreting and applying the Unix philosophy differently.\n\n\nModern Uses\nToday, Unix and Linux are everywhere. Although not as common on desktops as Windows or macOS, Linux distributions are the invisible forces behind much of the Internet and technology we interact with today:\n\nServers and Supercomputers: Linux is used by the majority of web servers powering the Internet and the world’s most powerful supercomputers due to its stability, security, and efficiency.\nSmartphones: Android, the most popular mobile operating system, is powered by a Linux kernel, making Linux the silent workhorse behind billions of smartphones.\nEmbedded Systems: From smartwatches to smart home devices, Linux is often the go-to choice for running embedded systems thanks to its scalability and low cost.\n\nUnix and Linux have grown from niche systems used by academics and researchers to foundational elements that power much of the digital world. They exemplify the power of open collaboration and innovation, showing how a small project or idea can grow and change the world.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -104,9 +94,19 @@
     "href": "intro.html#recap",
     "title": "Introduction",
     "section": "Recap",
-    "text": "Recap\nTo summarize, both are Unix and Linux are analogous to vehicles designed for transportation, but with a few important differences:\n\nUnix is like a high-end, custom-built car designed for a specific market, offering luxury, reliability, and exclusivity.\nLinux is like a kit car that can be built, modified, and customized however the user likes, with support from a large and active community of other enthusiasts.\n\nIn both Unix and Linux, Shells are essential for accessing the full power of the system, whether we’re making routine adjustments or performing complex configurations.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "text": "Recap\nTo summarize, both Unix and Linux are analogous to vehicles designed for transportation, but with a few important differences:\n\nUnix is like a high-end, custom-built car designed for a specific market, offering luxury, reliability, and exclusivity.\nLinux is like a kit car that can be built, modified, and customized however the user likes, with support from a large and active community of other enthusiasts.\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "setups.html",
+    "href": "setups.html",
+    "title": "Set-Ups",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\n\nThis section is being revised. Thank you for your patience.\n\n\n\n\nThis section details the practical aspects of preparing your environment to work with a Linux system. We’ll cover options for setting up a virtual machine and working with shells and terminals.\n\nVirtual Machines\nVirtual Machines are software-based emulations of a physical computer that allow users to run Linux distributions in an isolated environment, utilizing virtualized hardware resources from the host system.\n\n\n\n\n\n\n\n%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'Inconsolata', 'primaryColor': '#89D6FB', 'edgeLabelBackground':'#02577A'}}}%%\n\nflowchart TD\n  VM(\"Virtual Machine\")\n  Linux(\"Linux Distribution 🐧\")\n  HostSystem{\"Host System\"}\n  CPU(\"Virtualized CPU\")\n  RAM(\"Virtualized RAM 🧠\")\n  Disk(\"Virtualized Disk 💽\")\n\n  HostSystem--&gt;VM\n  VM--&gt;Linux\n  VM--&gt;CPU\n  VM--&gt;RAM\n  VM--&gt;Disk\n\n\n\n Running Virtual Machines \n\n\n\nThis chapter covers virtualization software options, various Linux distributions, and provides an example of setting up Ubuntu on VirtualBox.\n\n\nShells\nShells are the command-line interpreters that allow users to interact with the operating system by executing commands and running scripts.\n\n\nTerminals\nTerminals\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Set-Ups"
     ]
   },
   {
@@ -114,7 +114,7 @@
     "href": "vms.html",
     "title": "Virtual Machines",
     "section": "",
-    "text": "Virtualization Software\nSetting up Linux on virtual machines (VMs) is a valuable technique for running different operating systems on a single physical machine, which is helpful for development, testing, server deployment, and more. Several virtualization tools are available, but the most popular ones include:",
+    "text": "Virtualization Software\nVirtual machines (VMs) offer a flexible way to run Linux environments on top of your existing operating system, regardless of whether it’s Windows, macOS, or another Linux distribution. This chapter explores the setup process for virtual machines, highlighting popular VM software like VirtualBox and VMware.\nSetting up Linux on virtual machines (VMs) is a valuable technique for running different operating systems on a single physical machine, which is helpful for development, testing, server deployment, and more. Several virtualization tools are available, but the most popular ones include:",
     "crumbs": [
       "Set-Ups",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Virtual Machines</span>"
@@ -147,7 +147,18 @@
     "href": "shells.html",
     "title": "Shells",
     "section": "",
-    "text": "Bash\nIntroduced in 1989, Bash, or the Bourne Again SHell has become the default command-line interface or shell for most Linux distributions. Incorporating features from the Korn shell (ksh) and the C shell (csh), Bash supports features like command history, tab completion, aliases and scripting tasks.1",
+    "text": "The Command Interpreter\nFramed in the context of the car manufacturers analogy, Shells are the car’s dashboards and controls–the interface between the driver and the car’s engine. Shells translate commands into actions a computer can understand and execute. Below I’ll cover two popular shells: Bash and Zsh.1\nA Shell is a program that interprets commands (i.e., the ‘command interpreter’) and acts as an intermediary between the user and the kernel of the operating system. Shells can be either command-line based or graphical.\nThe available shells are stored in /etc/shells, and we can view them with the command below:\ncat /etc/shells\n## # List of acceptable shells for chpass(1).\n## # Ftpd will not allow users to connect who are not using\n## # one of these shells.\n## \n## /bin/bash\n## /bin/csh\n## /bin/dash\n## /bin/ksh\n## /bin/sh\n## /bin/tcsh\n## /bin/zsh",
+    "crumbs": [
+      "Set-Ups",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shells</span>"
+    ]
+  },
+  {
+    "objectID": "shells.html#the-command-interpreter",
+    "href": "shells.html#the-command-interpreter",
+    "title": "Shells",
+    "section": "",
+    "text": "Picking a shell\nTo change the default shell, use the chsh command (change shell). For example, if you want to switch to bash, use the command below:\n\nchsh -s /bin/bash\n\nYou can use the echo and ps commands to verify the shell you’re currently using:\n\necho $SHELL\n# /bin/bash\n\n\nps -p $$\n#   PID TTY           TIME CMD\n# 16082 ttys003    0:00.02 -bash",
     "crumbs": [
       "Set-Ups",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shells</span>"
@@ -157,8 +168,8 @@
     "objectID": "shells.html#sec-bash",
     "href": "shells.html#sec-bash",
     "title": "Shells",
-    "section": "",
-    "text": "Key features\nProgramming\nBash includes an array of programming constructs for scripting:\n\nConditional statements (if, then, else, elif, fi)\n\nLooping statements (for, while, until)\n\nInteractive Command Line Editing\nBash provides an interactive command line editing environment where users can navigate and edit commands directly on the command line using Emacs or Vi editing modes.\nHistory expansion\nCommands can be re-executed by recalling them from the history\nTab Completion\nBash supports tab completion for command names, file names, and even command arguments, speeding up the input process and reducing typos\nComprehensive Job Control\n\nBackgrounding (&), foregrounding (fg), and job management (jobs, bg)\n\nStopping (suspending) processes and continuing them with kill and kill -CONT\n\nAliases\nUsers can create shorter commands to represent longer sequences of commands using aliases\nShell Functions\nBash also supports more powerful functions that can take arguments like small scripts.\nScript Debugging\nBash scripts can be debugged using options like set -x to print commands and their arguments as they are executed, which is invaluable for troubleshooting scripts\nEnvironment Control\n\nEnvironment variables configuration and management\nVariables are exported to make them available to sub-processes\n\nExpansion Capabilities\nBash supports several types of expansions that enhance its scripting capabilities:\n\nBrace expansion: {a,b,c}\nTilde expansion: ~ translates to the home directory.\nParameter and variable expansion: $name or ${name}\nArithmetic expansion: $(( expression )0\n\nHistory Features\nBash maintains a history of commands that users have executed, which can be navigated, searched, and reused. It also supports configuring the history size and behavior through various environment variables like HISTSIZE and HISTFILESIZE.",
+    "section": " Bash",
+    "text": "Bash\nIntroduced in 1989, Bash, or the Bourne Again SHell has become the default command-line interface or shell for most Linux distributions. Incorporating features from the Korn shell (ksh) and the C shell (csh), Bash supports features like command history, tab completion, aliases and scripting tasks.2\n\nKey features\nProgramming\nBash includes an array of programming constructs for scripting:\n\nConditional statements (if, then, else, elif, fi)\n\nLooping statements (for, while, until)\n\nInteractive Command Line Editing\nBash provides an interactive command line editing environment where users can navigate and edit commands directly on the command line using Emacs or Vi editing modes.\nHistory expansion\nCommands can be re-executed by recalling them from the history.\nTab Completion\nBash supports tab completion for command names, file names, and even command arguments, speeding up the input process and reducing typos.\nComprehensive Job Control\n\nBackgrounding (&), foregrounding (fg), and job management (jobs, bg)\n\nStopping (suspending) processes and continuing them with kill and kill -CONT\n\nAliases\nUsers can create shorter commands to represent longer sequences of commands using aliases.\nShell Functions\nBash also supports more powerful functions that can take arguments like small scripts.\nScript Debugging\nBash scripts can be debugged using options like set -x to print commands and their arguments as they are executed, which is invaluable for troubleshooting scripts.\nEnvironment Control\n\nEnvironment variables configuration and management\nVariables are exported to make them available to sub-processes\n\nExpansion Capabilities\nBash supports several types of expansions that enhance its scripting capabilities:\n\nBrace expansion: {a,b,c}\nTilde expansion: ~ translates to the home directory.\nParameter and variable expansion: $name or ${name}\nArithmetic expansion: $(( expression )0\n\nHistory Features\nBash maintains a history of commands that users have executed, which can be navigated, searched, and reused. It also supports configuring the history size and behavior through various environment variables like HISTSIZE and HISTFILESIZE.",
     "crumbs": [
       "Set-Ups",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shells</span>"
@@ -169,18 +180,7 @@
     "href": "shells.html#zsh",
     "title": "Shells",
     "section": " Zsh",
-    "text": "Zsh\nZsh (Z Shell or ‘Oh My ZSH!’) is noted for its interactive features and is often used with customization frameworks. Zsh is a powerful command-line interpreter for Linux systems that serves as both a scriptable shell and an interactive command interpreter.2\n\nKey features\nCommand Line Editing\nZsh provides an advanced and customizable command-line editing environment. Users can configure key bindings and have extensive control over the text editing capabilities directly within the command prompt.\nTab Completion\nZsh has one of the most powerful tab completion systems. It supports:\n\nCompletion for command options and arguments.\nAutomatic listing of options when a tab is hit twice.\nContext-sensitive completion that can recognize patterns in filenames, history, running processes, hostnames, and more.\n\nThemes and Prompts\nZsh allows extensive customization of its prompt, supporting themes that can completely change the look of your command line. The prompt can include colors, content from shell variables, functions, and command outputs.\nScripting\nZsh scripting is robust, with features like arrays, associative arrays, and floating-point arithmetic which are not typically available in all shells. It enhances scripting capabilities and improves on the scripting syntax of the Bourne Shell.\nLoadable Modules: Zsh supports dynamically loadable modules, expanding its capabilities with features like:\n\nFTP client\nTCP and UDP socket operations\nAdvanced math functions\nFull-fledged regular expression matching\n\nImproved Variable Handling\nVariable handling in Zsh includes several enhancements like:\n\nBetter array handling\nAssociative arrays (similar to dictionaries in higher-level programming languages)\nEasier string manipulation and pattern matching\n\nSpell Check and Correction\nZsh can be configured to correct commands automatically if misspelled and to suggest corrections or alternatives. This feature helps in reducing syntax errors and improves user efficiency.\nExtended Globbing\nZsh’s file globbing allows for more complex pattern matching than traditional Linux shells. You can specify patterns in a more expressive and powerful way, which is particularly useful in scripts.",
-    "crumbs": [
-      "Set-Ups",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shells</span>"
-    ]
-  },
-  {
-    "objectID": "shells.html#fish",
-    "href": "shells.html#fish",
-    "title": "Shells",
-    "section": " Fish",
-    "text": "Fish\nFish, or the Friendly Interactive SHell, is a smart and user-friendly command line shell for Linux-like operating systems. It’s designed to be more interactive and user-friendly than traditional shells like Bash or Zsh.3\n\nKey features\nAutosuggestions\nFish suggests commands as you type based on history and completions, just like a web browser. This feature allows users to see and reuse previous commands by simply pressing the right arrow key to complete the suggested command, which can significantly speed up typing and reduce errors.\nSyntax Highlighting\nOne of Fish’s most noticeable features is its real-time syntax highlighting. Commands that are valid change color as you type them. It also helps users catch errors before the command is executed, such as highlighting misspelled commands or incorrect paths in red.\nWeb-Based Configuration\nFish includes a web-based configuration interface (accessible via the fish_config command), which makes customizing the shell settings and prompt easier for users who prefer a graphical interface over editing configuration files manually (or if you’re new to the command line).\nEnhanced Tab Completion\nFish provides intelligent tab completions for commands, file names, variables, and user-defined functions. It not only completes based on the prefix but also considers the whole line context, making the completions more relevant.\nImproved Variables and Scoping\nFish simplifies variable management, including universal variables that are automatically shared between all running shells and persist across restarts without needing explicit saving to a file. Variable scoping is also more straightforward, helping avoid common bugs seen in other shells.\nFunction Autoloads\nFish allows functions to be defined in individual files and automatically loads them only when needed. This lazy-loading of functions helps speed up the start time of the shell.\nExtensible\nFish is designed to be easily extensible through plugins. The Fisherman and Oh My Fish frameworks offer many plugins and themes designed to enhance Fish’s capabilities or customize its appearance.\nMan Page Completions\nFish generates command completions automatically from man pages, which means it often supports completions for all the installed commands without needing special configuration.\nNo Configuration Needed\nFish is designed to work properly out of the box, without needing to configure it extensively. This makes it very accessible for new users or those who want a powerful shell without the need to customize or configure it heavily.\nUser-Friendly Scripts\nFish uses a syntax that is slightly different from the traditional POSIX shell syntax, which is often simpler and easier to understand. For example, loops and conditionals are clearer, and there is no need for explicit subshell management.",
+    "text": "Zsh\nZsh (Z Shell or ‘Oh My ZSH!’) is noted for its interactive features and is often used with customization frameworks. Zsh is a powerful command-line interpreter for Linux systems that serves as both a scriptable shell and an interactive command interpreter.3\n\nKey features\nCommand Line Editing\nZsh provides an advanced and customizable command-line editing environment. Users can configure key bindings and have extensive control over the text editing capabilities directly within the command prompt.\nTab Completion\nZsh has one of the most powerful tab completion systems. It supports:\n\nCompletion for command options and arguments.\nAutomatic listing of options when a tab is hit twice.\nContext-sensitive completion that can recognize patterns in filenames, history, running processes, hostnames, and more.\n\nThemes and Prompts\nZsh allows extensive customization of its prompt, supporting themes that can completely change the look of your command line. The prompt can include colors, content from shell variables, functions, and command outputs.\nScripting\nZsh scripting is robust, with features like arrays, associative arrays, and floating-point arithmetic which are not typically available in all shells. It enhances scripting capabilities and improves on the scripting syntax of the Bourne Shell.\nLoadable Modules\nZsh supports dynamically loadable modules, expanding its capabilities with features like:\n\nFTP client\nTCP and UDP socket operations\nAdvanced math functions\nFull-fledged regular expression matching\n\nImproved Variable Handling\nVariable handling in Zsh includes several enhancements like:\n\nBetter array handling\nAssociative arrays (similar to dictionaries in higher-level programming languages)\nEasier string manipulation and pattern matching\n\nSpell Check and Correction\nZsh can be configured to correct commands automatically if misspelled and to suggest corrections or alternatives. This feature helps in reducing syntax errors and improves user efficiency.\nExtended Globbing\nZsh’s file globbing allows for more complex pattern matching than traditional Linux shells. You can specify patterns in a more expressive and powerful way, which is particularly useful in scripts.",
     "crumbs": [
       "Set-Ups",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shells</span>"
@@ -191,7 +191,7 @@
     "href": "shells.html#customizations",
     "title": "Shells",
     "section": "Customizations",
-    "text": "Customizations\nCustomizing the shell environment can significantly enhance your productivity by tailoring it to your specific needs and preferences. The next sections cover the basics of Bash, Zsh, and Fish customization.\n\nPrompts\n Bash\nBash offers a wide range of customization options through the .bash_profile file, which is sourced every time a new terminal session is started.\nThe PS1 variable defines the appearance of your command prompt. Use export PS1= to customize the prompt in the ~/.bash_profile file:4\n\n\n\n\n\n\n\n\n\n\n\n\n# in ~/.bash_profile\nexport PS1=\"Bash@MacBook \\W\\$ \"\n\n\n# prompt\nBash@MacBook ~$ \n\n\n\nThis command customizes the prompt to show the username in green, the hostname, and the current working directory in blue, followed by a dollar sign.\nPS1=\"\\[\\e[32m\\]\\u@\\h \\[\\e[34m\\]\\w\\[\\e[0m\\] \\$ \"\n Zsh\nCustomizations in Zsh are typically done through the .zshrc file.\nZsh’s PROMPT variable is similar to Bash’s PS1, but with more advanced capabilities.\nPROMPT='%F{green}%n@%m %F{blue}%~ %f%# '\nThis prompt shows the username in green, the hostname, and the current directory in blue, followed by a prompt character.\n Fish\nFish customizations are generally done through the config.fish file, typically located in ~/.config/fish/. Fish makes it easy to customize the prompt using the fish_prompt function.\nfunction fish_prompt\n    set_color green\n    echo -n (whoami) \"@\" (hostname) \" \"\n    set_color blue\n    echo -n (prompt_pwd)\n    set_color normal\n    echo -n \"&gt; \"\nend\nThis prompt shows the username in green, the hostname, and the current working directory in blue, followed by a &gt; symbol.\n\n\nAliases\nAliases allow you to create shortcuts for commonly used commands.\n Bash\nBash aliases: These aliases simplify the ls -la command to ll and git status to gs.\nalias ll='ls -la --color=auto'\nalias gs='git status'\n Zsh\nZsh Aliases: Zsh supports aliases in a similar manner to Bash.\nalias ll='ls -lh'\n Fish\nAliases: Fish uses the alias command similar to Bash and Zsh.\nalias ll=\"ls -la\"\n\n\nFunctions\n Bash\nBash Functions: Bash functions allow you to create reusable scripts within your shell environment.\nfunction mkcd() {\n    mkdir -p \"$1\" && cd \"$1\";\n}\nThe mkcd function creates a directory and then navigates into it.\n Zsh\nZsh Functions: Zsh supports functions in a similar manner to Bash.\nfunction extract() {\n    if [ -f $1 ]; then\n        case $1 in\n            *.tar.bz2)   tar xjf $1   ;;\n            *.tar.gz)    tar xzf $1   ;;\n            *.bz2)       bunzip2 $1   ;;\n            *.rar)       unrar e $1   ;;\n            *.gz)        gunzip $1    ;;\n            *.tar)       tar xf $1    ;;\n            *.tbz2)      tar xjf $1   ;;\n            *.tgz)       tar xzf $1   ;;\n            *.zip)       unzip $1     ;;\n            *.Z)         uncompress $1;;\n            *.7z)        7z x $1      ;;\n            *)           echo \"don't know how to extract '$1'...\" ;;\n        esac\n    else\n        echo \"'$1' is not a valid file!\"\n    fi\n}\n Fish\nFish Functions: In Fish, functions are first-class citizens and are easy to define.\nfunction mkcd\n    mkdir -p $argv; and cd $argv\nend\n\n\nAdvanced\nBelow we cover some advanced customizations.\n Bash\nBash Completion\nEnhance command-line efficiency by enabling tab completion for various commands.\nif [ -f /etc/bash_completion ]; then\n    . /etc/bash_completion\nfi\n Zsh\nOh My Zsh\nA popular framework for managing Zsh configuration, making it easy to apply themes and plugins.\nsh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"\nOnce installed, you can easily switch themes by editing the ZSH_THEME variable in your .zshrc file.\nZSH_THEME=\"agnoster\"\nZsh Completions and Plugins\nZsh offers extensive tab-completion support and a variety of plugins that can be enabled for additional functionality.\nplugins=(git docker kubectl)\n Fish\nUniversal Variables\nFish supports universal variables that persist across sessions and are shared among all Fish instances.\nset -U fish_greeting \"Welcome to Fish Shell\"\nPlugins and Themes\nFish has a growing ecosystem of plugins and themes, often managed by the fisher plugin manager.\ncurl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher\nfisher install oh-my-fish/theme-bobthefish\n\n\n\n\n\n\nChanging prompts in Zsh\n\n\n\n\n\n\n\nOpen your .zshrc file in your home directory with a text editor.\n~/.zshrc\nAdd or change the line that defines PROMPT. For example:\nexport PROMPT=\"Zsh@MacBook %1~%% \"\n\nThis sets a prompt similar to Bash’s example above.\nZsh@MacBook ~% \n\nSave the file and apply the changes by sourcing the profile:\nsource ~/.zshrc",
+    "text": "Customizations\nCustomizing the shell environment can significantly enhance your productivity by tailoring it to your specific needs and preferences. The next sections cover come basic customizations for Bash and Zsh.\n\nPrompts\n Bash\nBash offers a wide range of customization options through the .bash_profile file, which is sourced every time a new terminal session is started.\nThe PS1 variable defines the appearance of your command prompt. Use export PS1= to customize the prompt in the ~/.bash_profile file:4\n\n\n\n\n\n\n# in ~/.bash_profile\nexport PS1=\"Bash@MacBook \\W\\$ \"\n\n\n# prompt\nBash@MacBook ~$ \n\n\n\nBelow we’ll customizes the prompt to show Bash in green, @MacBook in blue, and the current working directory (\\W) in red, followed by a dollar sign ($).\nDefining ANSI Colors in ~/.bash_profile\n\n# define colors\nGREEN=\"\\[\\e[32m\\]\"\nBLUE=\"\\[\\e[34m\\]\"\nRED=\"\\[\\e[31m\\]\"\nRESET=\"\\[\\e[0m\\]\"\n\n\nGREEN=\"\\[\\e[32m\\]\": ANSI escape code for green\n\nBLUE=\"\\[\\e[34m\\]\": ANSI escape code for blue\n\nRED=\"\\[\\e[31m\\]\": ANSI escape code for red\n\nRESET=\"\\[\\e[0m\\]\": Resets color back to default terminal color\n\nUsing Colors in PS1\n\n# customize PS1 prompt with colors\nexport PS1=\"${GREEN}Bash${RESET}${BLUE}@MacBook${RESET} ${RED}\\W${RESET}\\$ \"\n\n\n${GREEN}: Inserts green color before Bash\n\n${RESET}: Resets the color after Bash and MacBook to ensure that only Bash and MacBook are colored\n\n${BLUE}: Inserts the blue color before @MacBook\n\n${RED}: Inserts the red color before the working directory (\\W)\n\n${RESET} at the end ensures that the prompt returns to the default color after displaying the prompt\n\nAfter updating the ~/.bash_profile file, run source ~/.bash_profile to apply the changes to the current session.\n\n\n\nCustomized prompt on bash shell\n\n\n Zsh\nCustomizations in Zsh are similar to Bash, but they done using the .zshrc file. Zsh has PROMPT variable to customize the prompt, but with more advanced capabilities:\n# Define color variables\nGREEN=\"%F{green}\"\nBLUE=\"%F{blue}\"\nRED=\"%F{red}\"\nRESET=\"%f\"\n\n# Customize the prompt using the variables\nexport PROMPT=\"${GREEN}Zsh${RESET}${BLUE}@MacBook${RESET} ${RED}&lt;%~&gt;${RESET} \"\n\n\nAliases\nAliases allow you to create shortcuts for commonly used commands.\n Bash\nBash aliases: These aliases simplify the ls -la command to ll and git status to gs.\nalias ll='ls -la --color=auto'\nalias gs='git status'\n Zsh\nZsh Aliases: Zsh supports aliases in a similar manner to Bash.\nalias ll='ls -lh'\n\n\nFunctions\n Bash\nBash Functions: Bash functions allow you to create reusable scripts within your shell environment.\nfunction mkcd() {\n    mkdir -p \"$1\" && cd \"$1\";\n}\nThe mkcd function creates a directory and then navigates into it.\n Zsh\nZsh Functions: Zsh supports functions in a similar manner to Bash.\nfunction extract() {\n    if [ -f $1 ]; then\n        case $1 in\n            *.tar.bz2)   tar xjf $1   ;;\n            *.tar.gz)    tar xzf $1   ;;\n            *.bz2)       bunzip2 $1   ;;\n            *.rar)       unrar e $1   ;;\n            *.gz)        gunzip $1    ;;\n            *.tar)       tar xf $1    ;;\n            *.tbz2)      tar xjf $1   ;;\n            *.tgz)       tar xzf $1   ;;\n            *.zip)       unzip $1     ;;\n            *.Z)         uncompress $1;;\n            *.7z)        7z x $1      ;;\n            *)           echo \"don't know how to extract '$1'...\" ;;\n        esac\n    else\n        echo \"'$1' is not a valid file!\"\n    fi\n}\n\n\nAdvanced\nBelow we cover some advanced customizations.\n Bash\nBash Completion\nEnhance command-line efficiency by enabling tab completion for various commands.\nif [ -f /etc/bash_completion ]; then\n    . /etc/bash_completion\nfi\n Zsh\nOh My Zsh\nA popular framework for managing Zsh configuration, making it easy to apply themes and plugins.\nsh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"\nOnce installed, you can easily switch themes by editing the ZSH_THEME variable in your .zshrc file.\nZSH_THEME=\"agnoster\"\nZsh Completions and Plugins\nZsh offers extensive tab-completion support and a variety of plugins that can be enabled for additional functionality.\nplugins=(git docker kubectl)\n\n\n\n\n\n\nChanging prompts in Zsh\n\n\n\n\n\n\n\nOpen your .zshrc file in your home directory with a text editor.\n~/.zshrc\nAdd or change the line that defines PROMPT. For example:\nexport PROMPT=\"Zsh@MacBook %1~%% \"\n\nThis sets a prompt similar to Bash’s example above.\nZsh@MacBook ~% \n\nSave the file and apply the changes by sourcing the profile:\nsource ~/.zshrc",
     "crumbs": [
       "Set-Ups",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shells</span>"
@@ -202,7 +202,7 @@
     "href": "shells.html#recap",
     "title": "Shells",
     "section": "Recap",
-    "text": "Recap\nIn summary, the shell is the command interpreter that executes the commands, calls other programs (when necessary), and returns the output for the user.",
+    "text": "Recap\nIf Linux is the environment where the heavy lifting of computing happens–managing files, running programs, and controlling hardware–then the shell commands are the language and syntax that spell out what computational work happens.",
     "crumbs": [
       "Set-Ups",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shells</span>"
@@ -213,7 +213,7 @@
     "href": "shells.html#footnotes",
     "title": "Shells",
     "section": "",
-    "text": "Bash was the default command-line interface for Apple’s macOS (which is Linux-based) until the transition to zsh as the default shell in macOS Catalina.↩︎\nZsh is an extended version of Bash (Bourne Again SHell), with many improvements, and is fully compatible with the Bourne Shell.↩︎\nArs Technica has a great summary comparing Fish to other shells.↩︎\n\\W prints the basename of the current working directory. You can also specify the username (\\u) and the host name up to the first period (\\h).↩︎",
+    "text": "The appendix also covers the key features and customizations of the Fish shell↩︎\nBash was the default command-line interface for Apple’s macOS (which is Linux-based) until the transition to zsh as the default shell in macOS Catalina.↩︎\nZsh is an extended version of Bash (Bourne Again SHell), with many improvements, and is fully compatible with the Bourne Shell.↩︎\n\\W prints the basename of the current working directory. You can also specify the username (\\u) and the host name up to the first period (\\h).↩︎",
     "crumbs": [
       "Set-Ups",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shells</span>"
@@ -224,7 +224,7 @@
     "href": "terminals.html",
     "title": "Terminals",
     "section": "",
-    "text": "GNOME\nGNOME is the default terminal emulator for the GNOME desktop environment, widely used in many Linux distributions.",
+    "text": "GNOME\nIn Linux environments, the terms ‘Shell’ and ‘Terminal’ are commonly used and although they are related, they actually refer to different things: A terminal (or terminal emulator) is a software program that provides a text-based interface to the shell, the program that processes user commands–which might also involve calling other programs–and returns the output.\nBelow is an expanded look at some commonly used terminal emulators and their key features.\nGNOME is the default terminal emulator for the GNOME desktop environment, widely used in many Linux distributions.",
     "crumbs": [
       "Set-Ups",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Terminals</span>"
@@ -275,11 +275,42 @@
     ]
   },
   {
+    "objectID": "basics.html",
+    "href": "basics.html",
+    "title": "Basics",
+    "section": "",
+    "text": "Directories\nThe next sections introduce some common topics and commands that will help you navigate folders (or directories), manipulate and manage files, and check system processes. These sections focus on executing single commands in a Terminal. In the next section we’ll dive into the Linux command syntax (i.e., arguments, options, and pipes).\nIn Linux, directories are special types of files that contain other files, including other directories. This ties into a fundamental concept in Linux: everything is a file. This means that not only are traditional files like documents and images considered files, but so are directories, devices, processes, and even network sockets.",
+    "crumbs": [
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "basics.html#recap",
+    "href": "basics.html#recap",
+    "title": "Basics",
+    "section": "Recap",
+    "text": "Recap\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Basics"
+    ]
+  },
+  {
     "objectID": "dirs.html",
     "href": "dirs.html",
     "title": "Directories",
     "section": "",
-    "text": "Navigate",
+    "text": "Root Directory\nWhen presented with a new map, the most important thing to find is your location on it. It’s hard to know where you’re going without knowing where you are. In Linux, directories are more than just containers for files; they are a critical part of the hierarchical file system, which is organized in a tree-like structure starting from the root directory (/).\nThe root directory is the topmost directory in the Linux file system hierarchy. All other directories and files are nested within it. It is represented by a single forward slash / and contains critical system directories like /bin, /etc, /home, and /var.\n%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'Inconsolata', 'primaryColor': '#89D6FB', 'edgeLabelBackground':'#02577A'}}}%%\n\nflowchart TD\n  Root(&lt;code&gt;/&lt;/code&gt;)\n  bin(&lt;code&gt;/bin&lt;/code&gt;)\n  etc(&lt;code&gt;/etc&lt;/code&gt;)\n  home(&lt;code&gt;/home&lt;/code&gt;)\n  usr(&lt;code&gt;/usr&lt;/code&gt;)\n  var(&lt;code&gt;/var&lt;/code&gt;)\n  tmp(&lt;code&gt;/tmp&lt;/code&gt;)\n\n  Root --&gt; bin\n  Root --&gt; etc\n  Root --&gt; home\n  Root --&gt; usr\n  Root --&gt; var\n  Root --&gt; tmp\n\n\n The root directory",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Directories</span>"
+    ]
+  },
+  {
+    "objectID": "dirs.html#root-directory",
+    "href": "dirs.html#root-directory",
+    "title": "Directories",
+    "section": "",
+    "text": "Subdirectories\nBeneath the root directory, the Linux file system is organized into various subdirectories, each serving specific purposes:\n/bin – Contains essential user command binaries\n/etc – Stores system-wide configuration files.\n/home – Houses personal directories for each user.\n/var – Contains variable data like logs and spool files.\nIn Linux systems, the ~ represents the user’s ‘home’ directory.\n\n\nFile paths\nA file path is a character string specifying the unique location of a file or directory within the hierarchical file system. File paths can be absolute (starting from the root (/) directory) or relative (starting from the current (.) directory).",
     "crumbs": [
       "Basics",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Directories</span>"
@@ -289,8 +320,8 @@
     "objectID": "dirs.html#sec-nav-dirs",
     "href": "dirs.html#sec-nav-dirs",
     "title": "Directories",
-    "section": "",
-    "text": "pwd\npwd (print working directory) tells you exactly where you are in the filesystem.\n\npwd \n# /Users/username/projects/books/fm-unix\n\nFile paths\nThe output from pwd is the file path to our local working directory. A file path is a character string specifying the unique location of a file or directory within the hierarchical file system. File paths can be absolute (starting from the root (/) directory) or relative (starting from the current (.) directory).\nIn Linux systems, the ~ represents the user’s ‘home’ directory.\n\ncd ~\npwd\n# /Users/username\n\n\n\ntree\nThe tree command will recursively print the directory structure of a file path in a ‘tree-like’ format, visually representing the hierarchy of files and directories.\nBelow is an example ‘folder tree’ for the current working directory returned from the pwd command above:\n\n# /Users/ \n#   └─ username/ -&gt; represented as '~'\n#        └─ project/ \n#             └─ books/ \n#                 └─ fm-unix/\n\nThe output from pwd is an absolute file path, and absolute file paths do not change regardless of the current working directory.\n\n\ncd\nMove from one directory to another with cd (change directory). For example, cd data takes you to the data folder inside our current working directory.\n\ncd data\n\nIn the command above, data is a relative file path. Relative file paths specify the location of a file relative to the current working directory.\n\n\n\n\n\n\nIf we view our current directory with tree after changing it to data, we see the current location listed as .:\n\n\ncd data \ntree -d\n# .\n# └── raw\n# \n# 2 directories\n\n\n\nIt’s important to notice the difference between absolute and relative paths, because it makes it easier to navigate the operating system and manipulate files and folders.\nFor example, can use a relative file path to view the report.txt file in the data folder with cat:\n\ncd data\ncat report.txt\n# my important information\n\ndata/report.txt is the relative file path (i.e., relative to the current working directory), and it’s meaning is based on the directory from which it is referenced.\n\n\nls\nls (list) lists the files and folders in a given location. In /bin, ls would show you the software tools available:\n\ncd /bin # change location\nls # what's in here?\n# [\n# bash\n# cat\n# chmod\n# cp\n# csh\n# dash\n# date\n# dd\n# df\n# echo\n# ed\n# expr\n# hostname\n# kill\n# ksh\n# launchctl\n# link\n# ln\n# ls\n# mkdir\n# mv\n# pax\n# ps\n# pwd\n# realpath\n# rm\n# rmdir\n# sh\n# sleep\n# stty\n# sync\n# tcsh\n# test\n# unlink\n# wait4path\n# zsh\n\n\n\nfind\nfind can be used to locate files or directories using the -type and -name options. The example below looks in the current working directory (.) for a folder named data:\n\nfind . -type d -name data\n# ./data",
+    "section": "Navigate",
+    "text": "Navigate\n\npwd\npwd (print working directory) tells you exactly where you are in the filesystem.\n\npwd \n# /Users/username/projects/books/fm-unix\n\n\nThe output from pwd is the file path to our local working directory.\n\ncd ~\npwd\n# /Users/username\n\n\n\ntree\nThe tree command will recursively print the directory structure of a file path in a ‘tree-like’ format, visually representing the hierarchy of files and directories.\nBelow is an example ‘folder tree’ for the current working directory returned from the pwd command above:\n\n# /Users/ \n#   └─ username/ -&gt; represented as '~'\n#        └─ project/ \n#             └─ books/ \n#                 └─ fm-unix/\n\nThe output from pwd is an absolute file path, and absolute file paths do not change regardless of the current working directory.\n\n\ncd\nMove from one directory to another with cd (change directory). For example, cd data takes you to the data folder inside our current working directory.\n\ncd data\n\nIn the command above, data is a relative file path. Relative file paths specify the location of a file relative to the current working directory.\n\n\n\n\n\n\nIf we view our current directory with tree after changing it to data, we see the current location listed as .:\n\n\ncd data \ntree -d\n# .\n# └── raw\n# \n# 2 directories\n\n\n\nIt’s important to notice the difference between absolute and relative paths, because it makes it easier to navigate the operating system and manipulate files and folders.\nFor example, can use a relative file path to view the report.txt file in the data folder with cat:\n\ncd data\ncat report.txt\n# my important information\n\ndata/report.txt is the relative file path (i.e., relative to the current working directory), and it’s meaning is based on the directory from which it is referenced.\n\n\nls\nls (list) lists the files and folders in a given location. In /bin, ls would show you the software tools available:\n\ncd /bin # change location\nls # what's in here?\n# [\n# bash\n# cat\n# chmod\n# cp\n# csh\n# dash\n# date\n# dd\n# df\n# echo\n# ed\n# expr\n# hostname\n# kill\n# ksh\n# launchctl\n# link\n# ln\n# ls\n# mkdir\n# mv\n# pax\n# ps\n# pwd\n# realpath\n# rm\n# rmdir\n# sh\n# sleep\n# stty\n# sync\n# tcsh\n# test\n# unlink\n# wait4path\n# zsh\n\n\n\nfind\nfind can be used to locate files or directories using the -type and -name options. The example below looks in the current working directory (.) for a folder named data:\n\nfind . -type d -name data\n# ./data",
     "crumbs": [
       "Basics",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Directories</span>"
@@ -312,7 +343,7 @@
     "href": "dirs.html#recap",
     "title": "Directories",
     "section": "Recap",
-    "text": "Recap\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "text": "Recap\nGiven the principle that everything is a file in Linux, directories are treated as special types of files that contain references to other files and directories, facilitating the organization and management of data.\nUnderstanding how to navigate, manipulate, and manage directories is essential for effective use of the Linux operating system.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Basics",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Directories</span>"
@@ -334,7 +365,7 @@
     "href": "files.html",
     "title": "Files",
     "section": "",
-    "text": "Create\nThe commands below can be used to create new files or update the time stamp of an existing file.",
+    "text": "Create\nThe following commands can be used for creating, managing, and manipulating files. Some of these commands also work on directories (which we covered in the previous chapter).\nThe commands below can be used to create new files or update the time stamp of an existing file.",
     "crumbs": [
       "Basics",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Files</span>"
@@ -433,7 +464,7 @@
     "href": "sys.html",
     "title": "System",
     "section": "",
-    "text": "Real-time monitoring",
+    "text": "Real-time monitoring\nThis chapter covers monitoring performance and resource usage in the Linux systems. These commands will help ensure that the servers and applications are running efficiently and can help you preemptively address potential issues before they escalate into major problems.\nWe’ll delve into some of the most essential and widely-used system monitoring commands: top, htop, free, df, and du",
     "crumbs": [
       "Basics",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>System</span>"
@@ -484,69 +515,13 @@
     ]
   },
   {
-    "objectID": "vars.html",
-    "href": "vars.html",
-    "title": "Variables",
+    "objectID": "syntax.html",
+    "href": "syntax.html",
+    "title": "Syntax",
     "section": "",
-    "text": "Unix/Linux Variables\nVariables in Unix/Linux are used to store data that can be accessed and manipulated by the operating system and applications. They play a crucial role in scripting, programming, and managing system configurations. By storing values in variables, users and scripts can dynamically reference and change these values without hard-coding them, making scripts more flexible and maintainable.\nIn Unix/Linux, variables can hold different types of data, such as strings, integers, or file paths. They can be used for various purposes, including:\nThe significance of variables lies in their ability to simplify complex tasks, enhance automation, and improve the overall efficiency of the Unix/Linux environment.",
+    "text": "Caution\n\n\n\n\n\n\nThis section is being revised. Thank you for your patience.\n\n\n\n\nIn the previous section we covered some of the basic common commands you’ll use in a Linux-like operating systems. This section dives deeper into the syntax–the commands, arguments, and options–you’ll type into the terminal or write in a shell script. We’ll also discuss creating variables and how to chain commands together using pipes\n\nCommands\n\n\nArguments\n\n\nOptions\n\n\nPipes\n\n\nVariables\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
-      "Basics",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables</span>"
-    ]
-  },
-  {
-    "objectID": "vars.html#unixlinux-variables",
-    "href": "vars.html#unixlinux-variables",
-    "title": "Variables",
-    "section": "",
-    "text": "Customizing the user environment (e.g., setting the default editor).\n\nStoring temporary data within scripts.\n\nPassing data between programs and scripts.\n\nConfiguring system and application settings.\n\n\n\nEnvironment vs. Shell\nIn Unix/Linux, variables are broadly categorized into environment variables and shell variables.\nEnvironment variables are global variables that are available system-wide and can influence the behavior of the shell and other programs. They are inherited by all child processes.\nEnvironment variables are often used to configure the shell environment, set application settings, and pass data to child processes.\n\nCommon environment variables\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nPATH\nSpecifies the directories to search for executable files.\n\n\nHOME\nRepresents the current user’s home directory.\n\n\nUSER\nContains the name of the current user.\n\n\nLANG\nDefines the language and locale settings for applications.\n\n\n\nShell variables are local to the shell session in which they are defined. They are not inherited by child processes unless explicitly exported.\nShell variables are typically used for temporary data storage within scripts, customizing the shell prompt, and managing session-specific settings.\n\nCommon shell variables\n\n\nVariable\nDescription\n\n\n\n\nPS1\nDefines the primary prompt string.\n\n\nPS2\nDefines the secondary prompt string.",
-    "crumbs": [
-      "Basics",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables</span>"
-    ]
-  },
-  {
-    "objectID": "vars.html#setting-variables",
-    "href": "vars.html#setting-variables",
-    "title": "Variables",
-    "section": "Setting Variables",
-    "text": "Setting Variables\nIn the following sections we’ll cover setting shell and environment variables in your shell. These commands will work in Bash or Zsh.\n\nSetting Shell Variables\nShell variables in Unix/Linux are defined within the context of the current shell session. To set a shell variable, simply assign a value to a variable name using the following syntax:\nVARIABLE_NAME=value\nVariable names are case-sensitive and traditionally use uppercase letters. When creating a new variable, there should be no spaces around the = sign. We can check the value of the new variable using echo:\n\nMY_VAR=\"Hello, World\"\n\n\necho $MY_VAR\n# Hello, World\n\n\n\n\nZsh  on macOS .\n\n\n\nRemoving Shell Variables\nTo remove a shell variable, use the unset command followed by the variable name:\n\nunset MY_VAR\n\nAfter running unset, the variable MY_VAR will no longer exist in the current shell session.\nTo list all shell variables, use the set command:\nset\n\n\nSetting Environment Variables\nEnvironment variables are set similarly to shell variables but are made available to child processes by using the export command. To set an environment variable, follow these steps:\n\nAssign a value to a variable.\nExport the variable.\n\n\nMY_ENV_VAR=\"This is an environment variable\"\nexport MY_ENV_VAR\n\nYou can also combine these steps into a single command:\n\nexport MY_ENV_VAR=\"This is an environment variable\"\n\nTo verify the value of an environment variable, use the echo command:\n\n\n\nZsh  on macOS .\n\n\necho $MY_ENV_VAR\n# This is an environment variable\n\nTo list all environment variables, use the printenv or env command:\n\nprintenv\n\nor\n\nenv",
-    "crumbs": [
-      "Basics",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables</span>"
-    ]
-  },
-  {
-    "objectID": "vars.html#using-variables",
-    "href": "vars.html#using-variables",
-    "title": "Variables",
-    "section": "Using Variables",
-    "text": "Using Variables\nThe section below covers how to use environment and shell variables in the terminal and in shell script (.sh) files.\n\nUsing Shell Variables\nUsing shell variables involves referencing them within scripts or commands with a dollar sign ($) prefix and the variable. Below is an example of using a shell variable in an if/then loop:\n\ncount=5\nif [ $count -gt 3 ]; then \n  echo \"Count is greater than 3\"; \nfi\n# Count is greater than 3\n\nThe code above could be stored in a script (if_count.sh), where the shell variables could be used to store and manipulate data dynamically by calling source:\n\ntouch if_count.sh\necho \"count=5\nif [ $count -gt 3 ]; then \n  echo \"Count is greater than 3\"; \nfi\" &gt; if_count.sh\n\n\nsource if_count.sh\n# if_count.sh: line 2: [: -gt: unary operator expected\n\n\n\nUsing Environment Variables\nEnvironment variables can be accessed in the same way as shell variables by prefixing the variable name with a dollar sign ($). Since they are available to child processes, environment variables are particularly useful for configuring application settings and passing data to scripts and programs.\nFor example, PWD works similar to the pwd command, but the path is stored as a string to use in scripts or programs.\n\necho $PWD\n# /Users/username/projects/books/fm-unix\n\nIn a script, we can use environment variables to ensure that certain settings or configurations are applied (like HOME and USER)\nAssume the following is stored in my_config.sh\n#!/bin/bash\necho \"User's home directory: $HOME\"\necho \"Current user: $USER\"\necho \"Current language: $LANG\"\nThese variables don’t need to be defined in the script–they can just be stored and called directly:\n\nsource my_config.sh\n# User's home directory: /Users/username\n# Current user: username\n# Current language: en_US.UTF-8",
-    "crumbs": [
-      "Basics",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables</span>"
-    ]
-  },
-  {
-    "objectID": "vars.html#key-differences",
-    "href": "vars.html#key-differences",
-    "title": "Variables",
-    "section": "Key Differences",
-    "text": "Key Differences\nUnderstanding the difference between environment and shell variables is essential for effective Unix/Linux system administration and scripting. It helps users manage and customize their environment efficiently, ensuring that scripts and applications work as intended.\n\nScope\n\n\n\n\n\n\nEnvironment variables have a global scope and are available to all processes.\n\n\nShell variables have a local scope and are limited to the shell session.\n\n\n\n\n\nInheritance\n\n\n\n\n\n\nEnvironment variables are inherited by child processes.\n\n\nShell variables need to be exported to be available to child processes.\n\n\n\n\n\nPurpose\n\n\n\n\n\n\nEnvironment variables are generally used for system-wide configuration and application settings.\n\n\nShell variables are used for script-specific or session-specific tasks.",
-    "crumbs": [
-      "Basics",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables</span>"
-    ]
-  },
-  {
-    "objectID": "vars.html#recap",
-    "href": "vars.html#recap",
-    "title": "Variables",
-    "section": "Recap",
-    "text": "Recap\nBy understanding and utilizing shell and environment variables effectively, you can enhance the functionality and flexibility of your Unix/Linux scripts and system configurations. We’ll touch on this topic again in the shell scripts section.",
-    "crumbs": [
-      "Basics",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables</span>"
+      "Syntax"
     ]
   },
   {
@@ -554,10 +529,10 @@
     "href": "commands.html",
     "title": "Commands",
     "section": "",
-    "text": "REPL\nThe REPL in Bash exemplifies a powerful and flexible interface for interacting with the system, running commands, and developing scripts, providing both novice and experienced users with an efficient way to manage their computing environment.\nHere is how it works:",
+    "text": "REPL\nCommands are the first part of a command line instruction, specifying the program or built-in functionality to be executed. In Unix/Linux, several commands can operate without any options or arguments, performing their basic functions in their simplest form.\nWe’re going to start with a basic command: date:\nThe command date returns the current date and time. What we’ve just done is referred to as the read–eval–print loop, or REPL, and it’s the underlying process of the command-line.\nThe REPL in Bash exemplifies a powerful and flexible interface for interacting with the system, running commands, and developing scripts, providing both novice and experienced users with an efficient way to manage their computing environment.\nHere is how it works:",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Commands</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Commands</span>"
     ]
   },
   {
@@ -568,7 +543,7 @@
     "text": "1. Read\nIn the Bash, the “Read” step occurs when the shell waits for input from the user. This is typically represented by the shell prompt, where we can type commands.\nThe prompt might display useful information, such as the current user (username), hostname (hostname), and working directory (current_directory), depending on its configuration.\n\n  user@host:directory$\n\n\n\n\n2. Eval\nOnce a command is entered, Bash “evaluates” it. This step involves parsing the command and its arguments, checking for syntax correctness, and then executing it.\n\n  user@host:directory$ date\n\n\nCommands can be simple, such as listing the current date and time, or complex scripts involving loops, conditionals, and functions.\n\n\n3. Print\nAfter evaluating the command, Bash “prints” the output or the result of the command execution to the screen (stdout or standard output) or another specified location.\n\n  # Wed Apr 10 02:55:23 MST 2024\n\n\n\n\nLoop\nAfter executing a command and returning the output, Bash immediately returns to the “read” step, displaying the prompt and waiting for new user input.\n\nuser@host:directory$\nuser@host:directory$ date\n#&gt; Wed Apr 10 02:55:23 MST 2024\nuser@host:directory$\n\nThis cycle repeats indefinitely until the user exits the REPL environment, typically with an exit command or by pressing Ctrl + D.",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Commands</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Commands</span>"
     ]
   },
   {
@@ -579,7 +554,7 @@
     "text": "Commands\nIn Unix, several commands can operate without any options or arguments, performing their basic functions in their simplest form. Below are some of these commands:\n\nwho\nwho shows who is logged on the system.\n\nwho\n# username       console      Apr 14 13:45 \n# username       ttys000      Apr 14 13:45 \n# username       ttys001      Apr 14 13:45 \n# username       ttys003      Apr 16 05:56\n\nwho by itself, without options or arguments, lists the users currently logged into the system.\n\n\nwhoami\nwhoami shows the username of the user currently logged into the system.\n\nwhoami\n# username\n\n\n\nhostname\nhostname displays the system’s network name.\n\nhostname\n# Users-MacBook-Pro.local\n\n\n\ncal\ncal displays a calender of the current month.\n\ncal\n#      April 2024       \n# Su Mo Tu We Th Fr Sa  \n#     1  2  3  4  5  6  \n#  7  8  9 10 11 12 13  \n# 14 15 16 17 18 19 20  \n# 21 22 23 24 25 26 27  \n# 28 29 30              \n# \n\n\n\nuptime\nuptime shows how long the system has been running.\n\nuptime\n# 11:39  up 15:05, 4 users, load averages: 3.85 3.08 2.93\n\n\n\nclear\nclear clears the terminal screen and doesn’t print any return values.\n\nclear\n\nclear does its job without the need for additional input.\n\n\nexit\nexit exits the shell or your current session.\n\nexit\n\nexit requires no arguments or options to execute this action, and doesn’t print any return values.",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Commands</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Commands</span>"
     ]
   },
   {
@@ -590,7 +565,7 @@
     "text": "Recap\nEach of these commands performs a specific and often utilized function within the Unix environment, embodying the Unix philosophy of doing one thing well.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Commands</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Commands</span>"
     ]
   },
   {
@@ -598,10 +573,10 @@
     "href": "arguments.html",
     "title": "Arguments",
     "section": "",
-    "text": "Anatomy\nA Unix command can be broken down into the command name, followed by its options (which we’ll address in the next chapter), and then its arguments:\ncommand argument1 argument2 ... argument",
+    "text": "Anatomy\nArguments in Unix/Linux commands are values or data passed to commands for processing. Unlike options, which modify the behavior of commands, arguments typically specify what the command should act upon. This typically includes filenames, user names, data values, or other kinds of information the command needs to execute its task.\nA Unix command can be broken down into the command name, followed by its options (which we’ll address in the next chapter), and then its arguments:\ncommand argument1 argument2 ... argument",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Arguments</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Arguments</span>"
     ]
   },
   {
@@ -612,7 +587,7 @@
     "text": "Argument Types\nBelow are a variety of command arguments types. This is not an exhaustive list, but includes many of the commands and arguments you’ll encounter on a regular basis.\n\nDirect arguments\nDirect arguments are the most straightforward type of arguments. They are typically the names of files or directories on which commands operate.\nExample\nIn the command cat my_file.txt, my_file.txt is a direct argument to the cat command, telling it which file to display on the standard output.\n\ncat my_file.txt\n# This is my file\n\n\n\nIndirect arguments\nIndirect arguments are arguments that might specify additional information that commands need to complete their tasks.\nExample\nThe file search pattern for the grep command is an example of an indirect command, and myfile.txt is the direct argument.\n\ngrep file my_file.txt\n# This is my file\n\nMost commonly, arguments are the names of files and directory names on which the command will operate.\nExample\nmy_file.txt and tmp/tmp_file.txt are arguments representing the source and destination locations to move with mv, respectively.\n\nmv my_file.txt tmp/tmp_file.txt\n\nCommands related to user management might take user and group names names as arguments.\nExample\nchown changes the ownership of file to user and group.\n\nchown user:group myfile.txt\n\n\n\nCommand Targets\nSome commands take other commands as arguments.\nExample\nFor example, sudo command runs command with superuser privileges.\n\nsudo vi path/to/file.config\n\n\n\nData Values\nCommands might take data values as arguments for processing.\nExample\nIn echo Hello, World!, Hello, World! is the argument value that echo prints to the terminal.\n\necho Hello, World!\n# Hello, World!\n\n\n\nOrder and Position\nFor many commands, the order of the arguments is significant.\nExample\ntmp/tmp_file.txt is the first argument (indicating the file to copy from), and new_file.txt is the second argument (indicating where to copy the file to).\n\ncp tmp/tmp_file.txt new_file.txt\n\nReversing these arguments would result in a completely different operation.\nArguments that contain spaces must be quoted or escaped, so the shell understands them as a single argument rather than multiple arguments.\nExample\nTo copy the contents of the new new_file.txt to 'my new file.txt', you would use:\n\ncp new_file.txt 'my new file.txt'\n\n\n\nCommand Substitution\nThe output of a command can be used as an argument for another command using backticks (` `) or $( ).\nExample\necho $(grep file 'my file 2.txt') uses the output of the grep command as an argument for echo:\n\necho $(grep file 'my new file.txt')\n# This is my file\n\n\n\nVariables as Arguments\nEnvironment variables can be used as arguments in commands.\nExample\necho $HOME prints the path to the user’s home directory, where $HOME is an argument that the echo command interprets:\n\necho $HOME\n# /Users/username",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Arguments</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Arguments</span>"
     ]
   },
   {
@@ -623,7 +598,7 @@
     "text": "Recap\nUnderstanding the nuances of Unix arguments is crucial for crafting precise and effective commands, allowing users to leverage the full power of the Unix command line for a wide array of tasks.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Arguments</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Arguments</span>"
     ]
   },
   {
@@ -631,10 +606,10 @@
     "href": "options.html",
     "title": "Options",
     "section": "",
-    "text": "Option types\nArguments can be short or long:",
+    "text": "Option types\nUnix command options (sometimes called flags) are often preceded by a hyphen (-) or two (-- for long-form options) and modify the behavior of a command. Options provide flexibility, control, and, in some cases, enable a vast array of additional functionalities.\nArguments can be short or long:",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Options</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Options</span>"
     ]
   },
   {
@@ -645,7 +620,7 @@
     "text": "Short options are typically a single dash followed by a single letter (e.g., -l) and they modify the command behavior in a specific, often concise way.\n\n\nLong options usually use two dashes followed by a word or compound words (e.g., --long-listing) and provide a more descriptive way to specify options, making scripts and commands more readable.\n\n\n\n\nShort options\nExample\nls -l data lists files in data in a long format, showing detailed information like permissions, owner, size, and modification date:\n\nls -l data\n# total 112\n# -rw-r--r--@  1 mjfrigaard  staff   8798 May 15 21:59 README.md\n# -rw-r--r--@  1 mjfrigaard  staff   6122 Apr 10 14:04 music_vids.tsv\n# -rw-r--r--@  1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.tsv\n# drwxr-xr-x@ 10 mjfrigaard  staff    320 May 15 21:55 raw\n# -rw-r--r--@  1 mjfrigaard  staff   4417 Apr 10 14:01 trees.tsv\n# -rw-r--r--   1 mjfrigaard  staff   4814 Apr 10 14:07 vg_hof.tsv\n# -rw-r--r--@  1 mjfrigaard  staff    462 Apr 15 14:07 wu_tang.psv\n# -rw-r--r--@  1 mjfrigaard  staff    263 Apr 10 09:39 wu_tang.tsv\n\n\n\nLong options\nExample 1\ntree data --sort size lists files in order according to size:\n\ntree data --sort size\n# ├── ajperlis_epigrams.txt\n# ├── pwrds.csv\n# ├── pwrds.tsv\n# ├── README.md\n# ├── music_vids.tsv\n# ├── vg_hof.tsv\n# ├── trees.tsv\n# ├── roxanne.txt\n# ├── wu_tang.dat\n# ├── who_tb_data.tsv\n# ├── who_tb_data.txt\n# ├── wu_tang.txt\n# ├── wu_tang.csv\n# ├── wu_tang.tsv\n# ├── roxanne_rev.txt\n# └── roxanne_orig.txt\n# \n# 1 directory, 16 files\n\nExample 2\ngrep --help displays usage information for the grep command, helping users understand available options and syntax.\n\ngrep --help\n#&gt; usage: grep [-abcdDEFGHhIiJLlMmnOopqRSsUVvwXxZz] [-A num] [-B num] [-C[num]]\n#&gt;  [-e pattern] [-f file] [--binary-files=value] [--color=when]\n#&gt;  [--context[=num]] [--directories=action] [--label] [--line-buffered]\n#&gt;  [--null] [pattern] [file ...]\n\nExample 3\nThe --version option is commonly used to get version information for various commands.\n\ngrep --version  \n# grep (BSD grep, GNU compatible) 2.6.0-FreeBSD\n\nNote that not all commands support the long-form option syntax.\n\n\nModifying behavior\nSome options modify the commands behavior.\nExample\ncp-n source.txt dest.txt does not overwrite the destination file if it already exists.\n\ncat myfile.txt\n# This is my file\n\n\ncp -n myfile.txt myfile2.txt\n\nThe -n option modifies the default behavior of the cp command.\n\ncat myfile2.txt\n# This is my 2nd file\n\n\n\nModifying output\nOther options modify a commands output.\nExample 1\nls -a lists all files, including hidden ones (those starting with a dot). This option alters the command’s output by showing files that are not listed by default.\n\nls -a data\n# .\n# ..\n# README.md\n# music_vids.tsv\n# pwrds.tsv\n# raw\n# trees.tsv\n# vg_hof.tsv\n# wu_tang.psv\n# wu_tang.tsv\n\nExample 2\ndf -h shows disk space usage in human-readable form (e.g., KB, MB, GB), modifying the default output to be more easily understood.\n\ndf -h\n# Filesystem                          Size    Used   Avail Capacity iused ifree %iused  Mounted on\n# /dev/disk1s1s1                     466Gi   9.5Gi    40Gi    20%    404k  422M    0%   /\n# devfs                              201Ki   201Ki     0Bi   100%     696     0  100%   /dev\n# /dev/disk1s3                       466Gi   2.4Gi    40Gi     6%    5.1k  422M    0%   /System/Volumes/Preboot\n# /dev/disk1s5                       466Gi   1.0Gi    40Gi     3%       1  422M    0%   /System/Volumes/VM\n# /dev/disk1s6                       466Gi    19Mi    40Gi     1%      19  422M    0%   /System/Volumes/Update\n# /dev/disk1s2                       466Gi   411Gi    40Gi    92%    6.3M  422M    1%   /System/Volumes/Data\n# map auto_home                        0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home\n\n\n\nEnvironment-specific options\nThe -u option in sort removes duplicate lines. -us behavior (considering case sensitivity) might vary depending on the locale and environment settings.\nExample\nsort -u data/roxanne.txt sorts the lines in data/roxanne.txt, removing duplicate lines.1\n\nsort -u data/raw/roxanne.txt\n# I have to tell you just how I feel\n# I know my mind is made up\n# I loved you since I knew you\n# I won't share you with another boy\n# I wouldn't talk down to you\n# It's a bad way\n# Ro...\n# Roxanne\n# Roxanne (Put on the red light)\n# Roxanne (You don't have to put on the red light)\n# So put away your make up\n# Those days are over\n# Told you once I won't tell you again\n# Walk the streets for money\n# You don't care if it's wrong or if it's right\n# You don't have to put on the red light\n# You don't have to sell your body to the night\n# You don't have to wear that dress tonight",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Options</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Options</span>"
     ]
   },
   {
@@ -656,7 +631,7 @@
     "text": "Combining Options\nMultiple short options can be combined after a single dash, without spaces (e.g., -lrt) allowing users to use multiple options at once, and reducing the need to type multiple dashes.\n\nMultiple short options\nOptions can be combined with arguments when they are followed by a space and then the argument (e.g., -o filename).\nExample\nls -lrt combines three options: -l (long listing format), -r (reverse order), and -t (sort by modification time), providing a detailed, reverse-chronological list of files.\n\nls -lrt data\n# total 112\n# -rw-r--r--@  1 mjfrigaard  staff    263 Apr 10 09:39 wu_tang.tsv\n# -rw-r--r--@  1 mjfrigaard  staff   4417 Apr 10 14:01 trees.tsv\n# -rw-r--r--@  1 mjfrigaard  staff   6122 Apr 10 14:04 music_vids.tsv\n# -rw-r--r--   1 mjfrigaard  staff   4814 Apr 10 14:07 vg_hof.tsv\n# -rw-r--r--@  1 mjfrigaard  staff    462 Apr 15 14:07 wu_tang.psv\n# -rw-r--r--@  1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.tsv\n# drwxr-xr-x@ 10 mjfrigaard  staff    320 May 15 21:55 raw\n# -rw-r--r--@  1 mjfrigaard  staff   8798 May 15 21:59 README.md\n\n\n\nOptions with values\nSome options require or accept an argument to specify a value related to the option’s action.\nExample\ngrep-i \"FILE\" myfile.txt uses -i to ignore case when searching for \"FILE\" in myfile.txt:\n\ngrep -i \"FILE\" myfile.txt\n# This is my file\n\nThe \"FILE\" here is an argument for the -i option.",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Options</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Options</span>"
     ]
   },
   {
@@ -667,7 +642,7 @@
     "text": "Recap\nOptions greatly enhance the power and versatility of Unix commands, allowing users to tailor operations to their specific needs and preferences.\nNot all Unix-like systems or shells may support the same options for a given command, and behavior can vary between implementations. It’s important to refer to a command’s manual page (using man command or command --help) for the most accurate and comprehensive list of options and their effects.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.\n\n\n\n\n\nrm myfile.txt\nrm myfile2.txt",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Options</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Options</span>"
     ]
   },
   {
@@ -678,7 +653,7 @@
     "text": "data/roxanne.txt contains the lyrics to the 1978 song Roxanne by The Police.↩︎",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Options</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Options</span>"
     ]
   },
   {
@@ -686,10 +661,10 @@
     "href": "pipes.html",
     "title": "Pipes",
     "section": "",
-    "text": "Fundamental Concept\nThe pipe is placed between two commands and directs the standard output (stdout) of the command to the left of the pipe to the standard input (stdin) of the command to the right.\nExample\necho \"Hello, World!\" | wc -w sends the output of the echo command to wc, which then counts the words.\necho \"Hello, World!\" | wc -w\n#        2\nThe output is 2, indicating there are two words in “Hello, World!”.",
+    "text": "Fundamental Concept\nThe Unix pipe, denoted by the vertical bar |, is a powerful feature of Unix and Unix-like operating systems that allows the output of one command (stdout) to be used as the input to another (stdin). This capability forms the basis of the Unix philosophy of building small, modular utilities that do one thing well and connecting them together to perform complex tasks.\nThe pipe is placed between two commands and directs the standard output (stdout) of the command to the left of the pipe to the standard input (stdin) of the command to the right.\nExample\necho \"Hello, World!\" | wc -w sends the output of the echo command to wc, which then counts the words.\necho \"Hello, World!\" | wc -w\n#        2\nThe output is 2, indicating there are two words in “Hello, World!”.",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Pipes</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Pipes</span>"
     ]
   },
   {
@@ -700,7 +675,7 @@
     "text": "Standard Input and Output\n\n\n\n\n\n\n\n\nstdin (standard input) is a text stream from which a command reads its input. By default, it’s the keyboard, but it can be redirected to read from a file or another command’s output.\nstdout (standard output) is a text stream where a command writes its output. Typically, this is the terminal screen, but it can be redirected to a file or another command’s input.",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Pipes</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Pipes</span>"
     ]
   },
   {
@@ -711,7 +686,7 @@
     "text": "Combining Pipes\nCommands can be chained together using multiple pipes, allowing for the creation of command pipelines where data is processed in stages.\nExample\npsaux |grep httpd lists all processes, filters those containing “httpd” (HTTPD = web server processes running):\n\nps aux | grep httpd\n# mjfrigaard       23601   0.0  0.0 33597016    632   ??  S     6:44AM   0:00.00 grep httpd\n# mjfrigaard       23599   0.0  0.0 33599596    928   ??  S     6:44AM   0:00.01 bash -c ps aux | grep httpd\n# mjfrigaard       23598   0.0  0.0 33598572    932   ??  S     6:44AM   0:00.01 sh -c 'bash'  -c 'ps aux | grep httpd' 2&gt;&1\n\nExample\nwc-l counts the number of lines:\n\nps aux | grep httpd | wc -l\n#        3\n\n\nFiltering and Processing\nExample 1\ncatdata/roxanne.txt |grep\"night\" displays lines from data/roxanne.txt that contain the number \"2\".\n\ncat data/raw/roxanne.txt | grep \"night\"\n# You don't have to sell your body to the night\n# You don't have to wear that dress tonight\n\nHere, cat outputs the file’s contents, which grep filters.\nExample 2\nls-l data/raw |sort-r lists the files in data/raw in a detailed format, then sorts them in reverse order.\n\nls -l data/raw | sort -r\n# total 128\n# -rw-r--r--@ 1 mjfrigaard  staff  12531 Apr 13 20:39 ajperlis_epigrams.txt\n# -rw-r--r--@ 1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.csv\n# -rw-r--r--@ 1 mjfrigaard  staff   6452 May 15 21:48 music_vids.csv\n# -rw-r--r--@ 1 mjfrigaard  staff   4828 May 15 21:49 vg_hof.csv\n# -rw-r--r--@ 1 mjfrigaard  staff   4462 May 15 21:48 trees.csv\n# -rw-r--r--@ 1 mjfrigaard  staff   1315 Apr  6 05:38 roxanne.txt\n# -rw-r--r--@ 1 mjfrigaard  staff    381 May 15 21:55 who_tb_data.csv\n# -rw-r--r--@ 1 mjfrigaard  staff    263 Apr 10 09:34 wu_tang.csv\n\nIt showcases how to reverse the listing of directory contents.\n\n\nTransformation and Reduction\nExample\nfind. -type f |xargsdu -sh |sort-h finds files (-type f) in the current directory and subdirectories, calculates their sizes (du -sh), and sorts them by size (sort -h):\n\nfind data -type f | xargs du -sh | sort -h\n# 4.0K  data/raw/roxanne.txt\n# 4.0K  data/raw/who_tb_data.csv\n# 4.0K  data/raw/wu_tang.csv\n# 4.0K  data/wu_tang.psv\n# 4.0K  data/wu_tang.tsv\n# 8.0K  data/music_vids.tsv\n# 8.0K  data/raw/music_vids.csv\n# 8.0K  data/raw/trees.csv\n# 8.0K  data/raw/vg_hof.csv\n# 8.0K  data/trees.tsv\n# 8.0K  data/vg_hof.tsv\n#  12K  data/README.md\n#  12K  data/pwrds.tsv\n#  12K  data/raw/pwrds.csv\n#  16K  data/raw/ajperlis_epigrams.txt\n\nThis pipeline not only identifies files but also sorts them by their disk usage, illustrating a complex operation made simple through pipes.\n\n\nReal-time Streaming and Monitoring\nExample\ncat /var/log/system.log | grep DEAD_PROCESS prints the system.log file, continuously monitoring for new entries, filters for those containing DEAD_PROCESS, then counts the number of lines:1\n\ncat /var/log/system.log | grep \"DEAD_PROCESS\" \n## Apr 10 06:35:23 Users-MacBook-Pro login[3596]: DEAD_PROCESS: 3596 ttys000\n## Apr 10 06:35:25 Users-MacBook-Pro sessionlogoutd[19895]: DEAD_PROCESS: 225 console\n## Apr 10 10:20:25 Users-MacBook-Pro login[715]: DEAD_PROCESS: 715 ttys000\n\n\n\nData Manipulation\nExample\ncut -d':' -f1 data/roxanne.txt | sort | uniq extracts the first field from each line in data/roxanne.txt, sorts the contents alphabetically, and removes duplicates.\n\ncut -d':' -f1 data/raw/roxanne.txt | sort | uniq\n# I have to tell you just how I feel\n# I know my mind is made up\n# I loved you since I knew you\n# I won't share you with another boy\n# I wouldn't talk down to you\n# It's a bad way\n# Ro...\n# Roxanne\n# Roxanne (Put on the red light)\n# Roxanne (You don't have to put on the red light)\n# So put away your make up\n# Those days are over\n# Told you once I won't tell you again\n# Walk the streets for money\n# You don't care if it's wrong or if it's right\n# You don't have to put on the red light\n# You don't have to sell your body to the night\n# You don't have to wear that dress tonight\n\nThis sequence is an example of performing data extraction and deduplication.",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Pipes</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Pipes</span>"
     ]
   },
   {
@@ -722,7 +697,7 @@
     "text": "Pipes with Loops\nThe example below demonstrates how to use the while loop with pipes with find, echo, grep, and wc.\n\nFilter with find\nfind data -name \"*.tsv\" starts in the data directory, looking for all files that end with the .tsv extension. The search is recursive, meaning it includes all subdirectories of data as well. Produces a list of paths to .tsv files, each path on a new line. This list is piped to the next command.\n\nfind data -name \"*.tsv\" \n# data/pwrds.tsv\n# data/music_vids.tsv\n# data/vg_hof.tsv\n# data/trees.tsv\n# data/wu_tang.tsv\n\n\n\nIterate with while and do\n| while read fname; do: The pipe (|) feeds the output from the find command into a while loop, which reads each line (file name) into the variable fname, one at a time. For each iteration of the loop (i.e., for each file name read into fname), the commands within the do ... done block are executed.\n\nfind data -name \"*.tsv\" | while read fname; do\n  # do this!\ndone\n\n\n\nPrint with echo\necho -n \"$fname: \": Prints the current file’s name being processed. echo-n outputs the value of fname (the path to the current .tsv file) followed by a colon and a space, without adding a newline at the end. This means the count returned by wc will be printed on the same line, right after the file name.\n\nfind data -name \"*.tsv\" | while read fname; do\n  echo -n \"$fname: \"\ndone\n# data/pwrds.tsv: data/music_vids.tsv: data/vg_hof.tsv: data/trees.tsv: data/wu_tang.tsv:\n\n\n\nSearch with grep\ngrep \"RZA\" \"$fname\": Searches for a specific pattern within the file. grep looks through the contents of the file (whose path is in fname) for lines containing the string “RZA”. Only the lines that match this pattern are printed to stdout, which is then piped to wc.\n\nfind data -name \"*.tsv\" | while read fname; do\n  echo -n \"$fname: \"\n  grep \"RZA\" \"$fname\"\ndone\n# data/pwrds.tsv: data/music_vids.tsv: data/vg_hof.tsv: data/trees.tsv: data/wu_tang.tsv: RZA   Robert Diggs\n\n\n\nCount with wc\nwc: For each file processed by the loop, wc outputs three numbers: the line count, word count, and character/byte count of the lines that grep found to contain “RZA”. Since no specific option is given to wc, it defaults to displaying all three counts.\n\nfind data -name \"*.tsv\" | while read fname; do\n  echo -n \"$fname: \"\n  grep \"RZA\" \"$fname\" | wc \ndone\n# data/pwrds.tsv:        0       0       0\n# data/music_vids.tsv:        0       0       0\n# data/vg_hof.tsv:        0       0       0\n# data/trees.tsv:        0       0       0\n# data/wu_tang.tsv:        1       3      17\n\nThis Bash command sequence combines find, a while loop, echo, grep, and wc to search through .tsv (Tab-Separated Values) files for lines containing a specific pattern (“RZA”) and reports the count of lines, words, and characters for each occurrence. Combining pipelines with loops is an efficient way to sift through a potentially large set of files within a directory, facilitating a detailed aggregation of specified conditions across multiple files.\n\n\n\n\n\n\nConsiderations when using pipes\n\n\n\n\n\n\nEfficiency and Performance\nWhile pipes are incredibly powerful, their use can impact performance, especially when processing large amounts of data. Each pipe involves creating a new subprocess, and data is copied between processes, which can lead to overhead.\nError Handling\nError handling in pipes can be non-trivial, as each command in a pipeline executes independently. Users need to consider how each command handles errors and ensure that the pipeline as a whole behaves as expected even when errors occur.",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Pipes</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Pipes</span>"
     ]
   },
   {
@@ -733,7 +708,7 @@
     "text": "Recap\nPipes (|) allow the output of one command (stdout) to be used as the input (stdin) to another, enabling the chaining of commands to perform complex tasks with the output of one serving as the input for the next. Unix pipes embody the concept of composability in Unix, enabling users to build complex workflows out of simple, single-purpose programs. They are a testament to the flexibility and power of the Unix command line, facilitating a wide range of tasks from simple text processing to sophisticated data analysis and system monitoring.\nThis framework of commands, arguments, options, and the interplay of input (stdin), output (stdout) , and pipes enables sophisticated data processing and manipulation directly from the terminal.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Pipes</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Pipes</span>"
     ]
   },
   {
@@ -744,7 +719,123 @@
     "text": "tail -f /var/log/syslog | grep sshd is useful for real-time monitoring of SSH daemon logs.↩︎",
     "crumbs": [
       "Syntax",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Pipes</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Pipes</span>"
+    ]
+  },
+  {
+    "objectID": "vars.html",
+    "href": "vars.html",
+    "title": "Variables",
+    "section": "",
+    "text": "Unix/Linux Variables\nThis chapter covers the essential aspects of variables in Unix/Linux environments. I’ll be using VS Code because I can quickly switch between shells in the Terminal window.\nVariables in Unix/Linux are used to store data that can be accessed and manipulated by the operating system and applications. They play a crucial role in scripting, programming, and managing system configurations. By storing values in variables, users and scripts can dynamically reference and change these values without hard-coding them, making scripts more flexible and maintainable.\nIn Unix/Linux, variables can hold different types of data, such as strings, integers, or file paths. They can be used for various purposes, including:\nThe significance of variables lies in their ability to simplify complex tasks, enhance automation, and improve the overall efficiency of the Unix/Linux environment.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Variables</span>"
+    ]
+  },
+  {
+    "objectID": "vars.html#unixlinux-variables",
+    "href": "vars.html#unixlinux-variables",
+    "title": "Variables",
+    "section": "",
+    "text": "Customizing the user environment (e.g., setting the default editor).\n\nStoring temporary data within scripts.\n\nPassing data between programs and scripts.\n\nConfiguring system and application settings.\n\n\n\nEnvironment vs. Shell\nIn Unix/Linux, variables are broadly categorized into environment variables and shell variables.\nEnvironment variables are global variables that are available system-wide and can influence the behavior of the shell and other programs. They are inherited by all child processes.\nEnvironment variables are often used to configure the shell environment, set application settings, and pass data to child processes.\n\nCommon environment variables\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nPATH\nSpecifies the directories to search for executable files.\n\n\nHOME\nRepresents the current user’s home directory.\n\n\nUSER\nContains the name of the current user.\n\n\nLANG\nDefines the language and locale settings for applications.\n\n\n\nShell variables are local to the shell session in which they are defined. They are not inherited by child processes unless explicitly exported.\nShell variables are typically used for temporary data storage within scripts, customizing the shell prompt, and managing session-specific settings.\n\nCommon shell variables\n\n\nVariable\nDescription\n\n\n\n\nPS1\nDefines the primary prompt string.\n\n\nPS2\nDefines the secondary prompt string.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Variables</span>"
+    ]
+  },
+  {
+    "objectID": "vars.html#setting-variables",
+    "href": "vars.html#setting-variables",
+    "title": "Variables",
+    "section": "Setting Variables",
+    "text": "Setting Variables\nIn the following sections we’ll cover setting shell and environment variables in your shell. These commands will work in Bash or Zsh.\n\nSetting Shell Variables\nShell variables in Unix/Linux are defined within the context of the current shell session. To set a shell variable, simply assign a value to a variable name using the following syntax:\nVARIABLE_NAME=value\nVariable names are case-sensitive and traditionally use uppercase letters. When creating a new variable, there should be no spaces around the = sign. We can check the value of the new variable using echo:\n\nMY_VAR=\"Hello, World\"\n\n\necho $MY_VAR\n# Hello, World\n\n\n\n\nZsh  on macOS .\n\n\n\nRemoving Shell Variables\nTo remove a shell variable, use the unset command followed by the variable name:\n\nunset MY_VAR\n\nAfter running unset, the variable MY_VAR will no longer exist in the current shell session.\nTo list all shell variables, use the set command:\nset\n\n\nSetting Environment Variables\nEnvironment variables are set similarly to shell variables but are made available to child processes by using the export command. To set an environment variable, follow these steps:\n\nAssign a value to a variable.\nExport the variable.\n\n\nMY_ENV_VAR=\"This is an environment variable\"\nexport MY_ENV_VAR\n\nYou can also combine these steps into a single command:\n\nexport MY_ENV_VAR=\"This is an environment variable\"\n\nTo verify the value of an environment variable, use the echo command:\n\n\n\nZsh  on macOS .\n\n\necho $MY_ENV_VAR\n# This is an environment variable\n\nTo list all environment variables, use the printenv or env command:\n\nprintenv\n\nor\n\nenv",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Variables</span>"
+    ]
+  },
+  {
+    "objectID": "vars.html#using-variables",
+    "href": "vars.html#using-variables",
+    "title": "Variables",
+    "section": "Using Variables",
+    "text": "Using Variables\nThe section below covers how to use environment and shell variables in the terminal and in shell script (.sh) files.\n\nUsing Shell Variables\nUsing shell variables involves referencing them within scripts or commands with a dollar sign ($) prefix and the variable. Below is an example of using a shell variable in an if/then loop:\n\ncount=5\nif [ $count -gt 3 ]; then \n  echo \"Count is greater than 3\"; \nfi\n# Count is greater than 3\n\nThe code above could be stored in a script (if_count.sh), where the shell variables could be used to store and manipulate data dynamically by calling source:\n\ntouch if_count.sh\necho \"count=5\nif [ $count -gt 3 ]; then \n  echo \"Count is greater than 3\"; \nfi\" &gt; if_count.sh\n\n\nsource if_count.sh\n# if_count.sh: line 2: [: -gt: unary operator expected\n\n\n\nUsing Environment Variables\nEnvironment variables can be accessed in the same way as shell variables by prefixing the variable name with a dollar sign ($). Since they are available to child processes, environment variables are particularly useful for configuring application settings and passing data to scripts and programs.\nFor example, PWD works similar to the pwd command, but the path is stored as a string to use in scripts or programs.\n\necho $PWD\n# /Users/username/projects/books/fm-unix\n\nIn a script, we can use environment variables to ensure that certain settings or configurations are applied (like HOME and USER)\nAssume the following is stored in my_config.sh\n#!/bin/bash\necho \"User's home directory: $HOME\"\necho \"Current user: $USER\"\necho \"Current language: $LANG\"\nThese variables don’t need to be defined in the script–they can just be stored and called directly:\n\nsource my_config.sh\n# User's home directory: /Users/username\n# Current user: username\n# Current language: en_US.UTF-8",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Variables</span>"
+    ]
+  },
+  {
+    "objectID": "vars.html#key-differences",
+    "href": "vars.html#key-differences",
+    "title": "Variables",
+    "section": "Key Differences",
+    "text": "Key Differences\nUnderstanding the difference between environment and shell variables is essential for effective Unix/Linux system administration and scripting. It helps users manage and customize their environment efficiently, ensuring that scripts and applications work as intended.\n\nScope\n\n\n\n\n\n\nEnvironment variables have a global scope and are available to all processes.\n\n\nShell variables have a local scope and are limited to the shell session.\n\n\n\n\n\nInheritance\n\n\n\n\n\n\nEnvironment variables are inherited by child processes.\n\n\nShell variables need to be exported to be available to child processes.\n\n\n\n\n\nPurpose\n\n\n\n\n\n\nEnvironment variables are generally used for system-wide configuration and application settings.\n\n\nShell variables are used for script-specific or session-specific tasks.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Variables</span>"
+    ]
+  },
+  {
+    "objectID": "vars.html#recap",
+    "href": "vars.html#recap",
+    "title": "Variables",
+    "section": "Recap",
+    "text": "Recap\nBy understanding and utilizing shell and environment variables effectively, you can enhance the functionality and flexibility of your Unix/Linux scripts and system configurations. We’ll touch on this topic again in the shell scripts section.",
+    "crumbs": [
+      "Syntax",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Variables</span>"
+    ]
+  },
+  {
+    "objectID": "text.html",
+    "href": "text.html",
+    "title": "Text",
+    "section": "",
+    "text": "Plain Text Files\nThe essence of Unix and Linux systems is their powerful simplicity, and nowhere is this more evident than in how they handle text. Text commands and editors form the backbone of these operating systems, enabling users to perform complex tasks with a few keystrokes. This chapter will delve into pattern matching with regular expressions, the fundamental concepts of plain text files, text streams, and the Unix philosophy that prioritizes text as a universal interface for programming and system administration.\nPlain text files are vital to Unix/Linux systems, embodying their philosophy of ‘simple and beautiful.’1 These files only contain text, making them versatile and powerful. Unix/Linux believes that ‘everything is a file,’ including devices, configurations, and processes.2 Plain text files are the universal interface between systems, programs, and users. Standard Unix/Linux tools can easily create, manipulate, and read plain text, making it an essential interface for system administration, programming, and process management.",
+    "crumbs": [
+      "Text"
+    ]
+  },
+  {
+    "objectID": "text.html#plain-text-files",
+    "href": "text.html#plain-text-files",
+    "title": "Text",
+    "section": "",
+    "text": "Simple and Efficient\nPlain text files are simple, versatile, and easy to work with. They can be edited with any text editor and don’t require specialized software, making actions transparent and learning accelerated. Plain text can also be easily manipulated using standard Unix/Linux text-processing tools such as grep, sed, and awk. With simple one-liners from the command line, users can search for a specific line, replace text across multiple files, or transform data formats.\n\n\nCommunication Between Programs\nUnix/Linux philosophy values specialized programs that work together efficiently. Plain text files are used as inputs or outputs in pipelines of simple, single-purpose programs to perform complex operations.",
+    "crumbs": [
+      "Text"
+    ]
+  },
+  {
+    "objectID": "text.html#text-streams",
+    "href": "text.html#text-streams",
+    "title": "Text",
+    "section": "Text Streams",
+    "text": "Text Streams\nA text stream in Unix and Linux is a simple, sequential flow of characters. Text streams can be inputs from keyboards, outputs to a display screen, or the data within a file. The concept of text streams is fundamental to the Unix philosophy; it allows for the chaining together of commands, where the output of one command can be seamlessly passed as input to another through a mechanism known as piping.",
+    "crumbs": [
+      "Text"
+    ]
+  },
+  {
+    "objectID": "text.html#text-editors-and-the-unix-philosophy",
+    "href": "text.html#text-editors-and-the-unix-philosophy",
+    "title": "Text",
+    "section": "Text Editors and The Unix Philosophy",
+    "text": "Text Editors and The Unix Philosophy\nThe Unix philosophy emphasizes simplicity, clarity, and the principle of “doing one thing well.” Plain text embodies this philosophy, serving as a simple, straightforward, and versatile means of interaction between the user, the system, and the programs running on it. This philosophy also underpins the design of Unix text editors, which range from the simple (like nano) to the powerful and extensible (like vi and emacs).\nText commands and editors are not just tools but the medium through which users communicate with the system and manipulate it to their will. Mastering these commands and editors opens up a world of possibilities for efficient system management, programming, and beyond.\nThis section will explore the core text commands that every Unix and Linux user should know, from file manipulation to text processing and searching. We will also introduce the most popular text editors, guiding you through their primary usage and highlighting their unique features.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Text"
+    ]
+  },
+  {
+    "objectID": "text.html#footnotes",
+    "href": "text.html#footnotes",
+    "title": "Text",
+    "section": "",
+    "text": "Doug McIlroy on Unix programming: “Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.” - Wikipedia↩︎\nLinus Torvalds (creator and lead developer of the Linux kernel) has clarified this to, “The UNIX philosophy is often quoted as ”everything is a file”, but that really means ”everything is a stream of bytes.”↩︎",
+    "crumbs": [
+      "Text"
     ]
   },
   {
@@ -752,7 +843,7 @@
     "href": "symbols_patterns.html",
     "title": "Symbols & Patterns",
     "section": "",
-    "text": "Wildcards\nWildcards (also known as glob patterns) are mostly used in commands to match filenames, paths, or filter text (ls, cp, mv, rm, etc.). Arguments can include wildcards, which the shell expands into a list of files or directories that match the pattern.",
+    "text": "Wildcards\nRegular expressions are powerful tools for searching and manipulating text data. A regular expression (or ‘regex’) is made up of special symbols that define specific patterns to be identified or transformed. The regex patterns are not the data themselves, but rather a framework for locating or modifying text data. In this chapter, we’ll explore wildcards, regular expressions, and other special characters.\nWildcards (also known as glob patterns) are mostly used in commands to match filenames, paths, or filter text (ls, cp, mv, rm, etc.). Arguments can include wildcards, which the shell expands into a list of files or directories that match the pattern.",
     "crumbs": [
       "Text",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Symbols & Patterns</span>"
@@ -796,7 +887,7 @@
     "href": "text_commands.html",
     "title": "Manipulating Text",
     "section": "",
-    "text": "The Text Stream\nUnix/Linux conceptualizes text as a stream, a continuous sequence of characters that can be manipulated in real-time. Streams are crucial for understanding how Unix/Linux commands process text. A text stream can originate from files, input devices, or even the output of other commands. Treating text as a steady stream of inputs offers a versatile and powerful method for text manipulation.",
+    "text": "The Text Stream\nThe Unix and Linux operating systems thrive on simplicity and efficiency, principles elegantly manifested in text handling. Central to this ecosystem are the commands explicitly designed for text manipulation.\nUnix/Linux conceptualizes text as a stream, a continuous sequence of characters that can be manipulated in real-time. Streams are crucial for understanding how Unix/Linux commands process text. A text stream can originate from files, input devices, or even the output of other commands. Treating text as a steady stream of inputs offers a versatile and powerful method for text manipulation.",
     "crumbs": [
       "Text",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Manipulating Text</span>"
@@ -891,6 +982,16 @@
     ]
   },
   {
+    "objectID": "scripts.html",
+    "href": "scripts.html",
+    "title": "Shell Scripts",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Shell Scripts"
+    ]
+  },
+  {
     "objectID": "format.html",
     "href": "format.html",
     "title": "Format",
@@ -913,11 +1014,21 @@
     ]
   },
   {
+    "objectID": "use_cases.html",
+    "href": "use_cases.html",
+    "title": "Use Cases",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.",
+    "crumbs": [
+      "Use Cases"
+    ]
+  },
+  {
     "objectID": "file_size.html",
     "href": "file_size.html",
     "title": "Find Large Files",
     "section": "",
-    "text": "find",
+    "text": "find\nScenario: You’ve been asked to discover any files over a certain size. This could be due concerns over disk space, performance optimization, backup and recovery, network load reduction, compliance, auditing, a system migration, user quotas, or internal data management policies (usually related to cost).",
     "crumbs": [
       "Use Cases",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Find Large Files</span>"
@@ -1005,7 +1116,7 @@
     "href": "syntax_ref.html#system-administration",
     "title": "Appendix A — Syntax Reference",
     "section": "System Administration",
-    "text": "System Administration\n\nwho\nShow who is logged in.\n\n\nwhoami\nDisplay current user name.\n\n\nhostname\nShow or set system’s network name.\n\n\ndate\nDisplay or set the date and time.\n\n\nuptime\nShow how long the system has been running.\n\n\ncal\nShows a calendar of the current month or a specified month and year.\n\n\ndf\nReport file system disk space usage.\n\n\ndu\nShow disk usage statistics.\n\n\nps\nReport a snapshot of the current processes.\n\n\nfree\nDisplays the amount of free and used memory in the system, including physical memory (RAM) and swap space.\n\n\ntop\nDisplay tasks and system status interactively.\n\n\n\ntop in iTerm2\n\n\n\n\niotop\nMonitor disk I/O usage by processes.\n\n\nhtop\nInteractive process viewer, similar to top but more configurable.\n\n\nvmstat\nReport virtual memory statistics.\n\n\ndmesg\nDisplay the kernel-related messages.\n\n\nclear\nClear the terminal screen.\n\n\nyes\nOutput a string repeatedly until killed.\nNOTE: Use Ctrl + C to interrupt the yes command.\n\n\nexit\nExits the shell or current command session.\n\n\nxargs\nBuild and execute command lines from standard input.\n\n\ncrontop\nSchedule periodic background work.\n\n\nsystemctl\nControl the systemd system and service manager.\n\n\njournalctl\nQuery and display messages from the journal.",
+    "text": "System Administration\n\nwho\nShow who is logged in.\n\n\nwhoami\nDisplay current user name.\n\n\nhostname\nShow or set system’s network name.\n\n\nchsh\nChange a user’s default login shell.\n\n\ndate\nDisplay or set the date and time.\n\n\nuptime\nShow how long the system has been running.\n\n\ncal\nShows a calendar of the current month or a specified month and year.\n\n\ndf\nReport file system disk space usage.\n\n\ndu\nShow disk usage statistics.\n\n\nps\nReport a snapshot of the current processes.\n\n\nfree\nDisplays the amount of free and used memory in the system, including physical memory (RAM) and swap space.\n\n\ntop\nDisplay tasks and system status interactively.\n\n\n\ntop in iTerm2\n\n\n\n\niotop\nMonitor disk I/O usage by processes.\n\n\nhtop\nInteractive process viewer, similar to top but more configurable.\n\n\nvmstat\nReport virtual memory statistics.\n\n\ndmesg\nDisplay the kernel-related messages.\n\n\nclear\nClear the terminal screen.\n\n\nyes\nOutput a string repeatedly until killed.\nNOTE: Use Ctrl + C to interrupt the yes command.\n\n\nexit\nExits the shell or current command session.\n\n\nxargs\nBuild and execute command lines from standard input.\n\n\ncrontop\nSchedule periodic background work.\n\n\nsystemctl\nControl the systemd system and service manager.\n\n\njournalctl\nQuery and display messages from the journal.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Syntax Reference</span>"
@@ -1078,6 +1189,226 @@
     ]
   },
   {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Appendix B — Data files",
+    "section": "",
+    "text": "Alan J. Perlis’ Epigrams\nThe ajperlis_epigrams.txt file contains a collection of witty programming and systems design epigrams by Alan J. Perlis.1 These statements cover various topics related to computer programming, software architecture, and philosophy. The epigrams offer nuggets of reflective and forward-thinking wisdom that provoke thought on the complexities of technology, the art of programming, and the interplay between human cognition and computational logic. This collection is invaluable for programmers and computer scientists interested in the cultural and intellectual history of computing.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data files</span>"
+    ]
+  },
+  {
+    "objectID": "data.html#music-videos",
+    "href": "data.html#music-videos",
+    "title": "Appendix B — Data files",
+    "section": "Music Videos",
+    "text": "Music Videos\nThe file music_vids.tsv is a tab-separated values (TSV) data file that details some of the most expensive music videos ever produced.2 Key information captured in the file includes:\n\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nrank\nThe music video’s position based on the production cost.\n\n\ntitle\nThe name of the music video.\n\n\nartists\nThe artist(s) who performed the song.\n\n\ndirector\nThe director of the music video.\n\n\nyear\nThe year the music video was released.\n\n\ncost_nominal\nThe production cost at the release time, presented in U.S. dollars.\n\n\ncost_adj\nThe production cost adjusted to current values for inflation, also presented in U.S. dollars.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data files</span>"
+    ]
+  },
+  {
+    "objectID": "data.html#passwords",
+    "href": "data.html#passwords",
+    "title": "Appendix B — Data files",
+    "section": "Passwords",
+    "text": "Passwords\npwrds.csv is a CSV (comma-separated values) file containing a comprehensive list of commonly used passwords and attributes.3 The dataset contains information about passwords’ strength, popularity rank, and resilience against online attacks. The dataset includes the following variables:\n\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\npassword\nThe actual password text.\n\n\nrank\nNumerical ranking based on the frequency or commonness of the password.\n\n\nstrength\nA numerical value representing the estimated password strength, where higher numbers indicate stronger passwords.\n\n\nonline_crack\nAn estimate of how long it would take to crack this password using online attack methods, expressed in units from seconds to years.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data files</span>"
+    ]
+  },
+  {
+    "objectID": "data.html#roxanne",
+    "href": "data.html#roxanne",
+    "title": "Appendix B — Data files",
+    "section": "Roxanne",
+    "text": "Roxanne\nThe file roxanne.txt contains the lyrics to the song “Roxanne” by The Police.4 The structure of the lyrics emphasizes the repeated refrain, “You don’t have to put on the red light,” which is a metaphor for not having to engage in prostitution.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data files</span>"
+    ]
+  },
+  {
+    "objectID": "data.html#trees",
+    "href": "data.html#trees",
+    "title": "Appendix B — Data files",
+    "section": "Trees",
+    "text": "Trees\nThe file trees.csv is a comma-separated value (CSV) document that catalogs some of the tallest trees in the world, providing detailed information on each tree listed.5 This file is structured to provide a quick reference to some of the most significant trees around the world, highlighting their impressive heights and the diverse locations they inhabit. Each entry in the dataset includes the following fields:\n\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\ntree\nIdentifier or common name used for the tree.\n\n\nspecies\nScientific name of the tree species.\n\n\nclass\nBiological classification (e.g., Conifer, Flowering plant).\n\n\nht_meters\nHeight of the tree in meters.\n\n\nht_feet\nHeight of the tree in feet.\n\n\nlocation\nSpecific location where the tree is found.\n\n\ncontinent\nContinent on which the tree is located.\n\n\nname\nThe colloquial name given to the tree, if applicable.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data files</span>"
+    ]
+  },
+  {
+    "objectID": "data.html#video-game-hall-of-fame",
+    "href": "data.html#video-game-hall-of-fame",
+    "title": "Appendix B — Data files",
+    "section": "Video Game Hall of Fame",
+    "text": "Video Game Hall of Fame\nThe file vg_hof.csv is a comma-separated values (CSV) document that contains a list of video games inducted into a hall of fame over several years, from 2015 to 2024.6 Each record in the dataset includes the year of induction, the game’s name, the developer, and the year the game was initially released.\nThe fields detailed in the dataset are:\n\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nyear\nThe year the game was inducted into the hall of fame.\n\n\ngame\nThe name of the video game.\n\n\ndeveloper\nThe company or individual who developed the game.\n\n\nyear_released\nThe original year of the game’s release.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data files</span>"
+    ]
+  },
+  {
+    "objectID": "data.html#world-health-organization-tuberculosis",
+    "href": "data.html#world-health-organization-tuberculosis",
+    "title": "Appendix B — Data files",
+    "section": "World Health Organization Tuberculosis",
+    "text": "World Health Organization Tuberculosis\nwho_tb_data.csv and who_tb_data.tsv are comma and tab-separated values (CSV and TSV) files that provides tuberculosis (TB) case data alongside population figures for selected countries over specific years, as reported by the World Health Organization (WHO).7\nThe dataset includes the following fields:\n\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\ncountry\nThe name of the country where the data was recorded.\n\n\nyear\nThe year in which the data was collected.\n\n\ntype\nA descriptor of the data type, which can be either ‘cases’ indicating the number of tuberculosis cases reported, or ‘population’ representing the total population of the country in that year.\n\n\ncount\nThe numerical value corresponding to the type, either the number of TB cases or the population size.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data files</span>"
+    ]
+  },
+  {
+    "objectID": "data.html#wu-tang-clan",
+    "href": "data.html#wu-tang-clan",
+    "title": "Appendix B — Data files",
+    "section": "Wu-Tang Clan",
+    "text": "Wu-Tang Clan\nwu_tang.csv is a comma-separated data file that provides the stage names and real names of the members of the Wu-Tang Clan, a highly influential hip-hop group.8 Each entry in the dataset correlates a member’s popularly known stage name with their legal name, offering insight into the identities behind the personas. The data structure includes two main fields:\n\n\n\nVariable\nDescription\n\n\n\n\nMember\nThe stage name of the Wu-Tang Clan member.\n\n\nName\nThe real name of the member.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data files</span>"
+    ]
+  },
+  {
+    "objectID": "data.html#footnotes",
+    "href": "data.html#footnotes",
+    "title": "Appendix B — Data files",
+    "section": "",
+    "text": "Read the Wikipedia or download the original PDF.↩︎\nFrom the List of most expensive music videos on Wikipedia↩︎\nThe original data comes from Information is Beautiful↩︎\nRead more about Roxanne (The Police song) on the Wikipedia page.↩︎\nFrom the List of tallest trees on Wikipedia.↩︎\nFrom the World Video Game Hall of Fame Wikipedia page.↩︎\nFrom the WHO global tuberculosis programme↩︎\nFrom the Wu-Tang Clan Wikipedia page.↩︎",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data files</span>"
+    ]
+  },
+  {
+    "objectID": "fish.html",
+    "href": "fish.html",
+    "title": "Appendix C — Fish",
+    "section": "",
+    "text": "The  Fish shell\nFish, or the Friendly Interactive SHell, is a smart and user-friendly command line shell for Linux-like operating systems. It’s designed to be more interactive and user-friendly than traditional shells like Bash or Zsh.1",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Fish</span>"
+    ]
+  },
+  {
+    "objectID": "fish.html#the-fish-shell",
+    "href": "fish.html#the-fish-shell",
+    "title": "Appendix C — Fish",
+    "section": "",
+    "text": "Key features\nAutosuggestions\nFish suggests commands as you type based on history and completions, just like a web browser. This feature allows users to see and reuse previous commands by simply pressing the right arrow key to complete the suggested command, which can significantly speed up typing and reduce errors.\nSyntax Highlighting\nOne of Fish’s most noticeable features is its real-time syntax highlighting. Commands that are valid change color as you type them. It also helps users catch errors before the command is executed, such as highlighting misspelled commands or incorrect paths in red.\nWeb-Based Configuration\nFish includes a web-based configuration interface (accessible via the fish_config command), which makes customizing the shell settings and prompt easier for users who prefer a graphical interface over editing configuration files manually (or if you’re new to the command line).\nEnhanced Tab Completion\nFish provides intelligent tab completions for commands, file names, variables, and user-defined functions. It not only completes based on the prefix but also considers the whole line context, making the completions more relevant.\nImproved Variables and Scoping\nFish simplifies variable management, including universal variables that are automatically shared between all running shells and persist across restarts without needing explicit saving to a file. Variable scoping is also more straightforward, helping avoid common bugs seen in other shells.\nFunction Autoloads\nFish allows functions to be defined in individual files and automatically loads them only when needed. This lazy-loading of functions helps speed up the start time of the shell.\nExtensible\nFish is designed to be easily extensible through plugins. The Fisherman and Oh My Fish frameworks offer many plugins and themes designed to enhance Fish’s capabilities or customize its appearance.\nMan Page Completions\nFish generates command completions automatically from man pages, which means it often supports completions for all the installed commands without needing special configuration.\nNo Configuration Needed\nFish is designed to work properly out of the box, without needing to configure it extensively. This makes it very accessible for new users or those who want a powerful shell without the need to customize or configure it heavily.\nUser-Friendly Scripts\nFish uses a syntax that is slightly different from the traditional POSIX shell syntax, which is often simpler and easier to understand. For example, loops and conditionals are clearer, and there is no need for explicit subshell management.\n\n\nCustomizations\n Fish\nFish customizations are generally done through the config.fish file, typically located in ~/.config/fish/. Fish makes it easy to customize the prompt using the fish_prompt function.\nfunction fish_prompt\n    set_color green\n    echo -n (whoami) \"@\" (hostname) \" \"\n    set_color blue\n    echo -n (prompt_pwd)\n    set_color normal\n    echo -n \"&gt; \"\nend\nThis prompt shows the username in green, the hostname, and the current working directory in blue, followed by a &gt; symbol.\nAliases: Fish uses the alias command similar to Bash and Zsh.\nalias ll=\"ls -la\"\nFunctions: In Fish, functions are first-class citizens and are easy to define.\nfunction mkcd\n    mkdir -p $argv; and cd $argv\nend\n\n\nAdvanced\nUniversal Variables\nFish supports universal variables that persist across sessions and are shared among all Fish instances.\nset -U fish_greeting \"Welcome to Fish Shell\"\nPlugins and Themes\nFish has a growing ecosystem of plugins and themes, often managed by the fisher plugin manager.\ncurl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher\nfisher install oh-my-fish/theme-bobthefish",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Fish</span>"
+    ]
+  },
+  {
+    "objectID": "fish.html#footnotes",
+    "href": "fish.html#footnotes",
+    "title": "Appendix C — Fish",
+    "section": "",
+    "text": "Ars Technica has a great summary comparing Fish to other shells.↩︎",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Fish</span>"
+    ]
+  },
+  {
+    "objectID": "macos.html",
+    "href": "macos.html",
+    "title": "Appendix D — macOS",
+    "section": "",
+    "text": "macOS Terminal\nUsing Unix/Linux on macOS offers a unique and powerful environment with macOS’s Terminal, but it’s important to be aware of the differences and limitations inherent in macOS’s implementation of Unix. Below we cover some special considerations rooted in macOS’s distinct architecture and its version of Unix.\nThe default Terminal app on macOS provides a solid interface to access the Unix command line, but there are other terminal emulators available (like iTerm2) that offer additional features such as split panes, search, and customization options.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>macOS</span>"
+    ]
+  },
+  {
+    "objectID": "macos.html#recap",
+    "href": "macos.html#recap",
+    "title": "Appendix D — macOS",
+    "section": "Recap",
+    "text": "Recap\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>macOS</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "Appendix E — Quarto",
+    "section": "",
+    "text": "Install\nIt is particularly useful for those looking to combine Unix/Linux command line operations with document creation, offering a way to embed executable code within documents. The next sections will guide you through downloading and installing Quarto, .qmd documents, YAML headers and Bash code chunks.\nQuarto can be installed from its official website. Follow the platform-specific instructions to install it on your system. Make sure Quarto has been installed correctly and is available in your system’s PATH.\nCheck if Quarto is in PATH:\nquarto --version\n## 1.5.28\nIf the Quarto version isn’t on your PATH, you’ll need to add the location of your quarto installation to PATH. You can do that with the commands below (depending on your shell).\nYou can also use which to locate quarto path:\nwhich quarto\n## /usr/local/bin/quarto\nOn macOS, you can use find in the Terminal:",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>E</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#install",
+    "href": "quarto.html#install",
+    "title": "Appendix E — Quarto",
+    "section": "",
+    "text": "Bash:1\n\n\necho 'export PATH=\"$PATH:/path/to/quarto\"' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\n\n\n\n\nZsh:2\n\n\necho 'export PATH=\"$PATH:/path/to/quarto\"' &gt;&gt; ~/.zshrc\nsource ~/.zshrc\n\n\n\n\n\n\nfind / -name quarto 2&gt;/dev/null",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>E</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#development",
+    "href": "quarto.html#development",
+    "title": "Appendix E — Quarto",
+    "section": "Development",
+    "text": "Development\nIf you decide to use Quarto documents, you’ll need to decide on the tool (or development environment) you want to use. At the time of this writing, Quarto has tutorials for getting started in RStudio, VS Code, Jupyter, Neovim, or a text editor (like Sublime Text).3 I recommend using an IDE like Visual Studio Code (VS Code) for several reasons:4\n\nIDE Features\nVS Code offers typical IDE features (syntax highlighting, code completion, linting, formatting, debugging, etc.) and a Quarto extension. VS Code also has a wide range of extensions for Bash scripting that can significantly streamline development.5\n\n\n\n\n\n\n\nExtensibility\nVS Code runs on multiple platforms (Windows, macOS, and Linux), which means you can maintain scripts across different environments using the same tool.\n\n\n\n\n\n\nVS Code also supports remote development (i.e., the ability to write and debug scripts running on remote servers and containers from your local machine).\n\n\n\n\n\n\n\n\n\n\n\n\nGit Integration\nVS Code also has excellent support for version control systems, especially Git.\n\n\n\n\n\n\nThis integration makes it easier to track changes, revert to previous versions of scripts, and manage updates, all within the same editor environment.\n\n\n\n\n\n\n\n\n\n\n\n\nCustomization\nVS Code can be customized and configured to suit each user’s specific needs, including setting up a personalized development environment with their preferred settings, key bindings, and even look and feel.\n\n\n\n\n\n\n\nQuarto Preview\nQuarto documents can be configured to render automatically, which gives users the ability to view document outputs as they’re developed in real-time.\n\n\n\n\n\n\n\nShell integration\nA Terminal window is available in the IDE as a separate window, giving quick access to the command line (with multiple shell options):\n\n\n\n\n\nOverall, VS Code provides a powerful, versatile, and user-friendly platform to develop, maintain, and manage Shell scripts. There is also a large community around VS Code with lots of tutorials, guides, and forums where users can find support.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>E</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#quarto-documents",
+    "href": "quarto.html#quarto-documents",
+    "title": "Appendix E — Quarto",
+    "section": "Quarto Documents",
+    "text": "Quarto Documents\nQuarto documents are a flexible and powerful tool for creating dynamic and reproducible reports, presentations, and publications. Quarto documents can support multiple programming languages, including R, Python, Julia, and Bash. Users can combine narrative text with code in a single document, rendering it into various formats like HTML, PDF, and Word.\nThis feature proves not only invaluable for data scientists, but for anyone looking to learn a new programming language. Quarto documents are a perfect ‘sandbox’ to experiment with code, take notes, and review the outputs. Moreover, Quarto has the supports cross-referencing, advanced layout options, and beautiful web and book publishing workflows.6\nQuarto documents consist of the following elements:\n\nYAML Header: This is used to specify the document’s title, author, and output format.\nNarrative Text: Plain language explanations and context.\nCode Chunks: Executable code blocks from languages like R, Python, Bash, or Julia.\n\nAdditional features include:\n\nResults: the output is displayed directly from the executable code chunks (tables, graphs, etc.).\nCross-references and Citations: Link to figures, tables, sections, or reference bibliographic sources.\nFigures and Tables: Markdown syntax can be used to add images and tables.\nAppendices and Bibliography: Footnotes and references.\n\n\n\n\n\n\n\nLiterate Programming\n\n\n\n\n\n\nLiterate programming is a programming paradigm that intertwines code with human-readable narrative, allowing programmers to write programs in the order best suited for human understanding. Donald Knuth developed this approach to make code more understandable and maintainable.\n\n‘Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.’ - Donald Knuth. Literate Programming (1984) in Literate Programming. CSLI, 1992, pg. 99.\n\nLiterate programming can foster clearer communication of complex programming concepts and enhances collaboration among developers.\n\n\n\n\n\nYAML header\nYAML is a lightweight markup language that’s easy to write and read. In Quarto, the YAML header is used to configure document properties such as the title, engine, output format, and more. It serves as the foundation for controlling how your Quarto document behaves and appears.\nQuarto documents are written in markdown and can include executable code in various programming languages, including Unix commands. The YAML header is placed between three dashes --- at the top of each Quarto document to specify metadata and global options.\n---\ntitle: \"Using Bash\"\n---\nTo run Bash commands, specify knitr in the engine field of in the YAML header of the Quarto file, and any additional key-value pairs:7\n---\ntitle: \"Using Bash\"\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n---\n\n\nCode Chunks\nOne of the powerful features of Quarto is the ability to integrate executable code chunks into Markdown documents. You can create bash code chunks using the following syntax:\n```{bash}\necho \"foo\" \n```\nBash code chunks allow you to include executable commands within your Quarto documents. You can also specify the code chunk options with the hash-pipe (#|):8\n```{bash}\n#| code-fold: show\n#| code-summary: 'show/hide echo'\necho \"foo\" \n```\nWhen the document is rendered, the narrative text is included with the output from the commnads.\n\n\nshow/hide echo\necho \"foo\"\n## foo\n\n\nThis simplicity allows authors to focus on their content rather than formatting.\n\n\nCode Chunk Isolation\nWhen incorporating Bash code chunks into Quarto documents, an essential detail to remember is the behavior of the working directory during file rendering. By default, Quarto sets the working directory to the location of the current document within the project.\nConsider the following scenario in a Quarto project:\n\n# This code chunk displays the current working directory\npwd\n## /Users/mjfrigaard/projects/books/fm-unix\n\nAlthough we can navigate to a different directory within a given code chunk:\n\ncd data # Change the current working directory to 'data' \npwd # confirm the change\n## /Users/mjfrigaard/projects/books/fm-unix/data\n\nIt’s crucial to note that Quarto resets the working directory to the document’s location for each new code chunk:\n\n# Verifying the working directory, which reverts to \npwd # the document's location for each new code chunk\n## /Users/mjfrigaard/projects/books/fm-unix\n\nThis behavior is different than what we’d see in Posit Workbench’s Terminal on my local machine:\n\nThe current working directory is ~/projects/books/fm-unix/ (as indicated by the Terminal prompt):\n\n\n\n\nfm-unix/ directory\n\n\n\nIf we change the working directory with .., we are in the books/ directory (as indicated by the books in the Shell window):\n\n\n\n\nbooks/ directory\n\n\n\nWhen we check the current working directory again with pwd, we see the location is still ~/projects/books/.\n\n\n\n\nStill in the books/ directory\n\n\nThis difference in behavior can be frustrating, but it also means we’ll start with a ‘clean slate’ in each new code chunk!",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>E</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#recap",
+    "href": "quarto.html#recap",
+    "title": "Appendix E — Quarto",
+    "section": "Recap",
+    "text": "Recap\nThis chapter covered a guide on how to use Quarto for embedding and executing Bash code, a powerful feature for Unix/Linux users and developers who need to document and automate command line tasks.\n\nSetting Up Quarto: We covered the resources and prerequisites for installing Quarto, and how to use Quarto within Visual Studio Code (VS Code). We included setting VS Code with the Quarto extension, and options for configuring the IDE.\nWriting and Executing Bash Code: We discussed setting up Bash in Quarto documents, including how to configure the YAML header in the Quarto document to include Bash as the programming language, and ensuring Quarto documents can recognize and execute Bash code.\n\nVS Code and Quarto are powerful tools. The IDE provides a user-friendly interface, extensive plugin ecosystem, and strong support for Quarto’s interactive capabilities.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>E</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#footnotes",
+    "href": "quarto.html#footnotes",
+    "title": "Appendix E — Quarto",
+    "section": "",
+    "text": "Bash is common in Linux and older macOS versions↩︎\nZsh is now the default in shell in macOS↩︎\nFor what its worth, I’ve been using RStudio for years and love it. However, I’ve also used Quarto in VS Code and love many of it’s features.↩︎\nIf you prefer a ‘Free/Libre Open Source Software Binary of VS Code’, check out vscodium↩︎\nBash Debug and Bash IDE are VS Code extensions specifically designed for Bash scripting, which we’ll cover in a later chapter.↩︎\nIn fact, this entire book was written using Quarto documents.↩︎\nRead more about configuring shell code blocks in Quarto in the documentation.↩︎\nConsult the full list of code chunk options in the Quarto documentation.↩︎",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>E</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
     "objectID": "glossary.html",
     "href": "glossary.html",
     "title": "Glossary",
@@ -1130,204 +1461,6 @@
     "crumbs": [
       "Appendices",
       "Glossary"
-    ]
-  },
-  {
-    "objectID": "macos.html",
-    "href": "macos.html",
-    "title": "Appendix B — macOS",
-    "section": "",
-    "text": "macOS Terminal\nThe default Terminal app on macOS provides a solid interface to access the Unix command line, but there are other terminal emulators available (like iTerm2) that offer additional features such as split panes, search, and customization options.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>macOS</span>"
-    ]
-  },
-  {
-    "objectID": "macos.html#recap",
-    "href": "macos.html#recap",
-    "title": "Appendix B — macOS",
-    "section": "Recap",
-    "text": "Recap\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>macOS</span>"
-    ]
-  },
-  {
-    "objectID": "quarto.html",
-    "href": "quarto.html",
-    "title": "Appendix C — Quarto",
-    "section": "",
-    "text": "Install\nQuarto can be installed from its official website. Follow the platform-specific instructions to install it on your system. Make sure Quarto has been installed correctly and is available in your system’s PATH.\nCheck if Quarto is in PATH:\nquarto --version\n## 1.5.28\nIf the Quarto version isn’t on your PATH, you’ll need to add the location of your quarto installation to PATH. You can do that with the commands below (depending on your shell).\nYou can also use which to locate quarto path:\nwhich quarto\n## /usr/local/bin/quarto\nOn macOS, you can use find in the Terminal:",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Quarto</span>"
-    ]
-  },
-  {
-    "objectID": "quarto.html#install",
-    "href": "quarto.html#install",
-    "title": "Appendix C — Quarto",
-    "section": "",
-    "text": "Bash:1\n\n\necho 'export PATH=\"$PATH:/path/to/quarto\"' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\n\n\n\n\nZsh:2\n\n\necho 'export PATH=\"$PATH:/path/to/quarto\"' &gt;&gt; ~/.zshrc\nsource ~/.zshrc\n\n\n\n\n\n\nfind / -name quarto 2&gt;/dev/null",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Quarto</span>"
-    ]
-  },
-  {
-    "objectID": "quarto.html#development",
-    "href": "quarto.html#development",
-    "title": "Appendix C — Quarto",
-    "section": "Development",
-    "text": "Development\nIf you decide to use Quarto documents, you’ll need to decide on the tool (or development environment) you want to use. At the time of this writing, Quarto has tutorials for getting started in RStudio, VS Code, Jupyter, Neovim, or a text editor (like Sublime Text).3 I recommend using an IDE like Visual Studio Code (VS Code) for several reasons:4\n\nIDE Features\nVS Code offers typical IDE features (syntax highlighting, code completion, linting, formatting, debugging, etc.) and a Quarto extension. VS Code also has a wide range of extensions for Bash scripting that can significantly streamline development.5\n\n\n\n\n\n\n\nExtensibility\nVS Code runs on multiple platforms (Windows, macOS, and Linux), which means you can maintain scripts across different environments using the same tool.\n\n\n\n\n\n\nVS Code also supports remote development (i.e., the ability to write and debug scripts running on remote servers and containers from your local machine).\n\n\n\n\n\n\n\n\n\n\n\n\nGit Integration\nVS Code also has excellent support for version control systems, especially Git.\n\n\n\n\n\n\nThis integration makes it easier to track changes, revert to previous versions of scripts, and manage updates, all within the same editor environment.\n\n\n\n\n\n\n\n\n\n\n\n\nCustomization\nVS Code can be customized and configured to suit each user’s specific needs, including setting up a personalized development environment with their preferred settings, key bindings, and even look and feel.\n\n\n\n\n\n\n\nQuarto Preview\nQuarto documents can be configured to render automatically, which gives users the ability to view document outputs as they’re developed in real-time.\n\n\n\n\n\n\n\nShell integration\nA Terminal window is available in the IDE as a separate window, giving quick access to the command line (with multiple shell options):\n\n\n\n\n\nOverall, VS Code provides a powerful, versatile, and user-friendly platform to develop, maintain, and manage Shell scripts. There is also a large community around VS Code with lots of tutorials, guides, and forums where users can find support.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Quarto</span>"
-    ]
-  },
-  {
-    "objectID": "quarto.html#quarto-documents",
-    "href": "quarto.html#quarto-documents",
-    "title": "Appendix C — Quarto",
-    "section": "Quarto Documents",
-    "text": "Quarto Documents\nQuarto documents are a flexible and powerful tool for creating dynamic and reproducible reports, presentations, and publications. Quarto documents can support multiple programming languages, including R, Python, Julia, and Bash. Users can combine narrative text with code in a single document, rendering it into various formats like HTML, PDF, and Word.\nThis feature proves not only invaluable for data scientists, but for anyone looking to learn a new programming language. Quarto documents are a perfect ‘sandbox’ to experiment with code, take notes, and review the outputs. Moreover, Quarto has the supports cross-referencing, advanced layout options, and beautiful web and book publishing workflows.6\nQuarto documents consist of the following elements:\n\nYAML Header: This is used to specify the document’s title, author, and output format.\nNarrative Text: Plain language explanations and context.\nCode Chunks: Executable code blocks from languages like R, Python, Bash, or Julia.\n\nAdditional features include:\n\nResults: the output is displayed directly from the executable code chunks (tables, graphs, etc.).\nCross-references and Citations: Link to figures, tables, sections, or reference bibliographic sources.\nFigures and Tables: Markdown syntax can be used to add images and tables.\nAppendices and Bibliography: Footnotes and references.\n\n\n\n\n\n\n\nLiterate Programming\n\n\n\n\n\n\nLiterate programming is a programming paradigm that intertwines code with human-readable narrative, allowing programmers to write programs in the order best suited for human understanding. Donald Knuth developed this approach to make code more understandable and maintainable.\n\n‘Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.’ - Donald Knuth. Literate Programming (1984) in Literate Programming. CSLI, 1992, pg. 99.\n\nLiterate programming can foster clearer communication of complex programming concepts and enhances collaboration among developers.\n\n\n\n\n\nYAML header\nYAML is a lightweight markup language that’s easy to write and read. In Quarto, the YAML header is used to configure document properties such as the title, engine, output format, and more. It serves as the foundation for controlling how your Quarto document behaves and appears.\nQuarto documents are written in markdown and can include executable code in various programming languages, including Unix commands. The YAML header is placed between three dashes --- at the top of each Quarto document to specify metadata and global options.\n---\ntitle: \"Using Bash\"\n---\nTo run Bash commands, specify knitr in the engine field of in the YAML header of the Quarto file, and any additional key-value pairs:7\n---\ntitle: \"Using Bash\"\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n---\n\n\nCode Chunks\nOne of the powerful features of Quarto is the ability to integrate executable code chunks into Markdown documents. You can create bash code chunks using the following syntax:\n```{bash}\necho \"foo\" \n```\nBash code chunks allow you to include executable commands within your Quarto documents. You can also specify the code chunk options with the hash-pipe (#|):8\n```{bash}\n#| code-fold: show\n#| code-summary: 'show/hide echo'\necho \"foo\" \n```\nWhen the document is rendered, the narrative text is included with the output from the commnads.\n\n\nshow/hide echo\necho \"foo\"\n## foo\n\n\nThis simplicity allows authors to focus on their content rather than formatting.\n\n\nCode Chunk Isolation\nWhen incorporating Bash code chunks into Quarto documents, an essential detail to remember is the behavior of the working directory during file rendering. By default, Quarto sets the working directory to the location of the current document within the project.\nConsider the following scenario in a Quarto project:\n\n# This code chunk displays the current working directory\npwd\n## /Users/mjfrigaard/projects/books/fm-unix\n\nAlthough we can navigate to a different directory within a given code chunk:\n\ncd data # Change the current working directory to 'data' \npwd # confirm the change\n## /Users/mjfrigaard/projects/books/fm-unix/data\n\nIt’s crucial to note that Quarto resets the working directory to the document’s location for each new code chunk:\n\n# Verifying the working directory, which reverts to \npwd # the document's location for each new code chunk\n## /Users/mjfrigaard/projects/books/fm-unix\n\nThis behavior is different than what we’d see in Posit Workbench’s Terminal on my local machine:\n\nThe current working directory is ~/projects/books/fm-unix/ (as indicated by the Terminal prompt):\n\n\n\n\nfm-unix/ directory\n\n\n\nIf we change the working directory with .., we are in the books/ directory (as indicated by the books in the Shell window):\n\n\n\n\nbooks/ directory\n\n\n\nWhen we check the current working directory again with pwd, we see the location is still ~/projects/books/.\n\n\n\n\nStill in the books/ directory\n\n\nThis difference in behavior can be frustrating, but it also means we’ll start with a ‘clean slate’ in each new code chunk!",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Quarto</span>"
-    ]
-  },
-  {
-    "objectID": "quarto.html#recap",
-    "href": "quarto.html#recap",
-    "title": "Appendix C — Quarto",
-    "section": "Recap",
-    "text": "Recap\nThis chapter covered a guide on how to use Quarto for embedding and executing Bash code, a powerful feature for Unix/Linux users and developers who need to document and automate command line tasks.\n\nSetting Up Quarto: We covered the resources and prerequisites for installing Quarto, and how to use Quarto within Visual Studio Code (VS Code). We included setting VS Code with the Quarto extension, and options for configuring the IDE.\nWriting and Executing Bash Code: We discussed setting up Bash in Quarto documents, including how to configure the YAML header in the Quarto document to include Bash as the programming language, and ensuring Quarto documents can recognize and execute Bash code.\n\nVS Code and Quarto are powerful tools. The IDE provides a user-friendly interface, extensive plugin ecosystem, and strong support for Quarto’s interactive capabilities.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Quarto</span>"
-    ]
-  },
-  {
-    "objectID": "quarto.html#footnotes",
-    "href": "quarto.html#footnotes",
-    "title": "Appendix C — Quarto",
-    "section": "",
-    "text": "Bash is common in Linux and older macOS versions↩︎\nZsh is now the default in shell in macOS↩︎\nFor what its worth, I’ve been using RStudio for years and love it. However, I’ve also used Quarto in VS Code and love many of it’s features.↩︎\nIf you prefer a ‘Free/Libre Open Source Software Binary of VS Code’, check out vscodium↩︎\nBash Debug and Bash IDE are VS Code extensions specifically designed for Bash scripting, which we’ll cover in a later chapter.↩︎\nIn fact, this entire book was written using Quarto documents.↩︎\nRead more about configuring shell code blocks in Quarto in the documentation.↩︎\nConsult the full list of code chunk options in the Quarto documentation.↩︎",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Quarto</span>"
-    ]
-  },
-  {
-    "objectID": "use_cases.html",
-    "href": "use_cases.html",
-    "title": "Use Cases",
-    "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.",
-    "crumbs": [
-      "Use Cases"
-    ]
-  },
-  {
-    "objectID": "basics.html",
-    "href": "basics.html",
-    "title": "Basics",
-    "section": "",
-    "text": "Basic Linux Commands\nDirectories covers how to navigating the file system.\nFiles discusses common file operations.\nSystem This chapter covers common system monitoring commands in Linux: top and htop for real-time process monitoring, free for memory usage, df for disk space usage, and du for directory and file size. These tools help efficiently manage and troubleshoot system performance and resource usage.\nVariables dives into the definition, types, and use of variables. Environment variables (PATH, HOME, USER), commands used with variables (printenv, set, unset, export, env), scripts, integer and strings, and best practices.",
-    "crumbs": [
-      "Basics"
-    ]
-  },
-  {
-    "objectID": "basics.html#recap",
-    "href": "basics.html#recap",
-    "title": "Basics",
-    "section": "Recap",
-    "text": "Recap\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Basics"
-    ]
-  },
-  {
-    "objectID": "text.html",
-    "href": "text.html",
-    "title": "Text",
-    "section": "",
-    "text": "Plain Text Files\nPlain text files are vital to Unix/Linux systems, embodying their philosophy of ‘simple and beautiful.’1 These files only contain text, making them versatile and powerful. Unix/Linux believes that ‘everything is a file,’ including devices, configurations, and processes.2 Plain text files are the universal interface between systems, programs, and users. Standard Unix/Linux tools can easily create, manipulate, and read plain text, making it an essential interface for system administration, programming, and process management.",
-    "crumbs": [
-      "Text"
-    ]
-  },
-  {
-    "objectID": "text.html#plain-text-files",
-    "href": "text.html#plain-text-files",
-    "title": "Text",
-    "section": "",
-    "text": "Simple and Efficient\nPlain text files are simple, versatile, and easy to work with. They can be edited with any text editor and don’t require specialized software, making actions transparent and learning accelerated. Plain text can also be easily manipulated using standard Unix/Linux text-processing tools such as grep, sed, and awk. With simple one-liners from the command line, users can search for a specific line, replace text across multiple files, or transform data formats.\n\n\nCommunication Between Programs\nUnix/Linux philosophy values specialized programs that work together efficiently. Plain text files are used as inputs or outputs in pipelines of simple, single-purpose programs to perform complex operations.",
-    "crumbs": [
-      "Text"
-    ]
-  },
-  {
-    "objectID": "text.html#text-streams",
-    "href": "text.html#text-streams",
-    "title": "Text",
-    "section": "Text Streams",
-    "text": "Text Streams\nA text stream in Unix and Linux is a simple, sequential flow of characters. Text streams can be inputs from keyboards, outputs to a display screen, or the data within a file. The concept of text streams is fundamental to the Unix philosophy; it allows for the chaining together of commands, where the output of one command can be seamlessly passed as input to another through a mechanism known as piping.",
-    "crumbs": [
-      "Text"
-    ]
-  },
-  {
-    "objectID": "text.html#text-editors-and-the-unix-philosophy",
-    "href": "text.html#text-editors-and-the-unix-philosophy",
-    "title": "Text",
-    "section": "Text Editors and The Unix Philosophy",
-    "text": "Text Editors and The Unix Philosophy\nThe Unix philosophy emphasizes simplicity, clarity, and the principle of “doing one thing well.” Plain text embodies this philosophy, serving as a simple, straightforward, and versatile means of interaction between the user, the system, and the programs running on it. This philosophy also underpins the design of Unix text editors, which range from the simple (like nano) to the powerful and extensible (like vi and emacs).\nText commands and editors are not just tools but the medium through which users communicate with the system and manipulate it to their will. Mastering these commands and editors opens up a world of possibilities for efficient system management, programming, and beyond.\nThis section will explore the core text commands that every Unix and Linux user should know, from file manipulation to text processing and searching. We will also introduce the most popular text editors, guiding you through their primary usage and highlighting their unique features.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Text"
-    ]
-  },
-  {
-    "objectID": "text.html#footnotes",
-    "href": "text.html#footnotes",
-    "title": "Text",
-    "section": "",
-    "text": "Doug McIlroy on Unix programming: “Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.” - Wikipedia↩︎\nLinus Torvalds (creator and lead developer of the Linux kernel) has clarified this to, “The UNIX philosophy is often quoted as ”everything is a file”, but that really means ”everything is a stream of bytes.”↩︎",
-    "crumbs": [
-      "Text"
-    ]
-  },
-  {
-    "objectID": "scripts.html",
-    "href": "scripts.html",
-    "title": "Shell Scripts",
-    "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.\n\n\n\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Shell Scripts"
-    ]
-  },
-  {
-    "objectID": "setups.html",
-    "href": "setups.html",
-    "title": "Set-Ups",
-    "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis section is being revised. Thank you for your patience.\n\n\n\n\nThis section details the practical aspects of preparing your environment to work with Unix/Linux systems. It is designed to guide you through various setup processes, catering to different preferences and requirements. We’ll cover working with shells and terminals, setting up a virtual machine, and using Quarto documents to execute Bash commands.\n\nShells and Terminals\n?sec-sh-term covers the differences between shells and terminals, and some common options for both.\n\n\nVirtual Machines\nVirtual Machines covers how to run Unix on a virtual machine.\n\n\nQuarto\nAppendix C — Quarto covers how to setup up the Quarto publishing system.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Set-Ups"
-    ]
-  },
-  {
-    "objectID": "syntax.html",
-    "href": "syntax.html",
-    "title": "Syntax",
-    "section": "",
-    "text": "Caution\n\n\n\n\n\n\nThis section is being revised. Thank you for your patience.\n\n\n\n\nIn the previous section we covered some of the basic common commands you’ll use in a Unix-like operating systems. This section dives deeper into the syntax–the commands, arguments, and options–you’ll type into the terminal or write in a shell script. We’ll also discuss how to chain commands together using pipes.\n\nCommands\n\n\nArguments\n\n\nOptions\n\n\nPipes\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
-    "crumbs": [
-      "Syntax"
     ]
   }
 ]
