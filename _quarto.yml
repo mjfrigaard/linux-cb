@@ -7,13 +7,13 @@ editor:
   render-on-save: true
 
 book:
-  title: "fm-linux"
+  title: "linux-cb"
   author: "Martin Frigaard"
   description: |
     A Linux Field Manual
   search: true
-  #site-url: https://mjfrigaard.github.io/fm-unix/
-  #repo-url: https://github.com/mjfrigaard/fm-unix
+  site-url: https://mjfrigaard.github.io/linux-cb/
+  repo-url: https://github.com/mjfrigaard/linux-cb
   #repo-branch: main
   #repo-actions: [edit, issue]
   chapters:
@@ -51,15 +51,18 @@ book:
         - file_size.qmd
   appendices:
         - syntax_ref.qmd
-        - glossary.qmd
+        - data.qmd
         - fish.qmd
         - macos.qmd
         - quarto.qmd
+        - glossary.qmd
 
 format:
   html:
     theme: [cosmo, styles.scss]
     highlight-style: arrow
+    date: last-modified
+    date-format: iso
     code-block-bg: "#f8f8f8"
     code-block-border-left: "#02577A"
     code-overflow: scroll
@@ -68,8 +71,6 @@ format:
     #callout-icon: false
     code-link: false
     code-annotations: hover
-    date: last-modified
-    date-format: iso
     toc: true
     toc-depth: 4
     toc-expand: true
@@ -84,8 +85,8 @@ format:
     fig-width: 7
     fig-height: 5
     engine: knitr
-    #mermaid:
-      #theme: neutral
+    mermaid:
+      theme: default
 
 execute:
   freeze: true

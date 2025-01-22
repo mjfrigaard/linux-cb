@@ -225,7 +225,7 @@ For example, `PWD` works similar to the `pwd` command, but the path is stored as
 ```{bash}
 #| eval: false
 echo $PWD
-# /Users/username/projects/books/fm-unix
+# /Users/username/projects/books/linux-cb
 ```
 
 In a script, we can use environment variables to ensure that certain settings or configurations are applied (like `HOME` and `USER`)

@@ -49,7 +49,7 @@ The available shells are stored in `/etc/shells`, and we can view them with the 
 cat /etc/shells
 ```
 
-### Change shells
+### Picking a shell
 
 To change the default shell, use the <strong><code>@sec-chsh</code></strong>  command (change shell). For example, if you want to switch to `bash`, use the command below:
 
@@ -94,11 +94,11 @@ Bash provides an interactive command line editing environment where users can na
 
 **History expansion**
 
-Commands can be re-executed by recalling them from the history
+Commands can be re-executed by recalling them from the history.
 
 **Tab Completion**
 
-Bash supports tab completion for command names, file names, and even command arguments, speeding up the input process and reducing typos
+Bash supports tab completion for command names, file names, and even command arguments, speeding up the input process and reducing typos.
 
 **Comprehensive Job Control**
 
@@ -107,7 +107,7 @@ Bash supports tab completion for command names, file names, and even command arg
 
 **Aliases**
 
-Users can create shorter commands to represent longer sequences of commands using aliases
+Users can create shorter commands to represent longer sequences of commands using aliases.
 
 **Shell Functions**
 
@@ -115,7 +115,7 @@ Bash also supports more powerful functions that can take arguments like small sc
 
 **Script Debugging**
 
-Bash scripts can be debugged using options like `set -x` to print commands and their arguments as they are executed, which is invaluable for troubleshooting scripts
+Bash scripts can be debugged using options like `set -x` to print commands and their arguments as they are executed, which is invaluable for troubleshooting scripts.
 
 **Environment Control**
 

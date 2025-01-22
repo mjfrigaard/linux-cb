@@ -165,7 +165,7 @@ Quarto documents are a flexible and powerful tool for creating dynamic and repro
 
 This feature proves not only invaluable for data scientists, but for anyone looking to learn a new programming language. Quarto documents are a perfect 'sandbox' to experiment with code, take notes, and review the outputs. Moreover, Quarto has the supports cross-referencing, advanced layout options, and beautiful web and book publishing workflows.[^quarto-book]
 
-[^quarto-book]: In fact, this [entire book](https://github.com/mjfrigaard/fm-unix/tree/main) was written using Quarto documents.
+[^quarto-book]: In fact, this [entire book](https://github.com/mjfrigaard/linux-cb/tree/main) was written using Quarto documents.
 
 Quarto documents consist of the following elements:
 
@@ -287,9 +287,9 @@ pwd # the document's location for each new code chunk
 
 This behavior is different than what we'd see in Posit Workbench's Terminal on my local machine:
 
-1. The current working directory is `~/projects/books/fm-unix/` (as indicated by the Terminal prompt):
+1. The current working directory is `~/projects/books/linux-cb/` (as indicated by the Terminal prompt):
 
-![`fm-unix/` directory](img/pwd-local-01.png){width='100%'}
+![`linux-cb/` directory](img/pwd-local-01.png){width='100%'}
 
 2. If we change the working directory with `..`, we are in the `books/` directory (as indicated by the **books** in the Shell window):
 

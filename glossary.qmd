@@ -46,6 +46,10 @@ On-prem or on-premises refers to software and technology installed and running o
 
 [Quarto](https://quarto.org/) is an open-source scientific and technical publishing framework designed to work with R, Python, Julia, Observable JavaScript, and more, making it a versatile tool for data scientists, researchers, and anyone involved in data analysis.
 
+## Shell {#sec-shell}
+
+Shells are essential for accessing the full power of the system, whether making routine adjustments or performing complex configurations, in both Unix and Linux.
+
 ## YAML {#sec-yaml}
 
 YAML: [YAML](https://yaml.org/) is a human-friendly data format for configuration files and data exchange, using key-value pairs, lists, and indentation to organize data.

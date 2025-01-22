@@ -35,15 +35,23 @@ co_box(
 )
 ```
 
-## Background 
+## [Background]{style="font-size: 1.05em; font-weight: bold;"} 
 
-I began writing this book when I started a new position as a Posit System Administrator with CDC's Enterprise Data, Analytics, and Visualization (EDAV) platform.[^edav] EDAV houses multiple enterprise data science products (Databricks, Power BI, Tableau, SAS Viya, etc.) including Posit Workbench, Connect, and Package Manager. The chapters contain the topics and tools I encountered regularly in my daily work (and some on my wish list).
+I began writing this book when I started a new position as a Posit System Administrator with CDC’s Enterprise Data, Analytics, and Visualization (EDAV) platform.[^edav] EDAV houses multiple enterprise data science products (Databricks, Power BI, Tableau, SAS Viya, etc.), including Posit Workbench, Connect, and Package Manager.
+
+I’d been an R programmer for over ten years and spent the last five years working primarily on Shiny apps. My new responsibilities included (but were not limited to) maintaining, updating, monitoring and improving the Posit services for CDC users.
+
+> "*If there's a book that you want to read, but it hasn't been written yet, then you must write it.*" - [Toni Morrison](https://www.goodreads.com/quotes/321-if-there-s-a-book-that-you-want-to-read-but)
+
+I wrote the book I wish I had when transitioning from an R Developer to a System Administrator. 
 
 [^edav]: Read more about EDAV and the Data Modernization Initiative [here](https://www.cdc.gov/data-modernization/php/technologies/edav.html).
 
-## [Book outline]{style="font-size: 1.05em; font-weight: bold;"}
+## [Outline]{style="font-size: 1.05em; font-weight: bold;"}
 
-This book gradually introduces the Linux environment, starting with the basics to more complex concepts, then covering multiple case studies. The first four sections of this manual cover concepts and materials for users new to Linux. If you’re familiar with command-line tools and regular expressions, skip these chapters.
+The first half of this book gradually introduces the Linux environment, starting with some history and operating system basics before moving into more complex concepts. These sections (**Set-Ups**, **Basics**, **Syntax**, **Text**, and **Shell Scripts**) cover concepts and topics for users new to Linux.
+
+The second half of the book covers case studies (or common tasks). If you’re familiar with Linux/Unix, command-line tools, and regular expressions, skip to these sections.
 
 ```{r}
 #| label: co_box_fms
@@ -63,7 +71,7 @@ Fiels Manuals function as both reference material and living documentation, enco
 
 ![Example improvised litter made using tent poles and field jackets.](img/jacket-pole-litter.png){width='70%' fig-align='center'}
   
-[^field-manuals]: This definition is based on the [U.S. Army Field Manuals (FMs).](https://github.com/mjfrigaard/fm-unix/tree/main/_assets/1965-fm531-boobytraps.pdf)")
+[^field-manuals]: This definition is based on the [U.S. Army Field Manuals (FMs).](https://github.com/mjfrigaard/linux-cb/tree/main/_assets/1965-fm531-boobytraps.pdf)")
 ```
 
 ### Introduction
@@ -153,9 +161,7 @@ co_box(
 )
 ```
 
-The data files used in this book are documented in [`data/README.md`](https://github.com/mjfrigaard/fm-unix/tree/main/data/README.md).
-
-{{< include _data.qmd >}}
+The data files used in this book are documented in the [data](data.qmd) appendix.
 
 ## [Recap]{style="font-size: 1.05em; font-weight: bold;"}
 

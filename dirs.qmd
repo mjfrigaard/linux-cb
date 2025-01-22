@@ -112,7 +112,7 @@ A file path is a character string specifying the unique location of a file or di
 ```{bash}
 #| eval: false
 pwd 
-# /Users/username/projects/books/fm-unix
+# /Users/username/projects/books/linux-cb
 ```
 
 []{style="font-size: 1.25em; font-weight: bold; font-style: italic;"} 
@@ -145,7 +145,7 @@ Below is an example 'folder tree' for the current working directory returned fro
 #   └─ username/ -> represented as '~'
 #        └─ project/ 
 #             └─ books/ 
-#                 └─ fm-unix/
+#                 └─ linux-cb/
 ```
 
 

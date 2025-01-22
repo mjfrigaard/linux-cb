@@ -40,15 +40,55 @@ co_box(
 )
 ```
 
-This section details the practical aspects of preparing your environment to work with a Linux system. We’ll cover setting up a virtual machine and working with shells and terminals. It is designed to guide you through various setup processes, catering to different preferences and requirements.
+This section details the practical aspects of preparing your environment to work with a Linux system. We’ll cover options for setting up a virtual machine and working with shells and terminals. 
 
 ### Virtual Machines 
 
-<strong>@sec-vms</strong> covers how to run Linux on a virtual machine.
+<strong>@sec-vms</strong> are software-based emulations of a physical computer that allow users to run Linux distributions in an isolated environment, utilizing virtualized hardware resources from the host system. 
+
+```{=html}
+
+<style>
+
+.codeStyle span:not(.nodeLabel) {
+  font-family: monospace;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #9753b8 !important;
+  background-color: #faf9ed;
+  padding: 0.2em;
+}
+
+</style>
+```
+
+```{mermaid}
+%%| fig-width: 8.0
+%%| fig-align: center
+%%| fig-cap: 'Running Virtual Machines'
+%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'Inconsolata', 'primaryColor': '#89D6FB', 'edgeLabelBackground':'#02577A'}}}%%
+
+flowchart TD
+  VM("Virtual Machine")
+  Linux("Linux Distribution 🐧")
+  HostSystem{"Host System"}
+  CPU("Virtualized CPU")
+  RAM("Virtualized RAM 🧠")
+  Disk("Virtualized Disk 💽")
+
+  HostSystem-->VM
+  VM-->Linux
+  VM-->CPU
+  VM-->RAM
+  VM-->Disk
+
+```
+
+This chapter covers virtualization software options, various Linux distributions, and provides an example of setting up Ubuntu on VirtualBox. 
 
 ### Shells 
 
-<strong>@sec-shells</strong>
+<strong>@sec-shells</strong> are the command-line interpreters that allow users to interact with the operating system by executing commands and running scripts.
 
 ### Terminals 
 

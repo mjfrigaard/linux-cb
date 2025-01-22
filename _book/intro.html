@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-01">
+<meta name="dcterms.date" content="2024-10-03">
 <meta name="description" content="A Linux Field Manual">
 
-<title>Introduction – fm-linux</title>
+<title>Introduction – linux-cb</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2c272e4a77f9976b39c4fc697268e7b0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -98,7 +98,10 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">fm-linux</a> 
+      <a href="./">linux-cb</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/mjfrigaard/linux-cb" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -293,8 +296,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Glossary</span></a>
+  <a href="./data.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data files</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -310,6 +312,12 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
       </ul>
@@ -353,7 +361,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024-09-01</p>
+      <p class="date">2024-10-03</p>
     </div>
   </div>
   
@@ -390,27 +398,27 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="unix-philosophy">Unix Philosophy</h3>
 <p>Unix was a breath of fresh air, designed with a simplicity and elegance that set it apart. Its portability, the ability to run on different types of hardware, was a game-changer. Over time, Unix evolved into a comprehensive operating system, incorporating essential commands and operations and setting a new standard for efficiency and innovation.</p>
 <p>The Unix philosophy (i.e., the foundational tools and techniques) became a blueprint for how computers could efficiently and securely manage tasks like organizing files or running software. The general tenets of the Unix philosophy are:</p>
-<ol type="1">
+<ul>
 <li><p><strong>Focus</strong>: Design programs to perform a single task effectively.</p></li>
 <li><p><strong>Synergy</strong>: Programs should be designed to work well with others, ensuring programs can handle input and output via standard streams, allowing them to be combined in powerful ways.</p></li>
 <li><p><strong>Text</strong>: Unix tools are designed to read from and write to text streams.</p></li>
-<li><p><strong>Extensibility</strong>: Tools should be designed with the expectation that they will be extended by users beyond their original intended purpose.</p></li>
-<li><p><strong>Simplicity</strong>: Simple, clear, and straightforward code is preferred over complex code (even if it means sacrificing functionality).</p></li>
-</ol>
+<li><p><strong>Extensibility</strong>: Tools should be designed with the expectation that users will extend them beyond their intended purpose.</p></li>
+<li><p><strong>Simplicity</strong>: Simple, clear, straightforward code is preferred over complex code (even if it means sacrificing functionality).</p></li>
+</ul>
 </section>
 </section>
 <section id="the-emergence-of-linux" class="level2">
 <h2 class="anchored" data-anchor-id="the-emergence-of-linux"><span style="font-size: 1.05em; font-weight: bold;">The Emergence of Linux</span></h2>
-<p>Fast forward a few decades to 1991, when a Finnish student named Linus Torvalds decided to create his free operating system kernel inspired by Unix. The Linux operating system was modeled after the principles of Unix, but not directly derived from Unix source code, and made freely available to anyone who wanted to use or improve it.</p>
+<p>Fast-forward a few decades to 1991, when a Finnish student named Linus Torvalds decided to create his free operating system kernel inspired by Unix. The Linux operating system was modeled after the principles of Unix but not directly derived from Unix source code and made freely available to anyone who wanted to use or improve it.</p>
 <section id="open-source" class="level3">
 <h3 class="anchored" data-anchor-id="open-source">Open-source</h3>
-<p>Linux flourished with the help of developers around the world. It’s a testament to what collaboration and shared goals can achieve. Whereas the development of Unix was largely driven by a specific group of organizations (like AT&amp;T, Sun Microsystems), Linux was like a kit car designed by a community of enthusiasts, allowing anyone to assemble it with different parts, engines, and even paint (i.e., a fully customizable operating system). This global effort lead to rapid evolution and a wide variety of distributions, each interpreting and applying the Unix philosophy in different ways.</p>
+<p>Linux flourished with the help of developers around the world. It’s a testament to what collaboration and shared goals can achieve. Whereas the development of Unix was largely driven by a specific group of organizations (like AT&amp;T and Sun Microsystems), Linux was like a kit car designed by a community of enthusiasts, allowing anyone to assemble it with different parts, engines, and even paint (i.e., a fully customizable operating system). This global effort led to rapid evolution and various distributions, each interpreting and applying the Unix philosophy differently.</p>
 </section>
 <section id="modern-uses" class="level3">
 <h3 class="anchored" data-anchor-id="modern-uses">Modern Uses</h3>
 <p>Today, Unix and Linux are everywhere. Although not as common on desktops as Windows or macOS, Linux distributions are the invisible forces behind much of the Internet and technology we interact with today:</p>
 <ul>
-<li><p><strong>Servers and Supercomputers</strong>: The majority of the web servers powering the internet, as well as the world’s most powerful supercomputers, run on Linux due to its stability, security, and efficiency.</p></li>
+<li><p><strong>Servers and Supercomputers</strong>: Linux is used by the majority of web servers powering the Internet and the world’s most powerful supercomputers due to its stability, security, and efficiency.</p></li>
 <li><p><strong>Smartphones</strong>: Android, the most popular mobile operating system, is powered by a Linux kernel, making Linux the silent workhorse behind billions of smartphones.</p></li>
 <li><p><strong>Embedded Systems</strong>: From smartwatches to smart home devices, Linux is often the go-to choice for running embedded systems thanks to its scalability and low cost.</p></li>
 </ul>
@@ -420,12 +428,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></h2>
-<p>To summarize, both are Unix and Linux are analogous to vehicles designed for transportation, but with a few important differences:</p>
+<p>To summarize, both Unix and Linux are analogous to vehicles designed for transportation, but with a few important differences:</p>
 <ul>
 <li><p>Unix is like a high-end, custom-built car designed for a specific market, offering luxury, reliability, and exclusivity.</p></li>
 <li><p>Linux is like a kit car that can be built, modified, and customized however the user likes, with support from a large and active community of other enthusiasts.</p></li>
 </ul>
-<p>In both Unix and Linux, Shells are essential for accessing the full power of the system, whether we’re making routine adjustments or performing complex configurations.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -531,8 +538,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -541,7 +546,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/mjfrigaard\.github\.io\/linux-cb\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -643,7 +648,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
