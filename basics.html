@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-03">
-<meta name="description" content="A Linux Field Manual">
+<meta name="dcterms.date" content="2025-01-23">
+<meta name="description" content="A Linux Cookbook">
 
-<title>Basics – linux-cb</title>
+<title>Basics – Linux-CB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">linux-cb</a> 
+      <a href="./">Linux-CB</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/mjfrigaard/linux-cb" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
+  <a href="./part_one.html" class="sidebar-item-text sidebar-link"><span class="chapter-title"><span style="font-size: 1.05em; font-weight: bold;">Part 1: Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -268,10 +268,15 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_two.html" class="sidebar-item-text sidebar-link"><span class="chapter-title"><span style="font-size: 1.05em; font-weight: bold;">Part 2: Use Cases</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./use_cases.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Use Cases</span></a>
+            <a href="./maintenance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maintenance</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -279,20 +284,36 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./file_size.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Find Large Files</span></a>
+  <a href="./installs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Installations</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+            <a href="./performance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Performance</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./file_size.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Finding Large Files</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./syntax_ref.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Syntax Reference</span></a>
@@ -360,7 +381,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024-09-03</p>
+      <p class="date">2025-01-23</p>
     </div>
   </div>
   
@@ -390,6 +411,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p>The next sections introduce some common topics and commands that will help you navigate folders (or directories), manipulate and manage files, and check system processes. These sections focus on executing single commands in a Terminal. In the next section we’ll dive into the Linux command syntax (i.e., arguments, options, and pipes).</p>
 <blockquote class="blockquote">
 <p><span style="font-size: 1.25em; font-weight: bold; font-style: italic;">“Everything is a file”</span></p>
 </blockquote>
@@ -406,19 +428,19 @@ ul.task-list li input[type="checkbox"] {
 }
 
 </style>
-<div class="cell" data-fig-width="8" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">%%{init: {'theme': 'forest', 'themeVariables': { 'fontFamily': 'Inconsolata', 'primaryColor': '#89D6FB', 'edgeLabelBackground':'#02577A'}}}%%
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'Inconsolata', 'fontSize': '14px'}}}%%
 
 mindmap
-  root(("`**Everything is a File**`"))
-    File
-      Text Files
-      Binary Files
-      Executable Files
+  root(("**Everything is a File**"))
+    Files
+      txt("Text Files")
+      bin("Binary Files")
+      exe("Executable Files")
     Directory
       Folders
       Special Directories 
@@ -442,14 +464,13 @@ mindmap
 </div>
 </div>
 </div>
-<p>The next sections introduce some common topics and commands that will help you navigate folders (or directories), manipulate and manage files, and check system processes. These sections focus on executing single commands in a Terminal. In the next section we’ll dive into the Linux command syntax (i.e., arguments, options, and pipes).</p>
 <section id="directories" class="level3">
 <h3 class="anchored" data-anchor-id="directories">Directories</h3>
 <p>In Linux, <a href="./dirs.html">directories</a> are special types of files that contain other files, including other directories. This ties into a fundamental concept in Linux: <strong>everything is a file</strong>. This means that not only are traditional files like documents and images considered files, but so are directories, devices, processes, and even network sockets.</p>
 </section>
 <section id="files" class="level3">
 <h3 class="anchored" data-anchor-id="files">Files</h3>
-<p>In Linux, the phrase <strong>everything is a <a href="files..qmd">files</a></strong> encapsulates the idea that all system components, whether traditional files, directories, devices, or even processes, are represented as files. This abstraction makes Linux both powerful and flexible, as it allows users to interact with a wide range of system elements using a consistent set of tools and commands.</p>
+<p>In Linux, all system components, whether traditional files, directories, devices, or even processes, are represented as <a href="./files.html">files</a>. This abstraction makes Linux both powerful and flexible, as it allows users to interact with a wide range of system elements using a consistent set of tools and commands.</p>
 </section>
 <section id="system" class="level3">
 <h3 class="anchored" data-anchor-id="system">System</h3>
@@ -491,7 +512,7 @@ mindmap
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 1.00em; color: #282b2d;">
-<p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
+<p>Please open an issue on <a href="https://github.com/mjfrigaard/linux-cb/issues/new">GitHub.</a></p>
 </div>
 </div>
 </div>

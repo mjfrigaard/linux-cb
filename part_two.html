@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-08-28">
+<meta name="dcterms.date" content="2025-01-23">
 <meta name="description" content="A Linux Cookbook">
 
-<title>Options – Linux-CB</title>
+<title>Part 2: Use Cases – Linux-CB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -66,8 +32,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./pipes.html" rel="next">
-<link href="./arguments.html" rel="prev">
+<link href="./maintenance.html" rel="next">
+<link href="./permissions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -117,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syntax.html">Syntax</a></li><li class="breadcrumb-item"><a href="./options.html"><span class="chapter-title">Options</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_two.html"><span class="chapter-title"><span style="font-size: 1.05em; font-weight: bold;">Part 2: Use Cases</span></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -235,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./options.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Options</span></a>
+  <a href="./options.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Options</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -300,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part_two.html" class="sidebar-item-text sidebar-link"><span class="chapter-title"><span style="font-size: 1.05em; font-weight: bold;">Part 2: Use Cases</span></span></a>
+  <a href="./part_two.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title"><span style="font-size: 1.05em; font-weight: bold;">Part 2: Use Cases</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -382,34 +348,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
-    <h2 id="toc-title">Contents</h2>
-   
-  <ul>
-  <li><a href="#option-types" id="toc-option-types" class="nav-link active" data-scroll-target="#option-types"><span style="font-size: 1.05em; font-weight: bold;">Option types</span></a>
-  <ul>
-  <li><a href="#short-options" id="toc-short-options" class="nav-link" data-scroll-target="#short-options">Short options</a></li>
-  <li><a href="#long-options" id="toc-long-options" class="nav-link" data-scroll-target="#long-options">Long options</a></li>
-  <li><a href="#modifying-behavior" id="toc-modifying-behavior" class="nav-link" data-scroll-target="#modifying-behavior">Modifying behavior</a></li>
-  <li><a href="#modifying-output" id="toc-modifying-output" class="nav-link" data-scroll-target="#modifying-output">Modifying output</a></li>
-  <li><a href="#environment-specific-options" id="toc-environment-specific-options" class="nav-link" data-scroll-target="#environment-specific-options">Environment-specific options</a></li>
-  </ul></li>
-  <li><a href="#combining-options" id="toc-combining-options" class="nav-link" data-scroll-target="#combining-options"><span style="font-size: 1.05em; font-weight: bold;">Combining Options</span></a>
-  <ul>
-  <li><a href="#multiple-short-options" id="toc-multiple-short-options" class="nav-link" data-scroll-target="#multiple-short-options">Multiple short options</a></li>
-  <li><a href="#options-with-values" id="toc-options-with-values" class="nav-link" data-scroll-target="#options-with-values">Options with values</a></li>
-  </ul></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syntax.html">Syntax</a></li><li class="breadcrumb-item"><a href="./options.html"><span class="chapter-title">Options</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-options" class="quarto-section-identifier"><span class="chapter-title">Options</span></span></h1>
+<h1 class="title"><span id="sec-part-two" class="quarto-section-identifier"><span class="chapter-title"><span style="font-size: 1.05em; font-weight: bold;">Part 2: Use Cases</span></span></span></h1>
 </div>
 
 
@@ -420,7 +367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024-08-28</p>
+      <p class="date">2025-01-23</p>
     </div>
   </div>
   
@@ -432,7 +379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -445,233 +392,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 1.00em; color: #282b2d;">
-<p>This section is being revised. Thank you for your patience.</p>
+<p>This section is under development. Thank you for your patience.</p>
 </div>
 </div>
 </div>
-</div>
-<p>Unix command options (sometimes called flags) are often preceded by a hyphen (<code>-</code>) or two (<code>--</code> for long-form options) and modify the behavior of a command. Options provide flexibility, control, and, in some cases, enable a vast array of additional functionalities.</p>
-<section id="option-types" class="level2">
-<h2 class="anchored" data-anchor-id="option-types"><span style="font-size: 1.05em; font-weight: bold;">Option types</span></h2>
-<p>Arguments can be short or long:</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[50,50]">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><strong>Short options</strong> are typically a single dash followed by a single letter (e.g., <code>-l</code>) and they modify the command behavior in a specific, often concise way.</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><strong>Long options</strong> usually use two dashes followed by a word or compound words (e.g., <code>--long-listing</code>) and provide a more descriptive way to specify options, making scripts and commands more readable.</p>
-</div>
-</div>
-</div>
-<section id="short-options" class="level3">
-<h3 class="anchored" data-anchor-id="short-options">Short options</h3>
-<p><strong>Example</strong></p>
-<p><code><a href="syntax_ref.html#sec-ls" class="quarto-xref"><span>ls</span></a></code> <code>-l data</code> lists files in <code>data</code> in a long format, showing detailed information like permissions, owner, size, and modification date:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> data</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># total 112</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 mjfrigaard  staff   8798 May 15 21:59 README.md</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 mjfrigaard  staff   6122 Apr 10 14:04 music_vids.tsv</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.tsv</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># drwxr-xr-x@ 10 mjfrigaard  staff    320 May 15 21:55 raw</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 mjfrigaard  staff   4417 Apr 10 14:01 trees.tsv</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--   1 mjfrigaard  staff   4814 Apr 10 14:07 vg_hof.tsv</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 mjfrigaard  staff    462 Apr 15 14:07 wu_tang.psv</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 mjfrigaard  staff    263 Apr 10 09:39 wu_tang.tsv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="long-options" class="level3">
-<h3 class="anchored" data-anchor-id="long-options">Long options</h3>
-<p><strong>Example 1</strong></p>
-<p><code>tree data --sort size</code> lists files in order according to size:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span> data <span class="at">--sort</span> size</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── ajperlis_epigrams.txt</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── pwrds.csv</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── pwrds.tsv</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── README.md</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── music_vids.tsv</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── vg_hof.tsv</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── trees.tsv</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── roxanne.txt</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── wu_tang.dat</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── who_tb_data.tsv</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── who_tb_data.txt</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── wu_tang.txt</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── wu_tang.csv</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── wu_tang.tsv</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ├── roxanne_rev.txt</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># └── roxanne_orig.txt</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 directory, 16 files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>Example 2</strong></p>
-<p><code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code> <code>--help</code> displays usage information for the <code>grep</code> command, helping users understand available options and syntax.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">--help</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; usage: grep [-abcdDEFGHhIiJLlMmnOopqRSsUVvwXxZz] [-A num] [-B num] [-C[num]]</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [-e pattern] [-f file] [--binary-files=value] [--color=when]</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [--context[=num]] [--directories=action] [--label] [--line-buffered]</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [--null] [pattern] [file ...]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>Example 3</strong></p>
-<p>The <code>--version</code> option is commonly used to get version information for various commands.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">--version</span>  </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># grep (BSD grep, GNU compatible) 2.6.0-FreeBSD</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>Note that not all commands support the long-form option syntax.</strong></p>
-</section>
-<section id="modifying-behavior" class="level3">
-<h3 class="anchored" data-anchor-id="modifying-behavior">Modifying behavior</h3>
-<p>Some options modify the commands behavior.</p>
-<p><strong>Example</strong></p>
-<p><code><a href="syntax_ref.html#sec-cp" class="quarto-xref"><span>cp</span></a></code><code>-n source.txt dest.txt</code> does not overwrite the destination file if it already exists.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> myfile.txt</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-n</span> myfile.txt myfile2.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The <code>-n</code> option modifies the default behavior of the <code>cp</code> command.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> myfile2.txt</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is my 2nd file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="modifying-output" class="level3">
-<h3 class="anchored" data-anchor-id="modifying-output">Modifying output</h3>
-<p>Other options modify a commands output.</p>
-<p><strong>Example 1</strong></p>
-<p><code>ls -a</code> lists all files, including hidden ones (those starting with a dot). This option alters the command’s output by showing files that are not listed by default.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span> data</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># .</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ..</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># README.md</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># music_vids.tsv</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># pwrds.tsv</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># raw</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># trees.tsv</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># vg_hof.tsv</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># wu_tang.psv</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># wu_tang.tsv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>Example 2</strong></p>
-<p><code>df -h</code> shows disk space usage in human-readable form (e.g., KB, MB, GB), modifying the default output to be more easily understood.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Filesystem                          Size    Used   Avail Capacity iused ifree %iused  Mounted on</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s1s1                     466Gi   9.5Gi    40Gi    20%    404k  422M    0%   /</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># devfs                              201Ki   201Ki     0Bi   100%     696     0  100%   /dev</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s3                       466Gi   2.4Gi    40Gi     6%    5.1k  422M    0%   /System/Volumes/Preboot</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s5                       466Gi   1.0Gi    40Gi     3%       1  422M    0%   /System/Volumes/VM</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s6                       466Gi    19Mi    40Gi     1%      19  422M    0%   /System/Volumes/Update</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># /dev/disk1s2                       466Gi   411Gi    40Gi    92%    6.3M  422M    1%   /System/Volumes/Data</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># map auto_home                        0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="environment-specific-options" class="level3">
-<h3 class="anchored" data-anchor-id="environment-specific-options">Environment-specific options</h3>
-<p>The <code>-u</code> option in <code><a href="syntax_ref.html#sec-sort" class="quarto-xref"><span>sort</span></a></code> removes duplicate lines. <code>-u</code>s behavior (considering case sensitivity) might vary depending on the locale and environment settings.</p>
-<p><strong>Example</strong></p>
-<p><code>sort -u data/roxanne.txt</code> sorts the lines in <code>data/roxanne.txt</code>, removing duplicate lines.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> <span class="at">-u</span> data/raw/roxanne.txt</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># I have to tell you just how I feel</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># I know my mind is made up</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># I loved you since I knew you</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># I won't share you with another boy</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># I wouldn't talk down to you</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># It's a bad way</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ro...</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Roxanne</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Roxanne (Put on the red light)</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Roxanne (You don't have to put on the red light)</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># So put away your make up</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Those days are over</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Told you once I won't tell you again</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Walk the streets for money</span></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't care if it's wrong or if it's right</span></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't have to put on the red light</span></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't have to sell your body to the night</span></span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co"># You don't have to wear that dress tonight</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
-<section id="combining-options" class="level2">
-<h2 class="anchored" data-anchor-id="combining-options"><span style="font-size: 1.05em; font-weight: bold;">Combining Options</span></h2>
-<p>Multiple short options can be combined after a single dash, without spaces (e.g., <code>-lrt</code>) allowing users to use multiple options at once, and reducing the need to type multiple dashes.</p>
-<section id="multiple-short-options" class="level3">
-<h3 class="anchored" data-anchor-id="multiple-short-options">Multiple short options</h3>
-<p>Options can be combined with arguments when they are followed by a space and then the argument (e.g., <code>-o filename</code>).</p>
-<p><strong>Example</strong></p>
-<p><code>ls -lrt</code> combines three options: <code>-l</code> (long listing format), <code>-r</code> (reverse order), and <code>-t</code> (sort by modification time), providing a detailed, reverse-chronological list of files.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lrt</span> data</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># total 112</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 mjfrigaard  staff    263 Apr 10 09:39 wu_tang.tsv</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 mjfrigaard  staff   4417 Apr 10 14:01 trees.tsv</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 mjfrigaard  staff   6122 Apr 10 14:04 music_vids.tsv</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--   1 mjfrigaard  staff   4814 Apr 10 14:07 vg_hof.tsv</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 mjfrigaard  staff    462 Apr 15 14:07 wu_tang.psv</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 mjfrigaard  staff  12057 Apr 22 14:11 pwrds.tsv</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># drwxr-xr-x@ 10 mjfrigaard  staff    320 May 15 21:55 raw</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 mjfrigaard  staff   8798 May 15 21:59 README.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="options-with-values" class="level3">
-<h3 class="anchored" data-anchor-id="options-with-values">Options with values</h3>
-<p>Some options require or accept an argument to specify a value related to the option’s action.</p>
-<p><strong>Example</strong></p>
-<p><code><a href="syntax_ref.html#sec-grep" class="quarto-xref"><span>grep</span></a></code><code>-i "FILE" myfile.txt</code> uses <code>-i</code> to ignore case when searching for <code>"FILE"</code> in <code>myfile.txt</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-i</span> <span class="st">"FILE"</span> myfile.txt</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is my file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The <code>"FILE"</code> here is an argument for the <code>-i</code> option.</p>
-</section>
-</section>
-<section id="recap" class="level2">
-<h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></h2>
-<p>Options greatly enhance the power and versatility of Unix commands, allowing users to tailor operations to their specific needs and preferences.</p>
-<p>Not all Unix-like systems or shells may support the same options for a given command, and behavior can vary between implementations. It’s important to refer to a command’s manual page (using <code>man command</code> or <code>command --help</code>) for the most accurate and comprehensive list of options and their effects.</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 1.15em;">See a typo, error, or something missing?</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<div style="font-size: 1.00em; color: #282b2d;">
-<p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> myfile.txt</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> myfile2.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p><code>data/roxanne.txt</code> contains the lyrics to the 1978 song <a href="https://en.wikipedia.org/wiki/Roxanne_(The_Police_song)">Roxanne by The Police</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1132,13 +859,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./arguments.html" class="pagination-link" aria-label="Arguments">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Arguments</span></span>
+      <a href="./permissions.html" class="pagination-link" aria-label="Permissions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Permissions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./pipes.html" class="pagination-link" aria-label="Pipes">
-        <span class="nav-page-text"><span class="chapter-title">Pipes</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./maintenance.html" class="pagination-link" aria-label="Maintenance">
+        <span class="nav-page-text">Maintenance</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

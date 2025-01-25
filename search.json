@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "linux-cb",
+    "title": "Linux-CB",
     "section": "",
     "text": "Caution\n\n\n\n\n\n\nThis project is under development. Thank you for your patience.\n\n\n\n\n\nWelcome!\nLinux is a powerful, versatile, and widely used operating system that runs on millions of devices worldwide, from smartphones to supercomputers.\n\nThis cookbook covers an introduction to terminals and shells, the Linux filesystem hierarchy, moving around directories, file permissions, executing commands, and writing scripts with a text editor.\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
@@ -34,7 +34,7 @@
     "href": "preface.html#outline",
     "title": "Preface",
     "section": "Outline",
-    "text": "Outline\nThe first half of this book gradually introduces the Linux environment, starting with some history and operating system basics before moving into more complex concepts. These sections (Set-Ups, Basics, Syntax, Text, and Shell Scripts) cover concepts and topics for users new to Linux.\nThe second half of the book covers case studies (or common tasks). If you’re familiar with Linux/Unix, command-line tools, and regular expressions, skip to these sections.\n\n\n\n\n\n\nWhat is in a Field Manual?\n\n\n\n\n\n\nA field manual (FM) is an educational tool that provides information, instructions, and techniques for various concepts and practices.\nFiels Manuals function as both reference material and living documentation, encouraging updates and adaptations based on the given situation, available technology, or broader environment.2\n\n\n\nExample improvised litter made using tent poles and field jackets.\n\n\n\n\n\n\n\nIntroduction\nThe Introduction acquaints you with some background that formed the landscape of Unix systems. It explains the shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Linux.\n\n\nSet-Ups\nSetting up your Linux environment is crucial before diving into writing commands and scripts. Set-ups guide you through various options for setting up Virtual Machines, Shells, and Terminals.3\n\n\nThe Basics\nNavigating and managing files and folders are daily tasks for Linux users. Directories cover essential commands such as cd for changing directories, pwd to print the current directory, ls for listing files, and mkdir for making directories.\nThe Files chapter covers file manipulation commands like cp (copy), mv (move), rm (remove), and less for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Linux.\nSystem goes over common system commands like top for monitoring processes in real-time, ps for listing currently running processes, kill to stop a process, df (Disk Free) to display disk space usage on all mounted filesystems, and du (Disk Usage) to estimate file space usage. These commands help efficiently manage the system’s processes and resources, ensuring a clear view of resource allocation and consumption.\n\n\nSyntax\nUnderstanding the shell syntax is vital for effectively communicating with a Linux system. The Syntax section demystifies the structure of commands, including how to differentiate between Commands, Arguments, and Options and manage inputs and outputs. This knowledge is critical to executing tasks reliably at the command line.\nPipes are a cornerstone of Linux productivity, enabling the output of one command to serve as the input to another. Syntax also covers how to combine commands using stdout and stdin, allowing for robust command chains that can perform complex tasks. Understanding pipes unlocks a higher level of command-line efficiency.\n\n\nManipulating Text\nLinux systems are renowned for their powerful text manipulation capabilities. The Text section covers using Symbols & Patterns to build regular expressions (regex). Manipulating Text introduces commands such as cat for displaying file contents, grep for searching within files, sorting data, sorting data, uniq for filtering unique lines, and cutting, pasting, and joining for editing files. Mastering these commands will allow you to handle and process text data efficiently. Text Editors cover Nano, vim, and Emacs.\n\n\n\n\n\n\n\n\nUnder Development\n\n\n\n\n\n\nThank you for your patience.\n\n\n\n\n\n\nShell Scripts\nShell scripting is a powerful tool for automating repetitive tasks in Linux. This section introduces writing shell scripts, covering the basics of script creation, execution, and debugging. We’ll discuss how to automate simple tasks, making Linux tasks productive and enjoyable.\n\n\n\n\n\n\n\n\nUnder Development\n\n\n\n\n\n\nThank you for your patience.\n\n\n\n\nThe Format chapter delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Linux systems. Permissions explains how Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.\n\n\nUse cases\n\n\n\n\n\n\n\n\nUnder Development\n\n\n\n\n\n\nThank you for your patience.\n\n\n\n\nThe data files used in this book are documented in the data appendix.",
+    "text": "Outline\nThe first half of this book gradually introduces the Linux environment, starting with some history and operating system basics before moving into more complex concepts. These sections (Set-Ups, Basics, Syntax, Text, and Shell Scripts) cover concepts and topics for users new to Linux.\nThe second half of the book covers case studies (or common tasks). If you’re familiar with Linux/Unix, command-line tools, and regular expressions, skip to these sections.\n\nPart One: Introduction\nThe Part 1: Introduction acquaints you with some background that formed the landscape of Unix systems. It explains the shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Linux.\n\nSet-Ups\nSetting up your Linux environment is crucial before diving into writing commands and scripts. Set-ups guide you through various options for setting up Virtual Machines, Shells, and Terminals.2\n\n\nThe Basics\nNavigating and managing files and folders are daily tasks for Linux users. Directories cover essential commands such as cd for changing directories, pwd to print the current directory, ls for listing files, and mkdir for making directories.\nThe Files chapter covers file manipulation commands like cp (copy), mv (move), rm (remove), and less for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Linux.\nSystem goes over common system commands like top for monitoring processes in real-time, ps for listing currently running processes, kill to stop a process, df (Disk Free) to display disk space usage on all mounted filesystems, and du (Disk Usage) to estimate file space usage. These commands help efficiently manage the system’s processes and resources, ensuring a clear view of resource allocation and consumption.\n\n\nSyntax\nUnderstanding the shell syntax is vital for effectively communicating with a Linux system. The Syntax section demystifies the structure of commands, including how to differentiate between Commands, Arguments, and Options and manage inputs and outputs. This knowledge is critical to executing tasks reliably at the command line.\nPipes are a cornerstone of Linux productivity, enabling the output of one command to serve as the input to another. Syntax also covers how to combine commands using stdout and stdin, allowing for robust command chains that can perform complex tasks. Understanding pipes unlocks a higher level of command-line efficiency.\n\n\nManipulating Text\nLinux systems are renowned for their powerful text manipulation capabilities. The Text section covers using Symbols & Patterns to build regular expressions (regex). Manipulating Text introduces commands such as cat for displaying file contents, grep for searching within files, sorting data, sorting data, uniq for filtering unique lines, and cutting, pasting, and joining for editing files. Mastering these commands will allow you to handle and process text data efficiently. Text Editors cover Nano, vim, and Emacs.\n\n\n\n\n\n\n\n\nUnder Development\n\n\n\n\n\n\nThank you for your patience.\n\n\n\n\n\n\nShell Scripts\nShell scripting is a powerful tool for automating repetitive tasks in Linux. This section introduces writing shell scripts, covering the basics of script creation, execution, and debugging. We’ll discuss how to automate simple tasks, making Linux tasks productive and enjoyable.\n\n\n\n\n\n\n\n\nUnder Development\n\n\n\n\n\n\nThank you for your patience.\n\n\n\n\nThe Format chapter delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Linux systems. Permissions explains how Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.\n\n\n\nPart Two: Use Cases\n\n\n\n\n\n\n\n\nUnder Development\n\n\n\n\n\n\nThank you for your patience.\n\n\n\n\nThe data files used in this book are documented in the data appendix.",
     "crumbs": [
       "Preface"
     ]
@@ -54,49 +54,49 @@
     "href": "preface.html#footnotes",
     "title": "Preface",
     "section": "",
-    "text": "Read more about EDAV and the Data Modernization Initiative here.↩︎\nThis definition is based on the U.S. Army Field Manuals (FMs).↩︎\nMost of these commands will work on any Shell (Zsh, Bash, etc.) program.↩︎",
+    "text": "Read more about EDAV and the Data Modernization Initiative here.↩︎\nMost of these commands will work on any Shell (Zsh, Bash, etc.) program.↩︎",
     "crumbs": [
       "Preface"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "Introduction",
+    "objectID": "part_one.html",
+    "href": "part_one.html",
+    "title": "Part 1: Introduction",
     "section": "",
     "text": "The Tale of Unix\nImagine Unix and Linux as cars in the vast landscape of automobile manufacturers. Our story begins in the late 1960s at AT&T’s Bell Labs—a significant moment in the history of technology. Unix was born out of a desire for a more flexible and portable operating system. In a time when computers were as big as rooms, Unix represented the custom-built car designed by a prestigious automaker. It was tailored to specific customers who needed top-end performance and reliability and was often used by large corporations or organizations.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>[Part 1: Introduction]{style=\"font-size: 1.05em; font-weight: bold;\"}</span>"
     ]
   },
   {
-    "objectID": "intro.html#the-tale-of-unix",
-    "href": "intro.html#the-tale-of-unix",
-    "title": "Introduction",
+    "objectID": "part_one.html#the-tale-of-unix",
+    "href": "part_one.html#the-tale-of-unix",
+    "title": "Part 1: Introduction",
     "section": "",
     "text": "Unix Philosophy\nUnix was a breath of fresh air, designed with a simplicity and elegance that set it apart. Its portability, the ability to run on different types of hardware, was a game-changer. Over time, Unix evolved into a comprehensive operating system, incorporating essential commands and operations and setting a new standard for efficiency and innovation.\nThe Unix philosophy (i.e., the foundational tools and techniques) became a blueprint for how computers could efficiently and securely manage tasks like organizing files or running software. The general tenets of the Unix philosophy are:\n\nFocus: Design programs to perform a single task effectively.\nSynergy: Programs should be designed to work well with others, ensuring programs can handle input and output via standard streams, allowing them to be combined in powerful ways.\nText: Unix tools are designed to read from and write to text streams.\nExtensibility: Tools should be designed with the expectation that users will extend them beyond their intended purpose.\nSimplicity: Simple, clear, straightforward code is preferred over complex code (even if it means sacrificing functionality).",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>[Part 1: Introduction]{style=\"font-size: 1.05em; font-weight: bold;\"}</span>"
     ]
   },
   {
-    "objectID": "intro.html#the-emergence-of-linux",
-    "href": "intro.html#the-emergence-of-linux",
-    "title": "Introduction",
+    "objectID": "part_one.html#the-emergence-of-linux",
+    "href": "part_one.html#the-emergence-of-linux",
+    "title": "Part 1: Introduction",
     "section": "The Emergence of Linux",
     "text": "The Emergence of Linux\nFast-forward a few decades to 1991, when a Finnish student named Linus Torvalds decided to create his free operating system kernel inspired by Unix. The Linux operating system was modeled after the principles of Unix but not directly derived from Unix source code and made freely available to anyone who wanted to use or improve it.\n\nOpen-source\nLinux flourished with the help of developers around the world. It’s a testament to what collaboration and shared goals can achieve. Whereas the development of Unix was largely driven by a specific group of organizations (like AT&T and Sun Microsystems), Linux was like a kit car designed by a community of enthusiasts, allowing anyone to assemble it with different parts, engines, and even paint (i.e., a fully customizable operating system). This global effort led to rapid evolution and various distributions, each interpreting and applying the Unix philosophy differently.\n\n\nModern Uses\nToday, Unix and Linux are everywhere. Although not as common on desktops as Windows or macOS, Linux distributions are the invisible forces behind much of the Internet and technology we interact with today:\n\nServers and Supercomputers: Linux is used by the majority of web servers powering the Internet and the world’s most powerful supercomputers due to its stability, security, and efficiency.\nSmartphones: Android, the most popular mobile operating system, is powered by a Linux kernel, making Linux the silent workhorse behind billions of smartphones.\nEmbedded Systems: From smartwatches to smart home devices, Linux is often the go-to choice for running embedded systems thanks to its scalability and low cost.\n\nUnix and Linux have grown from niche systems used by academics and researchers to foundational elements that power much of the digital world. They exemplify the power of open collaboration and innovation, showing how a small project or idea can grow and change the world.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>[Part 1: Introduction]{style=\"font-size: 1.05em; font-weight: bold;\"}</span>"
     ]
   },
   {
-    "objectID": "intro.html#recap",
-    "href": "intro.html#recap",
-    "title": "Introduction",
+    "objectID": "part_one.html#recap",
+    "href": "part_one.html#recap",
+    "title": "Part 1: Introduction",
     "section": "Recap",
     "text": "Recap\nTo summarize, both Unix and Linux are analogous to vehicles designed for transportation, but with a few important differences:\n\nUnix is like a high-end, custom-built car designed for a specific market, offering luxury, reliability, and exclusivity.\nLinux is like a kit car that can be built, modified, and customized however the user likes, with support from a large and active community of other enthusiasts.\n\n\n\n\n\n\n\nSee a typo, error, or something missing?\n\n\n\n\n\n\nPlease open an issue on GitHub.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>[Part 1: Introduction]{style=\"font-size: 1.05em; font-weight: bold;\"}</span>"
     ]
   },
   {
@@ -299,7 +299,7 @@
     "href": "dirs.html",
     "title": "Directories",
     "section": "",
-    "text": "Root Directory\nWhen presented with a new map, the most important thing to find is your location on it. It’s hard to know where you’re going without knowing where you are. In Linux, directories are more than just containers for files; they are a critical part of the hierarchical file system, which is organized in a tree-like structure starting from the root directory (/).\nThe root directory is the topmost directory in the Linux file system hierarchy. All other directories and files are nested within it. It is represented by a single forward slash / and contains critical system directories like /bin, /etc, /home, and /var.\n%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'Inconsolata', 'primaryColor': '#89D6FB', 'edgeLabelBackground':'#02577A'}}}%%\n\nflowchart TD\n  Root(&lt;code&gt;/&lt;/code&gt;)\n  bin(&lt;code&gt;/bin&lt;/code&gt;)\n  etc(&lt;code&gt;/etc&lt;/code&gt;)\n  home(&lt;code&gt;/home&lt;/code&gt;)\n  usr(&lt;code&gt;/usr&lt;/code&gt;)\n  var(&lt;code&gt;/var&lt;/code&gt;)\n  tmp(&lt;code&gt;/tmp&lt;/code&gt;)\n\n  Root --&gt; bin\n  Root --&gt; etc\n  Root --&gt; home\n  Root --&gt; usr\n  Root --&gt; var\n  Root --&gt; tmp\n\n\n The root directory",
+    "text": "Root Directory\nWhen presented with a new map, the most important thing to find is your location on it (it’s hard to know where you’re going without knowing where you are). In Linux, directories are more than just containers for files; they are a critical part of the hierarchical file system, which is organized in a tree-like structure starting from the root directory (/).\nThe root directory is the topmost directory in the Linux file system hierarchy. All other directories and files are nested within it. It is represented by a single forward slash / and contains critical system directories like /bin, /etc, /home, and /var.\n%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'Inconsolata', 'fontSize': '14px'}}}%%\n\nflowchart TD\n  Root(&lt;code&gt;/&lt;/code&gt;)\n  bin(&lt;code&gt;/bin&lt;/code&gt;)\n  etc(&lt;code&gt;/etc&lt;/code&gt;)\n  home(&lt;code&gt;/home&lt;/code&gt;)\n  usr(&lt;code&gt;/usr&lt;/code&gt;)\n  var(&lt;code&gt;/var&lt;/code&gt;)\n  tmp(&lt;code&gt;/tmp&lt;/code&gt;)\n\n  Root --&gt; bin\n  Root --&gt; etc\n  Root --&gt; home\n  Root --&gt; usr\n  Root --&gt; var\n  Root --&gt; tmp\n\n\n Everything is a file",
     "crumbs": [
       "Basics",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Directories</span>"
@@ -321,7 +321,7 @@
     "href": "dirs.html#sec-nav-dirs",
     "title": "Directories",
     "section": "Navigate",
-    "text": "Navigate\n\npwd\npwd (print working directory) tells you exactly where you are in the filesystem.\n\npwd \n# /Users/username/projects/books/fm-unix\n\n\nThe output from pwd is the file path to our local working directory.\n\ncd ~\npwd\n# /Users/username\n\n\n\ntree\nThe tree command will recursively print the directory structure of a file path in a ‘tree-like’ format, visually representing the hierarchy of files and directories.\nBelow is an example ‘folder tree’ for the current working directory returned from the pwd command above:\n\n# /Users/ \n#   └─ username/ -&gt; represented as '~'\n#        └─ project/ \n#             └─ books/ \n#                 └─ fm-unix/\n\nThe output from pwd is an absolute file path, and absolute file paths do not change regardless of the current working directory.\n\n\ncd\nMove from one directory to another with cd (change directory). For example, cd data takes you to the data folder inside our current working directory.\n\ncd data\n\nIn the command above, data is a relative file path. Relative file paths specify the location of a file relative to the current working directory.\n\n\n\n\n\n\nIf we view our current directory with tree after changing it to data, we see the current location listed as .:\n\n\ncd data \ntree -d\n# .\n# └── raw\n# \n# 2 directories\n\n\n\nIt’s important to notice the difference between absolute and relative paths, because it makes it easier to navigate the operating system and manipulate files and folders.\nFor example, can use a relative file path to view the report.txt file in the data folder with cat:\n\ncd data\ncat report.txt\n# my important information\n\ndata/report.txt is the relative file path (i.e., relative to the current working directory), and it’s meaning is based on the directory from which it is referenced.\n\n\nls\nls (list) lists the files and folders in a given location. In /bin, ls would show you the software tools available:\n\ncd /bin # change location\nls # what's in here?\n# [\n# bash\n# cat\n# chmod\n# cp\n# csh\n# dash\n# date\n# dd\n# df\n# echo\n# ed\n# expr\n# hostname\n# kill\n# ksh\n# launchctl\n# link\n# ln\n# ls\n# mkdir\n# mv\n# pax\n# ps\n# pwd\n# realpath\n# rm\n# rmdir\n# sh\n# sleep\n# stty\n# sync\n# tcsh\n# test\n# unlink\n# wait4path\n# zsh\n\n\n\nfind\nfind can be used to locate files or directories using the -type and -name options. The example below looks in the current working directory (.) for a folder named data:\n\nfind . -type d -name data\n# ./data",
+    "text": "Navigate\n\npwd\npwd (print working directory) tells you exactly where you are in the filesystem.\n\npwd \n# /Users/username/projects/books/linux-cb\n\n\nThe output from pwd is the file path to our local working directory.\n\ncd ~\npwd\n# /Users/username\n\n\n\ntree\nThe tree command will recursively print the directory structure of a file path in a ‘tree-like’ format, visually representing the hierarchy of files and directories.\nBelow is an example ‘folder tree’ for the current working directory returned from the pwd command above:\n\n# /Users/ \n#   └─ username/ -&gt; represented as '~'\n#        └─ project/ \n#             └─ books/ \n#                 └─ linux-cb/\n\nThe output from pwd is an absolute file path, and absolute file paths do not change regardless of the current working directory.\n\n\ncd\nMove from one directory to another with cd (change directory). For example, cd data takes you to the data folder inside our current working directory.\n\ncd data\n\nIn the command above, data is a relative file path. Relative file paths specify the location of a file relative to the current working directory.\n\n\n\n\n\n\nIf we view our current directory with tree after changing it to data, we see the current location listed as .:\n\n\ncd data \ntree -d\n# .\n# └── raw\n# \n# 2 directories\n\n\n\nIt’s important to notice the difference between absolute and relative paths, because it makes it easier to navigate the operating system and manipulate files and folders.\nFor example, can use a relative file path to view the report.txt file in the data folder with cat:\n\ncd data\ncat report.txt\n# my important information\n\ndata/report.txt is the relative file path (i.e., relative to the current working directory), and it’s meaning is based on the directory from which it is referenced.\n\n\nls\nls (list) lists the files and folders in a given location. In /bin, ls would show you the software tools available:\n\ncd /bin # change location\nls # what's in here?\n# [\n# bash\n# cat\n# chmod\n# cp\n# csh\n# dash\n# date\n# dd\n# df\n# echo\n# ed\n# expr\n# hostname\n# kill\n# ksh\n# launchctl\n# link\n# ln\n# ls\n# mkdir\n# mv\n# pax\n# ps\n# pwd\n# realpath\n# rm\n# rmdir\n# sh\n# sleep\n# stty\n# sync\n# tcsh\n# test\n# unlink\n# wait4path\n# zsh\n\n\n\nfind\nfind can be used to locate files or directories using the -type and -name options. The example below looks in the current working directory (.) for a folder named data:\n\nfind . -type d -name data\n# ./data",
     "crumbs": [
       "Basics",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Directories</span>"
@@ -1014,68 +1014,141 @@
     ]
   },
   {
-    "objectID": "use_cases.html",
-    "href": "use_cases.html",
-    "title": "Use Cases",
+    "objectID": "part_two.html",
+    "href": "part_two.html",
+    "title": "Part 2: Use Cases",
     "section": "",
     "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.",
     "crumbs": [
-      "Use Cases"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>[Part 2: Use Cases]{style=\"font-size: 1.05em; font-weight: bold;\"}</span>"
+    ]
+  },
+  {
+    "objectID": "maintenance.html",
+    "href": "maintenance.html",
+    "title": "Maintenance",
+    "section": "",
+    "text": "Installations",
+    "crumbs": [
+      "Maintenance"
+    ]
+  },
+  {
+    "objectID": "maintenance.html#updates",
+    "href": "maintenance.html#updates",
+    "title": "Maintenance",
+    "section": "Updates",
+    "text": "Updates",
+    "crumbs": [
+      "Maintenance"
+    ]
+  },
+  {
+    "objectID": "maintenance.html#upgrades",
+    "href": "maintenance.html#upgrades",
+    "title": "Maintenance",
+    "section": "Upgrades",
+    "text": "Upgrades",
+    "crumbs": [
+      "Maintenance"
+    ]
+  },
+  {
+    "objectID": "installs.html",
+    "href": "installs.html",
+    "title": "Installations",
+    "section": "",
+    "text": "Package managers\nScenario: You’ve been asked to install a software package on your Linux operating system. This could be an applications, library, utility, or their dependencies.\nIn the Linux ecosystem, apt, yum, and dnf are package managers. These tools are responsible for installing and managing software packages, such as installing, updating, and removing software, as well as resolving package dependencies.",
+    "crumbs": [
+      "Maintenance",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Installations</span>"
+    ]
+  },
+  {
+    "objectID": "installs.html#package-managers",
+    "href": "installs.html#package-managers",
+    "title": "Installations",
+    "section": "",
+    "text": "apt\napt (Advanced Package Tool)is used on Debian-based distributions like Ubuntu, Debian, etc. apt installs packages from .deb files, which are precompiled software packages.\n\nExample usage\n\nInstall a package:\nsudo apt install &lt;package_name&gt;\nUpdate a package:\nsudo apt update\nUpgrade installed packages:\nsudo apt upgrade\n\n\n\n\nyum\nyum (Yellowdog Updater, Modified) is used on older Red Hat-based distributions like CentOS 7, RHEL 7, and Fedora. yum installs packages from .rpm files, which are precompiled software packages.\n\nExample usage\n\nInstall a package:\nsudo yum install &lt;package_name&gt;\nUpdate all packages:\nsudo yum update\nRemove a package:\nsudo yum remove &lt;package_name&gt;\n\n\n\n\ndnf\ndnf (Dandified YUM) is the next-generation version of yum and the default package manager for RHEL 8+, CentOS 8+, and Fedora.\n\nMore efficient and faster than yum, with better dependency management.\n\n\nExample usage\n\nInstall a package:\nsudo dnf install &lt;package_name&gt;\nUpdate all packages:\nsudo dnf update\nRemove a package:\nsudo dnf remove &lt;package_name&gt;",
+    "crumbs": [
+      "Maintenance",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Installations</span>"
+    ]
+  },
+  {
+    "objectID": "installs.html#recap",
+    "href": "installs.html#recap",
+    "title": "Installations",
+    "section": "Recap",
+    "text": "Recap\nThe apt, yum, and dnf package managers install:\n\nSoftware packages: Precompiled binaries or scripts, such as applications, libraries, and utilities.\nDependencies: Additional packages required for the primary software to function correctly.\nUpdates: Security patches and newer versions of existing software.\n\nThese package managers fetch packages from their respective repositories, which are online or local directories containing approved and signed software packages.",
+    "crumbs": [
+      "Maintenance",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Installations</span>"
+    ]
+  },
+  {
+    "objectID": "performance.html",
+    "href": "performance.html",
+    "title": "Performance",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\n\nThis section is under development. Thank you for your patience.",
+    "crumbs": [
+      "Performance"
     ]
   },
   {
     "objectID": "file_size.html",
     "href": "file_size.html",
-    "title": "Find Large Files",
+    "title": "Finding Large Files",
     "section": "",
     "text": "find\nScenario: You’ve been asked to discover any files over a certain size. This could be due concerns over disk space, performance optimization, backup and recovery, network load reduction, compliance, auditing, a system migration, user quotas, or internal data management policies (usually related to cost).",
     "crumbs": [
-      "Use Cases",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Find Large Files</span>"
+      "Performance",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Finding Large Files</span>"
     ]
   },
   {
     "objectID": "file_size.html#du-sort",
     "href": "file_size.html#du-sort",
-    "title": "Find Large Files",
+    "title": "Finding Large Files",
     "section": "du & sort",
     "text": "du & sort",
     "crumbs": [
-      "Use Cases",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Find Large Files</span>"
+      "Performance",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Finding Large Files</span>"
     ]
   },
   {
     "objectID": "file_size.html#awk-ls",
     "href": "file_size.html#awk-ls",
-    "title": "Find Large Files",
+    "title": "Finding Large Files",
     "section": "awk & ls",
     "text": "awk & ls",
     "crumbs": [
-      "Use Cases",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Find Large Files</span>"
+      "Performance",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Finding Large Files</span>"
     ]
   },
   {
     "objectID": "file_size.html#ncdu",
     "href": "file_size.html#ncdu",
-    "title": "Find Large Files",
+    "title": "Finding Large Files",
     "section": "ncdu",
     "text": "ncdu",
     "crumbs": [
-      "Use Cases",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Find Large Files</span>"
+      "Performance",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Finding Large Files</span>"
     ]
   },
   {
     "objectID": "file_size.html#grep-find-or-du",
     "href": "file_size.html#grep-find-or-du",
-    "title": "Find Large Files",
+    "title": "Finding Large Files",
     "section": "grep & find or du",
     "text": "grep & find or du",
     "crumbs": [
-      "Use Cases",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Find Large Files</span>"
+      "Performance",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Finding Large Files</span>"
     ]
   },
   {

@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-22">
-<meta name="description" content="A Linux Field Manual">
+<meta name="dcterms.date" content="2025-01-23">
+<meta name="description" content="A Linux Cookbook">
 
-<title>Preface – linux-cb</title>
+<title>Preface – Linux-CB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./part_one.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">linux-cb</a> 
+      <a href="./">Linux-CB</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/mjfrigaard/linux-cb" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
+  <a href="./part_one.html" class="sidebar-item-text sidebar-link"><span class="chapter-title"><span style="font-size: 1.05em; font-weight: bold;">Part 1: Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -264,10 +264,15 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_two.html" class="sidebar-item-text sidebar-link"><span class="chapter-title"><span style="font-size: 1.05em; font-weight: bold;">Part 2: Use Cases</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./use_cases.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Use Cases</span></a>
+            <a href="./maintenance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maintenance</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -275,20 +280,36 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./file_size.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Find Large Files</span></a>
+  <a href="./installs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Installations</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+            <a href="./performance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Performance</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./file_size.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Finding Large Files</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./syntax_ref.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Syntax Reference</span></a>
@@ -335,13 +356,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span style="font-size: 1.05em; font-weight: bold;">Background</span></a></li>
   <li><a href="#outline" id="toc-outline" class="nav-link" data-scroll-target="#outline"><span style="font-size: 1.05em; font-weight: bold;">Outline</span></a>
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#part-one-introduction" id="toc-part-one-introduction" class="nav-link" data-scroll-target="#part-one-introduction">Part One: Introduction</a>
+  <ul class="collapse">
   <li><a href="#set-ups" id="toc-set-ups" class="nav-link" data-scroll-target="#set-ups">Set-Ups</a></li>
   <li><a href="#the-basics" id="toc-the-basics" class="nav-link" data-scroll-target="#the-basics">The Basics</a></li>
   <li><a href="#syntax" id="toc-syntax" class="nav-link" data-scroll-target="#syntax">Syntax</a></li>
   <li><a href="#manipulating-text" id="toc-manipulating-text" class="nav-link" data-scroll-target="#manipulating-text">Manipulating Text</a></li>
   <li><a href="#shell-scripts" id="toc-shell-scripts" class="nav-link" data-scroll-target="#shell-scripts">Shell Scripts</a></li>
-  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use cases</a></li>
+  </ul></li>
+  <li><a href="#part-two-use-cases" id="toc-part-two-use-cases" class="nav-link" data-scroll-target="#part-two-use-cases">Part Two: Use Cases</a></li>
   </ul></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></a></li>
   </ul>
@@ -363,7 +386,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-01-22</p>
+      <p class="date">2025-01-23</p>
     </div>
   </div>
   
@@ -406,53 +429,51 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="outline"><span style="font-size: 1.05em; font-weight: bold;">Outline</span></h2>
 <p>The first half of this book gradually introduces the Linux environment, starting with some history and operating system basics before moving into more complex concepts. These sections (<strong>Set-Ups</strong>, <strong>Basics</strong>, <strong>Syntax</strong>, <strong>Text</strong>, and <strong>Shell Scripts</strong>) cover concepts and topics for users new to Linux.</p>
 <p>The second half of the book covers case studies (or common tasks). If you’re familiar with Linux/Unix, command-line tools, and regular expressions, skip to these sections.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<section id="part-one-introduction" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="part-one-introduction">Part One: Introduction</h3>
+<p>The <strong><a href="part_one.html" class="quarto-xref"><span>Part 1: Introduction</span></a></strong> acquaints you with some background that formed the landscape of Unix systems. It explains the shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Linux.</p>
+<section id="set-ups" class="level4">
+<h4 class="anchored" data-anchor-id="set-ups">Set-Ups</h4>
+<p>Setting up your Linux environment is crucial before diving into writing commands and scripts. <strong><a href="./setups.html">Set-ups</a></strong> guide you through various options for setting up <strong><a href="vms.html" class="quarto-xref"><span>Virtual Machines</span></a></strong>, <strong><a href="shells.html" class="quarto-xref"><span>Shells</span></a></strong>, and <strong><a href="terminals.html" class="quarto-xref"><span>Terminals</span></a></strong>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</section>
+<section id="the-basics" class="level4">
+<h4 class="anchored" data-anchor-id="the-basics">The Basics</h4>
+<p>Navigating and managing files and folders are daily tasks for Linux users. <strong><a href="dirs.html" class="quarto-xref"><span>Directories</span></a></strong> cover essential commands such as cd for changing directories, <code>pwd</code> to print the current directory, <code>ls</code> for listing files, and <code>mkdir</code> for making directories.</p>
+<p>The <strong><a href="files.html" class="quarto-xref"><span>Files</span></a></strong> chapter covers file manipulation commands like <code>cp</code> (copy), <code>mv</code> (move), <code>rm</code> (remove), and <code>less</code> for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Linux.</p>
+<p><strong><a href="sys.html" class="quarto-xref"><span>System</span></a></strong> goes over common system commands like top for monitoring processes in real-time, <code>ps</code> for listing currently running processes, <code>kill</code> to stop a process, <code>df</code> (Disk Free) to display disk space usage on all mounted filesystems, and <code>du</code> (Disk Usage) to estimate file space usage. These commands help efficiently manage the system’s processes and resources, ensuring a clear view of resource allocation and consumption.</p>
+</section>
+<section id="syntax" class="level4">
+<h4 class="anchored" data-anchor-id="syntax">Syntax</h4>
+<p>Understanding the shell syntax is vital for effectively communicating with a Linux system. The <strong><a href="./syntax.html">Syntax</a></strong> section demystifies the structure of commands, including how to differentiate between <strong><a href="commands.html" class="quarto-xref"><span>Commands</span></a></strong>, <strong><a href="arguments.html" class="quarto-xref"><span>Arguments</span></a></strong>, and <strong><a href="options.html" class="quarto-xref"><span>Options</span></a></strong> and manage inputs and outputs. This knowledge is critical to executing tasks reliably at the command line.</p>
+<p><strong><a href="pipes.html" class="quarto-xref"><span>Pipes</span></a></strong> are a cornerstone of Linux productivity, enabling the output of one command to serve as the input to another. <strong><a href="./syntax.html">Syntax</a></strong> also covers how to combine commands using <code>stdout</code> and <code>stdin</code>, allowing for robust command chains that can perform complex tasks. Understanding pipes unlocks a higher level of command-line efficiency.</p>
+</section>
+<section id="manipulating-text" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="manipulating-text">Manipulating Text</h4>
+<p>Linux systems are renowned for their powerful text manipulation capabilities. <strong><a href="./text.html">The Text</a></strong> section covers using <strong><a href="symbols_patterns.html" class="quarto-xref"><span>Symbols &amp; Patterns</span></a></strong> to build regular expressions (regex). <strong><a href="text_commands.html" class="quarto-xref"><span>Manipulating Text</span></a></strong> introduces commands such as <code>cat</code> for displaying file contents, <code>grep</code> for searching within files, sorting data, sorting data, <code>uniq</code> for filtering unique lines, and cutting, pasting, and joining for editing files. Mastering these commands will allow you to handle and process text data efficiently. <strong><a href="./text_editors.html">Text Editors</a></strong> cover Nano, vim, and Emacs.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 1.10em;">What is in a Field Manual?</span>
+<span style="font-weight: bold; font-size: 0.95em;">Under Development</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div style="font-size: 0.95em; color: #282b2d;">
-<p>A field manual (FM) is an educational tool that provides information, instructions, and techniques for various concepts and practices.</p>
-<p>Fiels Manuals function as both reference material and living documentation, encouraging updates and adaptations based on the given situation, available technology, or broader environment.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/jacket-pole-litter.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Example improvised litter made using tent poles and field jackets.</figcaption>
-</figure>
+<p>Thank you for your patience.</p>
 </div>
 </div>
 </div>
 </div>
-</div>
-<section id="introduction" class="level3">
-<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
-<p>The <strong><a href="intro.html" class="quarto-xref"><span>Introduction</span></a></strong> acquaints you with some background that formed the landscape of Unix systems. It explains the shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Linux.</p>
-</section>
-<section id="set-ups" class="level3">
-<h3 class="anchored" data-anchor-id="set-ups">Set-Ups</h3>
-<p>Setting up your Linux environment is crucial before diving into writing commands and scripts. <strong><a href="./setups.html">Set-ups</a></strong> guide you through various options for setting up <strong><a href="vms.html" class="quarto-xref"><span>Virtual Machines</span></a></strong>, <strong><a href="shells.html" class="quarto-xref"><span>Shells</span></a></strong>, and <strong><a href="terminals.html" class="quarto-xref"><span>Terminals</span></a></strong>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-</section>
-<section id="the-basics" class="level3">
-<h3 class="anchored" data-anchor-id="the-basics">The Basics</h3>
-<p>Navigating and managing files and folders are daily tasks for Linux users. <strong><a href="dirs.html" class="quarto-xref"><span>Directories</span></a></strong> cover essential commands such as cd for changing directories, <code>pwd</code> to print the current directory, <code>ls</code> for listing files, and <code>mkdir</code> for making directories.</p>
-<p>The <strong><a href="files.html" class="quarto-xref"><span>Files</span></a></strong> chapter covers file manipulation commands like <code>cp</code> (copy), <code>mv</code> (move), <code>rm</code> (remove), and <code>less</code> for viewing file content, ensuring you can organize and manage your file system effectively. These commands are the building blocks for more complex operations in Linux.</p>
-<p><strong><a href="sys.html" class="quarto-xref"><span>System</span></a></strong> goes over common system commands like top for monitoring processes in real-time, <code>ps</code> for listing currently running processes, <code>kill</code> to stop a process, <code>df</code> (Disk Free) to display disk space usage on all mounted filesystems, and <code>du</code> (Disk Usage) to estimate file space usage. These commands help efficiently manage the system’s processes and resources, ensuring a clear view of resource allocation and consumption.</p>
-</section>
-<section id="syntax" class="level3">
-<h3 class="anchored" data-anchor-id="syntax">Syntax</h3>
-<p>Understanding the shell syntax is vital for effectively communicating with a Linux system. The <strong><a href="./syntax.html">Syntax</a></strong> section demystifies the structure of commands, including how to differentiate between <strong><a href="commands.html" class="quarto-xref"><span>Commands</span></a></strong>, <strong><a href="arguments.html" class="quarto-xref"><span>Arguments</span></a></strong>, and <strong><a href="options.html" class="quarto-xref"><span>Options</span></a></strong> and manage inputs and outputs. This knowledge is critical to executing tasks reliably at the command line.</p>
-<p><strong><a href="pipes.html" class="quarto-xref"><span>Pipes</span></a></strong> are a cornerstone of Linux productivity, enabling the output of one command to serve as the input to another. <strong><a href="./syntax.html">Syntax</a></strong> also covers how to combine commands using <code>stdout</code> and <code>stdin</code>, allowing for robust command chains that can perform complex tasks. Understanding pipes unlocks a higher level of command-line efficiency.</p>
-</section>
-<section id="manipulating-text" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="manipulating-text">Manipulating Text</h3>
-<p>Linux systems are renowned for their powerful text manipulation capabilities. <strong><a href="./text.html">The Text</a></strong> section covers using <strong><a href="symbols_patterns.html" class="quarto-xref"><span>Symbols &amp; Patterns</span></a></strong> to build regular expressions (regex). <strong><a href="text_commands.html" class="quarto-xref"><span>Manipulating Text</span></a></strong> introduces commands such as <code>cat</code> for displaying file contents, <code>grep</code> for searching within files, sorting data, sorting data, <code>uniq</code> for filtering unique lines, and cutting, pasting, and joining for editing files. Mastering these commands will allow you to handle and process text data efficiently. <strong><a href="./text_editors.html">Text Editors</a></strong> cover Nano, vim, and Emacs.</p>
+</div></div></section>
+<section id="shell-scripts" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="shell-scripts">Shell Scripts</h4>
+<p>Shell scripting is a powerful tool for automating repetitive tasks in Linux. This section introduces writing shell scripts, covering the basics of script creation, execution, and debugging. We’ll discuss how to automate simple tasks, making Linux tasks productive and enjoyable.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
@@ -473,10 +494,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-</div></div></section>
-<section id="shell-scripts" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="shell-scripts">Shell Scripts</h3>
-<p>Shell scripting is a powerful tool for automating repetitive tasks in Linux. This section introduces writing shell scripts, covering the basics of script creation, execution, and debugging. We’ll discuss how to automate simple tasks, making Linux tasks productive and enjoyable.</p>
+</div></div><p>The <strong><a href="./format.html">Format</a></strong> chapter delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Linux systems. <strong><a href="./permissions.html">Permissions</a></strong> explains how Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.</p>
+</section>
+</section>
+<section id="part-two-use-cases" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="part-two-use-cases">Part Two: Use Cases</h3>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
@@ -497,30 +519,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-</div></div><p>The <strong><a href="./format.html">Format</a></strong> chapter delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Linux systems. <strong><a href="./permissions.html">Permissions</a></strong> explains how Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.</p>
-</section>
-<section id="use-cases" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="use-cases">Use cases</h3>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span style="font-weight: bold; font-size: 0.95em;">Under Development</span>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div style="font-size: 0.95em; color: #282b2d;">
-<p>Thank you for your patience.</p>
-</div>
-</div>
-</div>
-</div>
 </div></div><p>The data files used in this book are documented in the <a href="./data.html">data</a> appendix.</p>
 </section>
 </section>
@@ -528,7 +526,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="recap"><span style="font-size: 1.05em; font-weight: bold;">Recap</span></h2>
 <p>By the end of this book, you’ll have a solid understanding of the Linux operating system. You’ll be equipped to navigate, manage files, write scripts, and set permissions confidently. Whether you’re looking to enhance your career prospects, manage a new system, or simply satisfy your curiosity, this book will be your companion on a fascinating journey into the world of Linux.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -537,10 +535,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 1.00em; color: #282b2d;">
-<p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
+<p>Please open an issue on <a href="https://github.com/mjfrigaard/linux-cb/issues/new">GitHub.</a></p>
 </div>
 </div>
 </div>
@@ -552,8 +550,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 <ol>
 <li id="fn1"><p>Read more about EDAV and the Data Modernization Initiative <a href="https://www.cdc.gov/data-modernization/php/technologies/edav.html">here</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>This definition is based on the <a href="https://github.com/mjfrigaard/fm-unix/tree/main/_assets/1965-fm531-boobytraps.pdf">U.S. Army Field Manuals (FMs).</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Most of these commands will work on any Shell (Zsh, Bash, etc.) program.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Most of these commands will work on any Shell (Zsh, Bash, etc.) program.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -1021,8 +1018,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./part_one.html" class="pagination-link" aria-label="[Part 1: Introduction]{style=&quot;font-size: 1.05em; font-weight: bold;&quot;}">
+        <span class="nav-page-text"><span class="chapter-title"><span style="font-size: 1.05em; font-weight: bold;">Part 1: Introduction</span></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

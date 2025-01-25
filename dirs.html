@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-22">
-<meta name="description" content="A Linux Field Manual">
+<meta name="dcterms.date" content="2025-01-23">
+<meta name="description" content="A Linux Cookbook">
 
-<title>Directories – linux-cb</title>
+<title>Directories – Linux-CB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,7 +136,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">linux-cb</a> 
+      <a href="./">Linux-CB</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/mjfrigaard/linux-cb" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
@@ -163,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
+  <a href="./part_one.html" class="sidebar-item-text sidebar-link"><span class="chapter-title"><span style="font-size: 1.05em; font-weight: bold;">Part 1: Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -302,10 +302,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_two.html" class="sidebar-item-text sidebar-link"><span class="chapter-title"><span style="font-size: 1.05em; font-weight: bold;">Part 2: Use Cases</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./use_cases.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Use Cases</span></a>
+            <a href="./maintenance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maintenance</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -313,20 +318,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./file_size.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Find Large Files</span></a>
+  <a href="./installs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Installations</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+            <a href="./performance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Performance</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./file_size.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Finding Large Files</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./syntax_ref.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Syntax Reference</span></a>
@@ -410,7 +431,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-01-22</p>
+      <p class="date">2025-01-23</p>
     </div>
   </div>
   
@@ -440,7 +461,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>When presented with a new map, the most important thing to find is your location on it. It’s hard to know where you’re going without knowing where you are. In Linux, directories are more than just containers for files; they are a critical part of the hierarchical file system, which is organized in a tree-like structure starting from the root directory (<code>/</code>).</p>
+<p>When presented with a new map, the most important thing to find is your location on it (it’s hard to know where you’re going without knowing where you are). In Linux, directories are more than just containers for files; they are a critical part of the hierarchical file system, which is organized in a tree-like structure starting from the root directory (<code>/</code>).</p>
 <section id="root-directory" class="level2">
 <h2 class="anchored" data-anchor-id="root-directory"><span style="font-size: 1.05em; font-weight: bold;">Root Directory</span></h2>
 <p>The root directory is the topmost directory in the Linux file system hierarchy. All other directories and files are nested within it. It is represented by a single forward slash <code>/</code> and contains critical system directories like <code>/bin</code>, <code>/etc</code>, <code>/home</code>, and <code>/var</code>.</p>
@@ -457,12 +478,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 
 </style>
-<div class="cell" data-fig-width="6.5" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'Inconsolata', 'primaryColor': '#89D6FB', 'edgeLabelBackground':'#02577A'}}}%%
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'Inconsolata', 'fontSize': '14px'}}}%%
 
 flowchart TD
   Root(&lt;code&gt;/&lt;/code&gt;)
@@ -481,7 +502,7 @@ flowchart TD
   Root --&gt; tmp
 </pre>
 </div>
-<p></p><figcaption> The <code>root</code> directory</figcaption> </figure><p></p>
+<p></p><figcaption> Everything is a file</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
@@ -506,7 +527,7 @@ flowchart TD
 <p><strong><code><a href="syntax_ref.html#sec-pwd" class="quarto-xref"><span>pwd</span></a></code></strong> (print working directory) tells you exactly where you are in the filesystem.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /Users/username/projects/books/fm-unix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /Users/username/projects/books/linux-cb</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><span style="font-size: 1.25em; font-weight: bold; font-style: italic;"></span></p>
 <p>The output from <code>pwd</code> is the file path to our local working directory.</p>
@@ -525,7 +546,7 @@ flowchart TD
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   └─ username/ -&gt; represented as '~'</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#        └─ project/ </span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#             └─ books/ </span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#                 └─ fm-unix/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#                 └─ linux-cb/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The output from <code>pwd</code> is an absolute file path, and <strong>absolute file paths</strong> do not change regardless of the current working directory.</p>
 </section>
@@ -737,7 +758,7 @@ flowchart TD
 <div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div style="font-size: 1.00em; color: #282b2d;">
-<p>Please open an issue on <a href="https://github.com/mjfrigaard/fm-unix/issues/new">GitHub.</a></p>
+<p>Please open an issue on <a href="https://github.com/mjfrigaard/linux-cb/issues/new">GitHub.</a></p>
 </div>
 </div>
 </div>
