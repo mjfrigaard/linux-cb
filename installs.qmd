@@ -1,0 +1,103 @@
+---
+engine: knitr
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: '#'
+---
+
+# Installations {#sec-installations}
+
+**Scenario:** You've been asked to install a software package on your Linux operating system. This could be an applications, library, utility, or their dependencies. 
+
+## Package managers
+
+In the Linux ecosystem, `apt`, `yum`, and `dnf` are **package managers**. These tools are responsible for installing and managing software packages, such as installing, updating, and removing software, as well as resolving package dependencies.
+
+### `apt`
+
+`apt` (Advanced Package Tool)is used on **Debian-based distributions** like Ubuntu, Debian, etc. `apt` installs packages from `.deb` files, which are precompiled software packages.
+
+#### Example usage
+
+  -   Install a package:   
+ 
+      ```sh
+      sudo apt install <package_name>
+      ```
+      
+  -   Update a package:   
+ 
+      ```sh
+      sudo apt update
+      ```
+      
+  -   Upgrade installed packages: 
+  
+      ```sh
+      sudo apt upgrade
+      ```
+
+### `yum`
+
+`yum` (Yellowdog Updater, Modified) is used on **older Red Hat-based distributions** like CentOS 7, RHEL 7, and Fedora. yum installs packages from `.rpm` files, which are precompiled software packages.
+
+
+#### Example usage
+
+  -   Install a package:    
+  
+      ```sh
+      sudo yum install <package_name>
+      ```
+
+  -   Update all packages: 
+  
+      ```sh
+      sudo yum update
+      ```
+      
+  -   Remove a package: 
+  
+      ```sh
+      sudo yum remove <package_name>
+      ```
+
+### `dnf`
+
+`dnf` (Dandified YUM) is the **next-generation version of `yum`** and the default package manager for **RHEL 8+, CentOS 8+, and Fedora**.
+
+   - More efficient and faster than `yum`, with better dependency management.
+   
+#### Example usage
+
+  -   Install a package: 
+  
+      ```sh
+      sudo dnf install <package_name>
+      ```
+  
+  -   Update all packages: 
+  
+      ```sh
+      sudo dnf update
+      ```
+
+  -   Remove a package: 
+
+      ```sh
+      sudo dnf remove <package_name>
+      ```
+
+
+## Recap
+
+The `apt`, `yum`, and `dnf` **package managers** install:
+
+1. **Software packages**: Precompiled binaries or scripts, such as applications, libraries, and utilities.
+
+2. **Dependencies**: Additional packages required for the primary software to function correctly.
+
+3. **Updates**: Security patches and newer versions of existing software.
+
+These package managers fetch packages from their respective repositories, which are online or local directories containing approved and signed software packages.

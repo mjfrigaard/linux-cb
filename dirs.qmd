@@ -40,7 +40,7 @@ co_box(
 )
 ```
 
-When presented with a new map, the most important thing to find is your location on it. It's hard to know where you're going without knowing where you are. In Linux, directories are more than just containers for files; they are a critical part of the hierarchical file system, which is organized in a tree-like structure starting from the root directory (`/`).
+When presented with a new map, the most important thing to find is your location on it (it's hard to know where you're going without knowing where you are). In Linux, directories are more than just containers for files; they are a critical part of the hierarchical file system, which is organized in a tree-like structure starting from the root directory (`/`).
 
 ## [Root Directory]{style="font-size: 1.05em; font-weight: bold;"} 
 
@@ -63,10 +63,9 @@ The root directory is the topmost directory in the Linux file system hierarchy. 
 ```
 
 ```{mermaid}
-%%| fig-width: 6.5
+%%| fig-cap: 'Everything is a file'
 %%| fig-align: center
-%%| fig-cap: 'The `root` directory'
-%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'Inconsolata', 'primaryColor': '#89D6FB', 'edgeLabelBackground':'#02577A'}}}%%
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'Inconsolata', 'fontSize': '14px'}}}%%
 
 flowchart TD
   Root(<code>/</code>)

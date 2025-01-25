@@ -1,0 +1,15 @@
+{
+  "hash": "3e8246e551de1e3b03b11b298654711c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\nengine: knitr\nknitr:\n  opts_chunk: \n    collapse: true\n    comment: '#'\n---\n\n\n\n\n# Performance {#sec-performance}\n\n\n\n\n\n\n\n\n\n:::: {.callout-important collapse='false' appearance='default' icon='false'}\n\n## [Caution]{style='font-weight: bold; font-size: 1.25em;'}\n\n::: {style='font-size: 1.00em; color: #282b2d;'}\n\n\nThis section is under development. Thank you for your patience.\n  \n\n::: \n\n::::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

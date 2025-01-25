@@ -3,14 +3,22 @@ engine: knitr
 knitr:
   opts_chunk: 
     collapse: true
-    comment: '# '
+    comment: '#'
 ---
 
-# Use Cases  {#sec-use-cases}
+# Performance {#sec-performance}
 
-```{r}
+```{bash}
 #| label: setup
 #| include: false
+whoami
+```
+
+```{r}
+#| label: common
+#| include: false
+# Sys.setenv('QUARTO_PROJECT_DIR' = 'data')
+# Sys.getenv('QUARTO_PROJECT_DIR')
 source("_common.R")
 ```
 

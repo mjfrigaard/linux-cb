@@ -30,6 +30,8 @@ co_box(
 )
 ```
 
+The next sections introduce some common topics and commands that will help you navigate folders (or directories), manipulate and manage files, and check system processes. These sections focus on executing single commands in a Terminal. In the next section we'll dive into the Linux command syntax (i.e., arguments, options, and pipes).
+
 > ["Everything is a file"]{style="font-size: 1.25em; font-weight: bold; font-style: italic;"}
 
 ```{=html}
@@ -49,17 +51,16 @@ co_box(
 ```
 
 ```{mermaid}
-%%| fig-width: 8.0
-%%| fig-align: center
 %%| fig-cap: 'Everything is a file'
-%%{init: {'theme': 'forest', 'themeVariables': { 'fontFamily': 'Inconsolata', 'primaryColor': '#89D6FB', 'edgeLabelBackground':'#02577A'}}}%%
+%%| fig-align: center
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'Inconsolata', 'fontSize': '14px'}}}%%
 
 mindmap
-  root(("`**Everything is a File**`"))
-    File
-      Text Files
-      Binary Files
-      Executable Files
+  root(("**Everything is a File**"))
+    Files
+      txt("Text Files")
+      bin("Binary Files")
+      exe("Executable Files")
     Directory
       Folders
       Special Directories 
@@ -79,15 +80,13 @@ mindmap
       
 ```
 
-The next sections introduce some common topics and commands that will help you navigate folders (or directories), manipulate and manage files, and check system processes. These sections focus on executing single commands in a Terminal. In the next section we'll dive into the Linux command syntax (i.e., arguments, options, and pipes).
-
 ### Directories 
 
 In Linux, [directories](dirs.qmd) are special types of files that contain other files, including other directories. This ties into a fundamental concept in Linux: **everything is a file**. This means that not only are traditional files like documents and images considered files, but so are directories, devices, processes, and even network sockets.
 
 ### Files 
 
-In Linux, the phrase **everything is a [files](files..qmd)** encapsulates the idea that all system components, whether traditional files, directories, devices, or even processes, are represented as files. This abstraction makes Linux both powerful and flexible, as it allows users to interact with a wide range of system elements using a consistent set of tools and commands.
+In Linux, all system components, whether traditional files, directories, devices, or even processes, are represented as [files](files.qmd). This abstraction makes Linux both powerful and flexible, as it allows users to interact with a wide range of system elements using a consistent set of tools and commands.
 
 ### System 
 

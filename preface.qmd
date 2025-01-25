@@ -57,7 +57,7 @@ The second half of the book covers case studies (or common tasks). If you’re f
 #| label: co_box_fms
 #| echo: false
 #| results: asis
-#| eval: true
+#| eval: false
 co_box(
   color = "g",
   header = "What is in a Field Manual?", 
@@ -74,17 +74,17 @@ Fiels Manuals function as both reference material and living documentation, enco
 [^field-manuals]: This definition is based on the [U.S. Army Field Manuals (FMs).](https://github.com/mjfrigaard/linux-cb/tree/main/_assets/1965-fm531-boobytraps.pdf)")
 ```
 
-### Introduction
+### Part One: Introduction
 
-The <strong>@sec-intro</strong> acquaints you with some background that formed the landscape of Unix systems. It explains the shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Linux.
+The <strong>@sec-part-one</strong> acquaints you with some background that formed the landscape of Unix systems. It explains the shell, a command-line interface (CLI), which is the gateway to leveraging the full potential of Linux.
 
-### Set-Ups
+#### Set-Ups
 
 Setting up your Linux environment is crucial before diving into writing commands and scripts. <strong>[Set-ups](setups.qmd)</strong> guide you through various options for setting up <strong>@sec-vms</strong>, <strong>@sec-shells</strong>, and <strong>@sec-terminals</strong>.[^zsh-bash]
 
 [^zsh-bash]: Most of these commands will work on any Shell (Zsh, Bash, etc.) program.
 
-### The Basics
+#### The Basics
 
 Navigating and managing files and folders are daily tasks for Linux users.  <strong>@sec-dirs</strong> cover essential commands such as cd for changing directories, `pwd` to print the current directory, `ls` for listing files, and `mkdir` for making directories.
 
@@ -92,13 +92,13 @@ The <strong>@sec-files</strong> chapter covers file manipulation commands like `
 
 <strong>@sec-sys</strong> goes over common system commands like top for monitoring processes in real-time, `ps` for listing currently running processes, `kill` to stop a process, `df` (Disk Free) to display disk space usage on all mounted filesystems, and `du` (Disk Usage) to estimate file space usage. These commands help efficiently manage the system’s processes and resources, ensuring a clear view of resource allocation and consumption.
 
-### Syntax
+#### Syntax
 
 Understanding the shell syntax is vital for effectively communicating with a Linux system. The <strong>[Syntax](syntax.qmd)</strong> section demystifies the structure of commands, including how to differentiate between  <strong>@sec-commands</strong>, <strong>@sec-args</strong>, and <strong>@sec-options</strong> and manage inputs and outputs. This knowledge is critical to executing tasks reliably at the command line.
 
 <strong>@sec-pipes</strong> are a cornerstone of Linux productivity, enabling the output of one command to serve as the input to another.  <strong>[Syntax](syntax.qmd)</strong> also covers how to combine commands using `stdout` and `stdin`, allowing for robust command chains that can perform complex tasks. Understanding pipes unlocks a higher level of command-line efficiency.
 
-### Manipulating Text
+#### Manipulating Text
 
 Linux systems are renowned for their powerful text manipulation capabilities.  <strong>[The Text](text.qmd)</strong> section covers using <strong>@sec-symbols-patterns</strong> to build regular expressions (regex). <strong>@sec-txt-cmds</strong> introduces commands such as `cat` for displaying file contents, `grep` for searching within files, sorting data, sorting data, `uniq` for filtering unique lines, and cutting, pasting, and joining for editing files. Mastering these commands will allow you to handle and process text data efficiently. <strong>[Text Editors](text_editors.qmd)</strong> cover Nano, vim, and Emacs.
 
@@ -119,7 +119,7 @@ co_box(
 )
 ```
 
-### Shell Scripts 
+#### Shell Scripts 
 
 Shell scripting is a powerful tool for automating repetitive tasks in Linux. This section introduces writing shell scripts, covering the basics of script creation, execution, and debugging. We’ll discuss how to automate simple tasks, making Linux tasks productive and enjoyable.
 
@@ -142,7 +142,7 @@ co_box(
 
 The <strong>[Format](format.qmd)</strong> chapter delves into the differences between these formats, guiding you on writing compatible scripts that can run across different Linux systems. <strong>[Permissions](permissions.qmd)</strong> explains how Linux permissions work and teaches you how to set and modify permissions to protect your data and system from unauthorized access.
 
-### Use cases 
+### Part Two: Use Cases 
 
 ```{r}
 #| label: co_box_use_cases

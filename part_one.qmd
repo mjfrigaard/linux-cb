@@ -5,7 +5,7 @@ knitr:
     collapse: true
 ---
 
-# Introduction {#sec-intro}
+# [Part 1: Introduction]{style="font-size: 1.05em; font-weight: bold;"} {#sec-part-one}
 
 ```{bash}
 #| label: setup

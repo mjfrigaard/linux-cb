@@ -7,10 +7,10 @@ editor:
   render-on-save: true
 
 book:
-  title: "linux-cb"
+  title: "Linux-CB"
   author: "Martin Frigaard"
   description: |
-    A Linux Field Manual
+    A Linux Cookbook
   search: true
   site-url: https://mjfrigaard.github.io/linux-cb/
   repo-url: https://github.com/mjfrigaard/linux-cb
@@ -19,7 +19,7 @@ book:
   chapters:
     - index.qmd 
     - preface.qmd
-    - intro.qmd
+    - part_one.qmd
     - part: setups.qmd
       chapters:
         - vms.qmd
@@ -46,7 +46,11 @@ book:
       chapters:
         - format.qmd
         - permissions.qmd
-    - part: use_cases.qmd
+    - part_two.qmd
+    - part: maintenance.qmd
+      chapters:
+        - installs.qmd
+    - part: performance.qmd
       chapters:
         - file_size.qmd
   appendices:
