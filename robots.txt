@@ -1,1 +1,1 @@
-Sitemap: https://mjfrigaard.github.io/linux-cb/sitemap.xml
+Sitemap: https://mjfrigaard.github.io/fm-linux/sitemap.xml

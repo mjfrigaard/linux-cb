@@ -1,143 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/index.html</loc>
-    <lastmod>2025-01-25T05:47:23.686Z</lastmod>
+    <loc>https://mjfrigaard.github.io/fm-linux/index.html</loc>
+    <lastmod>2025-01-26T05:31:15.603Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/preface.html</loc>
-    <lastmod>2025-01-23T18:29:34.800Z</lastmod>
+    <loc>https://mjfrigaard.github.io/fm-linux/preface.html</loc>
+    <lastmod>2025-01-26T05:31:15.606Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/part_one.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/part_one.html</loc>
     <lastmod>2025-01-22T23:23:21.981Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/setups.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/setups.html</loc>
     <lastmod>2024-10-03T18:17:23.735Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/vms.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/vms.html</loc>
     <lastmod>2024-08-30T14:21:50.545Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/shells.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/shells.html</loc>
     <lastmod>2024-10-04T05:32:11.822Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/terminals.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/terminals.html</loc>
     <lastmod>2024-08-30T04:54:07.333Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/basics.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/basics.html</loc>
     <lastmod>2025-01-23T18:43:58.625Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/dirs.html</loc>
-    <lastmod>2025-01-23T18:40:10.466Z</lastmod>
+    <loc>https://mjfrigaard.github.io/fm-linux/dirs.html</loc>
+    <lastmod>2025-01-26T05:31:15.592Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/files.html</loc>
-    <lastmod>2025-01-22T23:06:20.500Z</lastmod>
+    <loc>https://mjfrigaard.github.io/fm-linux/files.html</loc>
+    <lastmod>2025-01-26T05:31:15.600Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/sys.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/sys.html</loc>
     <lastmod>2024-08-30T20:47:44.905Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/syntax.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/syntax.html</loc>
     <lastmod>2024-09-03T06:37:33.167Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/commands.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/commands.html</loc>
     <lastmod>2024-08-28T15:01:35.960Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/arguments.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/arguments.html</loc>
     <lastmod>2024-08-28T15:01:35.958Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/options.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/options.html</loc>
     <lastmod>2024-08-28T15:01:35.980Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/pipes.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/pipes.html</loc>
     <lastmod>2024-08-28T15:01:35.985Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/vars.html</loc>
-    <lastmod>2025-01-22T23:06:20.514Z</lastmod>
+    <loc>https://mjfrigaard.github.io/fm-linux/vars.html</loc>
+    <lastmod>2025-01-26T05:31:15.616Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/text.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/text.html</loc>
     <lastmod>2024-08-28T15:01:36.003Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/symbols_patterns.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/symbols_patterns.html</loc>
     <lastmod>2024-04-27T04:51:59.433Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/text_commands.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/text_commands.html</loc>
     <lastmod>2024-08-28T15:01:36.007Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/text_editors.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/text_editors.html</loc>
     <lastmod>2024-04-12T15:53:35.566Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/scripts.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/scripts.html</loc>
     <lastmod>2024-04-05T20:55:55.019Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/format.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/format.html</loc>
     <lastmod>2024-04-16T12:51:06.539Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/permissions.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/permissions.html</loc>
     <lastmod>2024-05-17T14:21:12.225Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/part_two.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/part_two.html</loc>
     <lastmod>2025-01-23T18:26:50.562Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/maintenance.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/maintenance.html</loc>
     <lastmod>2025-01-25T06:13:48.484Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/installs.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/installs.html</loc>
     <lastmod>2025-01-25T06:12:44.101Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/performance.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/performance.html</loc>
     <lastmod>2025-01-23T18:20:45.424Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/file_size.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/file_size.html</loc>
     <lastmod>2025-01-25T05:48:42.255Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/syntax_ref.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/syntax_ref.html</loc>
     <lastmod>2024-10-04T04:19:20.052Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/data.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/data.html</loc>
     <lastmod>2024-09-19T17:47:48.203Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/fish.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/fish.html</loc>
     <lastmod>2024-10-04T05:26:48.219Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/macos.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/macos.html</loc>
     <lastmod>2024-08-28T15:01:35.978Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/quarto.html</loc>
-    <lastmod>2025-01-22T23:06:20.509Z</lastmod>
+    <loc>https://mjfrigaard.github.io/fm-linux/quarto.html</loc>
+    <lastmod>2025-01-26T05:31:15.610Z</lastmod>
   </url>
   <url>
-    <loc>https://mjfrigaard.github.io/linux-cb/glossary.html</loc>
+    <loc>https://mjfrigaard.github.io/fm-linux/glossary.html</loc>
     <lastmod>2024-10-04T04:23:15.317Z</lastmod>
   </url>
 </urlset>
