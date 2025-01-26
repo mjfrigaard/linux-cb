@@ -178,9 +178,9 @@ find data -name "*.tsv" -mtime -1
 #| eval: false
 #| label: locate
 locate who_tb_data data | head -n3
-# /Users/mjfrigaard/projects/books/linux-cb/data/csv/who_tb_data.csv
-# /Users/mjfrigaard/projects/books/linux-cb/data/tsv/who_tb_data.tsv
-# /Users/mjfrigaard/projects/books/linux-cb/data/who_tb_data.csv
+# /Users/mjfrigaard/projects/books/fm-linux/data/csv/who_tb_data.csv
+# /Users/mjfrigaard/projects/books/fm-linux/data/tsv/who_tb_data.tsv
+# /Users/mjfrigaard/projects/books/fm-linux/data/who_tb_data.csv
 ```
 
 ```{r}

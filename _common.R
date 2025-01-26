@@ -174,7 +174,7 @@ switch(color,
 }
 
 git_contrib_box <- function(
-                repo = 'linux-cb', 
+                repo = 'fm-linux', 
                 header = "See a typo, error, or something missing?",
                 contents = "Please open an issue on ",
                 hsize = "1.15", 

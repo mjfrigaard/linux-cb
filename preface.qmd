@@ -57,21 +57,21 @@ The second half of the book covers case studies (or common tasks). If you’re f
 #| label: co_box_fms
 #| echo: false
 #| results: asis
-#| eval: false
+#| eval: true
 co_box(
   color = "g",
   header = "What is in a Field Manual?", 
-  size = "0.95", 
-  hsize = "1.10", 
+  size = "1.05", 
+  hsize = "1.15", 
   look = "default",
   fold = TRUE,
   contents = "A field manual (FM) is an educational tool that provides information, instructions, and techniques for various concepts and practices. 
   
 Fiels Manuals function as both reference material and living documentation, encouraging updates and adaptations based on the given situation, available technology, or broader environment.[^field-manuals]
 
-![Example improvised litter made using tent poles and field jackets.](img/jacket-pole-litter.png){width='70%' fig-align='center'}
+![Example improvised boobytrap made using a charge and blasting cap.](img/fm531_1965_boobytraps.png){width='70%' fig-align='center'}
   
-[^field-manuals]: This definition is based on the [U.S. Army Field Manuals (FMs).](https://github.com/mjfrigaard/linux-cb/tree/main/_assets/1965-fm531-boobytraps.pdf)")
+[^field-manuals]: This definition is based on the [U.S. Army Field Manuals (FMs).](https://github.com/mjfrigaard/fm-linux/tree/main/_assets/1965-fm531-boobytraps.pdf)")
 ```
 
 ### Part One: Introduction

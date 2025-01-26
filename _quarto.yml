@@ -7,13 +7,13 @@ editor:
   render-on-save: true
 
 book:
-  title: "Linux-CB"
+  title: "FM-Linux"
   author: "Martin Frigaard"
   description: |
-    A Linux Cookbook
+    A Linux Field Manual
   search: true
-  site-url: https://mjfrigaard.github.io/linux-cb/
-  repo-url: https://github.com/mjfrigaard/linux-cb
+  site-url: https://mjfrigaard.github.io/fm-linux/
+  repo-url: https://github.com/mjfrigaard/fm-linux
   #repo-branch: main
   #repo-actions: [edit, issue]
   chapters:
