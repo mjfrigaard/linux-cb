@@ -53,10 +53,10 @@ The next sections introduce some common topics and commands that will help you n
 ```{mermaid}
 %%| fig-cap: 'Everything is a file'
 %%| fig-align: center
-%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'Inconsolata', 'fontSize': '14px'}}}%%
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'monospace', "fontSize":"16px"}}}%%
 
 mindmap
-  root(("**Everything is a File**"))
+  root(("*Everything is a File*"))
     Files
       txt("Text Files")
       bin("Binary Files")

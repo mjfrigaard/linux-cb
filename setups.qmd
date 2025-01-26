@@ -66,7 +66,7 @@ This section details the practical aspects of preparing your environment to work
 %%| fig-width: 8.0
 %%| fig-align: center
 %%| fig-cap: 'Running Virtual Machines'
-%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'Inconsolata', 'primaryColor': '#89D6FB', 'edgeLabelBackground':'#02577A'}}}%%
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'monospace', "fontSize":"16px"}}}%%
 
 flowchart TD
   VM("Virtual Machine")

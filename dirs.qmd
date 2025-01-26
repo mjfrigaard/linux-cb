@@ -65,7 +65,7 @@ The root directory is the topmost directory in the Linux file system hierarchy. 
 ```{mermaid}
 %%| fig-cap: 'Everything is a file'
 %%| fig-align: center
-%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'Inconsolata', 'fontSize': '14px'}}}%%
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontFamily': 'monospace', "fontSize":"16px"}}}%%
 
 flowchart TD
   Root(<code>/</code>)
